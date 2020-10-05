@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>biorex title text</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/css/neumorphic-login.css') ]]" rel="stylesheet" type="text/css"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body>
+  <section class="hero is-fullheight">
+   <div class="hero-body has-text-centered">
+    <div class="login">
+     <img src="https://logoipsum.com/logo/logo-1.svg" width="325px"/>
+     
+<!-- view: fneumorphicXlogin0, db_table: dfneumorphicXlogin0 -->
+<div>
+[%[= fneumorphicXlogin0.custom['begin'] ]]
+
+<div class="field">
+ <div class="control">
+ [%[ fneumorphicXlogin0.custom['widgets']['f0']['_class']= 'input is-medium is-rounded'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f0']['_placeholder']= 'hello@example.com:p4w'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f0']['_autocomplete']= 'username'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f0']['_required']= 'len0'  ]]
+ [%[= fneumorphicXlogin0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fneumorphicXlogin0.custom['errors']['f0'] if 'f0' in fneumorphicXlogin0.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="field">
+ <div class="control">
+ [%[ fneumorphicXlogin0.custom['widgets']['f1']['_class']= 'input is-medium is-rounded'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f1']['_placeholder']= '**********:p4w'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f1']['_autocomplete']= 'current-password'  ]]
+ [%[ fneumorphicXlogin0.custom['widgets']['f1']['_required']= 'len0'  ]]
+ [%[= fneumorphicXlogin0.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fneumorphicXlogin0.custom['errors']['f1'] if 'f1' in fneumorphicXlogin0.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+
+ [%[ fneumorphicXlogin0.custom['submit']['_class']= 'button is-block is-fullwidth is-primary is-medium is-rounded'  ]]
+ [%[ fneumorphicXlogin0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fneumorphicXlogin0.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fneumorphicXlogin0.custom['submit'] ]]
+
+[%[= fneumorphicXlogin0.custom['end'] ]]
+</div>
+<!-- end fneumorphicXlogin0 -->
+
+     <br/>
+     <nav class="level">
+      <div class="level-item has-text-centered">
+       <div>
+        <a href="#">Forgot Password?</a>
+       </div>
+      </div>
+      <div class="level-item has-text-centered">
+       <div>
+        <a href="#">Create an Account</a>
+       </div>
+      </div>
+     </nav>
+    </div>
+   </div>
+  </section>
+ </body>
+</html>

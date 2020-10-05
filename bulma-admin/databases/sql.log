@@ -1,0 +1,89 @@
+timestamp: 2020-08-03T11:38:32.103015
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2020-08-03T11:38:32.119243
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "path" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2020-08-27T14:53:25.565238
+CREATE TABLE "ttables0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512),
+    "f4" CHAR(512),
+    "f5" CHAR(512),
+    "f6" CHAR(512),
+    "f7" CHAR(512),
+    "f8" CHAR(512),
+    "f9" CHAR(512),
+    "f10" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.593831
+CREATE TABLE "dfforms0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.615744
+CREATE TABLE "dfforms1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.637474
+CREATE TABLE "dfforms2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.657012
+CREATE TABLE "dfforms3"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.678805
+CREATE TABLE "dfforms4"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.699057
+CREATE TABLE "dfforms5"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-08-27T15:01:11.719431
+CREATE TABLE "dfforms6"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" TEXT
+);
+success!
+timestamp: 2020-08-27T15:01:11.739201
+CREATE TABLE "dfuiXelements0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT
+);
+success!
+timestamp: 2020-08-27T15:01:11.757186
+CREATE TABLE "dfuiXelements1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT
+);
+success!

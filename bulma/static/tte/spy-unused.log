@@ -1,0 +1,11 @@
+templates/index.html
+templates/aside.html
+templates/skeleton.html
+templates/kanban-switch.html
+css/aside.css
+controllers.py
+CODE_OF_CONDUCT.md
+js/kanban-switch.js
+LICENSE
+README.md
+index.css
