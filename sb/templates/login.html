@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 05.10.2020 12:19:38 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>biorex title text</title>
+  <!-- Bootstrap core CSS-->
+  <link href="[%[=URL('static/tte/vendor/bootstrap/css/bootstrap.min.css') ]]" rel="stylesheet"/>
+  <!-- Custom fonts for this template-->
+  <link href="[%[=URL('static/tte/vendor/fontawesome-free/css/all.min.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- Custom styles for this template-->
+  <link href="[%[=URL('static/tte/css/sb-admin.css') ]]" rel="stylesheet"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="bg-dark">
+  <div class="container">
+   <div class="card card-login mx-auto mt-5">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+     
+<!-- view: flogin0, db_table: dflogin0 -->
+<div>
+[%[= flogin0.custom['begin'] ]]
+
+<div class="form-group">
+ <div class="form-label-group">
+ [%[ flogin0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_id']= 'inputEmail'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_placeholder']= 'Email address:p4w'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_required']= 'required'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_autofocus']= 'autofocus'  ]]
+ [%[= flogin0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= flogin0.custom['errors']['f0'] if 'f0' in flogin0.custom['errors'] else '' ]]</span>
+
+  <label for="inputEmail">
+   Email address:p4w
+  </label>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="form-label-group">
+ [%[ flogin0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_id']= 'inputPassword'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_required']= 'required'  ]]
+ [%[= flogin0.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= flogin0.custom['errors']['f1'] if 'f1' in flogin0.custom['errors'] else '' ]]</span>
+
+  <label for="inputPassword">
+   Password:p4w
+  </label>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="checkbox">
+  <label>
+ [%[ flogin0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ flogin0.custom['widgets']['f2']['_value']= 'remember-me'  ]]
+ [%[ flogin0.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[= flogin0.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= flogin0.custom['errors']['f2'] if 'f2' in flogin0.custom['errors'] else '' ]]</span>
+
+   Remember Password:p4w
+  </label>
+ </div>
+</div>
+
+ [%[ flogin0.custom['submit']['_class']= 'btn btn-primary btn-block'  ]]
+ [%[ flogin0.custom['submit']['_type']= 'submit'  ]]
+ [%[ flogin0.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= flogin0.custom['submit'] ]]
+
+[%[= flogin0.custom['end'] ]]
+</div>
+<!-- end flogin0 -->
+
+     <div class="text-center">
+      <a class="d-block small mt-3" href="[%[=URL('register') ]]">Register an Account</a>
+      <a class="d-block small" href="[%[=URL('forgotXpassword') ]]">Forgot Password?</a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="[%[=URL('static/tte/vendor/jquery/jquery.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap/js/bootstrap.bundle.min.js') ]]"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="[%[=URL('static/tte/vendor/jquery-easing/jquery.easing.min.js') ]]"></script>
+ </body>
+</html>

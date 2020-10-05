@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <!-- 17.08.2020 17:49:22 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>biorex title text</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <!-- Bootstrap 3.3.7 -->
+  <link href="[%[=URL('static/tte/bower_components/bootstrap/dist/css/bootstrap.min.css') ]]" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="[%[=URL('static/tte/bower_components/font-awesome/css/font-awesome.min.css') ]]" rel="stylesheet"/>
+  <!-- Ionicons -->
+  <link href="[%[=URL('static/tte/bower_components/Ionicons/css/ionicons.min.css') ]]" rel="stylesheet"/>
+  <!-- Theme style -->
+  <link href="[%[=URL('static/tte/dist/css/AdminLTE.min.css') ]]" rel="stylesheet"/>
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link href="[%[=URL('static/tte/dist/css/skins/_all-skins.min.css') ]]" rel="stylesheet"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" rel="stylesheet"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+   <header class="main-header">
+    <!-- Logo -->
+    <a class="logo" href="[%[=URL('index2') ]]">
+     <!-- mini logo for sidebar mini 50x50 pixels -->
+     <span class="logo-mini">
+      <b>A</b>
+      LT
+     </span>
+     <!-- logo for regular state and mobile devices -->
+     <span class="logo-lg">
+      <b>Admin</b>
+      LTE
+     </span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+     <!-- Sidebar toggle button-->
+     <a class="sidebar-toggle" data-toggle="push-menu" href="#" role="button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+     </a>
+     <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+       <!-- Messages: style can be found in dropdown.less-->
+       <li class="dropdown messages-menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <i class="fa fa-envelope-o"></i>
+         <span class="label label-success">4</span>
+        </a>
+        <ul class="dropdown-menu">
+         <li class="header">You have 4 messages</li>
+         <li>
+          <!-- inner menu: contains the actual data -->
+          <ul class="menu">
+           <li>
+            <!-- start message -->
+            <a href="#">
+             <div class="pull-left">
+              <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user2-160x160.jpg') ]]"/></div>
+             <h4>
+              Support Team
+              <small>
+               <i class="fa fa-clock-o"></i>
+               5 mins
+              </small>
+             </h4>
+             <p>Why not buy a new awesome theme?</p>
+            </a>
+           </li>
+           <!-- end message -->
+           <li>
+            <a href="#">
+             <div class="pull-left">
+              <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/></div>
+             <h4>
+              AdminLTE Design Team
+              <small>
+               <i class="fa fa-clock-o"></i>
+               2 hours
+              </small>
+             </h4>
+             <p>Why not buy a new awesome theme?</p>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <div class="pull-left">
+              <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user4-128x128.jpg') ]]"/></div>
+             <h4>
+              Developers
+              <small>
+               <i class="fa fa-clock-o"></i>
+               Today
+              </small>
+             </h4>
+             <p>Why not buy a new awesome theme?</p>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <div class="pull-left">
+              <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/></div>
+             <h4>
+              Sales Department
+              <small>
+               <i class="fa fa-clock-o"></i>
+               Yesterday
+              </small>
+             </h4>
+             <p>Why not buy a new awesome theme?</p>
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <div class="pull-left">
+              <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user4-128x128.jpg') ]]"/></div>
+             <h4>
+              Reviewers
+              <small>
+               <i class="fa fa-clock-o"></i>
+               2 days
+              </small>
+             </h4>
+             <p>Why not buy a new awesome theme?</p>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="footer">
+          <a href="#">See All Messages</a>
+         </li>
+        </ul>
+       </li>
+       <!-- Notifications: style can be found in dropdown.less -->
+       <li class="dropdown notifications-menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <i class="fa fa-bell-o"></i>
+         <span class="label label-warning">10</span>
+        </a>
+        <ul class="dropdown-menu">
+         <li class="header">You have 10 notifications</li>
+         <li>
+          <!-- inner menu: contains the actual data -->
+          <ul class="menu">
+           <li>
+            <a href="#">
+             <i class="fa fa-users text-aqua"></i>
+             5 new members joined today
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-warning text-yellow"></i>
+             Very long description here that may not fit into the
+                      page and may cause design problems
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-users text-red"></i>
+             5 new members joined
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-shopping-cart text-green"></i>
+             25 sales made
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             <i class="fa fa-user text-light-blue"></i>
+             You changed your username
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="footer">
+          <a href="#">View all</a>
+         </li>
+        </ul>
+       </li>
+       <!-- Tasks: style can be found in dropdown.less -->
+       <li class="dropdown tasks-menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <i class="fa fa-flag-o"></i>
+         <span class="label label-danger">9</span>
+        </a>
+        <ul class="dropdown-menu">
+         <li class="header">You have 9 tasks</li>
+         <li>
+          <!-- inner menu: contains the actual data -->
+          <ul class="menu">
+           <li>
+            <!-- Task item -->
+            <a href="#">
+             <h3>
+              Design some buttons
+              <small class="pull-right">20%</small>
+             </h3>
+             <div class="progress xs">
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-aqua" role="progressbar" style="width: 20%">
+               <span class="sr-only">20% Complete</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <!-- end task item -->
+           <li>
+            <!-- Task item -->
+            <a href="#">
+             <h3>
+              Create a nice theme
+              <small class="pull-right">40%</small>
+             </h3>
+             <div class="progress xs">
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-green" role="progressbar" style="width: 40%">
+               <span class="sr-only">40% Complete</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <!-- end task item -->
+           <li>
+            <!-- Task item -->
+            <a href="#">
+             <h3>
+              Some task I need to do
+              <small class="pull-right">60%</small>
+             </h3>
+             <div class="progress xs">
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-red" role="progressbar" style="width: 60%">
+               <span class="sr-only">60% Complete</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <!-- end task item -->
+           <li>
+            <!-- Task item -->
+            <a href="#">
+             <h3>
+              Make beautiful transitions
+              <small class="pull-right">80%</small>
+             </h3>
+             <div class="progress xs">
+              <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-yellow" role="progressbar" style="width: 80%">
+               <span class="sr-only">80% Complete</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <!-- end task item -->
+          </ul>
+         </li>
+         <li class="footer">
+          <a href="#">View all tasks</a>
+         </li>
+        </ul>
+       </li>
+       <!-- User Account: style can be found in dropdown.less -->
+       <li class="dropdown user user-menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <img alt="User Image" class="user-image" src="[%[=URL('static/tte/dist/img/user2-160x160.jpg') ]]"/>
+         <span class="hidden-xs">Alexander Pierce</span>
+        </a>
+        <ul class="dropdown-menu">
+         <!-- User image -->
+         <li class="user-header">
+          <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user2-160x160.jpg') ]]"/>
+          <p>
+           Alexander Pierce - Web Developer
+           <small>Member since Nov. 2012</small>
+          </p>
+         </li>
+         <!-- Menu Body -->
+         <li class="user-body">
+          <div class="row">
+           <div class="col-xs-4 text-center">
+            <a href="#">Followers</a>
+           </div>
+           <div class="col-xs-4 text-center">
+            <a href="#">Sales</a>
+           </div>
+           <div class="col-xs-4 text-center">
+            <a href="#">Friends</a>
+           </div>
+          </div>
+          <!-- /.row -->
+         </li>
+         <!-- Menu Footer-->
+         <li class="user-footer">
+          <div class="pull-left">
+           <a class="btn btn-default btn-flat" href="#">Profile</a>
+          </div>
+          <div class="pull-right">
+           <a class="btn btn-default btn-flat" href="#">Sign out</a>
+          </div>
+         </li>
+        </ul>
+       </li>
+       <!-- Control Sidebar Toggle Button -->
+       <li>
+        <a data-toggle="control-sidebar" href="#">
+         <i class="fa fa-gears"></i>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <!-- Left side column. contains the logo and sidebar -->
+   <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+     <!-- Sidebar user panel -->
+     <div class="user-panel">
+      <div class="pull-left image">
+       <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user2-160x160.jpg') ]]"/></div>
+      <div class="pull-left info">
+       <p>Alexander Pierce</p>
+       <a href="#">
+        <i class="fa fa-circle text-success"></i>
+        Online
+       </a>
+      </div>
+     </div>
+     <!-- search form -->
+     
+<!-- view: fwidgets0, db_table: dfwidgets0 -->
+<div action="#" method="get" class="sidebar-form">
+[%[= fwidgets0.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ fwidgets0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets0.custom['widgets']['f0']['_name']= 'q'  ]]
+ [%[ fwidgets0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fwidgets0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[= fwidgets0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets0.custom['errors']['f0'] if 'f0' in fwidgets0.custom['errors'] else '' ]]</span>
+
+ <span class="input-group-btn">
+ [%[ fwidgets0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets0.custom['submit']['_name']= 'search'  ]]
+ [%[ fwidgets0.custom['submit']['_id']= 'search-btn'  ]]
+ [%[ fwidgets0.custom['submit']['_class']= 'btn btn-flat'  ]]
+ [%[ fwidgets0.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fwidgets0.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= fwidgets0.custom['end'] ]]
+</div>
+<!-- end fwidgets0 -->
+
+     <!-- /.search form -->
+     <!-- sidebar menu: : style can be found in sidebar.less -->
+     <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">MAIN NAVIGATION</li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-dashboard"></i>
+        <span>Dashboard</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('index') ]]">
+          <i class="fa fa-circle-o"></i>
+          Dashboard v1
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('index2') ]]">
+          <i class="fa fa-circle-o"></i>
+          Dashboard v2
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-files-o"></i>
+        <span>Layout Options</span>
+        <span class="pull-right-container">
+         <span class="label label-primary pull-right">4</span>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('topXnav') ]]">
+          <i class="fa fa-circle-o"></i>
+          Top Navigation
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('boxed') ]]">
+          <i class="fa fa-circle-o"></i>
+          Boxed
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('fixed') ]]">
+          <i class="fa fa-circle-o"></i>
+          Fixed
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('collapsedXsidebar') ]]">
+          <i class="fa fa-circle-o"></i>
+          Collapsed Sidebar
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="active">
+       <a href="[%[=URL('widgets') ]]">
+        <i class="fa fa-th"></i>
+        <span>Widgets</span>
+        <span class="pull-right-container">
+         <small class="label pull-right bg-green">new</small>
+        </span>
+       </a>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-pie-chart"></i>
+        <span>Charts</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('chartjs') ]]">
+          <i class="fa fa-circle-o"></i>
+          ChartJS
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('morris') ]]">
+          <i class="fa fa-circle-o"></i>
+          Morris
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('flot') ]]">
+          <i class="fa fa-circle-o"></i>
+          Flot
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('inline') ]]">
+          <i class="fa fa-circle-o"></i>
+          Inline charts
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-laptop"></i>
+        <span>UI Elements</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('general') ]]">
+          <i class="fa fa-circle-o"></i>
+          General
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('icons') ]]">
+          <i class="fa fa-circle-o"></i>
+          Icons
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('buttons') ]]">
+          <i class="fa fa-circle-o"></i>
+          Buttons
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('sliders') ]]">
+          <i class="fa fa-circle-o"></i>
+          Sliders
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('timeline') ]]">
+          <i class="fa fa-circle-o"></i>
+          Timeline
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('modals') ]]">
+          <i class="fa fa-circle-o"></i>
+          Modals
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-edit"></i>
+        <span>Forms</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('general') ]]">
+          <i class="fa fa-circle-o"></i>
+          General Elements
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('advanced') ]]">
+          <i class="fa fa-circle-o"></i>
+          Advanced Elements
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('editors') ]]">
+          <i class="fa fa-circle-o"></i>
+          Editors
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-table"></i>
+        <span>Tables</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('simple') ]]">
+          <i class="fa fa-circle-o"></i>
+          Simple tables
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('data') ]]">
+          <i class="fa fa-circle-o"></i>
+          Data tables
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="[%[=URL('calendar') ]]">
+        <i class="fa fa-calendar"></i>
+        <span>Calendar</span>
+        <span class="pull-right-container">
+         <small class="label pull-right bg-red">3</small>
+         <small class="label pull-right bg-blue">17</small>
+        </span>
+       </a>
+      </li>
+      <li>
+       <a href="[%[=URL('mailbox') ]]">
+        <i class="fa fa-envelope"></i>
+        <span>Mailbox</span>
+        <span class="pull-right-container">
+         <small class="label pull-right bg-yellow">12</small>
+         <small class="label pull-right bg-green">16</small>
+         <small class="label pull-right bg-red">5</small>
+        </span>
+       </a>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-folder"></i>
+        <span>Examples</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('invoice') ]]">
+          <i class="fa fa-circle-o"></i>
+          Invoice
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('profile') ]]">
+          <i class="fa fa-circle-o"></i>
+          Profile
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('login') ]]">
+          <i class="fa fa-circle-o"></i>
+          Login
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('register') ]]">
+          <i class="fa fa-circle-o"></i>
+          Register
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('lockscreen') ]]">
+          <i class="fa fa-circle-o"></i>
+          Lockscreen
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('X404') ]]">
+          <i class="fa fa-circle-o"></i>
+          404 Error
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('X500') ]]">
+          <i class="fa fa-circle-o"></i>
+          500 Error
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('blank') ]]">
+          <i class="fa fa-circle-o"></i>
+          Blank Page
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('pace') ]]">
+          <i class="fa fa-circle-o"></i>
+          Pace Page
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-share"></i>
+        <span>Multilevel</span>
+        <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+        </span>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="#">
+          <i class="fa fa-circle-o"></i>
+          Level One
+         </a>
+        </li>
+        <li class="treeview">
+         <a href="#">
+          <i class="fa fa-circle-o"></i>
+          Level One
+          <span class="pull-right-container">
+           <i class="fa fa-angle-left pull-right"></i>
+          </span>
+         </a>
+         <ul class="treeview-menu">
+          <li>
+           <a href="#">
+            <i class="fa fa-circle-o"></i>
+            Level Two
+           </a>
+          </li>
+          <li class="treeview">
+           <a href="#">
+            <i class="fa fa-circle-o"></i>
+            Level Two
+            <span class="pull-right-container">
+             <i class="fa fa-angle-left pull-right"></i>
+            </span>
+           </a>
+           <ul class="treeview-menu">
+            <li>
+             <a href="#">
+              <i class="fa fa-circle-o"></i>
+              Level Three
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              <i class="fa fa-circle-o"></i>
+              Level Three
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <a href="#">
+          <i class="fa fa-circle-o"></i>
+          Level One
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="https://adminlte.io/docs">
+        <i class="fa fa-book"></i>
+        <span>Documentation</span>
+       </a>
+      </li>
+      <li class="header">LABELS</li>
+      <li>
+       <a href="#">
+        <i class="fa fa-circle-o text-red"></i>
+        <span>Important</span>
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa fa-circle-o text-yellow"></i>
+        <span>Warning</span>
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa fa-circle-o text-aqua"></i>
+        <span>Information</span>
+       </a>
+      </li>
+     </ul>
+    </section>
+    <!-- /.sidebar -->
+   </aside>
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+     <h1>
+      Widgets
+      <small>Preview page</small>
+     </h1>
+     <ol class="breadcrumb">
+      <li>
+       <a href="#">
+        <i class="fa fa-dashboard"></i>
+        Home
+       </a>
+      </li>
+      <li class="active">Widgets</li>
+     </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+     <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box">
+        <span class="info-box-icon bg-aqua">
+         <i class="fa fa-envelope-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Messages</span>
+         <span class="info-box-number">1,410</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box">
+        <span class="info-box-icon bg-green">
+         <i class="fa fa-flag-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Bookmarks</span>
+         <span class="info-box-number">410</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box">
+        <span class="info-box-icon bg-yellow">
+         <i class="fa fa-files-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Uploads</span>
+         <span class="info-box-number">13,648</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box">
+        <span class="info-box-icon bg-red">
+         <i class="fa fa-star-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Likes</span>
+         <span class="info-box-number">93,139</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <!-- =========================================================== -->
+     <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box bg-aqua">
+        <span class="info-box-icon">
+         <i class="fa fa-bookmark-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Bookmarks</span>
+         <span class="info-box-number">41,410</span>
+         <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+         </div>
+         <span class="progress-description">70% Increase in 30 Days</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box bg-green">
+        <span class="info-box-icon">
+         <i class="fa fa-thumbs-o-up"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Likes</span>
+         <span class="info-box-number">41,410</span>
+         <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+         </div>
+         <span class="progress-description">70% Increase in 30 Days</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box bg-yellow">
+        <span class="info-box-icon">
+         <i class="fa fa-calendar"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Events</span>
+         <span class="info-box-number">41,410</span>
+         <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+         </div>
+         <span class="progress-description">70% Increase in 30 Days</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="info-box bg-red">
+        <span class="info-box-icon">
+         <i class="fa fa-comments-o"></i>
+        </span>
+        <div class="info-box-content">
+         <span class="info-box-text">Comments</span>
+         <span class="info-box-number">41,410</span>
+         <div class="progress">
+          <div class="progress-bar" style="width: 70%"></div>
+         </div>
+         <span class="progress-description">70% Increase in 30 Days</span>
+        </div>
+        <!-- /.info-box-content -->
+       </div>
+       <!-- /.info-box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <!-- =========================================================== -->
+     <!-- Small boxes (Stat box) -->
+     <div class="row">
+      <div class="col-lg-3 col-xs-6">
+       <!-- small box -->
+       <div class="small-box bg-aqua">
+        <div class="inner">
+         <h3>150</h3>
+         <p>New Orders</p>
+        </div>
+        <div class="icon">
+         <i class="fa fa-shopping-cart"></i>
+        </div>
+        <a class="small-box-footer" href="#">
+         More info
+         <i class="fa fa-arrow-circle-right"></i>
+        </a>
+       </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+       <!-- small box -->
+       <div class="small-box bg-green">
+        <div class="inner">
+         <h3>
+          53
+          <sup style="font-size: 20px">
+           %
+          </sup>
+         </h3>
+         <p>Bounce Rate</p>
+        </div>
+        <div class="icon">
+         <i class="ion ion-stats-bars"></i>
+        </div>
+        <a class="small-box-footer" href="#">
+         More info
+         <i class="fa fa-arrow-circle-right"></i>
+        </a>
+       </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+       <!-- small box -->
+       <div class="small-box bg-yellow">
+        <div class="inner">
+         <h3>44</h3>
+         <p>User Registrations</p>
+        </div>
+        <div class="icon">
+         <i class="ion ion-person-add"></i>
+        </div>
+        <a class="small-box-footer" href="#">
+         More info
+         <i class="fa fa-arrow-circle-right"></i>
+        </a>
+       </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+       <!-- small box -->
+       <div class="small-box bg-red">
+        <div class="inner">
+         <h3>65</h3>
+         <p>Unique Visitors</p>
+        </div>
+        <div class="icon">
+         <i class="ion ion-pie-graph"></i>
+        </div>
+        <a class="small-box-footer" href="#">
+         More info
+         <i class="fa fa-arrow-circle-right"></i>
+        </a>
+       </div>
+      </div>
+      <!-- ./col -->
+     </div>
+     <!-- /.row -->
+     <!-- =========================================================== -->
+     <div class="row">
+      <div class="col-md-3">
+       <div class="box box-default collapsed-box">
+        <div class="box-header with-border">
+         <h3 class="box-title">Expandable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-plus"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-success">
+        <div class="box-header with-border">
+         <h3 class="box-title">Removable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-warning">
+        <div class="box-header with-border">
+         <h3 class="box-title">Collapsable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-danger">
+        <div class="box-header">
+         <h3 class="box-title">Loading state</h3>
+        </div>
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+        <!-- Loading (remove the following to stop the loading)-->
+        <div class="overlay">
+         <i class="fa fa-refresh fa-spin"></i>
+        </div>
+        <!-- end loading -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <!-- =========================================================== -->
+     <div class="row">
+      <div class="col-md-3">
+       <div class="box box-default collapsed-box box-solid">
+        <div class="box-header with-border">
+         <h3 class="box-title">Expandable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-plus"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-success box-solid">
+        <div class="box-header with-border">
+         <h3 class="box-title">Removable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-warning box-solid">
+        <div class="box-header with-border">
+         <h3 class="box-title">Collapsable</h3>
+         <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <div class="box box-danger box-solid">
+        <div class="box-header">
+         <h3 class="box-title">Loading state</h3>
+        </div>
+        <div class="box-body">The body of the box</div>
+        <!-- /.box-body -->
+        <!-- Loading (remove the following to stop the loading)-->
+        <div class="overlay">
+         <i class="fa fa-refresh fa-spin"></i>
+        </div>
+        <!-- end loading -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <!-- =========================================================== -->
+     <!-- Direct Chat -->
+     <div class="row">
+      <div class="col-md-3">
+       <!-- DIRECT CHAT PRIMARY -->
+       <div class="box box-primary direct-chat direct-chat-primary">
+        <div class="box-header with-border">
+         <h3 class="box-title">Direct Chat</h3>
+         <div class="box-tools pull-right">
+          <span class="badge bg-light-blue" data-toggle="tooltip" title="3 New Messages">3</span>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-toggle="tooltip" data-widget="chat-pane-toggle" title="Contacts" type="button">
+           <i class="fa fa-comments"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <!-- Conversations are loaded here -->
+         <div class="direct-chat-messages">
+          <!-- Message. Default to the left -->
+          <div class="direct-chat-msg">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-left">Alexander Pierce</span>
+            <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">Is this template really for free? That's unbelievable!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+          <!-- Message to the right -->
+          <div class="direct-chat-msg right">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-right">Sarah Bullock</span>
+            <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">You better believe it!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+         </div>
+         <!--/.direct-chat-messages-->
+         <!-- Contacts are loaded here -->
+         <div class="direct-chat-contacts">
+          <ul class="contacts-list">
+           <li>
+            <a href="#">
+             <img alt="User Image" class="contacts-list-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+             <div class="contacts-list-info">
+              <span class="contacts-list-name">
+               Count Dracula
+               <small class="contacts-list-date pull-right">2/28/2015</small>
+              </span>
+              <span class="contacts-list-msg">How have you been? I was...</span>
+             </div>
+             <!-- /.contacts-list-info -->
+            </a>
+           </li>
+           <!-- End Contact Item -->
+          </ul>
+          <!-- /.contatcts-list -->
+         </div>
+         <!-- /.direct-chat-pane -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets1, db_table: dfwidgets1 -->
+<div action="#" method="post">
+[%[= fwidgets1.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ fwidgets1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets1.custom['widgets']['f0']['_name']= 'message'  ]]
+ [%[ fwidgets1.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
+ [%[ fwidgets1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[= fwidgets1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets1.custom['errors']['f0'] if 'f0' in fwidgets1.custom['errors'] else '' ]]</span>
+
+ <span class="input-group-btn">
+ [%[ fwidgets1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets1.custom['submit']['_class']= 'btn btn-primary btn-flat'  ]]
+ [%[ fwidgets1.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fwidgets1.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= fwidgets1.custom['end'] ]]
+</div>
+<!-- end fwidgets1 -->
+
+        </div>
+        <!-- /.box-footer-->
+       </div>
+       <!--/.direct-chat -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <!-- DIRECT CHAT SUCCESS -->
+       <div class="box box-success direct-chat direct-chat-success">
+        <div class="box-header with-border">
+         <h3 class="box-title">Direct Chat</h3>
+         <div class="box-tools pull-right">
+          <span class="badge bg-green" data-toggle="tooltip" title="3 New Messages">3</span>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-toggle="tooltip" data-widget="chat-pane-toggle" title="Contacts" type="button">
+           <i class="fa fa-comments"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <!-- Conversations are loaded here -->
+         <div class="direct-chat-messages">
+          <!-- Message. Default to the left -->
+          <div class="direct-chat-msg">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-left">Alexander Pierce</span>
+            <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">Is this template really for free? That's unbelievable!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+          <!-- Message to the right -->
+          <div class="direct-chat-msg right">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-right">Sarah Bullock</span>
+            <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">You better believe it!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+         </div>
+         <!--/.direct-chat-messages-->
+         <!-- Contacts are loaded here -->
+         <div class="direct-chat-contacts">
+          <ul class="contacts-list">
+           <li>
+            <a href="#">
+             <img alt="User Image" class="contacts-list-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+             <div class="contacts-list-info">
+              <span class="contacts-list-name">
+               Count Dracula
+               <small class="contacts-list-date pull-right">2/28/2015</small>
+              </span>
+              <span class="contacts-list-msg">How have you been? I was...</span>
+             </div>
+             <!-- /.contacts-list-info -->
+            </a>
+           </li>
+           <!-- End Contact Item -->
+          </ul>
+          <!-- /.contatcts-list -->
+         </div>
+         <!-- /.direct-chat-pane -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets2, db_table: dfwidgets2 -->
+<div action="#" method="post">
+[%[= fwidgets2.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ fwidgets2.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets2.custom['widgets']['f0']['_name']= 'message'  ]]
+ [%[ fwidgets2.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
+ [%[ fwidgets2.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[= fwidgets2.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets2.custom['errors']['f0'] if 'f0' in fwidgets2.custom['errors'] else '' ]]</span>
+
+ <span class="input-group-btn">
+ [%[ fwidgets2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets2.custom['submit']['_class']= 'btn btn-success btn-flat'  ]]
+ [%[ fwidgets2.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fwidgets2.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= fwidgets2.custom['end'] ]]
+</div>
+<!-- end fwidgets2 -->
+
+        </div>
+        <!-- /.box-footer-->
+       </div>
+       <!--/.direct-chat -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <!-- DIRECT CHAT WARNING -->
+       <div class="box box-warning direct-chat direct-chat-warning">
+        <div class="box-header with-border">
+         <h3 class="box-title">Direct Chat</h3>
+         <div class="box-tools pull-right">
+          <span class="badge bg-yellow" data-toggle="tooltip" title="3 New Messages">3</span>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-toggle="tooltip" data-widget="chat-pane-toggle" title="Contacts" type="button">
+           <i class="fa fa-comments"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <!-- Conversations are loaded here -->
+         <div class="direct-chat-messages">
+          <!-- Message. Default to the left -->
+          <div class="direct-chat-msg">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-left">Alexander Pierce</span>
+            <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">Is this template really for free? That's unbelievable!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+          <!-- Message to the right -->
+          <div class="direct-chat-msg right">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-right">Sarah Bullock</span>
+            <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">You better believe it!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+         </div>
+         <!--/.direct-chat-messages-->
+         <!-- Contacts are loaded here -->
+         <div class="direct-chat-contacts">
+          <ul class="contacts-list">
+           <li>
+            <a href="#">
+             <img alt="User Image" class="contacts-list-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+             <div class="contacts-list-info">
+              <span class="contacts-list-name">
+               Count Dracula
+               <small class="contacts-list-date pull-right">2/28/2015</small>
+              </span>
+              <span class="contacts-list-msg">How have you been? I was...</span>
+             </div>
+             <!-- /.contacts-list-info -->
+            </a>
+           </li>
+           <!-- End Contact Item -->
+          </ul>
+          <!-- /.contatcts-list -->
+         </div>
+         <!-- /.direct-chat-pane -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets3, db_table: dfwidgets3 -->
+<div action="#" method="post">
+[%[= fwidgets3.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ fwidgets3.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets3.custom['widgets']['f0']['_name']= 'message'  ]]
+ [%[ fwidgets3.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
+ [%[ fwidgets3.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[= fwidgets3.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets3.custom['errors']['f0'] if 'f0' in fwidgets3.custom['errors'] else '' ]]</span>
+
+ <span class="input-group-btn">
+ [%[ fwidgets3.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets3.custom['submit']['_class']= 'btn btn-warning btn-flat'  ]]
+ [%[ fwidgets3.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fwidgets3.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= fwidgets3.custom['end'] ]]
+</div>
+<!-- end fwidgets3 -->
+
+        </div>
+        <!-- /.box-footer-->
+       </div>
+       <!--/.direct-chat -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3">
+       <!-- DIRECT CHAT DANGER -->
+       <div class="box box-danger direct-chat direct-chat-danger">
+        <div class="box-header with-border">
+         <h3 class="box-title">Direct Chat</h3>
+         <div class="box-tools pull-right">
+          <span class="badge bg-red" data-toggle="tooltip" title="3 New Messages">3</span>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-toggle="tooltip" data-widget="chat-pane-toggle" title="Contacts" type="button">
+           <i class="fa fa-comments"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <!-- Conversations are loaded here -->
+         <div class="direct-chat-messages">
+          <!-- Message. Default to the left -->
+          <div class="direct-chat-msg">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-left">Alexander Pierce</span>
+            <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">Is this template really for free? That's unbelievable!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+          <!-- Message to the right -->
+          <div class="direct-chat-msg right">
+           <div class="direct-chat-info clearfix">
+            <span class="direct-chat-name pull-right">Sarah Bullock</span>
+            <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+           </div>
+           <!-- /.direct-chat-info -->
+           <img alt="Message User Image" class="direct-chat-img" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+           <!-- /.direct-chat-img -->
+           <div class="direct-chat-text">You better believe it!</div>
+           <!-- /.direct-chat-text -->
+          </div>
+          <!-- /.direct-chat-msg -->
+         </div>
+         <!--/.direct-chat-messages-->
+         <!-- Contacts are loaded here -->
+         <div class="direct-chat-contacts">
+          <ul class="contacts-list">
+           <li>
+            <a href="#">
+             <img alt="User Image" class="contacts-list-img" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+             <div class="contacts-list-info">
+              <span class="contacts-list-name">
+               Count Dracula
+               <small class="contacts-list-date pull-right">2/28/2015</small>
+              </span>
+              <span class="contacts-list-msg">How have you been? I was...</span>
+             </div>
+             <!-- /.contacts-list-info -->
+            </a>
+           </li>
+           <!-- End Contact Item -->
+          </ul>
+          <!-- /.contatcts-list -->
+         </div>
+         <!-- /.direct-chat-pane -->
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets4, db_table: dfwidgets4 -->
+<div action="#" method="post">
+[%[= fwidgets4.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ fwidgets4.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets4.custom['widgets']['f0']['_name']= 'message'  ]]
+ [%[ fwidgets4.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
+ [%[ fwidgets4.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[= fwidgets4.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets4.custom['errors']['f0'] if 'f0' in fwidgets4.custom['errors'] else '' ]]</span>
+
+ <span class="input-group-btn">
+ [%[ fwidgets4.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets4.custom['submit']['_class']= 'btn btn-danger btn-flat'  ]]
+ [%[ fwidgets4.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fwidgets4.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= fwidgets4.custom['end'] ]]
+</div>
+<!-- end fwidgets4 -->
+
+        </div>
+        <!-- /.box-footer-->
+       </div>
+       <!--/.direct-chat -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <h2 class="page-header">Social Widgets</h2>
+     <div class="row">
+      <div class="col-md-4">
+       <!-- Widget: user widget style 1 -->
+       <div class="box box-widget widget-user-2">
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-yellow">
+         <div class="widget-user-image">
+          <img alt="User Avatar" class="img-circle" src="[%[=URL('static/tte/dist/img/user7-128x128.jpg') ]]"/></div>
+         <!-- /.widget-user-image -->
+         <h3 class="widget-user-username">Nadia Carmichael</h3>
+         <h5 class="widget-user-desc">Lead Developer</h5>
+        </div>
+        <div class="box-footer no-padding">
+         <ul class="nav nav-stacked">
+          <li>
+           <a href="#">
+            Projects
+            <span class="pull-right badge bg-blue">31</span>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Tasks
+            <span class="pull-right badge bg-aqua">5</span>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Completed Projects
+            <span class="pull-right badge bg-green">12</span>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            Followers
+            <span class="pull-right badge bg-red">842</span>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <!-- /.widget-user -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-4">
+       <!-- Widget: user widget style 1 -->
+       <div class="box box-widget widget-user">
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-aqua-active">
+         <h3 class="widget-user-username">Alexander Pierce</h3>
+         <h5 class="widget-user-desc">Founder &amp; CEO</h5>
+        </div>
+        <div class="widget-user-image">
+         <img alt="User Avatar" class="img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/></div>
+        <div class="box-footer">
+         <div class="row">
+          <div class="col-sm-4 border-right">
+           <div class="description-block">
+            <h5 class="description-header">3,200</h5>
+            <span class="description-text">SALES</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4 border-right">
+           <div class="description-block">
+            <h5 class="description-header">13,000</h5>
+            <span class="description-text">FOLLOWERS</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4">
+           <div class="description-block">
+            <h5 class="description-header">35</h5>
+            <span class="description-text">PRODUCTS</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+         </div>
+         <!-- /.row -->
+        </div>
+       </div>
+       <!-- /.widget-user -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-4">
+       <!-- Widget: user widget style 1 -->
+       <div class="box box-widget widget-user">
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-black" style="background: url([%[=URL('static/tte/dist/img/photo1.png') ]]) center center;">
+         <h3 class="widget-user-username">Elizabeth Pierce</h3>
+         <h5 class="widget-user-desc">Web Designer</h5>
+        </div>
+        <div class="widget-user-image">
+         <img alt="User Avatar" class="img-circle" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/></div>
+        <div class="box-footer">
+         <div class="row">
+          <div class="col-sm-4 border-right">
+           <div class="description-block">
+            <h5 class="description-header">3,200</h5>
+            <span class="description-text">SALES</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4 border-right">
+           <div class="description-block">
+            <h5 class="description-header">13,000</h5>
+            <span class="description-text">FOLLOWERS</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+          <div class="col-sm-4">
+           <div class="description-block">
+            <h5 class="description-header">35</h5>
+            <span class="description-text">PRODUCTS</span>
+           </div>
+           <!-- /.description-block -->
+          </div>
+          <!-- /.col -->
+         </div>
+         <!-- /.row -->
+        </div>
+       </div>
+       <!-- /.widget-user -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <div class="row">
+      <div class="col-md-6">
+       <!-- Box Comment -->
+       <div class="box box-widget">
+        <div class="box-header with-border">
+         <div class="user-block">
+          <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+          <span class="username">
+           <a href="#">Jonathan Burke Jr.</a>
+          </span>
+          <span class="description">Shared publicly - 7:30 PM Today</span>
+         </div>
+         <!-- /.user-block -->
+         <div class="box-tools">
+          <button class="btn btn-box-tool" data-toggle="tooltip" title="Mark as read" type="button">
+           <i class="fa fa-circle-o"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <img alt="Photo" class="img-responsive pad" src="[%[=URL('static/tte/dist/img/photo2.png') ]]"/>
+         <p>I took this photo this morning. What do you guys think?</p>
+         <button class="btn btn-default btn-xs" type="button">
+          <i class="fa fa-share"></i>
+          Share
+         </button>
+         <button class="btn btn-default btn-xs" type="button">
+          <i class="fa fa-thumbs-o-up"></i>
+          Like
+         </button>
+         <span class="pull-right text-muted">127 likes - 3 comments</span>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer box-comments">
+         <div class="box-comment">
+          <!-- User image -->
+          <img alt="User Image" class="img-circle img-sm" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+          <div class="comment-text">
+           <span class="username">
+            Maria Gonzales
+            <span class="text-muted pull-right">8:03 PM Today</span>
+           </span>
+           <!-- /.username -->
+           It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+          </div>
+          <!-- /.comment-text -->
+         </div>
+         <!-- /.box-comment -->
+         <div class="box-comment">
+          <!-- User image -->
+          <img alt="User Image" class="img-circle img-sm" src="[%[=URL('static/tte/dist/img/user4-128x128.jpg') ]]"/>
+          <div class="comment-text">
+           <span class="username">
+            Luna Stark
+            <span class="text-muted pull-right">8:03 PM Today</span>
+           </span>
+           <!-- /.username -->
+           It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+          </div>
+          <!-- /.comment-text -->
+         </div>
+         <!-- /.box-comment -->
+        </div>
+        <!-- /.box-footer -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets5, db_table: dfwidgets5 -->
+<div action="#" method="post">
+[%[= fwidgets5.custom['begin'] ]]
+
+
+<div class="img-push">
+ [%[ fwidgets5.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets5.custom['widgets']['f0']['_class']= 'form-control input-sm'  ]]
+ [%[ fwidgets5.custom['widgets']['f0']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[= fwidgets5.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets5.custom['errors']['f0'] if 'f0' in fwidgets5.custom['errors'] else '' ]]</span>
+
+ [%[ fwidgets5.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets5.custom['submit']['_class']= 'form-control input-sm'  ]]
+ [%[ fwidgets5.custom['submit']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[ fwidgets5.custom['submit']['_value']= 'sub:p4w'  ]]
+ [%[= fwidgets5.custom['submit'] ]]
+
+</div>
+[%[= fwidgets5.custom['end'] ]]
+</div>
+<!-- end fwidgets5 -->
+
+        </div>
+        <!-- /.box-footer -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-6">
+       <!-- Box Comment -->
+       <div class="box box-widget">
+        <div class="box-header with-border">
+         <div class="user-block">
+          <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+          <span class="username">
+           <a href="#">Jonathan Burke Jr.</a>
+          </span>
+          <span class="description">Shared publicly - 7:30 PM Today</span>
+         </div>
+         <!-- /.user-block -->
+         <div class="box-tools">
+          <button class="btn btn-box-tool" data-toggle="tooltip" title="Mark as read" type="button">
+           <i class="fa fa-circle-o"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="collapse" type="button">
+           <i class="fa fa-minus"></i>
+          </button>
+          <button class="btn btn-box-tool" data-widget="remove" type="button">
+           <i class="fa fa-times"></i>
+          </button>
+         </div>
+         <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+         <!-- post text -->
+         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at</p>
+         <p>the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+         <!-- Attachment -->
+         <div class="attachment-block clearfix">
+          <img alt="Attachment Image" class="attachment-img" src="[%[=URL('static/tte/dist/img/photo1.png') ]]"/>
+          <div class="attachment-pushed">
+           <h4 class="attachment-heading">
+            <a href="http://www.lipsum.com/">Lorem ipsum text generator</a>
+           </h4>
+           <div class="attachment-text">
+            Description about the attachment can be placed here.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            <a href="#">more</a>
+           </div>
+           <!-- /.attachment-text -->
+          </div>
+          <!-- /.attachment-pushed -->
+         </div>
+         <!-- /.attachment-block -->
+         <!-- Social sharing buttons -->
+         <button class="btn btn-default btn-xs" type="button">
+          <i class="fa fa-share"></i>
+          Share
+         </button>
+         <button class="btn btn-default btn-xs" type="button">
+          <i class="fa fa-thumbs-o-up"></i>
+          Like
+         </button>
+         <span class="pull-right text-muted">45 likes - 2 comments</span>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer box-comments">
+         <div class="box-comment">
+          <!-- User image -->
+          <img alt="User Image" class="img-circle img-sm" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+          <div class="comment-text">
+           <span class="username">
+            Maria Gonzales
+            <span class="text-muted pull-right">8:03 PM Today</span>
+           </span>
+           <!-- /.username -->
+           It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+          </div>
+          <!-- /.comment-text -->
+         </div>
+         <!-- /.box-comment -->
+         <div class="box-comment">
+          <!-- User image -->
+          <img alt="User Image" class="img-circle img-sm" src="[%[=URL('static/tte/dist/img/user5-128x128.jpg') ]]"/>
+          <div class="comment-text">
+           <span class="username">
+            Nora Havisham
+            <span class="text-muted pull-right">8:03 PM Today</span>
+           </span>
+           <!-- /.username -->
+           The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using
+                  'Content here, content here', making it look like readable English.
+          </div>
+          <!-- /.comment-text -->
+         </div>
+         <!-- /.box-comment -->
+        </div>
+        <!-- /.box-footer -->
+        <div class="box-footer">
+         
+<!-- view: fwidgets6, db_table: dfwidgets6 -->
+<div action="#" method="post">
+[%[= fwidgets6.custom['begin'] ]]
+
+
+<div class="img-push">
+ [%[ fwidgets6.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fwidgets6.custom['widgets']['f0']['_class']= 'form-control input-sm'  ]]
+ [%[ fwidgets6.custom['widgets']['f0']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[= fwidgets6.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets6.custom['errors']['f0'] if 'f0' in fwidgets6.custom['errors'] else '' ]]</span>
+
+ [%[ fwidgets6.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets6.custom['submit']['_class']= 'form-control input-sm'  ]]
+ [%[ fwidgets6.custom['submit']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[ fwidgets6.custom['submit']['_value']= 'sub:p4w'  ]]
+ [%[= fwidgets6.custom['submit'] ]]
+
+</div>
+[%[= fwidgets6.custom['end'] ]]
+</div>
+<!-- end fwidgets6 -->
+
+        </div>
+        <!-- /.box-footer -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+    </section>
+    <!-- /.content -->
+   </div>
+   <!-- /.content-wrapper -->
+   <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+     <b>Version</b>
+     2.4.18
+    </div>
+    <strong>
+     Copyright © 2014-2019
+     <a href="https://adminlte.io">AdminLTE</a>
+     .
+    </strong>
+    All rights
+    reserved.
+   </footer>
+   <!-- Control Sidebar -->
+   <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+     <li>
+      <a data-toggle="tab" href="#control-sidebar-home-tab">
+       <i class="fa fa-home"></i>
+      </a>
+     </li>
+     <li>
+      <a data-toggle="tab" href="#control-sidebar-settings-tab">
+       <i class="fa fa-gears"></i>
+      </a>
+     </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+     <!-- Home tab content -->
+     <div class="tab-pane" id="control-sidebar-home-tab">
+      <h3 class="control-sidebar-heading">Recent Activity</h3>
+      <ul class="control-sidebar-menu">
+       <li>
+        <a href="javascript:void(0)">
+         <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+         <div class="menu-info">
+          <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+          <p>Will be 23 on April 24th</p>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <i class="menu-icon fa fa-user bg-yellow"></i>
+         <div class="menu-info">
+          <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+          <p>New phone +1(800)555-1234</p>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+         <div class="menu-info">
+          <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+          <p>nora@example.com</p>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <i class="menu-icon fa fa-file-code-o bg-green"></i>
+         <div class="menu-info">
+          <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+          <p>Execution time 5 seconds</p>
+         </div>
+        </a>
+       </li>
+      </ul>
+      <!-- /.control-sidebar-menu -->
+      <h3 class="control-sidebar-heading">Tasks Progress</h3>
+      <ul class="control-sidebar-menu">
+       <li>
+        <a href="javascript:void(0)">
+         <h4 class="control-sidebar-subheading">
+          Custom Template Design
+          <span class="label label-danger pull-right">70%</span>
+         </h4>
+         <div class="progress progress-xxs">
+          <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <h4 class="control-sidebar-subheading">
+          Update Resume
+          <span class="label label-success pull-right">95%</span>
+         </h4>
+         <div class="progress progress-xxs">
+          <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <h4 class="control-sidebar-subheading">
+          Laravel Integration
+          <span class="label label-warning pull-right">50%</span>
+         </h4>
+         <div class="progress progress-xxs">
+          <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+         </div>
+        </a>
+       </li>
+       <li>
+        <a href="javascript:void(0)">
+         <h4 class="control-sidebar-subheading">
+          Back End Framework
+          <span class="label label-primary pull-right">68%</span>
+         </h4>
+         <div class="progress progress-xxs">
+          <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+         </div>
+        </a>
+       </li>
+      </ul>
+      <!-- /.control-sidebar-menu -->
+     </div>
+     <!-- /.tab-pane -->
+     <!-- Stats tab content -->
+     <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+     <!-- /.tab-pane -->
+     <!-- Settings tab content -->
+     <div class="tab-pane" id="control-sidebar-settings-tab">
+      
+<!-- view: fwidgets7, db_table: dfwidgets7 -->
+<div method="post">
+[%[= fwidgets7.custom['begin'] ]]
+
+<h3 class="control-sidebar-heading">
+ General Settings:p4w
+</h3>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Report panel usage:p4w
+ [%[ fwidgets7.custom['widgets']['f0']['_type']= 'checkbox'  ]]
+ [%[ fwidgets7.custom['widgets']['f0']['_class']= 'pull-right'  ]]
+ [%[ fwidgets7.custom['widgets']['f0']['_checked']= 'len0'  ]]
+ [%[ fwidgets7.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[= fwidgets7.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets7.custom['errors']['f0'] if 'f0' in fwidgets7.custom['errors'] else '' ]]</span>
+
+ </label>
+ <p>
+  Some information about this general settings option:p4w
+ </p>
+</div>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Allow mail redirect:p4w
+ [%[ fwidgets7.custom['widgets']['f1']['_type']= 'checkbox'  ]]
+ [%[ fwidgets7.custom['widgets']['f1']['_class']= 'pull-right'  ]]
+ [%[ fwidgets7.custom['widgets']['f1']['_checked']= 'len0'  ]]
+ [%[ fwidgets7.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[= fwidgets7.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets7.custom['errors']['f1'] if 'f1' in fwidgets7.custom['errors'] else '' ]]</span>
+
+ </label>
+ <p>
+  Other sets of options are available:p4w
+ </p>
+</div>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Expose author name in posts:p4w
+ [%[ fwidgets7.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ fwidgets7.custom['widgets']['f2']['_class']= 'pull-right'  ]]
+ [%[ fwidgets7.custom['widgets']['f2']['_checked']= 'len0'  ]]
+ [%[ fwidgets7.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[= fwidgets7.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets7.custom['errors']['f2'] if 'f2' in fwidgets7.custom['errors'] else '' ]]</span>
+
+ </label>
+ <p>
+  Allow the user to show his name in blog posts:p4w
+ </p>
+</div>
+
+<h3 class="control-sidebar-heading">
+ Chat Settings:p4w
+</h3>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Show me as online:p4w
+ [%[ fwidgets7.custom['widgets']['f3']['_type']= 'checkbox'  ]]
+ [%[ fwidgets7.custom['widgets']['f3']['_class']= 'pull-right'  ]]
+ [%[ fwidgets7.custom['widgets']['f3']['_checked']= 'len0'  ]]
+ [%[ fwidgets7.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
+ [%[= fwidgets7.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets7.custom['errors']['f3'] if 'f3' in fwidgets7.custom['errors'] else '' ]]</span>
+
+ </label>
+</div>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Turn off notifications:p4w
+ [%[ fwidgets7.custom['widgets']['f4']['_type']= 'checkbox'  ]]
+ [%[ fwidgets7.custom['widgets']['f4']['_class']= 'pull-right'  ]]
+ [%[ fwidgets7.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
+ [%[= fwidgets7.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fwidgets7.custom['errors']['f4'] if 'f4' in fwidgets7.custom['errors'] else '' ]]</span>
+
+ </label>
+</div>
+
+<div class="form-group">
+ <label class="control-sidebar-subheading">
+  Delete chat history:p4w
+ [%[ fwidgets7.custom['submit']['_class']= 'text-red pull-right'  ]]
+ [%[ fwidgets7.custom['submit']['_type']= 'submit'  ]]
+ [%[ fwidgets7.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= fwidgets7.custom['submit'] ]]
+
+ </label>
+</div>
+[%[= fwidgets7.custom['end'] ]]
+</div>
+<!-- end fwidgets7 -->
+
+     </div>
+     <!-- /.tab-pane -->
+    </div>
+   </aside>
+   <!-- /.control-sidebar -->
+   <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+   <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+  <!-- jQuery 3 -->
+  <script src="[%[=URL('static/tte/bower_components/jquery/dist/jquery.min.js') ]]"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="[%[=URL('static/tte/bower_components/bootstrap/dist/js/bootstrap.min.js') ]]"></script>
+  <!-- Slimscroll -->
+  <script src="[%[=URL('static/tte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') ]]"></script>
+  <!-- FastClick -->
+  <script src="[%[=URL('static/tte/bower_components/fastclick/lib/fastclick.js') ]]"></script>
+  <!-- AdminLTE App -->
+  <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
+ </body>
+</html>

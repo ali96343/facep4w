@@ -1,0 +1,9 @@
+{'general.html': ['pages/forms/general.html'],
+ 'index.html': ['plugins/jquery-ui/index.html',
+                'plugins/daterangepicker/index.html',
+                'plugins/raphael/dev/test/index.html',
+                'plugins/daterangepicker/website/index.html',
+                'plugins/daterangepicker/example/amd/index.html',
+                'plugins/codemirror/mode/rpm/changes/index.html',
+                'plugins/daterangepicker/example/browserify/index.html'],
+ 'simple.html': ['pages/search/simple.html']}

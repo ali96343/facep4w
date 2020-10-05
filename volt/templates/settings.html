@@ -1,0 +1,822 @@
+<!--
+
+=========================================================
+* Volt - Bootstrap 5 Admin Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2020 Themesberg (https://www.themesberg.com)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 05.10.2020 11:57:36 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <!-- Primary Meta Tags -->
+  <title>biorex title text</title>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Settings" name="title"/>
+  <meta content="Themesberg" name="author"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." name="description"/>
+  <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, free bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
+  <link href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" rel="canonical"/>
+  <!-- Open Graph / Facebook -->
+  <meta content="website" property="og:type"/>
+  <meta content="https://demo.themesberg.com/volt" property="og:url"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Settings" property="og:title"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="og:description"/>
+  <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="og:image"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" property="twitter:card"/>
+  <meta content="https://demo.themesberg.com/volt" property="twitter:url"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Settings" property="twitter:title"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="twitter:description"/>
+  <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="twitter:image"/>
+  <!-- Favicon -->
+  <link href="[%[=URL('static/tte/assets/img/favicon/apple-touch-icon.png') ]]" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/favicon-32x32.png') ]]" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/favicon-16x16.png') ]]" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/site.webmanifest') ]]" rel="manifest"/>
+  <link color="#ffffff" href="[%[=URL('static/tte/assets/img/favicon/safari-pinned-tab.svg') ]]" rel="mask-icon"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <!-- Fontawesome -->
+  <link href="[%[=URL('static/tte/vendor/@fortawesome/fontawesome-free/css/all.min.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- Notyf -->
+  <link href="[%[=URL('static/tte/vendor/notyf/notyf.min.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- Volt CSS -->
+  <link href="[%[=URL('static/tte/css/volt.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body>
+  <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
+   <a class="navbar-brand mr-lg-5" href="[%[=URL('index') ]]">
+    <img alt="Volt logo" class="navbar-brand-dark" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]"/>
+    <img alt="Volt logo" class="navbar-brand-light" src="[%[=URL('static/tte/assets/img/brand/dark.svg') ]]"/></a>
+   <div class="d-flex align-items-center">
+    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler d-md-none collapsed" data-target="#sidebarMenu" data-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </div>
+  </nav>
+  <div class="container-fluid bg-soft">
+   <div class="row">
+    <div class="col-12">
+     <nav class="sidebar d-md-block bg-primary text-white collapse" data-simplebar="" id="sidebarMenu">
+      <div class="sidebar-inner px-4 pt-3">
+       <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+        <div class="d-flex align-items-center">
+         <div class="user-avatar lg-avatar mr-4">
+          <img alt="Bonnie Green" class="card-img-top rounded-circle border-white" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+         <div class="d-block">
+          <h2 class="h6">Hi, Jane</h2>
+          <a class="btn btn-secondary text-dark btn-xs" href="[%[=URL('signXin') ]]">
+           <span class="mr-2">
+            <span class="fas fa-sign-out-alt"></span>
+           </span>
+           Sign Out
+          </a>
+         </div>
+        </div>
+        <div class="collapse-close d-md-none">
+         <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" class="fas fa-times" data-target="#sidebarMenu" data-toggle="collapse" href="#sidebarMenu"></a>
+        </div>
+       </div>
+       <ul class="nav flex-column">
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('dashboard') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-chart-pie"></span>
+          </span>
+          <span>Overview</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('transactions') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-hand-holding-usd"></span>
+          </span>
+          <span>Transactions</span>
+         </a>
+        </li>
+        <li class="nav-item active">
+         <a class="nav-link" href="[%[=URL('settings') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-cog"></span>
+          </span>
+          <span>Settings</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-app" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="fas fa-table"></span>
+           </span>
+           Tables
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse" id="submenu-app" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('bootstrapXtables') ]]">
+             <span>Bootstrap Tables</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-pages" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="far fa-file-alt"></span>
+           </span>
+           Page examples
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse" id="submenu-pages" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('signXin') ]]">
+             <span>Sign In</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('signXup') ]]">
+             <span>Sign Up</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('forgotXpassword') ]]">
+             <span>Forgot password</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('resetXpassword') ]]">
+             <span>Reset password</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('lock') ]]">
+             <span>Lock</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('X404') ]]">
+             <span>404 Not Found</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('X500') ]]">
+             <span>500 Server Error</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-components" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="fas fa-box-open"></span>
+           </span>
+           Components
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse" id="submenu-components" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('buttons') ]]">
+             <span>Buttons</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('notifications') ]]">
+             <span>Notifications</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('forms') ]]">
+             <span>Forms</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('modals') ]]">
+             <span>Modals</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('typography') ]]">
+             <span>Typography</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="dropdown-divider mt-4 mb-3 border-black" role="separator"></li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="[%[=URL('index') ]]">
+          <span class="sidebar-icon">
+           <img alt="Volt Logo" height="20" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]" width="20"/></span>
+          <span class="mt-1">Volt Overview</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" target="_blank">
+          <span class="sidebar-icon">
+           <span class="fas fa-book"></span>
+          </span>
+          <span>Quick Start</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard" target="_blank">
+          <span class="sidebar-icon">
+           <span class="fas fa-rocket"></span>
+          </span>
+          <span>Upgrade to Pro</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com" target="_blank">
+          <span class="sidebar-icon">
+           <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="20"/></span>
+          <span>Themesberg</span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <main class="content">
+      <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark pl-0 pr-2 pb-0">
+       <div class="container-fluid px-0">
+        <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+         <div class="d-flex">
+          <!-- Search form -->
+          
+<!-- view: fsettings0, db_table: dfsettings0 -->
+<div class="navbar-search form-inline" id="navbar-search-main">
+[%[= fsettings0.custom['begin'] ]]
+
+<div class="input-group input-group-merge search-bar">
+ <span class="input-group-text" id="topbar-addon">
+  <span class="fas fa-search">
+  </span>
+ </span>
+ [%[ fsettings0.custom['widgets']['f0']['_aria-describedby']= 'topbar-addon'  ]]
+ [%[ fsettings0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fsettings0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fsettings0.custom['widgets']['f0']['_id']= 'topbarInputIconLeft'  ]]
+ [%[ fsettings0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fsettings0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fsettings0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings0.custom['errors']['f0'] if 'f0' in fsettings0.custom['errors'] else '' ]]</span>
+
+ [%[ fsettings0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
+ [%[ fsettings0.custom['submit']['_aria-label']= 'Search'  ]]
+ [%[ fsettings0.custom['submit']['_class']= 'form-control'  ]]
+ [%[ fsettings0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
+ [%[ fsettings0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fsettings0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fsettings0.custom['submit']['_value']= 'sub:p4w'  ]]
+ [%[= fsettings0.custom['submit'] ]]
+
+</div>
+[%[= fsettings0.custom['end'] ]]
+</div>
+<!-- end fsettings0 -->
+
+         </div>
+         <!-- Navbar links -->
+         <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+           <a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark mr-lg-3 icon-notifications" data-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
+            <span class="icon icon-sm">
+             <span class="fas fa-bell bell-shake"></span>
+             <span class="icon-badge rounded-circle unread-notifications"></span>
+            </span>
+           </a>
+           <div class="dropdown-menu dashboard-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
+            <div class="list-group list-group-flush">
+             <a class="text-center text-primary font-weight-bold border-bottom border-light py-3" href="#">Notifications</a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Jose Leos</h4>
+                 </div>
+                 <div class="text-right">
+                  <small class="text-danger">a few moments ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">Added you to an event "Project stand-up" tomorrow at 12:30 AM.</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Neil Sims</h4>
+                 </div>
+                 <div class="text-right">
+                  <small class="text-danger">2 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">You've been assigned a task for "Awesome new project".</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Roberta Casas</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>5 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">Tagged you in a document called "First quarter financial plans",</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Joseph Garth</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>1 d ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">New message: "Hey, what's up? All set for the presentation?"</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>2 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">New message: "We need to improve the UI/UX for the landing page."</p>
+               </div>
+              </div>
+             </a>
+             <a class="dropdown-item text-center text-primary font-weight-bold py-3" href="#">View all</a>
+            </div>
+           </div>
+          </li>
+          <li class="nav-item dropdown">
+           <a aria-expanded="false" aria-haspopup="true" class="nav-link pt-1 px-0" data-toggle="dropdown" href="#" role="button">
+            <div class="media d-flex align-items-center">
+             <img alt="Image placeholder" class="user-avatar md-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
+             <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
+              <span class="mb-0 font-small font-weight-bold">Bonnie Green</span>
+             </div>
+            </div>
+           </a>
+           <div class="dropdown-menu dashboard-dropdown dropdown-menu-right mt-2">
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="far fa-user-circle"></span>
+             My Profile
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-cog"></span>
+             Settings
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-envelope-open-text"></span>
+             Messages
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-user-shield"></span>
+             Support
+            </a>
+            <div class="dropdown-divider" role="separator"></div>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-sign-out-alt text-danger"></span>
+             Logout
+            </a>
+           </div>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </nav>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+       <div>
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary text-dark mr-2 dropdown-toggle" data-toggle="dropdown">
+         <span class="fas fa-plus mr-2"></span>
+         New
+        </button>
+        <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="far fa-file-alt mr-2"></span>
+          Document
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="far fa-comment-dots mr-2"></span>
+          Message
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-box-open mr-2"></span>
+          Product
+         </a>
+         <div class="dropdown-divider" role="separator"></div>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-rocket text-danger mr-2"></span>
+          Subscription Plan
+         </a>
+        </div>
+       </div>
+       <div>
+        <button class="btn btn-primary mr-2" type="button">
+         <span class="fas fa-calendar-alt"></span>
+        </button>
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+         <span class="fas fa-clipboard mr-2"></span>
+         Reports
+         <span class="icon icon-small ml-1">
+          <span class="fas fa-chevron-down"></span>
+         </span>
+        </button>
+        <div class="dropdown-menu dashboard-dropdown dropdown-menu-left mt-2">
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-box-open mr-2"></span>
+          Products
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-store mr-2"></span>
+          Customers
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-cart-arrow-down mr-2"></span>
+          Orders
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-chart-pie mr-2"></span>
+          Console
+         </a>
+         <div class="dropdown-divider" role="separator"></div>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-rocket text-success mr-2"></span>
+          All Reports
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-12 col-xl-8">
+        <div class="card card-body bg-white border-light shadow-sm mb-4">
+         <h2 class="h5 mb-4">General information</h2>
+         
+<!-- view: fsettings1, db_table: dfsettings1 -->
+<div>
+[%[= fsettings1.custom['begin'] ]]
+
+<div class="row">
+ <div class="col-md-6 mb-3">
+  <div>
+   <label for="first_name">
+    First Name:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f0']['_id']= 'first_name'  ]]
+ [%[ fsettings1.custom['widgets']['f0']['_placeholder']= 'Enter your first name:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f0']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f0'] if 'f0' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <div class="col-md-6 mb-3">
+  <div>
+   <label for="last_name">
+    Last Name:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f1']['_id']= 'last_name'  ]]
+ [%[ fsettings1.custom['widgets']['f1']['_placeholder']= 'Also your last name:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f1']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f1'] if 'f1' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="row align-items-center">
+ <div class="col-md-6 mb-3">
+  <label for="birthday">
+   Birthday:p4w
+  </label>
+  <div class="input-group">
+   <span class="input-group-text">
+    <span class="far fa-calendar-alt">
+    </span>
+   </span>
+ [%[ fsettings1.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f2']['_data-datepicker']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f2']['_id']= 'birthday'  ]]
+ [%[ fsettings1.custom['widgets']['f2']['_placeholder']= 'dd/mm/yyyy:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f2']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f2'] if 'f2' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <div class="col-md-6 mb-3">
+  <label for="gender">
+   Gender:p4w
+  </label>
+ [%[ fsettings1.custom['widgets']['f3']['_aria-label']= 'Gender select example'  ]]
+ [%[ fsettings1.custom['widgets']['f3']['_class']= 'form-select mb-0'  ]]
+ [%[ fsettings1.custom['widgets']['f3']['_id']= 'gender'  ]]
+ [%[= fsettings1.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f3'] if 'f3' in fsettings1.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row">
+ <div class="col-md-6 mb-3">
+  <div class="form-group">
+   <label for="email">
+    Email:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f4']['_id']= 'email'  ]]
+ [%[ fsettings1.custom['widgets']['f4']['_placeholder']= 'name@company.com:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f4']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f4'] if 'f4' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <div class="col-md-6 mb-3">
+  <div class="form-group">
+   <label for="phone">
+    Phone:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f5']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f5']['_id']= 'phone'  ]]
+ [%[ fsettings1.custom['widgets']['f5']['_placeholder']= '+12-345 678 910:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f5']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f5']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f5'] if 'f5' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<h2 class="h5 my-4">
+ Adress:p4w
+</h2>
+
+<div class="row">
+ <div class="col-sm-9 mb-3">
+  <div class="form-group">
+   <label for="address">
+    Address:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f6']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f6']['_id']= 'address'  ]]
+ [%[ fsettings1.custom['widgets']['f6']['_placeholder']= 'Enter your home address:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f6']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f6']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f6'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f6'] if 'f6' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <div class="col-sm-3 mb-3">
+  <div class="form-group">
+   <label for="number">
+    Number:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f7']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f7']['_id']= 'number'  ]]
+ [%[ fsettings1.custom['widgets']['f7']['_placeholder']= 'No.:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f7']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f7']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f7'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f7'] if 'f7' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="col-sm-4 mb-3">
+  <div class="form-group">
+   <label for="city">
+    City:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f8']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f8']['_id']= 'city'  ]]
+ [%[ fsettings1.custom['widgets']['f8']['_placeholder']= 'City:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f8']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f8']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f8'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f8'] if 'f8' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <div class="col-sm-4">
+  <div class="form-group">
+   <label for="zip">
+    ZIP:p4w
+   </label>
+ [%[ fsettings1.custom['widgets']['f9']['_class']= 'form-control'  ]]
+ [%[ fsettings1.custom['widgets']['f9']['_id']= 'zip'  ]]
+ [%[ fsettings1.custom['widgets']['f9']['_placeholder']= 'ZIP:p4w'  ]]
+ [%[ fsettings1.custom['widgets']['f9']['_required']= 'len0'  ]]
+ [%[ fsettings1.custom['widgets']['f9']['_type']= 'text'  ]]
+ [%[= fsettings1.custom['widgets']['f9'] ]]
+
+ <span style="color:#ff0000">[%[= fsettings1.custom['errors']['f9'] if 'f9' in fsettings1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="mt-3">
+ [%[ fsettings1.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fsettings1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fsettings1.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fsettings1.custom['submit'] ]]
+
+</div>
+[%[= fsettings1.custom['end'] ]]
+</div>
+<!-- end fsettings1 -->
+
+        </div>
+       </div>
+       <div class="col-12 col-xl-4">
+        <div class="row">
+         <div class="col-12 mb-4">
+          <div class="card border-light text-center p-0">
+           <div class="profile-cover rounded-top" data-background="[%[=URL('static/tte/assets/img/profile-cover.jpg') ]]"></div>
+           <div class="card-body pb-5">
+            <img alt="Neil Portrait" class="user-avatar large-avatar rounded-circle mx-auto mt-n7 mb-4" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/>
+            <h4 class="h3">Neil Sims</h4>
+            <h5 class="font-weight-normal">Senior Software Engineer</h5>
+            <p class="text-gray mb-4">New York, USA</p>
+            <a class="btn btn-sm btn-primary mr-2" href="#">
+             <span class="fas fa-user-plus mr-1"></span>
+             Connect
+            </a>
+            <a class="btn btn-sm btn-secondary" href="#">Send Message</a>
+           </div>
+          </div>
+         </div>
+         <div class="col-12">
+          <div class="card card-body bg-white border-light shadow-sm mb-4">
+           <h2 class="h5 mb-4">Select profile photo</h2>
+           <div class="d-xl-flex align-items-center">
+            <div>
+             <!-- Avatar -->
+             <div class="user-avatar xl-avatar mb-3">
+              <img alt="change avatar" class="rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+            </div>
+            <div class="file-field">
+             <div class="d-flex justify-content-xl-center ml-xl-3">
+              <div class="d-flex">
+               <span class="icon icon-md">
+                <span class="fas fa-paperclip mr-3"></span>
+               </span>
+               <input type="file"/>
+               <div class="d-md-block text-left">
+                <div class="font-weight-normal text-dark mb-1">Choose Image</div>
+                <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <footer class="footer section py-5">
+       <div class="row">
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+         <p class="mb-0 text-center text-xl-left">
+          Copyright © 2019-
+          <span class="current-year"></span>
+          <a class="text-primary font-weight-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+         </p>
+        </div>
+        <div class="col-12 col-lg-6">
+         <ul class="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/about">About</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/themes">Themes</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/blog">Blog</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/contact">Contact</a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </footer>
+     </main>
+    </div>
+   </div>
+  </div>
+  <!-- Core -->
+  <script src="[%[=URL('static/tte/vendor/popper.js/dist/umd/popper.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap/dist/js/bootstrap.min.js') ]]"></script>
+  <!-- Vendor JS -->
+  <script src="[%[=URL('static/tte/vendor/onscreen/dist/on-screen.umd.min.js') ]]"></script>
+  <!-- Slider -->
+  <script src="[%[=URL('static/tte/vendor/nouislider/distribute/nouislider.min.js') ]]"></script>
+  <!-- Jarallax -->
+  <script src="[%[=URL('static/tte/vendor/jarallax/dist/jarallax.min.js') ]]"></script>
+  <!-- Smooth scroll -->
+  <script src="[%[=URL('static/tte/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') ]]"></script>
+  <!-- Count up -->
+  <script src="[%[=URL('static/tte/vendor/countup.js/dist/countUp.umd.js') ]]"></script>
+  <!-- Notyf -->
+  <script src="[%[=URL('static/tte/vendor/notyf/notyf.min.js') ]]"></script>
+  <!-- Charts -->
+  <script src="[%[=URL('static/tte/vendor/chartist/dist/chartist.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') ]]"></script>
+  <!-- Datepicker -->
+  <script src="[%[=URL('static/tte/vendor/vanillajs-datepicker/dist/js/datepicker.min.js') ]]"></script>
+  <!-- Simplebar -->
+  <script src="[%[=URL('static/tte/vendor/simplebar/dist/simplebar.min.js') ]]"></script>
+  <!-- Github buttons -->
+  <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Volt JS -->
+  <script src="[%[=URL('static/tte/assets/js/volt.js') ]]"></script>
+ </body>
+</html>

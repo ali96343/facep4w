@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 05.10.2020 11:35:53 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>biorex title text</title>
+  <!-- Bootstrap -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') ]]" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/font-awesome/css/font-awesome.min.css') ]]" rel="stylesheet"/>
+  <!-- NProgress -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/nprogress/nprogress.css') ]]" rel="stylesheet"/>
+  <!-- Custom Theme Style -->
+  <link href="[%[=URL('static/tte/gentelella/build/css/custom.min.css') ]]" rel="stylesheet"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="nav-md">
+  <div class="container body">
+   <div class="main_container">
+    <!-- page content -->
+    <div class="col-md-12">
+     <div class="col-middle">
+      <div class="text-center">
+       <h1 class="error-number">500</h1>
+       <h2>Internal Server Error</h2>
+       <p>
+        We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+        <a href="#">Report this?</a>
+       </p>
+       <div class="mid_center">
+        <h3>Search</h3>
+        
+<!-- view: fpageX5000, db_table: dfpageX5000 -->
+<div>
+[%[= fpageX5000.custom['begin'] ]]
+
+<div class="form-group pull-right top_search">
+ <div class="input-group">
+ [%[ fpageX5000.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fpageX5000.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fpageX5000.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
+ [%[= fpageX5000.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fpageX5000.custom['errors']['f0'] if 'f0' in fpageX5000.custom['errors'] else '' ]]</span>
+
+  <span class="input-group-btn">
+ [%[ fpageX5000.custom['submit']['_class']= 'btn btn-secondary'  ]]
+ [%[ fpageX5000.custom['submit']['_type']= 'submit'  ]]
+ [%[ fpageX5000.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[= fpageX5000.custom['submit'] ]]
+
+  </span>
+ </div>
+</div>
+[%[= fpageX5000.custom['end'] ]]
+</div>
+<!-- end fpageX5000 -->
+
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- /page content -->
+   </div>
+  </div>
+  <!-- jQuery -->
+  <script src="[%[=URL('static/tte/gentelella/vendors/jquery/dist/jquery.min.js') ]]"></script>
+  <!-- Bootstrap -->
+  <script src="[%[=URL('static/tte/gentelella/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') ]]"></script>
+  <!-- FastClick -->
+  <script src="[%[=URL('static/tte/gentelella/vendors/fastclick/lib/fastclick.js') ]]"></script>
+  <!-- NProgress -->
+  <script src="[%[=URL('static/tte/gentelella/vendors/nprogress/nprogress.js') ]]"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="[%[=URL('static/tte/gentelella/build/js/custom.min.js') ]]"></script>
+ </body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <!-- 11.08.2020 12:03:02 ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <title>biorex title text</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Ionicons -->
+  <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Theme style -->
+  <link href="[%[=URL('static/tte/css/AdminLTE.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <!-- js-script #1  moved to head -->
+          <!-- js-script #2  moved to head -->
+        <![endif]-->
+ 
+<!-- moved beg-->
+<script defer src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script defer src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<script defer src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- moved end -->
+
+
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" type="image/png">
+</head>
+ <body class="skin-blue">
+  <!-- header logo: style can be found in header.less -->
+  <header class="header">
+   <a class="logo" href="[%[=URL('index') ]]">
+    <!-- Add the class icon to your logo image or logo icon to add the margining -->
+    AdminLTE
+   </a>
+   <!-- Header Navbar: style can be found in header.less -->
+   <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a class="navbar-btn sidebar-toggle" data-toggle="offcanvas" href="#" role="button">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </a>
+    <div class="navbar-right">
+     <ul class="nav navbar-nav">
+      <!-- Messages: style can be found in dropdown.less-->
+      <li class="dropdown messages-menu">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="label label-success">4</span>
+       </a>
+       <ul class="dropdown-menu">
+        <li class="header">You have 4 messages</li>
+        <li>
+         <!-- inner menu: contains the actual data -->
+         <ul class="menu">
+          <li>
+           <!-- start message -->
+           <a href="#">
+            <div class="pull-left">
+             <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/img/avatar3.png') ]]"/></div>
+            <h4>
+             Support Team
+             <small>
+              <i class="fa fa-clock-o"></i>
+              5 mins
+             </small>
+            </h4>
+            <p>Why not buy a new awesome theme?</p>
+           </a>
+          </li>
+          <!-- end message -->
+          <li>
+           <a href="#">
+            <div class="pull-left">
+             <img alt="user image" class="img-circle" src="[%[=URL('static/tte/img/avatar2.png') ]]"/></div>
+            <h4>
+             AdminLTE Design Team
+             <small>
+              <i class="fa fa-clock-o"></i>
+              2 hours
+             </small>
+            </h4>
+            <p>Why not buy a new awesome theme?</p>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <div class="pull-left">
+             <img alt="user image" class="img-circle" src="[%[=URL('static/tte/img/avatar.png') ]]"/></div>
+            <h4>
+             Developers
+             <small>
+              <i class="fa fa-clock-o"></i>
+              Today
+             </small>
+            </h4>
+            <p>Why not buy a new awesome theme?</p>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <div class="pull-left">
+             <img alt="user image" class="img-circle" src="[%[=URL('static/tte/img/avatar2.png') ]]"/></div>
+            <h4>
+             Sales Department
+             <small>
+              <i class="fa fa-clock-o"></i>
+              Yesterday
+             </small>
+            </h4>
+            <p>Why not buy a new awesome theme?</p>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <div class="pull-left">
+             <img alt="user image" class="img-circle" src="[%[=URL('static/tte/img/avatar.png') ]]"/></div>
+            <h4>
+             Reviewers
+             <small>
+              <i class="fa fa-clock-o"></i>
+              2 days
+             </small>
+            </h4>
+            <p>Why not buy a new awesome theme?</p>
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="footer">
+         <a href="#">See All Messages</a>
+        </li>
+       </ul>
+      </li>
+      <!-- Notifications: style can be found in dropdown.less -->
+      <li class="dropdown notifications-menu">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-warning"></i>
+        <span class="label label-warning">10</span>
+       </a>
+       <ul class="dropdown-menu">
+        <li class="header">You have 10 notifications</li>
+        <li>
+         <!-- inner menu: contains the actual data -->
+         <ul class="menu">
+          <li>
+           <a href="#">
+            <i class="ion ion-ios7-people info"></i>
+            5 new members joined today
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa fa-warning danger"></i>
+            Very long description here that may not fit into the page and may cause design problems
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa fa-users warning"></i>
+            5 new members joined
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="ion ion-ios7-cart success"></i>
+            25 sales made
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="ion ion-ios7-person danger"></i>
+            You changed your username
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="footer">
+         <a href="#">View all</a>
+        </li>
+       </ul>
+      </li>
+      <!-- Tasks: style can be found in dropdown.less -->
+      <li class="dropdown tasks-menu">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-tasks"></i>
+        <span class="label label-danger">9</span>
+       </a>
+       <ul class="dropdown-menu">
+        <li class="header">You have 9 tasks</li>
+        <li>
+         <!-- inner menu: contains the actual data -->
+         <ul class="menu">
+          <li>
+           <!-- Task item -->
+           <a href="#">
+            <h3>
+             Design some buttons
+             <small class="pull-right">20%</small>
+            </h3>
+            <div class="progress xs">
+             <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-aqua" role="progressbar" style="width: 20%">
+              <span class="sr-only">20% Complete</span>
+             </div>
+            </div>
+           </a>
+          </li>
+          <!-- end task item -->
+          <li>
+           <!-- Task item -->
+           <a href="#">
+            <h3>
+             Create a nice theme
+             <small class="pull-right">40%</small>
+            </h3>
+            <div class="progress xs">
+             <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-green" role="progressbar" style="width: 40%">
+              <span class="sr-only">40% Complete</span>
+             </div>
+            </div>
+           </a>
+          </li>
+          <!-- end task item -->
+          <li>
+           <!-- Task item -->
+           <a href="#">
+            <h3>
+             Some task I need to do
+             <small class="pull-right">60%</small>
+            </h3>
+            <div class="progress xs">
+             <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-red" role="progressbar" style="width: 60%">
+              <span class="sr-only">60% Complete</span>
+             </div>
+            </div>
+           </a>
+          </li>
+          <!-- end task item -->
+          <li>
+           <!-- Task item -->
+           <a href="#">
+            <h3>
+             Make beautiful transitions
+             <small class="pull-right">80%</small>
+            </h3>
+            <div class="progress xs">
+             <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" class="progress-bar progress-bar-yellow" role="progressbar" style="width: 80%">
+              <span class="sr-only">80% Complete</span>
+             </div>
+            </div>
+           </a>
+          </li>
+          <!-- end task item -->
+         </ul>
+        </li>
+        <li class="footer">
+         <a href="#">View all tasks</a>
+        </li>
+       </ul>
+      </li>
+      <!-- User Account: style can be found in dropdown.less -->
+      <li class="dropdown user user-menu">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="glyphicon glyphicon-user"></i>
+        <span>
+         Jane Doe
+         <i class="caret"></i>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <!-- User image -->
+        <li class="user-header bg-light-blue">
+         <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/img/avatar3.png') ]]"/>
+         <p>
+          Jane Doe - Web Developer
+          <small>Member since Nov. 2012</small>
+         </p>
+        </li>
+        <!-- Menu Body -->
+        <li class="user-body">
+         <div class="col-xs-4 text-center">
+          <a href="#">Followers</a>
+         </div>
+         <div class="col-xs-4 text-center">
+          <a href="#">Sales</a>
+         </div>
+         <div class="col-xs-4 text-center">
+          <a href="#">Friends</a>
+         </div>
+        </li>
+        <!-- Menu Footer-->
+        <li class="user-footer">
+         <div class="pull-left">
+          <a class="btn btn-default btn-flat" href="#">Profile</a>
+         </div>
+         <div class="pull-right">
+          <a class="btn btn-default btn-flat" href="#">Sign out</a>
+         </div>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </nav>
+  </header>
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+   <!-- Left side column. contains the logo and sidebar -->
+   <aside class="left-side sidebar-offcanvas">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+     <!-- Sidebar user panel -->
+     <div class="user-panel">
+      <div class="pull-left image">
+       <img alt="User Image" class="img-circle" src="[%[=URL('static/tte/img/avatar3.png') ]]"/></div>
+      <div class="pull-left info">
+       <p>Hello, Jane</p>
+       <a href="#">
+        <i class="fa fa-circle text-success"></i>
+        Online
+       </a>
+      </div>
+     </div>
+     <!-- search form -->
+     
+<!--  ftimeline0,  db_table: dftimeline0   -->
+<div action="action" method="method" class="sidebar-form">
+[%[= ftimeline0.custom['begin'] ]]
+
+<div class="input-group">
+ [%[ftimeline0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ftimeline0.custom['widgets']['f0']['_name']= 'q'  ]]
+ [%[ftimeline0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ftimeline0.custom['widgets']['f0']['_placeholder']= 'p4w Search...'  ]]
+ [%[= ftimeline0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= ftimeline0.custom['errors']['f0'] if 'f0' in ftimeline0.custom['errors'] else '' ]]</span>
+
+ [%[ ftimeline0.custom['submit']['_type']= 'submit'  ]]
+ [%[ ftimeline0.custom['submit']['_name']= 'seach'  ]]
+ [%[ ftimeline0.custom['submit']['_id']= 'search-btn'  ]]
+ [%[ ftimeline0.custom['submit']['_class']= 'btn btn-flat'  ]]
+ [%[ ftimeline0.custom['submit']['_value']= 'b-p4w'  ]]
+ [%[ ftimeline0.custom['submit']['_help']= 'bsub'  ]]
+ [%[= ftimeline0.custom['submit'] ]]
+
+ </span>
+</div>
+[%[= ftimeline0.custom['end'] ]]
+</div>
+<!-- end ftimeline0 -->
+
+     <!-- /.search form -->
+     <!-- sidebar menu: : style can be found in sidebar.less -->
+     <ul class="sidebar-menu">
+      <li>
+       <a href="[%[=URL('index') ]]">
+        <i class="fa fa-dashboard"></i>
+        <span>Dashboard</span>
+       </a>
+      </li>
+      <li>
+       <a href="[%[=URL('widgets') ]]">
+        <i class="fa fa-th"></i>
+        <span>Widgets</span>
+        <small class="badge pull-right bg-green">new</small>
+       </a>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-bar-chart-o"></i>
+        <span>Charts</span>
+        <i class="fa fa-angle-left pull-right"></i>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('morris') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Morris
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('flot') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Flot
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('inline') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Inline charts
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview active">
+       <a href="#">
+        <i class="fa fa-laptop"></i>
+        <span>UI Elements</span>
+        <i class="fa fa-angle-left pull-right"></i>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('general') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          General
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('icons') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Icons
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('buttons') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Buttons
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('sliders') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Sliders
+         </a>
+        </li>
+        <li class="active">
+         <a href="[%[=URL('timeline') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Timeline
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-edit"></i>
+        <span>Forms</span>
+        <i class="fa fa-angle-left pull-right"></i>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('general') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          General Elements
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('advanced') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Advanced Elements
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('editors') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Editors
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-table"></i>
+        <span>Tables</span>
+        <i class="fa fa-angle-left pull-right"></i>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('simple') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Simple tables
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('data') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Data tables
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li>
+       <a href="[%[=URL('calendar') ]]">
+        <i class="fa fa-calendar"></i>
+        <span>Calendar</span>
+        <small class="badge pull-right bg-red">3</small>
+       </a>
+      </li>
+      <li>
+       <a href="[%[=URL('mailbox') ]]">
+        <i class="fa fa-envelope"></i>
+        <span>Mailbox</span>
+        <small class="badge pull-right bg-yellow">12</small>
+       </a>
+      </li>
+      <li class="treeview">
+       <a href="#">
+        <i class="fa fa-folder"></i>
+        <span>Examples</span>
+        <i class="fa fa-angle-left pull-right"></i>
+       </a>
+       <ul class="treeview-menu">
+        <li>
+         <a href="[%[=URL('invoice') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Invoice
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('login') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Login
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('register') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Register
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('lockscreen') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Lockscreen
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('X404') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          404 Error
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('X500') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          500 Error
+         </a>
+        </li>
+        <li>
+         <a href="[%[=URL('blank') ]]">
+          <i class="fa fa-angle-double-right"></i>
+          Blank Page
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </section>
+    <!-- /.sidebar -->
+   </aside>
+   <!-- Right side column. Contains the navbar and content of the page -->
+   <aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+     <h1>
+      Timeline
+      <small>example</small>
+     </h1>
+     <ol class="breadcrumb">
+      <li>
+       <a href="#">
+        <i class="fa fa-dashboard"></i>
+        Home
+       </a>
+      </li>
+      <li>
+       <a href="#">UI</a>
+      </li>
+      <li class="active">Timeline</li>
+     </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+     <!-- row -->
+     <div class="row">
+      <div class="col-md-12">
+       <!-- The time line -->
+       <ul class="timeline">
+        <!-- timeline time label -->
+        <li class="time-label">
+         <span class="bg-red">10 Feb. 2014</span>
+        </li>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <li>
+         <i class="fa fa-envelope bg-blue"></i>
+         <div class="timeline-item">
+          <span class="time">
+           <i class="fa fa-clock-o"></i>
+           12:05
+          </span>
+          <h3 class="timeline-header">
+           <a href="#">Support Team</a>
+           sent you and email
+          </h3>
+          <div class="timeline-body">Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...</div>
+          <div class="timeline-footer">
+           <a class="btn btn-primary btn-xs">Read more</a>
+           <a class="btn btn-danger btn-xs">Delete</a>
+          </div>
+         </div>
+        </li>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+        <li>
+         <i class="fa fa-user bg-aqua"></i>
+         <div class="timeline-item">
+          <span class="time">
+           <i class="fa fa-clock-o"></i>
+           5 mins ago
+          </span>
+          <h3 class="timeline-header no-border">
+           <a href="#">Sarah Young</a>
+           accepted your friend request
+          </h3>
+         </div>
+        </li>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+        <li>
+         <i class="fa fa-comments bg-yellow"></i>
+         <div class="timeline-item">
+          <span class="time">
+           <i class="fa fa-clock-o"></i>
+           27 mins ago
+          </span>
+          <h3 class="timeline-header">
+           <a href="#">Jay White</a>
+           commented on your post
+          </h3>
+          <div class="timeline-body">Take me to your leader! Switzerland is small and neutral! We are more like Germany, ambitious and misunderstood!</div>
+          <div class="timeline-footer">
+           <a class="btn btn-warning btn-flat btn-xs">View comment</a>
+          </div>
+         </div>
+        </li>
+        <!-- END timeline item -->
+        <!-- timeline time label -->
+        <li class="time-label">
+         <span class="bg-green">3 Jan. 2014</span>
+        </li>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <li>
+         <i class="fa fa-camera bg-purple"></i>
+         <div class="timeline-item">
+          <span class="time">
+           <i class="fa fa-clock-o"></i>
+           2 days ago
+          </span>
+          <h3 class="timeline-header">
+           <a href="#">Mina Lee</a>
+           uploaded new photos
+          </h3>
+          <div class="timeline-body">
+           <img alt="..." class="margin" src="http://placehold.it/150x100"/>
+           <img alt="..." class="margin" src="http://placehold.it/150x100"/>
+           <img alt="..." class="margin" src="http://placehold.it/150x100"/>
+           <img alt="..." class="margin" src="http://placehold.it/150x100"/></div>
+         </div>
+        </li>
+        <!-- END timeline item -->
+        <!-- timeline item -->
+        <li>
+         <i class="fa fa-video-camera bg-maroon"></i>
+         <div class="timeline-item">
+          <span class="time">
+           <i class="fa fa-clock-o"></i>
+           5 days ago
+          </span>
+          <h3 class="timeline-header">
+           <a href="#">Mr. Doe</a>
+           shared a video
+          </h3>
+          <div class="timeline-body">
+           <iframe allowfullscreen="" frameborder="0" height="169" src="//www.youtube.com/embed/fLe_qO4AE-M" width="300">
+           </iframe>
+          </div>
+          <div class="timeline-footer">
+           <a class="btn btn-xs bg-maroon" href="#">See comments</a>
+          </div>
+         </div>
+        </li>
+        <!-- END timeline item -->
+        <li>
+         <i class="fa fa-clock-o"></i>
+        </li>
+       </ul>
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+     <div class="row" style="margin-top: 10px;">
+      <div class="col-md-12">
+       <div class="box box-primary">
+        <div class="box-header">
+         <h3 class="box-title">
+          <i class="fa fa-code"></i>
+          Timeline Markup
+         </h3>
+        </div>
+        <div class="box-body">
+         <pre style="font-weight: 600;">
+&lt;ul class="timeline"&gt;
+
+    &lt;!-- timeline time label --&gt;
+    &lt;li class="time-label"&gt;
+        &lt;span class="bg-red"&gt;
+            10 Feb. 2014
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;!-- /.timeline-label --&gt;
+
+    &lt;!-- timeline item --&gt;
+    &lt;li&gt;
+        &lt;!-- timeline icon --&gt;
+        &lt;i class="fa fa-envelope bg-blue"&gt;&lt;/i&gt;
+        &lt;div class="timeline-item"&gt;
+            &lt;span class="time"&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt; 12:05&lt;/span&gt;
+
+            &lt;h3 class="timeline-header"&gt;&lt;a href="#"&gt;Support Team&lt;/a&gt; ...&lt;/h3&gt;
+
+            &lt;div class="timeline-body"&gt;
+                ...
+                Content goes here
+            &lt;/div&gt;
+
+            &lt;div class='timeline-footer'&gt;
+                &lt;a class="btn btn-primary btn-xs"&gt;...&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;!-- END timeline item --&gt;
+
+    ...
+
+&lt;/ul&gt;
+                                    </pre>
+        </div>
+        <!-- /.box-body -->
+       </div>
+       <!-- /.box -->
+      </div>
+      <!-- /.col -->
+     </div>
+     <!-- /.row -->
+    </section>
+    <!-- /.content -->
+   </aside>
+   <!-- /.right-side -->
+  </div>
+  <!-- ./wrapper -->
+  <!-- js-script #3  moved to head -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <!-- AdminLTE App -->
+  <script src="[%[=URL('static/tte/js/AdminLTE/app.js') ]]" type="text/javascript"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="[%[=URL('static/tte/js/AdminLTE/demo.js') ]]" type="text/javascript"></script>
+ </body>
+</html>

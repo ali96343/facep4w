@@ -1,0 +1,221 @@
+
+import os
+from py4web import action, request, abort, redirect, URL, Field, HTTP
+from yatl.helpers import A
+from py4web.utils.form import Form, FormStyleBulma
+from py4web.utils.grid import Grid
+from py4web.utils.publisher import Publisher, ALLOW_ALL_POLICY
+from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB
+from yatl.helpers import INPUT, H1, HTML, BODY, A
+from py4web.core import Template
+import bottle
+
+from .common import db, session, T, cache, authenticated, unauthenticated, auth
+
+# exposes services necessary to access the db.thing via ajax
+publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
+
+
+
+@action('index', method=["GET", "POST"] )
+@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session, T, )
+
+def index(param=None):
+    ctrl_info= "ctrl: index, view: index.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('settings', method=["GET", "POST"] )
+@action.uses(Template('settings.html', delimiters='[%[ ]]',), db, session, T, )
+
+def settings(param=None):
+    ctrl_info= "ctrl: settings, view: settings.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('500', method=["GET", "POST"] )
+@action.uses(Template('500.html', delimiters='[%[ ]]',), db, session, T, )
+
+def 500(param=None):
+    ctrl_info= "ctrl: 500, view: 500.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('404', method=["GET", "POST"] )
+@action.uses(Template('404.html', delimiters='[%[ ]]',), db, session, T, )
+
+def 404(param=None):
+    ctrl_info= "ctrl: 404, view: 404.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('transactions', method=["GET", "POST"] )
+@action.uses(Template('transactions.html', delimiters='[%[ ]]',), db, session, T, )
+
+def transactions(param=None):
+    ctrl_info= "ctrl: transactions, view: transactions.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('lock', method=["GET", "POST"] )
+@action.uses(Template('lock.html', delimiters='[%[ ]]',), db, session, T, )
+
+def lock(param=None):
+    ctrl_info= "ctrl: lock, view: lock.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('sign-in', method=["GET", "POST"] )
+@action.uses(Template('sign-in.html', delimiters='[%[ ]]',), db, session, T, )
+
+def sign-in(param=None):
+    ctrl_info= "ctrl: sign-in, view: sign-in.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('sign-up', method=["GET", "POST"] )
+@action.uses(Template('sign-up.html', delimiters='[%[ ]]',), db, session, T, )
+
+def sign-up(param=None):
+    ctrl_info= "ctrl: sign-up, view: sign-up.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('forms', method=["GET", "POST"] )
+@action.uses(Template('forms.html', delimiters='[%[ ]]',), db, session, T, )
+
+def forms(param=None):
+    ctrl_info= "ctrl: forms, view: forms.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('modals', method=["GET", "POST"] )
+@action.uses(Template('modals.html', delimiters='[%[ ]]',), db, session, T, )
+
+def modals(param=None):
+    ctrl_info= "ctrl: modals, view: modals.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('buttons', method=["GET", "POST"] )
+@action.uses(Template('buttons.html', delimiters='[%[ ]]',), db, session, T, )
+
+def buttons(param=None):
+    ctrl_info= "ctrl: buttons, view: buttons.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('dashboard', method=["GET", "POST"] )
+@action.uses(Template('dashboard.html', delimiters='[%[ ]]',), db, session, T, )
+
+def dashboard(param=None):
+    ctrl_info= "ctrl: dashboard, view: dashboard.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('typography', method=["GET", "POST"] )
+@action.uses(Template('typography.html', delimiters='[%[ ]]',), db, session, T, )
+
+def typography(param=None):
+    ctrl_info= "ctrl: typography, view: typography.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('reset-password', method=["GET", "POST"] )
+@action.uses(Template('reset-password.html', delimiters='[%[ ]]',), db, session, T, )
+
+def reset-password(param=None):
+    ctrl_info= "ctrl: reset-password, view: reset-password.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('bootstrap-tables', method=["GET", "POST"] )
+@action.uses(Template('bootstrap-tables.html', delimiters='[%[ ]]',), db, session, T, )
+
+def bootstrap-tables(param=None):
+    ctrl_info= "ctrl: bootstrap-tables, view: bootstrap-tables.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('forgot-password', method=["GET", "POST"] )
+@action.uses(Template('forgot-password.html', delimiters='[%[ ]]',), db, session, T, )
+
+def forgot-password(param=None):
+    ctrl_info= "ctrl: forgot-password, view: forgot-password.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+@action('notifications', method=["GET", "POST"] )
+@action.uses(Template('notifications.html', delimiters='[%[ ]]',), db, session, T, )
+
+def notifications(param=None):
+    ctrl_info= "ctrl: notifications, view: notifications.html"
+    if not param is None:
+        print (param)
+    return locals()
+
+
+import bottle
+
+#
+Glb= {'print': False , 'my_app_name' : "volt" }
+
+@bottle.error(404)
+def error404(error):
+    my_app_name = Glb['my_app_name']
+    #if error[2] == f'/{my_app_name}':
+    print(f"404, app_name = {my_app_name}:   {error}", bottle.request.path)
+    bottle.response.status = 303
+    bottle.response.set_header("Location", f"/{my_app_name}")
+
+
+
+#val_slide = bottle.request.query.command
+@bottle.hook("before_request")
+def before_request():
+    my_app_name = Glb['my_app_name']
+    Glb['print'] and print("  before:        ", bottle.request.environ["PATH_INFO"])
+    if f"/{my_app_name}/" + "/" in bottle.request.path:
+        bottle.request.environ["PATH_INFO"] = bottle.request.environ[
+            "PATH_INFO"
+        ].replace(f"/{my_app_name}/", "", 1)
+        bottle.request.path = bottle.request.path.replace(f"/{my_app_name}/", "", 1)
+        Glb['print'] and print(" changed before:     ", bottle.request.path)
+
+
+@bottle.hook("after_request")
+def after_request():
+    Glb['print'] and print("  after:    ", bottle.request.path)
+

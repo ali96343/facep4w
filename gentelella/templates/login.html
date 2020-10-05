@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 05.10.2020 11:35:53 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>biorex title text</title>
+  <!-- Bootstrap -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') ]]" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/font-awesome/css/font-awesome.min.css') ]]" rel="stylesheet"/>
+  <!-- NProgress -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/nprogress/nprogress.css') ]]" rel="stylesheet"/>
+  <!-- Animate.css -->
+  <link href="[%[=URL('static/tte/gentelella/vendors/animate.css/animate.min.css') ]]" rel="stylesheet"/>
+  <!-- Custom Theme Style -->
+  <link href="[%[=URL('static/tte/gentelella/build/css/custom.min.css') ]]" rel="stylesheet"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="login">
+  <div>
+   <a class="hiddenanchor" id="signup"></a>
+   <a class="hiddenanchor" id="signin"></a>
+   <div class="login_wrapper">
+    <div class="animate form login_form">
+     <section class="login_content">
+      
+<!-- view: flogin0, db_table: dflogin0 -->
+<div>
+[%[= flogin0.custom['begin'] ]]
+
+<h1>
+ Login Form:p4w
+</h1>
+
+<div>
+ [%[ flogin0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_placeholder']= 'Username:p4w'  ]]
+ [%[ flogin0.custom['widgets']['f0']['_required']= 'len0'  ]]
+ [%[= flogin0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= flogin0.custom['errors']['f0'] if 'f0' in flogin0.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div>
+ [%[ flogin0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
+ [%[ flogin0.custom['widgets']['f1']['_required']= 'len0'  ]]
+ [%[= flogin0.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= flogin0.custom['errors']['f1'] if 'f1' in flogin0.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div>
+ [%[ flogin0.custom['submit']['_class']= 'btn btn-default submit'  ]]
+ [%[ flogin0.custom['submit']['_type']= 'submit'  ]]
+ [%[ flogin0.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= flogin0.custom['submit'] ]]
+
+ <a class="reset_pass" href="[%[=URL('index')]]">
+  Lost your password?:p4w
+ </a>
+</div>
+
+<div class="clearfix">
+</div>
+
+<div class="separator">
+ <p class="change_link">
+  New to site?:p4w
+  <a class="to_register" href="[%[=URL('index')]]">
+   Create Account:p4w
+  </a>
+ </p>
+ <div class="clearfix">
+ </div>
+ <div>
+  <h1>
+   </i>
+   Gentelella Alela!:p4w
+  </h1>
+  <p>
+   ©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms:p4w
+  </p>
+ </div>
+</div>
+[%[= flogin0.custom['end'] ]]
+</div>
+<!-- end flogin0 -->
+
+     </section>
+    </div>
+    <div class="animate form registration_form" id="register">
+     <section class="login_content">
+      
+<!-- view: flogin1, db_table: dflogin1 -->
+<div>
+[%[= flogin1.custom['begin'] ]]
+
+<h1>
+ Create Account:p4w
+</h1>
+
+<div>
+ [%[ flogin1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ flogin1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ flogin1.custom['widgets']['f0']['_placeholder']= 'Username:p4w'  ]]
+ [%[ flogin1.custom['widgets']['f0']['_required']= 'len0'  ]]
+ [%[= flogin1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= flogin1.custom['errors']['f0'] if 'f0' in flogin1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div>
+ [%[ flogin1.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ flogin1.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ flogin1.custom['widgets']['f1']['_placeholder']= 'Email:p4w'  ]]
+ [%[ flogin1.custom['widgets']['f1']['_required']= 'len0'  ]]
+ [%[= flogin1.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= flogin1.custom['errors']['f1'] if 'f1' in flogin1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div>
+ [%[ flogin1.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[ flogin1.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ flogin1.custom['widgets']['f2']['_placeholder']= 'Password:p4w'  ]]
+ [%[ flogin1.custom['widgets']['f2']['_required']= 'len0'  ]]
+ [%[= flogin1.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= flogin1.custom['errors']['f2'] if 'f2' in flogin1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div>
+ [%[ flogin1.custom['submit']['_class']= 'btn btn-default submit'  ]]
+ [%[ flogin1.custom['submit']['_type']= 'submit'  ]]
+ [%[ flogin1.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= flogin1.custom['submit'] ]]
+
+</div>
+
+<div class="clearfix">
+</div>
+
+<div class="separator">
+ <p class="change_link">
+  Already a member ?:p4w
+  <a class="to_register" href="[%[=URL('index')]]">
+   Log in:p4w
+  </a>
+ </p>
+ <div class="clearfix">
+ </div>
+ <div>
+  <h1>
+   </i>
+   Gentelella Alela!:p4w
+  </h1>
+  <p>
+   ©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms:p4w
+  </p>
+ </div>
+</div>
+[%[= flogin1.custom['end'] ]]
+</div>
+<!-- end flogin1 -->
+
+     </section>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
