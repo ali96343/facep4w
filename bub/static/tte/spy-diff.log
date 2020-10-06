@@ -1,0 +1,4 @@
+ratio= 0.94
+   src: img/favicon.png
+   dst: img/favicon.png?3
+

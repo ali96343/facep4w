@@ -1,0 +1,166 @@
+timestamp: 2020-08-03T11:38:32.103015
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2020-08-03T11:38:32.119243
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "path" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2020-10-06T14:50:14.782200
+CREATE TABLE "test_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.816327
+CREATE TABLE "dfindex0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.831580
+CREATE TABLE "dflogin0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(1)
+);
+success!
+timestamp: 2020-10-06T14:50:14.848247
+CREATE TABLE "dfcharts0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.864434
+CREATE TABLE "dftables0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.881481
+CREATE TABLE "dfforms0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.898611
+CREATE TABLE "dfforms1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.933911
+CREATE TABLE "dfforms2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.952599
+CREATE TABLE "dfforms3"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.970572
+CREATE TABLE "dfforms4"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:14.989054
+CREATE TABLE "dfforms5"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512),
+    "f4" CHAR(512),
+    "f5" CHAR(512),
+    "f6" CHAR(512),
+    "f7" CHAR(1),
+    "f8" CHAR(512),
+    "f9" CHAR(512),
+    "f10" CHAR(1),
+    "f11" CHAR(1),
+    "f12" CHAR(1),
+    "f13" CHAR(1),
+    "f14" CHAR(512),
+    "f15" CHAR(512),
+    "f16" CHAR(512),
+    "f17" CHAR(512),
+    "f18" CHAR(512),
+    "f19" CHAR(512),
+    "f20" CHAR(512),
+    "f21" CHAR(512),
+    "f22" CHAR(512),
+    "f23" CHAR(512),
+    "f24" CHAR(512),
+    "f25" CHAR(512),
+    "f26" CHAR(512),
+    "f27" CHAR(512),
+    "f28" CHAR(512),
+    "f29" CHAR(1),
+    "f30" CHAR(512),
+    "f31" CHAR(512),
+    "f32" CHAR(512),
+    "f33" CHAR(512),
+    "f34" CHAR(512),
+    "f35" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:15.006495
+CREATE TABLE "ttables0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:15.023627
+CREATE TABLE "ttables1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:15.041775
+CREATE TABLE "ttables2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512)
+);
+success!
+timestamp: 2020-10-06T14:50:15.058997
+CREATE TABLE "ttables3"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512),
+    "f3" CHAR(512)
+);
+success!
