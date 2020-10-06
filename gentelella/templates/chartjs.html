@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -403,30 +403,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: fchartjs0, db_table: dfchartjs0 -->
-<div>
-[%[= fchartjs0.custom['begin'] ]]
-
- [%[ fchartjs0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fchartjs0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fchartjs0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fchartjs0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fchartjs0.custom['errors']['f0'] if 'f0' in fchartjs0.custom['errors'] else '' ]]</span>
-
- [%[ fchartjs0.custom['submit']['_class']= 'form-control'  ]]
- [%[ fchartjs0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fchartjs0.custom['submit']['_type']= 'submit'  ]]
- [%[ fchartjs0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fchartjs0.custom['submit'] ]]
-
-[%[= fchartjs0.custom['end'] ]]
-</div>
-<!-- end fchartjs0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-default" type="button">Go!</button>
           </span>

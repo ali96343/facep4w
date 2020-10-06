@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -403,30 +403,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: fecharts0, db_table: dfecharts0 -->
-<div>
-[%[= fecharts0.custom['begin'] ]]
-
- [%[ fecharts0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fecharts0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fecharts0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fecharts0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fecharts0.custom['errors']['f0'] if 'f0' in fecharts0.custom['errors'] else '' ]]</span>
-
- [%[ fecharts0.custom['submit']['_class']= 'form-control'  ]]
- [%[ fecharts0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fecharts0.custom['submit']['_type']= 'submit'  ]]
- [%[ fecharts0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fecharts0.custom['submit'] ]]
-
-[%[= fecharts0.custom['end'] ]]
-</div>
-<!-- end fecharts0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-default" type="button">Go!</button>
           </span>

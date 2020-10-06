@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:50 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:08 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -405,30 +405,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: finbox0, db_table: dfinbox0 -->
-<div>
-[%[= finbox0.custom['begin'] ]]
-
- [%[ finbox0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ finbox0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ finbox0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= finbox0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= finbox0.custom['errors']['f0'] if 'f0' in finbox0.custom['errors'] else '' ]]</span>
-
- [%[ finbox0.custom['submit']['_class']= 'form-control'  ]]
- [%[ finbox0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ finbox0.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= finbox0.custom['submit'] ]]
-
-[%[= finbox0.custom['end'] ]]
-</div>
-<!-- end finbox0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-secondary" type="button">Go!</button>
           </span>
@@ -808,32 +785,7 @@
        <i class="fa fa-link"></i>
       </a>
       <div class="dropdown-menu input-append">
-       
-
-<!-- view: finbox1, db_table: dfinbox1 -->
-<div>
-[%[= finbox1.custom['begin'] ]]
-
- [%[ finbox1.custom['widgets']['f0']['_class']= 'span2'  ]]
- [%[ finbox1.custom['widgets']['f0']['_data-edit']= 'createLink'  ]]
- [%[ finbox1.custom['widgets']['f0']['_placeholder']= 'URL:p4w'  ]]
- [%[ finbox1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= finbox1.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= finbox1.custom['errors']['f0'] if 'f0' in finbox1.custom['errors'] else '' ]]</span>
-
- [%[ finbox1.custom['submit']['_class']= 'span2'  ]]
- [%[ finbox1.custom['submit']['_data-edit']= 'createLink'  ]]
- [%[ finbox1.custom['submit']['_placeholder']= 'URL:p4w'  ]]
- [%[ finbox1.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= finbox1.custom['submit'] ]]
-
-[%[= finbox1.custom['end'] ]]
-</div>
-<!-- end finbox1 -->
-
-
+       <input class="span2" data-edit="createLink" placeholder="URL" type="text"/>
        <button class="btn" type="button">Add</button>
       </div>
       <a class="btn" data-edit="unlink" title="Remove Hyperlink">
@@ -844,34 +796,7 @@
       <a class="btn" id="pictureBtn" title="Insert picture (or just drag &amp; drop)">
        <i class="fa fa-picture-o"></i>
       </a>
-      
-
-<!-- view: finbox2, db_table: dfinbox2 -->
-<div>
-[%[= finbox2.custom['begin'] ]]
-
- [%[ finbox2.custom['widgets']['f0']['_data-edit']= 'insertImage'  ]]
- [%[ finbox2.custom['widgets']['f0']['_data-role']= 'magic-overlay'  ]]
- [%[ finbox2.custom['widgets']['f0']['_data-target']= '#pictureBtn'  ]]
- [%[ finbox2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ finbox2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
- [%[= finbox2.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= finbox2.custom['errors']['f0'] if 'f0' in finbox2.custom['errors'] else '' ]]</span>
-
- [%[ finbox2.custom['submit']['_data-edit']= 'insertImage'  ]]
- [%[ finbox2.custom['submit']['_data-role']= 'magic-overlay'  ]]
- [%[ finbox2.custom['submit']['_data-target']= '#pictureBtn'  ]]
- [%[ finbox2.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox2.custom['submit']['_placeholder']= ':p4w'  ]]
- [%[ finbox2.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= finbox2.custom['submit'] ]]
-
-[%[= finbox2.custom['end'] ]]
-</div>
-<!-- end finbox2 -->
-
-</div>
+      <input data-edit="insertImage" data-role="magic-overlay" data-target="#pictureBtn" type="file"/></div>
      <div class="btn-group">
       <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)">
        <i class="fa fa-undo"></i>

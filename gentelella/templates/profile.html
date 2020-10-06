@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -402,30 +402,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: fprofile0, db_table: dfprofile0 -->
-<div>
-[%[= fprofile0.custom['begin'] ]]
-
- [%[ fprofile0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fprofile0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fprofile0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fprofile0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fprofile0.custom['errors']['f0'] if 'f0' in fprofile0.custom['errors'] else '' ]]</span>
-
- [%[ fprofile0.custom['submit']['_class']= 'form-control'  ]]
- [%[ fprofile0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fprofile0.custom['submit']['_type']= 'submit'  ]]
- [%[ fprofile0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fprofile0.custom['submit'] ]]
-
-[%[= fprofile0.custom['end'] ]]
-</div>
-<!-- end fprofile0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-secondary" type="button">Go!</button>
           </span>

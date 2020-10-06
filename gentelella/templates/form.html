@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:48 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -465,9 +465,9 @@
 
 <div class="item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">
-  First Name:p4w
+  First Name
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -485,9 +485,9 @@
 
 <div class="item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">
-  Last Name:p4w
+  Last Name
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -506,7 +506,7 @@
 
 <div class="item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align" for="middle-name">
-  Middle Name / Initial:p4w
+  Middle Name / Initial
  </label>
  <div class="col-md-6 col-sm-6">
  [%[ fform0.custom['widgets']['f2']['_id']= 'middle-name'  ]]
@@ -523,7 +523,7 @@
 
 <div class="item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Gender:p4w
+  Gender
  </label>
  <div class="col-md-6 col-sm-6">
   <div class="btn-group" data-toggle="buttons" id="gender">
@@ -537,7 +537,7 @@
 
  <span style="color:#ff0000">[%[= fform0.custom['errors']['f3'] if 'f3' in fform0.custom['errors'] else '' ]]</span>
 
-    Male:p4w
+    Male
    </label>
    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
  [%[ fform0.custom['widgets']['f4']['_type']= 'radio'  ]]
@@ -549,7 +549,7 @@
 
  <span style="color:#ff0000">[%[= fform0.custom['errors']['f4'] if 'f4' in fform0.custom['errors'] else '' ]]</span>
 
-    Female:p4w
+    Female
    </label>
   </div>
  </div>
@@ -557,9 +557,9 @@
 
 <div class="item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Date Of Birth:p4w
+  Date Of Birth
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -577,11 +577,12 @@
 
  <span style="color:#ff0000">[%[= fform0.custom['errors']['f5'] if 'f5' in fform0.custom['errors'] else '' ]]</span>
 
-   function timeFunctionLong(input) {:p4w
-														setTimeout(function() {:p4w
-															input.type = 'text';:p4w
-														}, 60000);:p4w
-													}:p4w
+  <script>
+   function timeFunctionLong(input) {
+														setTimeout(function() {
+															input.type = 'text';
+														}, 60000);
+													}
   </script>
  </div>
 </div>
@@ -597,10 +598,10 @@
  [%[= fform0.custom['submit'] ]]
 
   <button class="btn btn-primary" type="reset">
-   Reset:p4w
+   Reset
   </button>
   <button class="btn btn-success" type="submit">
-   Submit:p4w
+   Submit
   </button>
  </div>
 </div>
@@ -704,7 +705,7 @@
 
 <div class="form-group row">
  <label class="col-form-label col-md-3 col-sm-3">
-  Default Input:p4w
+  Default Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform1.custom['widgets']['f4']['_type']= 'text'  ]]
@@ -719,7 +720,7 @@
 
 <div class="form-group row">
  <label class="col-form-label col-md-3 col-sm-3">
-  Disabled Input:p4w
+  Disabled Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform1.custom['widgets']['f5']['_type']= 'text'  ]]
@@ -735,7 +736,7 @@
 
 <div class="form-group row">
  <label class="col-form-label col-md-3 col-sm-3">
-  Read-Only Input:p4w
+  Read-Only Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform1.custom['widgets']['f6']['_type']= 'text'  ]]
@@ -751,9 +752,9 @@
 
 <div class="form-group row">
  <label class="col-form-label col-md-3 col-sm-3">
-  Date Of Birth:p4w
+  Date Of Birth
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-9 col-sm-9">
@@ -770,11 +771,12 @@
 
  <span style="color:#ff0000">[%[= fform1.custom['errors']['f7'] if 'f7' in fform1.custom['errors'] else '' ]]</span>
 
-   function timeFunctionLong(input) {:p4w
-														setTimeout(function() {:p4w
-															input.type = 'text';:p4w
-														}, 60000);:p4w
-													}:p4w
+  <script>
+   function timeFunctionLong(input) {
+														setTimeout(function() {
+															input.type = 'text';
+														}, 60000);
+													}
   </script>
  </div>
 </div>
@@ -790,10 +792,10 @@
  [%[= fform1.custom['submit'] ]]
 
   <button class="btn btn-primary" type="reset">
-   Reset:p4w
+   Reset
   </button>
   <button class="btn btn-success" type="submit">
-   Submit:p4w
+   Submit
   </button>
  </div>
 </div>
@@ -884,7 +886,7 @@
 [%[= fform2.custom['begin'] ]]
 
 <label for="fullname">
- Full Name * ::p4w
+ Full Name * :
 </label>
 
  [%[ fform2.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -899,7 +901,7 @@
 
 
 <label for="email">
- Email * ::p4w
+ Email * :
 </label>
 
  [%[ fform2.custom['widgets']['f1']['_type']= 'text'  ]]
@@ -915,11 +917,11 @@
 
 
 <label>
- Gender *::p4w
+ Gender *:
 </label>
 
 <p>
- M::p4w
+ M:
  [%[ fform2.custom['widgets']['f2']['_type']= 'radio'  ]]
  [%[ fform2.custom['widgets']['f2']['_class']= 'flat'  ]]
  [%[ fform2.custom['widgets']['f2']['_name']= 'gender'  ]]
@@ -932,7 +934,7 @@
 
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f2'] if 'f2' in fform2.custom['errors'] else '' ]]</span>
 
- F::p4w
+ F:
  [%[ fform2.custom['widgets']['f3']['_type']= 'radio'  ]]
  [%[ fform2.custom['widgets']['f3']['_class']= 'flat'  ]]
  [%[ fform2.custom['widgets']['f3']['_name']= 'gender'  ]]
@@ -946,7 +948,7 @@
 </p>
 
 <label>
- Hobbies (2 minimum)::p4w
+ Hobbies (2 minimum):
 </label>
 
 <p style="padding: 5px;">
@@ -962,7 +964,8 @@
 
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f4'] if 'f4' in fform2.custom['errors'] else '' ]]</span>
 
- Skiing:p4w
+ Skiing
+ <br/>
  [%[ fform2.custom['widgets']['f5']['_type']= 'checkbox'  ]]
  [%[ fform2.custom['widgets']['f5']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f5']['_id']= 'hobby2'  ]]
@@ -973,7 +976,8 @@
 
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f5'] if 'f5' in fform2.custom['errors'] else '' ]]</span>
 
- Running:p4w
+ Running
+ <br/>
  [%[ fform2.custom['widgets']['f6']['_type']= 'checkbox'  ]]
  [%[ fform2.custom['widgets']['f6']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f6']['_id']= 'hobby3'  ]]
@@ -984,7 +988,8 @@
 
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f6'] if 'f6' in fform2.custom['errors'] else '' ]]</span>
 
- Eating:p4w
+ Eating
+ <br/>
  [%[ fform2.custom['widgets']['f7']['_type']= 'checkbox'  ]]
  [%[ fform2.custom['widgets']['f7']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f7']['_id']= 'hobby4'  ]]
@@ -995,12 +1000,13 @@
 
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f7'] if 'f7' in fform2.custom['errors'] else '' ]]</span>
 
- Sleeping:p4w
+ Sleeping
+ <br/>
 </p>
 
 <p>
  <label for="heard">
-  Heard us by *::p4w
+  Heard us by *:
  </label>
  [%[ fform2.custom['widgets']['f8']['_id']= 'heard'  ]]
  [%[ fform2.custom['widgets']['f8']['_class']= 'form-control'  ]]
@@ -1010,7 +1016,7 @@
  <span style="color:#ff0000">[%[= fform2.custom['errors']['f8'] if 'f8' in fform2.custom['errors'] else '' ]]</span>
 
  <label for="message">
-  Message (20 chars min, 100 max) ::p4w
+  Message (20 chars min, 100 max) :
  </label>
  [%[ fform2.custom['widgets']['f9']['_id']= 'message'  ]]
  [%[ fform2.custom['widgets']['f9']['_required']= 'required'  ]]
@@ -1085,7 +1091,7 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3 col-sm-3">
-  Default Input:p4w
+  Default Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform3.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -1100,7 +1106,7 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3 col-sm-3">
-  Disabled Input:p4w
+  Disabled Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform3.custom['widgets']['f1']['_type']= 'text'  ]]
@@ -1116,7 +1122,7 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3 col-sm-3">
-  Read-Only Input:p4w
+  Read-Only Input
  </label>
  <div class="col-md-9 col-sm-9">
  [%[ fform3.custom['widgets']['f2']['_type']= 'text'  ]]
@@ -1132,9 +1138,9 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3 col-sm-3">
-  Date Of Birth:p4w
+  Date Of Birth
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-9 col-sm-9">
@@ -1199,7 +1205,7 @@
 
 <div class="form-group row">
  <label class="col-sm-3 col-form-label">
-  Button addons:p4w
+  Button addons
  </label>
  <div class="col-sm-9">
   <div class="input-group">
@@ -1228,7 +1234,7 @@
 
    <span class="input-group-btn">
     <button class="btn btn-primary" type="button">
-     Go!:p4w
+     Go!
     </button>
    </span>
   </div>
@@ -1240,7 +1246,7 @@
 
 <div class="form-group row">
  <label class="col-sm-3 col-form-label">
-  Button addons:p4w
+  Button addons
  </label>
  <div class="col-sm-9">
   <div class="dropdown input-group row">
@@ -1254,31 +1260,31 @@
 
    <div class="input-group-btn">
     <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" type="button">
-     Action:p4w
+     Action
      <span class="caret">
      </span>
     </button>
     <ul class="dropdown-menu dropdown-menu-right" role="menu">
      <li>
       <a class="dropdown-item" href="[%[=URL('index')]]">
-       Action:p4w
+       Action
       </a>
      </li>
      <li>
       <a class="dropdown-item" href="[%[=URL('index')]]">
-       Another action:p4w
+       Another action
       </a>
      </li>
      <li>
       <a class="dropdown-item" href="[%[=URL('index')]]">
-       Something else here:p4w
+       Something else here
       </a>
      </li>
      <li class="divider">
      </li>
      <li>
       <a class="dropdown-item" href="[%[=URL('index')]]">
-       Separated link:p4w
+       Separated link
       </a>
      </li>
     </ul>
@@ -1295,7 +1301,7 @@
 
    <span class="input-group-btn">
     <button class="btn btn-primary" type="button">
-     Go!:p4w
+     Go!
     </button>
    </span>
   </div>
@@ -1591,9 +1597,9 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3" for="first-name">
-  First Name:p4w
+  First Name
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-7">
@@ -1611,9 +1617,9 @@
 
 <div class="form-group row">
  <label class="control-label col-md-3" for="last-name">
-  Last Name:p4w
+  Last Name
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-7">
@@ -1658,7 +1664,7 @@
 
 <div class="form-group row">
  <label>
-  Email address:p4w
+  Email address
  </label>
  [%[ fform6.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fform6.custom['widgets']['f0']['_class']= 'form-control'  ]]
@@ -1671,7 +1677,7 @@
 
 <div class="form-group row">
  <label>
-  Password:p4w
+  Password
  </label>
  [%[ fform6.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fform6.custom['widgets']['f1']['_class']= 'form-control'  ]]
@@ -1701,7 +1707,7 @@
 
 <div class="form-group">
  <label class="col-form-label" for="ex3">
-  Email address:p4w
+  Email address
  </label>
  [%[ fform7.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fform7.custom['widgets']['f0']['_id']= 'ex3'  ]]
@@ -1715,7 +1721,7 @@
 
 <div class="form-group">
  <label class="col-form-label" for="ex4">
-  Email address:p4w
+  Email address
  </label>
  [%[ fform7.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fform7.custom['widgets']['f1']['_id']= 'ex4'  ]]
@@ -1735,7 +1741,7 @@
 
  <span style="color:#ff0000">[%[= fform7.custom['errors']['f2'] if 'f2' in fform7.custom['errors'] else '' ]]</span>
 
-  Remember me:p4w
+  Remember me
  </label>
 </div>
 

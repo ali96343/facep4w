@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:48 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -447,10 +447,10 @@
 [%[= fformXvalidation0.custom['begin'] ]]
 
 <p>
- For alternative validation library:p4w
-  parsleyJS:p4w
+ For alternative validation library
+  parsleyJS
  </code>
- check out in the:p4w
+ check out in the
  [%[ fformXvalidation0.custom['submit']['_type']= 'submit'  ]]
  [%[ fformXvalidation0.custom['submit']['_value']= 'a:p4w'  ]]
  [%[= fformXvalidation0.custom['submit'] ]]
@@ -458,14 +458,14 @@
 </p>
 
 <span class="section">
- Personal Info:p4w
+ Personal Info
 </span>
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Name:p4w
+  Name
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -485,9 +485,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Occupation:p4w
+  Occupation
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -505,9 +505,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  email:p4w
+  email
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -525,9 +525,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Confirm email address:p4w
+  Confirm email address
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -546,9 +546,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Number:p4w
+  Number
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -567,9 +567,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Date:p4w
+  Date
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -587,9 +587,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Time:p4w
+  Time
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -607,9 +607,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Password:p4w
+  Password
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -626,7 +626,9 @@
  <span style="color:#ff0000">[%[= fformXvalidation0.custom['errors']['f7'] if 'f7' in fformXvalidation0.custom['errors'] else '' ]]</span>
 
   <span onclick="hideshow()" style="position: absolute;right:15px;top:7px;">
+   <i class="fa fa-eye-slash" id="slash">
    </i>
+   <i class="fa fa-eye" id="eye">
    </i>
   </span>
  </div>
@@ -634,9 +636,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Repeat password:p4w
+  Repeat password
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -655,9 +657,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  Telephone:p4w
+  Telephone
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -676,9 +678,9 @@
 
 <div class="field item form-group">
  <label class="col-form-label col-md-3 col-sm-3 label-align">
-  message:p4w
+  message
   <span class="required">
-   *:p4w
+   *
   </span>
  </label>
  <div class="col-md-6 col-sm-6">
@@ -711,8 +713,8 @@
    </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="[%[=URL('static/tte/multifield.js') ]]"></script>
-  <script src="[%[=URL('static/tte/validator.js') ]]"></script>
+  <script src="[%[=URL('static/tte/gentelella/vendors/validator/multifield.js') ]]"></script>
+  <script src="[%[=URL('static/tte/gentelella/vendors/validator/validator.js') ]]"></script>
   <!-- Javascript functions	-->
   <script>
    function hideshow() {
@@ -765,7 +767,7 @@ $('.toggleValidationTooltips').change(function() {
   <!-- NProgress -->
   <script src="[%[=URL('static/tte/gentelella/vendors/nprogress/nprogress.js') ]]"></script>
   <!-- validator -->
-  <!-- <script src="[%[=URL('static/tte/validator.js') ]]"></script> -->
+  <!-- <script src="[%[=URL('static/tte/gentelella/vendors/validator/validator.js') ]]"></script> -->
   <!-- Custom Theme Scripts -->
   <script src="[%[=URL('static/tte/gentelella/build/js/custom.min.js') ]]"></script>
  </body>

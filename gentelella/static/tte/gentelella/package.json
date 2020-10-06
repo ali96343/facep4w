@@ -30,16 +30,15 @@
     "url": "https://github.com/puikinsh/gentelella/issues"
   },
   "homepage": "https://github.com/puikinsh/gentelella#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  },
+  "devDependencies": {},
   "dependencies": {
     "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-ruby-sass": "^4.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8"
   }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:48 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -400,30 +400,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group row pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: fformXbuttons0, db_table: dfformXbuttons0 -->
-<div>
-[%[= fformXbuttons0.custom['begin'] ]]
-
- [%[ fformXbuttons0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformXbuttons0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fformXbuttons0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fformXbuttons0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fformXbuttons0.custom['errors']['f0'] if 'f0' in fformXbuttons0.custom['errors'] else '' ]]</span>
-
- [%[ fformXbuttons0.custom['submit']['_class']= 'form-control'  ]]
- [%[ fformXbuttons0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ fformXbuttons0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXbuttons0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fformXbuttons0.custom['submit'] ]]
-
-[%[= fformXbuttons0.custom['end'] ]]
-</div>
-<!-- end fformXbuttons0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-secondary" type="button">Go!</button>
           </span>
@@ -876,96 +853,15 @@
           <div class="row">
            <div class="btn-group form-check" data-toggle="buttons">
             <label class="btn btn-secondary">
-             
-
-<!-- view: fformXbuttons1, db_table: dfformXbuttons1 -->
-<div>
-[%[= fformXbuttons1.custom['begin'] ]]
-
- [%[ fformXbuttons1.custom['widgets']['f0']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons1.custom['widgets']['f0']['_id']= 'option1'  ]]
- [%[ fformXbuttons1.custom['widgets']['f0']['_name']= 'options'  ]]
- [%[ fformXbuttons1.custom['widgets']['f0']['_type']= 'radio'  ]]
- [%[ fformXbuttons1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
- [%[= fformXbuttons1.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fformXbuttons1.custom['errors']['f0'] if 'f0' in fformXbuttons1.custom['errors'] else '' ]]</span>
-
- [%[ fformXbuttons1.custom['submit']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons1.custom['submit']['_id']= 'option1'  ]]
- [%[ fformXbuttons1.custom['submit']['_name']= 'options'  ]]
- [%[ fformXbuttons1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXbuttons1.custom['submit']['_placeholder']= ':p4w'  ]]
- [%[ fformXbuttons1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fformXbuttons1.custom['submit'] ]]
-
-[%[= fformXbuttons1.custom['end'] ]]
-</div>
-<!-- end fformXbuttons1 -->
-
-
+             <input class="join-btn" id="option1" name="options" type="radio"/>
              Option 1
             </label>
             <label class="btn btn-secondary">
-             
-
-<!-- view: fformXbuttons2, db_table: dfformXbuttons2 -->
-<div>
-[%[= fformXbuttons2.custom['begin'] ]]
-
- [%[ fformXbuttons2.custom['widgets']['f0']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons2.custom['widgets']['f0']['_id']= 'option2'  ]]
- [%[ fformXbuttons2.custom['widgets']['f0']['_name']= 'options'  ]]
- [%[ fformXbuttons2.custom['widgets']['f0']['_type']= 'radio'  ]]
- [%[ fformXbuttons2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
- [%[= fformXbuttons2.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fformXbuttons2.custom['errors']['f0'] if 'f0' in fformXbuttons2.custom['errors'] else '' ]]</span>
-
- [%[ fformXbuttons2.custom['submit']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons2.custom['submit']['_id']= 'option2'  ]]
- [%[ fformXbuttons2.custom['submit']['_name']= 'options'  ]]
- [%[ fformXbuttons2.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXbuttons2.custom['submit']['_placeholder']= ':p4w'  ]]
- [%[ fformXbuttons2.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fformXbuttons2.custom['submit'] ]]
-
-[%[= fformXbuttons2.custom['end'] ]]
-</div>
-<!-- end fformXbuttons2 -->
-
-
+             <input class="join-btn" id="option2" name="options" type="radio"/>
              Option 2
             </label>
             <label class="btn btn-secondary">
-             
-
-<!-- view: fformXbuttons3, db_table: dfformXbuttons3 -->
-<div>
-[%[= fformXbuttons3.custom['begin'] ]]
-
- [%[ fformXbuttons3.custom['widgets']['f0']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons3.custom['widgets']['f0']['_id']= 'option3'  ]]
- [%[ fformXbuttons3.custom['widgets']['f0']['_name']= 'options'  ]]
- [%[ fformXbuttons3.custom['widgets']['f0']['_type']= 'radio'  ]]
- [%[ fformXbuttons3.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
- [%[= fformXbuttons3.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fformXbuttons3.custom['errors']['f0'] if 'f0' in fformXbuttons3.custom['errors'] else '' ]]</span>
-
- [%[ fformXbuttons3.custom['submit']['_class']= 'join-btn'  ]]
- [%[ fformXbuttons3.custom['submit']['_id']= 'option3'  ]]
- [%[ fformXbuttons3.custom['submit']['_name']= 'options'  ]]
- [%[ fformXbuttons3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXbuttons3.custom['submit']['_placeholder']= ':p4w'  ]]
- [%[ fformXbuttons3.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fformXbuttons3.custom['submit'] ]]
-
-[%[= fformXbuttons3.custom['end'] ]]
-</div>
-<!-- end fformXbuttons3 -->
-
-
+             <input class="join-btn" id="option3" name="options" type="radio"/>
              Option 3
             </label>
            </div>

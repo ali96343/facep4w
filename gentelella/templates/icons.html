@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:35:49 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -400,30 +400,7 @@
        <div class="title_right">
         <div class="col-md-5 col-sm-5 form-group pull-right top_search">
          <div class="input-group">
-          
-
-<!-- view: ficons0, db_table: dficons0 -->
-<div>
-[%[= ficons0.custom['begin'] ]]
-
- [%[ ficons0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ ficons0.custom['widgets']['f0']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ ficons0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= ficons0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= ficons0.custom['errors']['f0'] if 'f0' in ficons0.custom['errors'] else '' ]]</span>
-
- [%[ ficons0.custom['submit']['_class']= 'form-control'  ]]
- [%[ ficons0.custom['submit']['_placeholder']= 'Search for...:p4w'  ]]
- [%[ ficons0.custom['submit']['_type']= 'submit'  ]]
- [%[ ficons0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= ficons0.custom['submit'] ]]
-
-[%[= ficons0.custom['end'] ]]
-</div>
-<!-- end ficons0 -->
-
-
+          <input class="form-control" placeholder="Search for..." type="text"/>
           <span class="input-group-btn">
            <button class="btn btn-secondary" type="button">Go!</button>
           </span>
