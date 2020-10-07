@@ -19,19 +19,27 @@ CREATE TABLE "auth_user_tag_groups"(
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2020-09-06T14:59:40.970227
+timestamp: 2020-10-07T13:48:37.891414
+CREATE TABLE "test_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512)
+);
+success!
+timestamp: 2020-10-07T13:48:37.926842
 CREATE TABLE "dfindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.022075
+timestamp: 2020-10-07T13:48:37.944051
 CREATE TABLE "dfdashboard0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.045434
+timestamp: 2020-10-07T13:48:37.962005
 CREATE TABLE "dfsignXin0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -39,7 +47,7 @@ CREATE TABLE "dfsignXin0"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-09-06T14:59:41.067893
+timestamp: 2020-10-07T13:48:37.980475
 CREATE TABLE "dfsignXup0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -48,25 +56,25 @@ CREATE TABLE "dfsignXup0"(
     "f3" CHAR(1)
 );
 success!
-timestamp: 2020-09-06T14:59:41.094169
+timestamp: 2020-10-07T13:48:37.996435
 CREATE TABLE "dflock0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.111908
+timestamp: 2020-10-07T13:48:38.013762
 CREATE TABLE "dftransactions0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.130854
+timestamp: 2020-10-07T13:48:38.031255
 CREATE TABLE "dfsettings0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.148493
+timestamp: 2020-10-07T13:48:38.062210
 CREATE TABLE "dfsettings1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -81,13 +89,13 @@ CREATE TABLE "dfsettings1"(
     "f9" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.168881
+timestamp: 2020-10-07T13:48:38.080932
 CREATE TABLE "dfforgotXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.192581
+timestamp: 2020-10-07T13:48:38.099837
 CREATE TABLE "dfresetXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -95,37 +103,37 @@ CREATE TABLE "dfresetXpassword0"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.216394
+timestamp: 2020-10-07T13:48:38.116502
 CREATE TABLE "dfbootstrapXtables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.241096
+timestamp: 2020-10-07T13:48:38.133910
 CREATE TABLE "dfbuttons0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.263644
+timestamp: 2020-10-07T13:48:38.150083
 CREATE TABLE "dfnotifications0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.281839
+timestamp: 2020-10-07T13:48:38.166323
 CREATE TABLE "dfforms0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.299629
+timestamp: 2020-10-07T13:48:38.183739
 CREATE TABLE "dfmodals0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.316004
+timestamp: 2020-10-07T13:48:38.201616
 CREATE TABLE "dfmodals1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -133,7 +141,7 @@ CREATE TABLE "dfmodals1"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-09-06T14:59:41.334198
+timestamp: 2020-10-07T13:48:38.218622
 CREATE TABLE "dfmodals2"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -142,13 +150,13 @@ CREATE TABLE "dfmodals2"(
     "f3" CHAR(1)
 );
 success!
-timestamp: 2020-09-06T14:59:41.352619
+timestamp: 2020-10-07T13:48:38.234567
 CREATE TABLE "dftypography0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.370497
+timestamp: 2020-10-07T13:48:38.251696
 CREATE TABLE "tdashboard0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -157,7 +165,7 @@ CREATE TABLE "tdashboard0"(
     "f3" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.388624
+timestamp: 2020-10-07T13:48:38.269165
 CREATE TABLE "ttransactions0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -169,7 +177,7 @@ CREATE TABLE "ttransactions0"(
     "f6" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.405164
+timestamp: 2020-10-07T13:48:38.285235
 CREATE TABLE "tbootstrapXtables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -181,7 +189,7 @@ CREATE TABLE "tbootstrapXtables0"(
     "f6" CHAR(512)
 );
 success!
-timestamp: 2020-09-06T14:59:41.425789
+timestamp: 2020-10-07T13:48:38.301874
 CREATE TABLE "tbootstrapXtables1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -192,404 +200,4 @@ CREATE TABLE "tbootstrapXtables1"(
     "f5" CHAR(512),
     "f6" CHAR(512)
 );
-success!
-timestamp: 2020-09-06T15:14:35.122643
-ALTER TABLE "dfsettings0" ADD "f1" CHAR(512);
-timestamp: 2020-09-06T15:14:35.142087
-ALTER TABLE "dfsettings0" ADD "f2" CHAR(512);
-timestamp: 2020-09-06T15:14:35.153956
-ALTER TABLE "dfsettings0" ADD "f3" CHAR(512);
-timestamp: 2020-09-06T15:14:35.166764
-ALTER TABLE "dfsettings0" ADD "f4" CHAR(512);
-timestamp: 2020-09-06T15:14:35.178371
-ALTER TABLE "dfsettings0" ADD "f5" CHAR(512);
-timestamp: 2020-09-06T15:14:35.190248
-ALTER TABLE "dfsettings0" ADD "f6" CHAR(512);
-timestamp: 2020-09-06T15:14:35.200896
-ALTER TABLE "dfsettings0" ADD "f7" CHAR(512);
-timestamp: 2020-09-06T15:14:35.211784
-ALTER TABLE "dfsettings0" ADD "f8" CHAR(512);
-timestamp: 2020-09-06T15:14:35.226974
-ALTER TABLE "dfsettings0" ADD "f9" CHAR(512);
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-timestamp: 2020-09-21T17:25:40.125696
-CREATE TABLE "test_table"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
-    "f2" CHAR(512)
-);
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
 success!
