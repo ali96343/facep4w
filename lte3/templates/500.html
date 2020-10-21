@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:03 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -55,9 +55,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fX5000.custom['hidden_widgets'].keys(): ]]
+ [%[= fX5000.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fX5000.custom['end'] ]]
 </div>
 <!-- end fX5000 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -480,6 +484,12 @@
         </a>
        </li>
        <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
+        </a>
+       </li>
+       <li class="nav-item">
         <a class="nav-link" href="#">
          <i class="nav-icon far fa-envelope"></i>
          <p>
@@ -871,7 +881,6 @@
 
 <div class="input-group">
  [%[ fX5001.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fX5001.custom['widgets']['f0']['_name']= 'search'  ]]
  [%[ fX5001.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fX5001.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[= fX5001.custom['widgets']['f0'] ]]
@@ -887,9 +896,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fX5001.custom['hidden_widgets'].keys(): ]]
+ [%[= fX5001.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fX5001.custom['end'] ]]
 </div>
 <!-- end fX5001 -->
+
 
       </div>
      </div>

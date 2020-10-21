@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -9,11 +9,10 @@
   <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
   <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
   <link href="[%[=URL('static/tte/css/bulma-divider.min.css') ]]" rel="stylesheet"/>
-  <style>
-   nav.navbar {
-      height: 6rem !important;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
-    }
+  <style>nav.navbar {
+    height: 6rem !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
+}
   </style>
  
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
@@ -23,7 +22,7 @@
   <nav class="navbar">
    <div class="container">
     <div class="navbar-brand">
-     <a class="navbar-item" href="[%[=URL('index') ]]">
+     <a class="navbar-item" href="../">
       <img alt="Logo" src="[%[=URL('static/tte/images/bulma.png') ]]"/></a>
      <span class="navbar-burger burger" data-target="navbarMenu">
       <span></span>
@@ -35,30 +34,7 @@
      <div class="navbar-end">
       <div class="navbar-item">
        <div class="control has-icons-left">
-        
-
-<!-- view: fblogXtailsaw0, db_table: dfblogXtailsaw0 -->
-<div>
-[%[= fblogXtailsaw0.custom['begin'] ]]
-
- [%[ fblogXtailsaw0.custom['widgets']['f0']['_class']= 'input is-rounded'  ]]
- [%[ fblogXtailsaw0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
- [%[ fblogXtailsaw0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fblogXtailsaw0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fblogXtailsaw0.custom['errors']['f0'] if 'f0' in fblogXtailsaw0.custom['errors'] else '' ]]</span>
-
- [%[ fblogXtailsaw0.custom['submit']['_class']= 'input is-rounded'  ]]
- [%[ fblogXtailsaw0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
- [%[ fblogXtailsaw0.custom['submit']['_type']= 'submit'  ]]
- [%[ fblogXtailsaw0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fblogXtailsaw0.custom['submit'] ]]
-
-[%[= fblogXtailsaw0.custom['end'] ]]
-</div>
-<!-- end fblogXtailsaw0 -->
-
-
+        <input class="input is-rounded" placeholder="Search" type="email"/>
         <span class="icon is-left">
          <i class="fa fa-search"></i>
         </span>
@@ -121,30 +97,7 @@
          <div class="column is-6 is-offset-3">
           <div class="field has-addons has-addons-centered">
            <div class="control is-expanded">
-            
-
-<!-- view: fblogXtailsaw1, db_table: dfblogXtailsaw1 -->
-<div>
-[%[= fblogXtailsaw1.custom['begin'] ]]
-
- [%[ fblogXtailsaw1.custom['widgets']['f0']['_class']= 'input'  ]]
- [%[ fblogXtailsaw1.custom['widgets']['f0']['_placeholder']= 'Email address:p4w'  ]]
- [%[ fblogXtailsaw1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fblogXtailsaw1.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fblogXtailsaw1.custom['errors']['f0'] if 'f0' in fblogXtailsaw1.custom['errors'] else '' ]]</span>
-
- [%[ fblogXtailsaw1.custom['submit']['_class']= 'input'  ]]
- [%[ fblogXtailsaw1.custom['submit']['_placeholder']= 'Email address:p4w'  ]]
- [%[ fblogXtailsaw1.custom['submit']['_type']= 'submit'  ]]
- [%[ fblogXtailsaw1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fblogXtailsaw1.custom['submit'] ]]
-
-[%[= fblogXtailsaw1.custom['end'] ]]
-</div>
-<!-- end fblogXtailsaw1 -->
-
-</div>
+            <input class="input" placeholder="Email address" type="text"/></div>
            <div class="control">
             <a class="button is-info">Subscribe</a>
            </div>

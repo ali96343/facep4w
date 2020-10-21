@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -18,7 +18,7 @@
   <nav class="navbar has-shadow">
    <div class="container">
     <div class="navbar-brand">
-     <a class="navbar-item" href="[%[=URL('index') ]]">
+     <a class="navbar-item" href="../">
       <img alt="Bulma: a modern CSS framework based on Flexbox" src="http://bulma.io/images/bulma-logo.png"/></a>
      <div class="navbar-burger burger" data-target="navMenu">
       <span></span>
@@ -49,30 +49,7 @@
       <div class="card-content">
        <div class="content">
         <div class="control has-icons-left has-icons-right">
-         
-
-<!-- view: fsearch0, db_table: dfsearch0 -->
-<div>
-[%[= fsearch0.custom['begin'] ]]
-
- [%[ fsearch0.custom['widgets']['f0']['_class']= 'input is-large'  ]]
- [%[ fsearch0.custom['widgets']['f0']['_placeholder']= 'len0:p4w'  ]]
- [%[ fsearch0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fsearch0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fsearch0.custom['errors']['f0'] if 'f0' in fsearch0.custom['errors'] else '' ]]</span>
-
- [%[ fsearch0.custom['submit']['_class']= 'input is-large'  ]]
- [%[ fsearch0.custom['submit']['_placeholder']= 'len0:p4w'  ]]
- [%[ fsearch0.custom['submit']['_type']= 'submit'  ]]
- [%[ fsearch0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fsearch0.custom['submit'] ]]
-
-[%[= fsearch0.custom['end'] ]]
-</div>
-<!-- end fsearch0 -->
-
-
+         <input class="input is-large" placeholder="" type="search"/>
          <span class="icon is-medium is-left">
           <i class="fa fa-search"></i>
          </span>

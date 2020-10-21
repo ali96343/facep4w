@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:06 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:42 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -493,7 +493,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fform0.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fform0.custom['widgets']['f1']['_id']= 'last-name'  ]]
- [%[ fform0.custom['widgets']['f1']['_name']= 'last-name'  ]]
  [%[ fform0.custom['widgets']['f1']['_required']= 'required'  ]]
  [%[ fform0.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fform0.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -512,7 +511,6 @@
  [%[ fform0.custom['widgets']['f2']['_id']= 'middle-name'  ]]
  [%[ fform0.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fform0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fform0.custom['widgets']['f2']['_name']= 'middle-name'  ]]
  [%[ fform0.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fform0.custom['widgets']['f2'] ]]
 
@@ -529,7 +527,6 @@
   <div class="btn-group" data-toggle="buttons" id="gender">
    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
  [%[ fform0.custom['widgets']['f3']['_type']= 'radio'  ]]
- [%[ fform0.custom['widgets']['f3']['_name']= 'gender'  ]]
  [%[ fform0.custom['widgets']['f3']['_value']= 'male'  ]]
  [%[ fform0.custom['widgets']['f3']['_class']= 'join-btn'  ]]
  [%[ fform0.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -541,7 +538,6 @@
    </label>
    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
  [%[ fform0.custom['widgets']['f4']['_type']= 'radio'  ]]
- [%[ fform0.custom['widgets']['f4']['_name']= 'gender'  ]]
  [%[ fform0.custom['widgets']['f4']['_value']= 'female'  ]]
  [%[ fform0.custom['widgets']['f4']['_class']= 'join-btn'  ]]
  [%[ fform0.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
@@ -605,9 +601,13 @@
   </button>
  </div>
 </div>
+ [%[ for hidden_widget in fform0.custom['hidden_widgets'].keys(): ]]
+ [%[= fform0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform0.custom['end'] ]]
 </div>
 <!-- end fform0 -->
+
 
          </div>
         </div>
@@ -799,9 +799,13 @@
   </button>
  </div>
 </div>
+ [%[ for hidden_widget in fform1.custom['hidden_widgets'].keys(): ]]
+ [%[= fform1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform1.custom['end'] ]]
 </div>
 <!-- end fform1 -->
+
 
          </div>
         </div>
@@ -892,7 +896,6 @@
  [%[ fform2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fform2.custom['widgets']['f0']['_id']= 'fullname'  ]]
  [%[ fform2.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fform2.custom['widgets']['f0']['_name']= 'fullname'  ]]
  [%[ fform2.custom['widgets']['f0']['_required']= 'len0'  ]]
  [%[ fform2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fform2.custom['widgets']['f0'] ]]
@@ -907,7 +910,6 @@
  [%[ fform2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fform2.custom['widgets']['f1']['_id']= 'email'  ]]
  [%[ fform2.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fform2.custom['widgets']['f1']['_name']= 'email'  ]]
  [%[ fform2.custom['widgets']['f1']['_data-parsley-trigger']= 'change'  ]]
  [%[ fform2.custom['widgets']['f1']['_required']= 'len0'  ]]
  [%[ fform2.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -924,7 +926,6 @@
  M:
  [%[ fform2.custom['widgets']['f2']['_type']= 'radio'  ]]
  [%[ fform2.custom['widgets']['f2']['_class']= 'flat'  ]]
- [%[ fform2.custom['widgets']['f2']['_name']= 'gender'  ]]
  [%[ fform2.custom['widgets']['f2']['_id']= 'genderM'  ]]
  [%[ fform2.custom['widgets']['f2']['_value']= 'M'  ]]
  [%[ fform2.custom['widgets']['f2']['_checked']= 'len0'  ]]
@@ -937,7 +938,6 @@
  F:
  [%[ fform2.custom['widgets']['f3']['_type']= 'radio'  ]]
  [%[ fform2.custom['widgets']['f3']['_class']= 'flat'  ]]
- [%[ fform2.custom['widgets']['f3']['_name']= 'gender'  ]]
  [%[ fform2.custom['widgets']['f3']['_id']= 'genderF'  ]]
  [%[ fform2.custom['widgets']['f3']['_value']= 'F'  ]]
  [%[ fform2.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -953,7 +953,6 @@
 
 <p style="padding: 5px;">
  [%[ fform2.custom['widgets']['f4']['_type']= 'checkbox'  ]]
- [%[ fform2.custom['widgets']['f4']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f4']['_id']= 'hobby1'  ]]
  [%[ fform2.custom['widgets']['f4']['_value']= 'ski'  ]]
  [%[ fform2.custom['widgets']['f4']['_data-parsley-mincheck']= '2'  ]]
@@ -967,7 +966,6 @@
  Skiing
  <br/>
  [%[ fform2.custom['widgets']['f5']['_type']= 'checkbox'  ]]
- [%[ fform2.custom['widgets']['f5']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f5']['_id']= 'hobby2'  ]]
  [%[ fform2.custom['widgets']['f5']['_value']= 'run'  ]]
  [%[ fform2.custom['widgets']['f5']['_class']= 'flat'  ]]
@@ -979,7 +977,6 @@
  Running
  <br/>
  [%[ fform2.custom['widgets']['f6']['_type']= 'checkbox'  ]]
- [%[ fform2.custom['widgets']['f6']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f6']['_id']= 'hobby3'  ]]
  [%[ fform2.custom['widgets']['f6']['_value']= 'eat'  ]]
  [%[ fform2.custom['widgets']['f6']['_class']= 'flat'  ]]
@@ -991,7 +988,6 @@
  Eating
  <br/>
  [%[ fform2.custom['widgets']['f7']['_type']= 'checkbox'  ]]
- [%[ fform2.custom['widgets']['f7']['_name']= 'hobbies[]'  ]]
  [%[ fform2.custom['widgets']['f7']['_id']= 'hobby4'  ]]
  [%[ fform2.custom['widgets']['f7']['_value']= 'sleep'  ]]
  [%[ fform2.custom['widgets']['f7']['_class']= 'flat'  ]]
@@ -1042,11 +1038,16 @@
  [%[ fform2.custom['submit']['_data-parsley-minlength-message']= 'Come on! You need to enter at least a 20 caracters long comment..'  ]]
  [%[ fform2.custom['submit']['_data-parsley-validation-threshold']= '10'  ]]
  [%[ fform2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform2.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fform2.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fform2.custom['submit'] ]]
+ [%[ for hidden_widget in fform2.custom['hidden_widgets'].keys(): ]]
+ [%[= fform2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform2.custom['end'] ]]
 </div>
 <!-- end fform2 -->
+
 
           <!-- end form for validations -->
          </div>
@@ -1155,14 +1156,18 @@
 
  [%[ fform3.custom['submit']['_class']= 'form-control'  ]]
  [%[ fform3.custom['submit']['_rows']= '3'  ]]
- [%[ fform3.custom['submit']['_placeholder']= 'Date Of Birth'  ]]
+ [%[ fform3.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fform3.custom['submit']['_type']= 'submit'  ]]
  [%[ fform3.custom['submit']['_name']= 'textarea'  ]]
  [%[ fform3.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fform3.custom['submit'] ]]
+ [%[ for hidden_widget in fform3.custom['hidden_widgets'].keys(): ]]
+ [%[= fform3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform3.custom['end'] ]]
 </div>
 <!-- end fform3 -->
+
 
          </div>
         </div>
@@ -1307,9 +1312,13 @@
   </div>
  </div>
 </div>
+ [%[ for hidden_widget in fform4.custom['hidden_widgets'].keys(): ]]
+ [%[= fform4.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform4.custom['end'] ]]
 </div>
 <!-- end fform4 -->
+
 
          </div>
         </div>
@@ -1625,7 +1634,6 @@
  <div class="col-md-7">
  [%[ fform5.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fform5.custom['widgets']['f1']['_id']= 'last-name2'  ]]
- [%[ fform5.custom['widgets']['f1']['_name']= 'last-name'  ]]
  [%[ fform5.custom['widgets']['f1']['_required']= 'required'  ]]
  [%[ fform5.custom['widgets']['f1']['_class']= 'form-control col-md-7'  ]]
  [%[ fform5.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -1635,18 +1643,21 @@
 
  [%[ fform5.custom['submit']['_type']= 'submit'  ]]
  [%[ fform5.custom['submit']['_id']= 'last-name2'  ]]
- [%[ fform5.custom['submit']['_name']= 'last-name'  ]]
  [%[ fform5.custom['submit']['_required']= 'required'  ]]
  [%[ fform5.custom['submit']['_class']= 'form-control col-md-7'  ]]
- [%[ fform5.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fform5.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fform5.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fform5.custom['submit'] ]]
 
  </div>
 </div>
+ [%[ for hidden_widget in fform5.custom['hidden_widgets'].keys(): ]]
+ [%[= fform5.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform5.custom['end'] ]]
 </div>
 <!-- end fform5 -->
+
 
         <h4>Vertical labels</h4>
         <p class="font-gray-dark">
@@ -1688,14 +1699,18 @@
 
  [%[ fform6.custom['submit']['_type']= 'submit'  ]]
  [%[ fform6.custom['submit']['_class']= 'form-control'  ]]
- [%[ fform6.custom['submit']['_placeholder']= 'Password:p4w'  ]]
+ [%[ fform6.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fform6.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fform6.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fform6.custom['hidden_widgets'].keys(): ]]
+ [%[= fform6.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform6.custom['end'] ]]
 </div>
 <!-- end fform6 -->
+
 
         </div>
         <h4>Inline Form</h4>
@@ -1750,9 +1765,13 @@
  [%[ fform7.custom['submit']['_value']= 'b:p4w'  ]]
  [%[= fform7.custom['submit'] ]]
 
+ [%[ for hidden_widget in fform7.custom['hidden_widgets'].keys(): ]]
+ [%[= fform7.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fform7.custom['end'] ]]
 </div>
 <!-- end fform7 -->
+
 
        </div>
       </div>

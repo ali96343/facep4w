@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:45 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -296,15 +296,19 @@
  [%[ fsettings0.custom['submit']['_aria-label']= 'Search'  ]]
  [%[ fsettings0.custom['submit']['_class']= 'form-control'  ]]
  [%[ fsettings0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fsettings0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fsettings0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fsettings0.custom['submit']['_type']= 'submit'  ]]
  [%[ fsettings0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fsettings0.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fsettings0.custom['hidden_widgets'].keys(): ]]
+ [%[= fsettings0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fsettings0.custom['end'] ]]
 </div>
 <!-- end fsettings0 -->
+
 
          </div>
          <!-- Navbar links -->
@@ -708,9 +712,13 @@
  [%[= fsettings1.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fsettings1.custom['hidden_widgets'].keys(): ]]
+ [%[= fsettings1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fsettings1.custom['end'] ]]
 </div>
 <!-- end fsettings1 -->
+
 
         </div>
        </div>

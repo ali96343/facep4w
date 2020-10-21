@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:42 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -446,9 +446,13 @@
 <div action="form_upload.html" class="dropzone">
 [%[= fformXupload0.custom['begin'] ]]
 
+ [%[ for hidden_widget in fformXupload0.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXupload0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXupload0.custom['end'] ]]
 </div>
 <!-- end fformXupload0 -->
+
 
           <br/>
           <br/>

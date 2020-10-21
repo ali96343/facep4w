@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 12:19:38 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 14:13:53 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -42,7 +42,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f0'] if 'f0' in fregister0.custom['errors'] else '' ]]</span>
 
     <label for="firstName">
-     First name:p4w
+     First name
     </label>
    </div>
   </div>
@@ -58,7 +58,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f1'] if 'f1' in fregister0.custom['errors'] else '' ]]</span>
 
     <label for="lastName">
-     Last name:p4w
+     Last name
     </label>
    </div>
   </div>
@@ -77,7 +77,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f2'] if 'f2' in fregister0.custom['errors'] else '' ]]</span>
 
   <label for="inputEmail">
-   Email address:p4w
+   Email address
   </label>
  </div>
 </div>
@@ -96,7 +96,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f3'] if 'f3' in fregister0.custom['errors'] else '' ]]</span>
 
     <label for="inputPassword">
-     Password:p4w
+     Password
     </label>
    </div>
   </div>
@@ -112,7 +112,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f4'] if 'f4' in fregister0.custom['errors'] else '' ]]</span>
 
     <label for="confirmPassword">
-     Confirm password:p4w
+     Confirm password
     </label>
    </div>
   </div>
@@ -124,9 +124,13 @@
  [%[ fregister0.custom['submit']['_value']= 'a:p4w'  ]]
  [%[= fregister0.custom['submit'] ]]
 
+ [%[ for hidden_widget in fregister0.custom['hidden_widgets'].keys(): ]]
+ [%[= fregister0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fregister0.custom['end'] ]]
 </div>
 <!-- end fregister0 -->
+
 
      <div class="text-center">
       <a class="d-block small mt-3" href="[%[=URL('login') ]]">Login Page</a>

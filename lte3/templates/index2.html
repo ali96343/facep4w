@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:56:58 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -57,9 +57,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in findex20.custom['hidden_widgets'].keys(): ]]
+ [%[= findex20.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= findex20.custom['end'] ]]
 </div>
 <!-- end findex20 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -482,6 +486,12 @@
         </a>
        </li>
        <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
+        </a>
+       </li>
+       <li class="nav-item">
         <a class="nav-link" href="#">
          <i class="nav-icon far fa-envelope"></i>
          <p>
@@ -837,7 +847,7 @@
      <div class="container-fluid">
       <div class="row mb-2">
        <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Dashboard v2</h1>
+        <h1 class="m-0">Dashboard v2</h1>
        </div>
        <!-- /.col -->
        <div class="col-sm-6">
@@ -1307,7 +1317,6 @@
 
 <div class="input-group">
  [%[ findex21.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ findex21.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ findex21.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ findex21.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= findex21.custom['widgets']['f0'] ]]
@@ -1322,9 +1331,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in findex21.custom['hidden_widgets'].keys(): ]]
+ [%[= findex21.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= findex21.custom['end'] ]]
 </div>
 <!-- end findex21 -->
+
 
            </div>
            <!-- /.card-footer-->
@@ -1556,7 +1569,7 @@
           <!-- /.row -->
          </div>
          <!-- /.card-body -->
-         <div class="card-footer bg-white p-0">
+         <div class="card-footer bg-light p-0">
           <ul class="nav nav-pills flex-column">
            <li class="nav-item">
             <a class="nav-link" href="#">

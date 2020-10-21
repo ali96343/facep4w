@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:03 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -101,7 +101,6 @@
   <div class="icheck-primary">
  [%[ fregister0.custom['widgets']['f4']['_type']= 'checkbox'  ]]
  [%[ fregister0.custom['widgets']['f4']['_id']= 'agreeTerms'  ]]
- [%[ fregister0.custom['widgets']['f4']['_name']= 'terms'  ]]
  [%[ fregister0.custom['widgets']['f4']['_value']= 'agree'  ]]
  [%[ fregister0.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
  [%[= fregister0.custom['widgets']['f4'] ]]
@@ -109,7 +108,7 @@
  <span style="color:#ff0000">[%[= fregister0.custom['errors']['f4'] if 'f4' in fregister0.custom['errors'] else '' ]]</span>
 
    <label for="agreeTerms">
-    I agree to the:p4w
+    I agree to the
  [%[ fregister0.custom['submit']['_type']= 'submit'  ]]
  [%[ fregister0.custom['submit']['_value']= 'a:p4w'  ]]
  [%[= fregister0.custom['submit'] ]]
@@ -120,14 +119,18 @@
  <!-- /.col -->
  <div class="col-4">
   <button class="btn btn-primary btn-block" type="submit">
-   Register:p4w
+   Register
   </button>
  </div>
  <!-- /.col -->
 </div>
+ [%[ for hidden_widget in fregister0.custom['hidden_widgets'].keys(): ]]
+ [%[= fregister0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fregister0.custom['end'] ]]
 </div>
 <!-- end fregister0 -->
+
 
      <div class="social-auth-links text-center">
       <p>- OR -</p>

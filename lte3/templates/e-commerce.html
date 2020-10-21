@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:02 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:09 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -56,9 +56,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in feXcommerce0.custom['hidden_widgets'].keys(): ]]
+ [%[= feXcommerce0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= feXcommerce0.custom['end'] ]]
 </div>
 <!-- end feXcommerce0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -478,6 +482,12 @@
         <a class="nav-link" href="[%[=URL('gallery') ]]">
          <i class="nav-icon far fa-image"></i>
          <p>Gallery</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
         </a>
        </li>
        <li class="nav-item">

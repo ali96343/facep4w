@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:45 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -146,9 +146,13 @@
 <button class="btn btn-block btn-primary" type="submit">
  Sign in
 </button>
+ [%[ for hidden_widget in fsignXin0.custom['hidden_widgets'].keys(): ]]
+ [%[= fsignXin0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fsignXin0.custom['end'] ]]
 </div>
 <!-- end fsignXin0 -->
+
 
         <div class="mt-3 mb-4 text-center">
          <span class="font-weight-normal">or login with</span>

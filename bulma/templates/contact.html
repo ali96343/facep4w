@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -19,7 +19,7 @@
   <nav class="navbar">
    <div class="container">
     <div class="navbar-brand">
-     <a class="navbar-item" href="[%[=URL('index') ]]">
+     <a class="navbar-item" href="../">
       <img alt="Logo" src="[%[=URL('static/tte/images/bulma.png') ]]"/></a>
      <span class="navbar-burger burger" data-target="navbarMenu">
       <span></span>
@@ -75,85 +75,21 @@
          Name
         </label>
         <div class="control">
-         
-
-<!-- view: fcontact0, db_table: dfcontact0 -->
-<div>
-[%[= fcontact0.custom['begin'] ]]
-
- [%[ fcontact0.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
- [%[ fcontact0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fcontact0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fcontact0.custom['errors']['f0'] if 'f0' in fcontact0.custom['errors'] else '' ]]</span>
-
- [%[ fcontact0.custom['submit']['_class']= 'input is-medium'  ]]
- [%[ fcontact0.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontact0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fcontact0.custom['submit'] ]]
-
-[%[= fcontact0.custom['end'] ]]
-</div>
-<!-- end fcontact0 -->
-
-</div>
+         <input class="input is-medium" type="text"/></div>
        </div>
        <div class="field">
         <label class="label">
          Email
         </label>
         <div class="control">
-         
-
-<!-- view: fcontact1, db_table: dfcontact1 -->
-<div>
-[%[= fcontact1.custom['begin'] ]]
-
- [%[ fcontact1.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
- [%[ fcontact1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fcontact1.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fcontact1.custom['errors']['f0'] if 'f0' in fcontact1.custom['errors'] else '' ]]</span>
-
- [%[ fcontact1.custom['submit']['_class']= 'input is-medium'  ]]
- [%[ fcontact1.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontact1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fcontact1.custom['submit'] ]]
-
-[%[= fcontact1.custom['end'] ]]
-</div>
-<!-- end fcontact1 -->
-
-</div>
+         <input class="input is-medium" type="text"/></div>
        </div>
        <div class="field">
         <label class="label">
          Message
         </label>
         <div class="control">
-         
-
-<!-- view: fcontact2, db_table: dfcontact2 -->
-<div>
-[%[= fcontact2.custom['begin'] ]]
-
- [%[ fcontact2.custom['widgets']['f0']['_class']= 'textarea is-medium'  ]]
- [%[ fcontact2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fcontact2.custom['widgets']['f0']['_name']= 'textarea'  ]]
- [%[= fcontact2.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fcontact2.custom['errors']['f0'] if 'f0' in fcontact2.custom['errors'] else '' ]]</span>
-
- [%[ fcontact2.custom['submit']['_class']= 'textarea is-medium'  ]]
- [%[ fcontact2.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontact2.custom['submit']['_name']= 'textarea'  ]]
- [%[ fcontact2.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fcontact2.custom['submit'] ]]
-[%[= fcontact2.custom['end'] ]]
-</div>
-<!-- end fcontact2 -->
-
-
+         <textarea class="textarea is-medium"></textarea>
         </div>
        </div>
        <div class="control">

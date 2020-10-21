@@ -9,8 +9,8 @@ vendor/simplebar/dist/simplebar.min.js.un
 vendor/simplebar/dist/simplebar.min.css.un
 vendor/popper.js/dist/esm/popper.min.js.un
 vendor/popper.js/dist/umd/popper.min.js.un
-vendor/popper.js/dist/popper-utils.min.js.un
 vendor/onscreen/dist/on-screen.umd.min.js.un
+vendor/popper.js/dist/popper-utils.min.js.un
 vendor/bootstrap/dist/js/bootstrap.min.js.un
 vendor/jarallax/dist/jarallax-video.min.js.un
 vendor/waypoints/lib/zepto.waypoints.min.js.un
@@ -65,8 +65,8 @@ volt-bootstrap-5-dashboard/html&css/vendor/simplebar/dist/simplebar.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/simplebar/dist/simplebar.min.css.un
 volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/esm/popper.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/umd/popper.min.js.un
-volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/popper-utils.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/onscreen/dist/on-screen.umd.min.js.un
+volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/popper-utils.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/bootstrap/dist/js/bootstrap.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/jarallax/dist/jarallax-video.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/waypoints/lib/zepto.waypoints.min.js.un

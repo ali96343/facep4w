@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:11 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:45 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -57,9 +57,13 @@
   </span>
  </div>
 </div>
+ [%[ for hidden_widget in fpageX5000.custom['hidden_widgets'].keys(): ]]
+ [%[= fpageX5000.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fpageX5000.custom['end'] ]]
 </div>
 <!-- end fpageX5000 -->
+
 
        </div>
       </div>

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+#
+# py4web app, AI-biorex ported 21.10.2020 16:01:04
+#
+
 import os
 from py4web import action, request, abort, redirect, URL, Field
 from yatl.helpers import A
@@ -8,500 +12,501 @@ from py4web.utils.grid import Grid
 from py4web.utils.publisher import Publisher, ALLOW_ALL_POLICY
 from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB
 from yatl.helpers import INPUT, H1, HTML, BODY, A
-from py4web.core import Template
+from py4web.core import Template, Reloader
 
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
+import bottle
 
 # exposes services necessary to access the db.thing via ajax
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
 
+Glb= {'debug': True , 'my_app_name' : "bulma", 'tte_path': '/static/tte' }
 
-
-@action('blog', method=["GET", "POST"] )
-@action.uses(Template('blog.html', delimiters='[%[ ]]',), db, session, T, )
-
-def blog(id=None):
-    ctrl_info= "ctrl: blog, view: blog.html"
-
-    return locals()
-
-
-@action('hero', method=["GET", "POST"] )
-@action.uses(Template('hero.html', delimiters='[%[ ]]',), db, session, T, )
-
-def hero(id=None):
-    ctrl_info= "ctrl: hero, view: hero.html"
-
-    return locals()
-
-
-@action('band', method=["GET", "POST"] )
-@action.uses(Template('band.html', delimiters='[%[ ]]',), db, session, T, )
-
-def band(id=None):
-    ctrl_info= "ctrl: band, view: band.html"
-
-    dfband0_rows=''
-    fband0= Form(db.dfband0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fband0.vars is None:  
-        fband0_f0 = fband0.vars.get('f0','')
-        if len ( fband0_f0 ):
-            db.dfband0.insert( **fband0.vars )
-            dfband0_rows = db( db.dfband0 ).select()
-            print (f'insert: \"{fband0.vars.f0}\" in db.dfband0; dfband0: {len(dfband0_rows)} rows' )
-
-    return locals()
 
 
 @action('tabs', method=["GET", "POST"] )
-@action.uses(Template('tabs.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('tabs.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def tabs(id=None):
     ctrl_info= "ctrl: tabs, view: tabs.html"
+    messages = []
 
     rows_ttabs0= db(db.ttabs0).select()
     return locals()
 
 
-@action('admin', method=["GET", "POST"] )
-@action.uses(Template('admin.html', delimiters='[%[ ]]',), db, session, T, )
+@action('hero', method=["GET", "POST"] )
+@action.uses(Template('hero.html', delimiters='[%[ ]]',), db, session,  T, )
 
-def admin(id=None):
-    ctrl_info= "ctrl: admin, view: admin.html"
-
-    rows_tadmin0= db(db.tadmin0).select()
-    dfadmin0_rows=''
-    fadmin0= Form(db.dfadmin0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fadmin0.vars is None:  
-        fadmin0_f0 = fadmin0.vars.get('f0','')
-        if len ( fadmin0_f0 ):
-            db.dfadmin0.insert( **fadmin0.vars )
-            dfadmin0_rows = db( db.dfadmin0 ).select()
-            print (f'insert: \"{fadmin0.vars.f0}\" in db.dfadmin0; dfadmin0: {len(dfadmin0_rows)} rows' )
-
-    dfadmin1_rows=''
-    fadmin1= Form(db.dfadmin1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fadmin1.vars is None:  
-        fadmin1_f0 = fadmin1.vars.get('f0','')
-        if len ( fadmin1_f0 ):
-            db.dfadmin1.insert( **fadmin1.vars )
-            dfadmin1_rows = db( db.dfadmin1 ).select()
-            print (f'insert: \"{fadmin1.vars.f0}\" in db.dfadmin1; dfadmin1: {len(dfadmin1_rows)} rows' )
+def hero(id=None):
+    ctrl_info= "ctrl: hero, view: hero.html"
+    messages = []
 
     return locals()
 
 
-@action('inbox', method=["GET", "POST"] )
-@action.uses(Template('inbox.html', delimiters='[%[ ]]',), db, session, T, )
+@action('blog', method=["GET", "POST"] )
+@action.uses(Template('blog.html', delimiters='[%[ ]]',), db, session,  T, )
 
-def inbox(id=None):
-    ctrl_info= "ctrl: inbox, view: inbox.html"
-
-    return locals()
-
-
-@action('forum', method=["GET", "POST"] )
-@action.uses(Template('forum.html', delimiters='[%[ ]]',), db, session, T, )
-
-def forum(id=None):
-    ctrl_info= "ctrl: forum, view: forum.html"
-
-    dfforum0_rows=''
-    fforum0= Form(db.dfforum0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fforum0.vars is None:  
-        fforum0_f0 = fforum0.vars.get('f0','')
-        if len ( fforum0_f0 ):
-            db.dfforum0.insert( **fforum0.vars )
-            dfforum0_rows = db( db.dfforum0 ).select()
-            print (f'insert: \"{fforum0.vars.f0}\" in db.dfforum0; dfforum0: {len(dfforum0_rows)} rows' )
+def blog(id=None):
+    ctrl_info= "ctrl: blog, view: blog.html"
+    messages = []
 
     return locals()
 
 
-@action('index', method=["GET", "POST"] )
-@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session, T, )
+@action('band', method=["GET", "POST"] )
+@action.uses(Template('band.html', delimiters='[%[ ]]',), db, session,  T, )
 
-def index(id=None):
-    ctrl_info= "ctrl: index, view: index.html"
+def band(id=None):
+    ctrl_info= "ctrl: band, view: band.html"
+    messages = []
+
+    dfband0_rows= None
+    id_dfband0 = None
+    fband0= Form(db.dfband0, id, deletable=False, dbio = False, keep_values = False, form_name = "fband0",  formstyle=FormStyleBulma )
+   
+    if fband0.accepted:
+
+        Glb['debug'] and print("     fband0 accepted with: %s " % (fband0.vars))
+        fband0_f0 = fband0.vars.get('f0','')
+        if len ( fband0_f0 ):
+            id_dfband0 = db.dfband0.insert( **fband0.vars )
+            db.commit()
+
+            if not id_dfband0 is None:
+                dfband0_rows = db.dfband0(id_dfband0 )
+
+                if not dfband0_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fband0.vars.f0}\" into db.dfband0.f0, id = {id_dfband0}' )
+                         print(f"     found db.dfband0.f0: \"{dfband0_rows.f0}\", id = {id_dfband0}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fband0_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fband0.vars.items() ]
+                print()
+   
+    elif fband0.errors:
+        print("fband0 has errors: %s " % (fband0.errors))
+ 
 
     return locals()
 
 
 @action('login', method=["GET", "POST"] )
-@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def login(id=None):
     ctrl_info= "ctrl: login, view: login.html"
+    messages = []
 
-    dflogin0_rows=''
-    flogin0= Form(db.dflogin0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not flogin0.vars is None:  
+    dflogin0_rows= None
+    id_dflogin0 = None
+    flogin0= Form(db.dflogin0, id, deletable=False, dbio = False, keep_values = False, form_name = "flogin0",  formstyle=FormStyleBulma )
+   
+    if flogin0.accepted:
+
+        Glb['debug'] and print("     flogin0 accepted with: %s " % (flogin0.vars))
         flogin0_f0 = flogin0.vars.get('f0','')
         if len ( flogin0_f0 ):
-            db.dflogin0.insert( **flogin0.vars )
-            dflogin0_rows = db( db.dflogin0 ).select()
-            print (f'insert: \"{flogin0.vars.f0}\" in db.dflogin0; dflogin0: {len(dflogin0_rows)} rows' )
+            id_dflogin0 = db.dflogin0.insert( **flogin0.vars )
+            db.commit()
+
+            if not id_dflogin0 is None:
+                dflogin0_rows = db.dflogin0(id_dflogin0 )
+
+                if not dflogin0_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{flogin0.vars.f0}\" into db.dflogin0.f0, id = {id_dflogin0}' )
+                         print(f"     found db.dflogin0.f0: \"{dflogin0_rows.f0}\", id = {id_dflogin0}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(flogin0_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in flogin0.vars.items() ]
+                print()
+   
+    elif flogin0.errors:
+        print("flogin0 has errors: %s " % (flogin0.errors))
+ 
 
     return locals()
 
 
+@action('inbox', method=["GET", "POST"] )
+@action.uses(Template('inbox.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def inbox(id=None):
+    ctrl_info= "ctrl: inbox, view: inbox.html"
+    messages = []
+
+    return locals()
+
+
+@action('forum', method=["GET", "POST"] )
+@action.uses(Template('forum.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def forum(id=None):
+    ctrl_info= "ctrl: forum, view: forum.html"
+    messages = []
+
+    return locals()
+
+
+@action('admin', method=["GET", "POST"] )
+@action.uses(Template('admin.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def admin(id=None):
+    ctrl_info= "ctrl: admin, view: admin.html"
+    messages = []
+
+    rows_tadmin0= db(db.tadmin0).select()
+    return locals()
+
+
 @action('cards', method=["GET", "POST"] )
-@action.uses(Template('cards.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('cards.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def cards(id=None):
     ctrl_info= "ctrl: cards, view: cards.html"
+    messages = []
 
     return locals()
 
 
 @action('cover', method=["GET", "POST"] )
-@action.uses(Template('cover.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('cover.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def cover(id=None):
     ctrl_info= "ctrl: cover, view: cover.html"
+    messages = []
 
     return locals()
 
 
-@action('kanban', method=["GET", "POST"] )
-@action.uses(Template('kanban.html', delimiters='[%[ ]]',), db, session, T, )
+@action('index', method=["GET", "POST"] )
+@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session,  T, )
 
-def kanban(id=None):
-    ctrl_info= "ctrl: kanban, view: kanban.html"
-
-    dfkanban0_rows=''
-    fkanban0= Form(db.dfkanban0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fkanban0.vars is None:  
-        fkanban0_f0 = fkanban0.vars.get('f0','')
-        if len ( fkanban0_f0 ):
-            db.dfkanban0.insert( **fkanban0.vars )
-            dfkanban0_rows = db( db.dfkanban0 ).select()
-            print (f'insert: \"{fkanban0.vars.f0}\" in db.dfkanban0; dfkanban0: {len(dfkanban0_rows)} rows' )
+def index(id=None):
+    ctrl_info= "ctrl: index, view: index.html"
+    messages = []
 
     return locals()
 
 
 @action('search', method=["GET", "POST"] )
-@action.uses(Template('search.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('search.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def search(id=None):
     ctrl_info= "ctrl: search, view: search.html"
+    messages = []
 
-    dfsearch0_rows=''
-    fsearch0= Form(db.dfsearch0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fsearch0.vars is None:  
-        fsearch0_f0 = fsearch0.vars.get('f0','')
-        if len ( fsearch0_f0 ):
-            db.dfsearch0.insert( **fsearch0.vars )
-            dfsearch0_rows = db( db.dfsearch0 ).select()
-            print (f'insert: \"{fsearch0.vars.f0}\" in db.dfsearch0; dfsearch0: {len(dfsearch0_rows)} rows' )
+    return locals()
+
+
+@action('kanban', method=["GET", "POST"] )
+@action.uses(Template('kanban.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def kanban(id=None):
+    ctrl_info= "ctrl: kanban, view: kanban.html"
+    messages = []
 
     return locals()
 
 
 @action('landing', method=["GET", "POST"] )
-@action.uses(Template('landing.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('landing.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def landing(id=None):
     ctrl_info= "ctrl: landing, view: landing.html"
-
-    dflanding0_rows=''
-    flanding0= Form(db.dflanding0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not flanding0.vars is None:  
-        flanding0_f0 = flanding0.vars.get('f0','')
-        if len ( flanding0_f0 ):
-            db.dflanding0.insert( **flanding0.vars )
-            dflanding0_rows = db( db.dflanding0 ).select()
-            print (f'insert: \"{flanding0.vars.f0}\" in db.dflanding0; dflanding0: {len(dflanding0_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('contact', method=["GET", "POST"] )
-@action.uses(Template('contact.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('contact.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def contact(id=None):
     ctrl_info= "ctrl: contact, view: contact.html"
-
-    dfcontact0_rows=''
-    fcontact0= Form(db.dfcontact0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fcontact0.vars is None:  
-        fcontact0_f0 = fcontact0.vars.get('f0','')
-        if len ( fcontact0_f0 ):
-            db.dfcontact0.insert( **fcontact0.vars )
-            dfcontact0_rows = db( db.dfcontact0 ).select()
-            print (f'insert: \"{fcontact0.vars.f0}\" in db.dfcontact0; dfcontact0: {len(dfcontact0_rows)} rows' )
-
-    dfcontact1_rows=''
-    fcontact1= Form(db.dfcontact1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fcontact1.vars is None:  
-        fcontact1_f0 = fcontact1.vars.get('f0','')
-        if len ( fcontact1_f0 ):
-            db.dfcontact1.insert( **fcontact1.vars )
-            dfcontact1_rows = db( db.dfcontact1 ).select()
-            print (f'insert: \"{fcontact1.vars.f0}\" in db.dfcontact1; dfcontact1: {len(dfcontact1_rows)} rows' )
-
-    dfcontact2_rows=''
-    fcontact2= Form(db.dfcontact2, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fcontact2.vars is None:  
-        fcontact2_f0 = fcontact2.vars.get('f0','')
-        if len ( fcontact2_f0 ):
-            db.dfcontact2.insert( **fcontact2.vars )
-            dfcontact2_rows = db( db.dfcontact2 ).select()
-            print (f'insert: \"{fcontact2.vars.f0}\" in db.dfcontact2; dfcontact2: {len(dfcontact2_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('register', method=["GET", "POST"] )
-@action.uses(Template('register.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('register.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def register(id=None):
     ctrl_info= "ctrl: register, view: register.html"
+    messages = []
 
-    dfregister0_rows=''
-    fregister0= Form(db.dfregister0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fregister0.vars is None:  
+    dfregister0_rows= None
+    id_dfregister0 = None
+    fregister0= Form(db.dfregister0, id, deletable=False, dbio = False, keep_values = False, form_name = "fregister0",  formstyle=FormStyleBulma )
+   
+    if fregister0.accepted:
+
+        Glb['debug'] and print("     fregister0 accepted with: %s " % (fregister0.vars))
         fregister0_f0 = fregister0.vars.get('f0','')
         if len ( fregister0_f0 ):
-            db.dfregister0.insert( **fregister0.vars )
-            dfregister0_rows = db( db.dfregister0 ).select()
-            print (f'insert: \"{fregister0.vars.f0}\" in db.dfregister0; dfregister0: {len(dfregister0_rows)} rows' )
+            id_dfregister0 = db.dfregister0.insert( **fregister0.vars )
+            db.commit()
 
-    return locals()
+            if not id_dfregister0 is None:
+                dfregister0_rows = db.dfregister0(id_dfregister0 )
 
-
-@action('personal', method=["GET", "POST"] )
-@action.uses(Template('personal.html', delimiters='[%[ ]]',), db, session, T, )
-
-def personal(id=None):
-    ctrl_info= "ctrl: personal, view: personal.html"
-
-    rows_tpersonal0= db(db.tpersonal0).select()
-    dfpersonal0_rows=''
-    fpersonal0= Form(db.dfpersonal0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fpersonal0.vars is None:  
-        fpersonal0_f0 = fpersonal0.vars.get('f0','')
-        if len ( fpersonal0_f0 ):
-            db.dfpersonal0.insert( **fpersonal0.vars )
-            dfpersonal0_rows = db( db.dfpersonal0 ).select()
-            print (f'insert: \"{fpersonal0.vars.f0}\" in db.dfpersonal0; dfpersonal0: {len(dfpersonal0_rows)} rows' )
-
-    dfpersonal1_rows=''
-    fpersonal1= Form(db.dfpersonal1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fpersonal1.vars is None:  
-        fpersonal1_f0 = fpersonal1.vars.get('f0','')
-        if len ( fpersonal1_f0 ):
-            db.dfpersonal1.insert( **fpersonal1.vars )
-            dfpersonal1_rows = db( db.dfpersonal1 ).select()
-            print (f'insert: \"{fpersonal1.vars.f0}\" in db.dfpersonal1; dfpersonal1: {len(dfpersonal1_rows)} rows' )
-
-    dfpersonal2_rows=''
-    fpersonal2= Form(db.dfpersonal2, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fpersonal2.vars is None:  
-        fpersonal2_f0 = fpersonal2.vars.get('f0','')
-        if len ( fpersonal2_f0 ):
-            db.dfpersonal2.insert( **fpersonal2.vars )
-            dfpersonal2_rows = db( db.dfpersonal2 ).select()
-            print (f'insert: \"{fpersonal2.vars.f0}\" in db.dfpersonal2; dfpersonal2: {len(dfpersonal2_rows)} rows' )
+                if not dfregister0_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fregister0.vars.f0}\" into db.dfregister0.f0, id = {id_dfregister0}' )
+                         print(f"     found db.dfregister0.f0: \"{dfregister0_rows.f0}\", id = {id_dfregister0}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fregister0_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fregister0.vars.items() ]
+                print()
+   
+    elif fregister0.errors:
+        print("fregister0 has errors: %s " % (fregister0.errors))
+ 
 
     return locals()
 
 
 @action('showcase', method=["GET", "POST"] )
-@action.uses(Template('showcase.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('showcase.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def showcase(id=None):
     ctrl_info= "ctrl: showcase, view: showcase.html"
+    messages = []
 
-    dfshowcase0_rows=''
-    fshowcase0= Form(db.dfshowcase0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fshowcase0.vars is None:  
+    dfshowcase0_rows= None
+    id_dfshowcase0 = None
+    fshowcase0= Form(db.dfshowcase0, id, deletable=False, dbio = False, keep_values = False, form_name = "fshowcase0",  formstyle=FormStyleBulma )
+   
+    if fshowcase0.accepted:
+
+        Glb['debug'] and print("     fshowcase0 accepted with: %s " % (fshowcase0.vars))
         fshowcase0_f0 = fshowcase0.vars.get('f0','')
         if len ( fshowcase0_f0 ):
-            db.dfshowcase0.insert( **fshowcase0.vars )
-            dfshowcase0_rows = db( db.dfshowcase0 ).select()
-            print (f'insert: \"{fshowcase0.vars.f0}\" in db.dfshowcase0; dfshowcase0: {len(dfshowcase0_rows)} rows' )
+            id_dfshowcase0 = db.dfshowcase0.insert( **fshowcase0.vars )
+            db.commit()
 
-    dfshowcase1_rows=''
-    fshowcase1= Form(db.dfshowcase1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fshowcase1.vars is None:  
+            if not id_dfshowcase0 is None:
+                dfshowcase0_rows = db.dfshowcase0(id_dfshowcase0 )
+
+                if not dfshowcase0_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fshowcase0.vars.f0}\" into db.dfshowcase0.f0, id = {id_dfshowcase0}' )
+                         print(f"     found db.dfshowcase0.f0: \"{dfshowcase0_rows.f0}\", id = {id_dfshowcase0}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fshowcase0_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fshowcase0.vars.items() ]
+                print()
+   
+    elif fshowcase0.errors:
+        print("fshowcase0 has errors: %s " % (fshowcase0.errors))
+ 
+
+    dfshowcase1_rows= None
+    id_dfshowcase1 = None
+    fshowcase1= Form(db.dfshowcase1, id, deletable=False, dbio = False, keep_values = False, form_name = "fshowcase1",  formstyle=FormStyleBulma )
+   
+    if fshowcase1.accepted:
+
+        Glb['debug'] and print("     fshowcase1 accepted with: %s " % (fshowcase1.vars))
         fshowcase1_f0 = fshowcase1.vars.get('f0','')
         if len ( fshowcase1_f0 ):
-            db.dfshowcase1.insert( **fshowcase1.vars )
-            dfshowcase1_rows = db( db.dfshowcase1 ).select()
-            print (f'insert: \"{fshowcase1.vars.f0}\" in db.dfshowcase1; dfshowcase1: {len(dfshowcase1_rows)} rows' )
+            id_dfshowcase1 = db.dfshowcase1.insert( **fshowcase1.vars )
+            db.commit()
 
-    dfshowcase2_rows=''
-    fshowcase2= Form(db.dfshowcase2, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fshowcase2.vars is None:  
+            if not id_dfshowcase1 is None:
+                dfshowcase1_rows = db.dfshowcase1(id_dfshowcase1 )
+
+                if not dfshowcase1_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fshowcase1.vars.f0}\" into db.dfshowcase1.f0, id = {id_dfshowcase1}' )
+                         print(f"     found db.dfshowcase1.f0: \"{dfshowcase1_rows.f0}\", id = {id_dfshowcase1}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fshowcase1_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fshowcase1.vars.items() ]
+                print()
+   
+    elif fshowcase1.errors:
+        print("fshowcase1 has errors: %s " % (fshowcase1.errors))
+ 
+
+    dfshowcase2_rows= None
+    id_dfshowcase2 = None
+    fshowcase2= Form(db.dfshowcase2, id, deletable=False, dbio = False, keep_values = False, form_name = "fshowcase2",  formstyle=FormStyleBulma )
+   
+    if fshowcase2.accepted:
+
+        Glb['debug'] and print("     fshowcase2 accepted with: %s " % (fshowcase2.vars))
         fshowcase2_f0 = fshowcase2.vars.get('f0','')
         if len ( fshowcase2_f0 ):
-            db.dfshowcase2.insert( **fshowcase2.vars )
-            dfshowcase2_rows = db( db.dfshowcase2 ).select()
-            print (f'insert: \"{fshowcase2.vars.f0}\" in db.dfshowcase2; dfshowcase2: {len(dfshowcase2_rows)} rows' )
+            id_dfshowcase2 = db.dfshowcase2.insert( **fshowcase2.vars )
+            db.commit()
+
+            if not id_dfshowcase2 is None:
+                dfshowcase2_rows = db.dfshowcase2(id_dfshowcase2 )
+
+                if not dfshowcase2_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fshowcase2.vars.f0}\" into db.dfshowcase2.f0, id = {id_dfshowcase2}' )
+                         print(f"     found db.dfshowcase2.f0: \"{dfshowcase2_rows.f0}\", id = {id_dfshowcase2}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fshowcase2_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fshowcase2.vars.items() ]
+                print()
+   
+    elif fshowcase2.errors:
+        print("fshowcase2 has errors: %s " % (fshowcase2.errors))
+ 
+
+    return locals()
+
+
+@action('personal', method=["GET", "POST"] )
+@action.uses(Template('personal.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def personal(id=None):
+    ctrl_info= "ctrl: personal, view: personal.html"
+    messages = []
+
+    rows_tpersonal0= db(db.tpersonal0).select()
+    return locals()
+
+
+@action('instaAlbum', method=["GET", "POST"] )
+@action.uses(Template('instaAlbum.html', delimiters='[%[ ]]',), db, session,  T, )
+
+def instaAlbum(id=None):
+    ctrl_info= "ctrl: instaAlbum, view: instaAlbum.html"
+    messages = []
 
     return locals()
 
 
 @action('cheatsheet', method=["GET", "POST"] )
-@action.uses(Template('cheatsheet.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('cheatsheet.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def cheatsheet(id=None):
     ctrl_info= "ctrl: cheatsheet, view: cheatsheet.html"
-
-    return locals()
-
-
-@action('instaAlbum', method=["GET", "POST"] )
-@action.uses(Template('instaAlbum.html', delimiters='[%[ ]]',), db, session, T, )
-
-def instaAlbum(id=None):
-    ctrl_info= "ctrl: instaAlbum, view: instaAlbum.html"
-
-    dfinstaAlbum0_rows=''
-    finstaAlbum0= Form(db.dfinstaAlbum0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not finstaAlbum0.vars is None:  
-        finstaAlbum0_f0 = finstaAlbum0.vars.get('f0','')
-        if len ( finstaAlbum0_f0 ):
-            db.dfinstaAlbum0.insert( **finstaAlbum0.vars )
-            dfinstaAlbum0_rows = db( db.dfinstaAlbum0 ).select()
-            print (f'insert: \"{finstaAlbum0.vars.f0}\" in db.dfinstaAlbum0; dfinstaAlbum0: {len(dfinstaAlbum0_rows)} rows' )
-
-    dfinstaAlbum1_rows=''
-    finstaAlbum1= Form(db.dfinstaAlbum1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not finstaAlbum1.vars is None:  
-        finstaAlbum1_f0 = finstaAlbum1.vars.get('f0','')
-        if len ( finstaAlbum1_f0 ):
-            db.dfinstaAlbum1.insert( **finstaAlbum1.vars )
-            dfinstaAlbum1_rows = db( db.dfinstaAlbum1 ).select()
-            print (f'insert: \"{finstaAlbum1.vars.f0}\" in db.dfinstaAlbum1; dfinstaAlbum1: {len(dfinstaAlbum1_rows)} rows' )
-
-    dfinstaAlbum2_rows=''
-    finstaAlbum2= Form(db.dfinstaAlbum2, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not finstaAlbum2.vars is None:  
-        finstaAlbum2_f0 = finstaAlbum2.vars.get('f0','')
-        if len ( finstaAlbum2_f0 ):
-            db.dfinstaAlbum2.insert( **finstaAlbum2.vars )
-            dfinstaAlbum2_rows = db( db.dfinstaAlbum2 ).select()
-            print (f'insert: \"{finstaAlbum2.vars.f0}\" in db.dfinstaAlbum2; dfinstaAlbum2: {len(dfinstaAlbum2_rows)} rows' )
-
-    dfinstaAlbum3_rows=''
-    finstaAlbum3= Form(db.dfinstaAlbum3, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not finstaAlbum3.vars is None:  
-        finstaAlbum3_f0 = finstaAlbum3.vars.get('f0','')
-        if len ( finstaAlbum3_f0 ):
-            db.dfinstaAlbum3.insert( **finstaAlbum3.vars )
-            dfinstaAlbum3_rows = db( db.dfinstaAlbum3 ).select()
-            print (f'insert: \"{finstaAlbum3.vars.f0}\" in db.dfinstaAlbum3; dfinstaAlbum3: {len(dfinstaAlbum3_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('ghostXblog', method=["GET", "POST"] )
-@action.uses(Template('ghost-blog.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('ghost-blog.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def ghostXblog(id=None):
     ctrl_info= "ctrl: ghostXblog, view: ghost-blog.html"
+    messages = []
 
     return locals()
 
 
 @action('modalXcards', method=["GET", "POST"] )
-@action.uses(Template('modal-cards.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('modal-cards.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def modalXcards(id=None):
     ctrl_info= "ctrl: modalXcards, view: modal-cards.html"
+    messages = []
 
     return locals()
 
 
 @action('blogXtailsaw', method=["GET", "POST"] )
-@action.uses(Template('blog-tailsaw.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('blog-tailsaw.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def blogXtailsaw(id=None):
     ctrl_info= "ctrl: blogXtailsaw, view: blog-tailsaw.html"
-
-    dfblogXtailsaw0_rows=''
-    fblogXtailsaw0= Form(db.dfblogXtailsaw0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fblogXtailsaw0.vars is None:  
-        fblogXtailsaw0_f0 = fblogXtailsaw0.vars.get('f0','')
-        if len ( fblogXtailsaw0_f0 ):
-            db.dfblogXtailsaw0.insert( **fblogXtailsaw0.vars )
-            dfblogXtailsaw0_rows = db( db.dfblogXtailsaw0 ).select()
-            print (f'insert: \"{fblogXtailsaw0.vars.f0}\" in db.dfblogXtailsaw0; dfblogXtailsaw0: {len(dfblogXtailsaw0_rows)} rows' )
-
-    dfblogXtailsaw1_rows=''
-    fblogXtailsaw1= Form(db.dfblogXtailsaw1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fblogXtailsaw1.vars is None:  
-        fblogXtailsaw1_f0 = fblogXtailsaw1.vars.get('f0','')
-        if len ( fblogXtailsaw1_f0 ):
-            db.dfblogXtailsaw1.insert( **fblogXtailsaw1.vars )
-            dfblogXtailsaw1_rows = db( db.dfblogXtailsaw1 ).select()
-            print (f'insert: \"{fblogXtailsaw1.vars.f0}\" in db.dfblogXtailsaw1; dfblogXtailsaw1: {len(dfblogXtailsaw1_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('kanbanXsearchX', method=["GET", "POST"] )
-@action.uses(Template('kanban[search].html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('kanban[search].html', delimiters='[%[ ]]',), db, session,  T, )
 
 def kanbanXsearchX(id=None):
     ctrl_info= "ctrl: kanbanXsearchX, view: kanban[search].html"
-
-    dfkanbanXsearchX0_rows=''
-    fkanbanXsearchX0= Form(db.dfkanbanXsearchX0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fkanbanXsearchX0.vars is None:  
-        fkanbanXsearchX0_f0 = fkanbanXsearchX0.vars.get('f0','')
-        if len ( fkanbanXsearchX0_f0 ):
-            db.dfkanbanXsearchX0.insert( **fkanbanXsearchX0.vars )
-            dfkanbanXsearchX0_rows = db( db.dfkanbanXsearchX0 ).select()
-            print (f'insert: \"{fkanbanXsearchX0.vars.f0}\" in db.dfkanbanXsearchX0; dfkanbanXsearchX0: {len(dfkanbanXsearchX0_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('helloXparallax', method=["GET", "POST"] )
-@action.uses(Template('hello-parallax.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('hello-parallax.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def helloXparallax(id=None):
     ctrl_info= "ctrl: helloXparallax, view: hello-parallax.html"
-
-    dfhelloXparallax0_rows=''
-    fhelloXparallax0= Form(db.dfhelloXparallax0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fhelloXparallax0.vars is None:  
-        fhelloXparallax0_f0 = fhelloXparallax0.vars.get('f0','')
-        if len ( fhelloXparallax0_f0 ):
-            db.dfhelloXparallax0.insert( **fhelloXparallax0.vars )
-            dfhelloXparallax0_rows = db( db.dfhelloXparallax0 ).select()
-            print (f'insert: \"{fhelloXparallax0.vars.f0}\" in db.dfhelloXparallax0; dfhelloXparallax0: {len(dfhelloXparallax0_rows)} rows' )
-
-    dfhelloXparallax1_rows=''
-    fhelloXparallax1= Form(db.dfhelloXparallax1, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fhelloXparallax1.vars is None:  
-        fhelloXparallax1_f0 = fhelloXparallax1.vars.get('f0','')
-        if len ( fhelloXparallax1_f0 ):
-            db.dfhelloXparallax1.insert( **fhelloXparallax1.vars )
-            dfhelloXparallax1_rows = db( db.dfhelloXparallax1 ).select()
-            print (f'insert: \"{fhelloXparallax1.vars.f0}\" in db.dfhelloXparallax1; dfhelloXparallax1: {len(dfhelloXparallax1_rows)} rows' )
+    messages = []
 
     return locals()
 
 
 @action('neumorphicXlogin', method=["GET", "POST"] )
-@action.uses(Template('neumorphic-login.html', delimiters='[%[ ]]',), db, session, T, )
+@action.uses(Template('neumorphic-login.html', delimiters='[%[ ]]',), db, session,  T, )
 
 def neumorphicXlogin(id=None):
     ctrl_info= "ctrl: neumorphicXlogin, view: neumorphic-login.html"
+    messages = []
 
-    dfneumorphicXlogin0_rows=''
-    fneumorphicXlogin0= Form(db.dfneumorphicXlogin0, id, deletable=False, dbio = False, formstyle=FormStyleBulma )
-    if not fneumorphicXlogin0.vars is None:  
+    dfneumorphicXlogin0_rows= None
+    id_dfneumorphicXlogin0 = None
+    fneumorphicXlogin0= Form(db.dfneumorphicXlogin0, id, deletable=False, dbio = False, keep_values = False, form_name = "fneumorphicXlogin0",  formstyle=FormStyleBulma )
+   
+    if fneumorphicXlogin0.accepted:
+
+        Glb['debug'] and print("     fneumorphicXlogin0 accepted with: %s " % (fneumorphicXlogin0.vars))
         fneumorphicXlogin0_f0 = fneumorphicXlogin0.vars.get('f0','')
         if len ( fneumorphicXlogin0_f0 ):
-            db.dfneumorphicXlogin0.insert( **fneumorphicXlogin0.vars )
-            dfneumorphicXlogin0_rows = db( db.dfneumorphicXlogin0 ).select()
-            print (f'insert: \"{fneumorphicXlogin0.vars.f0}\" in db.dfneumorphicXlogin0; dfneumorphicXlogin0: {len(dfneumorphicXlogin0_rows)} rows' )
+            id_dfneumorphicXlogin0 = db.dfneumorphicXlogin0.insert( **fneumorphicXlogin0.vars )
+            db.commit()
+
+            if not id_dfneumorphicXlogin0 is None:
+                dfneumorphicXlogin0_rows = db.dfneumorphicXlogin0(id_dfneumorphicXlogin0 )
+
+                if not dfneumorphicXlogin0_rows is None:
+                    if Glb['debug'] == True:
+                         print(f"app: {Glb['my_app_name']}")
+                         print(f'     inserted: \"{fneumorphicXlogin0.vars.f0}\" into db.dfneumorphicXlogin0.f0, id = {id_dfneumorphicXlogin0}' )
+                         print(f"     found db.dfneumorphicXlogin0.f0: \"{dfneumorphicXlogin0_rows.f0}\", id = {id_dfneumorphicXlogin0}" )
+                         print ()
+        else:
+            if Glb['debug'] == True:
+                print("app:",Glb['my_app_name'])
+                print(f"     len(fneumorphicXlogin0_f0)=0, not inserted")  
+                _ = [ print (f'     {k}: {v}') for k,v in fneumorphicXlogin0.vars.items() ]
+                print()
+   
+    elif fneumorphicXlogin0.errors:
+        print("fneumorphicXlogin0 has errors: %s " % (fneumorphicXlogin0.errors))
+ 
 
     return locals()
 
@@ -515,13 +520,27 @@ policy.set('*', 'PUT', authorize=True)
 policy.set('*', 'POST', authorize=True)
 policy.set('*', 'DELETE', authorize=True)
 
-@action('api/<tablename>/')
-@action('api/<tablename>/<rec_id>')
+@action('api/<tablename>/', method=["GET", "POST", "PUT", "DELETE"])
+@action('api/<tablename>/<rec_id>', method=["GET", "POST", "PUT", "DELETE"])
 def api(tablename, rec_id=None):
-    return RestAPI(db, policy)(request.method, 
-                               tablename, 
+    return RestAPI(db, policy)(request.method,
+                               tablename,
                                rec_id,
-                               request.GET, 
+                               request.GET,
                                request.POST
                                )
-# /superheroes/rest/api/superhero?name.eq=Superman
+# 
+# curl -X  GET   http://localhost:8000/bulma/api/test_table/
+# curl -X  GET   http://localhost:8000/bulma/api/test_table/9
+# curl -X DELETE  http://localhost:8000/bulma/api/test_table/2
+# curl -X POST -d 'f0=1111111&f1=2222222222&f2=33333333333' http://localhost:8000/bulma/api/test_table/
+# curl -X PUT -d 'f0=1111111&f1=2222222222&f2=33333333333' http://localhost:8000/bulma/api/test_table/9
+# curl -X POST -d f0=1111111   -d f1=2222222222 -d f2=8888888888  http://localhost:8000/bulma/api/test_table/
+#
+#  pip install httpie
+#  http         localhost:8000/bulma/api/test_table/
+#  http         localhost:8000/bulma/api/test_table/9
+#  http -f POST localhost:8000/bulma/api/test_table/ f0=111111 f1=2222222 f2=333333
+#  http -f DELETE localhost:8000/bulma/api/test_table/2
+#  http -f PUT localhost:8000/bulma/api/test_table/2 f0=111111 f1=2222222 f2=333333
+

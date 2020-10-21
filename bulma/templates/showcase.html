@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -10,7 +10,7 @@
   <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
   <link href="[%[=URL('static/tte/css/showcase.css') ]]" rel="stylesheet" type="text/css"/>
   <script crossorigin="anonymous" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" src="https://kit.fontawesome.com/2828f7885a.js"></script>
-  <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" rel="icon" type="image/png"/>
+  <link href="[%[=URL('static/tte/images/favicon.png') ]]" rel="icon" type="image/png"/>
  
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
@@ -33,9 +33,13 @@
  [%[ fshowcase0.custom['submit']['_value']= 'b:p4w'  ]]
  [%[= fshowcase0.custom['submit'] ]]
 
+ [%[ for hidden_widget in fshowcase0.custom['hidden_widgets'].keys(): ]]
+ [%[= fshowcase0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fshowcase0.custom['end'] ]]
 </div>
 <!-- end fshowcase0 -->
+
 
   <!-- End Scroll Up Button -->
   <!-- Begin Header -->
@@ -182,9 +186,13 @@
  [%[ fshowcase1.custom['submit']['_value']= 'b:p4w'  ]]
  [%[= fshowcase1.custom['submit'] ]]
 
+ [%[ for hidden_widget in fshowcase1.custom['hidden_widgets'].keys(): ]]
+ [%[= fshowcase1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fshowcase1.custom['end'] ]]
 </div>
 <!-- end fshowcase1 -->
+
 
       </div>
      </div>
@@ -358,18 +366,18 @@
 
 <div class="field">
  <label class="label">
-  Name:p4w
+  Name
  </label>
  <div class="control has-icons-left">
  [%[ fshowcase2.custom['widgets']['f0']['_class']= 'input'  ]]
  [%[ fshowcase2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fshowcase2.custom['widgets']['f0']['_placeholder']= 'Ex. Jane Smith:p4w'  ]]
- [%[ fshowcase2.custom['widgets']['f0']['_name']= 'Name'  ]]
  [%[= fshowcase2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fshowcase2.custom['errors']['f0'] if 'f0' in fshowcase2.custom['errors'] else '' ]]</span>
 
   <span class="icon is-small is-left">
+   <i class="fas fa-user">
    </i>
   </span>
  </div>
@@ -377,18 +385,18 @@
 
 <div class="field">
  <label class="label">
-  Email:p4w
+  Email
  </label>
  <div class="control has-icons-left">
  [%[ fshowcase2.custom['widgets']['f1']['_class']= 'input'  ]]
  [%[ fshowcase2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fshowcase2.custom['widgets']['f1']['_placeholder']= 'Ex. hello@arctheme.com:p4w'  ]]
- [%[ fshowcase2.custom['widgets']['f1']['_name']= 'Email'  ]]
  [%[= fshowcase2.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fshowcase2.custom['errors']['f1'] if 'f1' in fshowcase2.custom['errors'] else '' ]]</span>
 
   <span class="icon is-small is-left">
+   <i class="fas fa-envelope">
    </i>
   </span>
  </div>
@@ -396,7 +404,7 @@
 
 <div class="field">
  <label class="label">
-  Message:p4w
+  Message
  </label>
  <div class="control">
  [%[ fshowcase2.custom['widgets']['f2']['_class']= 'textarea'  ]]
@@ -408,14 +416,18 @@
  <span style="color:#ff0000">[%[= fshowcase2.custom['errors']['f2'] if 'f2' in fshowcase2.custom['errors'] else '' ]]</span>
 
  [%[ fshowcase2.custom['submit']['_class']= 'textarea'  ]]
- [%[ fshowcase2.custom['submit']['_placeholder']= 'Textarea'  ]]
+ [%[ fshowcase2.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fshowcase2.custom['submit']['_name']= 'textarea'  ]]
  [%[ fshowcase2.custom['submit']['_type']= 'submit'  ]]
  [%[ fshowcase2.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fshowcase2.custom['submit'] ]]
+ [%[ for hidden_widget in fshowcase2.custom['hidden_widgets'].keys(): ]]
+ [%[= fshowcase2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fshowcase2.custom['end'] ]]
 </div>
 <!-- end fshowcase2 -->
+
 
       </div>
      </div>
@@ -446,9 +458,9 @@
   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   <script>
    AOS.init({
-        easing: "ease-out",
-        duration: 800,
-      });
+    easing: "ease-out",
+    duration: 800,
+});
   </script>
  </body>
 </html>

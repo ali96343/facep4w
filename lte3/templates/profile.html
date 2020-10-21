@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:02 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:09 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -55,9 +55,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fprofile0.custom['hidden_widgets'].keys(): ]]
+ [%[= fprofile0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fprofile0.custom['end'] ]]
 </div>
 <!-- end fprofile0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -477,6 +481,12 @@
         <a class="nav-link" href="[%[=URL('gallery') ]]">
          <i class="nav-icon far fa-image"></i>
          <p>Gallery</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
         </a>
        </li>
        <li class="nav-item">
@@ -1010,9 +1020,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fprofile1.custom['hidden_widgets'].keys(): ]]
+ [%[= fprofile1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fprofile1.custom['end'] ]]
 </div>
 <!-- end fprofile1 -->
+
 
             </div>
             <!-- /.post -->
@@ -1170,7 +1184,7 @@
 
 <div class="form-group row">
  <label class="col-sm-2 col-form-label" for="inputName">
-  Name:p4w
+  Name
  </label>
  <div class="col-sm-10">
  [%[ fprofile2.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -1186,7 +1200,7 @@
 
 <div class="form-group row">
  <label class="col-sm-2 col-form-label" for="inputEmail">
-  Email:p4w
+  Email
  </label>
  <div class="col-sm-10">
  [%[ fprofile2.custom['widgets']['f1']['_type']= 'text'  ]]
@@ -1202,7 +1216,7 @@
 
 <div class="form-group row">
  <label class="col-sm-2 col-form-label" for="inputName2">
-  Name:p4w
+  Name
  </label>
  <div class="col-sm-10">
  [%[ fprofile2.custom['widgets']['f2']['_type']= 'text'  ]]
@@ -1218,7 +1232,7 @@
 
 <div class="form-group row">
  <label class="col-sm-2 col-form-label" for="inputExperience">
-  Experience:p4w
+  Experience
  </label>
  <div class="col-sm-10">
  [%[ fprofile2.custom['widgets']['f3']['_class']= 'form-control'  ]]
@@ -1232,14 +1246,18 @@
 
  [%[ fprofile2.custom['submit']['_class']= 'form-control'  ]]
  [%[ fprofile2.custom['submit']['_id']= 'inputExperience'  ]]
- [%[ fprofile2.custom['submit']['_placeholder']= 'Experience'  ]]
+ [%[ fprofile2.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fprofile2.custom['submit']['_type']= 'submit'  ]]
  [%[ fprofile2.custom['submit']['_name']= 'textarea'  ]]
  [%[ fprofile2.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fprofile2.custom['submit'] ]]
+ [%[ for hidden_widget in fprofile2.custom['hidden_widgets'].keys(): ]]
+ [%[= fprofile2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fprofile2.custom['end'] ]]
 </div>
 <!-- end fprofile2 -->
+
 
            </div>
            <!-- /.tab-pane -->

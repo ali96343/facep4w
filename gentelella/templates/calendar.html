@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:08 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:44 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -489,7 +489,6 @@
  [%[ fcalendar0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fcalendar0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fcalendar0.custom['widgets']['f0']['_id']= 'title'  ]]
- [%[ fcalendar0.custom['widgets']['f0']['_name']= 'title'  ]]
  [%[ fcalendar0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fcalendar0.custom['widgets']['f0'] ]]
 
@@ -517,11 +516,16 @@
  [%[ fcalendar0.custom['submit']['_id']= 'descr'  ]]
  [%[ fcalendar0.custom['submit']['_name']= 'textarea'  ]]
  [%[ fcalendar0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fcalendar0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fcalendar0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fcalendar0.custom['submit'] ]]
+ [%[ for hidden_widget in fcalendar0.custom['hidden_widgets'].keys(): ]]
+ [%[= fcalendar0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fcalendar0.custom['end'] ]]
 </div>
 <!-- end fcalendar0 -->
+
 
       </div>
      </div>
@@ -554,7 +558,6 @@
  [%[ fcalendar1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fcalendar1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fcalendar1.custom['widgets']['f0']['_id']= 'title2'  ]]
- [%[ fcalendar1.custom['widgets']['f0']['_name']= 'title2'  ]]
  [%[ fcalendar1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fcalendar1.custom['widgets']['f0'] ]]
 
@@ -582,11 +585,16 @@
  [%[ fcalendar1.custom['submit']['_id']= 'descr2'  ]]
  [%[ fcalendar1.custom['submit']['_name']= 'textarea'  ]]
  [%[ fcalendar1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fcalendar1.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fcalendar1.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fcalendar1.custom['submit'] ]]
+ [%[ for hidden_widget in fcalendar1.custom['hidden_widgets'].keys(): ]]
+ [%[= fcalendar1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fcalendar1.custom['end'] ]]
 </div>
 <!-- end fcalendar1 -->
+
 
       </div>
      </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:56:58 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -57,9 +57,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fwidgets0.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets0.custom['end'] ]]
 </div>
 <!-- end fwidgets0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -479,6 +483,12 @@
         <a class="nav-link" href="[%[=URL('gallery') ]]">
          <i class="nav-icon far fa-image"></i>
          <p>Gallery</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
         </a>
        </li>
        <li class="nav-item">
@@ -928,8 +938,8 @@
           <i class="far fa-envelope"></i>
          </span>
          <div class="info-box-content">
-          <span class="info-box-text">Custom Shadows - None</span>
-          <span class="info-box-number"></span>
+          <span class="info-box-text">Shadows</span>
+          <span class="info-box-number">None</span>
          </div>
          <!-- /.info-box-content -->
         </div>
@@ -942,8 +952,8 @@
           <i class="far fa-flag"></i>
          </span>
          <div class="info-box-content">
-          <span class="info-box-text">Custom Shadows - Small</span>
-          <span class="info-box-number"></span>
+          <span class="info-box-text">Shadows</span>
+          <span class="info-box-number">Small</span>
          </div>
          <!-- /.info-box-content -->
         </div>
@@ -956,8 +966,8 @@
           <i class="far fa-copy"></i>
          </span>
          <div class="info-box-content">
-          <span class="info-box-text">Custom Shadows - Regular</span>
-          <span class="info-box-number"></span>
+          <span class="info-box-text">Shadows</span>
+          <span class="info-box-number">Regular</span>
          </div>
          <!-- /.info-box-content -->
         </div>
@@ -970,8 +980,8 @@
           <i class="far fa-star"></i>
          </span>
          <div class="info-box-content">
-          <span class="info-box-text">Custom Shadows - Large</span>
-          <span class="info-box-number"></span>
+          <span class="info-box-text">Shadows</span>
+          <span class="info-box-number">Large</span>
          </div>
          <!-- /.info-box-content -->
         </div>
@@ -1797,7 +1807,7 @@
       <div class="row">
        <div class="col-md-3">
         <!-- DIRECT CHAT PRIMARY -->
-        <div class="card card-prirary cardutline direct-chat direct-chat-primary">
+        <div class="card card-primary card-outline direct-chat direct-chat-primary">
          <div class="card-header">
           <h3 class="card-title">Direct Chat</h3>
           <div class="card-tools">
@@ -1876,7 +1886,6 @@
 
 <div class="input-group">
  [%[ fwidgets1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets1.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets1.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets1.custom['widgets']['f0'] ]]
@@ -1891,9 +1900,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets1.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets1.custom['end'] ]]
 </div>
 <!-- end fwidgets1 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -1903,7 +1916,7 @@
        <!-- /.col -->
        <div class="col-md-3">
         <!-- DIRECT CHAT SUCCESS -->
-        <div class="card card-sucress cardutline direct-chat direct-chat-success">
+        <div class="card card-success card-outline direct-chat direct-chat-success">
          <div class="card-header">
           <h3 class="card-title">Direct Chat</h3>
           <div class="card-tools">
@@ -1982,7 +1995,6 @@
 
 <div class="input-group">
  [%[ fwidgets2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets2.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets2.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets2.custom['widgets']['f0'] ]]
@@ -1997,9 +2009,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets2.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets2.custom['end'] ]]
 </div>
 <!-- end fwidgets2 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2088,7 +2104,6 @@
 
 <div class="input-group">
  [%[ fwidgets3.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets3.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets3.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets3.custom['widgets']['f0'] ]]
@@ -2103,9 +2118,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets3.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets3.custom['end'] ]]
 </div>
 <!-- end fwidgets3 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2194,7 +2213,6 @@
 
 <div class="input-group">
  [%[ fwidgets4.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets4.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets4.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets4.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets4.custom['widgets']['f0'] ]]
@@ -2209,9 +2227,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets4.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets4.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets4.custom['end'] ]]
 </div>
 <!-- end fwidgets4 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2231,7 +2253,7 @@
       <div class="row">
        <div class="col-md-3">
         <!-- DIRECT CHAT PRIMARY -->
-        <div class="card card-prirary cardutline direct-chat direct-chat-primary shadow-none">
+        <div class="card card-primary card-outline direct-chat direct-chat-primary shadow-none">
          <div class="card-header">
           <h3 class="card-title">Shadow - None</h3>
           <div class="card-tools">
@@ -2310,7 +2332,6 @@
 
 <div class="input-group">
  [%[ fwidgets5.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets5.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets5.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets5.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets5.custom['widgets']['f0'] ]]
@@ -2325,9 +2346,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets5.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets5.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets5.custom['end'] ]]
 </div>
 <!-- end fwidgets5 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2337,7 +2362,7 @@
        <!-- /.col -->
        <div class="col-md-3">
         <!-- DIRECT CHAT SUCCESS -->
-        <div class="card card-sucress cardutline direct-chat direct-chat-success shadow-sm">
+        <div class="card card-success card-outline direct-chat direct-chat-success shadow-sm">
          <div class="card-header">
           <h3 class="card-title">Shadow - Small</h3>
           <div class="card-tools">
@@ -2416,7 +2441,6 @@
 
 <div class="input-group">
  [%[ fwidgets6.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets6.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets6.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets6.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets6.custom['widgets']['f0'] ]]
@@ -2431,9 +2455,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets6.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets6.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets6.custom['end'] ]]
 </div>
 <!-- end fwidgets6 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2522,7 +2550,6 @@
 
 <div class="input-group">
  [%[ fwidgets7.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets7.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets7.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets7.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets7.custom['widgets']['f0'] ]]
@@ -2537,9 +2564,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets7.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets7.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets7.custom['end'] ]]
 </div>
 <!-- end fwidgets7 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2628,7 +2659,6 @@
 
 <div class="input-group">
  [%[ fwidgets8.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets8.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ fwidgets8.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ fwidgets8.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fwidgets8.custom['widgets']['f0'] ]]
@@ -2643,9 +2673,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in fwidgets8.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets8.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets8.custom['end'] ]]
 </div>
 <!-- end fwidgets8 -->
+
 
          </div>
          <!-- /.card-footer-->
@@ -2880,14 +2914,18 @@
 
  [%[ fwidgets9.custom['submit']['_type']= 'submit'  ]]
  [%[ fwidgets9.custom['submit']['_class']= 'form-control form-control-sm'  ]]
- [%[ fwidgets9.custom['submit']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[ fwidgets9.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fwidgets9.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fwidgets9.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fwidgets9.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets9.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets9.custom['end'] ]]
 </div>
 <!-- end fwidgets9 -->
+
 
          </div>
          <!-- /.card-footer -->
@@ -3006,14 +3044,18 @@
 
  [%[ fwidgets10.custom['submit']['_type']= 'submit'  ]]
  [%[ fwidgets10.custom['submit']['_class']= 'form-control form-control-sm'  ]]
- [%[ fwidgets10.custom['submit']['_placeholder']= 'Press enter to post comment:p4w'  ]]
+ [%[ fwidgets10.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fwidgets10.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fwidgets10.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fwidgets10.custom['hidden_widgets'].keys(): ]]
+ [%[= fwidgets10.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fwidgets10.custom['end'] ]]
 </div>
 <!-- end fwidgets10 -->
+
 
          </div>
          <!-- /.card-footer -->

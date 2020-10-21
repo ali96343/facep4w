@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:04 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -57,9 +57,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fenhancedXresults0.custom['hidden_widgets'].keys(): ]]
+ [%[= fenhancedXresults0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fenhancedXresults0.custom['end'] ]]
 </div>
 <!-- end fenhancedXresults0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -482,6 +486,12 @@
         </a>
        </li>
        <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
+        </a>
+       </li>
+       <li class="nav-item">
         <a class="nav-link" href="#">
          <i class="nav-icon far fa-envelope"></i>
          <p>
@@ -853,7 +863,7 @@
    <div class="col-6">
     <div class="form-group">
      <label>
-      Result Type::p4w
+      Result Type:
      </label>
  [%[ fenhancedXresults1.custom['widgets']['f0']['_class']= 'select2'  ]]
  [%[ fenhancedXresults1.custom['widgets']['f0']['_multiple']= 'multiple'  ]]
@@ -868,7 +878,7 @@
    <div class="col-3">
     <div class="form-group">
      <label>
-      Sort Order::p4w
+      Sort Order:
      </label>
  [%[ fenhancedXresults1.custom['widgets']['f1']['_class']= 'select2'  ]]
  [%[ fenhancedXresults1.custom['widgets']['f1']['_style']= 'width: 100%;'  ]]
@@ -881,7 +891,7 @@
    <div class="col-3">
     <div class="form-group">
      <label>
-      Order By::p4w
+      Order By:
      </label>
  [%[ fenhancedXresults1.custom['widgets']['f2']['_class']= 'select2'  ]]
  [%[ fenhancedXresults1.custom['widgets']['f2']['_style']= 'width: 100%;'  ]]
@@ -913,9 +923,13 @@
   </div>
  </div>
 </div>
+ [%[ for hidden_widget in fenhancedXresults1.custom['hidden_widgets'].keys(): ]]
+ [%[= fenhancedXresults1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fenhancedXresults1.custom['end'] ]]
 </div>
 <!-- end fenhancedXresults1 -->
+
 
       <div class="row mt-3">
        <div class="col-md-10 offset-md-1">

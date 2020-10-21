@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/images/favicon.png') ]]" rel="icon" sizes="32x32" type="image/png"/>
@@ -298,19 +298,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js"></script>
   <script>
    window.addEventListener('resize', () => {
-  const divs = document.querySelectorAll(".menu-list");
-  if (window.innerWidth < 768){
-    divs.forEach(div => div.classList.add("tags"));
-  }
-  else {
-    divs.forEach(div => div.classList.remove("tags"));
-  }
+    const divs = document.querySelectorAll(".menu-list");
+    if (window.innerWidth < 768) {
+        divs.forEach(div => div.classList.add("tags"));
+    } else {
+        divs.forEach(div => div.classList.remove("tags"));
+    }
 });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-	//The first argument are the elements to which the plugin shall be initialized
-	//The second argument has to be at least a empty object or a object with your desired options
-	OverlayScrollbars(document.querySelectorAll("body"), { });
+
+document.addEventListener("DOMContentLoaded", function() {
+    //The first argument are the elements to which the plugin shall be initialized
+    //The second argument has to be at least a empty object or a object with your desired options
+    OverlayScrollbars(document.querySelectorAll("body"), {});
 });
   </script>
  </body>

@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:44 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:29 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -767,7 +767,6 @@
  <div class="col-12">
  [%[ findex0.custom['widgets']['f0']['_aria-label']= 'Subscribe form'  ]]
  [%[ findex0.custom['widgets']['f0']['_class']= 'form-control mb-2'  ]]
- [%[ findex0.custom['widgets']['f0']['_name']= 'email'  ]]
  [%[ findex0.custom['widgets']['f0']['_placeholder']= 'example@company.com:p4w'  ]]
  [%[ findex0.custom['widgets']['f0']['_required']= 'len0'  ]]
  [%[ findex0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -785,9 +784,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in findex0.custom['hidden_widgets'].keys(): ]]
+ [%[= findex0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= findex0.custom['end'] ]]
 </div>
 <!-- end findex0 -->
+
 
       <p class="text-muted font-small m-0">
        We’ll never share your details. See our

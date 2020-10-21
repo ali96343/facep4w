@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 12:19:38 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 14:13:53 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -49,9 +49,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fblank0.custom['hidden_widgets'].keys(): ]]
+ [%[= fblank0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fblank0.custom['end'] ]]
 </div>
 <!-- end fblank0 -->
+
 
    <!-- Navbar -->
    <ul class="navbar-nav ml-auto ml-md-0">

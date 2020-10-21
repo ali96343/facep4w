@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/images/favicon.png') ]]" rel="icon" sizes="32x32" type="image/png"/>
@@ -16,7 +16,7 @@
   <nav class="navbar has-shadow">
    <div class="container">
     <div class="navbar-brand">
-     <a class="navbar-item" href="[%[=URL('index') ]]">
+     <a class="navbar-item" href="../">
       <img alt="Bulma: a modern CSS framework based on Flexbox" src="http://bulma.io/images/bulma-logo.png"/></a>
      <div class="navbar-burger burger" data-target="navMenu">
       <span></span>
@@ -47,28 +47,7 @@
       <div class="card-content">
        <div class="content">
         <div class="control has-icons-left has-icons-right">
-         
-
-<!-- view: fkanban0, db_table: dfkanban0 -->
-<div>
-[%[= fkanban0.custom['begin'] ]]
-
- [%[ fkanban0.custom['widgets']['f0']['_class']= 'input is-large'  ]]
- [%[ fkanban0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fkanban0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fkanban0.custom['errors']['f0'] if 'f0' in fkanban0.custom['errors'] else '' ]]</span>
-
- [%[ fkanban0.custom['submit']['_class']= 'input is-large'  ]]
- [%[ fkanban0.custom['submit']['_type']= 'submit'  ]]
- [%[ fkanban0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fkanban0.custom['submit'] ]]
-
-[%[= fkanban0.custom['end'] ]]
-</div>
-<!-- end fkanban0 -->
-
-
+         <input class="input is-large" type="search"/>
          <span class="icon is-medium is-left">
           <i class="fa fa-search"></i>
          </span>

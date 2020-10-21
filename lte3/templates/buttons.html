@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:00 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -55,9 +55,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fbuttons0.custom['hidden_widgets'].keys(): ]]
+ [%[= fbuttons0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fbuttons0.custom['end'] ]]
 </div>
 <!-- end fbuttons0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -477,6 +481,12 @@
         <a class="nav-link" href="[%[=URL('gallery') ]]">
          <i class="nav-icon far fa-image"></i>
          <p>Gallery</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
         </a>
        </li>
        <li class="nav-item">
@@ -977,6 +987,43 @@
       <!-- ./row -->
       <div class="row">
        <div class="col-md-6">
+        <!-- Buttons with Icons -->
+        <div class="card">
+         <div class="card-header">
+          <h3 class="card-title">Buttons with Icons</h3>
+         </div>
+         <div class="card-body row">
+          <div class="col-md-6">
+           <button class="btn btn-primary btn-block" type="button">
+            <i class="fa fa-bell"></i>
+            .btn-block
+           </button>
+           <button class="btn btn-info btn-block btn-flat" type="button">
+            <i class="fa fa-bell"></i>
+            .btn-block .btn-flat
+           </button>
+           <button class="btn btn-danger btn-block btn-sm" type="button">
+            <i class="fa fa-bell"></i>
+            .btn-block .btn-sm
+           </button>
+          </div>
+          <div class="col-md-6">
+           <button class="btn btn-outline-primary btn-block" type="button">
+            <i class="fa fa-bell"></i>
+            .btn-block
+           </button>
+           <button class="btn btn-outline-info btn-block btn-flat" type="button">
+            <i class="fa fa-book"></i>
+            .btn-block .btn-flat
+           </button>
+           <button class="btn btn-outline-danger btn-block btn-sm" type="button">
+            <i class="fa fa-book"></i>
+            .btn-block .btn-sm
+           </button>
+          </div>
+         </div>
+        </div>
+        <!-- /.card -->
         <!-- Block buttons -->
         <div class="card">
          <div class="card-header">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:00 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:07 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -59,9 +59,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar0.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar0.custom['end'] ]]
 </div>
 <!-- end fnavbar0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -481,6 +485,12 @@
         <a class="nav-link" href="[%[=URL('gallery') ]]">
          <i class="nav-icon far fa-image"></i>
          <p>Gallery</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
         </a>
        </li>
        <li class="nav-item">
@@ -913,9 +923,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar1.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar1.custom['end'] ]]
 </div>
 <!-- end fnavbar1 -->
+
 
             </nav>
            </div>
@@ -962,9 +976,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar2.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar2.custom['end'] ]]
 </div>
 <!-- end fnavbar2 -->
+
 
             </nav>
            </div>
@@ -1016,9 +1034,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar3.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar3.custom['end'] ]]
 </div>
 <!-- end fnavbar3 -->
+
 
             </nav>
            </div>
@@ -1065,9 +1087,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar4.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar4.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar4.custom['end'] ]]
 </div>
 <!-- end fnavbar4 -->
+
 
             </nav>
            </div>
@@ -1119,9 +1145,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar5.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar5.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar5.custom['end'] ]]
 </div>
 <!-- end fnavbar5 -->
+
 
             </nav>
            </div>
@@ -1168,9 +1198,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fnavbar6.custom['hidden_widgets'].keys(): ]]
+ [%[= fnavbar6.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnavbar6.custom['end'] ]]
 </div>
 <!-- end fnavbar6 -->
+
 
             </nav>
            </div>

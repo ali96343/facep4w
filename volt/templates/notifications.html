@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:45 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -295,16 +295,20 @@
  [%[ fnotifications0.custom['submit']['_type']= 'submit'  ]]
  [%[ fnotifications0.custom['submit']['_class']= 'form-control'  ]]
  [%[ fnotifications0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fnotifications0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fnotifications0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fnotifications0.custom['submit']['_aria-label']= 'Search'  ]]
  [%[ fnotifications0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
  [%[ fnotifications0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fnotifications0.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fnotifications0.custom['hidden_widgets'].keys(): ]]
+ [%[= fnotifications0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fnotifications0.custom['end'] ]]
 </div>
 <!-- end fnotifications0 -->
+
 
          </div>
          <!-- Navbar links -->

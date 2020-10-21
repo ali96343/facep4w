@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:01 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:08 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -55,9 +55,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in fvalidation0.custom['hidden_widgets'].keys(): ]]
+ [%[= fvalidation0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fvalidation0.custom['end'] ]]
 </div>
 <!-- end fvalidation0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -480,6 +484,12 @@
         </a>
        </li>
        <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
+        </a>
+       </li>
+       <li class="nav-item">
         <a class="nav-link" href="#">
          <i class="nav-icon far fa-envelope"></i>
          <p>
@@ -873,10 +883,9 @@
 <div class="card-body">
  <div class="form-group">
   <label for="exampleInputEmail1">
-   Email address:p4w
+   Email address
   </label>
  [%[ fvalidation1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fvalidation1.custom['widgets']['f0']['_name']= 'email'  ]]
  [%[ fvalidation1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fvalidation1.custom['widgets']['f0']['_id']= 'exampleInputEmail1'  ]]
  [%[ fvalidation1.custom['widgets']['f0']['_placeholder']= 'Enter email:p4w'  ]]
@@ -887,10 +896,9 @@
  </div>
  <div class="form-group">
   <label for="exampleInputPassword1">
-   Password:p4w
+   Password
   </label>
  [%[ fvalidation1.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fvalidation1.custom['widgets']['f1']['_name']= 'password'  ]]
  [%[ fvalidation1.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fvalidation1.custom['widgets']['f1']['_id']= 'exampleInputPassword1'  ]]
  [%[ fvalidation1.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
@@ -902,7 +910,6 @@
  <div class="form-group mb-0">
   <div class="custom-control custom-checkbox">
  [%[ fvalidation1.custom['widgets']['f2']['_type']= 'checkbox'  ]]
- [%[ fvalidation1.custom['widgets']['f2']['_name']= 'terms'  ]]
  [%[ fvalidation1.custom['widgets']['f2']['_class']= 'custom-control-input'  ]]
  [%[ fvalidation1.custom['widgets']['f2']['_id']= 'exampleCheck1'  ]]
  [%[ fvalidation1.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
@@ -911,12 +918,12 @@
  <span style="color:#ff0000">[%[= fvalidation1.custom['errors']['f2'] if 'f2' in fvalidation1.custom['errors'] else '' ]]</span>
 
    <label class="custom-control-label" for="exampleCheck1">
-    I agree to the:p4w
+    I agree to the
  [%[ fvalidation1.custom['submit']['_type']= 'submit'  ]]
  [%[ fvalidation1.custom['submit']['_value']= 'a:p4w'  ]]
  [%[= fvalidation1.custom['submit'] ]]
 
-    .:p4w
+    .
    </label>
   </div>
  </div>
@@ -924,12 +931,16 @@
 
 <div class="card-footer">
  <button class="btn btn-primary" type="submit">
-  Submit:p4w
+  Submit
  </button>
 </div>
+ [%[ for hidden_widget in fvalidation1.custom['hidden_widgets'].keys(): ]]
+ [%[= fvalidation1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fvalidation1.custom['end'] ]]
 </div>
 <!-- end fvalidation1 -->
+
 
         </div>
         <!-- /.card -->

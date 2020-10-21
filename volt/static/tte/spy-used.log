@@ -26,8 +26,8 @@ assets/img/themesberg.svg
 vendor/notyf/notyf.min.css
 assets/img/flags/japan.svg
 assets/img/brand/light.svg
-assets/img/flags/france.svg
 assets/img/flags/canada.svg
+assets/img/flags/france.svg
 vendor/notyf/notyf.min.js.un
 assets/img/pages/sign-up.jpg
 assets/img/pages/sign-in.jpg
@@ -70,8 +70,8 @@ vendor/bootstrap/dist/js/bootstrap.min.js
 vendor/simplebar/dist/simplebar.min.css.un
 vendor/popper.js/dist/esm/popper.min.js.un
 vendor/popper.js/dist/umd/popper.min.js.un
-vendor/popper.js/dist/popper-utils.min.js.un
 vendor/onscreen/dist/on-screen.umd.min.js.un
+vendor/popper.js/dist/popper-utils.min.js.un
 vendor/bootstrap/dist/js/bootstrap.min.js.un
 vendor/jarallax/dist/jarallax-video.min.js.un
 assets/img/flags/united-states-of-america.svg
@@ -99,8 +99,8 @@ vendor/bootstrap/dist/css/bootstrap-reboot.min.css.un
 vendor/@fortawesome/fontawesome-free/js/all.min.js.un
 vendor/@fortawesome/fontawesome-free/js/solid.min.js.un
 vendor/@fortawesome/fontawesome-free/css/all.min.css.un
-vendor/vanillajs-datepicker/dist/js/datepicker.min.js.un
 vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js
+vendor/vanillajs-datepicker/dist/js/datepicker.min.js.un
 vendor/bootstrap/dist/css/bootstrap-utilities.min.css.un
 vendor/@fortawesome/fontawesome-free/js/brands.min.js.un
 vendor/@fortawesome/fontawesome-free/js/regular.min.js.un
@@ -147,8 +147,8 @@ volt-bootstrap-5-dashboard/html&css/vendor/simplebar/dist/simplebar.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/simplebar/dist/simplebar.min.css.un
 volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/esm/popper.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/umd/popper.min.js.un
-volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/popper-utils.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/onscreen/dist/on-screen.umd.min.js.un
+volt-bootstrap-5-dashboard/html&css/vendor/popper.js/dist/popper-utils.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/bootstrap/dist/js/bootstrap.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/jarallax/dist/jarallax-video.min.js.un
 volt-bootstrap-5-dashboard/html&css/vendor/waypoints/lib/zepto.waypoints.min.js.un

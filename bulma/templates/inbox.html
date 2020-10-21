@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -19,7 +19,7 @@
   <nav class="navbar has-shadow">
    <div class="container">
     <div class="navbar-brand">
-     <a class="navbar-item" href="[%[=URL('index') ]]">
+     <a class="navbar-item" href="../">
       <img alt="Bulma: a modern CSS framework based on Flexbox" src="http://bulma.io/images/bulma-logo.png"/></a>
      <div class="navbar-burger burger" data-target="navMenu">
       <span></span>
@@ -210,47 +210,47 @@
   <script crossorigin="anonymous" integrity="sha256-4PIvl58L9q7iwjT654TQJM+C/acEyoG738iL8B8nhXg=" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
   <script>
    $(document).ready(function() {
-            window.inbox = {};
-            window.paginate = {
-                total: Math.random() * (54236 - 100) + 3
-            }
-            for (var i = 0; i <= 10; i++) {
-                window.inbox[i] = {
-                    from: faker.name.findName(),
-                    timestamp: null,
-                    subject: faker.lorem.sentence().substring(0, 40),
-                    snippet: faker.lorem.lines(),
-                    fullMail: window.faker.lorem.paragraphs(faker.random.number(40)),
-                    email: faker.internet.email()
-                };
-            }
-            var inboxVue = new Vue({
-                el: '#mail-app',
-                data: {
-                    messages: window.inbox,
-                    paginate: {
-                        pointer: {
-                            start: 1,
-                            end: 10
-                        },
-                        total: 100
-                    }
+    window.inbox = {};
+    window.paginate = {
+        total: Math.random() * (54236 - 100) + 3
+    }
+    for (var i = 0; i <= 10; i++) {
+        window.inbox[i] = {
+            from: faker.name.findName(),
+            timestamp: null,
+            subject: faker.lorem.sentence().substring(0, 40),
+            snippet: faker.lorem.lines(),
+            fullMail: window.faker.lorem.paragraphs(faker.random.number(40)),
+            email: faker.internet.email()
+        };
+    }
+    var inboxVue = new Vue({
+        el: '#mail-app',
+        data: {
+            messages: window.inbox,
+            paginate: {
+                pointer: {
+                    start: 1,
+                    end: 10
                 },
-                methods: {
-                    showMessage: function(msg, index) {
-                        $('#message-pane').removeClass('is-hidden');
-                        $('.card').removeClass('active');
-                        $('#msg-card-' + index).addClass('active');
-                        $('.message .address .name').text(msg.from);
-                        $('.message .address .email').text(msg.email);
-                        var msg_body = '<p>' + msg.snippet + '</p>' +
-                            '<br>' +
-                            '<p>' + msg.fullMail + '</p>';
-                        $('.message .content').html(msg_body);
-                    }
-                }
-            });
-        });
+                total: 100
+            }
+        },
+        methods: {
+            showMessage: function(msg, index) {
+                $('#message-pane').removeClass('is-hidden');
+                $('.card').removeClass('active');
+                $('#msg-card-' + index).addClass('active');
+                $('.message .address .name').text(msg.from);
+                $('.message .address .email').text(msg.email);
+                var msg_body = '<p>' + msg.snippet + '</p>' +
+                    '<br>' +
+                    '<p>' + msg.fullMail + '</p>';
+                $('.message .content').html(msg_body);
+            }
+        }
+    });
+});
   </script>
  </body>
 </html>

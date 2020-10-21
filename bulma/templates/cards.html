@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -49,8 +49,8 @@
     <div class="row columns is-multiline" id="app">
      <div class="column is-4" key="card.id" v-for="card in cardData">
       <div class="card large">
-       <div class="card-image is-16by9">
-        <figure class="image">
+       <div class="card-image">
+        <figure class="image is-16by9">
          <img :src="card.image" alt="Image"/>
         </figure>
        </div>
@@ -116,11 +116,11 @@
   <!-- Using Vue to populate cards to reduce redundant code -->
   <script>
    var app = new Vue({
-        el: '#app',
-        data: {
-          cardData: cardsData
-        }
-      })
+    el: '#app',
+    data: {
+        cardData: cardsData
+    }
+})
   </script>
  </body>
 </html>

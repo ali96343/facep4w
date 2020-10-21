@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:45 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -296,15 +296,19 @@
  [%[ fmodals0.custom['submit']['_aria-label']= 'Search'  ]]
  [%[ fmodals0.custom['submit']['_class']= 'form-control'  ]]
  [%[ fmodals0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fmodals0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fmodals0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fmodals0.custom['submit']['_type']= 'submit'  ]]
  [%[ fmodals0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fmodals0.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fmodals0.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fmodals0.custom['end'] ]]
 </div>
 <!-- end fmodals0 -->
+
 
          </div>
          <!-- Navbar links -->
@@ -627,9 +631,13 @@
 <button class="btn btn-block btn-primary" type="submit">
  Sign in
 </button>
+ [%[ for hidden_widget in fmodals1.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fmodals1.custom['end'] ]]
 </div>
 <!-- end fmodals1 -->
+
 
                   <div class="mt-3 mb-4 text-center">
                    <span class="font-weight-normal">or login with</span>
@@ -763,9 +771,13 @@
 <button class="btn btn-block btn-primary" type="submit">
  Sign in
 </button>
+ [%[ for hidden_widget in fmodals2.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fmodals2.custom['end'] ]]
 </div>
 <!-- end fmodals2 -->
+
 
                   <div class="mt-3 mb-4 text-center">
                    <span class="font-weight-normal">or</span>

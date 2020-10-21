@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -21,7 +21,7 @@
     <nav class="navbar">
      <div class="container">
       <div class="navbar-brand">
-       <a class="navbar-item" href="[%[=URL('index') ]]">
+       <a class="navbar-item" href="../">
         <img alt="Logo" src="http://bulma.io/images/bulma-type-white.png"/></a>
        <span class="navbar-burger burger" data-target="navbarMenu">
         <span></span>
@@ -76,30 +76,7 @@
       <div class="box">
        <div class="field is-grouped">
         <p class="control is-expanded">
-         
-
-<!-- view: flanding0, db_table: dflanding0 -->
-<div>
-[%[= flanding0.custom['begin'] ]]
-
- [%[ flanding0.custom['widgets']['f0']['_class']= 'input'  ]]
- [%[ flanding0.custom['widgets']['f0']['_placeholder']= 'Enter your email:p4w'  ]]
- [%[ flanding0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= flanding0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= flanding0.custom['errors']['f0'] if 'f0' in flanding0.custom['errors'] else '' ]]</span>
-
- [%[ flanding0.custom['submit']['_class']= 'input'  ]]
- [%[ flanding0.custom['submit']['_placeholder']= 'Enter your email:p4w'  ]]
- [%[ flanding0.custom['submit']['_type']= 'submit'  ]]
- [%[ flanding0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= flanding0.custom['submit'] ]]
-
-[%[= flanding0.custom['end'] ]]
-</div>
-<!-- end flanding0 -->
-
-</p>
+         <input class="input" placeholder="Enter your email" type="text"/></p>
         <p class="control">
          <a class="button is-info">Notify Me</a>
         </p>

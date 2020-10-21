@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:57:03 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -76,7 +76,7 @@
  <span style="color:#ff0000">[%[= floginXv20.custom['errors']['f2'] if 'f2' in floginXv20.custom['errors'] else '' ]]</span>
 
    <label for="remember">
-    Remember Me:p4w
+    Remember Me
    </label>
   </div>
  </div>
@@ -90,9 +90,13 @@
  </div>
  <!-- /.col -->
 </div>
+ [%[ for hidden_widget in floginXv20.custom['hidden_widgets'].keys(): ]]
+ [%[= floginXv20.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= floginXv20.custom['end'] ]]
 </div>
 <!-- end floginXv20 -->
+
 
      <div class="social-auth-links text-center mt-2 mb-3">
       <a class="btn btn-block btn-primary" href="#">

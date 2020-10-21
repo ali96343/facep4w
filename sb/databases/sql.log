@@ -19,13 +19,21 @@ CREATE TABLE "auth_user_tag_groups"(
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2020-08-19T10:13:29.389529
+timestamp: 2020-10-21T14:14:30.176069
+CREATE TABLE "test_table"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "f1" CHAR(512),
+    "f2" CHAR(512)
+);
+success!
+timestamp: 2020-10-21T14:14:30.212019
 CREATE TABLE "dfindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.425056
+timestamp: 2020-10-21T14:14:30.228661
 CREATE TABLE "dflogin0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -33,7 +41,7 @@ CREATE TABLE "dflogin0"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-08-19T10:13:29.448027
+timestamp: 2020-10-21T14:14:30.248899
 CREATE TABLE "dfregister0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -43,37 +51,37 @@ CREATE TABLE "dfregister0"(
     "f4" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.472208
+timestamp: 2020-10-21T14:14:30.267772
 CREATE TABLE "dfforgotXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.495081
+timestamp: 2020-10-21T14:14:30.285479
 CREATE TABLE "dfX4040"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.515361
+timestamp: 2020-10-21T14:14:30.305003
 CREATE TABLE "dfblank0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.531961
+timestamp: 2020-10-21T14:14:30.322585
 CREATE TABLE "dfcharts0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.548575
+timestamp: 2020-10-21T14:14:30.341343
 CREATE TABLE "dftables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.566527
+timestamp: 2020-10-21T14:14:30.361042
 CREATE TABLE "tindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -84,7 +92,7 @@ CREATE TABLE "tindex0"(
     "f5" CHAR(512)
 );
 success!
-timestamp: 2020-08-19T10:13:29.583299
+timestamp: 2020-10-21T14:14:30.378430
 CREATE TABLE "ttables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -93,13 +101,5 @@ CREATE TABLE "ttables0"(
     "f3" CHAR(512),
     "f4" CHAR(512),
     "f5" CHAR(512)
-);
-success!
-timestamp: 2020-10-05T12:20:13.852882
-CREATE TABLE "test_table"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
-    "f2" CHAR(512)
 );
 success!

@@ -1,5 +1,10 @@
 from .common import db, Field
 from pydal.validators import *
+from py4web.utils.populate import populate
+
+#
+# py4web app, AI-biorex ported 21.10.2020 16:01:04
+#
 
 #import pydal
 
@@ -21,70 +26,21 @@ if not db(db.auth_user).count():
 
 
 db.define_table(
-    'dfadmin0',
-    Field('f0','string'),
+    'test_table',
+    Field( 'f0', 'string', label='l0'),
+    Field( 'f1', 'string', label='l1'),
+    Field( 'f2', 'string', label='l2'),
     )
 
-db.define_table(
-    'dfadmin1',
-    Field('f0','string'),
-    )
+if not db(db.test_table).count():
+    populate(db.test_table, n=10)
+
 
 db.define_table(
     'dfband0',
     Field('f0','string'),
     Field('f1','string'),
     Field('f2','text'),
-    )
-
-db.define_table(
-    'dfforum0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfhelloXparallax0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfhelloXparallax1',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfinstaAlbum0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfinstaAlbum1',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfinstaAlbum2',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfinstaAlbum3',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfkanban0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfkanbanXsearchX0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dflanding0',
-    Field('f0','string'),
     )
 
 db.define_table(
@@ -98,21 +54,6 @@ db.define_table(
     'dfneumorphicXlogin0',
     Field('f0','string'),
     Field('f1','string'),
-    )
-
-db.define_table(
-    'dfpersonal0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfpersonal1',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfpersonal2',
-    Field('f0','text'),
     )
 
 db.define_table(
@@ -134,36 +75,6 @@ db.define_table(
     'dfregister0',
     Field('f0','string'),
     Field('f1','string'),
-    )
-
-db.define_table(
-    'dfcontact0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfcontact1',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfcontact2',
-    Field('f0','text'),
-    )
-
-db.define_table(
-    'dfblogXtailsaw0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfblogXtailsaw1',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfsearch0',
-    Field('f0','string'),
     )
 
 db.define_table(

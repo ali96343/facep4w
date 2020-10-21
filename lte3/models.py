@@ -2,6 +2,9 @@ from .common import db, Field
 from pydal.validators import *
 from py4web.utils.populate import populate
 
+#
+# py4web app, AI-biorex ported 21.10.2020 16:02:05
+#
 
 #import pydal
 
@@ -286,6 +289,11 @@ db.define_table(
     )
 
 db.define_table(
+    'dfkanban0',
+    Field('f0','string'),
+    )
+
+db.define_table(
     'dfmailbox0',
     Field('f0','string'),
     )
@@ -429,16 +437,6 @@ db.define_table(
 
 db.define_table(
     'dflanguageXmenu0',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfX4040',
-    Field('f0','string'),
-    )
-
-db.define_table(
-    'dfX4041',
     Field('f0','string'),
     )
 

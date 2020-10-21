@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -706,61 +706,14 @@
          Name
         </label>
         <div class="control">
-         
-
-<!-- view: fpersonal0, db_table: dfpersonal0 -->
-<div>
-[%[= fpersonal0.custom['begin'] ]]
-
- [%[ fpersonal0.custom['widgets']['f0']['_class']= 'input'  ]]
- [%[ fpersonal0.custom['widgets']['f0']['_placeholder']= 'Text input:p4w'  ]]
- [%[ fpersonal0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fpersonal0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fpersonal0.custom['errors']['f0'] if 'f0' in fpersonal0.custom['errors'] else '' ]]</span>
-
- [%[ fpersonal0.custom['submit']['_class']= 'input'  ]]
- [%[ fpersonal0.custom['submit']['_placeholder']= 'Text input:p4w'  ]]
- [%[ fpersonal0.custom['submit']['_type']= 'submit'  ]]
- [%[ fpersonal0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fpersonal0.custom['submit'] ]]
-
-[%[= fpersonal0.custom['end'] ]]
-</div>
-<!-- end fpersonal0 -->
-
-</div>
+         <input class="input" placeholder="Text input" type="text"/></div>
        </div>
        <div class="field">
         <label class="label">
          Email
         </label>
         <div class="control has-icons-left">
-         
-
-<!-- view: fpersonal1, db_table: dfpersonal1 -->
-<div>
-[%[= fpersonal1.custom['begin'] ]]
-
- [%[ fpersonal1.custom['widgets']['f0']['_class']= 'input'  ]]
- [%[ fpersonal1.custom['widgets']['f0']['_placeholder']= 'Email input:p4w'  ]]
- [%[ fpersonal1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fpersonal1.custom['widgets']['f0']['_value']= 'len0'  ]]
- [%[= fpersonal1.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fpersonal1.custom['errors']['f0'] if 'f0' in fpersonal1.custom['errors'] else '' ]]</span>
-
- [%[ fpersonal1.custom['submit']['_class']= 'input'  ]]
- [%[ fpersonal1.custom['submit']['_placeholder']= 'Email input:p4w'  ]]
- [%[ fpersonal1.custom['submit']['_type']= 'submit'  ]]
- [%[ fpersonal1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fpersonal1.custom['submit'] ]]
-
-[%[= fpersonal1.custom['end'] ]]
-</div>
-<!-- end fpersonal1 -->
-
-
+         <input class="input" placeholder="Email input" type="email" value=""/>
          <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
          </span>
@@ -771,31 +724,7 @@
          Message
         </label>
         <div class="control">
-         
-
-<!-- view: fpersonal2, db_table: dfpersonal2 -->
-<div>
-[%[= fpersonal2.custom['begin'] ]]
-
- [%[ fpersonal2.custom['widgets']['f0']['_class']= 'textarea'  ]]
- [%[ fpersonal2.custom['widgets']['f0']['_placeholder']= 'Textarea'  ]]
- [%[ fpersonal2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fpersonal2.custom['widgets']['f0']['_name']= 'textarea'  ]]
- [%[= fpersonal2.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fpersonal2.custom['errors']['f0'] if 'f0' in fpersonal2.custom['errors'] else '' ]]</span>
-
- [%[ fpersonal2.custom['submit']['_class']= 'textarea'  ]]
- [%[ fpersonal2.custom['submit']['_placeholder']= 'Textarea'  ]]
- [%[ fpersonal2.custom['submit']['_type']= 'submit'  ]]
- [%[ fpersonal2.custom['submit']['_name']= 'textarea'  ]]
- [%[ fpersonal2.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fpersonal2.custom['submit'] ]]
-[%[= fpersonal2.custom['end'] ]]
-</div>
-<!-- end fpersonal2 -->
-
-
+         <textarea class="textarea" placeholder="Textarea"></textarea>
         </div>
        </div>
        <div class="field is-grouped has-text-centered">

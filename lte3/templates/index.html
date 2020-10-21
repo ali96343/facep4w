@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 05.10.2020 11:56:58 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:02:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -69,9 +69,13 @@
 
  </div>
 </div>
+ [%[ for hidden_widget in findex0.custom['hidden_widgets'].keys(): ]]
+ [%[= findex0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= findex0.custom['end'] ]]
 </div>
 <!-- end findex0 -->
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -494,6 +498,12 @@
         </a>
        </li>
        <li class="nav-item">
+        <a class="nav-link" href="[%[=URL('kanban') ]]">
+         <i class="nav-icon fas fa-columns"></i>
+         <p>Kanban Board</p>
+        </a>
+       </li>
+       <li class="nav-item">
         <a class="nav-link" href="#">
          <i class="nav-icon far fa-envelope"></i>
          <p>
@@ -849,7 +859,7 @@
      <div class="container-fluid">
       <div class="row mb-2">
        <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Dashboard</h1>
+        <h1 class="m-0">Dashboard</h1>
        </div>
        <!-- /.col -->
        <div class="col-sm-6">
@@ -1160,7 +1170,6 @@
 
 <div class="input-group">
  [%[ findex1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ findex1.custom['widgets']['f0']['_name']= 'message'  ]]
  [%[ findex1.custom['widgets']['f0']['_placeholder']= 'Type Message ...:p4w'  ]]
  [%[ findex1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= findex1.custom['widgets']['f0'] ]]
@@ -1175,9 +1184,13 @@
 
  </span>
 </div>
+ [%[ for hidden_widget in findex1.custom['hidden_widgets'].keys(): ]]
+ [%[= findex1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= findex1.custom['end'] ]]
 </div>
 <!-- end findex1 -->
+
 
          </div>
          <!-- /.card-footer-->

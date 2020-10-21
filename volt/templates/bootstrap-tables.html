@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.10.2020 13:45:45 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -296,15 +296,19 @@
  [%[ fbootstrapXtables0.custom['submit']['_aria-label']= 'Search'  ]]
  [%[ fbootstrapXtables0.custom['submit']['_class']= 'form-control'  ]]
  [%[ fbootstrapXtables0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fbootstrapXtables0.custom['submit']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fbootstrapXtables0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fbootstrapXtables0.custom['submit']['_type']= 'submit'  ]]
  [%[ fbootstrapXtables0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fbootstrapXtables0.custom['submit'] ]]
 
 </div>
+ [%[ for hidden_widget in fbootstrapXtables0.custom['hidden_widgets'].keys(): ]]
+ [%[= fbootstrapXtables0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fbootstrapXtables0.custom['end'] ]]
 </div>
 <!-- end fbootstrapXtables0 -->
+
 
          </div>
          <!-- Navbar links -->

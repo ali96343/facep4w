@@ -2,6 +2,9 @@ from .common import db, Field
 from pydal.validators import *
 from py4web.utils.populate import populate
 
+#
+# py4web app, AI-biorex ported 21.10.2020 16:01:29
+#
 
 #import pydal
 

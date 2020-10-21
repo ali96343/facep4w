@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -60,11 +60,12 @@
 <div class="field">
  <label class="checkbox">
  [%[ flogin0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ flogin0.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= flogin0.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= flogin0.custom['errors']['f2'] if 'f2' in flogin0.custom['errors'] else '' ]]</span>
 
-  Remember me:p4w
+  Remember me
  </label>
 </div>
 
@@ -73,17 +74,21 @@
  [%[ flogin0.custom['submit']['_value']= 'b:p4w'  ]]
  [%[= flogin0.custom['submit'] ]]
 
+ [%[ for hidden_widget in flogin0.custom['hidden_widgets'].keys(): ]]
+ [%[= flogin0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= flogin0.custom['end'] ]]
 </div>
 <!-- end flogin0 -->
 
+
       </div>
       <p class="has-text-grey">
-       <a href="[%[=URL('index') ]]">Sign Up</a>
+       <a href="../">Sign Up</a>
        ·
-       <a href="[%[=URL('index') ]]">Forgot Password</a>
+       <a href="../">Forgot Password</a>
        ·
-       <a href="[%[=URL('index') ]]">Need Help?</a>
+       <a href="../">Need Help?</a>
       </p>
      </div>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:42 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -579,9 +579,13 @@
   </button>
  </div>
 </div>
+ [%[ for hidden_widget in fformXadvanced0.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXadvanced0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXadvanced0.custom['end'] ]]
 </div>
 <!-- end fformXadvanced0 -->
+
 
          </div>
         </div>
@@ -700,7 +704,7 @@
  [%[ fformXadvanced1.custom['submit']['_id']= 'demo_forceformat3'  ]]
  [%[ fformXadvanced1.custom['submit']['_type']= 'submit'  ]]
  [%[ fformXadvanced1.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[ fformXadvanced1.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fformXadvanced1.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[= fformXadvanced1.custom['submit'] ]]
 
  </div>
@@ -719,9 +723,13 @@
   </div>
  </div>
 </div>
+ [%[ for hidden_widget in fformXadvanced1.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXadvanced1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXadvanced1.custom['end'] ]]
 </div>
 <!-- end fformXadvanced1 -->
+
 
          </div>
         </div>
@@ -856,7 +864,6 @@
     </span>
  [%[ fformXadvanced2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXadvanced2.custom['widgets']['f0']['_id']= 'reservation'  ]]
- [%[ fformXadvanced2.custom['widgets']['f0']['_name']= 'reservation'  ]]
  [%[ fformXadvanced2.custom['widgets']['f0']['_style']= 'width: 200px'  ]]
  [%[ fformXadvanced2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXadvanced2.custom['widgets']['f0']['_value']= '01/01/2016 - 01/25/2016'  ]]
@@ -867,20 +874,23 @@
 
  [%[ fformXadvanced2.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformXadvanced2.custom['submit']['_id']= 'reservation'  ]]
- [%[ fformXadvanced2.custom['submit']['_name']= 'reservation'  ]]
  [%[ fformXadvanced2.custom['submit']['_style']= 'width: 200px'  ]]
  [%[ fformXadvanced2.custom['submit']['_type']= 'submit'  ]]
  [%[ fformXadvanced2.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[ fformXadvanced2.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fformXadvanced2.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[= fformXadvanced2.custom['submit'] ]]
 
    </div>
   </div>
  </div>
 </fieldset>
+ [%[ for hidden_widget in fformXadvanced2.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXadvanced2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXadvanced2.custom['end'] ]]
 </div>
 <!-- end fformXadvanced2 -->
+
 
            </div>
            <div class="col-md-5">
@@ -899,7 +909,6 @@
     </span>
  [%[ fformXadvanced3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXadvanced3.custom['widgets']['f0']['_id']= 'reservation-time'  ]]
- [%[ fformXadvanced3.custom['widgets']['f0']['_name']= 'reservation-time'  ]]
  [%[ fformXadvanced3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXadvanced3.custom['widgets']['f0']['_value']= '01/01/2016 - 01/25/2016'  ]]
  [%[ fformXadvanced3.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
@@ -909,19 +918,22 @@
 
  [%[ fformXadvanced3.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformXadvanced3.custom['submit']['_id']= 'reservation-time'  ]]
- [%[ fformXadvanced3.custom['submit']['_name']= 'reservation-time'  ]]
  [%[ fformXadvanced3.custom['submit']['_type']= 'submit'  ]]
  [%[ fformXadvanced3.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[ fformXadvanced3.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fformXadvanced3.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[= fformXadvanced3.custom['submit'] ]]
 
    </div>
   </div>
  </div>
 </fieldset>
+ [%[ for hidden_widget in fformXadvanced3.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXadvanced3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXadvanced3.custom['end'] ]]
 </div>
 <!-- end fformXadvanced3 -->
+
 
            </div>
           </div>

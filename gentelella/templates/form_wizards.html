@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:42 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -526,7 +526,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXwizards0.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXwizards0.custom['widgets']['f1']['_id']= 'last-name'  ]]
- [%[ fformXwizards0.custom['widgets']['f1']['_name']= 'last-name'  ]]
  [%[ fformXwizards0.custom['widgets']['f1']['_required']= 'required'  ]]
  [%[ fformXwizards0.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformXwizards0.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -545,7 +544,6 @@
  [%[ fformXwizards0.custom['widgets']['f2']['_id']= 'middle-name'  ]]
  [%[ fformXwizards0.custom['widgets']['f2']['_class']= 'form-control col'  ]]
  [%[ fformXwizards0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXwizards0.custom['widgets']['f2']['_name']= 'middle-name'  ]]
  [%[ fformXwizards0.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fformXwizards0.custom['widgets']['f2'] ]]
 
@@ -562,7 +560,6 @@
   <div class="btn-group" data-toggle="buttons" id="gender">
    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
  [%[ fformXwizards0.custom['widgets']['f3']['_type']= 'radio'  ]]
- [%[ fformXwizards0.custom['widgets']['f3']['_name']= 'gender'  ]]
  [%[ fformXwizards0.custom['widgets']['f3']['_value']= 'male'  ]]
  [%[ fformXwizards0.custom['widgets']['f3']['_class']= 'join-btn'  ]]
  [%[ fformXwizards0.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -574,7 +571,6 @@
    </label>
    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
  [%[ fformXwizards0.custom['widgets']['f4']['_type']= 'radio'  ]]
- [%[ fformXwizards0.custom['widgets']['f4']['_name']= 'gender'  ]]
  [%[ fformXwizards0.custom['widgets']['f4']['_value']= 'female'  ]]
  [%[ fformXwizards0.custom['widgets']['f4']['_class']= 'join-btn'  ]]
  [%[ fformXwizards0.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
@@ -609,15 +605,19 @@
  [%[ fformXwizards0.custom['submit']['_class']= 'date-picker form-control'  ]]
  [%[ fformXwizards0.custom['submit']['_required']= 'required'  ]]
  [%[ fformXwizards0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXwizards0.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fformXwizards0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fformXwizards0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fformXwizards0.custom['submit'] ]]
 
  </div>
 </div>
+ [%[ for hidden_widget in fformXwizards0.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXwizards0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXwizards0.custom['end'] ]]
 </div>
 <!-- end fformXwizards0 -->
+
 
            </div>
            <div id="step-2">
@@ -704,7 +704,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXwizards1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXwizards1.custom['widgets']['f1']['_id']= 'last-name2'  ]]
- [%[ fformXwizards1.custom['widgets']['f1']['_name']= 'last-name'  ]]
  [%[ fformXwizards1.custom['widgets']['f1']['_required']= 'required'  ]]
  [%[ fformXwizards1.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformXwizards1.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -723,7 +722,6 @@
  [%[ fformXwizards1.custom['widgets']['f2']['_id']= 'middle-name2'  ]]
  [%[ fformXwizards1.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformXwizards1.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXwizards1.custom['widgets']['f2']['_name']= 'middle-name'  ]]
  [%[ fformXwizards1.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fformXwizards1.custom['widgets']['f2'] ]]
 
@@ -740,7 +738,6 @@
   <div class="btn-group" data-toggle="buttons" id="gender2">
    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
  [%[ fformXwizards1.custom['widgets']['f3']['_type']= 'radio'  ]]
- [%[ fformXwizards1.custom['widgets']['f3']['_name']= 'gender'  ]]
  [%[ fformXwizards1.custom['widgets']['f3']['_value']= 'male'  ]]
  [%[ fformXwizards1.custom['widgets']['f3']['_class']= 'join-btn'  ]]
  [%[ fformXwizards1.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -752,7 +749,6 @@
    </label>
    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-secondary">
  [%[ fformXwizards1.custom['widgets']['f4']['_type']= 'radio'  ]]
- [%[ fformXwizards1.custom['widgets']['f4']['_name']= 'gender'  ]]
  [%[ fformXwizards1.custom['widgets']['f4']['_value']= 'female'  ]]
  [%[ fformXwizards1.custom['widgets']['f4']['_class']= 'join-btn'  ]]
  [%[ fformXwizards1.custom['widgets']['f4']['_checked']= 'len0'  ]]
@@ -788,15 +784,19 @@
  [%[ fformXwizards1.custom['submit']['_class']= 'date-picker form-control'  ]]
  [%[ fformXwizards1.custom['submit']['_required']= 'required'  ]]
  [%[ fformXwizards1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformXwizards1.custom['submit']['_placeholder']= ':p4w'  ]]
+ [%[ fformXwizards1.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fformXwizards1.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fformXwizards1.custom['submit'] ]]
 
  </div>
 </div>
+ [%[ for hidden_widget in fformXwizards1.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXwizards1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXwizards1.custom['end'] ]]
 </div>
 <!-- end fformXwizards1 -->
+
 
            </div>
            <div id="step-22">

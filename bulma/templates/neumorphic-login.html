@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -50,15 +50,20 @@
  </div>
 </div>
 
+<br/>
 
  [%[ fneumorphicXlogin0.custom['submit']['_class']= 'button is-block is-fullwidth is-primary is-medium is-rounded'  ]]
  [%[ fneumorphicXlogin0.custom['submit']['_type']= 'submit'  ]]
  [%[ fneumorphicXlogin0.custom['submit']['_value']= 'b:p4w'  ]]
  [%[= fneumorphicXlogin0.custom['submit'] ]]
 
+ [%[ for hidden_widget in fneumorphicXlogin0.custom['hidden_widgets'].keys(): ]]
+ [%[= fneumorphicXlogin0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fneumorphicXlogin0.custom['end'] ]]
 </div>
 <!-- end fneumorphicXlogin0 -->
+
 
      <br/>
      <nav class="level">

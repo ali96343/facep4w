@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
   <!-- Bulma Version 0.9.0-->
@@ -15,7 +15,7 @@
    <nav class="navbar has-shadow">
     <div class="container">
      <div class="navbar-brand">
-      <a class="navbar-item" href="[%[=URL('index') ]]">
+      <a class="navbar-item" href="../">
        <img alt="Bulma: a modern CSS framework based on Flexbox" src="http://bulma.io/images/bulma-logo.png"/></a>
      </div>
     </div>
@@ -27,32 +27,7 @@
        <div class="card-content">
         <div class="content">
          <div class="control has-icons-left has-icons-right search-field">
-          
-
-<!-- view: fkanbanXsearchX0, db_table: dfkanbanXsearchX0 -->
-<div>
-[%[= fkanbanXsearchX0.custom['begin'] ]]
-
- [%[ fkanbanXsearchX0.custom['widgets']['f0']['_class']= 'input is-large'  ]]
- [%[ fkanbanXsearchX0.custom['widgets']['f0']['_placeholder']= 'len0:p4w'  ]]
- [%[ fkanbanXsearchX0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fkanbanXsearchX0.custom['widgets']['f0']['_v-model']= 'search'  ]]
- [%[= fkanbanXsearchX0.custom['widgets']['f0'] ]]
-
- <span style="color:#ff0000">[%[= fkanbanXsearchX0.custom['errors']['f0'] if 'f0' in fkanbanXsearchX0.custom['errors'] else '' ]]</span>
-
- [%[ fkanbanXsearchX0.custom['submit']['_class']= 'input is-large'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_placeholder']= 'len0:p4w'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_type']= 'submit'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_v-model']= 'search'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_value']= 'sub:p4w'  ]]
- [%[= fkanbanXsearchX0.custom['submit'] ]]
-
-[%[= fkanbanXsearchX0.custom['end'] ]]
-</div>
-<!-- end fkanbanXsearchX0 -->
-
-
+          <input class="input is-large" placeholder="" type="text" v-model="search"/>
           <span class="icon is-medium is-left">
            <i class="fa fa-search"></i>
           </span>

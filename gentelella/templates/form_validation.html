@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 06.10.2020 13:49:07 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:07:42 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -448,6 +448,7 @@
 
 <p>
  For alternative validation library
+ <code>
   parsleyJS
  </code>
  check out in the
@@ -472,7 +473,6 @@
  [%[ fformXvalidation0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f0']['_data-validate-length-range']= '6'  ]]
  [%[ fformXvalidation0.custom['widgets']['f0']['_data-validate-words']= '2'  ]]
- [%[ fformXvalidation0.custom['widgets']['f0']['_name']= 'name'  ]]
  [%[ fformXvalidation0.custom['widgets']['f0']['_placeholder']= 'ex. John f. Kennedy:p4w'  ]]
  [%[ fformXvalidation0.custom['widgets']['f0']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -493,7 +493,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f1']['_data-validate-length-range']= '5,15'  ]]
- [%[ fformXvalidation0.custom['widgets']['f1']['_name']= 'occupation'  ]]
  [%[ fformXvalidation0.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
  [%[= fformXvalidation0.custom['widgets']['f1'] ]]
@@ -512,7 +511,6 @@
  </label>
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fformXvalidation0.custom['widgets']['f2']['_name']= 'email'  ]]
  [%[ fformXvalidation0.custom['widgets']['f2']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
@@ -533,7 +531,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f3']['_data-validate-linked']= 'email'  ]]
- [%[ fformXvalidation0.custom['widgets']['f3']['_name']= 'confirm_email'  ]]
  [%[ fformXvalidation0.custom['widgets']['f3']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -554,7 +551,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f4']['_data-validate-minmax']= '10,100'  ]]
- [%[ fformXvalidation0.custom['widgets']['f4']['_name']= 'number'  ]]
  [%[ fformXvalidation0.custom['widgets']['f4']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
@@ -574,7 +570,6 @@
  </label>
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f5']['_class']= 'form-control'  ]]
- [%[ fformXvalidation0.custom['widgets']['f5']['_name']= 'date'  ]]
  [%[ fformXvalidation0.custom['widgets']['f5']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f5']['_placeholder']= ':p4w'  ]]
@@ -594,7 +589,6 @@
  </label>
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f6']['_class']= 'form-control'  ]]
- [%[ fformXvalidation0.custom['widgets']['f6']['_name']= 'time'  ]]
  [%[ fformXvalidation0.custom['widgets']['f6']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f6']['_placeholder']= ':p4w'  ]]
@@ -615,7 +609,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f7']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f7']['_id']= 'password1'  ]]
- [%[ fformXvalidation0.custom['widgets']['f7']['_name']= 'password'  ]]
  [%[ fformXvalidation0.custom['widgets']['f7']['_pattern']= '(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}'  ]]
  [%[ fformXvalidation0.custom['widgets']['f7']['_required']= 'len0'  ]]
  [%[ fformXvalidation0.custom['widgets']['f7']['_title']= 'Minimum 8 Characters Including An Upper And Lower Case Letter, A Number And A Unique Character'  ]]
@@ -644,7 +637,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f8']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f8']['_data-validate-linked']= 'password'  ]]
- [%[ fformXvalidation0.custom['widgets']['f8']['_name']= 'password2'  ]]
  [%[ fformXvalidation0.custom['widgets']['f8']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f8']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f8']['_placeholder']= ':p4w'  ]]
@@ -665,7 +657,6 @@
  <div class="col-md-6 col-sm-6">
  [%[ fformXvalidation0.custom['widgets']['f9']['_class']= 'form-control'  ]]
  [%[ fformXvalidation0.custom['widgets']['f9']['_data-validate-length-range']= '8,20'  ]]
- [%[ fformXvalidation0.custom['widgets']['f9']['_name']= 'phone'  ]]
  [%[ fformXvalidation0.custom['widgets']['f9']['_required']= 'required'  ]]
  [%[ fformXvalidation0.custom['widgets']['f9']['_type']= 'text'  ]]
  [%[ fformXvalidation0.custom['widgets']['f9']['_placeholder']= ':p4w'  ]]
@@ -690,9 +681,13 @@
  [%[= fformXvalidation0.custom['widgets']['f10'] ]]
 
  <span style="color:#ff0000">[%[= fformXvalidation0.custom['errors']['f10'] if 'f10' in fformXvalidation0.custom['errors'] else '' ]]</span>
+ [%[ for hidden_widget in fformXvalidation0.custom['hidden_widgets'].keys(): ]]
+ [%[= fformXvalidation0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fformXvalidation0.custom['end'] ]]
 </div>
 <!-- end fformXvalidation0 -->
+
 
          </div>
         </div>

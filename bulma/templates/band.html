@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 17.08.2020 15:37:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -263,6 +263,7 @@
  <span style="color:#ff0000">[%[= fband0.custom['errors']['f0'] if 'f0' in fband0.custom['errors'] else '' ]]</span>
 
     <span class="icon is-small is-left">
+     <i class="fas fa-user">
      </i>
     </span>
    </p>
@@ -277,6 +278,7 @@
  <span style="color:#ff0000">[%[= fband0.custom['errors']['f1'] if 'f1' in fband0.custom['errors'] else '' ]]</span>
 
     <span class="icon is-small is-left">
+     <i class="fas fa-envelope">
      </i>
     </span>
    </p>
@@ -297,14 +299,18 @@
  <span style="color:#ff0000">[%[= fband0.custom['errors']['f2'] if 'f2' in fband0.custom['errors'] else '' ]]</span>
 
  [%[ fband0.custom['submit']['_class']= 'textarea'  ]]
- [%[ fband0.custom['submit']['_placeholder']= 'Message us'  ]]
+ [%[ fband0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
  [%[ fband0.custom['submit']['_type']= 'submit'  ]]
  [%[ fband0.custom['submit']['_name']= 'textarea'  ]]
  [%[ fband0.custom['submit']['_value']= 'sub:p4w'  ]]
  [%[= fband0.custom['submit'] ]]
+ [%[ for hidden_widget in fband0.custom['hidden_widgets'].keys(): ]]
+ [%[= fband0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
 [%[= fband0.custom['end'] ]]
 </div>
 <!-- end fband0 -->
+
 
    </div>
   </section>
