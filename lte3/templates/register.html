@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 21.10.2020 16:02:10 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>biorex title text</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="[%[=URL('static/tte/plugins/fontawesome-free/css/all.min.css') ]]" rel="stylesheet"/>
+  <!-- icheck bootstrap -->
+  <link href="[%[=URL('static/tte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') ]]" rel="stylesheet"/>
+  <!-- Theme style -->
+  <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="hold-transition register-page">
+  <div class="register-box">
+   <div class="register-logo">
+    <a href="[%[=URL('index2') ]]">
+     <b>Admin</b>
+     LTE
+    </a>
+   </div>
+   <div class="card">
+    <div class="card-body register-card-body">
+     <p class="login-box-msg">Register a new membership</p>
+     
+<!-- view: fregister0, db_table: dfregister0 -->
+<div action="../../index.html" method="post">
+[%[= fregister0.custom['begin'] ]]
+
+<div class="input-group mb-3">
+ [%[ fregister0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fregister0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fregister0.custom['widgets']['f0']['_placeholder']= 'Full name:p4w'  ]]
+ [%[= fregister0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fregister0.custom['errors']['f0'] if 'f0' in fregister0.custom['errors'] else '' ]]</span>
+
+ <div class="input-group-append">
+  <div class="input-group-text">
+   <span class="fas fa-user">
+   </span>
+  </div>
+ </div>
+</div>
+
+<div class="input-group mb-3">
+ [%[ fregister0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fregister0.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fregister0.custom['widgets']['f1']['_placeholder']= 'Email:p4w'  ]]
+ [%[= fregister0.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fregister0.custom['errors']['f1'] if 'f1' in fregister0.custom['errors'] else '' ]]</span>
+
+ <div class="input-group-append">
+  <div class="input-group-text">
+   <span class="fas fa-envelope">
+   </span>
+  </div>
+ </div>
+</div>
+
+<div class="input-group mb-3">
+ [%[ fregister0.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[ fregister0.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fregister0.custom['widgets']['f2']['_placeholder']= 'Password:p4w'  ]]
+ [%[= fregister0.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fregister0.custom['errors']['f2'] if 'f2' in fregister0.custom['errors'] else '' ]]</span>
+
+ <div class="input-group-append">
+  <div class="input-group-text">
+   <span class="fas fa-lock">
+   </span>
+  </div>
+ </div>
+</div>
+
+<div class="input-group mb-3">
+ [%[ fregister0.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[ fregister0.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fregister0.custom['widgets']['f3']['_placeholder']= 'Retype password:p4w'  ]]
+ [%[= fregister0.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fregister0.custom['errors']['f3'] if 'f3' in fregister0.custom['errors'] else '' ]]</span>
+
+ <div class="input-group-append">
+  <div class="input-group-text">
+   <span class="fas fa-lock">
+   </span>
+  </div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="col-8">
+  <div class="icheck-primary">
+ [%[ fregister0.custom['widgets']['f4']['_type']= 'checkbox'  ]]
+ [%[ fregister0.custom['widgets']['f4']['_id']= 'agreeTerms'  ]]
+ [%[ fregister0.custom['widgets']['f4']['_value']= 'agree'  ]]
+ [%[ fregister0.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
+ [%[= fregister0.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fregister0.custom['errors']['f4'] if 'f4' in fregister0.custom['errors'] else '' ]]</span>
+
+   <label for="agreeTerms">
+    I agree to the
+ [%[ fregister0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fregister0.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= fregister0.custom['submit'] ]]
+
+   </label>
+  </div>
+ </div>
+ <!-- /.col -->
+ <div class="col-4">
+  <button class="btn btn-primary btn-block" type="submit">
+   Register
+  </button>
+ </div>
+ <!-- /.col -->
+</div>
+ [%[ for hidden_widget in fregister0.custom['hidden_widgets'].keys(): ]]
+ [%[= fregister0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+[%[= fregister0.custom['end'] ]]
+</div>
+<!-- end fregister0 -->
+
+
+     <div class="social-auth-links text-center">
+      <p>- OR -</p>
+      <a class="btn btn-block btn-primary" href="#">
+       <i class="fab fa-facebook mr-2"></i>
+       Sign up using Facebook
+      </a>
+      <a class="btn btn-block btn-danger" href="#">
+       <i class="fab fa-google-plus mr-2"></i>
+       Sign up using Google+
+      </a>
+     </div>
+     <a class="text-center" href="[%[=URL('login') ]]">I already have a membership</a>
+    </div>
+    <!-- /.form-box -->
+   </div>
+   <!-- /.card -->
+  </div>
+  <!-- /.register-box -->
+  <!-- jQuery -->
+  <script src="[%[=URL('static/tte/plugins/jquery/jquery.min.js') ]]"></script>
+  <!-- Bootstrap 4 -->
+  <script src="[%[=URL('static/tte/plugins/bootstrap/js/bootstrap.bundle.min.js') ]]"></script>
+  <!-- AdminLTE App -->
+  <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
+ </body>
+</html>

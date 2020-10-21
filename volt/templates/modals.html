@@ -1,0 +1,947 @@
+<!--
+
+=========================================================
+* Volt - Bootstrap 5 Admin Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2020 Themesberg (https://www.themesberg.com)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <!-- Primary Meta Tags -->
+  <title>biorex title text</title>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Modals" name="title"/>
+  <meta content="Themesberg" name="author"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." name="description"/>
+  <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, free bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
+  <link href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" rel="canonical"/>
+  <!-- Open Graph / Facebook -->
+  <meta content="website" property="og:type"/>
+  <meta content="https://demo.themesberg.com/volt" property="og:url"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Modals" property="og:title"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="og:description"/>
+  <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="og:image"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" property="twitter:card"/>
+  <meta content="https://demo.themesberg.com/volt" property="twitter:url"/>
+  <meta content="Volt Bootstrap 5 Dashboard - Modals" property="twitter:title"/>
+  <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="twitter:description"/>
+  <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="twitter:image"/>
+  <!-- Favicon -->
+  <link href="[%[=URL('static/tte/assets/img/favicon/apple-touch-icon.png') ]]" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/favicon-32x32.png') ]]" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/favicon-16x16.png') ]]" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="[%[=URL('static/tte/assets/img/favicon/site.webmanifest') ]]" rel="manifest"/>
+  <link color="#ffffff" href="[%[=URL('static/tte/assets/img/favicon/safari-pinned-tab.svg') ]]" rel="mask-icon"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <!-- Fontawesome -->
+  <link href="[%[=URL('static/tte/vendor/@fortawesome/fontawesome-free/css/all.min.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- Notyf -->
+  <link href="[%[=URL('static/tte/vendor/notyf/notyf.min.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- Volt CSS -->
+  <link href="[%[=URL('static/tte/css/volt.css') ]]" rel="stylesheet" type="text/css"/>
+  <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+ 
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+</head>
+ <body class="bg-soft">
+  <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
+   <a class="navbar-brand mr-lg-5" href="[%[=URL('index') ]]">
+    <img alt="Volt logo" class="navbar-brand-dark" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]"/>
+    <img alt="Volt logo" class="navbar-brand-light" src="[%[=URL('static/tte/assets/img/brand/dark.svg') ]]"/></a>
+   <div class="d-flex align-items-center">
+    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler d-md-none collapsed" data-target="#sidebarMenu" data-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </div>
+  </nav>
+  <div class="container-fluid bg-soft">
+   <div class="row">
+    <div class="col-12">
+     <nav class="sidebar d-md-block bg-primary text-white collapse" data-simplebar="" id="sidebarMenu">
+      <div class="sidebar-inner px-4 pt-3">
+       <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+        <div class="d-flex align-items-center">
+         <div class="user-avatar lg-avatar mr-4">
+          <img alt="Bonnie Green" class="card-img-top rounded-circle border-white" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+         <div class="d-block">
+          <h2 class="h6">Hi, Jane</h2>
+          <a class="btn btn-secondary text-dark btn-xs" href="[%[=URL('signXin') ]]">
+           <span class="mr-2">
+            <span class="fas fa-sign-out-alt"></span>
+           </span>
+           Sign Out
+          </a>
+         </div>
+        </div>
+        <div class="collapse-close d-md-none">
+         <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" class="fas fa-times" data-target="#sidebarMenu" data-toggle="collapse" href="#sidebarMenu"></a>
+        </div>
+       </div>
+       <ul class="nav flex-column">
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('dashboard') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-chart-pie"></span>
+          </span>
+          <span>Overview</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('transactions') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-hand-holding-usd"></span>
+          </span>
+          <span>Transactions</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('settings') ]]">
+          <span class="sidebar-icon">
+           <span class="fas fa-cog"></span>
+          </span>
+          <span>Settings</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-app" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="fas fa-table"></span>
+           </span>
+           Tables
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse" id="submenu-app" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('bootstrapXtables') ]]">
+             <span>Bootstrap Tables</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-pages" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="far fa-file-alt"></span>
+           </span>
+           Page examples
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse" id="submenu-pages" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('signXin') ]]">
+             <span>Sign In</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('signXup') ]]">
+             <span>Sign Up</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('forgotXpassword') ]]">
+             <span>Forgot password</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('resetXpassword') ]]">
+             <span>Reset password</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('lock') ]]">
+             <span>Lock</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('X404') ]]">
+             <span>404 Not Found</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('X500') ]]">
+             <span>500 Server Error</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="nav-item">
+         <span class="nav-link d-flex justify-content-between align-items-center" data-target="#submenu-components" data-toggle="collapse">
+          <span>
+           <span class="sidebar-icon">
+            <span class="fas fa-box-open"></span>
+           </span>
+           Components
+          </span>
+          <span class="link-arrow">
+           <span class="fas fa-chevron-right"></span>
+          </span>
+         </span>
+         <div aria-expanded="false" class="multi-level collapse show" id="submenu-components" role="list">
+          <ul class="flex-column nav">
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('buttons') ]]">
+             <span>Buttons</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('notifications') ]]">
+             <span>Notifications</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('forms') ]]">
+             <span>Forms</span>
+            </a>
+           </li>
+           <li class="nav-item active">
+            <a class="nav-link" href="[%[=URL('modals') ]]">
+             <span>Modals</span>
+            </a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="[%[=URL('typography') ]]">
+             <span>Typography</span>
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="dropdown-divider mt-4 mb-3 border-black" role="separator"></li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="[%[=URL('index') ]]">
+          <span class="sidebar-icon">
+           <img alt="Volt Logo" height="20" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]" width="20"/></span>
+          <span class="mt-1">Volt Overview</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" target="_blank">
+          <span class="sidebar-icon">
+           <span class="fas fa-book"></span>
+          </span>
+          <span>Quick Start</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard" target="_blank">
+          <span class="sidebar-icon">
+           <span class="fas fa-rocket"></span>
+          </span>
+          <span>Upgrade to Pro</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link d-flex align-items-center" href="https://themesberg.com" target="_blank">
+          <span class="sidebar-icon">
+           <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="20"/></span>
+          <span>Themesberg</span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     <main class="content">
+      <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark pl-0 pr-2 pb-0">
+       <div class="container-fluid px-0">
+        <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+         <div class="d-flex">
+          <!-- Search form -->
+          
+<!-- view: fmodals0, db_table: dfmodals0 -->
+<div class="navbar-search form-inline" id="navbar-search-main">
+[%[= fmodals0.custom['begin'] ]]
+
+<div class="input-group input-group-merge search-bar">
+ <span class="input-group-text" id="topbar-addon">
+  <span class="fas fa-search">
+  </span>
+ </span>
+ [%[ fmodals0.custom['widgets']['f0']['_aria-describedby']= 'topbar-addon'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_id']= 'topbarInputIconLeft'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fmodals0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f0'] if 'f0' in fmodals0.custom['errors'] else '' ]]</span>
+
+ [%[ fmodals0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
+ [%[ fmodals0.custom['submit']['_aria-label']= 'Search'  ]]
+ [%[ fmodals0.custom['submit']['_class']= 'form-control'  ]]
+ [%[ fmodals0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
+ [%[ fmodals0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
+ [%[ fmodals0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fmodals0.custom['submit']['_value']= 'sub:p4w'  ]]
+ [%[= fmodals0.custom['submit'] ]]
+
+</div>
+ [%[ for hidden_widget in fmodals0.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+[%[= fmodals0.custom['end'] ]]
+</div>
+<!-- end fmodals0 -->
+
+
+         </div>
+         <!-- Navbar links -->
+         <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+           <a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark mr-lg-3 icon-notifications" data-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
+            <span class="icon icon-sm">
+             <span class="fas fa-bell bell-shake"></span>
+             <span class="icon-badge rounded-circle unread-notifications"></span>
+            </span>
+           </a>
+           <div class="dropdown-menu dashboard-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
+            <div class="list-group list-group-flush">
+             <a class="text-center text-primary font-weight-bold border-bottom border-light py-3" href="#">Notifications</a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Jose Leos</h4>
+                 </div>
+                 <div class="text-right">
+                  <small class="text-danger">a few moments ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">Added you to an event "Project stand-up" tomorrow at 12:30 AM.</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Neil Sims</h4>
+                 </div>
+                 <div class="text-right">
+                  <small class="text-danger">2 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">You've been assigned a task for "Awesome new project".</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Roberta Casas</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>5 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">Tagged you in a document called "First quarter financial plans",</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Joseph Garth</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>1 d ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">New message: "Hey, what's up? All set for the presentation?"</p>
+               </div>
+              </div>
+             </a>
+             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+              <div class="row align-items-center">
+               <div class="col-auto">
+                <!-- Avatar -->
+                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
+               <div class="col pl-0 ml--2">
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                  <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
+                 </div>
+                 <div class="text-right">
+                  <small>2 hrs ago</small>
+                 </div>
+                </div>
+                <p class="font-small mt-1 mb-0">New message: "We need to improve the UI/UX for the landing page."</p>
+               </div>
+              </div>
+             </a>
+             <a class="dropdown-item text-center text-primary font-weight-bold py-3" href="#">View all</a>
+            </div>
+           </div>
+          </li>
+          <li class="nav-item dropdown">
+           <a aria-expanded="false" aria-haspopup="true" class="nav-link pt-1 px-0" data-toggle="dropdown" href="#" role="button">
+            <div class="media d-flex align-items-center">
+             <img alt="Image placeholder" class="user-avatar md-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
+             <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
+              <span class="mb-0 font-small font-weight-bold">Bonnie Green</span>
+             </div>
+            </div>
+           </a>
+           <div class="dropdown-menu dashboard-dropdown dropdown-menu-right mt-2">
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="far fa-user-circle"></span>
+             My Profile
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-cog"></span>
+             Settings
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-envelope-open-text"></span>
+             Messages
+            </a>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-user-shield"></span>
+             Support
+            </a>
+            <div class="dropdown-divider" role="separator"></div>
+            <a class="dropdown-item font-weight-bold" href="#">
+             <span class="fas fa-sign-out-alt text-danger"></span>
+             Logout
+            </a>
+           </div>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </nav>
+      <div class="py-4">
+       <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+         <li class="breadcrumb-item">
+          <a href="#">
+           <span class="fas fa-home"></span>
+          </a>
+         </li>
+         <li class="breadcrumb-item">
+          <a href="#">Components</a>
+         </li>
+         <li aria-current="page" class="breadcrumb-item active">Modals</li>
+        </ol>
+       </nav>
+       <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+         <h1 class="h4">Modals</h1>
+         <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+        </div>
+        <div>
+         <a class="btn btn-outline-gray" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/modals/">
+          <i class="far fa-question-circle mr-1"></i>
+          Modals Docs
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-12 mb-4">
+        <div class="card border-light shadow-sm">
+         <div class="card-body">
+          <div class="row d-block mt-4">
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-primary mb-3" data-target="#modal-default" data-toggle="modal" type="button">Default</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-default" class="modal fade" id="modal-default" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+               <div class="modal-header">
+                <h2 class="h6 modal-title">Terms of Service</h2>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                 <span aria-hidden="true"></span>
+                </button>
+               </div>
+               <div class="modal-body">
+                <p>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+                <p>The European Union s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+               </div>
+               <div class="modal-footer">
+                <button class="btn btn-sm btn-secondary" type="button">I Got It</button>
+                <button class="btn btn-link text-danger ml-auto" data-dismiss="modal" type="button">Close</button>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-primary mb-3" data-target="#modal-notification" data-toggle="modal" type="button">Notification</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-notification" class="modal fade" id="modal-notification" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-info modal-dialog-centered" role="document">
+              <div class="modal-content bg-gradient-secondary">
+               <div class="modal-header">
+                <p class="modal-title" id="modal-title-notification">A new experience, personalized for you.</p>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                 <span aria-hidden="true"></span>
+                </button>
+               </div>
+               <div class="modal-body">
+                <div class="py-3 text-center">
+                 <span class="modal-icon display-1-lg">
+                  <span class="far fa-envelope-open"></span>
+                 </span>
+                 <h2 class="h4 modal-title my-3">Important message!</h2>
+                 <p>Do you know that you can assign status and relation to a company right in the visit list?.</p>
+                </div>
+               </div>
+               <div class="modal-footer">
+                <button class="btn btn-sm btn-white" type="button">Go to Inbox</button>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-primary mb-3" data-target="#modal-form" data-toggle="modal" type="button">Sign In</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-form" class="modal fade" id="modal-form" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+               <div class="modal-body p-0">
+                <div class="card border-light p-4">
+                 <div class="card-header border-0 text-center pb-0">
+                  <h2 class="h4">Sign in to our platform</h2>
+                  <span>Login here using your username and password</span>
+                 </div>
+                 <div class="card-body">
+                  
+<!-- view: fmodals1, db_table: dfmodals1 -->
+<div action="#" class="mt-4">
+[%[= fmodals1.custom['begin'] ]]
+
+<div class="form-group mb-4">
+ <label for="exampleInputEmailCard1">
+  Your Email
+ </label>
+ <div class="input-group">
+  <span class="input-group-text" id="basic-addon1">
+   <span class="fas fa-envelope">
+   </span>
+  </span>
+ [%[ fmodals1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fmodals1.custom['widgets']['f0']['_id']= 'exampleInputEmailCard1'  ]]
+ [%[ fmodals1.custom['widgets']['f0']['_placeholder']= 'example@company.com:p4w'  ]]
+ [%[ fmodals1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fmodals1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals1.custom['errors']['f0'] if 'f0' in fmodals1.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group">
+ <!-- Form -->
+ <div class="form-group mb-4">
+  <label for="exampleInputPasswordCard1">
+   Your Password
+  </label>
+  <div class="input-group">
+   <span class="input-group-text" id="basic-addon2">
+    <span class="fas fa-unlock-alt">
+    </span>
+   </span>
+ [%[ fmodals1.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fmodals1.custom['widgets']['f1']['_id']= 'exampleInputPasswordCard1'  ]]
+ [%[ fmodals1.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
+ [%[ fmodals1.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fmodals1.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals1.custom['errors']['f1'] if 'f1' in fmodals1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <!-- End of Form -->
+ <div class="d-flex justify-content-between align-items-center mb-4">
+  <div class="form-check">
+ [%[ fmodals1.custom['widgets']['f2']['_class']= 'form-check-input'  ]]
+ [%[ fmodals1.custom['widgets']['f2']['_id']= 'defaultCheck5'  ]]
+ [%[ fmodals1.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ fmodals1.custom['widgets']['f2']['_value']= 'len0'  ]]
+ [%[ fmodals1.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[= fmodals1.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals1.custom['errors']['f2'] if 'f2' in fmodals1.custom['errors'] else '' ]]</span>
+
+   <label class="form-check-label" for="defaultCheck5">
+    Remember me
+   </label>
+  </div>
+  <div>
+ [%[ fmodals1.custom['submit']['_class']= 'small text-right'  ]]
+ [%[ fmodals1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fmodals1.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= fmodals1.custom['submit'] ]]
+
+  </div>
+ </div>
+</div>
+
+<button class="btn btn-block btn-primary" type="submit">
+ Sign in
+</button>
+ [%[ for hidden_widget in fmodals1.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+[%[= fmodals1.custom['end'] ]]
+</div>
+<!-- end fmodals1 -->
+
+
+                  <div class="mt-3 mb-4 text-center">
+                   <span class="font-weight-normal">or login with</span>
+                  </div>
+                  <div class="btn-wrapper my-4 text-center">
+                   <button aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" title="facebook button" type="button">
+                    <span aria-hidden="true" class="fab fa-facebook-f"></span>
+                   </button>
+                   <button aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" title="twitter button" type="button">
+                    <span aria-hidden="true" class="fab fa-twitter"></span>
+                   </button>
+                   <button aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" title="github button" type="button">
+                    <span aria-hidden="true" class="fab fa-github"></span>
+                   </button>
+                  </div>
+                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                   <span class="font-weight-normal">
+                    Not registered?
+                    <a class="font-weight-bold" href="#">Create account</a>
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-primary mb-3" data-target="#modal-form-signup" data-toggle="modal" type="button">Sign Up</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-form-signup" class="modal fade" id="modal-form-signup" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+               <div class="modal-body p-0">
+                <div class="card border-light p-4">
+                 <div class="card-header text-center pb-0">
+                  <h2 class="mb-0 h5">Create Account</h2>
+                 </div>
+                 <div class="card-body">
+                  
+<!-- view: fmodals2, db_table: dfmodals2 -->
+<div action="#">
+[%[= fmodals2.custom['begin'] ]]
+
+<div class="form-group mb-4">
+ <label for="exampleInputEmailCard3">
+  Your Email
+ </label>
+ <div class="input-group">
+  <span class="input-group-text" id="basic-addon3">
+   <span class="fas fa-envelope">
+   </span>
+  </span>
+ [%[ fmodals2.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fmodals2.custom['widgets']['f0']['_id']= 'exampleInputEmailCard3'  ]]
+ [%[ fmodals2.custom['widgets']['f0']['_placeholder']= 'example@company.com:p4w'  ]]
+ [%[ fmodals2.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fmodals2.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals2.custom['errors']['f0'] if 'f0' in fmodals2.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group">
+ <!-- Form -->
+ <div class="form-group mb-4">
+  <label for="exampleInputPasswordCard4">
+   Your Password
+  </label>
+  <div class="input-group">
+   <span class="input-group-text" id="basic-addon4">
+    <span class="fas fa-unlock-alt">
+    </span>
+   </span>
+ [%[ fmodals2.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fmodals2.custom['widgets']['f1']['_id']= 'exampleInputPasswordCard4'  ]]
+ [%[ fmodals2.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
+ [%[ fmodals2.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fmodals2.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals2.custom['errors']['f1'] if 'f1' in fmodals2.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <!-- End of Form -->
+ <!-- Form -->
+ <div class="form-group mb-4">
+  <label for="exampleInputPasswordCard4">
+   Confirm Password
+  </label>
+  <div class="input-group">
+   <span class="input-group-text" id="basic-addon5">
+    <span class="fas fa-unlock-alt">
+    </span>
+   </span>
+ [%[ fmodals2.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fmodals2.custom['widgets']['f2']['_id']= 'exampleInputPasswordCard5'  ]]
+ [%[ fmodals2.custom['widgets']['f2']['_placeholder']= 'Confirm Password:p4w'  ]]
+ [%[ fmodals2.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fmodals2.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals2.custom['errors']['f2'] if 'f2' in fmodals2.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+ <!-- End of Form -->
+ <div class="form-check mb-4">
+ [%[ fmodals2.custom['widgets']['f3']['_class']= 'form-check-input'  ]]
+ [%[ fmodals2.custom['widgets']['f3']['_id']= 'defaultCheck6'  ]]
+ [%[ fmodals2.custom['widgets']['f3']['_type']= 'checkbox'  ]]
+ [%[ fmodals2.custom['widgets']['f3']['_value']= 'len0'  ]]
+ [%[ fmodals2.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
+ [%[= fmodals2.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fmodals2.custom['errors']['f3'] if 'f3' in fmodals2.custom['errors'] else '' ]]</span>
+
+  <label class="form-check-label" for="defaultCheck6">
+   I agree to the
+ [%[ fmodals2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fmodals2.custom['submit']['_value']= 'a:p4w'  ]]
+ [%[= fmodals2.custom['submit'] ]]
+
+  </label>
+ </div>
+</div>
+
+<button class="btn btn-block btn-primary" type="submit">
+ Sign in
+</button>
+ [%[ for hidden_widget in fmodals2.custom['hidden_widgets'].keys(): ]]
+ [%[= fmodals2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+[%[= fmodals2.custom['end'] ]]
+</div>
+<!-- end fmodals2 -->
+
+
+                  <div class="mt-3 mb-4 text-center">
+                   <span class="font-weight-normal">or</span>
+                  </div>
+                  <div class="btn-wrapper my-4 text-center">
+                   <button aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" title="facebook button" type="button">
+                    <span aria-hidden="true" class="fab fa-facebook-f"></span>
+                   </button>
+                   <button aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" title="twitter button" type="button">
+                    <span aria-hidden="true" class="fab fa-twitter"></span>
+                   </button>
+                   <button aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" title="github button" type="button">
+                    <span aria-hidden="true" class="fab fa-github"></span>
+                   </button>
+                  </div>
+                  <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                   <span class="font-weight-normal">
+                    Already have an account?
+                    <a class="font-weight-bold" href="#">Login here</a>
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-tertiary mb-3" data-target="#modal-achievement" data-toggle="modal" type="button">Achievement</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-achievement" class="modal fade" id="modal-achievement" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-tertiary modal-dialog-centered" role="document">
+              <div class="modal-content">
+               <div class="modal-header mx-auto">
+                <p class="lead mb-0 text-white">You just unlocked a new badge</p>
+               </div>
+               <div class="modal-body">
+                <div class="py-3 px-5 text-center">
+                 <span class="modal-icon display-1-lg">
+                  <span class="fas fa-medal"></span>
+                 </span>
+                 <h2 class="h3 modal-title mb-3 text-white">Author Level 5</h2>
+                 <p class="mb-4 text-white">One Thousand Dollars! Well done mate - heads are turning your way.</p>
+                 <div class="progress-wrapper">
+                  <div class="progress">
+                   <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" class="progress-bar bg-primary" role="progressbar"></div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="modal-footer">
+                <button class="btn btn-sm btn-white text-tertiary" type="button">All badges</button>
+                <button aria-label="Close" class="close ml-auto" data-dismiss="modal" type="button">
+                 <span aria-hidden="true"></span>
+                </button>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+           <div class="col-md-4">
+            <!-- Button Modal -->
+            <button class="btn btn-block btn-primary mb-3" data-target="#modal-subscribe" data-toggle="modal" type="button">Subscribe</button>
+            <!-- Modal Content -->
+            <div aria-hidden="true" aria-labelledby="modal-subscribe" class="modal fade" id="modal-subscribe" role="dialog" tabindex="-1">
+             <div class="modal-dialog modal-tertiary modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content bg-dark text-white">
+               <div class="modal-header">
+                <button aria-label="Close" class="close ml-auto" data-dismiss="modal" type="button">
+                 <span aria-hidden="true"></span>
+                </button>
+               </div>
+               <div class="modal-body text-center py-3">
+                <span class="modal-icon display-1-lg">
+                 <span class="fas fa-envelope-open-text"></span>
+                </span>
+                <h3 class="modal-title mb-3">Join our 1,360,462 subscribers</h3>
+                <p class="mb-4 lead">Get exclusive access to freebies, premium products and news.</p>
+                <div class="form-group px-5">
+                 <div class="d-sm-flex flex-column flex-sm-row mb-3 justify-content-center">
+                  <input class="mr-sm-1 mb-2 mb-sm-0 form-control form-control-lg" id="modalInputSubscribe7" placeholder="example@company.com" type="text"/>
+                  <button class="ml-sm-1 btn btn-lg btn-tertiary" type="submit">Subscribe</button>
+                 </div>
+                </div>
+               </div>
+               <div class="modal-footer z-2 mx-auto text-center">
+                <p class="text-white">
+                 We’ll never share your details with third parties.
+                 <br class="visible-md"/>
+                 View our
+                 <a href="#">Privacy Policy</a>
+                 for more info.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <!-- End of Modal Content -->
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <footer class="footer section py-5">
+       <div class="row">
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+         <p class="mb-0 text-center text-xl-left">
+          Copyright © 2019-
+          <span class="current-year"></span>
+          <a class="text-primary font-weight-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+         </p>
+        </div>
+        <div class="col-12 col-lg-6">
+         <ul class="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/about">About</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/themes">Themes</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/blog">Blog</a>
+          </li>
+          <li class="list-inline-item px-0 px-sm-2">
+           <a href="https://themesberg.com/contact">Contact</a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </footer>
+     </main>
+    </div>
+   </div>
+  </div>
+  <!-- Core -->
+  <script src="[%[=URL('static/tte/vendor/popper.js/dist/umd/popper.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap/dist/js/bootstrap.min.js') ]]"></script>
+  <!-- Vendor JS -->
+  <script src="[%[=URL('static/tte/vendor/onscreen/dist/on-screen.umd.min.js') ]]"></script>
+  <!-- Slider -->
+  <script src="[%[=URL('static/tte/vendor/nouislider/distribute/nouislider.min.js') ]]"></script>
+  <!-- Jarallax -->
+  <script src="[%[=URL('static/tte/vendor/jarallax/dist/jarallax.min.js') ]]"></script>
+  <!-- Smooth scroll -->
+  <script src="[%[=URL('static/tte/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') ]]"></script>
+  <!-- Count up -->
+  <script src="[%[=URL('static/tte/vendor/countup.js/dist/countUp.umd.js') ]]"></script>
+  <!-- Notyf -->
+  <script src="[%[=URL('static/tte/vendor/notyf/notyf.min.js') ]]"></script>
+  <!-- Charts -->
+  <script src="[%[=URL('static/tte/vendor/chartist/dist/chartist.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') ]]"></script>
+  <!-- Datepicker -->
+  <script src="[%[=URL('static/tte/vendor/vanillajs-datepicker/dist/js/datepicker.min.js') ]]"></script>
+  <!-- Simplebar -->
+  <script src="[%[=URL('static/tte/vendor/simplebar/dist/simplebar.min.js') ]]"></script>
+  <!-- Github buttons -->
+  <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+  <!-- Volt JS -->
+  <script src="[%[=URL('static/tte/assets/js/volt.js') ]]"></script>
+ </body>
+</html>
