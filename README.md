@@ -1,7 +1,7 @@
 # facep4w
 some py4web apps
 
-generated from:
+ported from:
 
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
