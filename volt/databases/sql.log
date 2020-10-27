@@ -19,7 +19,7 @@ CREATE TABLE "auth_user_tag_groups"(
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2020-10-14T10:20:03.343306
+timestamp: 2020-10-27T12:32:19.371927
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -27,19 +27,19 @@ CREATE TABLE "test_table"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.407258
+timestamp: 2020-10-27T12:32:19.418497
 CREATE TABLE "dfindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.435651
+timestamp: 2020-10-27T12:32:19.435395
 CREATE TABLE "dfdashboard0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.466121
+timestamp: 2020-10-27T12:32:19.454574
 CREATE TABLE "dfsignXin0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -47,7 +47,7 @@ CREATE TABLE "dfsignXin0"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-10-14T10:20:03.497469
+timestamp: 2020-10-27T12:32:19.784907
 CREATE TABLE "dfsignXup0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -56,25 +56,25 @@ CREATE TABLE "dfsignXup0"(
     "f3" CHAR(1)
 );
 success!
-timestamp: 2020-10-14T10:20:03.529166
+timestamp: 2020-10-27T12:32:19.802085
 CREATE TABLE "dflock0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.566700
+timestamp: 2020-10-27T12:32:19.820397
 CREATE TABLE "dftransactions0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.603071
+timestamp: 2020-10-27T12:32:19.842179
 CREATE TABLE "dfsettings0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.641142
+timestamp: 2020-10-27T12:32:19.863117
 CREATE TABLE "dfsettings1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -89,13 +89,13 @@ CREATE TABLE "dfsettings1"(
     "f9" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.669077
+timestamp: 2020-10-27T12:32:19.882871
 CREATE TABLE "dfforgotXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.693239
+timestamp: 2020-10-27T12:32:19.901858
 CREATE TABLE "dfresetXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -103,37 +103,37 @@ CREATE TABLE "dfresetXpassword0"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.711909
+timestamp: 2020-10-27T12:32:19.921547
 CREATE TABLE "dfbootstrapXtables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.727538
+timestamp: 2020-10-27T12:32:19.940273
 CREATE TABLE "dfbuttons0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.753545
+timestamp: 2020-10-27T12:32:19.962632
 CREATE TABLE "dfnotifications0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.771920
+timestamp: 2020-10-27T12:32:19.981714
 CREATE TABLE "dfforms0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.789806
+timestamp: 2020-10-27T12:32:20.001444
 CREATE TABLE "dfmodals0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.808241
+timestamp: 2020-10-27T12:32:20.021160
 CREATE TABLE "dfmodals1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -141,7 +141,7 @@ CREATE TABLE "dfmodals1"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-10-14T10:20:03.828172
+timestamp: 2020-10-27T12:32:20.041629
 CREATE TABLE "dfmodals2"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -150,13 +150,13 @@ CREATE TABLE "dfmodals2"(
     "f3" CHAR(1)
 );
 success!
-timestamp: 2020-10-14T10:20:03.846251
+timestamp: 2020-10-27T12:32:20.063267
 CREATE TABLE "dftypography0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.864134
+timestamp: 2020-10-27T12:32:20.082480
 CREATE TABLE "tdashboard0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -165,7 +165,7 @@ CREATE TABLE "tdashboard0"(
     "f3" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.883467
+timestamp: 2020-10-27T12:32:20.103616
 CREATE TABLE "ttransactions0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -177,7 +177,7 @@ CREATE TABLE "ttransactions0"(
     "f6" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.901438
+timestamp: 2020-10-27T12:32:20.123142
 CREATE TABLE "tbootstrapXtables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -189,7 +189,7 @@ CREATE TABLE "tbootstrapXtables0"(
     "f6" CHAR(512)
 );
 success!
-timestamp: 2020-10-14T10:20:03.920851
+timestamp: 2020-10-27T12:32:20.142348
 CREATE TABLE "tbootstrapXtables1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),

@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 21.10.2020 16:01:30 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 27.10.2020 12:42:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -276,39 +276,52 @@
 <!-- view: ftransactions0, db_table: dftransactions0 -->
 <div class="navbar-search form-inline" id="navbar-search-main">
 [%[= ftransactions0.custom['begin'] ]]
-
 <div class="input-group input-group-merge search-bar">
  <span class="input-group-text" id="topbar-addon">
   <span class="fas fa-search">
   </span>
  </span>
- [%[ ftransactions0.custom['widgets']['f0']['_aria-describedby']= 'topbar-addon'  ]]
- [%[ ftransactions0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ ftransactions0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ ftransactions0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ ftransactions0.custom['widgets']['f0']['_id']= 'topbarInputIconLeft'  ]]
  [%[ ftransactions0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
- [%[ ftransactions0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ ftransactions0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ ftransactions0.custom['widgets']['f0']['_aria-describedby']= 'topbar-addon'  ]]
  [%[= ftransactions0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= ftransactions0.custom['errors']['f0'] if 'f0' in ftransactions0.custom['errors'] else '' ]]</span>
 
- [%[ ftransactions0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
- [%[ ftransactions0.custom['submit']['_aria-label']= 'Search'  ]]
+ [%[ ftransactions0.custom['submit']['_type']= 'submit'  ]]
  [%[ ftransactions0.custom['submit']['_class']= 'form-control'  ]]
  [%[ ftransactions0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ ftransactions0.custom['submit']['_placeholder']= 'sub:p4w'  ]]
- [%[ ftransactions0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftransactions0.custom['submit']['_value']= 'sub:p4w'  ]]
+ [%[ ftransactions0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ ftransactions0.custom['submit']['_aria-label']= 'Search'  ]]
+ [%[ ftransactions0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
+ [%[ ftransactions0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ ftransactions0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftransactions0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftransactions0.custom['submit'] ]]
 
 </div>
+
  [%[ for hidden_widget in ftransactions0.custom['hidden_widgets'].keys(): ]]
  [%[= ftransactions0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 [%[= ftransactions0.custom['end'] ]]
+  <div  class='divftransactions0' style="text-align: center; position:absolute;">
+  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftransactions0</small>
+</div>
+
+<script>
+
+  !function() { const elems = document.querySelectorAll('.divftransactions0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+  }();
+
+</script>
+
 </div>
 <!-- end ftransactions0 -->
-
 
          </div>
          <!-- Navbar links -->
@@ -516,6 +529,7 @@
 <!--view: rows_ttransactions0, db_table: ttransactions0 -->
 <table class="table table-hover">
   <thead>
+   <tr>
     <th>#</th>
     <th>Bill For</th>
     <th>Issue Date</th>
@@ -523,6 +537,7 @@
     <th>Total</th>
     <th>Status</th>
     <th>Action</th>
+  </tr>
   </thead>
   <tbody>
         [%[ for row0 in rows_ttransactions0: ]]

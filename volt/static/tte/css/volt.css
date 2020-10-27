@@ -2887,7 +2887,6 @@ progress {
     background-clip: padding-box;
     border: 0.0625rem solid #d1d7e0;
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 0.5rem;
     box-shadow: inset 0 1px 2px rgba(46, 54, 80, 0.075);
@@ -2986,7 +2985,6 @@ progress {
     border-radius: 0.5rem;
     box-shadow: inset 0 1px 2px rgba(46, 54, 80, 0.075);
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
@@ -3056,7 +3054,6 @@ progress {
     background-size: contain;
     border: 1px solid #d1d7e0;
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
@@ -3244,7 +3241,6 @@ progress {
     padding: 0;
     background-color: transparent;
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
@@ -3313,7 +3309,6 @@ progress {
     box-shadow: 0 0.1rem 0.25rem rgba(46, 54, 80, 0.1);
     -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    -moz-appearance: none;
     appearance: none;
 }
 
@@ -42437,7 +42432,6 @@ label {
     border-radius: 0.5rem;
     box-shadow: inset 0 1px 2px rgba(46, 54, 80, 0.075);
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
@@ -42481,7 +42475,6 @@ label {
     background-clip: padding-box;
     border: 0.0625rem solid #d1d7e0;
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 0.5rem;
     box-shadow: inset 0 1px 2px rgba(46, 54, 80, 0.075);

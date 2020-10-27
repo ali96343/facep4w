@@ -5,6 +5,8 @@ ported from:
 
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
+- https://github.com/puikinsh/notika
+- https://github.com/icdcom/octopus
 - https://github.com/ColorlibHQ/AdminLTE
 - https://github.com/ColorlibHQ/gentelella
 - https://github.com/StartBootstrap/startbootstrap-sb-admin

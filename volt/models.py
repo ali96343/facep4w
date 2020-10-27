@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 21.10.2020 16:01:29
+# py4web app, AI-biorex ported 27.10.2020 12:42:09
 #
 
 #import pydal
@@ -24,7 +24,6 @@ if not db(db.auth_user).count():
     db.auth_user.insert(**body)
     db.commit()
 
-
 db.define_table(
     'test_table',
     Field( 'f0', 'string', label='l0'),
@@ -34,6 +33,7 @@ db.define_table(
 
 if not db(db.test_table).count():
     populate(db.test_table, n=10)
+    db.commit()
 
 
 db.define_table(
@@ -199,16 +199,16 @@ if not db(db.tdashboard0).count():
 
 if not db(db.ttransactions0).count():
     db.ttransactions0.insert(f0="p4w:#", f1="p4w:Bill For", f2="p4w:Issue Date", f3="p4w:Due Date", f4="p4w:Total", f5="p4w:Status", f6="p4w:Action")
-    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Platinum Subscription Plan", f2="p4w:1 May 2020", f3="p4w:1 Jun 2020", f4="p4w:$799,00", f5="p4w:Due", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456423", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Apr 2020", f3="p4w:1 May 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456420", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Mar 2020", f3="p4w:1 Apr 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456421", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Feb 2020", f3="p4w:1 Mar 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456420", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Jan 2020", f3="p4w:1 Feb 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456479", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Dec 2019", f3="p4w:1 Jan 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Nov 2019", f3="p4w:1 Dec 2019", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:453673", f1="p4w:Gold Subscription Plan", f2="p4w:1 Oct 2019", f3="p4w:1 Nov 2019", f4="p4w:$533,42", f5="p4w:Canceled", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456468", f1="p4w:Gold Subscription Plan", f2="p4w:1 Sep 2019", f3="p4w:1 Oct 2019", f4="p4w:$533,42", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
-    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Flexible Subscription Plan", f2="p4w:1 Aug 2019", f3="p4w:1 Sep 2019", f4="p4w:$233,42", f5="p4w:Paid", f6="p4w:Toggle Dropdown View Details Edit Remove")
+    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Platinum Subscription Plan", f2="p4w:1 May 2020", f3="p4w:1 Jun 2020", f4="p4w:$799,00", f5="p4w:Due", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456423", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Apr 2020", f3="p4w:1 May 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456420", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Mar 2020", f3="p4w:1 Apr 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456421", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Feb 2020", f3="p4w:1 Mar 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456420", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Jan 2020", f3="p4w:1 Feb 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456479", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Dec 2019", f3="p4w:1 Jan 2020", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Platinum Subscription Plan", f2="p4w:1 Nov 2019", f3="p4w:1 Dec 2019", f4="p4w:$799,00", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:453673", f1="p4w:Gold Subscription Plan", f2="p4w:1 Oct 2019", f3="p4w:1 Nov 2019", f4="p4w:$533,42", f5="p4w:Canceled", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456468", f1="p4w:Gold Subscription Plan", f2="p4w:1 Sep 2019", f3="p4w:1 Oct 2019", f4="p4w:$533,42", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
+    db.ttransactions0.insert(f0="p4w:456478", f1="p4w:Flexible Subscription Plan", f2="p4w:1 Aug 2019", f3="p4w:1 Sep 2019", f4="p4w:$233,42", f5="p4w:Paid", f6="p4w:Toggle DropdownView DetailsEditRemove")
     db.commit()
 
 if not db(db.tbootstrapXtables0).count():
