@@ -5445,8 +5445,8 @@ def error404(error):
                         f"     info: {error}", ]
         if len(func_mess):
             debug_mess += func_mess
-        debug_mess.append(f"     goto_new_path: {location}\\n")
-        print("\\n".join(debug_mess))
+        debug_mess.append(f"     goto_new_path: {location}\n")
+        print("\n".join(debug_mess))
 
     bottle.response.status = 303
     bottle.response.set_header("Location", location)
