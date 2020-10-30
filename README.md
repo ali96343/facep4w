@@ -1,7 +1,5 @@
 # facep4w
-some py4web apps
-
-ported from:
+py4web apps ported from multistars-github-dashboards:
 
 js, jquery, bootstrap, bulma
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
@@ -16,8 +14,14 @@ js, jquery, bootstrap, bulma
 
 angular, vue
 
-- https://github.com/epicmaxco/vuestic-admin
 - https://github.com/akveo/ngx-admin
-- https://github.com/PanJiaChen/vue-element-admin.git
-- https://github.com/creativetimofficial/vue-notus
 - https://github.com/flatlogic/angular-material-admin
+- https://github.com/PanJiaChen/vue-element-admin.git
+- https://github.com/epicmaxco/vuestic-admin
+- https://github.com/creativetimofficial/vue-notus
+
+react, tailwind
+  
+  The list will be continued
+
+
