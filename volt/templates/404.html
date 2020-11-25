@@ -1,11 +1,12 @@
 <!--
 
 =========================================================
-* Volt - Bootstrap 5 Admin Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard
 * Copyright 2020 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
 
 * Designed and coded by https://themesberg.com
 
@@ -17,12 +18,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 27.10.2020 12:42:10 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 17:20:27 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="Volt Bootstrap 5 Dashboard - 404 Not Found Page" name="title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - 404 Not Found Page" name="title"/>
   <meta content="Themesberg" name="author"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." name="description"/>
   <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, free bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
@@ -30,13 +31,13 @@
   <!-- Open Graph / Facebook -->
   <meta content="website" property="og:type"/>
   <meta content="https://demo.themesberg.com/volt" property="og:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - 404 Not Found Page" property="og:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - 404 Not Found Page" property="og:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="og:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" property="twitter:card"/>
   <meta content="https://demo.themesberg.com/volt" property="twitter:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - 404 Not Found Page" property="twitter:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - 404 Not Found Page" property="twitter:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="twitter:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="twitter:image"/>
   <!-- Favicon -->
@@ -55,6 +56,7 @@
   <link href="[%[=URL('static/tte/css/volt.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -64,17 +66,15 @@
      <div class="row">
       <div class="col-12 text-center d-flex align-items-center justify-content-center">
        <div>
-        <a href="[%[=URL('index') ]]">
-         <img alt="404 not found" class="img-fluid w-75" src="[%[=URL('static/tte/assets/img/illustrations/404.svg') ]]"/></a>
+        <img alt="404 not found" class="img-fluid w-75" src="[%[=URL('static/tte/assets/img/illustrations/404.svg') ]]"/>
         <h1 class="mt-5">
          Page not
          <span class="font-weight-bolder text-primary">found</span>
         </h1>
         <p class="lead my-4">Oops! Looks like you followed a bad link. If you think this is a problem with us, please tell us.</p>
-        <a class="btn btn-primary animate-hover" href="[%[=URL('index') ]]">
+        <a class="btn btn-primary animate-hover" href="[%[=URL('dashboard') ]]">
          <i class="fas fa-chevron-left mr-3 pl-2 animate-left-3"></i>
-         Go
-                                back home
+         Go back home
         </a>
        </div>
       </div>

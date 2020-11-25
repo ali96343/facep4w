@@ -21,7 +21,6 @@ angular, vue
 - https://github.com/creativetimofficial/vue-notus
 
 react, tailwind
-  
-  The list will be continued
 
-
+- https://github.com/creativetimofficial/material-dashboard-react
+- https://github.com/tailwindadmin/admin  

@@ -1,4 +1,4 @@
-timestamp: 2020-08-03T11:38:32.103015
+timestamp: 2020-11-19T10:44:30.971851
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "username" CHAR(512) UNIQUE,
@@ -8,22 +8,95 @@ CREATE TABLE "auth_user"(
     "last_name" CHAR(512),
     "sso_id" CHAR(512),
     "action_token" CHAR(512),
-    "last_password_change" TIMESTAMP,
-    "past_passwords_hash" TEXT
+    "last_password_change" TIMESTAMP
 );
 success!
-timestamp: 2020-08-03T11:38:32.119243
+timestamp: 2020-11-19T10:44:31.051122
 CREATE TABLE "auth_user_tag_groups"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "path" CHAR(512),
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2020-10-21T14:26:37.440291
+timestamp: 2020-11-19T10:44:31.274153
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
     "f1" CHAR(512),
     "f2" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.422445
+CREATE TABLE "dfforms0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.446062
+CREATE TABLE "dfforms1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.507201
+CREATE TABLE "dfforms2"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.542718
+CREATE TABLE "dfforms3"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.568471
+CREATE TABLE "dfforms4"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.594217
+CREATE TABLE "dfforms5"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512)
+);
+success!
+timestamp: 2020-11-19T10:44:31.626277
+CREATE TABLE "dfforms6"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" TEXT
+);
+success!
+timestamp: 2020-11-19T10:44:31.644464
+CREATE TABLE "dfuiXelements0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" TEXT
+);
+success!
+timestamp: 2020-11-19T10:44:31.698524
+CREATE TABLE "ttables0"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
+    "f2" CHAR(1024),
+    "f3" CHAR(1024),
+    "f4" CHAR(1024),
+    "f5" CHAR(1024),
+    "f6" CHAR(1024),
+    "f7" CHAR(1024),
+    "f8" CHAR(1024),
+    "f9" CHAR(1024),
+    "f10" CHAR(1024)
+);
+success!
+timestamp: 2020-11-19T10:44:31.770973
+CREATE TABLE "ttables1"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
+    "f2" CHAR(1024),
+    "f3" CHAR(1024),
+    "f4" CHAR(1024)
 );
 success!

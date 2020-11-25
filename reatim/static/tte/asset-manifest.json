@@ -1,0 +1,31 @@
+{
+    "files": {
+        "main.css": "/reatim/static/tte/static/css/main.8e9f8467.chunk.css",
+        "main.js": "/reatim/static/tte/static/js/main.56086d01.chunk.js",
+        "main.js.map": "/reatim/static/tte/static/js/main.56086d01.chunk.js.map",
+        "runtime-main.js": "/reatim/static/tte/static/js/runtime-main.d0bf2bb1.js",
+        "runtime-main.js.map": "/reatim/static/tte/static/js/runtime-main.d0bf2bb1.js.map",
+        "reatim/static/tte/static/css/2.d0176e96.chunk.css": "/reatim/static/tte/static/css/2.d0176e96.chunk.css",
+        "reatim/static/tte/static/js/2.b542eb57.chunk.js": "/reatim/static/tte/static/js/2.b542eb57.chunk.js",
+        "reatim/static/tte/static/js/2.b542eb57.chunk.js.map": "/reatim/static/tte/static/js/2.b542eb57.chunk.js.map",
+        "/reatim/index.html": "/reatim/index.html",
+        "/reatim/static/tte/precache-manifest.1138432044edc98dadcddb54903d928d.js": "/reatim/static/tte/precache-manifest.1138432044edc98dadcddb54903d928d.js",
+        "/reatim/static/tte/service-worker.js": "/reatim/static/tte/service-worker.js",
+        "reatim/static/tte/static/css/2.d0176e96.chunk.css.map": "/reatim/static/tte/static/css/2.d0176e96.chunk.css.map",
+        "reatim/static/tte/static/css/main.8e9f8467.chunk.css.map": "/reatim/static/tte/static/css/main.8e9f8467.chunk.css.map",
+        "reatim/static/tte/static/js/2.b542eb57.chunk.js.LICENSE.txt": "/reatim/static/tte/static/js/2.b542eb57.chunk.js.LICENSE.txt",
+        "reatim/static/tte/static/js/main.56086d01.chunk.js.LICENSE.txt": "/reatim/static/tte/static/js/main.56086d01.chunk.js.LICENSE.txt",
+        "reatim/static/tte/static/media/marc.jpg": "/reatim/static/tte/static/media/marc.8880a65c.jpg",
+        "reatim/static/tte/static/media/sidebar-1.jpg": "/reatim/static/tte/static/media/sidebar-1.8e9f0a3c.jpg",
+        "reatim/static/tte/static/media/sidebar-2.jpg": "/reatim/static/tte/static/media/sidebar-2.310509c9.jpg",
+        "reatim/static/tte/static/media/sidebar-3.jpg": "/reatim/static/tte/static/media/sidebar-3.25031690.jpg",
+        "reatim/static/tte/static/media/sidebar-4.jpg": "/reatim/static/tte/static/media/sidebar-4.fc9cb053.jpg"
+    },
+    "entrypoints": [
+        "reatim/static/tte/static/js/runtime-main.d0bf2bb1.js",
+        "reatim/static/tte/static/css/2.d0176e96.chunk.css",
+        "reatim/static/tte/static/js/2.b542eb57.chunk.js",
+        "reatim/static/tte/static/css/main.8e9f8467.chunk.css",
+        "reatim/static/tte/static/js/main.56086d01.chunk.js"
+    ]
+}

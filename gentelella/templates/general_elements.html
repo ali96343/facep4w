@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 21.10.2020 16:07:43 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 16:43:08 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -25,6 +25,7 @@
   <!-- Custom Theme Style -->
   <link href="[%[=URL('static/tte/gentelella/build/css/custom.min.css') ]]" rel="stylesheet"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body class="nav-md">
@@ -674,25 +675,37 @@
              <div class="panel-body">
               
 <!--view: rows_tgeneralXelements0, db_table: tgeneralXelements0 -->
-<table class="table table-bordered">
-  <thead>
-    <th>#</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Username</th>
-  </thead>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_tgeneralXelements0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tgeneralXelements0 -->
+
+
+<div  class='divtgeneralXelements0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tgeneralXelements0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtgeneralXelements0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
              </div>
             </div>
@@ -770,25 +783,37 @@
              <div class="panel-body">
               
 <!--view: rows_tgeneralXelements1, db_table: tgeneralXelements1 -->
-<table class="table table-striped">
-  <thead>
-    <th>#</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Username</th>
-  </thead>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row1 in rows_tgeneralXelements1: ]]
         <tr>
-            <td>[%[= row1.f0 ]]</td>
-            <td>[%[= row1.f1 ]]</td>
-            <td>[%[= row1.f2 ]]</td>
-            <td>[%[= row1.f3 ]]</td>
+            <td>[%[= XML(row1.f0) ]]</td>
+            <td>[%[= XML(row1.f1) ]]</td>
+            <td>[%[= XML(row1.f2) ]]</td>
+            <td>[%[= XML(row1.f3) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tgeneralXelements1 -->
+
+
+<div  class='divtgeneralXelements1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tgeneralXelements1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtgeneralXelements1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
              </div>
             </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 21.10.2020 16:07:44 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 16:43:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
   <!-- Bootstrap -->
-  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+  <link href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
   <link href="[%[=URL('static/tte/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') ]]" rel="stylesheet"/>
   <!-- Font Awesome -->
   <link href="[%[=URL('static/tte/gentelella/vendors/font-awesome/css/font-awesome.min.css') ]]" rel="stylesheet"/>
@@ -26,6 +26,7 @@
   <!-- Custom Theme Style -->
   <link href="[%[=URL('static/tte/gentelella/build/css/custom.min.css') ]]" rel="stylesheet"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body class="nav-md">
@@ -464,29 +465,41 @@
              </p>
              
 <!--view: rows_ttablesXdynamic0, db_table: ttablesXdynamic0 -->
-<table id="datatable" class="table table-striped table-bordered" style="width:100%">
-  <thead>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
+  <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_ttablesXdynamic0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
-            <td>[%[= row0.f4 ]]</td>
-            <td>[%[= row0.f5 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
+            <td>[%[= XML(row0.f4) ]]</td>
+            <td>[%[= XML(row0.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic0 -->
+
+
+<div  class='divttablesXdynamic0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>
@@ -533,33 +546,45 @@
              </p>
              
 <!--view: rows_ttablesXdynamic1, db_table: ttablesXdynamic1 -->
-<table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
-  <thead>
-    <th>len0</th>
-    <th>len0</th>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
+  <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
+    <thead>
+      <tr>
+        <th>==0</th>
+        <th>==0</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row1 in rows_ttablesXdynamic1: ]]
         <tr>
-            <td>[%[= row1.f0 ]]</td>
-            <td>[%[= row1.f1 ]]</td>
-            <td>[%[= row1.f2 ]]</td>
-            <td>[%[= row1.f3 ]]</td>
-            <td>[%[= row1.f4 ]]</td>
-            <td>[%[= row1.f5 ]]</td>
-            <td>[%[= row1.f6 ]]</td>
-            <td>[%[= row1.f7 ]]</td>
+            <td>[%[= XML(row1.f0) ]]</td>
+            <td>[%[= XML(row1.f1) ]]</td>
+            <td>[%[= XML(row1.f2) ]]</td>
+            <td>[%[= XML(row1.f3) ]]</td>
+            <td>[%[= XML(row1.f4) ]]</td>
+            <td>[%[= XML(row1.f5) ]]</td>
+            <td>[%[= XML(row1.f6) ]]</td>
+            <td>[%[= XML(row1.f7) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic1 -->
+
+
+<div  class='divttablesXdynamic1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>
@@ -604,29 +629,41 @@
              <p class="text-muted font-13 m-b-30">The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.</p>
              
 <!--view: rows_ttablesXdynamic2, db_table: ttablesXdynamic2 -->
-<table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
-  <thead>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
+  <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row2 in rows_ttablesXdynamic2: ]]
         <tr>
-            <td>[%[= row2.f0 ]]</td>
-            <td>[%[= row2.f1 ]]</td>
-            <td>[%[= row2.f2 ]]</td>
-            <td>[%[= row2.f3 ]]</td>
-            <td>[%[= row2.f4 ]]</td>
-            <td>[%[= row2.f5 ]]</td>
+            <td>[%[= XML(row2.f0) ]]</td>
+            <td>[%[= XML(row2.f1) ]]</td>
+            <td>[%[= XML(row2.f2) ]]</td>
+            <td>[%[= XML(row2.f3) ]]</td>
+            <td>[%[= XML(row2.f4) ]]</td>
+            <td>[%[= XML(row2.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic2 -->
+
+
+<div  class='divttablesXdynamic2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic2</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic2');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>
@@ -671,29 +708,41 @@
              <p class="text-muted font-13 m-b-30">This example shows FixedHeader being styling by the Bootstrap CSS framework.</p>
              
 <!--view: rows_ttablesXdynamic3, db_table: ttablesXdynamic3 -->
-<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
-  <thead>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
+  <table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row3 in rows_ttablesXdynamic3: ]]
         <tr>
-            <td>[%[= row3.f0 ]]</td>
-            <td>[%[= row3.f1 ]]</td>
-            <td>[%[= row3.f2 ]]</td>
-            <td>[%[= row3.f3 ]]</td>
-            <td>[%[= row3.f4 ]]</td>
-            <td>[%[= row3.f5 ]]</td>
+            <td>[%[= XML(row3.f0) ]]</td>
+            <td>[%[= XML(row3.f1) ]]</td>
+            <td>[%[= XML(row3.f2) ]]</td>
+            <td>[%[= XML(row3.f3) ]]</td>
+            <td>[%[= XML(row3.f4) ]]</td>
+            <td>[%[= XML(row3.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic3 -->
+
+
+<div  class='divttablesXdynamic3' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic3</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic3');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>
@@ -738,29 +787,41 @@
              <p class="text-muted font-13 m-b-30">KeyTable provides Excel like cell navigation on any table. Events (focus, blur, action etc) can be assigned to individual cells, columns, rows or all cells.</p>
              
 <!--view: rows_ttablesXdynamic4, db_table: ttablesXdynamic4 -->
-<table id="datatable-keytable" class="table table-striped table-bordered" style="width:100%">
-  <thead>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
+  <table id="datatable-keytable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row4 in rows_ttablesXdynamic4: ]]
         <tr>
-            <td>[%[= row4.f0 ]]</td>
-            <td>[%[= row4.f1 ]]</td>
-            <td>[%[= row4.f2 ]]</td>
-            <td>[%[= row4.f3 ]]</td>
-            <td>[%[= row4.f4 ]]</td>
-            <td>[%[= row4.f5 ]]</td>
+            <td>[%[= XML(row4.f0) ]]</td>
+            <td>[%[= XML(row4.f1) ]]</td>
+            <td>[%[= XML(row4.f2) ]]</td>
+            <td>[%[= XML(row4.f3) ]]</td>
+            <td>[%[= XML(row4.f4) ]]</td>
+            <td>[%[= XML(row4.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic4 -->
+
+
+<div  class='divttablesXdynamic4' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic4</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic4');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>
@@ -805,35 +866,47 @@
              <p class="text-muted font-13 m-b-30">Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.</p>
              
 <!--view: rows_ttablesXdynamic5, db_table: ttablesXdynamic5 -->
-<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-  <thead>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-    <th>Extn.</th>
-    <th>E-mail</th>
-  </thead>
+  <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+        <th>Extn.</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row5 in rows_ttablesXdynamic5: ]]
         <tr>
-            <td>[%[= row5.f0 ]]</td>
-            <td>[%[= row5.f1 ]]</td>
-            <td>[%[= row5.f2 ]]</td>
-            <td>[%[= row5.f3 ]]</td>
-            <td>[%[= row5.f4 ]]</td>
-            <td>[%[= row5.f5 ]]</td>
-            <td>[%[= row5.f6 ]]</td>
-            <td>[%[= row5.f7 ]]</td>
-            <td>[%[= row5.f8 ]]</td>
+            <td>[%[= XML(row5.f0) ]]</td>
+            <td>[%[= XML(row5.f1) ]]</td>
+            <td>[%[= XML(row5.f2) ]]</td>
+            <td>[%[= XML(row5.f3) ]]</td>
+            <td>[%[= XML(row5.f4) ]]</td>
+            <td>[%[= XML(row5.f5) ]]</td>
+            <td>[%[= XML(row5.f6) ]]</td>
+            <td>[%[= XML(row5.f7) ]]</td>
+            <td>[%[= XML(row5.f8) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXdynamic5 -->
+
+
+<div  class='divttablesXdynamic5' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXdynamic5</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXdynamic5');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
             </div>
            </div>

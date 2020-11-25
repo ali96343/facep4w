@@ -1,11 +1,12 @@
 <!--
 
 =========================================================
-* Volt - Bootstrap 5 Admin Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard
 * Copyright 2020 Themesberg (https://www.themesberg.com)
+* License (https://themes.getbootstrap.com/licenses/)
 
 * Designed and coded by https://themesberg.com
 
@@ -17,12 +18,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 27.10.2020 12:42:10 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 17:20:27 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Lock Page" name="title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Lock Page" name="title"/>
   <meta content="Themesberg" name="author"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." name="description"/>
   <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, free bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
@@ -30,13 +31,13 @@
   <!-- Open Graph / Facebook -->
   <meta content="website" property="og:type"/>
   <meta content="https://demo.themesberg.com/volt" property="og:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Lock Page" property="og:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Lock Page" property="og:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="og:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" property="twitter:card"/>
   <meta content="https://demo.themesberg.com/volt" property="twitter:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Lock Page" property="twitter:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Lock Page" property="twitter:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="twitter:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="twitter:image"/>
   <!-- Favicon -->
@@ -55,16 +56,23 @@
   <link href="[%[=URL('static/tte/css/volt.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
- <body class="bg-soft">
+ <body>
   <main>
    <!-- Section -->
-   <section class="vh-lg-100 bg-soft d-flex align-items-center">
+   <section class="vh-lg-100 bg-soft d-flex align-items-center my-4">
     <div class="container">
-     <div class="row justify-content-center form-bg-image" data-background="[%[=URL('static/tte/assets/img/illustrations/signin.svg') ]]">
+     <p class="text-center">
+      <a class="text-gray-700" href="[%[=URL('dashboard') ]]">
+       <i class="fas fa-angle-left mr-2"></i>
+       Back to homepage
+      </a>
+     </p>
+     <div class="row justify-content-center form-bg-image" data-background-lg="[%[=URL('static/tte/assets/img/illustrations/signin.svg') ]]">
       <div class="col-12 d-flex align-items-center justify-content-center">
-       <div class="signin-inner my-3 my-lg-0 bg-white shadow-soft border border-light rounded p-4 p-lg-5 w-100 fmxw-500">
+       <div class="bg-white shadow-soft border border-light rounded p-4 p-lg-5 w-100 fmxw-500">
         <div class="text-center text-md-center mb-4 mt-md-0">
          <div class="user-avatar large-avatar mx-auto mb-3 border-dark p-2">
           <img alt="Image placeholder" class="rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
@@ -73,7 +81,7 @@
         </div>
         
 <!-- view: flock0, db_table: dflock0 -->
-<div class="mt-5">
+<div class="mt-5"  style="border: 1px gray dashed;">
 [%[= flock0.custom['begin'] ]]
 <div class="mb-4">
  <label for="exampleInputPasswordCard4">
@@ -103,26 +111,25 @@
  [%[ flock0.custom['submit']['_type']= 'submit'  ]]
  [%[ flock0.custom['submit']['_class']= 'btn btn-block btn-primary'  ]]
  [%[ flock0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ flock0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ flock0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ flock0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ flock0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= flock0.custom['submit'] ]]
 
 </div>
 
  [%[ for hidden_widget in flock0.custom['hidden_widgets'].keys(): ]]
- [%[= flock0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= flock0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= flock0.custom['end'] ]]
-  <div  class='divflock0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">flock0</small>
+  
+<div  class='divflock0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">flock0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divflock0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -160,5 +167,32 @@
   <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
   <!-- Volt JS -->
   <script src="[%[=URL('static/tte/assets/js/volt.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: 'will hide in 3sec',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

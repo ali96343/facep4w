@@ -1,11 +1,12 @@
 <!--
 
 =========================================================
-* Volt - Bootstrap 5 Admin Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard
 * Copyright 2020 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
 
 * Designed and coded by https://themesberg.com
 
@@ -17,12 +18,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 27.10.2020 12:42:10 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 17:20:28 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Typography" name="title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Typography" name="title"/>
   <meta content="Themesberg" name="author"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." name="description"/>
   <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, free bootstrap 5 dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
@@ -30,13 +31,13 @@
   <!-- Open Graph / Facebook -->
   <meta content="website" property="og:type"/>
   <meta content="https://demo.themesberg.com/volt" property="og:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Typography" property="og:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Typography" property="og:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="og:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" property="twitter:card"/>
   <meta content="https://demo.themesberg.com/volt" property="twitter:url"/>
-  <meta content="Volt Bootstrap 5 Dashboard - Typography" property="twitter:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Typography" property="twitter:title"/>
   <meta content="Volt is a free and open source Bootstrap 5 Admin Dashboard featuring 11 example pages, 100 components and 3 plugins with Vanilla JS." property="twitter:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg" property="twitter:image"/>
   <!-- Favicon -->
@@ -55,9 +56,10 @@
   <link href="[%[=URL('static/tte/css/volt.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
- <body class="bg-soft">
+ <body>
   <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
    <a class="navbar-brand mr-lg-5" href="[%[=URL('index') ]]">
     <img alt="Volt logo" class="navbar-brand-dark" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]"/>
@@ -68,213 +70,210 @@
     </button>
    </div>
   </nav>
-  <div class="container-fluid bg-soft">
-   <div class="row">
-    <div class="col-12">
-     <nav class="sidebar d-md-block bg-primary text-white collapse" data-simplebar="" id="sidebarMenu">
-      <div class="sidebar-inner px-4 pt-3">
-       <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
-        <div class="d-flex align-items-center">
-         <div class="user-avatar lg-avatar mr-4">
-          <img alt="Bonnie Green" class="card-img-top rounded-circle border-white" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
-         <div class="d-block">
-          <h2 class="h6">Hi, Jane</h2>
-          <a class="btn btn-secondary text-dark btn-xs" href="[%[=URL('signXin') ]]">
-           <span class="mr-2">
-            <span class="fas fa-sign-out-alt"></span>
-           </span>
-           Sign Out
-          </a>
-         </div>
-        </div>
-        <div class="collapse-close d-md-none">
-         <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" class="fas fa-times" data-target="#sidebarMenu" data-toggle="collapse" href="#sidebarMenu"></a>
-        </div>
-       </div>
-       <ul class="nav flex-column">
+  <nav class="sidebar d-md-block bg-primary text-white collapse" data-simplebar="" id="sidebarMenu">
+   <div class="sidebar-inner px-4 pt-3">
+    <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+     <div class="d-flex align-items-center">
+      <div class="user-avatar lg-avatar mr-4">
+       <img alt="Bonnie Green" class="card-img-top rounded-circle border-white" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+      <div class="d-block">
+       <h2 class="h6">Hi, Jane</h2>
+       <a class="btn btn-secondary text-dark btn-xs" href="[%[=URL('signXin') ]]">
+        <span class="mr-2">
+         <span class="fas fa-sign-out-alt"></span>
+        </span>
+        Sign Out
+       </a>
+      </div>
+     </div>
+     <div class="collapse-close d-md-none">
+      <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" class="fas fa-times" data-target="#sidebarMenu" data-toggle="collapse" href="#sidebarMenu"></a>
+     </div>
+    </div>
+    <ul class="nav flex-column">
+     <li class="nav-item">
+      <a class="nav-link" href="[%[=URL('dashboard') ]]">
+       <span class="sidebar-icon">
+        <span class="fas fa-chart-pie"></span>
+       </span>
+       <span>Overview</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="[%[=URL('transactions') ]]">
+       <span class="sidebar-icon">
+        <span class="fas fa-hand-holding-usd"></span>
+       </span>
+       <span>Transactions</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="[%[=URL('settings') ]]">
+       <span class="sidebar-icon">
+        <span class="fas fa-cog"></span>
+       </span>
+       <span>Settings</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-app" data-toggle="collapse">
+       <span>
+        <span class="sidebar-icon">
+         <span class="fas fa-table"></span>
+        </span>
+        Tables
+       </span>
+       <span class="link-arrow">
+        <span class="fas fa-chevron-right"></span>
+       </span>
+      </span>
+      <div aria-expanded="false" class="multi-level collapse" id="submenu-app" role="list">
+       <ul class="flex-column nav">
         <li class="nav-item">
-         <a class="nav-link" href="[%[=URL('dashboard') ]]">
-          <span class="sidebar-icon">
-           <span class="fas fa-chart-pie"></span>
-          </span>
-          <span>Overview</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link" href="[%[=URL('transactions') ]]">
-          <span class="sidebar-icon">
-           <span class="fas fa-hand-holding-usd"></span>
-          </span>
-          <span>Transactions</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link" href="[%[=URL('settings') ]]">
-          <span class="sidebar-icon">
-           <span class="fas fa-cog"></span>
-          </span>
-          <span>Settings</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-app" data-toggle="collapse">
-          <span>
-           <span class="sidebar-icon">
-            <span class="fas fa-table"></span>
-           </span>
-           Tables
-          </span>
-          <span class="link-arrow">
-           <span class="fas fa-chevron-right"></span>
-          </span>
-         </span>
-         <div aria-expanded="false" class="multi-level collapse" id="submenu-app" role="list">
-          <ul class="flex-column nav">
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('bootstrapXtables') ]]">
-             <span>Bootstrap Tables</span>
-            </a>
-           </li>
-          </ul>
-         </div>
-        </li>
-        <li class="nav-item">
-         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-pages" data-toggle="collapse">
-          <span>
-           <span class="sidebar-icon">
-            <span class="far fa-file-alt"></span>
-           </span>
-           Page examples
-          </span>
-          <span class="link-arrow">
-           <span class="fas fa-chevron-right"></span>
-          </span>
-         </span>
-         <div aria-expanded="false" class="multi-level collapse" id="submenu-pages" role="list">
-          <ul class="flex-column nav">
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('signXin') ]]">
-             <span>Sign In</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('signXup') ]]">
-             <span>Sign Up</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('forgotXpassword') ]]">
-             <span>Forgot password</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('resetXpassword') ]]">
-             <span>Reset password</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('lock') ]]">
-             <span>Lock</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('X404') ]]">
-             <span>404 Not Found</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('X500') ]]">
-             <span>500 Server Error</span>
-            </a>
-           </li>
-          </ul>
-         </div>
-        </li>
-        <li class="nav-item">
-         <span class="nav-link d-flex justify-content-between align-items-center" data-target="#submenu-components" data-toggle="collapse">
-          <span>
-           <span class="sidebar-icon">
-            <span class="fas fa-box-open"></span>
-           </span>
-           Components
-          </span>
-          <span class="link-arrow">
-           <span class="fas fa-chevron-right"></span>
-          </span>
-         </span>
-         <div aria-expanded="false" class="multi-level collapse show" id="submenu-components" role="list">
-          <ul class="flex-column nav">
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('buttons') ]]">
-             <span>Buttons</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('notifications') ]]">
-             <span>Notifications</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('forms') ]]">
-             <span>Forms</span>
-            </a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('modals') ]]">
-             <span>Modals</span>
-            </a>
-           </li>
-           <li class="nav-item active">
-            <a class="nav-link" href="[%[=URL('typography') ]]">
-             <span>Typography</span>
-            </a>
-           </li>
-          </ul>
-         </div>
-        </li>
-        <li class="dropdown-divider mt-4 mb-3 border-black" role="separator"></li>
-        <li class="nav-item">
-         <a class="nav-link d-flex align-items-center" href="[%[=URL('index') ]]">
-          <span class="sidebar-icon">
-           <img alt="Volt Logo" height="20" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]" width="20"/></span>
-          <span class="mt-1">Volt Overview</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" target="_blank">
-          <span class="sidebar-icon">
-           <span class="fas fa-book"></span>
-          </span>
-          <span>Quick Start</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link d-flex align-items-center" href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard" target="_blank">
-          <span class="sidebar-icon">
-           <span class="fas fa-rocket"></span>
-          </span>
-          <span>Upgrade to Pro</span>
-         </a>
-        </li>
-        <li class="nav-item">
-         <a class="nav-link d-flex align-items-center" href="https://themesberg.com" target="_blank">
-          <span class="sidebar-icon">
-           <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="20"/></span>
-          <span>Themesberg</span>
+         <a class="nav-link" href="[%[=URL('bootstrapXtables') ]]">
+          <span>Bootstrap Tables</span>
          </a>
         </li>
        </ul>
       </div>
-     </nav>
-     <main class="content">
-      <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark pl-0 pr-2 pb-0">
-       <div class="container-fluid px-0">
-        <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
-         <div class="d-flex">
-          <!-- Search form -->
-          
+     </li>
+     <li class="nav-item">
+      <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-target="#submenu-pages" data-toggle="collapse">
+       <span>
+        <span class="sidebar-icon">
+         <span class="far fa-file-alt"></span>
+        </span>
+        Page examples
+       </span>
+       <span class="link-arrow">
+        <span class="fas fa-chevron-right"></span>
+       </span>
+      </span>
+      <div aria-expanded="false" class="multi-level collapse" id="submenu-pages" role="list">
+       <ul class="flex-column nav">
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('signXin') ]]">
+          <span>Sign In</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('signXup') ]]">
+          <span>Sign Up</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('forgotXpassword') ]]">
+          <span>Forgot password</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('resetXpassword') ]]">
+          <span>Reset password</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('lock') ]]">
+          <span>Lock</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('X404') ]]">
+          <span>404 Not Found</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('X500') ]]">
+          <span>500 Server Error</span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="nav-item">
+      <span class="nav-link d-flex justify-content-between align-items-center" data-target="#submenu-components" data-toggle="collapse">
+       <span>
+        <span class="sidebar-icon">
+         <span class="fas fa-box-open"></span>
+        </span>
+        Components
+       </span>
+       <span class="link-arrow">
+        <span class="fas fa-chevron-right"></span>
+       </span>
+      </span>
+      <div aria-expanded="false" class="multi-level collapse show" id="submenu-components" role="list">
+       <ul class="flex-column nav">
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('buttons') ]]">
+          <span>Buttons</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('notifications') ]]">
+          <span>Notifications</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('forms') ]]">
+          <span>Forms</span>
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="[%[=URL('modals') ]]">
+          <span>Modals</span>
+         </a>
+        </li>
+        <li class="nav-item active">
+         <a class="nav-link" href="[%[=URL('typography') ]]">
+          <span>Typography</span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="dropdown-divider mt-4 mb-3 border-black" role="separator"></li>
+     <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="[%[=URL('index') ]]">
+       <span class="sidebar-icon">
+        <img alt="Volt Logo" height="20" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]" width="20"/></span>
+       <span class="mt-1">Volt Overview</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" target="_blank">
+       <span class="sidebar-icon">
+        <span class="fas fa-book"></span>
+       </span>
+       <span>Quick Start</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link d-flex align-items-center" href="https://themesberg.com" target="_blank">
+       <span class="sidebar-icon">
+        <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="20"/></span>
+       <span>Themesberg</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro" href="[%[=URL('upgradeXtoXpro') ]]">
+       <span class="sidebar-icon">
+        <span class="fas fa-rocket mr-2"></span>
+       </span>
+       <span>Upgrade to Pro</span>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <main class="content">
+   <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark pl-0 pr-2 pb-0">
+    <div class="container-fluid px-0">
+     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+      <div class="d-flex">
+       <!-- Search form -->
+       
 <!-- view: ftypography0, db_table: dftypography0 -->
-<div class="navbar-search form-inline" id="navbar-search-main">
+<div class="navbar-search form-inline" id="navbar-search-main"  style="border: 1px gray dashed;">
 [%[= ftypography0.custom['begin'] ]]
 <div class="input-group input-group-merge search-bar">
  <span class="input-group-text" id="topbar-addon">
@@ -297,405 +296,404 @@
  [%[ ftypography0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ ftypography0.custom['submit']['_aria-label']= 'Search'  ]]
  [%[ ftypography0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
- [%[ ftypography0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ ftypography0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftypography0.custom['submit']['_rows']= '1'  ]]
+ [%[ ftypography0.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ ftypography0.custom['submit']['_value']= 'Submit'  ]]
  [%[ ftypography0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftypography0.custom['submit'] ]]
 
 </div>
 
  [%[ for hidden_widget in ftypography0.custom['hidden_widgets'].keys(): ]]
- [%[= ftypography0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftypography0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= ftypography0.custom['end'] ]]
-  <div  class='divftypography0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftypography0</small>
+  
+<div  class='divftypography0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftypography0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftypography0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
 <!-- end ftypography0 -->
 
-         </div>
-         <!-- Navbar links -->
-         <ul class="navbar-nav align-items-center">
-          <li class="nav-item dropdown">
-           <a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark mr-lg-3 icon-notifications" data-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
-            <span class="icon icon-sm">
-             <span class="fas fa-bell bell-shake"></span>
-             <span class="icon-badge rounded-circle unread-notifications"></span>
-            </span>
-           </a>
-           <div class="dropdown-menu dashboard-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
-            <div class="list-group list-group-flush">
-             <a class="text-center text-primary font-weight-bold border-bottom border-light py-3" href="#">Notifications</a>
-             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
-              <div class="row align-items-center">
-               <div class="col-auto">
-                <!-- Avatar -->
-                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
-               <div class="col pl-0 ml--2">
-                <div class="d-flex justify-content-between align-items-center">
-                 <div>
-                  <h4 class="h6 mb-0 text-small">Jose Leos</h4>
-                 </div>
-                 <div class="text-right">
-                  <small class="text-danger">a few moments ago</small>
-                 </div>
-                </div>
-                <p class="font-small mt-1 mb-0">Added you to an event "Project stand-up" tomorrow at 12:30 AM.</p>
-               </div>
+      </div>
+      <!-- Navbar links -->
+      <ul class="navbar-nav align-items-center">
+       <li class="nav-item dropdown">
+        <a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark mr-lg-3 icon-notifications" data-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
+         <span class="icon icon-sm">
+          <span class="fas fa-bell bell-shake"></span>
+          <span class="icon-badge rounded-circle unread-notifications"></span>
+         </span>
+        </a>
+        <div class="dropdown-menu dashboard-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
+         <div class="list-group list-group-flush">
+          <a class="text-center text-primary font-weight-bold border-bottom border-light py-3" href="#">Notifications</a>
+          <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+           <div class="row align-items-center">
+            <div class="col-auto">
+             <!-- Avatar -->
+             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
+            <div class="col pl-0 ml--2">
+             <div class="d-flex justify-content-between align-items-center">
+              <div>
+               <h4 class="h6 mb-0 text-small">Jose Leos</h4>
               </div>
-             </a>
-             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
-              <div class="row align-items-center">
-               <div class="col-auto">
-                <!-- Avatar -->
-                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
-               <div class="col pl-0 ml--2">
-                <div class="d-flex justify-content-between align-items-center">
-                 <div>
-                  <h4 class="h6 mb-0 text-small">Neil Sims</h4>
-                 </div>
-                 <div class="text-right">
-                  <small class="text-danger">2 hrs ago</small>
-                 </div>
-                </div>
-                <p class="font-small mt-1 mb-0">You've been assigned a task for "Awesome new project".</p>
-               </div>
+              <div class="text-right">
+               <small class="text-danger">a few moments ago</small>
               </div>
-             </a>
-             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
-              <div class="row align-items-center">
-               <div class="col-auto">
-                <!-- Avatar -->
-                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
-               <div class="col pl-0 ml--2">
-                <div class="d-flex justify-content-between align-items-center">
-                 <div>
-                  <h4 class="h6 mb-0 text-small">Roberta Casas</h4>
-                 </div>
-                 <div class="text-right">
-                  <small>5 hrs ago</small>
-                 </div>
-                </div>
-                <p class="font-small mt-1 mb-0">Tagged you in a document called "First quarter financial plans",</p>
-               </div>
-              </div>
-             </a>
-             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
-              <div class="row align-items-center">
-               <div class="col-auto">
-                <!-- Avatar -->
-                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
-               <div class="col pl-0 ml--2">
-                <div class="d-flex justify-content-between align-items-center">
-                 <div>
-                  <h4 class="h6 mb-0 text-small">Joseph Garth</h4>
-                 </div>
-                 <div class="text-right">
-                  <small>1 d ago</small>
-                 </div>
-                </div>
-                <p class="font-small mt-1 mb-0">New message: "Hey, what's up? All set for the presentation?"</p>
-               </div>
-              </div>
-             </a>
-             <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
-              <div class="row align-items-center">
-               <div class="col-auto">
-                <!-- Avatar -->
-                <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
-               <div class="col pl-0 ml--2">
-                <div class="d-flex justify-content-between align-items-center">
-                 <div>
-                  <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
-                 </div>
-                 <div class="text-right">
-                  <small>2 hrs ago</small>
-                 </div>
-                </div>
-                <p class="font-small mt-1 mb-0">New message: "We need to improve the UI/UX for the landing page."</p>
-               </div>
-              </div>
-             </a>
-             <a class="dropdown-item text-center text-primary font-weight-bold py-3" href="#">View all</a>
-            </div>
-           </div>
-          </li>
-          <li class="nav-item dropdown">
-           <a aria-expanded="false" aria-haspopup="true" class="nav-link pt-1 px-0" data-toggle="dropdown" href="#" role="button">
-            <div class="media d-flex align-items-center">
-             <img alt="Image placeholder" class="user-avatar md-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
-             <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
-              <span class="mb-0 font-small font-weight-bold">Bonnie Green</span>
              </div>
+             <p class="font-small mt-1 mb-0">Added you to an event "Project stand-up" tomorrow at 12:30 AM.</p>
             </div>
-           </a>
-           <div class="dropdown-menu dashboard-dropdown dropdown-menu-right mt-2">
-            <a class="dropdown-item font-weight-bold" href="#">
-             <span class="far fa-user-circle"></span>
-             My Profile
-            </a>
-            <a class="dropdown-item font-weight-bold" href="#">
-             <span class="fas fa-cog"></span>
-             Settings
-            </a>
-            <a class="dropdown-item font-weight-bold" href="#">
-             <span class="fas fa-envelope-open-text"></span>
-             Messages
-            </a>
-            <a class="dropdown-item font-weight-bold" href="#">
-             <span class="fas fa-user-shield"></span>
-             Support
-            </a>
-            <div class="dropdown-divider" role="separator"></div>
-            <a class="dropdown-item font-weight-bold" href="#">
-             <span class="fas fa-sign-out-alt text-danger"></span>
-             Logout
-            </a>
            </div>
-          </li>
-         </ul>
-        </div>
-       </div>
-      </nav>
-      <div class="py-4">
-       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-         <li class="breadcrumb-item">
-          <a href="#">
-           <span class="fas fa-home"></span>
           </a>
-         </li>
-         <li class="breadcrumb-item">
-          <a href="#">Components</a>
-         </li>
-         <li aria-current="page" class="breadcrumb-item active">Typography</li>
-        </ol>
-       </nav>
-       <div class="d-flex justify-content-between w-100 flex-wrap">
-        <div class="mb-3 mb-lg-0">
-         <h1 class="h4">Typography</h1>
-         <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+          <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+           <div class="row align-items-center">
+            <div class="col-auto">
+             <!-- Avatar -->
+             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
+            <div class="col pl-0 ml--2">
+             <div class="d-flex justify-content-between align-items-center">
+              <div>
+               <h4 class="h6 mb-0 text-small">Neil Sims</h4>
+              </div>
+              <div class="text-right">
+               <small class="text-danger">2 hrs ago</small>
+              </div>
+             </div>
+             <p class="font-small mt-1 mb-0">You've been assigned a task for "Awesome new project".</p>
+            </div>
+           </div>
+          </a>
+          <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+           <div class="row align-items-center">
+            <div class="col-auto">
+             <!-- Avatar -->
+             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+            <div class="col pl-0 ml--2">
+             <div class="d-flex justify-content-between align-items-center">
+              <div>
+               <h4 class="h6 mb-0 text-small">Roberta Casas</h4>
+              </div>
+              <div class="text-right">
+               <small>5 hrs ago</small>
+              </div>
+             </div>
+             <p class="font-small mt-1 mb-0">Tagged you in a document called "First quarter financial plans",</p>
+            </div>
+           </div>
+          </a>
+          <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+           <div class="row align-items-center">
+            <div class="col-auto">
+             <!-- Avatar -->
+             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
+            <div class="col pl-0 ml--2">
+             <div class="d-flex justify-content-between align-items-center">
+              <div>
+               <h4 class="h6 mb-0 text-small">Joseph Garth</h4>
+              </div>
+              <div class="text-right">
+               <small>1 d ago</small>
+              </div>
+             </div>
+             <p class="font-small mt-1 mb-0">New message: "Hey, what's up? All set for the presentation?"</p>
+            </div>
+           </div>
+          </a>
+          <a class="list-group-item list-group-item-action border-bottom border-light" href="[%[=URL('index') ]]">
+           <div class="row align-items-center">
+            <div class="col-auto">
+             <!-- Avatar -->
+             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
+            <div class="col pl-0 ml--2">
+             <div class="d-flex justify-content-between align-items-center">
+              <div>
+               <h4 class="h6 mb-0 text-small">Bonnie Green</h4>
+              </div>
+              <div class="text-right">
+               <small>2 hrs ago</small>
+              </div>
+             </div>
+             <p class="font-small mt-1 mb-0">New message: "We need to improve the UI/UX for the landing page."</p>
+            </div>
+           </div>
+          </a>
+          <a class="dropdown-item text-center text-primary font-weight-bold py-3" href="#">View all</a>
+         </div>
         </div>
-        <div>
-         <a class="btn btn-outline-gray" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/foundation/typography/">
-          <i class="far fa-question-circle mr-1"></i>
-          Typography Docs
+       </li>
+       <li class="nav-item dropdown">
+        <a aria-expanded="false" aria-haspopup="true" class="nav-link pt-1 px-0" data-toggle="dropdown" href="#" role="button">
+         <div class="media d-flex align-items-center">
+          <img alt="Image placeholder" class="user-avatar md-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
+          <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
+           <span class="mb-0 font-small font-weight-bold">Bonnie Green</span>
+          </div>
+         </div>
+        </a>
+        <div class="dropdown-menu dashboard-dropdown dropdown-menu-right mt-2">
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="far fa-user-circle"></span>
+          My Profile
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-cog"></span>
+          Settings
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-envelope-open-text"></span>
+          Messages
+         </a>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-user-shield"></span>
+          Support
+         </a>
+         <div class="dropdown-divider" role="separator"></div>
+         <a class="dropdown-item font-weight-bold" href="#">
+          <span class="fas fa-sign-out-alt text-danger"></span>
+          Logout
          </a>
         </div>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </nav>
+   <div class="preloader bg-soft flex-column justify-content-center align-items-center">
+    <img alt="Volt logo" class="loader-element animate__animated animate__jackInTheBox" height="60" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]"/></div>
+   <div class="py-4">
+    <nav aria-label="breadcrumb">
+     <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+      <li class="breadcrumb-item">
+       <a href="#">
+        <span class="fas fa-home"></span>
+       </a>
+      </li>
+      <li class="breadcrumb-item">
+       <a href="#">Components</a>
+      </li>
+      <li aria-current="page" class="breadcrumb-item active">Typography</li>
+     </ol>
+    </nav>
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+     <div class="mb-3 mb-lg-0">
+      <h1 class="h4">Typography</h1>
+      <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+     </div>
+     <div>
+      <a class="btn btn-outline-gray" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/foundation/typography/">
+       <i class="far fa-question-circle mr-1"></i>
+       Typography Docs
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-12 mb-4">
+     <div class="card border-light shadow-sm components-section">
+      <div class="card-body">
+       <div class="row mb-4 mb-lg-5">
+        <div class="col-12 col-md-6">
+         <h2 class="h5 mb-3">Headings</h2>
+         <h1>h1. Themesberg heading</h1>
+         <h2>h2. Themesberg heading</h2>
+         <h3>h3. Themesberg heading</h3>
+         <h4>h4. Themesberg heading</h4>
+         <h5>h5. Themesberg heading</h5>
+         <h6>h6. Themesberg heading</h6>
+        </div>
+        <div class="col-12 col-md-6">
+         <h2 class="h5 mb-3">Display Headings</h2>
+         <h1 class="display-1">Display 1</h1>
+         <h1 class="display-2">Display 2</h1>
+         <h1 class="display-3">Display 3</h1>
+         <h1 class="display-4">Display 4</h1>
+        </div>
        </div>
-      </div>
-      <div class="row">
-       <div class="col-12 mb-4">
-        <div class="card border-light shadow-sm components-section">
-         <div class="card-body">
-          <div class="row mb-4 mb-lg-5">
-           <div class="col-12 col-md-6">
-            <h2 class="h5 mb-3">Headings</h2>
-            <h1>h1. Themesberg heading</h1>
-            <h2>h2. Themesberg heading</h2>
-            <h3>h3. Themesberg heading</h3>
-            <h4>h4. Themesberg heading</h4>
-            <h5>h5. Themesberg heading</h5>
-            <h6>h6. Themesberg heading</h6>
-           </div>
-           <div class="col-12 col-md-6">
-            <h2 class="h5 mb-3">Display Headings</h2>
-            <h1 class="display-1">Display 1</h1>
-            <h1 class="display-2">Display 2</h1>
-            <h1 class="display-3">Display 3</h1>
-            <h1 class="display-4">Display 4</h1>
-           </div>
-          </div>
-          <!-- Title  -->
-          <div class="row">
-           <div class="col-md-4">
-            <div class="mb-5">
-             <h2 class="h5 mb-3">Paragraphs</h2>
-            </div>
-           </div>
-          </div>
-          <!-- End of Title -->
-          <div class="row mb-4 mb-lg-5">
-           <div class="col-md-6">
-            <div class="mb-3">
-             <span class="h6 font-weight-bold">Simple paragraph</span>
-            </div>
-            <p>Start your development with a Pixel Design System for Bootstrap 4. Themesberg makes beautiful products to help people with creative ideas succeed.Our company empowers millions of people.</p>
-           </div>
-           <div class="col-md-6">
-            <div class="mt-5 mb-3 mt-sm-0">
-             <span class="h6 font-weight-bold">Lead paragraph</span>
-            </div>
-            <p class="lead">Start your development with a Pixel Design System for Bootstrap 4.Themesberg makes beautiful products to help people with creative ideas succeed.Our company empowers millions of people.</p>
-           </div>
-          </div>
-          <div class="row mt-4 mb-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Dark text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-dark mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Primary text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-primary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Secondary text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-secondary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Tertiary text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-tertiary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Info text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-info mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Danger text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-danger mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <div class="row py-3 align-items-center">
-           <div class="col-sm-2">
-            <small class="text-uppercase text-muted">Success text</small>
-           </div>
-           <div class="col-sm-10">
-            <p class="text-success mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
-           </div>
-          </div>
-          <!-- Title  -->
-          <div class="row">
-           <div class="col-md-4">
-            <div class="mt-6 mb-5">
-             <span class="h6">Blockquote</span>
-            </div>
-           </div>
-          </div>
-          <!-- End of Title -->
-          <div class="row">
-           <div class="col-md-8">
-            <blockquote class="blockquote text-center">
-             Themesberg makes beautiful products to help people with creative ideas succeed. Our company empowers millions of people.
-             <footer class="blockquote-footer mt-3 text-primary">
-              Zoltan Szőgyényi
-             </footer>
-            </blockquote>
-           </div>
-          </div>
-          <!-- Title  -->
-          <div class="row">
-           <div class="col-md-4">
-            <div class="mt-6 mb-5">
-             <span class="h6">Lists</span>
-            </div>
-           </div>
-          </div>
-          <!-- End of Title -->
-          <div class="row">
-           <div class="col-md-6">
-            <div class="mb-3">
-             <span class="h6">Unordered</span>
-            </div>
-            <ul>
-             <li>Minutes of the last meeting</li>
-             <li>Do we need yet more meetings?</li>
-             <li>
-              Any other business
-              <ul>
-               <li>Programming</li>
-               <li>Web Design</li>
-               <li>Database</li>
-              </ul>
-             </li>
-             <li>Something funny</li>
-            </ul>
-           </div>
-           <div class="col-md-6">
-            <div class="mt-5 mb-3 mt-sm-0">
-             <span class="h6 font-weight-bold">Ordered</span>
-            </div>
-            <ol>
-             <li>Minutes of the last meeting</li>
-             <li>Do we need yet more meetings?</li>
-             <li>
-              Any other business
-              <ol>
-               <li>Programming</li>
-               <li>Web Design</li>
-               <li>Database</li>
-              </ol>
-             </li>
-             <li>Something funny</li>
-            </ol>
-           </div>
-          </div>
+       <!-- Title  -->
+       <div class="row">
+        <div class="col-md-4">
+         <div class="mb-5">
+          <h2 class="h5 mb-3">Paragraphs</h2>
          </div>
         </div>
        </div>
-      </div>
-      <footer class="footer section py-5">
-       <div class="row">
-        <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-         <p class="mb-0 text-center text-xl-left">
-          Copyright © 2019-
-          <span class="current-year"></span>
-          <a class="text-primary font-weight-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
-         </p>
+       <!-- End of Title -->
+       <div class="row mb-4 mb-lg-5">
+        <div class="col-md-6">
+         <div class="mb-3">
+          <span class="h6 font-weight-bold">Simple paragraph</span>
+         </div>
+         <p>Start your development with a Pixel Design System for Bootstrap 4. Themesberg makes beautiful products to help people with creative ideas succeed.Our company empowers millions of people.</p>
         </div>
-        <div class="col-12 col-lg-6">
-         <ul class="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
-          <li class="list-inline-item px-0 px-sm-2">
-           <a href="https://themesberg.com/about">About</a>
-          </li>
-          <li class="list-inline-item px-0 px-sm-2">
-           <a href="https://themesberg.com/themes">Themes</a>
-          </li>
-          <li class="list-inline-item px-0 px-sm-2">
-           <a href="https://themesberg.com/blog">Blog</a>
-          </li>
-          <li class="list-inline-item px-0 px-sm-2">
-           <a href="https://themesberg.com/contact">Contact</a>
-          </li>
-         </ul>
+        <div class="col-md-6">
+         <div class="mt-5 mb-3 mt-sm-0">
+          <span class="h6 font-weight-bold">Lead paragraph</span>
+         </div>
+         <p class="lead">Start your development with a Pixel Design System for Bootstrap 4.Themesberg makes beautiful products to help people with creative ideas succeed.Our company empowers millions of people.</p>
         </div>
        </div>
-      </footer>
-     </main>
+       <div class="row mt-4 mb-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Dark text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-dark mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Primary text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-primary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Secondary text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-secondary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Tertiary text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-tertiary mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Info text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-info mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Danger text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-danger mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <div class="row py-3 align-items-center">
+        <div class="col-sm-2">
+         <small class="text-uppercase text-muted">Success text</small>
+        </div>
+        <div class="col-sm-10">
+         <p class="text-success mb-0">Design is not just what it looks like and feels like. Design is how it works.</p>
+        </div>
+       </div>
+       <!-- Title  -->
+       <div class="row">
+        <div class="col-md-4">
+         <div class="mt-6 mb-5">
+          <span class="h6">Blockquote</span>
+         </div>
+        </div>
+       </div>
+       <!-- End of Title -->
+       <div class="row">
+        <div class="col-md-8">
+         <blockquote class="blockquote text-center">
+          Themesberg makes beautiful products to help people with creative ideas succeed. Our company empowers millions of people.
+          <footer class="blockquote-footer mt-3 text-primary">
+           Zoltan Szőgyényi
+          </footer>
+         </blockquote>
+        </div>
+       </div>
+       <!-- Title  -->
+       <div class="row">
+        <div class="col-md-4">
+         <div class="mt-6 mb-5">
+          <span class="h6">Lists</span>
+         </div>
+        </div>
+       </div>
+       <!-- End of Title -->
+       <div class="row">
+        <div class="col-md-6">
+         <div class="mb-3">
+          <span class="h6">Unordered</span>
+         </div>
+         <ul>
+          <li>Minutes of the last meeting</li>
+          <li>Do we need yet more meetings?</li>
+          <li>
+           Any other business
+           <ul>
+            <li>Programming</li>
+            <li>Web Design</li>
+            <li>Database</li>
+           </ul>
+          </li>
+          <li>Something funny</li>
+         </ul>
+        </div>
+        <div class="col-md-6">
+         <div class="mt-5 mb-3 mt-sm-0">
+          <span class="h6 font-weight-bold">Ordered</span>
+         </div>
+         <ol>
+          <li>Minutes of the last meeting</li>
+          <li>Do we need yet more meetings?</li>
+          <li>
+           Any other business
+           <ol>
+            <li>Programming</li>
+            <li>Web Design</li>
+            <li>Database</li>
+           </ol>
+          </li>
+          <li>Something funny</li>
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
     </div>
    </div>
-  </div>
+   <footer class="footer section py-5">
+    <div class="row">
+     <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+      <p class="mb-0 text-center text-xl-left">
+       Copyright © 2019-
+       <span class="current-year"></span>
+       <a class="text-primary font-weight-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+      </p>
+     </div>
+     <div class="col-12 col-lg-6">
+      <ul class="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
+       <li class="list-inline-item px-0 px-sm-2">
+        <a href="https://themesberg.com/about">About</a>
+       </li>
+       <li class="list-inline-item px-0 px-sm-2">
+        <a href="https://themesberg.com/themes">Themes</a>
+       </li>
+       <li class="list-inline-item px-0 px-sm-2">
+        <a href="https://themesberg.com/blog">Blog</a>
+       </li>
+       <li class="list-inline-item px-0 px-sm-2">
+        <a href="https://themesberg.com/contact">Contact</a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </footer>
+  </main>
   <!-- Core -->
   <script src="[%[=URL('static/tte/vendor/popper.js/dist/umd/popper.min.js') ]]"></script>
   <script src="[%[=URL('static/tte/vendor/bootstrap/dist/js/bootstrap.min.js') ]]"></script>
@@ -722,5 +720,32 @@
   <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
   <!-- Volt JS -->
   <script src="[%[=URL('static/tte/assets/js/volt.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: 'will hide in 3sec',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>
