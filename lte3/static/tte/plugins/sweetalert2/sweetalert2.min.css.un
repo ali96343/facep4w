@@ -93,7 +93,7 @@
 }
 
 .swal2-popup.swal2-toast .swal2-styled:focus {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, .4)
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(100, 150, 200, .5)
 }
 
 .swal2-popup.swal2-toast .swal2-success {
@@ -328,7 +328,7 @@
     max-width: 100%;
     padding: 1.25em;
     border: none;
-    border-radius: .3125em;
+    border-radius: 5px;
     background: #fff;
     font-family: inherit;
     font-size: 1rem
@@ -398,12 +398,12 @@
     border-width: .25em;
     border-style: solid;
     border-radius: 100%;
-    border-color: #3085d6 transparent #3085d6 transparent
+    border-color: #2778c4 transparent #2778c4 transparent
 }
 
 .swal2-styled {
     margin: .3125em;
-    padding: .625em 2em;
+    padding: .625em 1.1em;
     box-shadow: none;
     font-weight: 500
 }
@@ -416,7 +416,7 @@
     border: 0;
     border-radius: .25em;
     background: initial;
-    background-color: #3085d6;
+    background-color: #2778c4;
     color: #fff;
     font-size: 1.0625em
 }
@@ -425,7 +425,7 @@
     border: 0;
     border-radius: .25em;
     background: initial;
-    background-color: #dd6b55;
+    background-color: #d14529;
     color: #fff;
     font-size: 1.0625em
 }
@@ -434,14 +434,14 @@
     border: 0;
     border-radius: .25em;
     background: initial;
-    background-color: #aaa;
+    background-color: #757575;
     color: #fff;
     font-size: 1.0625em
 }
 
 .swal2-styled:focus {
     outline: 0;
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(50, 100, 150, .4)
+    box-shadow: 0 0 0 3px rgba(100, 150, 200, .5)
 }
 
 .swal2-styled::-moz-focus-inner {
@@ -464,8 +464,8 @@
     left: 0;
     height: .25em;
     overflow: hidden;
-    border-bottom-right-radius: .3125em;
-    border-bottom-left-radius: .3125em
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px
 }
 
 .swal2-timer-progress-bar {
@@ -492,7 +492,7 @@
     overflow: hidden;
     transition: color .1s ease-out;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     background: 0 0;
     color: #ccc;
     font-family: serif;
@@ -505,6 +505,11 @@
     transform: none;
     background: 0 0;
     color: #f27474
+}
+
+.swal2-close:focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 3px rgba(100, 150, 200, .5)
 }
 
 .swal2-close::-moz-focus-inner {
@@ -559,7 +564,7 @@
 .swal2-textarea:focus {
     border: 1px solid #b4dbed;
     outline: 0;
-    box-shadow: 0 0 3px #c4e6f5
+    box-shadow: 0 0 0 3px rgba(100, 150, 200, .5)
 }
 
 .swal2-file::-moz-placeholder,
@@ -571,12 +576,6 @@
 .swal2-file:-ms-input-placeholder,
 .swal2-input:-ms-input-placeholder,
 .swal2-textarea:-ms-input-placeholder {
-    color: #ccc
-}
-
-.swal2-file::-ms-input-placeholder,
-.swal2-input::-ms-input-placeholder,
-.swal2-textarea::-ms-input-placeholder {
     color: #ccc
 }
 
@@ -657,10 +656,17 @@
     margin: 0 .4em
 }
 
+.swal2-input-label {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto
+}
+
 .swal2-validation-message {
     display: none;
     align-items: center;
     justify-content: center;
+    margin: 0 -2.7em;
     padding: .625em;
     overflow: hidden;
     background: #f0f0f0;
@@ -853,7 +859,9 @@
 }
 
 .swal2-progress-steps {
+    flex-wrap: wrap;
     align-items: center;
+    max-width: 100%;
     margin: 0 0 1.25em;
     padding: 0;
     background: inherit;
@@ -867,17 +875,18 @@
 
 .swal2-progress-steps .swal2-progress-step {
     z-index: 20;
+    flex-shrink: 0;
     width: 2em;
     height: 2em;
     border-radius: 2em;
-    background: #3085d6;
+    background: #2778c4;
     color: #fff;
     line-height: 2em;
     text-align: center
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
-    background: #3085d6
+    background: #2778c4
 }
 
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step {
@@ -891,10 +900,11 @@
 
 .swal2-progress-steps .swal2-progress-step-line {
     z-index: 10;
+    flex-shrink: 0;
     width: 2.5em;
     height: .4em;
     margin: 0 -1px;
-    background: #3085d6
+    background: #2778c4
 }
 
 [class^=swal2] {
@@ -951,12 +961,6 @@
 
     .swal2-range output {
         display: none
-    }
-}
-
-@-moz-document url-prefix() {
-    .swal2-close:focus {
-        outline: 2px solid rgba(50, 100, 150, .4)
     }
 }
 

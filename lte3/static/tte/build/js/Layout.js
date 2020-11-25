@@ -31,11 +31,13 @@ const CLASS_NAME_SIDEBAR_FOCUSED = 'sidebar-focused'
 const CLASS_NAME_LAYOUT_FIXED = 'layout-fixed'
 const CLASS_NAME_CONTROL_SIDEBAR_SLIDE_OPEN = 'control-sidebar-slide-open'
 const CLASS_NAME_CONTROL_SIDEBAR_OPEN = 'control-sidebar-open'
+const CLASS_NAME_LAYOUT_TOP_NAV = 'layout-top-nav'
 
 const Default = {
   scrollbarTheme: 'os-theme-light',
   scrollbarAutoHide: 'l',
   panelAutoHeight: true,
+  panelAutoHeightMode: 'min-height',
   loginRegisterAutoHeight: true
 }
 
@@ -81,15 +83,19 @@ class Layout {
 
     if (offset !== false) {
       if (max === heights.controlSidebar) {
-        $contentSelector.css('min-height', (max + offset))
+        if ($body.hasClass(CLASS_NAME_LAYOUT_TOP_NAV)) {
+          $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) + heights.header + heights.footer)
+        } else {
+          $contentSelector.css(this._config.panelAutoHeightMode, (max + offset))
+        }
       } else if (max === heights.window) {
-        $contentSelector.css('min-height', (max + offset) - heights.header - heights.footer)
+        $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) - heights.header - heights.footer)
       } else {
-        $contentSelector.css('min-height', (max + offset) - heights.header)
+        $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) - heights.header)
       }
 
       if (this._isFooterFixed()) {
-        $contentSelector.css('min-height', parseFloat($contentSelector.css('min-height')) + heights.footer)
+        $contentSelector.css(this._config.panelAutoHeightMode, parseFloat($contentSelector.css(this._config.panelAutoHeightMode)) + heights.footer)
       }
     }
 
@@ -98,7 +104,7 @@ class Layout {
     }
 
     if (offset !== false) {
-      $contentSelector.css('min-height', (max + offset) - heights.header - heights.footer)
+      $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) - heights.header - heights.footer)
     }
 
     if (typeof $.fn.overlayScrollbars !== 'undefined') {
@@ -123,8 +129,8 @@ class Layout {
     } else {
       const boxHeight = $selector.height()
 
-      if ($body.css('min-height') !== boxHeight) {
-        $body.css('min-height', boxHeight)
+      if ($body.css(this._config.panelAutoHeightMode) !== boxHeight) {
+        $body.css(this._config.panelAutoHeightMode, boxHeight)
       }
     }
   }
@@ -160,6 +166,10 @@ class Layout {
       })
 
     $(window).resize(() => {
+      this.fixLayoutHeight()
+    })
+
+    $(document).ready(() => {
       this.fixLayoutHeight()
     })
 

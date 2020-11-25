@@ -1,5 +1,5 @@
 /*!
- *   AdminLTE v3.1.0-pre
+ *   AdminLTE v3.1.0-rc
  *     Only Pages
  *   Author: Colorlib
  *   Website: AdminLTE.io <https://adminlte.io>
@@ -501,6 +501,94 @@ a.disabled.mailbox-attachment-close {
 
 .projects .project-state {
     text-align: center
+}
+
+body.iframe-mode .main-sidebar {
+    display: none
+}
+
+body.iframe-mode .content-wrapper {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important
+}
+
+body.iframe-mode .main-footer,
+body.iframe-mode .main-header {
+    display: none
+}
+
+body.iframe-mode-fullscreen {
+    overflow: hidden
+}
+
+.content-wrapper {
+    height: 100%
+}
+
+.content-wrapper.iframe-mode .navbar-nav {
+    overflow-y: auto;
+    width: 100%
+}
+
+.content-wrapper.iframe-mode .navbar-nav .nav-link {
+    white-space: nowrap
+}
+
+.content-wrapper.iframe-mode .tab-content {
+    position: relative
+}
+
+.content-wrapper.iframe-mode .tab-empty {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.content-wrapper.iframe-mode .tab-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    background-color: #f4f6f9
+}
+
+.content-wrapper.iframe-mode .tab-loading>div {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%
+}
+
+.content-wrapper.iframe-mode iframe {
+    border: 0;
+    width: 100%;
+    height: 100%
+}
+
+.content-wrapper.iframe-mode iframe .content-wrapper {
+    padding-bottom: 0 !important
+}
+
+body.iframe-mode-fullscreen .content-wrapper.iframe-mode {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 0 !important;
+    height: 100%;
+    min-height: 100%;
+    z-index: 1048
 }
 
 .content-wrapper.kanban {

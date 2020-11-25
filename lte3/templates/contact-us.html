@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 21.10.2020 16:02:10 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 17:54:58 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -12,6 +12,7 @@
   <!-- Theme style -->
   <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body class="hold-transition sidebar-mini">
@@ -36,9 +37,8 @@
     <!-- SEARCH FORM -->
     
 <!-- view: fcontactXus0, db_table: dfcontactXus0 -->
-<div class="form-inline ml-3">
+<div class="form-inline ml-3"  style="border: 1px gray dashed;">
 [%[= fcontactXus0.custom['begin'] ]]
-
 <div class="input-group input-group-sm">
  [%[ fcontactXus0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
  [%[ fcontactXus0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -51,18 +51,31 @@
  <div class="input-group-append">
  [%[ fcontactXus0.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fcontactXus0.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontactXus0.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[ fcontactXus0.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fcontactXus0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fcontactXus0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fcontactXus0.custom['submit'] ]]
 
  </div>
 </div>
+
  [%[ for hidden_widget in fcontactXus0.custom['hidden_widgets'].keys(): ]]
- [%[= fcontactXus0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fcontactXus0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fcontactXus0.custom['end'] ]]
+  
+<div  class='divfcontactXus0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fcontactXus0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divfcontactXus0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
 </div>
 <!-- end fcontactXus0 -->
-
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -341,6 +354,12 @@
           <a class="nav-link" href="[%[=URL('inline') ]]">
            <i class="far fa-circle nav-icon"></i>
            <p>Inline</p>
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="[%[=URL('uplot') ]]">
+           <i class="far fa-circle nav-icon"></i>
+           <p>uPlot</p>
           </a>
          </li>
         </ul>
@@ -744,7 +763,13 @@
        </li>
        <li class="nav-header">MISCELLANEOUS</li>
        <li class="nav-item">
-        <a class="nav-link" href="https://adminlte.io/docs/3.0/">
+        <a class="nav-link" href="[%[=URL('iframe') ]]">
+         <i class="nav-icon fas fa-ellipsis-h"></i>
+         <p>Tabbed IFrame Plugin</p>
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="https://adminlte.io/docs/3.1/">
          <i class="nav-icon fas fa-file"></i>
          <p>Documentation</p>
         </a>
@@ -910,7 +935,7 @@
    <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
      <b>Version</b>
-     3.1.0-pre
+     3.1.0-rc
     </div>
     <strong>
      Copyright © 2014-2020
@@ -934,5 +959,32 @@
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: 'will hide in 3sec',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

@@ -1,6 +1,6 @@
 title: AdminLTE v3 Documentation
-version: v3.1.0-pre
-description: AdminLTE v3 Documentation
+version: v3.1.0-rc
+description: AdminLTE v3.1 Documentation
 
 baseurl: /docs/3.1
 url: https://adminlte.io
@@ -69,6 +69,8 @@ navigation:
         url: javascript/sidebar-search.html
       - title: Expandable Tables
         url: javascript/expandable-tables.html
+      - title: IFrame
+        url: javascript/iframe.html
   - title: Browser Support
     url: browser-support.html
     icon: fab fa-chrome

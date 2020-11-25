@@ -1,11 +1,11 @@
 /*!
- *   AdminLTE v3.1.0-pre
+ *   AdminLTE v3.1.0-rc
  *   Author: Colorlib
  *   Website: AdminLTE.io <https://adminlte.io>
  *   License: Open source - MIT <https://opensource.org/licenses/MIT>
  */
 /*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -235,7 +235,8 @@ caption {
 }
 
 th {
-    text-align: inherit
+    text-align: inherit;
+    text-align: -webkit-match-parent
 }
 
 label {
@@ -4204,7 +4205,9 @@ input[type=submit].btn-block {
     z-index: 1;
     display: block;
     min-height: 1.5rem;
-    padding-left: 1.5rem
+    padding-left: 1.5rem;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact
 }
 
 .custom-control-inline {
@@ -4230,7 +4233,7 @@ input[type=submit].btn-block {
 }
 
 .custom-control-input:focus~.custom-control-label::before {
-    box-shadow: inset 0 0 0 transparent, none
+    box-shadow: inset 0 0 0 transparent, 0 0 0 1px #fff, 0 0 0 .2rem rgba(0, 123, 255, .25)
 }
 
 .custom-control-input:focus:not(:checked)~.custom-control-label::before {
@@ -5867,6 +5870,7 @@ a.badge-dark:focus {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 2;
     padding: .75rem 1.25rem;
     color: inherit
 }
@@ -11375,7 +11379,7 @@ a.text-dark:hover {
 
 .text-break {
     word-break: break-word !important;
-    overflow-wrap: break-word !important
+    word-wrap: break-word !important
 }
 
 .text-reset {
@@ -13021,6 +13025,11 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
     }
 }
 
+.main-header.dropdown-legacy .dropdown-menu {
+    top: 3rem;
+    margin-top: 0
+}
+
 .navbar-img {
     height: calc(3.5rem + 1px)/2;
     width: auto
@@ -13244,7 +13253,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .sidebar {
     height: calc(100% - (3.5rem + 1px));
-    overflow-y: auto;
+    overflow-y: initial;
     padding-bottom: 0;
     padding-left: .5rem;
     padding-right: .5rem;
@@ -23746,6 +23755,94 @@ a.disabled.mailbox-attachment-close {
 
 .projects .project-state {
     text-align: center
+}
+
+body.iframe-mode .main-sidebar {
+    display: none
+}
+
+body.iframe-mode .content-wrapper {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important
+}
+
+body.iframe-mode .main-footer,
+body.iframe-mode .main-header {
+    display: none
+}
+
+body.iframe-mode-fullscreen {
+    overflow: hidden
+}
+
+.content-wrapper {
+    height: 100%
+}
+
+.content-wrapper.iframe-mode .navbar-nav {
+    overflow-y: auto;
+    width: 100%
+}
+
+.content-wrapper.iframe-mode .navbar-nav .nav-link {
+    white-space: nowrap
+}
+
+.content-wrapper.iframe-mode .tab-content {
+    position: relative
+}
+
+.content-wrapper.iframe-mode .tab-empty {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.content-wrapper.iframe-mode .tab-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    background-color: #f4f6f9
+}
+
+.content-wrapper.iframe-mode .tab-loading>div {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%
+}
+
+.content-wrapper.iframe-mode iframe {
+    border: 0;
+    width: 100%;
+    height: 100%
+}
+
+.content-wrapper.iframe-mode iframe .content-wrapper {
+    padding-bottom: 0 !important
+}
+
+body.iframe-mode-fullscreen .content-wrapper.iframe-mode {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 0 !important;
+    height: 100%;
+    min-height: 100%;
+    z-index: 1048
 }
 
 .content-wrapper.kanban {

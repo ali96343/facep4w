@@ -1,9 +1,9 @@
 /*!
- *   AdminLTE v3.0.5
+ *   AdminLTE v3.1.0-rc
  *     Only Plugins
  *   Author: Colorlib
- *   Website: AdminLTE.io <http://adminlte.io>
- *   License: Open source - MIT <http://opensource.org/licenses/MIT>
+ *   Website: AdminLTE.io <https://adminlte.io>
+ *   License: Open source - MIT <https://opensource.org/licenses/MIT>
  */
 .fc-button {
     background: #f8f9fa;
@@ -62,20 +62,24 @@
 
 @media (max-width:575.98px) {
     .fc-toolbar {
+        -ms-flex-direction: column;
         flex-direction: column
     }
 
     .fc-toolbar .fc-left {
+        -ms-flex-order: 1;
         order: 1;
         margin-bottom: .5rem
     }
 
     .fc-toolbar .fc-center {
+        -ms-flex-order: 0;
         order: 0;
         margin-bottom: .375rem
     }
 
     .fc-toolbar .fc-right {
+        -ms-flex-order: 2;
         order: 2
     }
 }
@@ -101,19 +105,23 @@
 
 .fc-color-picker>li .fa,
 .fc-color-picker>li .fab,
+.fc-color-picker>li .fad,
+.fc-color-picker>li .fal,
 .fc-color-picker>li .far,
 .fc-color-picker>li .fas,
-.fc-color-picker>li .glyphicon,
-.fc-color-picker>li .ion {
+.fc-color-picker>li .ion,
+.fc-color-picker>li .svg-inline--fa {
     transition: transform linear .3s
 }
 
 .fc-color-picker>li .fa:hover,
 .fc-color-picker>li .fab:hover,
+.fc-color-picker>li .fad:hover,
+.fc-color-picker>li .fal:hover,
 .fc-color-picker>li .far:hover,
 .fc-color-picker>li .fas:hover,
-.fc-color-picker>li .glyphicon:hover,
-.fc-color-picker>li .ion:hover {
+.fc-color-picker>li .ion:hover,
+.fc-color-picker>li .svg-inline--fa:hover {
     transform: rotate(30deg)
 }
 
@@ -150,8 +158,10 @@
 
 .select2-container--default .select2-results__option {
     padding: 6px 12px;
-    user-select: none;
-    -webkit-user-select: none
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -1911,6 +1921,51 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
     border-color: #6d7a86
 }
 
+.dark-mode .select2-selection {
+    background-color: #343a40;
+    border-color: #6c757d
+}
+
+.dark-mode .select2-container--disabled .select2-selection--single {
+    background-color: #454d55
+}
+
+.dark-mode .select2-selection--single {
+    background-color: #343a40;
+    border-color: #6c757d
+}
+
+.dark-mode .select2-selection--single .select2-selection__rendered {
+    color: #fff
+}
+
+.dark-mode .select2-dropdown .select2-search__field,
+.dark-mode .select2-search--inline .select2-search__field {
+    background-color: #343a40;
+    border-color: #6c757d;
+    color: #fff
+}
+
+.dark-mode .select2-dropdown {
+    background-color: #343a40;
+    border-color: #6c757d;
+    color: #fff
+}
+
+.dark-mode .select2-results__option[aria-selected=true] {
+    background-color: #3f474e !important;
+    color: #dee2e6
+}
+
+.dark-mode .select2-container .select2-search--inline .select2-search__field {
+    background-color: transparent;
+    color: #fff
+}
+
+.dark-mode .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
+    color: #fff
+}
+
 .slider .tooltip.in {
     opacity: .9
 }
@@ -2029,6 +2084,11 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 
 .slider-gray-dark .slider .slider-selection {
     background: #343a40
+}
+
+.dark-mode .slider-track {
+    background-color: #4b545c;
+    background-image: none
 }
 
 .icheck-primary>input:first-child:not(:checked):not(:disabled):hover+input[type=hidden]+label::before,
@@ -2463,6 +2523,11 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
     border-color: #343a40
 }
 
+.dark-mode [class*=icheck-]>input:first-child:not(:checked)+input[type=hidden]+label::before,
+.dark-mode [class*=icheck-]>input:first-child:not(:checked)+label::before {
+    border-color: #6c757d
+}
+
 .mapael .map {
     position: relative
 }
@@ -2516,6 +2581,9 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
     position: absolute;
     text-align: center;
     top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     width: 16px
 }
@@ -2591,6 +2659,16 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 
 .swal2-icon.swal2-success [class^=swal2-success-line] {
     background-color: #28a745
+}
+
+.dark-mode .swal2-popup {
+    background-color: #343a40;
+    color: #e9ecef
+}
+
+.dark-mode .swal2-popup .swal2-content,
+.dark-mode .swal2-popup .swal2-title {
+    color: #e9ecef
 }
 
 #toast-container .toast {
@@ -6205,6 +6283,9 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
     position: relative;
     text-align: left;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     vertical-align: middle;
     z-index: 0
@@ -6496,6 +6577,17 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
     border-top-left-radius: .1rem
 }
 
+.dark-mode .bootstrap-switch {
+    border-color: #6c757d
+}
+
+.dark-mode .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+.dark-mode .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+    background-color: #3a4047;
+    color: #fff;
+    border-color: #454d55
+}
+
 .jqstooltip {
     height: auto !important;
     padding: 5px !important;
@@ -6526,6 +6618,34 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 .chart {
     overflow: hidden;
     position: relative
+}
+
+.dark-mode .irs--flat .irs-line {
+    background-color: #4b545c
+}
+
+.dark-mode .jsgrid-alt-row>.jsgrid-cell,
+.dark-mode .jsgrid-edit-row>.jsgrid-cell,
+.dark-mode .jsgrid-filter-row>.jsgrid-cell,
+.dark-mode .jsgrid-grid-body,
+.dark-mode .jsgrid-grid-header,
+.dark-mode .jsgrid-header-row>.jsgrid-header-cell,
+.dark-mode .jsgrid-insert-row>.jsgrid-cell,
+.dark-mode .jsgrid-row>.jsgrid-cell {
+    border-color: #6c757d
+}
+
+.dark-mode .jsgrid-header-row>.jsgrid-header-cell,
+.dark-mode .jsgrid-row>.jsgrid-cell {
+    background-color: #343a40
+}
+
+.dark-mode .jsgrid-alt-row>.jsgrid-cell {
+    background-color: #3a4047
+}
+
+.dark-mode .jsgrid-selected-row>.jsgrid-cell {
+    background-color: #3f474e
 }
 
 /*# sourceMappingURL=adminlte.plugins.min.css.map */
