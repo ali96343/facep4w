@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 19.11.2020 10:44:24 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 25.11.2020 17:35:38 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="index, follow" name="robots"/>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -27,6 +27,7 @@ gtag('js', new Date())
 gtag('config', 'UA-25065548-2')
   </script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -247,26 +248,25 @@ gtag('config', 'UA-25065548-2')
  [%[ fforms0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fforms0.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms0.custom['submit']['_rows']= '1'  ]]
- [%[ fforms0.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms0.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms0.custom['hidden_widgets'].keys(): ]]
- [%[= fforms0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms0.custom['end'] ]]
-  <div  class='divfforms0' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms0</span>
+  
+<div  class='divfforms0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -296,27 +296,26 @@ gtag('config', 'UA-25065548-2')
  [%[ fforms1.custom['submit']['_class']= 'input is-success'  ]]
  [%[ fforms1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fforms1.custom['submit']['_type']= 'submit'  ]]
- [%[ fforms1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms1.custom['submit']['_rows']= '1'  ]]
- [%[ fforms1.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
+ [%[ fforms1.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fforms1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms1.custom['hidden_widgets'].keys(): ]]
- [%[= fforms1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms1.custom['end'] ]]
-  <div  class='divfforms1' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms1</span>
+  
+<div  class='divfforms1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -358,26 +357,25 @@ gtag('config', 'UA-25065548-2')
  [%[ fforms2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fforms2.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms2.custom['submit']['_rows']= '1'  ]]
- [%[ fforms2.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms2.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms2.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms2.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms2.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms2.custom['hidden_widgets'].keys(): ]]
- [%[= fforms2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms2.custom['end'] ]]
-  <div  class='divfforms2' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms2</span>
+  
+<div  class='divfforms2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms2</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -438,26 +436,25 @@ gtag('config', 'UA-25065548-2')
 
  [%[ fforms3.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fforms3.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms3.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms3.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms3.custom['hidden_widgets'].keys(): ]]
- [%[= fforms3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms3.custom['end'] ]]
-  <div  class='divfforms3' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms3</span>
+  
+<div  class='divfforms3' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms3</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms3');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -480,26 +477,25 @@ gtag('config', 'UA-25065548-2')
 
  [%[ fforms4.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms4.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fforms4.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms4.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms4.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms4.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms4.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms4.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms4.custom['hidden_widgets'].keys(): ]]
- [%[= fforms4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms4.custom['end'] ]]
-  <div  class='divfforms4' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms4</span>
+  
+<div  class='divfforms4' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms4</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms4');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -537,26 +533,25 @@ gtag('config', 'UA-25065548-2')
  [%[ fforms5.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fforms5.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms5.custom['submit']['_rows']= '1'  ]]
- [%[ fforms5.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms5.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms5.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms5.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms5.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms5.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fforms5.custom['hidden_widgets'].keys(): ]]
- [%[= fforms5.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms5.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms5.custom['end'] ]]
-  <div  class='divfforms5' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms5</span>
+  
+<div  class='divfforms5' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms5</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms5');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -592,25 +587,24 @@ gtag('config', 'UA-25065548-2')
  [%[ fforms6.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fforms6.custom['submit']['_type']= 'submit'  ]]
  [%[ fforms6.custom['submit']['_rows']= '1'  ]]
- [%[ fforms6.custom['submit']['_style']= 'color:red; border:1px dashed red;'  ]]
- [%[ fforms6.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fforms6.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms6.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms6.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms6.custom['submit'] ]]
 
  [%[ for hidden_widget in fforms6.custom['hidden_widgets'].keys(): ]]
- [%[= fforms6.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fforms6.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fforms6.custom['end'] ]]
-  <div  class='divfforms6' style="text-align: center; position:absolute;">
-  <span style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms6</span>
+  
+<div  class='divfforms6' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms6</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfforms6');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -695,5 +689,32 @@ gtag('config', 'UA-25065548-2')
         }
     }]
 }</script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: 'will hide in 3sec',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>
