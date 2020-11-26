@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:24 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:40 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -26,6 +26,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -43,7 +44,7 @@
     <div class="header-right">
      
 <!-- view: ftablesXresponsive0, db_table: dftablesXresponsive0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= ftablesXresponsive0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ ftablesXresponsive0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -57,28 +58,27 @@
  <span class="input-group-btn">
  [%[ ftablesXresponsive0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ ftablesXresponsive0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftablesXresponsive0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ ftablesXresponsive0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ ftablesXresponsive0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ ftablesXresponsive0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ ftablesXresponsive0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftablesXresponsive0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= ftablesXresponsive0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in ftablesXresponsive0.custom['hidden_widgets'].keys(): ]]
- [%[= ftablesXresponsive0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftablesXresponsive0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= ftablesXresponsive0.custom['end'] ]]
-  <div  class='divftablesXresponsive0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXresponsive0</small>
+  
+<div  class='divftablesXresponsive0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXresponsive0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftablesXresponsive0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -654,37 +654,47 @@
        <div class="table-responsive">
         
 <!--view: rows_ttablesXresponsive0, db_table: ttablesXresponsive0 -->
-<table class="table table-bordered table-striped table-condensed mb-none">
-  <thead>
-   <tr>
-    <th>Code</th>
-    <th>Company</th>
-    <th>Price</th>
-    <th>Change</th>
-    <th>Change %</th>
-    <th>Open</th>
-    <th>High</th>
-    <th>Low</th>
-    <th>Volume</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped table-condensed mb-none">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Company</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Change</th>
+        <th class="text-right">Change %</th>
+        <th class="text-right">Open</th>
+        <th class="text-right">High</th>
+        <th class="text-right">Low</th>
+        <th class="text-right">Volume</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_ttablesXresponsive0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td class="text-right">[%[= row0.f2 ]]</td>
-            <td class="text-right">[%[= row0.f3 ]]</td>
-            <td class="text-right">[%[= row0.f4 ]]</td>
-            <td class="text-right">[%[= row0.f5 ]]</td>
-            <td class="text-right">[%[= row0.f6 ]]</td>
-            <td class="text-right">[%[= row0.f7 ]]</td>
-            <td class="text-right">[%[= row0.f8 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td class="text-right">[%[= XML(row0.f2) ]]</td>
+            <td class="text-right">[%[= XML(row0.f3) ]]</td>
+            <td class="text-right">[%[= XML(row0.f4) ]]</td>
+            <td class="text-right">[%[= XML(row0.f5) ]]</td>
+            <td class="text-right">[%[= XML(row0.f6) ]]</td>
+            <td class="text-right">[%[= XML(row0.f7) ]]</td>
+            <td class="text-right">[%[= XML(row0.f8) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXresponsive0 -->
+
+
+<div  class='divttablesXresponsive0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXresponsive0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXresponsive0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
        </div>
       </div>
@@ -700,37 +710,47 @@
       <div class="panel-body">
        
 <!--view: rows_ttablesXresponsive1, db_table: ttablesXresponsive1 -->
-<table class="table table-bordered table-striped table-condensed mb-none">
-  <thead>
-   <tr>
-    <th>Code</th>
-    <th>Company</th>
-    <th>Price</th>
-    <th>Change</th>
-    <th>Change %</th>
-    <th>Open</th>
-    <th>High</th>
-    <th>Low</th>
-    <th>Volume</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped table-condensed mb-none">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th class="hidden-xs hidden-sm">Company</th>
+        <th class="text-right">Price</th>
+        <th class="text-right hidden-xs hidden-sm">Change</th>
+        <th class="text-right hidden-xs">Change %</th>
+        <th class="text-right">Open</th>
+        <th class="text-right hidden-xs hidden-sm">High</th>
+        <th class="text-right hidden-xs hidden-sm">Low</th>
+        <th class="text-right">Volume</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row1 in rows_ttablesXresponsive1: ]]
         <tr>
-            <td>[%[= row1.f0 ]]</td>
-            <td class="hidden-xs hidden-sm">[%[= row1.f1 ]]</td>
-            <td class="text-right">[%[= row1.f2 ]]</td>
-            <td class="text-right hidden-xs hidden-sm">[%[= row1.f3 ]]</td>
-            <td class="text-right hidden-xs">[%[= row1.f4 ]]</td>
-            <td class="text-right">[%[= row1.f5 ]]</td>
-            <td class="text-right hidden-xs hidden-sm">[%[= row1.f6 ]]</td>
-            <td class="text-right hidden-xs hidden-sm">[%[= row1.f7 ]]</td>
-            <td class="text-right">[%[= row1.f8 ]]</td>
+            <td>[%[= XML(row1.f0) ]]</td>
+            <td class="hidden-xs hidden-sm">[%[= XML(row1.f1) ]]</td>
+            <td class="text-right">[%[= XML(row1.f2) ]]</td>
+            <td class="text-right hidden-xs hidden-sm">[%[= XML(row1.f3) ]]</td>
+            <td class="text-right hidden-xs">[%[= XML(row1.f4) ]]</td>
+            <td class="text-right">[%[= XML(row1.f5) ]]</td>
+            <td class="text-right hidden-xs hidden-sm">[%[= XML(row1.f6) ]]</td>
+            <td class="text-right hidden-xs hidden-sm">[%[= XML(row1.f7) ]]</td>
+            <td class="text-right">[%[= XML(row1.f8) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXresponsive1 -->
+
+
+<div  class='divttablesXresponsive1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXresponsive1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXresponsive1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -745,37 +765,47 @@
       <div class="panel-body">
        
 <!--view: rows_ttablesXresponsive2, db_table: ttablesXresponsive2 -->
-<table class="table table-no-more table-bordered table-striped mb-none">
-  <thead>
-   <tr>
-    <th>Code</th>
-    <th>Company</th>
-    <th>Price</th>
-    <th>Change</th>
-    <th>Change %</th>
-    <th>Open</th>
-    <th>High</th>
-    <th>Low</th>
-    <th>Volume</th>
-  </tr>
-  </thead>
+  <table class="table table-no-more table-bordered table-striped mb-none">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th class="hidden-xs hidden-sm">Company</th>
+        <th class="text-right">Price</th>
+        <th class="text-right hidden-xs hidden-sm">Change</th>
+        <th class="text-right">Change %</th>
+        <th class="text-right">Open</th>
+        <th class="text-right hidden-xs hidden-sm">High</th>
+        <th class="text-right hidden-xs hidden-sm">Low</th>
+        <th class="text-right">Volume</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row2 in rows_ttablesXresponsive2: ]]
         <tr>
-            <td data-title="Code">[%[= row2.f0 ]]</td>
-            <td data-title="Company" class="hidden-xs hidden-sm">[%[= row2.f1 ]]</td>
-            <td data-title="Price" class="text-right">[%[= row2.f2 ]]</td>
-            <td data-title="Change" class="text-right hidden-xs hidden-sm">[%[= row2.f3 ]]</td>
-            <td data-title="Change %" class="text-right">[%[= row2.f4 ]]</td>
-            <td data-title="Open" class="text-right">[%[= row2.f5 ]]</td>
-            <td data-title="High" class="text-right hidden-xs hidden-sm">[%[= row2.f6 ]]</td>
-            <td data-title="Low" class="text-right hidden-xs hidden-sm">[%[= row2.f7 ]]</td>
-            <td data-title="Volume" class="text-right">[%[= row2.f8 ]]</td>
+            <td data-title="Code">[%[= XML(row2.f0) ]]</td>
+            <td data-title="Company" class="hidden-xs hidden-sm">[%[= XML(row2.f1) ]]</td>
+            <td data-title="Price" class="text-right">[%[= XML(row2.f2) ]]</td>
+            <td data-title="Change" class="text-right hidden-xs hidden-sm">[%[= XML(row2.f3) ]]</td>
+            <td data-title="Change %" class="text-right">[%[= XML(row2.f4) ]]</td>
+            <td data-title="Open" class="text-right">[%[= XML(row2.f5) ]]</td>
+            <td data-title="High" class="text-right hidden-xs hidden-sm">[%[= XML(row2.f6) ]]</td>
+            <td data-title="Low" class="text-right hidden-xs hidden-sm">[%[= XML(row2.f7) ]]</td>
+            <td data-title="Volume" class="text-right">[%[= XML(row2.f8) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXresponsive2 -->
+
+
+<div  class='divttablesXresponsive2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXresponsive2</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXresponsive2');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -862,5 +892,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

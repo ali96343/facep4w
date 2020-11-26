@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:19 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:36 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -26,6 +26,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -43,7 +44,7 @@
     <div class="header-right">
      
 <!-- view: fpagesXlogXviewer0, db_table: dfpagesXlogXviewer0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fpagesXlogXviewer0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fpagesXlogXviewer0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -57,28 +58,27 @@
  <span class="input-group-btn">
  [%[ fpagesXlogXviewer0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fpagesXlogXviewer0.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXlogXviewer0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fpagesXlogXviewer0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fpagesXlogXviewer0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fpagesXlogXviewer0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fpagesXlogXviewer0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fpagesXlogXviewer0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fpagesXlogXviewer0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fpagesXlogXviewer0.custom['hidden_widgets'].keys(): ]]
- [%[= fpagesXlogXviewer0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fpagesXlogXviewer0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fpagesXlogXviewer0.custom['end'] ]]
-  <div  class='divfpagesXlogXviewer0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXlogXviewer0</small>
+  
+<div  class='divfpagesXlogXviewer0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXlogXviewer0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfpagesXlogXviewer0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -674,73 +674,103 @@
        <div class="tab-pane active" id="access-log">
         
 <!--view: rows_tpagesXlogXviewer0, db_table: tpagesXlogXviewer0 -->
-<table class="table table-striped table-no-more table-bordered mb-none">
-  <thead>
-   <tr>
-    <th>Type</th>
-    <th>Date</th>
-    <th>Message</th>
-  </tr>
-  </thead>
-  <tbody>
+  <table class="table table-striped table-no-more table-bordered mb-none">
+    <thead>
+      <tr>
+        <th style="width: 10%">Type</th>
+        <th style="width: 15%">Date</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+  <tbody class="log-viewer">
         [%[ for row0 in rows_tpagesXlogXviewer0: ]]
         <tr>
-            <td data-title="Type" class="pt-md pb-md">[%[= row0.f0 ]]</td>
-            <td data-title="Date" class="pt-md pb-md">[%[= row0.f1 ]]</td>
-            <td data-title="Message" class="pt-md pb-md">[%[= row0.f2 ]]</td>
+            <td data-title="Type" class="pt-md pb-md">[%[= XML(row0.f0) ]]</td>
+            <td data-title="Date" class="pt-md pb-md">[%[= XML(row0.f1) ]]</td>
+            <td data-title="Message" class="pt-md pb-md">[%[= XML(row0.f2) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tpagesXlogXviewer0 -->
 
+
+<div  class='divtpagesXlogXviewer0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tpagesXlogXviewer0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtpagesXlogXviewer0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
        </div>
        <div class="tab-pane" id="error-log">
         
 <!--view: rows_tpagesXlogXviewer1, db_table: tpagesXlogXviewer1 -->
-<table class="table table-striped table-no-more table-bordered mb-none">
-  <thead>
-   <tr>
-    <th>Type</th>
-    <th>Date</th>
-    <th>Message</th>
-  </tr>
-  </thead>
-  <tbody>
+  <table class="table table-striped table-no-more table-bordered mb-none">
+    <thead>
+      <tr>
+        <th style="width: 10%">Type</th>
+        <th style="width: 15%">Date</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+  <tbody class="log-viewer">
         [%[ for row1 in rows_tpagesXlogXviewer1: ]]
         <tr>
-            <td data-title="Type" class="pt-md pb-md">[%[= row1.f0 ]]</td>
-            <td data-title="Date" class="pt-md pb-md">[%[= row1.f1 ]]</td>
-            <td data-title="Message" class="pt-md pb-md">[%[= row1.f2 ]]</td>
+            <td data-title="Type" class="pt-md pb-md">[%[= XML(row1.f0) ]]</td>
+            <td data-title="Date" class="pt-md pb-md">[%[= XML(row1.f1) ]]</td>
+            <td data-title="Message" class="pt-md pb-md">[%[= XML(row1.f2) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tpagesXlogXviewer1 -->
 
+
+<div  class='divtpagesXlogXviewer1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tpagesXlogXviewer1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtpagesXlogXviewer1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
        </div>
        <div class="tab-pane" id="custom-log">
         
 <!--view: rows_tpagesXlogXviewer2, db_table: tpagesXlogXviewer2 -->
-<table class="table table-striped table-no-more table-bordered mb-none">
-  <thead>
-   <tr>
-    <th>Type</th>
-    <th>Date</th>
-    <th>Message</th>
-  </tr>
-  </thead>
-  <tbody>
+  <table class="table table-striped table-no-more table-bordered mb-none">
+    <thead>
+      <tr>
+        <th style="width: 10%">Type</th>
+        <th style="width: 15%">Date</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+  <tbody class="log-viewer">
         [%[ for row2 in rows_tpagesXlogXviewer2: ]]
         <tr>
-            <td data-title="Type" class="pt-md pb-md">[%[= row2.f0 ]]</td>
-            <td data-title="Date" class="pt-md pb-md">[%[= row2.f1 ]]</td>
-            <td data-title="Message" class="pt-md pb-md">[%[= row2.f2 ]]</td>
+            <td data-title="Type" class="pt-md pb-md">[%[= XML(row2.f0) ]]</td>
+            <td data-title="Date" class="pt-md pb-md">[%[= XML(row2.f1) ]]</td>
+            <td data-title="Message" class="pt-md pb-md">[%[= XML(row2.f2) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tpagesXlogXviewer2 -->
+
+
+<div  class='divtpagesXlogXviewer2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tpagesXlogXviewer2</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtpagesXlogXviewer2');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
        </div>
       </div>
@@ -828,5 +858,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

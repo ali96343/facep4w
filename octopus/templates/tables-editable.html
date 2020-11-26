@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:24 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:40 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -29,6 +29,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -46,7 +47,7 @@
     <div class="header-right">
      
 <!-- view: ftablesXeditable0, db_table: dftablesXeditable0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= ftablesXeditable0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ ftablesXeditable0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -60,28 +61,27 @@
  <span class="input-group-btn">
  [%[ ftablesXeditable0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ ftablesXeditable0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftablesXeditable0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ ftablesXeditable0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ ftablesXeditable0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ ftablesXeditable0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ ftablesXeditable0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftablesXeditable0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= ftablesXeditable0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in ftablesXeditable0.custom['hidden_widgets'].keys(): ]]
- [%[= ftablesXeditable0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftablesXeditable0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= ftablesXeditable0.custom['end'] ]]
-  <div  class='divftablesXeditable0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXeditable0</small>
+  
+<div  class='divftablesXeditable0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXeditable0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftablesXeditable0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -665,27 +665,37 @@
        </div>
        
 <!--view: rows_ttablesXeditable0, db_table: ttablesXeditable0 -->
-<table class="table table-bordered table-striped mb-none" id="datatable-editable">
-  <thead>
-   <tr>
-    <th>Rendering engine</th>
-    <th>Browser</th>
-    <th>Platform(s)</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped mb-none" id="datatable-editable">
+    <thead>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_ttablesXeditable0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td class="actions">[%[= row0.f3 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td class="actions">[%[= XML(row0.f3) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXeditable0 -->
+
+
+<div  class='divttablesXeditable0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXeditable0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXeditable0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -800,5 +810,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
   <!-- Examples -->
   <script src="[%[=URL('static/tte/assets/javascripts/tables/examples.datatables.editable.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

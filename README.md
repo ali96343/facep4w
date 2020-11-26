@@ -24,3 +24,4 @@ react, tailwind
 
 - https://github.com/creativetimofficial/material-dashboard-react
 - https://github.com/tailwindadmin/admin  
+- https://github.com/davidgrzyb/tailwind-admin-template

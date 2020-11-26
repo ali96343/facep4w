@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:22 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:39 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -26,6 +26,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -43,7 +44,7 @@
     <div class="header-right">
      
 <!-- view: fformsXvalidation0, db_table: dfformsXvalidation0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fformsXvalidation0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXvalidation0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -57,28 +58,27 @@
  <span class="input-group-btn">
  [%[ fformsXvalidation0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXvalidation0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fformsXvalidation0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXvalidation0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXvalidation0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXvalidation0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXvalidation0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXvalidation0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fformsXvalidation0.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXvalidation0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXvalidation0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXvalidation0.custom['end'] ]]
-  <div  class='divfformsXvalidation0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation0</small>
+  
+<div  class='divfformsXvalidation0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -645,7 +645,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXvalidation1, db_table: dfformsXvalidation1 -->
-<div id="form" class="form-horizontal">
+<div id="form" class="form-horizontal"  style="border: 1px gray dashed;">
 [%[= fformsXvalidation1.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -739,25 +739,24 @@
  [%[ fformsXvalidation1.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXvalidation1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fformsXvalidation1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXvalidation1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXvalidation1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXvalidation1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXvalidation1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXvalidation1.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXvalidation1.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXvalidation1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXvalidation1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXvalidation1.custom['end'] ]]
-  <div  class='divfformsXvalidation1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation1</small>
+  
+<div  class='divfformsXvalidation1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -768,7 +767,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXvalidation2, db_table: dfformsXvalidation2 -->
-<div id="chk-radios-form">
+<div id="chk-radios-form"  style="border: 1px gray dashed;">
 [%[= fformsXvalidation2.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -893,10 +892,10 @@
   <div class="row">
    <div class="col-sm-9 col-sm-offset-3">
  [%[ fformsXvalidation2.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXvalidation2.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fformsXvalidation2.custom['submit']['_title']= 'mysubmit from <button'  ]]
  [%[ fformsXvalidation2.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation2.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXvalidation2.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXvalidation2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXvalidation2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXvalidation2.custom['submit'] ]]
 
     <button class="btn btn-default" type="reset">
@@ -908,19 +907,18 @@
 </section>
 
  [%[ for hidden_widget in fformsXvalidation2.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXvalidation2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXvalidation2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXvalidation2.custom['end'] ]]
-  <div  class='divfformsXvalidation2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation2</small>
+  
+<div  class='divfformsXvalidation2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation2</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -932,7 +930,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXvalidation3, db_table: dfformsXvalidation3 -->
-<div id="summary-form" class="form-horizontal">
+<div id="summary-form" class="form-horizontal"  style="border: 1px gray dashed;">
 [%[= fformsXvalidation3.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -1027,24 +1025,23 @@
  [%[ fformsXvalidation3.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXvalidation3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fformsXvalidation3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation3.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXvalidation3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXvalidation3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXvalidation3.custom['submit']['_value']= 'Submit'  ]]
  [%[= fformsXvalidation3.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXvalidation3.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXvalidation3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXvalidation3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXvalidation3.custom['end'] ]]
-  <div  class='divfformsXvalidation3' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation3</small>
+  
+<div  class='divfformsXvalidation3' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation3</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation3');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1054,7 +1051,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXvalidation4, db_table: dfformsXvalidation4 -->
-<div id="selects-form">
+<div id="selects-form"  style="border: 1px gray dashed;">
 [%[= fformsXvalidation4.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -1114,10 +1111,10 @@
   <div class="row">
    <div class="col-sm-9 col-sm-offset-3">
  [%[ fformsXvalidation4.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXvalidation4.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fformsXvalidation4.custom['submit']['_title']= 'mysubmit from <button'  ]]
  [%[ fformsXvalidation4.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation4.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXvalidation4.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXvalidation4.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXvalidation4.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXvalidation4.custom['submit'] ]]
 
     <button class="btn btn-default" type="reset">
@@ -1129,19 +1126,18 @@
 </section>
 
  [%[ for hidden_widget in fformsXvalidation4.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXvalidation4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXvalidation4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXvalidation4.custom['end'] ]]
-  <div  class='divfformsXvalidation4' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation4</small>
+  
+<div  class='divfformsXvalidation4' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation4</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation4');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1236,5 +1232,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
   <!-- Examples -->
   <script src="[%[=URL('static/tte/assets/javascripts/forms/examples.validation.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 21.10.2020 14:13:53 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 10:31:08 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -17,6 +17,7 @@
   <!-- Custom styles for this template-->
   <link href="[%[=URL('static/tte/css/sb-admin.css') ]]" rel="stylesheet"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body id="page-top">
@@ -28,9 +29,8 @@
    <!-- Navbar Search -->
    
 <!-- view: ftables0, db_table: dftables0 -->
-<div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+<div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"  style="border: 1px gray dashed;">
 [%[= ftables0.custom['begin'] ]]
-
 <div class="input-group">
  [%[ ftables0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ ftables0.custom['widgets']['f0']['_class']= 'form-control'  ]]
@@ -44,18 +44,31 @@
  <div class="input-group-append">
  [%[ ftables0.custom['submit']['_class']= 'btn btn-primary'  ]]
  [%[ ftables0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftables0.custom['submit']['_value']= 'b:p4w'  ]]
+ [%[ ftables0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ ftables0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftables0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= ftables0.custom['submit'] ]]
 
  </div>
 </div>
+
  [%[ for hidden_widget in ftables0.custom['hidden_widgets'].keys(): ]]
- [%[= ftables0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftables0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= ftables0.custom['end'] ]]
+  
+<div  class='divftables0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftables0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divftables0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
 </div>
 <!-- end ftables0 -->
-
 
    <!-- Navbar -->
    <ul class="navbar-nav ml-auto ml-md-0">
@@ -153,37 +166,51 @@
        <div class="table-responsive">
         
 <!--view: rows_ttables0, db_table: ttables0 -->
-<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-  <thead>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </thead>
-  <tfoot>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </tfoot>
+  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_ttables0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
-            <td>[%[= row0.f4 ]]</td>
-            <td>[%[= row0.f5 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
+            <td>[%[= XML(row0.f4) ]]</td>
+            <td>[%[= XML(row0.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
+    <tfoot>
+      <tr>
+        <td>Name</td>
+        <td>Position</td>
+        <td>Office</td>
+        <td>Age</td>
+        <td>Start date</td>
+        <td>Salary</td>
+      </tr>
+    </tfoot>
 </table>
 <!-- end rows_ttables0 -->
+
+
+<div  class='divttables0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttables0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttables0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
        </div>
       </div>
@@ -242,5 +269,32 @@
   <script src="[%[=URL('static/tte/js/sb-admin.min.js') ]]"></script>
   <!-- Demo scripts for this page-->
   <script src="[%[=URL('static/tte/js/demo/datatables-demo.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: 'will hide in 3sec',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

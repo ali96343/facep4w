@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed sidebar-left-collapsed">
  <head>
-            <!-- 27.10.2020 14:00:24 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:41 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -30,6 +30,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -47,7 +48,7 @@
     <div class="header-right">
      
 <!-- view: fmailboxXcompose0, db_table: dfmailboxXcompose0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fmailboxXcompose0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fmailboxXcompose0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -61,28 +62,27 @@
  <span class="input-group-btn">
  [%[ fmailboxXcompose0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fmailboxXcompose0.custom['submit']['_type']= 'submit'  ]]
- [%[ fmailboxXcompose0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fmailboxXcompose0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fmailboxXcompose0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fmailboxXcompose0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fmailboxXcompose0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fmailboxXcompose0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fmailboxXcompose0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fmailboxXcompose0.custom['hidden_widgets'].keys(): ]]
- [%[= fmailboxXcompose0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fmailboxXcompose0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fmailboxXcompose0.custom['end'] ]]
-  <div  class='divfmailboxXcompose0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmailboxXcompose0</small>
+  
+<div  class='divfmailboxXcompose0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmailboxXcompose0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfmailboxXcompose0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -797,7 +797,7 @@
         <div class="mailbox-compose">
          
 <!-- view: fmailboxXcompose1, db_table: dfmailboxXcompose1 -->
-<div class="form-horizontal form-bordered form-bordered">
+<div class="form-horizontal form-bordered form-bordered"  style="border: 1px gray dashed;">
 [%[= fmailboxXcompose1.custom['begin'] ]]
 <div class="form-group form-group-invisible">
  <label class="control-label-invisible" for="to">
@@ -809,7 +809,7 @@
  [%[ fmailboxXcompose1.custom['widgets']['f0']['_class']= 'form-control form-control-invisible'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f0']['_data-role']= 'tagsinput'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f0']['_data-tag-class']= 'label label-primary'  ]]
- [%[ fmailboxXcompose1.custom['widgets']['f0']['_value']= 'len0'  ]]
+ [%[ fmailboxXcompose1.custom['widgets']['f0']['_value']= '==0'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fmailboxXcompose1.custom['widgets']['f0'] ]]
 
@@ -828,7 +828,7 @@
  [%[ fmailboxXcompose1.custom['widgets']['f1']['_class']= 'form-control form-control-invisible'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f1']['_data-role']= 'tagsinput'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f1']['_data-tag-class']= 'label label-primary'  ]]
- [%[ fmailboxXcompose1.custom['widgets']['f1']['_value']= 'len0'  ]]
+ [%[ fmailboxXcompose1.custom['widgets']['f1']['_value']= '==0'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
  [%[= fmailboxXcompose1.custom['widgets']['f1'] ]]
 
@@ -845,7 +845,7 @@
  [%[ fmailboxXcompose1.custom['widgets']['f2']['_id']= 'subject'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f2']['_class']= 'form-control form-control-invisible'  ]]
- [%[ fmailboxXcompose1.custom['widgets']['f2']['_value']= 'len0'  ]]
+ [%[ fmailboxXcompose1.custom['widgets']['f2']['_value']= '==0'  ]]
  [%[ fmailboxXcompose1.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fmailboxXcompose1.custom['widgets']['f2'] ]]
 
@@ -854,9 +854,10 @@
  [%[ fmailboxXcompose1.custom['submit']['_id']= 'subject'  ]]
  [%[ fmailboxXcompose1.custom['submit']['_type']= 'submit'  ]]
  [%[ fmailboxXcompose1.custom['submit']['_class']= 'form-control form-control-invisible'  ]]
- [%[ fmailboxXcompose1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fmailboxXcompose1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fmailboxXcompose1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fmailboxXcompose1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fmailboxXcompose1.custom['submit']['_rows']= '1'  ]]
+ [%[ fmailboxXcompose1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fmailboxXcompose1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fmailboxXcompose1.custom['submit'] ]]
 
@@ -871,19 +872,18 @@
 </div>
 
  [%[ for hidden_widget in fmailboxXcompose1.custom['hidden_widgets'].keys(): ]]
- [%[= fmailboxXcompose1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fmailboxXcompose1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fmailboxXcompose1.custom['end'] ]]
-  <div  class='divfmailboxXcompose1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmailboxXcompose1</small>
+  
+<div  class='divfmailboxXcompose1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmailboxXcompose1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfmailboxXcompose1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -979,5 +979,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

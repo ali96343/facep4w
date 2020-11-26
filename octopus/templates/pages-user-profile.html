@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:18 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:35 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -26,6 +26,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -43,7 +44,7 @@
     <div class="header-right">
      
 <!-- view: fpagesXuserXprofile0, db_table: dfpagesXuserXprofile0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fpagesXuserXprofile0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -57,28 +58,27 @@
  <span class="input-group-btn">
  [%[ fpagesXuserXprofile0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fpagesXuserXprofile0.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fpagesXuserXprofile0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fpagesXuserXprofile0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fpagesXuserXprofile0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fpagesXuserXprofile0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fpagesXuserXprofile0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fpagesXuserXprofile0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fpagesXuserXprofile0.custom['hidden_widgets'].keys(): ]]
- [%[= fpagesXuserXprofile0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fpagesXuserXprofile0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fpagesXuserXprofile0.custom['end'] ]]
-  <div  class='divfpagesXuserXprofile0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile0</small>
+  
+<div  class='divfpagesXuserXprofile0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -820,9 +820,9 @@
           <section class="simple-compose-box mb-xlg">
            
 <!-- view: fpagesXuserXprofile1, db_table: dfpagesXuserXprofile1 -->
-<div>
+<div  style="border: 1px gray dashed;">
 [%[= fpagesXuserXprofile1.custom['begin'] ]]
- [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_data-plugin-textarea-autosize']= 'len0'  ]]
+ [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_data-plugin-textarea-autosize']= '==0'  ]]
  [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_placeholder']= 'Whats on your mind?'  ]]
  [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_rows']= '1'  ]]
  [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -830,29 +830,28 @@
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile1.custom['errors']['f0'] if 'f0' in fpagesXuserXprofile1.custom['errors'] else '' ]]</span>
 
- [%[ fpagesXuserXprofile1.custom['submit']['_data-plugin-textarea-autosize']= 'len0'  ]]
+ [%[ fpagesXuserXprofile1.custom['submit']['_data-plugin-textarea-autosize']= '==0'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_rows']= '1'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fpagesXuserXprofile1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fpagesXuserXprofile1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fpagesXuserXprofile1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fpagesXuserXprofile1.custom['submit'] ]]
 
  [%[ for hidden_widget in fpagesXuserXprofile1.custom['hidden_widgets'].keys(): ]]
- [%[= fpagesXuserXprofile1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fpagesXuserXprofile1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fpagesXuserXprofile1.custom['end'] ]]
-  <div  class='divfpagesXuserXprofile1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile1</small>
+  
+<div  class='divfpagesXuserXprofile1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -921,7 +920,7 @@
          <div class="tab-pane" id="edit">
           
 <!-- view: fpagesXuserXprofile2, db_table: dfpagesXuserXprofile2 -->
-<div class="form-horizontal">
+<div class="form-horizontal"  style="border: 1px gray dashed;">
 [%[= fpagesXuserXprofile2.custom['begin'] ]]
 <h4 class="mb-xlg">
  Personal Information
@@ -1014,26 +1013,25 @@
  [%[ fpagesXuserXprofile2.custom['submit']['_rows']= '1'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_id']= 'profileBio'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile2.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fpagesXuserXprofile2.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fpagesXuserXprofile2.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['submit']['_value']= 'Submit'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fpagesXuserXprofile2.custom['submit'] ]]
 
  [%[ for hidden_widget in fpagesXuserXprofile2.custom['hidden_widgets'].keys(): ]]
- [%[= fpagesXuserXprofile2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fpagesXuserXprofile2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fpagesXuserXprofile2.custom['end'] ]]
-  <div  class='divfpagesXuserXprofile2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile2</small>
+  
+<div  class='divfpagesXuserXprofile2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile2</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1196,5 +1194,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

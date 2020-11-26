@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:23 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:39 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -26,6 +26,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -43,7 +44,7 @@
     <div class="header-right">
      
 <!-- view: fformsXlayouts0, db_table: dfformsXlayouts0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fformsXlayouts0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXlayouts0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -57,28 +58,27 @@
  <span class="input-group-btn">
  [%[ fformsXlayouts0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXlayouts0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fformsXlayouts0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXlayouts0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXlayouts0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXlayouts0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXlayouts0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fformsXlayouts0.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXlayouts0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXlayouts0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXlayouts0.custom['end'] ]]
-  <div  class='divfformsXlayouts0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts0</small>
+  
+<div  class='divfformsXlayouts0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -645,7 +645,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXlayouts1, db_table: dfformsXlayouts1 -->
-<div id="form1" class="form-horizontal">
+<div id="form1" class="form-horizontal"  style="border: 1px gray dashed;">
 [%[= fformsXlayouts1.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -698,10 +698,10 @@
  </div>
  <footer class="panel-footer">
  [%[ fformsXlayouts1.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts1.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fformsXlayouts1.custom['submit']['_title']= 'mysubmit from <button'  ]]
  [%[ fformsXlayouts1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts1.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXlayouts1.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXlayouts1.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXlayouts1.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXlayouts1.custom['submit'] ]]
 
   <button class="btn btn-default" type="reset">
@@ -711,19 +711,18 @@
 </section>
 
  [%[ for hidden_widget in fformsXlayouts1.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXlayouts1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXlayouts1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXlayouts1.custom['end'] ]]
-  <div  class='divfformsXlayouts1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts1</small>
+  
+<div  class='divfformsXlayouts1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -733,7 +732,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXlayouts2, db_table: dfformsXlayouts2 -->
-<div id="form2" class="form-horizontal form-bordered">
+<div id="form2" class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXlayouts2.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -786,10 +785,10 @@
  </div>
  <footer class="panel-footer">
  [%[ fformsXlayouts2.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts2.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fformsXlayouts2.custom['submit']['_title']= 'mysubmit from <button'  ]]
  [%[ fformsXlayouts2.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts2.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXlayouts2.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXlayouts2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXlayouts2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXlayouts2.custom['submit'] ]]
 
   <button class="btn btn-default" type="reset">
@@ -799,19 +798,18 @@
 </section>
 
  [%[ for hidden_widget in fformsXlayouts2.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXlayouts2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXlayouts2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXlayouts2.custom['end'] ]]
-  <div  class='divfformsXlayouts2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts2</small>
+  
+<div  class='divfformsXlayouts2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts2</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -823,7 +821,7 @@
       <div class="col-md-6">
        
 <!-- view: fformsXlayouts3, db_table: dfformsXlayouts3 -->
-<div>
+<div  style="border: 1px gray dashed;">
 [%[= fformsXlayouts3.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -888,25 +886,24 @@
  [%[ fformsXlayouts3.custom['submit']['_rows']= '1'  ]]
  [%[ fformsXlayouts3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
  [%[ fformsXlayouts3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts3.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXlayouts3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXlayouts3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXlayouts3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXlayouts3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXlayouts3.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXlayouts3.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXlayouts3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXlayouts3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXlayouts3.custom['end'] ]]
-  <div  class='divfformsXlayouts3' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts3</small>
+  
+<div  class='divfformsXlayouts3' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts3</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts3');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -983,7 +980,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXlayouts4, db_table: dfformsXlayouts4 -->
-<div class="form-inline">
+<div class="form-inline"  style="border: 1px gray dashed;">
 [%[= fformsXlayouts4.custom['begin'] ]]
 <div class="form-group">
  <label class="sr-only" for="exampleInputUsername2">
@@ -1018,7 +1015,7 @@
 
 <div class="checkbox-custom checkbox-default checkbox-inline mt-sm ml-md mr-md">
  [%[ fformsXlayouts4.custom['widgets']['f2']['_type']= 'checkbox'  ]]
- [%[ fformsXlayouts4.custom['widgets']['f2']['_checked']= 'len0'  ]]
+ [%[ fformsXlayouts4.custom['widgets']['f2']['_checked']= '==0'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f2']['_id']= 'exampleCheckbox1'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fformsXlayouts4.custom['widgets']['f2'] ]]
@@ -1035,9 +1032,9 @@
 
  [%[ fformsXlayouts4.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXlayouts4.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts4.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fformsXlayouts4.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXlayouts4.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXlayouts4.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts4.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXlayouts4.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXlayouts4.custom['submit'] ]]
 
 
@@ -1046,19 +1043,18 @@
 </button>
 
  [%[ for hidden_widget in fformsXlayouts4.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXlayouts4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXlayouts4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXlayouts4.custom['end'] ]]
-  <div  class='divfformsXlayouts4' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts4</small>
+  
+<div  class='divfformsXlayouts4' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts4</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts4');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1151,5 +1147,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

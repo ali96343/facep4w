@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:23 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:40 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -29,6 +29,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -46,7 +47,7 @@
     <div class="header-right">
      
 <!-- view: ftablesXadvanced0, db_table: dftablesXadvanced0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= ftablesXadvanced0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ ftablesXadvanced0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -60,28 +61,27 @@
  <span class="input-group-btn">
  [%[ ftablesXadvanced0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ ftablesXadvanced0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftablesXadvanced0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ ftablesXadvanced0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ ftablesXadvanced0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ ftablesXadvanced0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ ftablesXadvanced0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftablesXadvanced0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= ftablesXadvanced0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in ftablesXadvanced0.custom['hidden_widgets'].keys(): ]]
- [%[= ftablesXadvanced0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftablesXadvanced0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= ftablesXadvanced0.custom['end'] ]]
-  <div  class='divftablesXadvanced0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXadvanced0</small>
+  
+<div  class='divftablesXadvanced0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftablesXadvanced0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftablesXadvanced0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -655,29 +655,39 @@
       <div class="panel-body">
        
 <!--view: rows_ttablesXadvanced0, db_table: ttablesXadvanced0 -->
-<table class="table table-bordered table-striped mb-none" id="datatable-default">
-  <thead>
-   <tr>
-    <th>Rendering engine</th>
-    <th>Browser</th>
-    <th>Platform(s)</th>
-    <th>Engine version</th>
-    <th>CSS grade</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped mb-none" id="datatable-default">
+    <thead>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th class="hidden-phone">Engine version</th>
+        <th class="hidden-phone">CSS grade</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_ttablesXadvanced0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td class="center hidden-phone">[%[= row0.f3 ]]</td>
-            <td class="center hidden-phone">[%[= row0.f4 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td class="center hidden-phone">[%[= XML(row0.f3) ]]</td>
+            <td class="center hidden-phone">[%[= XML(row0.f4) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXadvanced0 -->
+
+
+<div  class='divttablesXadvanced0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXadvanced0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXadvanced0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -692,29 +702,39 @@
       <div class="panel-body">
        
 <!--view: rows_ttablesXadvanced1, db_table: ttablesXadvanced1 -->
-<table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="[%[=URL('static/tte/assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf') ]]">
-  <thead>
-   <tr>
-    <th>Rendering engine</th>
-    <th>Browser</th>
-    <th>Platform(s)</th>
-    <th>Engine version</th>
-    <th>CSS grade</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+    <thead>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th class="hidden-phone">Engine version</th>
+        <th class="hidden-phone">CSS grade</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row1 in rows_ttablesXadvanced1: ]]
         <tr>
-            <td>[%[= row1.f0 ]]</td>
-            <td>[%[= row1.f1 ]]</td>
-            <td>[%[= row1.f2 ]]</td>
-            <td class="center hidden-phone">[%[= row1.f3 ]]</td>
-            <td class="center hidden-phone">[%[= row1.f4 ]]</td>
+            <td>[%[= XML(row1.f0) ]]</td>
+            <td>[%[= XML(row1.f1) ]]</td>
+            <td>[%[= XML(row1.f2) ]]</td>
+            <td class="center hidden-phone">[%[= XML(row1.f3) ]]</td>
+            <td class="center hidden-phone">[%[= XML(row1.f4) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXadvanced1 -->
+
+
+<div  class='divttablesXadvanced1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXadvanced1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXadvanced1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -729,29 +749,39 @@
       <div class="panel-body">
        
 <!--view: rows_ttablesXadvanced2, db_table: ttablesXadvanced2 -->
-<table class="table table-bordered table-striped mb-none" id="datatable-details">
-  <thead>
-   <tr>
-    <th>Rendering engine</th>
-    <th>Browser</th>
-    <th>Platform(s)</th>
-    <th>Engine version</th>
-    <th>CSS grade</th>
-  </tr>
-  </thead>
+  <table class="table table-bordered table-striped mb-none" id="datatable-details">
+    <thead>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th>Engine version</th>
+        <th>CSS grade</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row2 in rows_ttablesXadvanced2: ]]
         <tr>
-            <td>[%[= row2.f0 ]]</td>
-            <td>[%[= row2.f1 ]]</td>
-            <td>[%[= row2.f2 ]]</td>
-            <td class="center">[%[= row2.f3 ]]</td>
-            <td class="center">[%[= row2.f4 ]]</td>
+            <td>[%[= XML(row2.f0) ]]</td>
+            <td>[%[= XML(row2.f1) ]]</td>
+            <td>[%[= XML(row2.f2) ]]</td>
+            <td class="center">[%[= XML(row2.f3) ]]</td>
+            <td class="center">[%[= XML(row2.f4) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_ttablesXadvanced2 -->
+
+
+<div  class='divttablesXadvanced2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttablesXadvanced2</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divttablesXadvanced2');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
       </div>
      </section>
@@ -847,5 +877,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/tables/examples.datatables.default.js') ]]"></script>
   <script src="[%[=URL('static/tte/assets/javascripts/tables/examples.datatables.row.with.details.js') ]]"></script>
   <script src="[%[=URL('static/tte/assets/javascripts/tables/examples.datatables.tabletools.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

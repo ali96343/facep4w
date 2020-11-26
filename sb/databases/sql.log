@@ -1,4 +1,4 @@
-timestamp: 2020-08-03T11:38:32.103015
+timestamp: 2020-11-26T10:31:24.226593
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "username" CHAR(512) UNIQUE,
@@ -8,18 +8,17 @@ CREATE TABLE "auth_user"(
     "last_name" CHAR(512),
     "sso_id" CHAR(512),
     "action_token" CHAR(512),
-    "last_password_change" TIMESTAMP,
-    "past_passwords_hash" TEXT
+    "last_password_change" TIMESTAMP
 );
 success!
-timestamp: 2020-08-03T11:38:32.119243
+timestamp: 2020-11-26T10:31:24.243857
 CREATE TABLE "auth_user_tag_groups"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "path" CHAR(512),
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2020-10-21T14:14:30.176069
+timestamp: 2020-11-26T10:31:24.500172
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -27,79 +26,79 @@ CREATE TABLE "test_table"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2020-10-21T14:14:30.212019
+timestamp: 2020-11-26T10:31:24.533018
 CREATE TABLE "dfindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.228661
+timestamp: 2020-11-26T10:31:24.549611
 CREATE TABLE "dflogin0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
     "f2" CHAR(1)
 );
 success!
-timestamp: 2020-10-21T14:14:30.248899
+timestamp: 2020-11-26T10:31:24.566248
 CREATE TABLE "dfregister0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
-    "f2" CHAR(512),
-    "f3" CHAR(512),
-    "f4" CHAR(512)
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
+    "f2" CHAR(1024),
+    "f3" CHAR(1024),
+    "f4" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.267772
+timestamp: 2020-11-26T10:31:24.584014
 CREATE TABLE "dfforgotXpassword0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.285479
+timestamp: 2020-11-26T10:31:24.602273
 CREATE TABLE "dfX4040"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.305003
+timestamp: 2020-11-26T10:31:24.620875
 CREATE TABLE "dfblank0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.322585
+timestamp: 2020-11-26T10:31:24.638210
 CREATE TABLE "dfcharts0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.341343
+timestamp: 2020-11-26T10:31:24.654517
 CREATE TABLE "dftables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512)
+    "f0" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.361042
+timestamp: 2020-11-26T10:31:24.673362
 CREATE TABLE "tindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
-    "f2" CHAR(512),
-    "f3" CHAR(512),
-    "f4" CHAR(512),
-    "f5" CHAR(512)
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
+    "f2" CHAR(1024),
+    "f3" CHAR(1024),
+    "f4" CHAR(1024),
+    "f5" CHAR(1024)
 );
 success!
-timestamp: 2020-10-21T14:14:30.378430
+timestamp: 2020-11-26T10:31:24.691864
 CREATE TABLE "ttables0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(512),
-    "f1" CHAR(512),
-    "f2" CHAR(512),
-    "f3" CHAR(512),
-    "f4" CHAR(512),
-    "f5" CHAR(512)
+    "f0" CHAR(1024),
+    "f1" CHAR(1024),
+    "f2" CHAR(1024),
+    "f3" CHAR(1024),
+    "f4" CHAR(1024),
+    "f5" CHAR(1024)
 );
 success!

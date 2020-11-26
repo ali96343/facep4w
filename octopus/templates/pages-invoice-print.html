@@ -1,6 +1,6 @@
 <html>
  <head>
-            <!-- 27.10.2020 14:00:25 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:41 py4web app, ported by AI-biorex, tidylib_check = True -->
   <title>biorex title text</title>
   <!-- Web Fonts  -->
   <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css"/>
@@ -9,6 +9,7 @@
   <!-- Invoice Print Style -->
   <link href="[%[=URL('static/tte/assets/stylesheets/invoice-print.css') ]]" rel="stylesheet"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -67,31 +68,41 @@
    <div class="table-responsive">
     
 <!--view: rows_tpagesXinvoiceXprint0, db_table: tpagesXinvoiceXprint0 -->
-<table class="table invoice-items">
-  <thead>
-   <tr>
-    <th>#</th>
-    <th>Item</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Quantity</th>
-    <th>Total</th>
-  </tr>
-  </thead>
+  <table class="table invoice-items">
+    <thead>
+      <tr>
+        <th id="cell-id" class="text-semibold">#</th>
+        <th id="cell-item" class="text-semibold">Item</th>
+        <th id="cell-desc" class="text-semibold">Description</th>
+        <th id="cell-price" class="text-center text-semibold">Price</th>
+        <th id="cell-qty" class="text-center text-semibold">Quantity</th>
+        <th id="cell-total" class="text-center text-semibold">Total</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_tpagesXinvoiceXprint0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td class="text-semibold text-dark">[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td class="text-center">[%[= row0.f3 ]]</td>
-            <td class="text-center">[%[= row0.f4 ]]</td>
-            <td class="text-center">[%[= row0.f5 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td class="text-semibold text-dark">[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td class="text-center">[%[= XML(row0.f3) ]]</td>
+            <td class="text-center">[%[= XML(row0.f4) ]]</td>
+            <td class="text-center">[%[= XML(row0.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tpagesXinvoiceXprint0 -->
+
+
+<div  class='divtpagesXinvoiceXprint0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tpagesXinvoiceXprint0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtpagesXinvoiceXprint0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
    </div>
    <div class="invoice-summary">
@@ -99,17 +110,27 @@
      <div class="col-sm-4 col-sm-offset-8">
       
 <!--view: rows_tpagesXinvoiceXprint1, db_table: tpagesXinvoiceXprint1 -->
-<table class="table h5 text-dark">
+  <table class="table h5 text-dark">
   <tbody>
         [%[ for row1 in rows_tpagesXinvoiceXprint1: ]]
         <tr>
-            <td colspan="2">[%[= row1.f0 ]]</td>
-            <td class="text-left">[%[= row1.f1 ]]</td>
+            <td colspan="2">[%[= XML(row1.f0) ]]</td>
+            <td class="text-left">[%[= XML(row1.f1) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tpagesXinvoiceXprint1 -->
+
+
+<div  class='divtpagesXinvoiceXprint1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">tpagesXinvoiceXprint1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtpagesXinvoiceXprint1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
      </div>
     </div>

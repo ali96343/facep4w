@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:22 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:38 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -40,6 +40,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -57,7 +58,7 @@
     <div class="header-right">
      
 <!-- view: fformsXadvanced0, db_table: dfformsXadvanced0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXadvanced0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -71,28 +72,27 @@
  <span class="input-group-btn">
  [%[ fformsXadvanced0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXadvanced0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fformsXadvanced0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXadvanced0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXadvanced0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXadvanced0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXadvanced0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXadvanced0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fformsXadvanced0.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced0.custom['end'] ]]
-  <div  class='divfformsXadvanced0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced0</small>
+  
+<div  class='divfformsXadvanced0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -668,14 +668,14 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced1, db_table: dfformsXadvanced1 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced1.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
   Basic select
  </label>
  <div class="col-md-6">
- [%[ fformsXadvanced1.custom['widgets']['f0']['_data-plugin-selecttwo']= 'len0'  ]]
+ [%[ fformsXadvanced1.custom['widgets']['f0']['_data-plugin-selecttwo']= '==0'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f0']['_class']= 'form-control populate'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f0']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f0']['_style']= 'color:red;'  ]]
@@ -691,8 +691,8 @@
   Multi-Value Select
  </label>
  <div class="col-md-6">
- [%[ fformsXadvanced1.custom['widgets']['f1']['_multiple']= 'len0'  ]]
- [%[ fformsXadvanced1.custom['widgets']['f1']['_data-plugin-selecttwo']= 'len0'  ]]
+ [%[ fformsXadvanced1.custom['widgets']['f1']['_multiple']= '==0'  ]]
+ [%[ fformsXadvanced1.custom['widgets']['f1']['_data-plugin-selecttwo']= '==0'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f1']['_class']= 'form-control populate'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f1']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f1']['_style']= 'color:red;'  ]]
@@ -708,7 +708,7 @@
   Placeholders
  </label>
  <div class="col-md-6">
- [%[ fformsXadvanced1.custom['widgets']['f2']['_data-plugin-selecttwo']= 'len0'  ]]
+ [%[ fformsXadvanced1.custom['widgets']['f2']['_data-plugin-selecttwo']= '==0'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f2']['_class']= 'form-control populate placeholder'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f2']['_data-plugin-options']= '{ placeholder: Select a State, allowClear: true }'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f2']['_placeholder']= 'it was select'  ]]
@@ -725,7 +725,7 @@
   Minimum Input
  </label>
  <div class="col-md-6">
- [%[ fformsXadvanced1.custom['widgets']['f3']['_data-plugin-selecttwo']= 'len0'  ]]
+ [%[ fformsXadvanced1.custom['widgets']['f3']['_data-plugin-selecttwo']= '==0'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f3']['_class']= 'form-control populate'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f3']['_data-plugin-options']= '{ minimumInputLength: 2 }'  ]]
  [%[ fformsXadvanced1.custom['widgets']['f3']['_placeholder']= 'it was select'  ]]
@@ -734,13 +734,13 @@
 
  <span style="color:#ff0000">[%[= fformsXadvanced1.custom['errors']['f3'] if 'f3' in fformsXadvanced1.custom['errors'] else '' ]]</span>
 
- [%[ fformsXadvanced1.custom['submit']['_data-plugin-selecttwo']= 'len0'  ]]
+ [%[ fformsXadvanced1.custom['submit']['_data-plugin-selecttwo']= '==0'  ]]
  [%[ fformsXadvanced1.custom['submit']['_class']= 'form-control populate'  ]]
  [%[ fformsXadvanced1.custom['submit']['_data-plugin-options']= '{ minimumInputLength: 2 }'  ]]
  [%[ fformsXadvanced1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXadvanced1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXadvanced1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced1.custom['submit'] ]]
 
@@ -748,19 +748,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced1.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced1.custom['end'] ]]
-  <div  class='divfformsXadvanced1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced1</small>
+  
+<div  class='divfformsXadvanced1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -783,7 +782,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced2, db_table: dfformsXadvanced2 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced2.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -792,7 +791,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f0']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f0']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f0']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f0']['_id']= 'ms_example0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f0']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f0']['_style']= 'color:red;'  ]]
@@ -809,7 +808,7 @@
  </label>
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f1']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f1']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f1']['_id']= 'ms_example1'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f1']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f1']['_style']= 'color:red;'  ]]
@@ -827,7 +826,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f2']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f2']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f2']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f2']['_id']= 'ms_example2'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f2']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f2']['_style']= 'color:red;'  ]]
@@ -845,7 +844,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f3']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f3']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f3']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f3']['_data-plugin-options']= '{ buttonClass: btn btn-link }'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f3']['_id']= 'ms_example3'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f3']['_placeholder']= 'it was select'  ]]
@@ -869,7 +868,7 @@
    </span>
  [%[ fformsXadvanced2.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f4']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f4']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f4']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f4']['_id']= 'ms_example4'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f4']['_placeholder']= 'it was select'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f4']['_style']= 'color:red;'  ]]
@@ -888,7 +887,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f5']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f5']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f5']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f5']['_data-plugin-options']= '{ includeSelectAllOption: true }'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f5']['_id']= 'ms_example5'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f5']['_placeholder']= 'it was select'  ]]
@@ -907,7 +906,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced2.custom['widgets']['f6']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f6']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f6']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f6']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f6']['_data-plugin-options']= '{ enableCaseInsensitiveFiltering: true }'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f6']['_id']= 'ms_example6'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f6']['_placeholder']= 'it was select'  ]]
@@ -927,7 +926,7 @@
   <div class="btn-group">
  [%[ fformsXadvanced2.custom['widgets']['f7']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f7']['_multiple']= 'multiple'  ]]
- [%[ fformsXadvanced2.custom['widgets']['f7']['_data-plugin-multiselect']= 'len0'  ]]
+ [%[ fformsXadvanced2.custom['widgets']['f7']['_data-plugin-multiselect']= '==0'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f7']['_data-multiselect-toggle-all']= 'true'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f7']['_id']= 'ms_example7'  ]]
  [%[ fformsXadvanced2.custom['widgets']['f7']['_placeholder']= 'it was select'  ]]
@@ -938,10 +937,10 @@
 
  [%[ fformsXadvanced2.custom['submit']['_id']= 'ms_example7-toggle'  ]]
  [%[ fformsXadvanced2.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXadvanced2.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fformsXadvanced2.custom['submit']['_title']= 'mysubmit from <button'  ]]
  [%[ fformsXadvanced2.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced2.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXadvanced2.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXadvanced2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXadvanced2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXadvanced2.custom['submit'] ]]
 
   </div>
@@ -949,19 +948,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced2.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced2.custom['end'] ]]
-  <div  class='divfformsXadvanced2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced2</small>
+  
+<div  class='divfformsXadvanced2' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced2</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -984,7 +982,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced3, db_table: dfformsXadvanced3 -->
-<div class="form-horizontal form-bordered form-bordered">
+<div class="form-horizontal form-bordered form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced3.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label" for="tags-input">
@@ -1018,7 +1016,7 @@
  </label>
  <div class="col-md-7">
  [%[ fformsXadvanced3.custom['widgets']['f1']['_id']= 'tags-input-multiple'  ]]
- [%[ fformsXadvanced3.custom['widgets']['f1']['_multiple']= 'len0'  ]]
+ [%[ fformsXadvanced3.custom['widgets']['f1']['_multiple']= '==0'  ]]
  [%[ fformsXadvanced3.custom['widgets']['f1']['_data-role']= 'tagsinput'  ]]
  [%[ fformsXadvanced3.custom['widgets']['f1']['_data-tag-class']= 'label label-primary'  ]]
  [%[ fformsXadvanced3.custom['widgets']['f1']['_placeholder']= 'it was select'  ]]
@@ -1028,13 +1026,13 @@
  <span style="color:#ff0000">[%[= fformsXadvanced3.custom['errors']['f1'] if 'f1' in fformsXadvanced3.custom['errors'] else '' ]]</span>
 
  [%[ fformsXadvanced3.custom['submit']['_id']= 'tags-input-multiple'  ]]
- [%[ fformsXadvanced3.custom['submit']['_multiple']= 'len0'  ]]
+ [%[ fformsXadvanced3.custom['submit']['_multiple']= '==0'  ]]
  [%[ fformsXadvanced3.custom['submit']['_data-role']= 'tagsinput'  ]]
  [%[ fformsXadvanced3.custom['submit']['_data-tag-class']= 'label label-primary'  ]]
  [%[ fformsXadvanced3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced3.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXadvanced3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXadvanced3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced3.custom['submit'] ]]
 
@@ -1053,19 +1051,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced3.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced3.custom['end'] ]]
-  <div  class='divfformsXadvanced3' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced3</small>
+  
+<div  class='divfformsXadvanced3' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced3</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced3');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1088,7 +1085,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced4, db_table: dfformsXadvanced4 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced4.custom['begin'] ]]
 <div class="form-group">
  <label class="control-label col-md-3">
@@ -1097,7 +1094,7 @@
  <div class="col-md-9">
   <div class="switch switch-lg switch-primary">
  [%[ fformsXadvanced4.custom['widgets']['f0']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f0']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f0']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f0']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f0'] ]]
@@ -1107,7 +1104,7 @@
   </div>
   <div class="switch switch-lg switch-success">
  [%[ fformsXadvanced4.custom['widgets']['f1']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f1']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f1']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f1']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f1'] ]]
@@ -1117,7 +1114,7 @@
   </div>
   <div class="switch switch-lg switch-warning">
  [%[ fformsXadvanced4.custom['widgets']['f2']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f2']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f2']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f2']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f2'] ]]
@@ -1127,7 +1124,7 @@
   </div>
   <div class="switch switch-lg switch-danger">
  [%[ fformsXadvanced4.custom['widgets']['f3']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f3']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f3']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f3']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f3'] ]]
@@ -1137,7 +1134,7 @@
   </div>
   <div class="switch switch-lg switch-info">
  [%[ fformsXadvanced4.custom['widgets']['f4']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f4']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f4']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f4']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f4'] ]]
@@ -1147,7 +1144,7 @@
   </div>
   <div class="switch switch-lg switch-dark">
  [%[ fformsXadvanced4.custom['widgets']['f5']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f5']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f5']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f5']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f5']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f5'] ]]
@@ -1165,7 +1162,7 @@
  <div class="col-md-9">
   <div class="switch switch-primary">
  [%[ fformsXadvanced4.custom['widgets']['f6']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f6']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f6']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f6']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f6']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f6'] ]]
@@ -1175,7 +1172,7 @@
   </div>
   <div class="switch switch-success">
  [%[ fformsXadvanced4.custom['widgets']['f7']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f7']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f7']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f7']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f7']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f7'] ]]
@@ -1185,7 +1182,7 @@
   </div>
   <div class="switch switch-warning">
  [%[ fformsXadvanced4.custom['widgets']['f8']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f8']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f8']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f8']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f8']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f8'] ]]
@@ -1195,7 +1192,7 @@
   </div>
   <div class="switch switch-danger">
  [%[ fformsXadvanced4.custom['widgets']['f9']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f9']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f9']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f9']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f9']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f9'] ]]
@@ -1205,7 +1202,7 @@
   </div>
   <div class="switch switch-info">
  [%[ fformsXadvanced4.custom['widgets']['f10']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f10']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f10']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f10']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f10']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f10'] ]]
@@ -1215,7 +1212,7 @@
   </div>
   <div class="switch switch-dark">
  [%[ fformsXadvanced4.custom['widgets']['f11']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f11']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f11']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f11']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f11']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f11'] ]]
@@ -1233,7 +1230,7 @@
  <div class="col-md-9">
   <div class="switch switch-sm switch-primary">
  [%[ fformsXadvanced4.custom['widgets']['f12']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f12']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f12']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f12']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f12']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f12'] ]]
@@ -1243,7 +1240,7 @@
   </div>
   <div class="switch switch-sm switch-success">
  [%[ fformsXadvanced4.custom['widgets']['f13']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f13']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f13']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f13']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f13']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f13'] ]]
@@ -1253,7 +1250,7 @@
   </div>
   <div class="switch switch-sm switch-warning">
  [%[ fformsXadvanced4.custom['widgets']['f14']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f14']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f14']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f14']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f14']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f14'] ]]
@@ -1263,7 +1260,7 @@
   </div>
   <div class="switch switch-sm switch-danger">
  [%[ fformsXadvanced4.custom['widgets']['f15']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f15']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f15']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f15']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f15']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f15'] ]]
@@ -1273,7 +1270,7 @@
   </div>
   <div class="switch switch-sm switch-info">
  [%[ fformsXadvanced4.custom['widgets']['f16']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f16']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f16']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f16']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f16']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f16'] ]]
@@ -1283,7 +1280,7 @@
   </div>
   <div class="switch switch-sm switch-dark">
  [%[ fformsXadvanced4.custom['widgets']['f17']['_type']= 'checkbox'  ]]
- [%[ fformsXadvanced4.custom['widgets']['f17']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['widgets']['f17']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f17']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['widgets']['f17']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced4.custom['widgets']['f17'] ]]
@@ -1291,11 +1288,11 @@
  <span style="color:#ff0000">[%[= fformsXadvanced4.custom['errors']['f17'] if 'f17' in fformsXadvanced4.custom['errors'] else '' ]]</span>
 
  [%[ fformsXadvanced4.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced4.custom['submit']['_data-plugin-ios-switch']= 'len0'  ]]
+ [%[ fformsXadvanced4.custom['submit']['_data-plugin-ios-switch']= '==0'  ]]
  [%[ fformsXadvanced4.custom['submit']['_checked']= 'checked'  ]]
  [%[ fformsXadvanced4.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced4.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXadvanced4.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced4.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXadvanced4.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced4.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced4.custom['submit'] ]]
 
@@ -1304,19 +1301,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced4.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced4.custom['end'] ]]
-  <div  class='divfformsXadvanced4' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced4</small>
+  
+<div  class='divfformsXadvanced4' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced4</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced4');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1339,7 +1335,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced5, db_table: dfformsXadvanced5 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced5.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -1385,9 +1381,10 @@
 
  [%[ fformsXadvanced5.custom['submit']['_id']= 'listenSlider2'  ]]
  [%[ fformsXadvanced5.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced5.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced5.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced5.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced5.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXadvanced5.custom['submit']['_rows']= '1'  ]]
+ [%[ fformsXadvanced5.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXadvanced5.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced5.custom['submit'] ]]
 
@@ -1414,19 +1411,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced5.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced5.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced5.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced5.custom['end'] ]]
-  <div  class='divfformsXadvanced5' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced5</small>
+  
+<div  class='divfformsXadvanced5' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced5</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced5');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1480,7 +1476,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXadvanced6, db_table: dfformsXadvanced6 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced6.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -1493,7 +1489,7 @@
     </i>
    </span>
  [%[ fformsXadvanced6.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformsXadvanced6.custom['widgets']['f0']['_data-plugin-datepicker']= 'len0'  ]]
+ [%[ fformsXadvanced6.custom['widgets']['f0']['_data-plugin-datepicker']= '==0'  ]]
  [%[ fformsXadvanced6.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced6.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced6.custom['widgets']['f0'] ]]
@@ -1546,7 +1542,7 @@
     </i>
    </span>
  [%[ fformsXadvanced6.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformsXadvanced6.custom['widgets']['f3']['_data-plugin-datepicker']= 'len0'  ]]
+ [%[ fformsXadvanced6.custom['widgets']['f3']['_data-plugin-datepicker']= '==0'  ]]
  [%[ fformsXadvanced6.custom['widgets']['f3']['_data-plugin-options']= '{ multidate: true }'  ]]
  [%[ fformsXadvanced6.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced6.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
@@ -1555,12 +1551,13 @@
  <span style="color:#ff0000">[%[= fformsXadvanced6.custom['errors']['f3'] if 'f3' in fformsXadvanced6.custom['errors'] else '' ]]</span>
 
  [%[ fformsXadvanced6.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced6.custom['submit']['_data-plugin-datepicker']= 'len0'  ]]
+ [%[ fformsXadvanced6.custom['submit']['_data-plugin-datepicker']= '==0'  ]]
  [%[ fformsXadvanced6.custom['submit']['_data-plugin-options']= '{ multidate: true }'  ]]
  [%[ fformsXadvanced6.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced6.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced6.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXadvanced6.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced6.custom['submit']['_rows']= '1'  ]]
+ [%[ fformsXadvanced6.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXadvanced6.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced6.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced6.custom['submit'] ]]
 
@@ -1579,19 +1576,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced6.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced6.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced6.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced6.custom['end'] ]]
-  <div  class='divfformsXadvanced6' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced6</small>
+  
+<div  class='divfformsXadvanced6' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced6</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced6');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1613,7 +1609,7 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced7, db_table: dfformsXadvanced7 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced7.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -1626,7 +1622,7 @@
     </i>
    </span>
  [%[ fformsXadvanced7.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformsXadvanced7.custom['widgets']['f0']['_data-plugin-timepicker']= 'len0'  ]]
+ [%[ fformsXadvanced7.custom['widgets']['f0']['_data-plugin-timepicker']= '==0'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[= fformsXadvanced7.custom['widgets']['f0'] ]]
@@ -1648,7 +1644,7 @@
     </i>
    </span>
  [%[ fformsXadvanced7.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformsXadvanced7.custom['widgets']['f1']['_data-plugin-timepicker']= 'len0'  ]]
+ [%[ fformsXadvanced7.custom['widgets']['f1']['_data-plugin-timepicker']= '==0'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f1']['_data-plugin-options']= '{ showMeridian: false }'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
@@ -1671,7 +1667,7 @@
     </i>
    </span>
  [%[ fformsXadvanced7.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformsXadvanced7.custom['widgets']['f2']['_data-plugin-timepicker']= 'len0'  ]]
+ [%[ fformsXadvanced7.custom['widgets']['f2']['_data-plugin-timepicker']= '==0'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f2']['_data-plugin-options']= '{ minuteStep: 15 }'  ]]
  [%[ fformsXadvanced7.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
@@ -1680,12 +1676,13 @@
  <span style="color:#ff0000">[%[= fformsXadvanced7.custom['errors']['f2'] if 'f2' in fformsXadvanced7.custom['errors'] else '' ]]</span>
 
  [%[ fformsXadvanced7.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced7.custom['submit']['_data-plugin-timepicker']= 'len0'  ]]
+ [%[ fformsXadvanced7.custom['submit']['_data-plugin-timepicker']= '==0'  ]]
  [%[ fformsXadvanced7.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced7.custom['submit']['_data-plugin-options']= '{ minuteStep: 15 }'  ]]
  [%[ fformsXadvanced7.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced7.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXadvanced7.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced7.custom['submit']['_rows']= '1'  ]]
+ [%[ fformsXadvanced7.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXadvanced7.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced7.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced7.custom['submit'] ]]
 
@@ -1694,19 +1691,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced7.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced7.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced7.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced7.custom['end'] ]]
-  <div  class='divfformsXadvanced7' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced7</small>
+  
+<div  class='divfformsXadvanced7' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced7</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced7');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1729,7 +1725,7 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced8, db_table: dfformsXadvanced8 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced8.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -1737,7 +1733,7 @@
  </label>
  <div class="col-md-6">
  [%[ fformsXadvanced8.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformsXadvanced8.custom['widgets']['f0']['_data-plugin-colorpicker']= 'len0'  ]]
+ [%[ fformsXadvanced8.custom['widgets']['f0']['_data-plugin-colorpicker']= '==0'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f0']['_class']= 'colorpicker-default form-control'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f0']['_value']= '#8fff00'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
@@ -1754,7 +1750,7 @@
  </label>
  <div class="col-md-6">
  [%[ fformsXadvanced8.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformsXadvanced8.custom['widgets']['f1']['_data-plugin-colorpicker']= 'len0'  ]]
+ [%[ fformsXadvanced8.custom['widgets']['f1']['_data-plugin-colorpicker']= '==0'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f1']['_class']= 'colorpicker-rgba form-control'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f1']['_value']= 'rgb(0,194,255,0.78)'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f1']['_data-color-format']= 'rgba'  ]]
@@ -1772,7 +1768,7 @@
  </label>
  <div class="col-md-6">
  [%[ fformsXadvanced8.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformsXadvanced8.custom['widgets']['f2']['_data-plugin-colorpicker']= 'len0'  ]]
+ [%[ fformsXadvanced8.custom['widgets']['f2']['_data-plugin-colorpicker']= '==0'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f2']['_class']= 'colorpicker-rgba form-control'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f2']['_value']= '#8fff00'  ]]
  [%[ fformsXadvanced8.custom['widgets']['f2']['_data-horizontal']= 'true'  ]]
@@ -1801,14 +1797,6 @@
 
  <span style="color:#ff0000">[%[= fformsXadvanced8.custom['errors']['f3'] if 'f3' in fformsXadvanced8.custom['errors'] else '' ]]</span>
 
- [%[ fformsXadvanced8.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced8.custom['submit']['_class']= 'form-control'  ]]
- [%[ fformsXadvanced8.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced8.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fformsXadvanced8.custom['submit']['_value']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced8.custom['submit']['_title']= 'mysubmit from last element'  ]]
- [%[= fformsXadvanced8.custom['submit'] ]]
-
   </div>
  </div>
 </div>
@@ -1818,26 +1806,32 @@
   Button
  </label>
  <div class="col-md-6 col-xs-11">
-  <a class="btn btn-sm btn-primary" data-color="rgb(255, 255, 255)" data-color-format="hex" data-plugin-colorpicker="" href="[%[=URL('index')]]">
-   Select color
-  </a>
+ [%[ fformsXadvanced8.custom['submit']['_class']= 'btn btn-sm btn-primary'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_data-plugin-colorpicker']= '==0'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_data-color-format']= 'hex'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_data-color']= 'rgb(255, 255, 255)'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_title']= 'mysubmit from <a'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_type']= 'submit'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXadvanced8.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[= fformsXadvanced8.custom['submit'] ]]
+
  </div>
 </div>
 
  [%[ for hidden_widget in fformsXadvanced8.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced8.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced8.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced8.custom['end'] ]]
-  <div  class='divfformsXadvanced8' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced8</small>
+  
+<div  class='divfformsXadvanced8' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced8</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced8');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1860,7 +1854,7 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced9, db_table: dfformsXadvanced9 -->
-<div class="form-horizontal form-bordered form-bordered">
+<div class="form-horizontal form-bordered form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced9.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label" for="textareaDefault">
@@ -1868,7 +1862,7 @@
  </label>
  <div class="col-md-6">
  [%[ fformsXadvanced9.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformsXadvanced9.custom['widgets']['f0']['_data-plugin-maxlength']= 'len0'  ]]
+ [%[ fformsXadvanced9.custom['widgets']['f0']['_data-plugin-maxlength']= '==0'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f0']['_maxlength']= '20'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -1892,7 +1886,7 @@
  <div class="col-md-6">
  [%[ fformsXadvanced9.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f1']['_rows']= '3'  ]]
- [%[ fformsXadvanced9.custom['widgets']['f1']['_data-plugin-maxlength']= 'len0'  ]]
+ [%[ fformsXadvanced9.custom['widgets']['f1']['_data-plugin-maxlength']= '==0'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f1']['_maxlength']= '140'  ]]
  [%[ fformsXadvanced9.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fformsXadvanced9.custom['widgets']['f1'] ]]
@@ -1901,29 +1895,28 @@
 
  [%[ fformsXadvanced9.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXadvanced9.custom['submit']['_rows']= '1'  ]]
- [%[ fformsXadvanced9.custom['submit']['_data-plugin-maxlength']= 'len0'  ]]
+ [%[ fformsXadvanced9.custom['submit']['_data-plugin-maxlength']= '==0'  ]]
  [%[ fformsXadvanced9.custom['submit']['_maxlength']= '140'  ]]
  [%[ fformsXadvanced9.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced9.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXadvanced9.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXadvanced9.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced9.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced9.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced9.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced9.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXadvanced9.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced9.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced9.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced9.custom['end'] ]]
-  <div  class='divfformsXadvanced9' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced9</small>
+  
+<div  class='divfformsXadvanced9' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced9</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced9');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1946,23 +1939,22 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced10, db_table: dfformsXadvanced10 -->
-<div class="dropzone dz-square" id="dropzone-example">
+<div class="dropzone dz-square" id="dropzone-example"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced10.custom['begin'] ]]
 
  [%[ for hidden_widget in fformsXadvanced10.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced10.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced10.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced10.custom['end'] ]]
-  <div  class='divfformsXadvanced10' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced10</small>
+  
+<div  class='divfformsXadvanced10' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced10</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced10');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -1985,7 +1977,7 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced11, db_table: dfformsXadvanced11 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced11.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
@@ -1999,19 +1991,18 @@
 </div>
 
  [%[ for hidden_widget in fformsXadvanced11.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced11.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced11.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced11.custom['end'] ]]
-  <div  class='divfformsXadvanced11' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced11</small>
+  
+<div  class='divfformsXadvanced11' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced11</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced11');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -2034,43 +2025,42 @@
          <div class="panel-body">
           
 <!-- view: fformsXadvanced12, db_table: dfformsXadvanced12 -->
-<div class="form-horizontal form-bordered">
+<div class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
 [%[= fformsXadvanced12.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-3 control-label">
   Bootstrap Markdown
  </label>
  <div class="col-md-9">
- [%[ fformsXadvanced12.custom['widgets']['f0']['_data-plugin-markdown-editor']= 'len0'  ]]
+ [%[ fformsXadvanced12.custom['widgets']['f0']['_data-plugin-markdown-editor']= '==0'  ]]
  [%[ fformsXadvanced12.custom['widgets']['f0']['_rows']= '10'  ]]
  [%[ fformsXadvanced12.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fformsXadvanced12.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXadvanced12.custom['errors']['f0'] if 'f0' in fformsXadvanced12.custom['errors'] else '' ]]</span>
 
- [%[ fformsXadvanced12.custom['submit']['_data-plugin-markdown-editor']= 'len0'  ]]
+ [%[ fformsXadvanced12.custom['submit']['_data-plugin-markdown-editor']= '==0'  ]]
  [%[ fformsXadvanced12.custom['submit']['_rows']= '1'  ]]
  [%[ fformsXadvanced12.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXadvanced12.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXadvanced12.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXadvanced12.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXadvanced12.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXadvanced12.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXadvanced12.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXadvanced12.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXadvanced12.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXadvanced12.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXadvanced12.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXadvanced12.custom['end'] ]]
-  <div  class='divfformsXadvanced12' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced12</small>
+  
+<div  class='divfformsXadvanced12' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXadvanced12</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXadvanced12');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -2190,5 +2180,32 @@
     <script src="[%[=URL('static/tte/assets/javascripts/forms/examples.advanced.form.js') ]]"></script>
    </div>
   </section>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

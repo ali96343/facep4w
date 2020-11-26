@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 27.10.2020 14:00:23 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 14:36:39 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -29,6 +29,7 @@
   <!-- Head Libs -->
   <script src="[%[=URL('static/tte/assets/vendor/modernizr/modernizr.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 </head>
  <body>
@@ -46,7 +47,7 @@
     <div class="header-right">
      
 <!-- view: fformsXcodeXeditor0, db_table: dfformsXcodeXeditor0 -->
-<div class="search nav-form">
+<div class="search nav-form"  style="border: 1px gray dashed;">
 [%[= fformsXcodeXeditor0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXcodeXeditor0.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -60,28 +61,27 @@
  <span class="input-group-btn">
  [%[ fformsXcodeXeditor0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXcodeXeditor0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXcodeXeditor0.custom['submit']['_title']= 'mysubmit from B'  ]]
- [%[ fformsXcodeXeditor0.custom['submit']['_value']= 'B:p4w'  ]]
- [%[ fformsXcodeXeditor0.custom['submit']['_style']= 'border:2px dashed red;'  ]]
+ [%[ fformsXcodeXeditor0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXcodeXeditor0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fformsXcodeXeditor0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
  [%[= fformsXcodeXeditor0.custom['submit'] ]]
 
  </span>
 </div>
 
  [%[ for hidden_widget in fformsXcodeXeditor0.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXcodeXeditor0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXcodeXeditor0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXcodeXeditor0.custom['end'] ]]
-  <div  class='divfformsXcodeXeditor0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXcodeXeditor0</small>
+  
+<div  class='divfformsXcodeXeditor0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXcodeXeditor0</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXcodeXeditor0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -657,7 +657,7 @@
         <div class="panel-body">
          
 <!-- view: fformsXcodeXeditor1, db_table: dfformsXcodeXeditor1 -->
-<div class="form-horizontal">
+<div class="form-horizontal"  style="border: 1px gray dashed;">
 [%[= fformsXcodeXeditor1.custom['begin'] ]]
 <div class="form-group">
  <label class="col-md-2 control-label" for="textareaDefault">
@@ -667,7 +667,7 @@
  [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_rows']= '10'  ]]
  [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_id']= 'codemirror_js_code'  ]]
- [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_data-plugin-codemirror']= 'len0'  ]]
+ [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_data-plugin-codemirror']= '==0'  ]]
  [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_data-plugin-options']= '{ mode: text/javascript }'  ]]
  [%[ fformsXcodeXeditor1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fformsXcodeXeditor1.custom['widgets']['f0'] ]]
@@ -677,29 +677,28 @@
  [%[ fformsXcodeXeditor1.custom['submit']['_class']= 'form-control'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_rows']= '1'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_id']= 'codemirror_js_code'  ]]
- [%[ fformsXcodeXeditor1.custom['submit']['_data-plugin-codemirror']= 'len0'  ]]
+ [%[ fformsXcodeXeditor1.custom['submit']['_data-plugin-codemirror']= '==0'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_data-plugin-options']= '{ mode: text/javascript }'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXcodeXeditor1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ fformsXcodeXeditor1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fformsXcodeXeditor1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fformsXcodeXeditor1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXcodeXeditor1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXcodeXeditor1.custom['submit'] ]]
 
  [%[ for hidden_widget in fformsXcodeXeditor1.custom['hidden_widgets'].keys(): ]]
- [%[= fformsXcodeXeditor1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fformsXcodeXeditor1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
+
 [%[= fformsXcodeXeditor1.custom['end'] ]]
-  <div  class='divfformsXcodeXeditor1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXcodeXeditor1</small>
+  
+<div  class='divfformsXcodeXeditor1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXcodeXeditor1</div>
 </div>
-
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfformsXcodeXeditor1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
 </div>
@@ -800,5 +799,32 @@
   <script src="[%[=URL('static/tte/assets/javascripts/theme.custom.js') ]]"></script>
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>
