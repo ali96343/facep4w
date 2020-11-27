@@ -1,398 +1,222 @@
-#!/usr/bin/env python3
-
 #
-# py4web app, AI-biorex ported 21.10.2020 16:37:42
+# py4web app, AI-biorex ported 27.11.2020 15:03:38 UTC+3
+# https://github.com/ali96343/facep4w
 #
 
-import os
-from py4web import action, request, abort, redirect, URL, Field
-from yatl.helpers import A
+import os, json
+import bottle
+
+from py4web import action, request, response,  abort, redirect, URL, Field
 from py4web.utils.form import Form, FormStyleBulma
 from py4web.utils.grid import Grid
 from py4web.utils.publisher import Publisher, ALLOW_ALL_POLICY
 from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB
-from yatl.helpers import INPUT, H1, HTML, BODY, A
 from py4web.core import Template, Reloader
+from py4web.utils.dbstore import DBStore
 
+#from yatl.helpers import INPUT, H1, HTML, BODY, A
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
-import bottle
+from .settings import APP_NAME
+
+
+ 
+# ---------------------- Global -----------------------------------------------------
 
 # exposes services necessary to access the db.thing via ajax
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
 
-Glb= {'debug': True , 'my_app_name' : "bubbly", 'tte_path': '/static/tte' }
+#db_sess = DAL('sqlite:memory')
+#session =  Session(storage=DBStore(db_sess))
 
+Glb= {'debug': True , 'my_app_name': APP_NAME, 'tte_path': '/static/tte' }
 
+# ---------------------- Utils -------------------------------------------------------
 
-@action('forms', method=["GET", "POST"] )
-@action.uses(Template('forms.html', delimiters='[%[ ]]',), db, session,  T, )
+def prn_form_vars(myform, mydb,):
 
-def forms(id=None):
-    ctrl_info= "ctrl: forms, view: forms.html"
-    messages = []
+        id_db = None; row_db = None; f0_fld = None; inserted = False
 
-    dfforms0_rows= None
-    id_dfforms0 = None
-    fforms0= Form(db.dfforms0, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms0",  formstyle=FormStyleBulma )
-   
-    if fforms0.accepted:
+        if Glb['debug'] == True:
+            print("app:",Glb['my_app_name'])
+            _ = [ print (f'     {k}: {v}') for k,v in myform.vars.items() if k != '_formkey']
 
-        Glb['debug'] and print("     fforms0 accepted with: %s " % (fforms0.vars))
-        fforms0_f0 = fforms0.vars.get('f0','')
-        if len ( fforms0_f0 ):
-            id_dfforms0 = db.dfforms0.insert( **fforms0.vars )
+        f0_fld = myform.vars.get('f0', None )
+        if (not f0_fld is None) and len(f0_fld):
+            id_db = mydb.insert(**mydb._filter_fields(myform.vars))
             db.commit()
 
-            if not id_dfforms0 is None:
-                dfforms0_rows = db.dfforms0(id_dfforms0 )
+            if not id_db is None:
+                row_db = mydb(id_db )
 
-                if not dfforms0_rows is None:
+                if not row_db is None:
                     if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms0.vars.f0}\" into db.dfforms0.f0, id = {id_dfforms0}' )
-                         print(f"     found db.dfforms0.f0: \"{dfforms0_rows.f0}\", id = {id_dfforms0}" )
+                         print(f'     inserted: \"{myform.vars.f0}\" into {mydb.f0}, id = {id_db}' )
+                         print(f"     select  : \"{row_db.f0}\" from {mydb.f0}, id = {id_db}" )
                          print ()
+                    inserted =True
         else:
             if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms0_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms0.vars.items() ]
+                print(f"     no entry inserted: (f0_fld is None) or (len(f0_fld) == 0)")
                 print()
-   
-    elif fforms0.errors:
-        print("fforms0 has errors: %s " % (fforms0.errors))
- 
 
-    dfforms1_rows= None
-    id_dfforms1 = None
-    fforms1= Form(db.dfforms1, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms1",  formstyle=FormStyleBulma )
-   
-    if fforms1.accepted:
-
-        Glb['debug'] and print("     fforms1 accepted with: %s " % (fforms1.vars))
-        fforms1_f0 = fforms1.vars.get('f0','')
-        if len ( fforms1_f0 ):
-            id_dfforms1 = db.dfforms1.insert( **fforms1.vars )
-            db.commit()
-
-            if not id_dfforms1 is None:
-                dfforms1_rows = db.dfforms1(id_dfforms1 )
-
-                if not dfforms1_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms1.vars.f0}\" into db.dfforms1.f0, id = {id_dfforms1}' )
-                         print(f"     found db.dfforms1.f0: \"{dfforms1_rows.f0}\", id = {id_dfforms1}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms1_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms1.vars.items() ]
-                print()
-   
-    elif fforms1.errors:
-        print("fforms1 has errors: %s " % (fforms1.errors))
- 
-
-    dfforms2_rows= None
-    id_dfforms2 = None
-    fforms2= Form(db.dfforms2, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms2",  formstyle=FormStyleBulma )
-   
-    if fforms2.accepted:
-
-        Glb['debug'] and print("     fforms2 accepted with: %s " % (fforms2.vars))
-        fforms2_f0 = fforms2.vars.get('f0','')
-        if len ( fforms2_f0 ):
-            id_dfforms2 = db.dfforms2.insert( **fforms2.vars )
-            db.commit()
-
-            if not id_dfforms2 is None:
-                dfforms2_rows = db.dfforms2(id_dfforms2 )
-
-                if not dfforms2_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms2.vars.f0}\" into db.dfforms2.f0, id = {id_dfforms2}' )
-                         print(f"     found db.dfforms2.f0: \"{dfforms2_rows.f0}\", id = {id_dfforms2}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms2_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms2.vars.items() ]
-                print()
-   
-    elif fforms2.errors:
-        print("fforms2 has errors: %s " % (fforms2.errors))
- 
-
-    dfforms3_rows= None
-    id_dfforms3 = None
-    fforms3= Form(db.dfforms3, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms3",  formstyle=FormStyleBulma )
-   
-    if fforms3.accepted:
-
-        Glb['debug'] and print("     fforms3 accepted with: %s " % (fforms3.vars))
-        fforms3_f0 = fforms3.vars.get('f0','')
-        if len ( fforms3_f0 ):
-            id_dfforms3 = db.dfforms3.insert( **fforms3.vars )
-            db.commit()
-
-            if not id_dfforms3 is None:
-                dfforms3_rows = db.dfforms3(id_dfforms3 )
-
-                if not dfforms3_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms3.vars.f0}\" into db.dfforms3.f0, id = {id_dfforms3}' )
-                         print(f"     found db.dfforms3.f0: \"{dfforms3_rows.f0}\", id = {id_dfforms3}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms3_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms3.vars.items() ]
-                print()
-   
-    elif fforms3.errors:
-        print("fforms3 has errors: %s " % (fforms3.errors))
- 
-
-    dfforms4_rows= None
-    id_dfforms4 = None
-    fforms4= Form(db.dfforms4, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms4",  formstyle=FormStyleBulma )
-   
-    if fforms4.accepted:
-
-        Glb['debug'] and print("     fforms4 accepted with: %s " % (fforms4.vars))
-        fforms4_f0 = fforms4.vars.get('f0','')
-        if len ( fforms4_f0 ):
-            id_dfforms4 = db.dfforms4.insert( **fforms4.vars )
-            db.commit()
-
-            if not id_dfforms4 is None:
-                dfforms4_rows = db.dfforms4(id_dfforms4 )
-
-                if not dfforms4_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms4.vars.f0}\" into db.dfforms4.f0, id = {id_dfforms4}' )
-                         print(f"     found db.dfforms4.f0: \"{dfforms4_rows.f0}\", id = {id_dfforms4}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms4_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms4.vars.items() ]
-                print()
-   
-    elif fforms4.errors:
-        print("fforms4 has errors: %s " % (fforms4.errors))
- 
-
-    dfforms5_rows= None
-    id_dfforms5 = None
-    fforms5= Form(db.dfforms5, id, deletable=False, dbio = False, keep_values = False, form_name = "fforms5",  formstyle=FormStyleBulma )
-   
-    if fforms5.accepted:
-
-        Glb['debug'] and print("     fforms5 accepted with: %s " % (fforms5.vars))
-        fforms5_f0 = fforms5.vars.get('f0','')
-        if len ( fforms5_f0 ):
-            id_dfforms5 = db.dfforms5.insert( **fforms5.vars )
-            db.commit()
-
-            if not id_dfforms5 is None:
-                dfforms5_rows = db.dfforms5(id_dfforms5 )
-
-                if not dfforms5_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fforms5.vars.f0}\" into db.dfforms5.f0, id = {id_dfforms5}' )
-                         print(f"     found db.dfforms5.f0: \"{dfforms5_rows.f0}\", id = {id_dfforms5}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fforms5_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fforms5.vars.items() ]
-                print()
-   
-    elif fforms5.errors:
-        print("fforms5 has errors: %s " % (fforms5.errors))
- 
-
-    return locals()
-
+        return inserted
+            
+def put_json_messages(mess='mymess'):
+    response.headers["Content-Type"] = "application/json"
+    return json.dumps( {'messages' : f'{mess}'})
+    
+# ---------------------- Controllers  ------------------------------------------------
 
 @action('index', method=["GET", "POST"] )
-@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session,  T, )
+@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session, T,)
 
-def index(id=None):
+def index():
     ctrl_info= "ctrl: index, view: index.html"
+    page_url = "\'" + URL('index' ) + "\'"
     messages = []
 
-    dfindex0_rows= None
-    id_dfindex0 = None
-    findex0= Form(db.dfindex0, id, deletable=False, dbio = False, keep_values = False, form_name = "findex0",  formstyle=FormStyleBulma )
-   
+    findex0= Form(db.dfindex0, dbio=False, formstyle=FormStyleBulma)
+
     if findex0.accepted:
-
-        Glb['debug'] and print("     findex0 accepted with: %s " % (findex0.vars))
-        findex0_f0 = findex0.vars.get('f0','')
-        if len ( findex0_f0 ):
-            id_dfindex0 = db.dfindex0.insert( **findex0.vars )
-            db.commit()
-
-            if not id_dfindex0 is None:
-                dfindex0_rows = db.dfindex0(id_dfindex0 )
-
-                if not dfindex0_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{findex0.vars.f0}\" into db.dfindex0.f0, id = {id_dfindex0}' )
-                         print(f"     found db.dfindex0.f0: \"{dfindex0_rows.f0}\", id = {id_dfindex0}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(findex0_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in findex0.vars.items() ]
-                print()
-   
+        prn_form_vars( findex0, db.dfindex0 )
+        return put_json_messages('accepted: ' + str( findex0.form_name ))
     elif findex0.errors:
-        print("findex0 has errors: %s " % (findex0.errors))
+        print("findex0 has errors: %s" % (findex0.errors))
+        return put_json_messages('error: ' + str( findex0.form_name ))
  
 
     return locals()
-
 
 @action('login', method=["GET", "POST"] )
-@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session,  T, )
+@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session, T,)
 
-def login(id=None):
+def login():
     ctrl_info= "ctrl: login, view: login.html"
+    page_url = "\'" + URL('login' ) + "\'"
     messages = []
 
-    dflogin0_rows= None
-    id_dflogin0 = None
-    flogin0= Form(db.dflogin0, id, deletable=False, dbio = False, keep_values = False, form_name = "flogin0",  formstyle=FormStyleBulma )
-   
+    flogin0= Form(db.dflogin0, dbio=False, formstyle=FormStyleBulma)
+
     if flogin0.accepted:
-
-        Glb['debug'] and print("     flogin0 accepted with: %s " % (flogin0.vars))
-        flogin0_f0 = flogin0.vars.get('f0','')
-        if len ( flogin0_f0 ):
-            id_dflogin0 = db.dflogin0.insert( **flogin0.vars )
-            db.commit()
-
-            if not id_dflogin0 is None:
-                dflogin0_rows = db.dflogin0(id_dflogin0 )
-
-                if not dflogin0_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{flogin0.vars.f0}\" into db.dflogin0.f0, id = {id_dflogin0}' )
-                         print(f"     found db.dflogin0.f0: \"{dflogin0_rows.f0}\", id = {id_dflogin0}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(flogin0_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in flogin0.vars.items() ]
-                print()
-   
+        prn_form_vars( flogin0, db.dflogin0 )
+        return put_json_messages('accepted: ' + str( flogin0.form_name ))
     elif flogin0.errors:
-        print("flogin0 has errors: %s " % (flogin0.errors))
+        print("flogin0 has errors: %s" % (flogin0.errors))
+        return put_json_messages('error: ' + str( flogin0.form_name ))
  
 
     return locals()
 
+@action('forms', method=["GET", "POST"] )
+@action.uses(Template('forms.html', delimiters='[%[ ]]',), db, session, T,)
 
-@action('charts', method=["GET", "POST"] )
-@action.uses(Template('charts.html', delimiters='[%[ ]]',), db, session,  T, )
-
-def charts(id=None):
-    ctrl_info= "ctrl: charts, view: charts.html"
+def forms():
+    ctrl_info= "ctrl: forms, view: forms.html"
+    page_url = "\'" + URL('forms' ) + "\'"
     messages = []
 
-    dfcharts0_rows= None
-    id_dfcharts0 = None
-    fcharts0= Form(db.dfcharts0, id, deletable=False, dbio = False, keep_values = False, form_name = "fcharts0",  formstyle=FormStyleBulma )
-   
-    if fcharts0.accepted:
+    fforms0= Form(db.dfforms0, dbio=False, formstyle=FormStyleBulma)
 
-        Glb['debug'] and print("     fcharts0 accepted with: %s " % (fcharts0.vars))
-        fcharts0_f0 = fcharts0.vars.get('f0','')
-        if len ( fcharts0_f0 ):
-            id_dfcharts0 = db.dfcharts0.insert( **fcharts0.vars )
-            db.commit()
+    if fforms0.accepted:
+        prn_form_vars( fforms0, db.dfforms0 )
+        return put_json_messages('accepted: ' + str( fforms0.form_name ))
+    elif fforms0.errors:
+        print("fforms0 has errors: %s" % (fforms0.errors))
+        return put_json_messages('error: ' + str( fforms0.form_name ))
+ 
 
-            if not id_dfcharts0 is None:
-                dfcharts0_rows = db.dfcharts0(id_dfcharts0 )
+    fforms1= Form(db.dfforms1, dbio=False, formstyle=FormStyleBulma)
 
-                if not dfcharts0_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{fcharts0.vars.f0}\" into db.dfcharts0.f0, id = {id_dfcharts0}' )
-                         print(f"     found db.dfcharts0.f0: \"{dfcharts0_rows.f0}\", id = {id_dfcharts0}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(fcharts0_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in fcharts0.vars.items() ]
-                print()
-   
-    elif fcharts0.errors:
-        print("fcharts0 has errors: %s " % (fcharts0.errors))
+    if fforms1.accepted:
+        prn_form_vars( fforms1, db.dfforms1 )
+        return put_json_messages('accepted: ' + str( fforms1.form_name ))
+    elif fforms1.errors:
+        print("fforms1 has errors: %s" % (fforms1.errors))
+        return put_json_messages('error: ' + str( fforms1.form_name ))
+ 
+
+    fforms2= Form(db.dfforms2, dbio=False, formstyle=FormStyleBulma)
+
+    if fforms2.accepted:
+        prn_form_vars( fforms2, db.dfforms2 )
+        return put_json_messages('accepted: ' + str( fforms2.form_name ))
+    elif fforms2.errors:
+        print("fforms2 has errors: %s" % (fforms2.errors))
+        return put_json_messages('error: ' + str( fforms2.form_name ))
+ 
+
+    fforms3= Form(db.dfforms3, dbio=False, formstyle=FormStyleBulma)
+
+    if fforms3.accepted:
+        prn_form_vars( fforms3, db.dfforms3 )
+        return put_json_messages('accepted: ' + str( fforms3.form_name ))
+    elif fforms3.errors:
+        print("fforms3 has errors: %s" % (fforms3.errors))
+        return put_json_messages('error: ' + str( fforms3.form_name ))
+ 
+
+    fforms4= Form(db.dfforms4, dbio=False, formstyle=FormStyleBulma)
+
+    if fforms4.accepted:
+        prn_form_vars( fforms4, db.dfforms4 )
+        return put_json_messages('accepted: ' + str( fforms4.form_name ))
+    elif fforms4.errors:
+        print("fforms4 has errors: %s" % (fforms4.errors))
+        return put_json_messages('error: ' + str( fforms4.form_name ))
+ 
+
+    fforms5= Form(db.dfforms5, dbio=False, formstyle=FormStyleBulma)
+
+    if fforms5.accepted:
+        prn_form_vars( fforms5, db.dfforms5 )
+        return put_json_messages('accepted: ' + str( fforms5.form_name ))
+    elif fforms5.errors:
+        print("fforms5 has errors: %s" % (fforms5.errors))
+        return put_json_messages('error: ' + str( fforms5.form_name ))
  
 
     return locals()
-
 
 @action('tables', method=["GET", "POST"] )
-@action.uses(Template('tables.html', delimiters='[%[ ]]',), db, session,  T, )
+@action.uses(Template('tables.html', delimiters='[%[ ]]',), db, session, T,)
 
-def tables(id=None):
+def tables():
     ctrl_info= "ctrl: tables, view: tables.html"
+    page_url = "\'" + URL('tables' ) + "\'"
     messages = []
 
     rows_ttables0= db(db.ttables0).select()
     rows_ttables1= db(db.ttables1).select()
     rows_ttables2= db(db.ttables2).select()
     rows_ttables3= db(db.ttables3).select()
-    dftables0_rows= None
-    id_dftables0 = None
-    ftables0= Form(db.dftables0, id, deletable=False, dbio = False, keep_values = False, form_name = "ftables0",  formstyle=FormStyleBulma )
-   
+    ftables0= Form(db.dftables0, dbio=False, formstyle=FormStyleBulma)
+
     if ftables0.accepted:
-
-        Glb['debug'] and print("     ftables0 accepted with: %s " % (ftables0.vars))
-        ftables0_f0 = ftables0.vars.get('f0','')
-        if len ( ftables0_f0 ):
-            id_dftables0 = db.dftables0.insert( **ftables0.vars )
-            db.commit()
-
-            if not id_dftables0 is None:
-                dftables0_rows = db.dftables0(id_dftables0 )
-
-                if not dftables0_rows is None:
-                    if Glb['debug'] == True:
-                         print(f"app: {Glb['my_app_name']}")
-                         print(f'     inserted: \"{ftables0.vars.f0}\" into db.dftables0.f0, id = {id_dftables0}' )
-                         print(f"     found db.dftables0.f0: \"{dftables0_rows.f0}\", id = {id_dftables0}" )
-                         print ()
-        else:
-            if Glb['debug'] == True:
-                print("app:",Glb['my_app_name'])
-                print(f"     len(ftables0_f0)=0, not inserted")  
-                _ = [ print (f'     {k}: {v}') for k,v in ftables0.vars.items() ]
-                print()
-   
+        prn_form_vars( ftables0, db.dftables0 )
+        return put_json_messages('accepted: ' + str( ftables0.form_name ))
     elif ftables0.errors:
-        print("ftables0 has errors: %s " % (ftables0.errors))
+        print("ftables0 has errors: %s" % (ftables0.errors))
+        return put_json_messages('error: ' + str( ftables0.form_name ))
+ 
+
+    return locals()
+
+@action('charts', method=["GET", "POST"] )
+@action.uses(Template('charts.html', delimiters='[%[ ]]',), db, session, T,)
+
+def charts():
+    ctrl_info= "ctrl: charts, view: charts.html"
+    page_url = "\'" + URL('charts' ) + "\'"
+    messages = []
+
+    fcharts0= Form(db.dfcharts0, dbio=False, formstyle=FormStyleBulma)
+
+    if fcharts0.accepted:
+        prn_form_vars( fcharts0, db.dfcharts0 )
+        return put_json_messages('accepted: ' + str( fcharts0.form_name ))
+    elif fcharts0.errors:
+        print("fcharts0 has errors: %s" % (fcharts0.errors))
+        return put_json_messages('error: ' + str( fcharts0.form_name ))
  
 
     return locals()
@@ -430,4 +254,50 @@ def api(tablename, rec_id=None):
 #  http -f POST localhost:8000/bubbly/api/test_table/ f0=111111 f1=2222222 f2=333333
 #  http -f DELETE localhost:8000/bubbly/api/test_table/2
 #  http -f PUT localhost:8000/bubbly/api/test_table/2 f0=111111 f1=2222222 f2=333333
+
+
+@bottle.error(404)
+def error404(error):
+
+    func_mess = []
+
+    def check_rule(maybe_app_root):
+        for e in Reloader.ROUTES:
+            if ('rule' in e ) and ( e["rule"] == maybe_app_root) :
+                Glb["debug"] and func_mess.append(f"     found_rule: {e['rule']}")
+                return True
+        return False
+
+    location = "/" + Glb["my_app_name"]
+    lx = bottle.request.path.split("/", 2)
+
+    if len(lx) >= 2 and check_rule("/" + lx[1]):
+        location = "/" + lx[1]
+        files_prefix = location + Glb["tte_path"]
+
+        location_2x = location + location + "/"
+        files_prefix_2x = files_prefix + files_prefix + "/"
+
+        def rm_bad_prefix(bad_prefix):
+            new_location = bottle.request.path.replace(bad_prefix, "", 1)
+            Glb["debug"] and func_mess.append(f"     rm_bad_prefix: {bad_prefix}")
+            return new_location
+
+        if bottle.request.path.startswith(files_prefix_2x):
+            if len(bottle.request.path) > len(files_prefix_2x):
+                location = rm_bad_prefix(files_prefix)
+
+        elif bottle.request.path.startswith(location_2x):
+            if len(bottle.request.path) > len(location_2x):
+                location = rm_bad_prefix(location)
+    if Glb["debug"]:
+        debug_mess = [  f"404  app=/{Glb['my_app_name']}, err_path={bottle.request.path}",
+                        f"     info: {error}", ]
+        if len(func_mess):
+            debug_mess += func_mess
+        debug_mess.append(f"     goto_new_path: {location}\n")
+        print("\n".join(debug_mess))
+
+    bottle.response.status = 303
+    bottle.response.set_header("Location", location)
 

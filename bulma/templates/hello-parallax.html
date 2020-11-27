@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 21.10.2020 16:01:05 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.11.2020 15:42:46 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -11,7 +11,9 @@
   <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
   <link href="[%[=URL('static/tte/css/hello-parallax.css') ]]" rel="stylesheet" type="text/css"/>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
 </head>
  <body>
   <section class="hero is-medium">
@@ -93,7 +95,47 @@
         Name
        </label>
        <div class="control">
-        <input class="input is-medium" placeholder="Jon Snow" type="text"/></div>
+        
+
+<!-- view: fhelloXparallax0, db_table: dfhelloXparallax0 -->
+<div  style="border: 1px gray dashed;">
+[%[= fhelloXparallax0.custom['begin'] ]]
+ [%[ fhelloXparallax0.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
+ [%[ fhelloXparallax0.custom['widgets']['f0']['_placeholder']= 'Jon Snow:p4w'  ]]
+ [%[ fhelloXparallax0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fhelloXparallax0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fhelloXparallax0.custom['errors']['f0'] if 'f0' in fhelloXparallax0.custom['errors'] else '' ]]</span>
+
+ [%[ fhelloXparallax0.custom['submit']['_class']= 'input is-medium'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_rows']= '1'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fhelloXparallax0.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fhelloXparallax0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fhelloXparallax0.custom['hidden_widgets'].keys(): ]]
+     [%[= fhelloXparallax0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+[%[= fhelloXparallax0.custom['end'] ]]
+  
+<div  class='divfhelloXparallax0' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fhelloXparallax0</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divfhelloXparallax0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
+</div>
+<!-- end fhelloXparallax0 -->
+
+</div>
       </div>
       <br/>
       <div class="field">
@@ -101,7 +143,47 @@
         Email
        </label>
        <div class="control">
-        <input class="input is-medium" placeholder="jon@winterfell.com" type="email"/></div>
+        
+
+<!-- view: fhelloXparallax1, db_table: dfhelloXparallax1 -->
+<div  style="border: 1px gray dashed;">
+[%[= fhelloXparallax1.custom['begin'] ]]
+ [%[ fhelloXparallax1.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
+ [%[ fhelloXparallax1.custom['widgets']['f0']['_placeholder']= 'jon@winterfell.com:p4w'  ]]
+ [%[ fhelloXparallax1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fhelloXparallax1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fhelloXparallax1.custom['errors']['f0'] if 'f0' in fhelloXparallax1.custom['errors'] else '' ]]</span>
+
+ [%[ fhelloXparallax1.custom['submit']['_class']= 'input is-medium'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_rows']= '1'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fhelloXparallax1.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fhelloXparallax1.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fhelloXparallax1.custom['hidden_widgets'].keys(): ]]
+     [%[= fhelloXparallax1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+[%[= fhelloXparallax1.custom['end'] ]]
+  
+<div  class='divfhelloXparallax1' style="text-align: center; position:absolute;">
+  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fhelloXparallax1</div>
+</div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divfhelloXparallax1');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
+
+</div>
+<!-- end fhelloXparallax1 -->
+
+</div>
       </div>
       <br/>
       <div class="field is-grouped">
@@ -128,5 +210,32 @@
     </p>
    </div>
   </footer>
+  
+<!-- myadd -->
+<script>
+  const forms_url = [%[ =XML( page_url ) ]];
+
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

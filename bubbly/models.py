@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 21.10.2020 16:37:42
+# py4web app, AI-biorex ported 27.11.2020 15:03:38 UTC+3
 #
 
 #import pydal
@@ -24,169 +24,180 @@ if not db(db.auth_user).count():
     db.auth_user.insert(**body)
     db.commit()
 
-
 db.define_table(
     'test_table',
     Field( 'f0', 'string', label='l0'),
     Field( 'f1', 'string', label='l1'),
     Field( 'f2', 'string', label='l2'),
     )
+db.commit()
 
 if not db(db.test_table).count():
     populate(db.test_table, n=10)
+    db.commit()
 
 
 db.define_table(
     'dfindex0',
-    Field('f0','string'),
+    Field('f0','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dflogin0',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','boolean'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','boolean',  ),
     )
+db.commit()
 
 db.define_table(
     'dfcharts0',
-    Field('f0','string'),
+    Field('f0','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dftables0',
-    Field('f0','string'),
+    Field('f0','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms0',
-    Field('f0','string'),
+    Field('f0','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms1',
-    Field('f0','string'),
-    Field('f1','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms2',
-    Field('f0','string'),
-    Field('f1','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms3',
-    Field('f0','string'),
-    Field('f1','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms4',
-    Field('f0','string'),
-    Field('f1','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'dfforms5',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','string'),
-    Field('f3','string'),
-    Field('f4','string'),
-    Field('f5','string'),
-    Field('f6','string'),
-    Field('f7','boolean'),
-    Field('f8','string'),
-    Field('f9','string'),
-    Field('f10','boolean'),
-    Field('f11','boolean'),
-    Field('f12','boolean'),
-    Field('f13','boolean'),
-    Field('f14','string'),
-    Field('f15','string'),
-    Field('f16','string'),
-    Field('f17','string'),
-    Field('f18','string'),
-    Field('f19','string'),
-    Field('f20','string'),
-    Field('f21','string'),
-    Field('f22','string'),
-    Field('f23','string'),
-    Field('f24','string'),
-    Field('f25','string'),
-    Field('f26','string'),
-    Field('f27','string'),
-    Field('f28','string'),
-    Field('f29','boolean'),
-    Field('f30','string'),
-    Field('f31','string'),
-    Field('f32','string'),
-    Field('f33','string'),
-    Field('f34','string'),
-    Field('f35','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','string', length=1024, ),
+    Field('f3','string', length=1024, ),
+    Field('f4','string', length=1024, ),
+    Field('f5','string', length=1024, ),
+    Field('f6','string', length=1024, ),
+    Field('f7','boolean',  ),
+    Field('f8','string', length=1024, ),
+    Field('f9','string', length=1024, ),
+    Field('f10','boolean',  ),
+    Field('f11','boolean',  ),
+    Field('f12','boolean',  ),
+    Field('f13','boolean',  ),
+    Field('f14','string', length=1024, ),
+    Field('f15','string', length=1024, ),
+    Field('f16','string', length=1024, ),
+    Field('f17','string', length=1024, ),
+    Field('f18','string', length=1024, ),
+    Field('f19','string', length=1024, ),
+    Field('f20','string', length=1024, ),
+    Field('f21','string', length=1024, ),
+    Field('f22','string', length=1024, ),
+    Field('f23','string', length=1024, ),
+    Field('f24','string', length=1024, ),
+    Field('f25','string', length=1024, ),
+    Field('f26','string', length=1024, ),
+    Field('f27','string', length=1024, ),
+    Field('f28','string', length=1024, ),
+    Field('f29','boolean',  ),
+    Field('f30','string', length=1024, ),
+    Field('f31','string', length=1024, ),
+    Field('f32','string', length=1024, ),
+    Field('f33','string', length=1024, ),
+    Field('f34','string', length=1024, ),
+    Field('f35','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'ttables0',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','string'),
-    Field('f3','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','string', length=1024, ),
+    Field('f3','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'ttables1',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','string'),
-    Field('f3','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','string', length=1024, ),
+    Field('f3','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'ttables2',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','string'),
-    Field('f3','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','string', length=1024, ),
+    Field('f3','string', length=1024, ),
     )
+db.commit()
 
 db.define_table(
     'ttables3',
-    Field('f0','string'),
-    Field('f1','string'),
-    Field('f2','string'),
-    Field('f3','string'),
+    Field('f0','string', length=1024, ),
+    Field('f1','string', length=1024, ),
+    Field('f2','string', length=1024, ),
+    Field('f3','string', length=1024, ),
     )
+db.commit()
 
 if not db(db.ttables0).count():
-    db.ttables0.insert(f0="p4w:#", f1="p4w:First Name", f2="p4w:Last Name", f3="p4w:Username")
-    db.ttables0.insert(f0="p4w:1", f1="p4w:Mark", f2="p4w:Otto", f3="p4w:@mdo")
-    db.ttables0.insert(f0="p4w:2", f1="p4w:Jacob", f2="p4w:Thornton", f3="p4w:@fat")
-    db.ttables0.insert(f0="p4w:3", f1="p4w:Larry", f2="p4w:the Bird", f3="p4w:@twitter")
+    db.ttables0.insert(f0="1", f1="Mark", f2="Otto", f3="@mdo")
+    db.ttables0.insert(f0="2", f1="Jacob", f2="Thornton", f3="@fat")
+    db.ttables0.insert(f0="3", f1="Larry", f2="the Bird", f3="@twitter")
     db.commit()
 
 if not db(db.ttables1).count():
-    db.ttables1.insert(f0="p4w:#", f1="p4w:First Name", f2="p4w:Last Name", f3="p4w:Username")
-    db.ttables1.insert(f0="p4w:1", f1="p4w:Mark", f2="p4w:Otto", f3="p4w:@mdo")
-    db.ttables1.insert(f0="p4w:2", f1="p4w:Jacob", f2="p4w:Thornton", f3="p4w:@fat")
-    db.ttables1.insert(f0="p4w:3", f1="p4w:Larry", f2="p4w:the Bird", f3="p4w:@twitter")
+    db.ttables1.insert(f0="1", f1="Mark", f2="Otto", f3="@mdo")
+    db.ttables1.insert(f0="2", f1="Jacob", f2="Thornton", f3="@fat")
+    db.ttables1.insert(f0="3", f1="Larry", f2="the Bird", f3="@twitter")
     db.commit()
 
 if not db(db.ttables2).count():
-    db.ttables2.insert(f0="p4w:#", f1="p4w:First Name", f2="p4w:Last Name", f3="p4w:Username")
-    db.ttables2.insert(f0="p4w:1", f1="p4w:Mark", f2="p4w:Otto", f3="p4w:@mdo")
-    db.ttables2.insert(f0="p4w:2", f1="p4w:Jacob", f2="p4w:Thornton", f3="p4w:@fat")
-    db.ttables2.insert(f0="p4w:3", f1="p4w:Larry", f2="p4w:the Bird", f3="p4w:@twitter")
-    db.ttables2.insert(f0="p4w:3", f1="p4w:Sam", f2="p4w:Nevoresky", f3="p4w:@facebook")
+    db.ttables2.insert(f0="1", f1="Mark", f2="Otto", f3="@mdo")
+    db.ttables2.insert(f0="2", f1="Jacob", f2="Thornton", f3="@fat")
+    db.ttables2.insert(f0="3", f1="Larry", f2="the Bird", f3="@twitter")
+    db.ttables2.insert(f0="3", f1="Sam", f2="Nevoresky", f3="@facebook")
     db.commit()
 
 if not db(db.ttables3).count():
-    db.ttables3.insert(f0="p4w:#", f1="p4w:First Name", f2="p4w:Last Name", f3="p4w:Username")
-    db.ttables3.insert(f0="p4w:1", f1="p4w:Mark", f2="p4w:Otto", f3="p4w:@mdo")
-    db.ttables3.insert(f0="p4w:2", f1="p4w:Jacob", f2="p4w:Thornton", f3="p4w:@fat")
-    db.ttables3.insert(f0="p4w:3", f1="p4w:Larry", f2="p4w:the Bird", f3="p4w:@twitter")
-    db.ttables3.insert(f0="p4w:4", f1="p4w:Mark", f2="p4w:Otto", f3="p4w:@mdo")
-    db.ttables3.insert(f0="p4w:5", f1="p4w:Jacob", f2="p4w:Thornton", f3="p4w:@fat")
-    db.ttables3.insert(f0="p4w:6", f1="p4w:Larry", f2="p4w:the Bird", f3="p4w:@twitter")
+    db.ttables3.insert(f0="1", f1="Mark", f2="Otto", f3="@mdo")
+    db.ttables3.insert(f0="2", f1="Jacob", f2="Thornton", f3="@fat")
+    db.ttables3.insert(f0="3", f1="Larry", f2="the Bird", f3="@twitter")
+    db.ttables3.insert(f0="4", f1="Mark", f2="Otto", f3="@mdo")
+    db.ttables3.insert(f0="5", f1="Jacob", f2="Thornton", f3="@fat")
+    db.ttables3.insert(f0="6", f1="Larry", f2="the Bird", f3="@twitter")
     db.commit()
