@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 26.11.2020 14:36:35 UTC+3
+# py4web app, AI-biorex ported 01.12.2020 12:03:27 UTC+3
 #
 
 #import pydal

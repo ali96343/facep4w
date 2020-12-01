@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ca">
  <head>
-            <!-- 27.10.2020 12:50:55 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -56,7 +56,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -86,41 +125,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: ftabs0, db_table: dftabs0 -->
+<!-- BEGIN view: ftabs0, db_table: dftabs0 -->
 <div>
 [%[= ftabs0.custom['begin'] ]]
  [%[ ftabs0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ ftabs0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ ftabs0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= ftabs0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= ftabs0.custom['errors']['f0'] if 'f0' in ftabs0.custom['errors'] else '' ]]</span>
 
  [%[ ftabs0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftabs0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ ftabs0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ ftabs0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftabs0.custom['submit']['_placeholder']= ''  ]]
+ [%[ ftabs0.custom['submit']['_rows']= '1'  ]]
+ [%[ ftabs0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ ftabs0.custom['submit']['_value']= 'Submit'  ]]
  [%[ ftabs0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftabs0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in ftabs0.custom['hidden_widgets'].keys(): ]]
- [%[= ftabs0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftabs0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= ftabs0.custom['end'] ]]
-  <div  class='divftabs0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftabs0</small>
-</div>
 
+  
+<div class="divftabs0 flashdiv"> <span class="flashspan">ftabs0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftabs0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= ftabs0.custom['end'] ]]
 </div>
-<!-- end ftabs0 -->
+<!-- END ftabs0-->
 
 </div>
          </div>
@@ -340,41 +378,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: ftabs1, db_table: dftabs1 -->
+<!-- BEGIN view: ftabs1, db_table: dftabs1 -->
 <div>
 [%[= ftabs1.custom['begin'] ]]
- [%[ ftabs1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ ftabs1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ ftabs1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= ftabs1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= ftabs1.custom['errors']['f0'] if 'f0' in ftabs1.custom['errors'] else '' ]]</span>
 
- [%[ ftabs1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ ftabs1.custom['submit']['_placeholder']= ''  ]]
  [%[ ftabs1.custom['submit']['_type']= 'submit'  ]]
- [%[ ftabs1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ ftabs1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftabs1.custom['submit']['_rows']= '1'  ]]
+ [%[ ftabs1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ ftabs1.custom['submit']['_value']= 'Submit'  ]]
  [%[ ftabs1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftabs1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in ftabs1.custom['hidden_widgets'].keys(): ]]
- [%[= ftabs1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftabs1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= ftabs1.custom['end'] ]]
-  <div  class='divftabs1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftabs1</small>
-</div>
 
+  
+<div class="divftabs1 flashdiv"> <span class="flashspan">ftabs1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftabs1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= ftabs1.custom['end'] ]]
 </div>
-<!-- end ftabs1 -->
+<!-- END ftabs1-->
 
 </div>
           <div class="hd-message-info">
@@ -1136,5 +1173,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

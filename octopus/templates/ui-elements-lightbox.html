@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 26.11.2020 14:36:37 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:30 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -28,6 +28,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -43,14 +81,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fuiXelementsXlightbox0, db_table: dfuiXelementsXlightbox0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fuiXelementsXlightbox0, db_table: dfuiXelementsXlightbox0 -->
+<div class="search nav-form">
 [%[= fuiXelementsXlightbox0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fuiXelementsXlightbox0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fuiXelementsXlightbox0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fuiXelementsXlightbox0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fuiXelementsXlightbox0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fuiXelementsXlightbox0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fuiXelementsXlightbox0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fuiXelementsXlightbox0.custom['errors']['f0'] if 'f0' in fuiXelementsXlightbox0.custom['errors'] else '' ]]</span>
@@ -58,9 +96,9 @@
  <span class="input-group-btn">
  [%[ fuiXelementsXlightbox0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fuiXelementsXlightbox0.custom['submit']['_type']= 'submit'  ]]
- [%[ fuiXelementsXlightbox0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fuiXelementsXlightbox0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fuiXelementsXlightbox0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fuiXelementsXlightbox0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fuiXelementsXlightbox0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fuiXelementsXlightbox0.custom['submit'] ]]
 
  </span>
@@ -70,19 +108,18 @@
      [%[= fuiXelementsXlightbox0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fuiXelementsXlightbox0.custom['end'] ]]
   
-<div  class='divfuiXelementsXlightbox0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fuiXelementsXlightbox0</div>
-</div>
+<div class="divfuiXelementsXlightbox0 flashdiv"> <span class="flashspan">fuiXelementsXlightbox0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfuiXelementsXlightbox0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fuiXelementsXlightbox0.custom['end'] ]]
 </div>
-<!-- end fuiXelementsXlightbox0 -->
+<!-- END fuiXelementsXlightbox0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -824,8 +861,8 @@
          <a class="popup-with-form btn btn-default" href="#demo-form">Open Form</a>
          <!-- Form -->
          
-<!-- view: fuiXelementsXlightbox1, db_table: dfuiXelementsXlightbox1 -->
-<div id="demo-form" class="white-popup-block mfp-hide form-horizontal"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fuiXelementsXlightbox1, db_table: dfuiXelementsXlightbox1 -->
+<div id="demo-form" class="white-popup-block mfp-hide form-horizontal">
 [%[= fuiXelementsXlightbox1.custom['begin'] ]]
 <div class="row">
  <div class="col-sm-12">
@@ -845,7 +882,7 @@
  <div class="col-sm-9">
  [%[ fuiXelementsXlightbox1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fuiXelementsXlightbox1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fuiXelementsXlightbox1.custom['widgets']['f0']['_placeholder']= 'Type your name...:p4w'  ]]
+ [%[ fuiXelementsXlightbox1.custom['widgets']['f0']['_placeholder']= 'Type your name..._p4w'  ]]
  [%[= fuiXelementsXlightbox1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fuiXelementsXlightbox1.custom['errors']['f0'] if 'f0' in fuiXelementsXlightbox1.custom['errors'] else '' ]]</span>
@@ -860,7 +897,7 @@
  <div class="col-sm-9">
  [%[ fuiXelementsXlightbox1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fuiXelementsXlightbox1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fuiXelementsXlightbox1.custom['widgets']['f1']['_placeholder']= 'Type your email...:p4w'  ]]
+ [%[ fuiXelementsXlightbox1.custom['widgets']['f1']['_placeholder']= 'Type your email..._p4w'  ]]
  [%[= fuiXelementsXlightbox1.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fuiXelementsXlightbox1.custom['errors']['f1'] if 'f1' in fuiXelementsXlightbox1.custom['errors'] else '' ]]</span>
@@ -875,7 +912,7 @@
  <div class="col-sm-9">
  [%[ fuiXelementsXlightbox1.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fuiXelementsXlightbox1.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fuiXelementsXlightbox1.custom['widgets']['f2']['_placeholder']= 'Type an URL...:p4w'  ]]
+ [%[ fuiXelementsXlightbox1.custom['widgets']['f2']['_placeholder']= 'Type an URL..._p4w'  ]]
  [%[= fuiXelementsXlightbox1.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fuiXelementsXlightbox1.custom['errors']['f2'] if 'f2' in fuiXelementsXlightbox1.custom['errors'] else '' ]]</span>
@@ -897,10 +934,9 @@
  <span style="color:#ff0000">[%[= fuiXelementsXlightbox1.custom['errors']['f3'] if 'f3' in fuiXelementsXlightbox1.custom['errors'] else '' ]]</span>
 
  [%[ fuiXelementsXlightbox1.custom['submit']['_rows']= '1'  ]]
- [%[ fuiXelementsXlightbox1.custom['submit']['_class']= 'form-control'  ]]
- [%[ fuiXelementsXlightbox1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fuiXelementsXlightbox1.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fuiXelementsXlightbox1.custom['submit']['_placeholder']= ''  ]]
  [%[ fuiXelementsXlightbox1.custom['submit']['_type']= 'submit'  ]]
- [%[ fuiXelementsXlightbox1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fuiXelementsXlightbox1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fuiXelementsXlightbox1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fuiXelementsXlightbox1.custom['submit'] ]]
@@ -909,19 +945,18 @@
      [%[= fuiXelementsXlightbox1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fuiXelementsXlightbox1.custom['end'] ]]
   
-<div  class='divfuiXelementsXlightbox1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fuiXelementsXlightbox1</div>
-</div>
+<div class="divfuiXelementsXlightbox1 flashdiv"> <span class="flashspan">fuiXelementsXlightbox1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfuiXelementsXlightbox1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fuiXelementsXlightbox1.custom['end'] ]]
 </div>
-<!-- end fuiXelementsXlightbox1 -->
+<!-- END fuiXelementsXlightbox1-->
 
         </div>
        </section>
@@ -1015,16 +1050,19 @@
   <!-- Examples -->
   <script src="[%[=URL('static/tte/assets/javascripts/ui-elements/examples.lightbox.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 15:42:47 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:59:13 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -14,6 +14,43 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
 
 </head>
  <body>
@@ -79,21 +116,20 @@
         <div class="control">
          
 
-<!-- view: fcontact0, db_table: dfcontact0 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fcontact0, db_table: dfcontact0 -->
+<div>
 [%[= fcontact0.custom['begin'] ]]
  [%[ fcontact0.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
  [%[ fcontact0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fcontact0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fcontact0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fcontact0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fcontact0.custom['errors']['f0'] if 'f0' in fcontact0.custom['errors'] else '' ]]</span>
 
- [%[ fcontact0.custom['submit']['_class']= 'input is-medium'  ]]
+ [%[ fcontact0.custom['submit']['_class']= 'input is-medium mysubmit_cls'  ]]
  [%[ fcontact0.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontact0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fcontact0.custom['submit']['_placeholder']= ''  ]]
  [%[ fcontact0.custom['submit']['_rows']= '1'  ]]
- [%[ fcontact0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fcontact0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fcontact0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fcontact0.custom['submit'] ]]
@@ -103,19 +139,18 @@
      [%[= fcontact0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fcontact0.custom['end'] ]]
   
-<div  class='divfcontact0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fcontact0</div>
-</div>
+<div class="divfcontact0 flashdiv"> <span class="flashspan">fcontact0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfcontact0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fcontact0.custom['end'] ]]
 </div>
-<!-- end fcontact0 -->
+<!-- END fcontact0-->
 
 </div>
        </div>
@@ -126,21 +161,20 @@
         <div class="control">
          
 
-<!-- view: fcontact1, db_table: dfcontact1 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fcontact1, db_table: dfcontact1 -->
+<div>
 [%[= fcontact1.custom['begin'] ]]
  [%[ fcontact1.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
  [%[ fcontact1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fcontact1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fcontact1.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fcontact1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fcontact1.custom['errors']['f0'] if 'f0' in fcontact1.custom['errors'] else '' ]]</span>
 
- [%[ fcontact1.custom['submit']['_class']= 'input is-medium'  ]]
+ [%[ fcontact1.custom['submit']['_class']= 'input is-medium mysubmit_cls'  ]]
  [%[ fcontact1.custom['submit']['_type']= 'submit'  ]]
- [%[ fcontact1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fcontact1.custom['submit']['_placeholder']= ''  ]]
  [%[ fcontact1.custom['submit']['_rows']= '1'  ]]
- [%[ fcontact1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fcontact1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fcontact1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fcontact1.custom['submit'] ]]
@@ -150,19 +184,18 @@
      [%[= fcontact1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fcontact1.custom['end'] ]]
   
-<div  class='divfcontact1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fcontact1</div>
-</div>
+<div class="divfcontact1 flashdiv"> <span class="flashspan">fcontact1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfcontact1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fcontact1.custom['end'] ]]
 </div>
-<!-- end fcontact1 -->
+<!-- END fcontact1-->
 
 </div>
        </div>
@@ -173,8 +206,8 @@
         <div class="control">
          
 
-<!-- view: fcontact2, db_table: dfcontact2 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fcontact2, db_table: dfcontact2 -->
+<div>
 [%[= fcontact2.custom['begin'] ]]
  [%[ fcontact2.custom['widgets']['f0']['_class']= 'textarea is-medium'  ]]
  [%[ fcontact2.custom['widgets']['f0']['_type']= 'text'  ]]
@@ -182,11 +215,10 @@
 
  <span style="color:#ff0000">[%[= fcontact2.custom['errors']['f0'] if 'f0' in fcontact2.custom['errors'] else '' ]]</span>
 
- [%[ fcontact2.custom['submit']['_class']= 'textarea is-medium'  ]]
+ [%[ fcontact2.custom['submit']['_class']= 'textarea is-medium mysubmit_cls'  ]]
  [%[ fcontact2.custom['submit']['_type']= 'submit'  ]]
  [%[ fcontact2.custom['submit']['_rows']= '1'  ]]
- [%[ fcontact2.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
- [%[ fcontact2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fcontact2.custom['submit']['_placeholder']= ''  ]]
  [%[ fcontact2.custom['submit']['_value']= 'Submit'  ]]
  [%[ fcontact2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fcontact2.custom['submit'] ]]
@@ -195,19 +227,18 @@
      [%[= fcontact2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fcontact2.custom['end'] ]]
   
-<div  class='divfcontact2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fcontact2</div>
-</div>
+<div class="divfcontact2 flashdiv"> <span class="flashspan">fcontact2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfcontact2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fcontact2.custom['end'] ]]
 </div>
-<!-- end fcontact2 -->
+<!-- END fcontact2-->
 
 
         </div>
@@ -221,16 +252,19 @@
    </div>
   </section>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

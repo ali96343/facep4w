@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 26.11.2020 14:36:35 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:28 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -28,6 +28,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -43,14 +81,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fpagesXuserXprofile0, db_table: dfpagesXuserXprofile0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fpagesXuserXprofile0, db_table: dfpagesXuserXprofile0 -->
+<div class="search nav-form">
 [%[= fpagesXuserXprofile0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fpagesXuserXprofile0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fpagesXuserXprofile0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile0.custom['errors']['f0'] if 'f0' in fpagesXuserXprofile0.custom['errors'] else '' ]]</span>
@@ -58,9 +96,9 @@
  <span class="input-group-btn">
  [%[ fpagesXuserXprofile0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fpagesXuserXprofile0.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fpagesXuserXprofile0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fpagesXuserXprofile0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fpagesXuserXprofile0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fpagesXuserXprofile0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fpagesXuserXprofile0.custom['submit'] ]]
 
  </span>
@@ -70,19 +108,18 @@
      [%[= fpagesXuserXprofile0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fpagesXuserXprofile0.custom['end'] ]]
   
-<div  class='divfpagesXuserXprofile0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile0</div>
-</div>
+<div class="divfpagesXuserXprofile0 flashdiv"> <span class="flashspan">fpagesXuserXprofile0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fpagesXuserXprofile0.custom['end'] ]]
 </div>
-<!-- end fpagesXuserXprofile0 -->
+<!-- END fpagesXuserXprofile0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -819,8 +856,8 @@
           <h4 class="mb-md">Update Status</h4>
           <section class="simple-compose-box mb-xlg">
            
-<!-- view: fpagesXuserXprofile1, db_table: dfpagesXuserXprofile1 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fpagesXuserXprofile1, db_table: dfpagesXuserXprofile1 -->
+<div>
 [%[= fpagesXuserXprofile1.custom['begin'] ]]
  [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_data-plugin-textarea-autosize']= '==0'  ]]
  [%[ fpagesXuserXprofile1.custom['widgets']['f0']['_placeholder']= 'Whats on your mind?'  ]]
@@ -831,10 +868,10 @@
  <span style="color:#ff0000">[%[= fpagesXuserXprofile1.custom['errors']['f0'] if 'f0' in fpagesXuserXprofile1.custom['errors'] else '' ]]</span>
 
  [%[ fpagesXuserXprofile1.custom['submit']['_data-plugin-textarea-autosize']= '==0'  ]]
- [%[ fpagesXuserXprofile1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fpagesXuserXprofile1.custom['submit']['_placeholder']= ''  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_rows']= '1'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fpagesXuserXprofile1.custom['submit']['_class']= 'mysubmit_cls'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fpagesXuserXprofile1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fpagesXuserXprofile1.custom['submit'] ]]
@@ -843,19 +880,18 @@
      [%[= fpagesXuserXprofile1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fpagesXuserXprofile1.custom['end'] ]]
   
-<div  class='divfpagesXuserXprofile1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile1</div>
-</div>
+<div class="divfpagesXuserXprofile1 flashdiv"> <span class="flashspan">fpagesXuserXprofile1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fpagesXuserXprofile1.custom['end'] ]]
 </div>
-<!-- end fpagesXuserXprofile1 -->
+<!-- END fpagesXuserXprofile1-->
 
            <div class="compose-box-footer">
             <ul class="compose-toolbar">
@@ -919,8 +955,8 @@
          </div>
          <div class="tab-pane" id="edit">
           
-<!-- view: fpagesXuserXprofile2, db_table: dfpagesXuserXprofile2 -->
-<div class="form-horizontal"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fpagesXuserXprofile2, db_table: dfpagesXuserXprofile2 -->
+<div class="form-horizontal">
 [%[= fpagesXuserXprofile2.custom['begin'] ]]
 <h4 class="mb-xlg">
  Personal Information
@@ -935,7 +971,7 @@
  [%[ fpagesXuserXprofile2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f0']['_id']= 'profileFirstName'  ]]
- [%[ fpagesXuserXprofile2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fpagesXuserXprofile2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile2.custom['errors']['f0'] if 'f0' in fpagesXuserXprofile2.custom['errors'] else '' ]]</span>
@@ -950,7 +986,7 @@
  [%[ fpagesXuserXprofile2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f1']['_id']= 'profileLastName'  ]]
- [%[ fpagesXuserXprofile2.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
  [%[= fpagesXuserXprofile2.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile2.custom['errors']['f1'] if 'f1' in fpagesXuserXprofile2.custom['errors'] else '' ]]</span>
@@ -965,7 +1001,7 @@
  [%[ fpagesXuserXprofile2.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f2']['_id']= 'profileAddress'  ]]
- [%[ fpagesXuserXprofile2.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
  [%[= fpagesXuserXprofile2.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile2.custom['errors']['f2'] if 'f2' in fpagesXuserXprofile2.custom['errors'] else '' ]]</span>
@@ -980,7 +1016,7 @@
  [%[ fpagesXuserXprofile2.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fpagesXuserXprofile2.custom['widgets']['f3']['_id']= 'profileCompany'  ]]
- [%[ fpagesXuserXprofile2.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
  [%[= fpagesXuserXprofile2.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile2.custom['errors']['f3'] if 'f3' in fpagesXuserXprofile2.custom['errors'] else '' ]]</span>
@@ -1009,12 +1045,11 @@
 
  <span style="color:#ff0000">[%[= fpagesXuserXprofile2.custom['errors']['f4'] if 'f4' in fpagesXuserXprofile2.custom['errors'] else '' ]]</span>
 
- [%[ fpagesXuserXprofile2.custom['submit']['_class']= 'form-control'  ]]
+ [%[ fpagesXuserXprofile2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_rows']= '1'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_id']= 'profileBio'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_type']= 'submit'  ]]
- [%[ fpagesXuserXprofile2.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
- [%[ fpagesXuserXprofile2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fpagesXuserXprofile2.custom['submit']['_placeholder']= ''  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_value']= 'Submit'  ]]
  [%[ fpagesXuserXprofile2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fpagesXuserXprofile2.custom['submit'] ]]
@@ -1023,19 +1058,18 @@
      [%[= fpagesXuserXprofile2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fpagesXuserXprofile2.custom['end'] ]]
   
-<div  class='divfpagesXuserXprofile2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fpagesXuserXprofile2</div>
-</div>
+<div class="divfpagesXuserXprofile2 flashdiv"> <span class="flashspan">fpagesXuserXprofile2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfpagesXuserXprofile2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fpagesXuserXprofile2.custom['end'] ]]
 </div>
-<!-- end fpagesXuserXprofile2 -->
+<!-- END fpagesXuserXprofile2-->
 
          </div>
         </div>
@@ -1195,16 +1229,19 @@
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

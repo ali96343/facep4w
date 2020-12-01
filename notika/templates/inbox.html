@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:02 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -56,7 +56,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -86,41 +125,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: finbox0, db_table: dfinbox0 -->
+<!-- BEGIN view: finbox0, db_table: dfinbox0 -->
 <div>
 [%[= finbox0.custom['begin'] ]]
  [%[ finbox0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ finbox0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ finbox0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= finbox0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finbox0.custom['errors']['f0'] if 'f0' in finbox0.custom['errors'] else '' ]]</span>
 
  [%[ finbox0.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ finbox0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ finbox0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ finbox0.custom['submit']['_placeholder']= ''  ]]
+ [%[ finbox0.custom['submit']['_rows']= '1'  ]]
+ [%[ finbox0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ finbox0.custom['submit']['_value']= 'Submit'  ]]
  [%[ finbox0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finbox0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in finbox0.custom['hidden_widgets'].keys(): ]]
- [%[= finbox0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= finbox0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= finbox0.custom['end'] ]]
-  <div  class='divfinbox0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finbox0</small>
-</div>
 
+  
+<div class="divfinbox0 flashdiv"> <span class="flashspan">finbox0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfinbox0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= finbox0.custom['end'] ]]
 </div>
-<!-- end finbox0 -->
+<!-- END finbox0-->
 
 </div>
          </div>
@@ -340,41 +378,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: finbox1, db_table: dfinbox1 -->
+<!-- BEGIN view: finbox1, db_table: dfinbox1 -->
 <div>
 [%[= finbox1.custom['begin'] ]]
- [%[ finbox1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ finbox1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ finbox1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finbox1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finbox1.custom['errors']['f0'] if 'f0' in finbox1.custom['errors'] else '' ]]</span>
 
- [%[ finbox1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finbox1.custom['submit']['_placeholder']= ''  ]]
  [%[ finbox1.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ finbox1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ finbox1.custom['submit']['_rows']= '1'  ]]
+ [%[ finbox1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ finbox1.custom['submit']['_value']= 'Submit'  ]]
  [%[ finbox1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finbox1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in finbox1.custom['hidden_widgets'].keys(): ]]
- [%[= finbox1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= finbox1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= finbox1.custom['end'] ]]
-  <div  class='divfinbox1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finbox1</small>
-</div>
 
+  
+<div class="divfinbox1 flashdiv"> <span class="flashspan">finbox1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfinbox1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= finbox1.custom['end'] ]]
 </div>
-<!-- end finbox1 -->
+<!-- END finbox1-->
 
 </div>
           <div class="hd-message-info">
@@ -994,43 +1031,41 @@
         <div class="nk-int-st search-input search-overt">
          
 
-<!-- view: finbox2, db_table: dfinbox2 -->
+<!-- BEGIN view: finbox2, db_table: dfinbox2 -->
 <div>
 [%[= finbox2.custom['begin'] ]]
  [%[ finbox2.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ finbox2.custom['widgets']['f0']['_placeholder']= 'Search email...:p4w'  ]]
+ [%[ finbox2.custom['widgets']['f0']['_placeholder']= 'Search email..._p4w'  ]]
  [%[ finbox2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finbox2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finbox2.custom['errors']['f0'] if 'f0' in finbox2.custom['errors'] else '' ]]</span>
 
- [%[ finbox2.custom['submit']['_class']= 'form-control'  ]]
- [%[ finbox2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finbox2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ finbox2.custom['submit']['_placeholder']= ''  ]]
  [%[ finbox2.custom['submit']['_type']= 'submit'  ]]
- [%[ finbox2.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ finbox2.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ finbox2.custom['submit']['_rows']= '1'  ]]
+ [%[ finbox2.custom['submit']['_value']= 'Submit'  ]]
  [%[ finbox2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finbox2.custom['submit'] ]]
 
 
  [%[ for hidden_widget in finbox2.custom['hidden_widgets'].keys(): ]]
- [%[= finbox2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= finbox2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= finbox2.custom['end'] ]]
-  <div  class='divfinbox2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finbox2</small>
-</div>
 
+  
+<div class="divfinbox2 flashdiv"> <span class="flashspan">finbox2</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfinbox2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= finbox2.custom['end'] ]]
 </div>
-<!-- end finbox2 -->
+<!-- END finbox2-->
 
 
          <button class="btn search-ib">Search</button>
@@ -1070,20 +1105,28 @@
        <div class="table-responsive">
         
 <!--view: rows_tinbox0, db_table: tinbox0 -->
-<table class="table table-hover table-inbox">
+  <table class="table table-hover table-inbox">
   <tbody>
         [%[ for row0 in rows_tinbox0: ]]
         <tr>
-            <td class="">[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
-            <td class="text-right mail-date">[%[= row0.f4 ]]</td>
+            <td class="">[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
+            <td class="text-right mail-date">[%[= XML(row0.f4) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tinbox0 -->
+
+
+<div class="divtinbox0 flashdiv"> <span class="flashspan">tinbox0</span> </div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtinbox0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
         <div class="pagination-inbox">
          <ul class="wizard-nav-ac">
@@ -1199,5 +1242,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

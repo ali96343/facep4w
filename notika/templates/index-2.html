@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:51 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:01 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -58,7 +58,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -88,41 +127,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: findexX20, db_table: dfindexX20 -->
+<!-- BEGIN view: findexX20, db_table: dfindexX20 -->
 <div>
 [%[= findexX20.custom['begin'] ]]
  [%[ findexX20.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ findexX20.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ findexX20.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= findexX20.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX20.custom['errors']['f0'] if 'f0' in findexX20.custom['errors'] else '' ]]</span>
 
  [%[ findexX20.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX20.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ findexX20.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ findexX20.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ findexX20.custom['submit']['_placeholder']= ''  ]]
+ [%[ findexX20.custom['submit']['_rows']= '1'  ]]
+ [%[ findexX20.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ findexX20.custom['submit']['_value']= 'Submit'  ]]
  [%[ findexX20.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX20.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX20.custom['hidden_widgets'].keys(): ]]
- [%[= findexX20.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX20.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX20.custom['end'] ]]
-  <div  class='divfindexX20' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX20</small>
-</div>
 
+  
+<div class="divfindexX20 flashdiv"> <span class="flashspan">findexX20</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX20');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX20.custom['end'] ]]
 </div>
-<!-- end findexX20 -->
+<!-- END findexX20-->
 
 </div>
          </div>
@@ -342,41 +380,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: findexX21, db_table: dfindexX21 -->
+<!-- BEGIN view: findexX21, db_table: dfindexX21 -->
 <div>
 [%[= findexX21.custom['begin'] ]]
- [%[ findexX21.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ findexX21.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ findexX21.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= findexX21.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX21.custom['errors']['f0'] if 'f0' in findexX21.custom['errors'] else '' ]]</span>
 
- [%[ findexX21.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ findexX21.custom['submit']['_placeholder']= ''  ]]
  [%[ findexX21.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX21.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ findexX21.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ findexX21.custom['submit']['_rows']= '1'  ]]
+ [%[ findexX21.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ findexX21.custom['submit']['_value']= 'Submit'  ]]
  [%[ findexX21.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX21.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX21.custom['hidden_widgets'].keys(): ]]
- [%[= findexX21.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX21.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX21.custom['end'] ]]
-  <div  class='divfindexX21' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX21</small>
-</div>
 
+  
+<div class="divfindexX21 flashdiv"> <span class="flashspan">findexX21</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX21');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX21.custom['end'] ]]
 </div>
-<!-- end findexX21 -->
+<!-- END findexX21-->
 
 </div>
           <div class="hd-message-info">
@@ -974,7 +1011,7 @@
          <div class="email-round-nock">
           
 
-<!-- view: findexX22, db_table: dfindexX22 -->
+<!-- BEGIN view: findexX22, db_table: dfindexX22 -->
 <div>
 [%[= findexX22.custom['begin'] ]]
  [%[ findexX22.custom['widgets']['f0']['_class']= 'knob'  ]]
@@ -987,12 +1024,12 @@
  [%[ findexX22.custom['widgets']['f0']['_data-width']= '130'  ]]
  [%[ findexX22.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ findexX22.custom['widgets']['f0']['_value']= '0'  ]]
- [%[ findexX22.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ findexX22.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= findexX22.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX22.custom['errors']['f0'] if 'f0' in findexX22.custom['errors'] else '' ]]</span>
 
- [%[ findexX22.custom['submit']['_class']= 'knob'  ]]
+ [%[ findexX22.custom['submit']['_class']= 'knob mysubmit_cls'  ]]
  [%[ findexX22.custom['submit']['_data-bgcolor']= '#E4E4E4'  ]]
  [%[ findexX22.custom['submit']['_data-fgcolor']= '#00c292'  ]]
  [%[ findexX22.custom['submit']['_data-linecap']= 'round'  ]]
@@ -1001,31 +1038,29 @@
  [%[ findexX22.custom['submit']['_data-thickness']= '10'  ]]
  [%[ findexX22.custom['submit']['_data-width']= '130'  ]]
  [%[ findexX22.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX22.custom['submit']['_value']= 'sUb:p4w'  ]]
- [%[ findexX22.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ findexX22.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ findexX22.custom['submit']['_value']= 'Submit'  ]]
+ [%[ findexX22.custom['submit']['_placeholder']= ''  ]]
+ [%[ findexX22.custom['submit']['_rows']= '1'  ]]
  [%[ findexX22.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX22.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX22.custom['hidden_widgets'].keys(): ]]
- [%[= findexX22.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX22.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX22.custom['end'] ]]
-  <div  class='divfindexX22' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX22</small>
-</div>
 
+  
+<div class="divfindexX22 flashdiv"> <span class="flashspan">findexX22</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX22');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX22.custom['end'] ]]
 </div>
-<!-- end findexX22 -->
+<!-- END findexX22-->
 
 </div>
          <div class="email-ctn-nock">
@@ -1037,7 +1072,7 @@
           <div class="email-signle-gp">
            
 
-<!-- view: findexX23, db_table: dfindexX23 -->
+<!-- BEGIN view: findexX23, db_table: dfindexX23 -->
 <div>
 [%[= findexX23.custom['begin'] ]]
  [%[ findexX23.custom['widgets']['f0']['_class']= 'knob'  ]]
@@ -1050,12 +1085,12 @@
  [%[ findexX23.custom['widgets']['f0']['_data-width']= '90'  ]]
  [%[ findexX23.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ findexX23.custom['widgets']['f0']['_value']= '0'  ]]
- [%[ findexX23.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ findexX23.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= findexX23.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX23.custom['errors']['f0'] if 'f0' in findexX23.custom['errors'] else '' ]]</span>
 
- [%[ findexX23.custom['submit']['_class']= 'knob'  ]]
+ [%[ findexX23.custom['submit']['_class']= 'knob mysubmit_cls'  ]]
  [%[ findexX23.custom['submit']['_data-bgcolor']= '#E4E4E4'  ]]
  [%[ findexX23.custom['submit']['_data-fgcolor']= '#00c292'  ]]
  [%[ findexX23.custom['submit']['_data-linecap']= 'round'  ]]
@@ -1064,31 +1099,29 @@
  [%[ findexX23.custom['submit']['_data-thickness']= '10'  ]]
  [%[ findexX23.custom['submit']['_data-width']= '90'  ]]
  [%[ findexX23.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX23.custom['submit']['_value']= 'sUb:p4w'  ]]
- [%[ findexX23.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ findexX23.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ findexX23.custom['submit']['_value']= 'Submit'  ]]
+ [%[ findexX23.custom['submit']['_placeholder']= ''  ]]
+ [%[ findexX23.custom['submit']['_rows']= '1'  ]]
  [%[ findexX23.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX23.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX23.custom['hidden_widgets'].keys(): ]]
- [%[= findexX23.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX23.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX23.custom['end'] ]]
-  <div  class='divfindexX23' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX23</small>
-</div>
 
+  
+<div class="divfindexX23 flashdiv"> <span class="flashspan">findexX23</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX23');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX23.custom['end'] ]]
 </div>
-<!-- end findexX23 -->
+<!-- END findexX23-->
 
 </div>
           <div class="email-ctn-nock">
@@ -1099,7 +1132,7 @@
           <div class="email-signle-gp">
            
 
-<!-- view: findexX24, db_table: dfindexX24 -->
+<!-- BEGIN view: findexX24, db_table: dfindexX24 -->
 <div>
 [%[= findexX24.custom['begin'] ]]
  [%[ findexX24.custom['widgets']['f0']['_class']= 'knob'  ]]
@@ -1112,12 +1145,12 @@
  [%[ findexX24.custom['widgets']['f0']['_data-width']= '90'  ]]
  [%[ findexX24.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ findexX24.custom['widgets']['f0']['_value']= '0'  ]]
- [%[ findexX24.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ findexX24.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= findexX24.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX24.custom['errors']['f0'] if 'f0' in findexX24.custom['errors'] else '' ]]</span>
 
- [%[ findexX24.custom['submit']['_class']= 'knob'  ]]
+ [%[ findexX24.custom['submit']['_class']= 'knob mysubmit_cls'  ]]
  [%[ findexX24.custom['submit']['_data-bgcolor']= '#E4E4E4'  ]]
  [%[ findexX24.custom['submit']['_data-fgcolor']= '#00c292'  ]]
  [%[ findexX24.custom['submit']['_data-linecap']= 'round'  ]]
@@ -1126,31 +1159,29 @@
  [%[ findexX24.custom['submit']['_data-thickness']= '10'  ]]
  [%[ findexX24.custom['submit']['_data-width']= '90'  ]]
  [%[ findexX24.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX24.custom['submit']['_value']= 'sUb:p4w'  ]]
- [%[ findexX24.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ findexX24.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ findexX24.custom['submit']['_value']= 'Submit'  ]]
+ [%[ findexX24.custom['submit']['_placeholder']= ''  ]]
+ [%[ findexX24.custom['submit']['_rows']= '1'  ]]
  [%[ findexX24.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX24.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX24.custom['hidden_widgets'].keys(): ]]
- [%[= findexX24.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX24.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX24.custom['end'] ]]
-  <div  class='divfindexX24' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX24</small>
-</div>
 
+  
+<div class="divfindexX24 flashdiv"> <span class="flashspan">findexX24</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX24');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX24.custom['end'] ]]
 </div>
-<!-- end findexX24 -->
+<!-- END findexX24-->
 
 </div>
           <div class="email-ctn-nock">
@@ -1161,7 +1192,7 @@
           <div class="email-signle-gp">
            
 
-<!-- view: findexX25, db_table: dfindexX25 -->
+<!-- BEGIN view: findexX25, db_table: dfindexX25 -->
 <div>
 [%[= findexX25.custom['begin'] ]]
  [%[ findexX25.custom['widgets']['f0']['_class']= 'knob'  ]]
@@ -1174,12 +1205,12 @@
  [%[ findexX25.custom['widgets']['f0']['_data-width']= '90'  ]]
  [%[ findexX25.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ findexX25.custom['widgets']['f0']['_value']= '0'  ]]
- [%[ findexX25.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ findexX25.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= findexX25.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX25.custom['errors']['f0'] if 'f0' in findexX25.custom['errors'] else '' ]]</span>
 
- [%[ findexX25.custom['submit']['_class']= 'knob'  ]]
+ [%[ findexX25.custom['submit']['_class']= 'knob mysubmit_cls'  ]]
  [%[ findexX25.custom['submit']['_data-bgcolor']= '#E4E4E4'  ]]
  [%[ findexX25.custom['submit']['_data-fgcolor']= '#00c292'  ]]
  [%[ findexX25.custom['submit']['_data-linecap']= 'round'  ]]
@@ -1188,31 +1219,29 @@
  [%[ findexX25.custom['submit']['_data-thickness']= '10'  ]]
  [%[ findexX25.custom['submit']['_data-width']= '90'  ]]
  [%[ findexX25.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX25.custom['submit']['_value']= 'sUb:p4w'  ]]
- [%[ findexX25.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ findexX25.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
+ [%[ findexX25.custom['submit']['_value']= 'Submit'  ]]
+ [%[ findexX25.custom['submit']['_placeholder']= ''  ]]
+ [%[ findexX25.custom['submit']['_rows']= '1'  ]]
  [%[ findexX25.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX25.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX25.custom['hidden_widgets'].keys(): ]]
- [%[= findexX25.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX25.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX25.custom['end'] ]]
-  <div  class='divfindexX25' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX25</small>
-</div>
 
+  
+<div class="divfindexX25 flashdiv"> <span class="flashspan">findexX25</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX25');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX25.custom['end'] ]]
 </div>
-<!-- end findexX25 -->
+<!-- END findexX25-->
 
 </div>
           <div class="email-ctn-nock">
@@ -1314,25 +1343,33 @@
         <div class="recent-items-inn">
          
 <!--view: rows_tindexX20, db_table: tindexX20 -->
-<table class="table table-inner table-vmiddle">
-  <thead>
-   <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Price</th>
-  </tr>
-  </thead>
+  <table class="table table-inner table-vmiddle">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th style="width: 60px">Price</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_tindexX20: ]]
         <tr>
-            <td class="f-500 c-cyan">[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td class="f-500 c-cyan">[%[= row0.f2 ]]</td>
+            <td class="f-500 c-cyan">[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td class="f-500 c-cyan">[%[= XML(row0.f2) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tindexX20 -->
+
+
+<div class="divtindexX20 flashdiv"> <span class="flashspan">tindexX20</span> </div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtindexX20');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
         </div>
         <div class="flot-chart-items flot-chart vt-ct-it tb-rc-it-res" id="recent-items-chart"></div>
@@ -1455,45 +1492,43 @@
              <div class="nk-int-st">
               
 
-<!-- view: findexX26, db_table: dfindexX26 -->
+<!-- BEGIN view: findexX26, db_table: dfindexX26 -->
 <div>
 [%[= findexX26.custom['begin'] ]]
  [%[ findexX26.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ findexX26.custom['widgets']['f0']['_id']= 'todo-input-text'  ]]
- [%[ findexX26.custom['widgets']['f0']['_placeholder']= 'Add new todo:p4w'  ]]
+ [%[ findexX26.custom['widgets']['f0']['_placeholder']= 'Add new todo_p4w'  ]]
  [%[ findexX26.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= findexX26.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX26.custom['errors']['f0'] if 'f0' in findexX26.custom['errors'] else '' ]]</span>
 
- [%[ findexX26.custom['submit']['_class']= 'form-control'  ]]
+ [%[ findexX26.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
  [%[ findexX26.custom['submit']['_id']= 'todo-input-text'  ]]
- [%[ findexX26.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ findexX26.custom['submit']['_placeholder']= ''  ]]
  [%[ findexX26.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX26.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ findexX26.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ findexX26.custom['submit']['_rows']= '1'  ]]
+ [%[ findexX26.custom['submit']['_value']= 'Submit'  ]]
  [%[ findexX26.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX26.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX26.custom['hidden_widgets'].keys(): ]]
- [%[= findexX26.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX26.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX26.custom['end'] ]]
-  <div  class='divfindexX26' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX26</small>
-</div>
 
+  
+<div class="divfindexX26 flashdiv"> <span class="flashspan">findexX26</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX26');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX26.custom['end'] ]]
 </div>
-<!-- end findexX26 -->
+<!-- END findexX26-->
 
 </div>
              <div class="todo-send">
@@ -1599,43 +1634,41 @@
              <div class="nk-int-st">
               
 
-<!-- view: findexX27, db_table: dfindexX27 -->
+<!-- BEGIN view: findexX27, db_table: dfindexX27 -->
 <div>
 [%[= findexX27.custom['begin'] ]]
  [%[ findexX27.custom['widgets']['f0']['_class']= 'form-control chat-input'  ]]
- [%[ findexX27.custom['widgets']['f0']['_placeholder']= 'Enter your text:p4w'  ]]
+ [%[ findexX27.custom['widgets']['f0']['_placeholder']= 'Enter your text_p4w'  ]]
  [%[ findexX27.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= findexX27.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= findexX27.custom['errors']['f0'] if 'f0' in findexX27.custom['errors'] else '' ]]</span>
 
- [%[ findexX27.custom['submit']['_class']= 'form-control chat-input'  ]]
- [%[ findexX27.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ findexX27.custom['submit']['_class']= 'form-control chat-input mysubmit_cls'  ]]
+ [%[ findexX27.custom['submit']['_placeholder']= ''  ]]
  [%[ findexX27.custom['submit']['_type']= 'submit'  ]]
- [%[ findexX27.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ findexX27.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ findexX27.custom['submit']['_rows']= '1'  ]]
+ [%[ findexX27.custom['submit']['_value']= 'Submit'  ]]
  [%[ findexX27.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= findexX27.custom['submit'] ]]
 
 
  [%[ for hidden_widget in findexX27.custom['hidden_widgets'].keys(): ]]
- [%[= findexX27.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= findexX27.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= findexX27.custom['end'] ]]
-  <div  class='divfindexX27' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">findexX27</small>
-</div>
 
+  
+<div class="divfindexX27 flashdiv"> <span class="flashspan">findexX27</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfindexX27');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= findexX27.custom['end'] ]]
 </div>
-<!-- end findexX27 -->
+<!-- END findexX27-->
 
 </div>
              <div class="chat-send">
@@ -1740,5 +1773,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

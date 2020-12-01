@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:53 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:03 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -58,7 +58,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -88,41 +127,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fimageXcropper0, db_table: dfimageXcropper0 -->
+<!-- BEGIN view: fimageXcropper0, db_table: dfimageXcropper0 -->
 <div>
 [%[= fimageXcropper0.custom['begin'] ]]
  [%[ fimageXcropper0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fimageXcropper0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fimageXcropper0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fimageXcropper0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fimageXcropper0.custom['errors']['f0'] if 'f0' in fimageXcropper0.custom['errors'] else '' ]]</span>
 
  [%[ fimageXcropper0.custom['submit']['_type']= 'submit'  ]]
- [%[ fimageXcropper0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fimageXcropper0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fimageXcropper0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fimageXcropper0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fimageXcropper0.custom['submit']['_rows']= '1'  ]]
+ [%[ fimageXcropper0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fimageXcropper0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fimageXcropper0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fimageXcropper0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fimageXcropper0.custom['hidden_widgets'].keys(): ]]
- [%[= fimageXcropper0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fimageXcropper0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fimageXcropper0.custom['end'] ]]
-  <div  class='divfimageXcropper0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fimageXcropper0</small>
-</div>
 
+  
+<div class="divfimageXcropper0 flashdiv"> <span class="flashspan">fimageXcropper0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfimageXcropper0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fimageXcropper0.custom['end'] ]]
 </div>
-<!-- end fimageXcropper0 -->
+<!-- END fimageXcropper0-->
 
 </div>
          </div>
@@ -342,41 +380,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fimageXcropper1, db_table: dfimageXcropper1 -->
+<!-- BEGIN view: fimageXcropper1, db_table: dfimageXcropper1 -->
 <div>
 [%[= fimageXcropper1.custom['begin'] ]]
- [%[ fimageXcropper1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fimageXcropper1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fimageXcropper1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fimageXcropper1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fimageXcropper1.custom['errors']['f0'] if 'f0' in fimageXcropper1.custom['errors'] else '' ]]</span>
 
- [%[ fimageXcropper1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fimageXcropper1.custom['submit']['_placeholder']= ''  ]]
  [%[ fimageXcropper1.custom['submit']['_type']= 'submit'  ]]
- [%[ fimageXcropper1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fimageXcropper1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fimageXcropper1.custom['submit']['_rows']= '1'  ]]
+ [%[ fimageXcropper1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fimageXcropper1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fimageXcropper1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fimageXcropper1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fimageXcropper1.custom['hidden_widgets'].keys(): ]]
- [%[= fimageXcropper1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fimageXcropper1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fimageXcropper1.custom['end'] ]]
-  <div  class='divfimageXcropper1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fimageXcropper1</small>
-</div>
 
+  
+<div class="divfimageXcropper1 flashdiv"> <span class="flashspan">fimageXcropper1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfimageXcropper1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fimageXcropper1.custom['end'] ]]
 </div>
-<!-- end fimageXcropper1 -->
+<!-- END fimageXcropper1-->
 
 </div>
           <div class="hd-message-info">
@@ -1021,5 +1058,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

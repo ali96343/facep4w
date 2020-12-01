@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -55,7 +55,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -92,41 +131,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: finvoice0, db_table: dfinvoice0 -->
+<!-- BEGIN view: finvoice0, db_table: dfinvoice0 -->
 <div>
 [%[= finvoice0.custom['begin'] ]]
  [%[ finvoice0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ finvoice0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ finvoice0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= finvoice0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finvoice0.custom['errors']['f0'] if 'f0' in finvoice0.custom['errors'] else '' ]]</span>
 
  [%[ finvoice0.custom['submit']['_type']= 'submit'  ]]
- [%[ finvoice0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ finvoice0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ finvoice0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ finvoice0.custom['submit']['_placeholder']= ''  ]]
+ [%[ finvoice0.custom['submit']['_rows']= '1'  ]]
+ [%[ finvoice0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ finvoice0.custom['submit']['_value']= 'Submit'  ]]
  [%[ finvoice0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finvoice0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in finvoice0.custom['hidden_widgets'].keys(): ]]
- [%[= finvoice0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= finvoice0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= finvoice0.custom['end'] ]]
-  <div  class='divfinvoice0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finvoice0</small>
-</div>
 
+  
+<div class="divfinvoice0 flashdiv"> <span class="flashspan">finvoice0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfinvoice0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= finvoice0.custom['end'] ]]
 </div>
-<!-- end finvoice0 -->
+<!-- END finvoice0-->
 
 </div>
          </div>
@@ -346,41 +384,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: finvoice1, db_table: dfinvoice1 -->
+<!-- BEGIN view: finvoice1, db_table: dfinvoice1 -->
 <div>
 [%[= finvoice1.custom['begin'] ]]
- [%[ finvoice1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ finvoice1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ finvoice1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finvoice1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finvoice1.custom['errors']['f0'] if 'f0' in finvoice1.custom['errors'] else '' ]]</span>
 
- [%[ finvoice1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finvoice1.custom['submit']['_placeholder']= ''  ]]
  [%[ finvoice1.custom['submit']['_type']= 'submit'  ]]
- [%[ finvoice1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ finvoice1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ finvoice1.custom['submit']['_rows']= '1'  ]]
+ [%[ finvoice1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ finvoice1.custom['submit']['_value']= 'Submit'  ]]
  [%[ finvoice1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finvoice1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in finvoice1.custom['hidden_widgets'].keys(): ]]
- [%[= finvoice1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= finvoice1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= finvoice1.custom['end'] ]]
-  <div  class='divfinvoice1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finvoice1</small>
-</div>
 
+  
+<div class="divfinvoice1 flashdiv"> <span class="flashspan">finvoice1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfinvoice1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= finvoice1.custom['end'] ]]
 </div>
-<!-- end finvoice1 -->
+<!-- END finvoice1-->
 
 </div>
           <div class="hd-message-info">
@@ -957,29 +994,37 @@
          <div class="invoice-sp">
           
 <!--view: rows_tinvoice0, db_table: tinvoice0 -->
-<table class="table table-hover">
-  <thead>
-   <tr>
-    <th>#</th>
-    <th>Item Title</th>
-    <th>Unit Price</th>
-    <th>Quantity</th>
-    <th>Total</th>
-  </tr>
-  </thead>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Item Title</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_tinvoice0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
-            <td>[%[= row0.f4 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
+            <td>[%[= XML(row0.f4) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
 </table>
 <!-- end rows_tinvoice0 -->
+
+
+<div class="divtinvoice0 flashdiv"> <span class="flashspan">tinvoice0</span> </div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtinvoice0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
          </div>
         </div>
@@ -1085,5 +1130,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

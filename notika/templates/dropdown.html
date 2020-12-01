@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -55,7 +55,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -85,41 +124,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fdropdown0, db_table: dfdropdown0 -->
+<!-- BEGIN view: fdropdown0, db_table: dfdropdown0 -->
 <div>
 [%[= fdropdown0.custom['begin'] ]]
  [%[ fdropdown0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fdropdown0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fdropdown0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fdropdown0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fdropdown0.custom['errors']['f0'] if 'f0' in fdropdown0.custom['errors'] else '' ]]</span>
 
  [%[ fdropdown0.custom['submit']['_type']= 'submit'  ]]
- [%[ fdropdown0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fdropdown0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fdropdown0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fdropdown0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fdropdown0.custom['submit']['_rows']= '1'  ]]
+ [%[ fdropdown0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fdropdown0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fdropdown0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fdropdown0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fdropdown0.custom['hidden_widgets'].keys(): ]]
- [%[= fdropdown0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fdropdown0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fdropdown0.custom['end'] ]]
-  <div  class='divfdropdown0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fdropdown0</small>
-</div>
 
+  
+<div class="divfdropdown0 flashdiv"> <span class="flashspan">fdropdown0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfdropdown0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fdropdown0.custom['end'] ]]
 </div>
-<!-- end fdropdown0 -->
+<!-- END fdropdown0-->
 
 </div>
          </div>
@@ -339,41 +377,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fdropdown1, db_table: dfdropdown1 -->
+<!-- BEGIN view: fdropdown1, db_table: dfdropdown1 -->
 <div>
 [%[= fdropdown1.custom['begin'] ]]
- [%[ fdropdown1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fdropdown1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fdropdown1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fdropdown1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fdropdown1.custom['errors']['f0'] if 'f0' in fdropdown1.custom['errors'] else '' ]]</span>
 
- [%[ fdropdown1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fdropdown1.custom['submit']['_placeholder']= ''  ]]
  [%[ fdropdown1.custom['submit']['_type']= 'submit'  ]]
- [%[ fdropdown1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fdropdown1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fdropdown1.custom['submit']['_rows']= '1'  ]]
+ [%[ fdropdown1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fdropdown1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fdropdown1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fdropdown1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fdropdown1.custom['hidden_widgets'].keys(): ]]
- [%[= fdropdown1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fdropdown1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fdropdown1.custom['end'] ]]
-  <div  class='divfdropdown1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fdropdown1</small>
-</div>
 
+  
+<div class="divfdropdown1 flashdiv"> <span class="flashspan">fdropdown1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfdropdown1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fdropdown1.custom['end'] ]]
 </div>
-<!-- end fdropdown1 -->
+<!-- END fdropdown1-->
 
 </div>
           <div class="hd-message-info">
@@ -1730,5 +1767,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

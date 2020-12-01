@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 15:42:46 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:59:13 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
   <!-- Bulma Version 0.9.0-->
@@ -10,6 +10,43 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
 
 </head>
  <body>
@@ -31,23 +68,22 @@
          <div class="control has-icons-left has-icons-right search-field">
           
 
-<!-- view: fkanbanXsearchX0, db_table: dfkanbanXsearchX0 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fkanbanXsearchX0, db_table: dfkanbanXsearchX0 -->
+<div>
 [%[= fkanbanXsearchX0.custom['begin'] ]]
  [%[ fkanbanXsearchX0.custom['widgets']['f0']['_class']= 'input is-large'  ]]
- [%[ fkanbanXsearchX0.custom['widgets']['f0']['_placeholder']= '==0:p4w'  ]]
+ [%[ fkanbanXsearchX0.custom['widgets']['f0']['_placeholder']= '==0_p4w'  ]]
  [%[ fkanbanXsearchX0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fkanbanXsearchX0.custom['widgets']['f0']['_v-model']= 'search'  ]]
  [%[= fkanbanXsearchX0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fkanbanXsearchX0.custom['errors']['f0'] if 'f0' in fkanbanXsearchX0.custom['errors'] else '' ]]</span>
 
- [%[ fkanbanXsearchX0.custom['submit']['_class']= 'input is-large'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fkanbanXsearchX0.custom['submit']['_class']= 'input is-large mysubmit_cls'  ]]
+ [%[ fkanbanXsearchX0.custom['submit']['_placeholder']= ''  ]]
  [%[ fkanbanXsearchX0.custom['submit']['_type']= 'submit'  ]]
  [%[ fkanbanXsearchX0.custom['submit']['_v-model']= 'search'  ]]
  [%[ fkanbanXsearchX0.custom['submit']['_rows']= '1'  ]]
- [%[ fkanbanXsearchX0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fkanbanXsearchX0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fkanbanXsearchX0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fkanbanXsearchX0.custom['submit'] ]]
@@ -57,19 +93,18 @@
      [%[= fkanbanXsearchX0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fkanbanXsearchX0.custom['end'] ]]
   
-<div  class='divfkanbanXsearchX0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fkanbanXsearchX0</div>
-</div>
+<div class="divfkanbanXsearchX0 flashdiv"> <span class="flashspan">fkanbanXsearchX0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfkanbanXsearchX0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fkanbanXsearchX0.custom['end'] ]]
 </div>
-<!-- end fkanbanXsearchX0 -->
+<!-- END fkanbanXsearchX0-->
 
 
           <span class="icon is-medium is-left">
@@ -143,16 +178,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
   <script src="[%[=URL('static/tte/js/kanban.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

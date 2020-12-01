@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 26.11.2020 14:36:37 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:29 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -28,6 +28,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -43,14 +81,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fuiXelementsXbuttons0, db_table: dfuiXelementsXbuttons0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fuiXelementsXbuttons0, db_table: dfuiXelementsXbuttons0 -->
+<div class="search nav-form">
 [%[= fuiXelementsXbuttons0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fuiXelementsXbuttons0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fuiXelementsXbuttons0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fuiXelementsXbuttons0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fuiXelementsXbuttons0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fuiXelementsXbuttons0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fuiXelementsXbuttons0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fuiXelementsXbuttons0.custom['errors']['f0'] if 'f0' in fuiXelementsXbuttons0.custom['errors'] else '' ]]</span>
@@ -58,9 +96,9 @@
  <span class="input-group-btn">
  [%[ fuiXelementsXbuttons0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fuiXelementsXbuttons0.custom['submit']['_type']= 'submit'  ]]
- [%[ fuiXelementsXbuttons0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fuiXelementsXbuttons0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fuiXelementsXbuttons0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fuiXelementsXbuttons0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fuiXelementsXbuttons0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fuiXelementsXbuttons0.custom['submit'] ]]
 
  </span>
@@ -70,19 +108,18 @@
      [%[= fuiXelementsXbuttons0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fuiXelementsXbuttons0.custom['end'] ]]
   
-<div  class='divfuiXelementsXbuttons0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fuiXelementsXbuttons0</div>
-</div>
+<div class="divfuiXelementsXbuttons0 flashdiv"> <span class="flashspan">fuiXelementsXbuttons0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfuiXelementsXbuttons0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fuiXelementsXbuttons0.custom['end'] ]]
 </div>
-<!-- end fuiXelementsXbuttons0 -->
+<!-- END fuiXelementsXbuttons0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -1058,16 +1095,19 @@
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

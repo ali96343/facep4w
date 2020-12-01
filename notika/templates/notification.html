@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:54 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:04 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -58,7 +58,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -88,41 +127,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fnotification0, db_table: dfnotification0 -->
+<!-- BEGIN view: fnotification0, db_table: dfnotification0 -->
 <div>
 [%[= fnotification0.custom['begin'] ]]
  [%[ fnotification0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnotification0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fnotification0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fnotification0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnotification0.custom['errors']['f0'] if 'f0' in fnotification0.custom['errors'] else '' ]]</span>
 
  [%[ fnotification0.custom['submit']['_type']= 'submit'  ]]
- [%[ fnotification0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fnotification0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fnotification0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fnotification0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fnotification0.custom['submit']['_rows']= '1'  ]]
+ [%[ fnotification0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fnotification0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fnotification0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fnotification0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fnotification0.custom['hidden_widgets'].keys(): ]]
- [%[= fnotification0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fnotification0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fnotification0.custom['end'] ]]
-  <div  class='divfnotification0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnotification0</small>
-</div>
 
+  
+<div class="divfnotification0 flashdiv"> <span class="flashspan">fnotification0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfnotification0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fnotification0.custom['end'] ]]
 </div>
-<!-- end fnotification0 -->
+<!-- END fnotification0-->
 
 </div>
          </div>
@@ -342,41 +380,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fnotification1, db_table: dfnotification1 -->
+<!-- BEGIN view: fnotification1, db_table: dfnotification1 -->
 <div>
 [%[= fnotification1.custom['begin'] ]]
- [%[ fnotification1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fnotification1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fnotification1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnotification1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnotification1.custom['errors']['f0'] if 'f0' in fnotification1.custom['errors'] else '' ]]</span>
 
- [%[ fnotification1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fnotification1.custom['submit']['_placeholder']= ''  ]]
  [%[ fnotification1.custom['submit']['_type']= 'submit'  ]]
- [%[ fnotification1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fnotification1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fnotification1.custom['submit']['_rows']= '1'  ]]
+ [%[ fnotification1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fnotification1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fnotification1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fnotification1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fnotification1.custom['hidden_widgets'].keys(): ]]
- [%[= fnotification1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fnotification1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fnotification1.custom['end'] ]]
-  <div  class='divfnotification1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnotification1</small>
-</div>
 
+  
+<div class="divfnotification1 flashdiv"> <span class="flashspan">fnotification1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfnotification1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fnotification1.custom['end'] ]]
 </div>
-<!-- end fnotification1 -->
+<!-- END fnotification1-->
 
 </div>
           <div class="hd-message-info">
@@ -1011,5 +1048,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

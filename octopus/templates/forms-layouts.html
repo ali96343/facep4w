@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 26.11.2020 14:36:39 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:31 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -28,6 +28,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -43,14 +81,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fformsXlayouts0, db_table: dfformsXlayouts0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXlayouts0, db_table: dfformsXlayouts0 -->
+<div class="search nav-form">
 [%[= fformsXlayouts0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXlayouts0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXlayouts0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXlayouts0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fformsXlayouts0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fformsXlayouts0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fformsXlayouts0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts0.custom['errors']['f0'] if 'f0' in fformsXlayouts0.custom['errors'] else '' ]]</span>
@@ -58,9 +96,9 @@
  <span class="input-group-btn">
  [%[ fformsXlayouts0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXlayouts0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXlayouts0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXlayouts0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXlayouts0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXlayouts0.custom['submit'] ]]
 
  </span>
@@ -70,19 +108,18 @@
      [%[= fformsXlayouts0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXlayouts0.custom['end'] ]]
   
-<div  class='divfformsXlayouts0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts0</div>
-</div>
+<div class="divfformsXlayouts0 flashdiv"> <span class="flashspan">fformsXlayouts0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXlayouts0.custom['end'] ]]
 </div>
-<!-- end fformsXlayouts0 -->
+<!-- END fformsXlayouts0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -644,8 +681,8 @@
      <div class="row">
       <div class="col-md-6">
        
-<!-- view: fformsXlayouts1, db_table: dfformsXlayouts1 -->
-<div id="form1" class="form-horizontal"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXlayouts1, db_table: dfformsXlayouts1 -->
+<div id="form1" class="form-horizontal">
 [%[= fformsXlayouts1.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -674,7 +711,7 @@
    <div class="col-sm-8">
  [%[ fformsXlayouts1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXlayouts1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformsXlayouts1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXlayouts1.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fformsXlayouts1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts1.custom['errors']['f0'] if 'f0' in fformsXlayouts1.custom['errors'] else '' ]]</span>
@@ -688,7 +725,7 @@
    <div class="col-sm-8">
  [%[ fformsXlayouts1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformsXlayouts1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformsXlayouts1.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXlayouts1.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
  [%[= fformsXlayouts1.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts1.custom['errors']['f1'] if 'f1' in fformsXlayouts1.custom['errors'] else '' ]]</span>
@@ -698,10 +735,10 @@
  </div>
  <footer class="panel-footer">
  [%[ fformsXlayouts1.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts1.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts1.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXlayouts1.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXlayouts1.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXlayouts1.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXlayouts1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXlayouts1.custom['submit'] ]]
 
   <button class="btn btn-default" type="reset">
@@ -714,25 +751,24 @@
      [%[= fformsXlayouts1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXlayouts1.custom['end'] ]]
   
-<div  class='divfformsXlayouts1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts1</div>
-</div>
+<div class="divfformsXlayouts1 flashdiv"> <span class="flashspan">fformsXlayouts1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXlayouts1.custom['end'] ]]
 </div>
-<!-- end fformsXlayouts1 -->
+<!-- END fformsXlayouts1-->
 
       </div>
       <div class="col-md-6">
        
-<!-- view: fformsXlayouts2, db_table: dfformsXlayouts2 -->
-<div id="form2" class="form-horizontal form-bordered"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXlayouts2, db_table: dfformsXlayouts2 -->
+<div id="form2" class="form-horizontal form-bordered">
 [%[= fformsXlayouts2.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -761,7 +797,7 @@
    <div class="col-sm-8">
  [%[ fformsXlayouts2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXlayouts2.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformsXlayouts2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXlayouts2.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fformsXlayouts2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts2.custom['errors']['f0'] if 'f0' in fformsXlayouts2.custom['errors'] else '' ]]</span>
@@ -775,7 +811,7 @@
    <div class="col-sm-8">
  [%[ fformsXlayouts2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformsXlayouts2.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformsXlayouts2.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXlayouts2.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
  [%[= fformsXlayouts2.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts2.custom['errors']['f1'] if 'f1' in fformsXlayouts2.custom['errors'] else '' ]]</span>
@@ -785,10 +821,10 @@
  </div>
  <footer class="panel-footer">
  [%[ fformsXlayouts2.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts2.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts2.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXlayouts2.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXlayouts2.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXlayouts2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXlayouts2.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXlayouts2.custom['submit'] ]]
 
   <button class="btn btn-default" type="reset">
@@ -801,27 +837,26 @@
      [%[= fformsXlayouts2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXlayouts2.custom['end'] ]]
   
-<div  class='divfformsXlayouts2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts2</div>
-</div>
+<div class="divfformsXlayouts2 flashdiv"> <span class="flashspan">fformsXlayouts2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXlayouts2.custom['end'] ]]
 </div>
-<!-- end fformsXlayouts2 -->
+<!-- END fformsXlayouts2-->
 
       </div>
      </div>
      <div class="row">
       <div class="col-md-6">
        
-<!-- view: fformsXlayouts3, db_table: dfformsXlayouts3 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXlayouts3, db_table: dfformsXlayouts3 -->
+<div>
 [%[= fformsXlayouts3.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -842,7 +877,7 @@
   <div class="row form-group">
    <div class="col-lg-4">
  [%[ fformsXlayouts3.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformsXlayouts3.custom['widgets']['f0']['_placeholder']= 'First Name:p4w'  ]]
+ [%[ fformsXlayouts3.custom['widgets']['f0']['_placeholder']= 'First Name_p4w'  ]]
  [%[ fformsXlayouts3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[= fformsXlayouts3.custom['widgets']['f0'] ]]
 
@@ -853,7 +888,7 @@
    </div>
    <div class="col-lg-4">
  [%[ fformsXlayouts3.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformsXlayouts3.custom['widgets']['f1']['_placeholder']= 'Last Name:p4w'  ]]
+ [%[ fformsXlayouts3.custom['widgets']['f1']['_placeholder']= 'Last Name_p4w'  ]]
  [%[ fformsXlayouts3.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[= fformsXlayouts3.custom['widgets']['f1'] ]]
 
@@ -864,7 +899,7 @@
    </div>
    <div class="col-lg-4">
  [%[ fformsXlayouts3.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformsXlayouts3.custom['widgets']['f2']['_placeholder']= 'Your Email:p4w'  ]]
+ [%[ fformsXlayouts3.custom['widgets']['f2']['_placeholder']= 'Your Email_p4w'  ]]
  [%[ fformsXlayouts3.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[= fformsXlayouts3.custom['widgets']['f2'] ]]
 
@@ -882,11 +917,10 @@
 
  <span style="color:#ff0000">[%[= fformsXlayouts3.custom['errors']['f3'] if 'f3' in fformsXlayouts3.custom['errors'] else '' ]]</span>
 
- [%[ fformsXlayouts3.custom['submit']['_class']= 'form-control'  ]]
+ [%[ fformsXlayouts3.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
  [%[ fformsXlayouts3.custom['submit']['_rows']= '1'  ]]
- [%[ fformsXlayouts3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fformsXlayouts3.custom['submit']['_placeholder']= ''  ]]
  [%[ fformsXlayouts3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXlayouts3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXlayouts3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXlayouts3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXlayouts3.custom['submit'] ]]
@@ -895,19 +929,18 @@
      [%[= fformsXlayouts3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXlayouts3.custom['end'] ]]
   
-<div  class='divfformsXlayouts3' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts3</div>
-</div>
+<div class="divfformsXlayouts3 flashdiv"> <span class="flashspan">fformsXlayouts3</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts3');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXlayouts3.custom['end'] ]]
 </div>
-<!-- end fformsXlayouts3 -->
+<!-- END fformsXlayouts3-->
 
       </div>
       <div class="col-md-6">
@@ -979,8 +1012,8 @@
         </header>
         <div class="panel-body">
          
-<!-- view: fformsXlayouts4, db_table: dfformsXlayouts4 -->
-<div class="form-inline"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXlayouts4, db_table: dfformsXlayouts4 -->
+<div class="form-inline">
 [%[= fformsXlayouts4.custom['begin'] ]]
 <div class="form-group">
  <label class="sr-only" for="exampleInputUsername2">
@@ -989,7 +1022,7 @@
  [%[ fformsXlayouts4.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f0']['_id']= 'exampleInputUsername2'  ]]
- [%[ fformsXlayouts4.custom['widgets']['f0']['_placeholder']= 'Username:p4w'  ]]
+ [%[ fformsXlayouts4.custom['widgets']['f0']['_placeholder']= 'Username_p4w'  ]]
  [%[= fformsXlayouts4.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts4.custom['errors']['f0'] if 'f0' in fformsXlayouts4.custom['errors'] else '' ]]</span>
@@ -1003,7 +1036,7 @@
  [%[ fformsXlayouts4.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f1']['_id']= 'exampleInputPassword2'  ]]
- [%[ fformsXlayouts4.custom['widgets']['f1']['_placeholder']= 'Password:p4w'  ]]
+ [%[ fformsXlayouts4.custom['widgets']['f1']['_placeholder']= 'Password_p4w'  ]]
  [%[= fformsXlayouts4.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts4.custom['errors']['f1'] if 'f1' in fformsXlayouts4.custom['errors'] else '' ]]</span>
@@ -1017,7 +1050,7 @@
  [%[ fformsXlayouts4.custom['widgets']['f2']['_type']= 'checkbox'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f2']['_checked']= '==0'  ]]
  [%[ fformsXlayouts4.custom['widgets']['f2']['_id']= 'exampleCheckbox1'  ]]
- [%[ fformsXlayouts4.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXlayouts4.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
  [%[= fformsXlayouts4.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformsXlayouts4.custom['errors']['f2'] if 'f2' in fformsXlayouts4.custom['errors'] else '' ]]</span>
@@ -1032,9 +1065,9 @@
 
  [%[ fformsXlayouts4.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXlayouts4.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXlayouts4.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXlayouts4.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXlayouts4.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXlayouts4.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXlayouts4.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXlayouts4.custom['submit'] ]]
 
 
@@ -1046,19 +1079,18 @@
      [%[= fformsXlayouts4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXlayouts4.custom['end'] ]]
   
-<div  class='divfformsXlayouts4' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXlayouts4</div>
-</div>
+<div class="divfformsXlayouts4 flashdiv"> <span class="flashspan">fformsXlayouts4</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXlayouts4');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXlayouts4.custom['end'] ]]
 </div>
-<!-- end fformsXlayouts4 -->
+<!-- END fformsXlayouts4-->
 
         </div>
        </section>
@@ -1148,16 +1180,19 @@
   <!-- Theme Initialization Files -->
   <script src="[%[=URL('static/tte/assets/javascripts/theme.init.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

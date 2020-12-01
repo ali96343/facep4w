@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 25.11.2020 17:20:27 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 11:28:00 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
@@ -58,6 +58,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
@@ -272,8 +310,8 @@
       <div class="d-flex">
        <!-- Search form -->
        
-<!-- view: fbuttons0, db_table: dfbuttons0 -->
-<div class="navbar-search form-inline" id="navbar-search-main"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fbuttons0, db_table: dfbuttons0 -->
+<div class="navbar-search form-inline" id="navbar-search-main">
 [%[= fbuttons0.custom['begin'] ]]
 <div class="input-group input-group-merge search-bar">
  <span class="input-group-text" id="topbar-addon">
@@ -284,7 +322,7 @@
  [%[ fbuttons0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fbuttons0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fbuttons0.custom['widgets']['f0']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fbuttons0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fbuttons0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
  [%[ fbuttons0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fbuttons0.custom['widgets']['f0'] ]]
 
@@ -292,12 +330,11 @@
 
  [%[ fbuttons0.custom['submit']['_aria-describedby']= 'topbar-addon'  ]]
  [%[ fbuttons0.custom['submit']['_aria-label']= 'Search'  ]]
- [%[ fbuttons0.custom['submit']['_class']= 'form-control'  ]]
+ [%[ fbuttons0.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
  [%[ fbuttons0.custom['submit']['_id']= 'topbarInputIconLeft'  ]]
- [%[ fbuttons0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fbuttons0.custom['submit']['_placeholder']= ''  ]]
  [%[ fbuttons0.custom['submit']['_type']= 'submit'  ]]
  [%[ fbuttons0.custom['submit']['_rows']= '1'  ]]
- [%[ fbuttons0.custom['submit']['_style']= 'color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fbuttons0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fbuttons0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fbuttons0.custom['submit'] ]]
@@ -308,19 +345,18 @@
      [%[= fbuttons0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fbuttons0.custom['end'] ]]
   
-<div  class='divfbuttons0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fbuttons0</div>
-</div>
+<div class="divfbuttons0 flashdiv"> <span class="flashspan">fbuttons0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfbuttons0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fbuttons0.custom['end'] ]]
 </div>
-<!-- end fbuttons0 -->
+<!-- END fbuttons0-->
 
       </div>
       <!-- Navbar links -->
@@ -766,16 +802,19 @@
   <!-- Volt JS -->
   <script src="[%[=URL('static/tte/assets/js/volt.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({
@@ -783,7 +822,7 @@
                   title: result.messages,
                   animation : false,
                   timer: 3000,
-                  text: 'will hide in 3sec',
+                  text: '3 sec & will hide',
                   showCancelButton: false,
                   showConfirmButton: false
                  });

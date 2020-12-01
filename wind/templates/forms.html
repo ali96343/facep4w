@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 13:05:32 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:11:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>biorex title text</title>
@@ -46,6 +46,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body class="bg-gray-100 font-family-karla flex">
   <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
@@ -169,8 +207,8 @@
        </p>
        <div class="leading-loose">
         
-<!-- view: fforms0, db_table: dfforms0 -->
-<div class="p-10 bg-white rounded shadow-xl"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fforms0, db_table: dfforms0 -->
+<div class="p-10 bg-white rounded shadow-xl">
 [%[= fforms0.custom['begin'] ]]
 <div class="">
  <label class="block text-sm text-gray-600" for="name">
@@ -179,7 +217,7 @@
  [%[ fforms0.custom['widgets']['f0']['_aria-label']= 'Name'  ]]
  [%[ fforms0.custom['widgets']['f0']['_class']= 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms0.custom['widgets']['f0']['_id']= 'name'  ]]
- [%[ fforms0.custom['widgets']['f0']['_placeholder']= 'Your Name:p4w'  ]]
+ [%[ fforms0.custom['widgets']['f0']['_placeholder']= 'Your Name_p4w'  ]]
  [%[ fforms0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fforms0.custom['widgets']['f0'] ]]
 
@@ -194,7 +232,7 @@
  [%[ fforms0.custom['widgets']['f1']['_aria-label']= 'Email'  ]]
  [%[ fforms0.custom['widgets']['f1']['_class']= 'w-full px-5 py-4 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms0.custom['widgets']['f1']['_id']= 'email'  ]]
- [%[ fforms0.custom['widgets']['f1']['_placeholder']= 'Your Email:p4w'  ]]
+ [%[ fforms0.custom['widgets']['f1']['_placeholder']= 'Your Email_p4w'  ]]
  [%[ fforms0.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fforms0.custom['widgets']['f1'] ]]
 
@@ -217,12 +255,11 @@
  <span style="color:#ff0000">[%[= fforms0.custom['errors']['f2'] if 'f2' in fforms0.custom['errors'] else '' ]]</span>
 
  [%[ fforms0.custom['submit']['_aria-label']= 'Email'  ]]
- [%[ fforms0.custom['submit']['_class']= 'w-full px-5 py-2 text-gray-700 bg-gray-200 rounded'  ]]
+ [%[ fforms0.custom['submit']['_class']= 'w-full px-5 py-2 text-gray-700 bg-gray-200 rounded mysubmit_cls'  ]]
  [%[ fforms0.custom['submit']['_id']= 'message'  ]]
- [%[ fforms0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fforms0.custom['submit']['_placeholder']= ''  ]]
  [%[ fforms0.custom['submit']['_rows']= '1'  ]]
  [%[ fforms0.custom['submit']['_type']= 'submit'  ]]
- [%[ fforms0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fforms0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fforms0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fforms0.custom['submit'] ]]
@@ -231,19 +268,18 @@
      [%[= fforms0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fforms0.custom['end'] ]]
   
-<div  class='divfforms0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms0</div>
-</div>
+<div class="divfforms0 flashdiv"> <span class="flashspan">fforms0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfforms0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fforms0.custom['end'] ]]
 </div>
-<!-- end fforms0 -->
+<!-- END fforms0-->
 
        </div>
       </div>
@@ -254,8 +290,8 @@
        </p>
        <div class="leading-loose">
         
-<!-- view: fforms1, db_table: dfforms1 -->
-<div class="p-10 bg-white rounded shadow-xl"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fforms1, db_table: dfforms1 -->
+<div class="p-10 bg-white rounded shadow-xl">
 [%[= fforms1.custom['begin'] ]]
 <p class="text-lg text-gray-800 font-medium pb-4">
  Customer information
@@ -268,7 +304,7 @@
  [%[ fforms1.custom['widgets']['f0']['_aria-label']= 'Name'  ]]
  [%[ fforms1.custom['widgets']['f0']['_class']= 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f0']['_id']= 'cus_name'  ]]
- [%[ fforms1.custom['widgets']['f0']['_placeholder']= 'Your Name:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f0']['_placeholder']= 'Your Name_p4w'  ]]
  [%[ fforms1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f0'] ]]
 
@@ -283,7 +319,7 @@
  [%[ fforms1.custom['widgets']['f1']['_aria-label']= 'Email'  ]]
  [%[ fforms1.custom['widgets']['f1']['_class']= 'w-full px-5 py-4 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f1']['_id']= 'cus_email'  ]]
- [%[ fforms1.custom['widgets']['f1']['_placeholder']= 'Your Email:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f1']['_placeholder']= 'Your Email_p4w'  ]]
  [%[ fforms1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f1'] ]]
 
@@ -298,7 +334,7 @@
  [%[ fforms1.custom['widgets']['f2']['_aria-label']= 'Email'  ]]
  [%[ fforms1.custom['widgets']['f2']['_class']= 'w-full px-2 py-2 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f2']['_id']= 'cus_email'  ]]
- [%[ fforms1.custom['widgets']['f2']['_placeholder']= 'Street:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f2']['_placeholder']= 'Street_p4w'  ]]
  [%[ fforms1.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f2'] ]]
 
@@ -313,7 +349,7 @@
  [%[ fforms1.custom['widgets']['f3']['_aria-label']= 'Email'  ]]
  [%[ fforms1.custom['widgets']['f3']['_class']= 'w-full px-2 py-2 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f3']['_id']= 'cus_email'  ]]
- [%[ fforms1.custom['widgets']['f3']['_placeholder']= 'City:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f3']['_placeholder']= 'City_p4w'  ]]
  [%[ fforms1.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f3'] ]]
 
@@ -328,7 +364,7 @@
  [%[ fforms1.custom['widgets']['f4']['_aria-label']= 'Email'  ]]
  [%[ fforms1.custom['widgets']['f4']['_class']= 'w-full px-2 py-2 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f4']['_id']= 'cus_email'  ]]
- [%[ fforms1.custom['widgets']['f4']['_placeholder']= 'Country:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f4']['_placeholder']= 'Country_p4w'  ]]
  [%[ fforms1.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f4'] ]]
 
@@ -343,7 +379,7 @@
  [%[ fforms1.custom['widgets']['f5']['_aria-label']= 'Email'  ]]
  [%[ fforms1.custom['widgets']['f5']['_class']= 'w-full px-2 py-2 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f5']['_id']= 'cus_email'  ]]
- [%[ fforms1.custom['widgets']['f5']['_placeholder']= 'Zip:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f5']['_placeholder']= 'Zip_p4w'  ]]
  [%[ fforms1.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f5'] ]]
 
@@ -362,7 +398,7 @@
  [%[ fforms1.custom['widgets']['f6']['_aria-label']= 'Name'  ]]
  [%[ fforms1.custom['widgets']['f6']['_class']= 'w-full px-2 py-2 text-gray-700 bg-gray-200 rounded'  ]]
  [%[ fforms1.custom['widgets']['f6']['_id']= 'cus_name'  ]]
- [%[ fforms1.custom['widgets']['f6']['_placeholder']= 'Card Number MM/YY CVC:p4w'  ]]
+ [%[ fforms1.custom['widgets']['f6']['_placeholder']= 'Card Number MM/YY CVC_p4w'  ]]
  [%[ fforms1.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[= fforms1.custom['widgets']['f6'] ]]
 
@@ -373,9 +409,9 @@
 <div class="mt-6">
  [%[ fforms1.custom['submit']['_class']= 'px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded'  ]]
  [%[ fforms1.custom['submit']['_type']= 'submit'  ]]
- [%[ fforms1.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fforms1.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fforms1.custom['submit']['_value']= 'Submit'  ]]
- [%[ fforms1.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fforms1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fforms1.custom['submit'] ]]
 
 </div>
@@ -384,19 +420,18 @@
      [%[= fforms1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fforms1.custom['end'] ]]
   
-<div  class='divfforms1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fforms1</div>
-</div>
+<div class="divfforms1 flashdiv"> <span class="flashspan">fforms1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfforms1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fforms1.custom['end'] ]]
 </div>
-<!-- end fforms1 -->
+<!-- END fforms1-->
 
        </div>
        <p class="pt-6 text-gray-600">
@@ -418,16 +453,19 @@
   <!-- Font Awesome -->
   <script crossorigin="anonymous" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

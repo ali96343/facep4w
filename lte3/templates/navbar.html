@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 25.11.2020 17:54:55 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 13:21:39 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -18,6 +18,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 2px dashed red;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -39,14 +77,14 @@
     </ul>
     <!-- SEARCH FORM -->
     
-<!-- view: fnavbar0, db_table: dfnavbar0 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar0, db_table: dfnavbar0 -->
+<div class="form-inline ml-3">
 [%[= fnavbar0.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar0.custom['errors']['f0'] if 'f0' in fnavbar0.custom['errors'] else '' ]]</span>
@@ -54,9 +92,9 @@
  <div class="input-group-append">
  [%[ fnavbar0.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar0.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar0.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar0.custom['submit'] ]]
 
  </div>
@@ -66,19 +104,18 @@
      [%[= fnavbar0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar0.custom['end'] ]]
   
-<div  class='divfnavbar0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar0</div>
-</div>
+<div class="divfnavbar0 flashdiv"> <span class="flashspan">fnavbar0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar0.custom['end'] ]]
 </div>
-<!-- end fnavbar0 -->
+<!-- END fnavbar0-->
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -927,14 +964,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar1, db_table: dfnavbar1 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar1, db_table: dfnavbar1 -->
+<div class="form-inline ml-3">
 [%[= fnavbar1.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar1.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar1.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar1.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar1.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar1.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar1.custom['errors']['f0'] if 'f0' in fnavbar1.custom['errors'] else '' ]]</span>
@@ -942,9 +979,9 @@
  <div class="input-group-append">
  [%[ fnavbar1.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar1.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar1.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar1.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar1.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar1.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar1.custom['submit'] ]]
 
  </div>
@@ -954,19 +991,18 @@
      [%[= fnavbar1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar1.custom['end'] ]]
   
-<div  class='divfnavbar1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar1</div>
-</div>
+<div class="divfnavbar1 flashdiv"> <span class="flashspan">fnavbar1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar1.custom['end'] ]]
 </div>
-<!-- end fnavbar1 -->
+<!-- END fnavbar1-->
 
             </nav>
            </div>
@@ -992,14 +1028,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar2, db_table: dfnavbar2 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar2, db_table: dfnavbar2 -->
+<div class="form-inline ml-3">
 [%[= fnavbar2.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar2.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar2.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar2.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar2.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar2.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar2.custom['errors']['f0'] if 'f0' in fnavbar2.custom['errors'] else '' ]]</span>
@@ -1007,9 +1043,9 @@
  <div class="input-group-append">
  [%[ fnavbar2.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar2.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar2.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar2.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar2.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar2.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar2.custom['submit'] ]]
 
  </div>
@@ -1019,19 +1055,18 @@
      [%[= fnavbar2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar2.custom['end'] ]]
   
-<div  class='divfnavbar2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar2</div>
-</div>
+<div class="divfnavbar2 flashdiv"> <span class="flashspan">fnavbar2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar2.custom['end'] ]]
 </div>
-<!-- end fnavbar2 -->
+<!-- END fnavbar2-->
 
             </nav>
            </div>
@@ -1062,14 +1097,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar3, db_table: dfnavbar3 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar3, db_table: dfnavbar3 -->
+<div class="form-inline ml-3">
 [%[= fnavbar3.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar3.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar3.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar3.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar3.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar3.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar3.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar3.custom['errors']['f0'] if 'f0' in fnavbar3.custom['errors'] else '' ]]</span>
@@ -1077,9 +1112,9 @@
  <div class="input-group-append">
  [%[ fnavbar3.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar3.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar3.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar3.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar3.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar3.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar3.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar3.custom['submit'] ]]
 
  </div>
@@ -1089,19 +1124,18 @@
      [%[= fnavbar3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar3.custom['end'] ]]
   
-<div  class='divfnavbar3' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar3</div>
-</div>
+<div class="divfnavbar3 flashdiv"> <span class="flashspan">fnavbar3</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar3');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar3.custom['end'] ]]
 </div>
-<!-- end fnavbar3 -->
+<!-- END fnavbar3-->
 
             </nav>
            </div>
@@ -1127,14 +1161,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar4, db_table: dfnavbar4 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar4, db_table: dfnavbar4 -->
+<div class="form-inline ml-3">
 [%[= fnavbar4.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar4.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar4.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar4.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar4.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar4.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar4.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar4.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar4.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar4.custom['errors']['f0'] if 'f0' in fnavbar4.custom['errors'] else '' ]]</span>
@@ -1142,9 +1176,9 @@
  <div class="input-group-append">
  [%[ fnavbar4.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar4.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar4.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar4.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar4.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar4.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar4.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar4.custom['submit'] ]]
 
  </div>
@@ -1154,19 +1188,18 @@
      [%[= fnavbar4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar4.custom['end'] ]]
   
-<div  class='divfnavbar4' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar4</div>
-</div>
+<div class="divfnavbar4 flashdiv"> <span class="flashspan">fnavbar4</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar4');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar4.custom['end'] ]]
 </div>
-<!-- end fnavbar4 -->
+<!-- END fnavbar4-->
 
             </nav>
            </div>
@@ -1197,14 +1230,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar5, db_table: dfnavbar5 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar5, db_table: dfnavbar5 -->
+<div class="form-inline ml-3">
 [%[= fnavbar5.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar5.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar5.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar5.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar5.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar5.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar5.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar5.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar5.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar5.custom['errors']['f0'] if 'f0' in fnavbar5.custom['errors'] else '' ]]</span>
@@ -1212,9 +1245,9 @@
  <div class="input-group-append">
  [%[ fnavbar5.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar5.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar5.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar5.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar5.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar5.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar5.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar5.custom['submit'] ]]
 
  </div>
@@ -1224,19 +1257,18 @@
      [%[= fnavbar5.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar5.custom['end'] ]]
   
-<div  class='divfnavbar5' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar5</div>
-</div>
+<div class="divfnavbar5 flashdiv"> <span class="flashspan">fnavbar5</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar5');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar5.custom['end'] ]]
 </div>
-<!-- end fnavbar5 -->
+<!-- END fnavbar5-->
 
             </nav>
            </div>
@@ -1262,14 +1294,14 @@
              </ul>
              <!-- SEARCH FORM -->
              
-<!-- view: fnavbar6, db_table: dfnavbar6 -->
-<div class="form-inline ml-3"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fnavbar6, db_table: dfnavbar6 -->
+<div class="form-inline ml-3">
 [%[= fnavbar6.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fnavbar6.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar6.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fnavbar6.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
  [%[ fnavbar6.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[ fnavbar6.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fnavbar6.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar6.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar6.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fnavbar6.custom['errors']['f0'] if 'f0' in fnavbar6.custom['errors'] else '' ]]</span>
@@ -1277,9 +1309,9 @@
  <div class="input-group-append">
  [%[ fnavbar6.custom['submit']['_class']= 'btn btn-navbar'  ]]
  [%[ fnavbar6.custom['submit']['_type']= 'submit'  ]]
- [%[ fnavbar6.custom['submit']['_title']= 'mysubmit from B'  ]]
+ [%[ fnavbar6.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fnavbar6.custom['submit']['_value']= 'Submit'  ]]
- [%[ fnavbar6.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fnavbar6.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar6.custom['submit'] ]]
 
  </div>
@@ -1289,19 +1321,18 @@
      [%[= fnavbar6.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fnavbar6.custom['end'] ]]
   
-<div  class='divfnavbar6' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fnavbar6</div>
-</div>
+<div class="divfnavbar6 flashdiv"> <span class="flashspan">fnavbar6</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfnavbar6');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fnavbar6.custom['end'] ]]
 </div>
-<!-- end fnavbar6 -->
+<!-- END fnavbar6-->
 
             </nav>
            </div>
@@ -1641,16 +1672,19 @@
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({
@@ -1658,7 +1692,7 @@
                   title: result.messages,
                   animation : false,
                   timer: 3000,
-                  text: 'will hide in 3sec',
+                  text: '3 sec & will hide',
                   showCancelButton: false,
                   showConfirmButton: false
                  });

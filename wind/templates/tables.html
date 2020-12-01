@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 13:05:32 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:11:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>biorex title text</title>
@@ -46,6 +46,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body class="bg-gray-100 font-family-karla flex">
   <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
@@ -192,9 +230,7 @@
 <!-- end rows_ttables0 -->
 
 
-<div  class='divttables0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttables0</div>
-</div>
+<div class="divttables0 flashdiv"> <span class="flashspan">ttables0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divttables0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
@@ -238,9 +274,7 @@
 <!-- end rows_ttables1 -->
 
 
-<div  class='divttables1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttables1</div>
-</div>
+<div class="divttables1 flashdiv"> <span class="flashspan">ttables1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divttables1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
@@ -284,9 +318,7 @@
 <!-- end rows_ttables2 -->
 
 
-<div  class='divttables2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ttables2</div>
-</div>
+<div class="divttables2 flashdiv"> <span class="flashspan">ttables2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divttables2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }

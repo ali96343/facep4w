@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:02 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -55,7 +55,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -85,41 +124,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fwidgets0, db_table: dfwidgets0 -->
+<!-- BEGIN view: fwidgets0, db_table: dfwidgets0 -->
 <div>
 [%[= fwidgets0.custom['begin'] ]]
  [%[ fwidgets0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fwidgets0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fwidgets0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fwidgets0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets0.custom['errors']['f0'] if 'f0' in fwidgets0.custom['errors'] else '' ]]</span>
 
  [%[ fwidgets0.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fwidgets0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fwidgets0.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fwidgets0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets0.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets0.custom['end'] ]]
-  <div  class='divfwidgets0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets0</small>
-</div>
 
+  
+<div class="divfwidgets0 flashdiv"> <span class="flashspan">fwidgets0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets0.custom['end'] ]]
 </div>
-<!-- end fwidgets0 -->
+<!-- END fwidgets0-->
 
 </div>
          </div>
@@ -339,41 +377,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fwidgets1, db_table: dfwidgets1 -->
+<!-- BEGIN view: fwidgets1, db_table: dfwidgets1 -->
 <div>
 [%[= fwidgets1.custom['begin'] ]]
- [%[ fwidgets1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fwidgets1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fwidgets1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fwidgets1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets1.custom['errors']['f0'] if 'f0' in fwidgets1.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets1.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets1.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets1.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fwidgets1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets1.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets1.custom['end'] ]]
-  <div  class='divfwidgets1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets1</small>
-</div>
 
+  
+<div class="divfwidgets1 flashdiv"> <span class="flashspan">fwidgets1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets1.custom['end'] ]]
 </div>
-<!-- end fwidgets1 -->
+<!-- END fwidgets1-->
 
 </div>
           <div class="hd-message-info">
@@ -1114,43 +1151,41 @@
          <div class="form-single nk-int-st widget-form">
           
 
-<!-- view: fwidgets2, db_table: dfwidgets2 -->
+<!-- BEGIN view: fwidgets2, db_table: dfwidgets2 -->
 <div>
 [%[= fwidgets2.custom['begin'] ]]
  [%[ fwidgets2.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fwidgets2.custom['widgets']['f0']['_placeholder']= 'First Name:p4w'  ]]
+ [%[ fwidgets2.custom['widgets']['f0']['_placeholder']= 'First Name_p4w'  ]]
  [%[ fwidgets2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fwidgets2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets2.custom['errors']['f0'] if 'f0' in fwidgets2.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets2.custom['submit']['_class']= 'form-control'  ]]
- [%[ fwidgets2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fwidgets2.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets2.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets2.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets2.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets2.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets2.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets2.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets2.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets2.custom['end'] ]]
-  <div  class='divfwidgets2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets2</small>
-</div>
 
+  
+<div class="divfwidgets2 flashdiv"> <span class="flashspan">fwidgets2</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets2.custom['end'] ]]
 </div>
-<!-- end fwidgets2 -->
+<!-- END fwidgets2-->
 
 </div>
         </div>
@@ -1158,43 +1193,41 @@
          <div class="form-single nk-int-st widget-form">
           
 
-<!-- view: fwidgets3, db_table: dfwidgets3 -->
+<!-- BEGIN view: fwidgets3, db_table: dfwidgets3 -->
 <div>
 [%[= fwidgets3.custom['begin'] ]]
  [%[ fwidgets3.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fwidgets3.custom['widgets']['f0']['_placeholder']= 'Last Name:p4w'  ]]
+ [%[ fwidgets3.custom['widgets']['f0']['_placeholder']= 'Last Name_p4w'  ]]
  [%[ fwidgets3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fwidgets3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets3.custom['errors']['f0'] if 'f0' in fwidgets3.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets3.custom['submit']['_class']= 'form-control'  ]]
- [%[ fwidgets3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets3.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fwidgets3.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets3.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets3.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets3.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets3.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets3.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets3.custom['end'] ]]
-  <div  class='divfwidgets3' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets3</small>
-</div>
 
+  
+<div class="divfwidgets3 flashdiv"> <span class="flashspan">fwidgets3</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets3');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets3.custom['end'] ]]
 </div>
-<!-- end fwidgets3 -->
+<!-- END fwidgets3-->
 
 </div>
         </div>
@@ -1202,43 +1235,41 @@
          <div class="form-single nk-int-st widget-form">
           
 
-<!-- view: fwidgets4, db_table: dfwidgets4 -->
+<!-- BEGIN view: fwidgets4, db_table: dfwidgets4 -->
 <div>
 [%[= fwidgets4.custom['begin'] ]]
  [%[ fwidgets4.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fwidgets4.custom['widgets']['f0']['_placeholder']= 'Email Address:p4w'  ]]
+ [%[ fwidgets4.custom['widgets']['f0']['_placeholder']= 'Email Address_p4w'  ]]
  [%[ fwidgets4.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fwidgets4.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets4.custom['errors']['f0'] if 'f0' in fwidgets4.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets4.custom['submit']['_class']= 'form-control'  ]]
- [%[ fwidgets4.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets4.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fwidgets4.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets4.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets4.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets4.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets4.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets4.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets4.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets4.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets4.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets4.custom['end'] ]]
-  <div  class='divfwidgets4' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets4</small>
-</div>
 
+  
+<div class="divfwidgets4 flashdiv"> <span class="flashspan">fwidgets4</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets4');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets4.custom['end'] ]]
 </div>
-<!-- end fwidgets4 -->
+<!-- END fwidgets4-->
 
 </div>
         </div>
@@ -1246,43 +1277,41 @@
          <div class="form-single nk-int-st widget-form">
           
 
-<!-- view: fwidgets5, db_table: dfwidgets5 -->
+<!-- BEGIN view: fwidgets5, db_table: dfwidgets5 -->
 <div>
 [%[= fwidgets5.custom['begin'] ]]
  [%[ fwidgets5.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fwidgets5.custom['widgets']['f0']['_placeholder']= 'Contact Number:p4w'  ]]
+ [%[ fwidgets5.custom['widgets']['f0']['_placeholder']= 'Contact Number_p4w'  ]]
  [%[ fwidgets5.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fwidgets5.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fwidgets5.custom['errors']['f0'] if 'f0' in fwidgets5.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets5.custom['submit']['_class']= 'form-control'  ]]
- [%[ fwidgets5.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets5.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fwidgets5.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets5.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets5.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets5.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets5.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets5.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets5.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets5.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fwidgets5.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets5.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets5.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets5.custom['end'] ]]
-  <div  class='divfwidgets5' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets5</small>
-</div>
 
+  
+<div class="divfwidgets5 flashdiv"> <span class="flashspan">fwidgets5</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets5');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets5.custom['end'] ]]
 </div>
-<!-- end fwidgets5 -->
+<!-- END fwidgets5-->
 
 </div>
         </div>
@@ -1290,7 +1319,7 @@
          <div class="form-single nk-int-st widget-form">
           
 
-<!-- view: fwidgets6, db_table: dfwidgets6 -->
+<!-- BEGIN view: fwidgets6, db_table: dfwidgets6 -->
 <div>
 [%[= fwidgets6.custom['begin'] ]]
  [%[ fwidgets6.custom['widgets']['f0']['_class']= 'form-control'  ]]
@@ -1300,32 +1329,30 @@
 
  <span style="color:#ff0000">[%[= fwidgets6.custom['errors']['f0'] if 'f0' in fwidgets6.custom['errors'] else '' ]]</span>
 
- [%[ fwidgets6.custom['submit']['_class']= 'form-control'  ]]
- [%[ fwidgets6.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fwidgets6.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fwidgets6.custom['submit']['_placeholder']= ''  ]]
  [%[ fwidgets6.custom['submit']['_type']= 'submit'  ]]
- [%[ fwidgets6.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fwidgets6.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fwidgets6.custom['submit']['_rows']= '1'  ]]
+ [%[ fwidgets6.custom['submit']['_value']= 'Submit'  ]]
  [%[ fwidgets6.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fwidgets6.custom['submit'] ]]
 
  [%[ for hidden_widget in fwidgets6.custom['hidden_widgets'].keys(): ]]
- [%[= fwidgets6.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fwidgets6.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fwidgets6.custom['end'] ]]
-  <div  class='divfwidgets6' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fwidgets6</small>
-</div>
 
+  
+<div class="divfwidgets6 flashdiv"> <span class="flashspan">fwidgets6</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfwidgets6');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fwidgets6.custom['end'] ]]
 </div>
-<!-- end fwidgets6 -->
+<!-- END fwidgets6-->
 
 
          </div>
@@ -1504,5 +1531,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

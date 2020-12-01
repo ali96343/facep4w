@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 25.11.2020 17:20:26 msk
+# py4web app, AI-biorex ported 01.12.2020 11:27:59 UTC+3
 #
 
 #import pydal
@@ -161,6 +161,12 @@ db.define_table(
 db.commit()
 
 db.define_table(
+    'dfmodals3',
+    Field('f0','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
     'dftypography0',
     Field('f0','string', length=1024, ),
     )
@@ -268,5 +274,5 @@ if not db(db.tupgradeXtoXpro0).count():
     db.tupgradeXtoXpro0.insert(f0="Documentation", f1="<i class=\"fa fa-check text-success\"></i>", f2="<i class=\"fa fa-check text-success\"></i>")
     db.tupgradeXtoXpro0.insert(f0="6 Months Premium Support", f1="<i class=\"fa fa-times text-danger\"></i>", f2="<i class=\"fa fa-check text-success\"></i>")
     db.tupgradeXtoXpro0.insert(f0="Free updates", f1="<i class=\"fa fa-times text-danger\"></i>", f2="<i class=\"fa fa-check text-success\"></i>")
-    db.tupgradeXtoXpro0.insert(f0="==0", f1="<a class=\"btn btn-dark\" href=\"#\" target=\"_blank\"><i class=\"fas fa-download mr-2\"></i>Download</a>", f2="<a class=\"btn btn-secondary\" href=\"#\" target=\"_blank\">Live Demo PRO <span class=\"fas fa-external-link-alt ml-2\"></span></a> <a class=\"btn btn-outline-dark ml-3\" href=\"#\" target=\"_blank\"><span class=\"fas fa-shopping-cart mr-2\"></span> Purchase - $59</a>")
+    db.tupgradeXtoXpro0.insert(f0="==0", f1="<a class=\"btn btn-dark\" href=\"https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard\" target=\"_blank\"><i class=\"fas fa-download mr-2\"></i>Download</a>", f2="<a class=\"btn btn-secondary\" href=\"https://demo.themesberg.com/volt-pro/pages/dashboard/dashboard.html\" target=\"_blank\">Live Demo PRO <span class=\"fas fa-external-link-alt ml-2\"></span></a> <a class=\"btn btn-outline-dark ml-3\" href=\"https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard\" target=\"_blank\"><span class=\"fas fa-shopping-cart mr-2\"></span> Purchase - $59</a>")
     db.commit()

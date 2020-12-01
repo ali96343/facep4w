@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:55 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -56,7 +56,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -86,41 +125,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fbuttons0, db_table: dfbuttons0 -->
+<!-- BEGIN view: fbuttons0, db_table: dfbuttons0 -->
 <div>
 [%[= fbuttons0.custom['begin'] ]]
  [%[ fbuttons0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fbuttons0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fbuttons0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fbuttons0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fbuttons0.custom['errors']['f0'] if 'f0' in fbuttons0.custom['errors'] else '' ]]</span>
 
  [%[ fbuttons0.custom['submit']['_type']= 'submit'  ]]
- [%[ fbuttons0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fbuttons0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fbuttons0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fbuttons0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fbuttons0.custom['submit']['_rows']= '1'  ]]
+ [%[ fbuttons0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fbuttons0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fbuttons0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fbuttons0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fbuttons0.custom['hidden_widgets'].keys(): ]]
- [%[= fbuttons0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fbuttons0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fbuttons0.custom['end'] ]]
-  <div  class='divfbuttons0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fbuttons0</small>
-</div>
 
+  
+<div class="divfbuttons0 flashdiv"> <span class="flashspan">fbuttons0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfbuttons0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fbuttons0.custom['end'] ]]
 </div>
-<!-- end fbuttons0 -->
+<!-- END fbuttons0-->
 
 </div>
          </div>
@@ -340,41 +378,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fbuttons1, db_table: dfbuttons1 -->
+<!-- BEGIN view: fbuttons1, db_table: dfbuttons1 -->
 <div>
 [%[= fbuttons1.custom['begin'] ]]
- [%[ fbuttons1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fbuttons1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fbuttons1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fbuttons1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fbuttons1.custom['errors']['f0'] if 'f0' in fbuttons1.custom['errors'] else '' ]]</span>
 
- [%[ fbuttons1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fbuttons1.custom['submit']['_placeholder']= ''  ]]
  [%[ fbuttons1.custom['submit']['_type']= 'submit'  ]]
- [%[ fbuttons1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fbuttons1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fbuttons1.custom['submit']['_rows']= '1'  ]]
+ [%[ fbuttons1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fbuttons1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fbuttons1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fbuttons1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fbuttons1.custom['hidden_widgets'].keys(): ]]
- [%[= fbuttons1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fbuttons1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fbuttons1.custom['end'] ]]
-  <div  class='divfbuttons1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fbuttons1</small>
-</div>
 
+  
+<div class="divfbuttons1 flashdiv"> <span class="flashspan">fbuttons1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfbuttons1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fbuttons1.custom['end'] ]]
 </div>
-<!-- end fbuttons1 -->
+<!-- END fbuttons1-->
 
 </div>
           <div class="hd-message-info">
@@ -1352,5 +1389,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

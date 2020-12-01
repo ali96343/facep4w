@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:02 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -62,7 +62,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -984,7 +1023,7 @@
        <div class="multiupload-sys">
         <div class="dropmail" id="dropzone">
          
-<!-- view: fcomposeXemail0, db_table: dfcomposeXemail0 -->
+<!-- BEGIN view: fcomposeXemail0, db_table: dfcomposeXemail0 -->
 <div class="dropzone dropzone-custom needsclick" id="demo-upload">
 [%[= fcomposeXemail0.custom['begin'] ]]
 <div class="dz-message needsclick download-custom">
@@ -1005,23 +1044,21 @@
 </div>
 
  [%[ for hidden_widget in fcomposeXemail0.custom['hidden_widgets'].keys(): ]]
- [%[= fcomposeXemail0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fcomposeXemail0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fcomposeXemail0.custom['end'] ]]
-  <div  class='divfcomposeXemail0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fcomposeXemail0</small>
-</div>
 
+  
+<div class="divfcomposeXemail0 flashdiv"> <span class="flashspan">fcomposeXemail0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfcomposeXemail0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fcomposeXemail0.custom['end'] ]]
 </div>
-<!-- end fcomposeXemail0 -->
+<!-- END fcomposeXemail0-->
 
         </div>
        </div>
@@ -1142,5 +1179,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

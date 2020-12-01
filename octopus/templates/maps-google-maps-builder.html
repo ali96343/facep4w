@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed sidebar-left-collapsed">
  <head>
-            <!-- 26.11.2020 14:36:40 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:33 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -30,6 +30,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -45,14 +83,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fmapsXgoogleXmapsXbuilder0, db_table: dfmapsXgoogleXmapsXbuilder0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fmapsXgoogleXmapsXbuilder0, db_table: dfmapsXgoogleXmapsXbuilder0 -->
+<div class="search nav-form">
 [%[= fmapsXgoogleXmapsXbuilder0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fmapsXgoogleXmapsXbuilder0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fmapsXgoogleXmapsXbuilder0.custom['errors']['f0'] if 'f0' in fmapsXgoogleXmapsXbuilder0.custom['errors'] else '' ]]</span>
@@ -60,9 +98,9 @@
  <span class="input-group-btn">
  [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_type']= 'submit'  ]]
- [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fmapsXgoogleXmapsXbuilder0.custom['submit'] ]]
 
  </span>
@@ -72,19 +110,18 @@
      [%[= fmapsXgoogleXmapsXbuilder0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fmapsXgoogleXmapsXbuilder0.custom['end'] ]]
   
-<div  class='divfmapsXgoogleXmapsXbuilder0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmapsXgoogleXmapsXbuilder0</div>
-</div>
+<div class="divfmapsXgoogleXmapsXbuilder0 flashdiv"> <span class="flashspan">fmapsXgoogleXmapsXbuilder0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfmapsXgoogleXmapsXbuilder0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fmapsXgoogleXmapsXbuilder0.custom['end'] ]]
 </div>
-<!-- end fmapsXgoogleXmapsXbuilder0 -->
+<!-- END fmapsXgoogleXmapsXbuilder0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -1010,8 +1047,8 @@
            <h4 class="modal-title">Choose Marker Location</h4>
           </div>
           
-<!-- view: fmapsXgoogleXmapsXbuilder1, db_table: dfmapsXgoogleXmapsXbuilder1 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fmapsXgoogleXmapsXbuilder1, db_table: dfmapsXgoogleXmapsXbuilder1 -->
+<div>
 [%[= fmapsXgoogleXmapsXbuilder1.custom['begin'] ]]
 <div class="modal-body">
  <div class="form-group">
@@ -1021,7 +1058,7 @@
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0']['_id']= 'MarkerLocation'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fmapsXgoogleXmapsXbuilder1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fmapsXgoogleXmapsXbuilder1.custom['errors']['f0'] if 'f0' in fmapsXgoogleXmapsXbuilder1.custom['errors'] else '' ]]</span>
@@ -1034,7 +1071,7 @@
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1']['_id']= 'MarkerTitle'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
  [%[= fmapsXgoogleXmapsXbuilder1.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fmapsXgoogleXmapsXbuilder1.custom['errors']['f1'] if 'f1' in fmapsXgoogleXmapsXbuilder1.custom['errors'] else '' ]]</span>
@@ -1055,9 +1092,8 @@
  [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_id']= 'MarkerDescription'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_type']= 'submit'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_rows']= '1'  ]]
- [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_class']= 'form-control'  ]]
- [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
- [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_placeholder']= ''  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fmapsXgoogleXmapsXbuilder1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fmapsXgoogleXmapsXbuilder1.custom['submit'] ]]
@@ -1066,19 +1102,18 @@
      [%[= fmapsXgoogleXmapsXbuilder1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fmapsXgoogleXmapsXbuilder1.custom['end'] ]]
   
-<div  class='divfmapsXgoogleXmapsXbuilder1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fmapsXgoogleXmapsXbuilder1</div>
-</div>
+<div class="divfmapsXgoogleXmapsXbuilder1 flashdiv"> <span class="flashspan">fmapsXgoogleXmapsXbuilder1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfmapsXgoogleXmapsXbuilder1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fmapsXgoogleXmapsXbuilder1.custom['end'] ]]
 </div>
-<!-- end fmapsXgoogleXmapsXbuilder1 -->
+<!-- END fmapsXgoogleXmapsXbuilder1-->
 
          </div>
         </div>
@@ -1202,16 +1237,19 @@
    </div>
   </section>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 26.11.2020 14:36:35 UTC+3
+# py4web app, AI-biorex ported 01.12.2020 12:03:27 UTC+3
 # https://github.com/ali96343/facep4w
 #
 
@@ -79,8 +79,8 @@ def index():
     findex0= Form(db.dfindex0, dbio=False, formstyle=FormStyleBulma)
 
     if findex0.accepted:
-        prn_form_vars( findex0, db.dfindex0 )
-        return put_json_messages('accepted: ' + str( findex0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( findex0, db.dfindex0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( findex0.form_name ))
     elif findex0.errors:
         print("findex0 has errors: %s" % (findex0.errors))
         return put_json_messages('error: ' + str( findex0.form_name ))
@@ -89,8 +89,8 @@ def index():
     findex1= Form(db.dfindex1, dbio=False, formstyle=FormStyleBulma)
 
     if findex1.accepted:
-        prn_form_vars( findex1, db.dfindex1 )
-        return put_json_messages('accepted: ' + str( findex1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( findex1, db.dfindex1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( findex1.form_name ))
     elif findex1.errors:
         print("findex1 has errors: %s" % (findex1.errors))
         return put_json_messages('error: ' + str( findex1.form_name ))
@@ -119,8 +119,8 @@ def pagesX404():
     fpagesX4040= Form(db.dfpagesX4040, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesX4040.accepted:
-        prn_form_vars( fpagesX4040, db.dfpagesX4040 )
-        return put_json_messages('accepted: ' + str( fpagesX4040.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesX4040, db.dfpagesX4040 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesX4040.form_name ))
     elif fpagesX4040.errors:
         print("fpagesX4040 has errors: %s" % (fpagesX4040.errors))
         return put_json_messages('error: ' + str( fpagesX4040.form_name ))
@@ -139,8 +139,8 @@ def mapsXvector():
     fmapsXvector0= Form(db.dfmapsXvector0, dbio=False, formstyle=FormStyleBulma)
 
     if fmapsXvector0.accepted:
-        prn_form_vars( fmapsXvector0, db.dfmapsXvector0 )
-        return put_json_messages('accepted: ' + str( fmapsXvector0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmapsXvector0, db.dfmapsXvector0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmapsXvector0.form_name ))
     elif fmapsXvector0.errors:
         print("fmapsXvector0 has errors: %s" % (fmapsXvector0.errors))
         return put_json_messages('error: ' + str( fmapsXvector0.form_name ))
@@ -159,8 +159,8 @@ def formsXbasic():
     fformsXbasic0= Form(db.dfformsXbasic0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic0.accepted:
-        prn_form_vars( fformsXbasic0, db.dfformsXbasic0 )
-        return put_json_messages('accepted: ' + str( fformsXbasic0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic0, db.dfformsXbasic0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic0.form_name ))
     elif fformsXbasic0.errors:
         print("fformsXbasic0 has errors: %s" % (fformsXbasic0.errors))
         return put_json_messages('error: ' + str( fformsXbasic0.form_name ))
@@ -169,8 +169,8 @@ def formsXbasic():
     fformsXbasic1= Form(db.dfformsXbasic1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic1.accepted:
-        prn_form_vars( fformsXbasic1, db.dfformsXbasic1 )
-        return put_json_messages('accepted: ' + str( fformsXbasic1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic1, db.dfformsXbasic1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic1.form_name ))
     elif fformsXbasic1.errors:
         print("fformsXbasic1 has errors: %s" % (fformsXbasic1.errors))
         return put_json_messages('error: ' + str( fformsXbasic1.form_name ))
@@ -179,8 +179,8 @@ def formsXbasic():
     fformsXbasic2= Form(db.dfformsXbasic2, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic2.accepted:
-        prn_form_vars( fformsXbasic2, db.dfformsXbasic2 )
-        return put_json_messages('accepted: ' + str( fformsXbasic2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic2, db.dfformsXbasic2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic2.form_name ))
     elif fformsXbasic2.errors:
         print("fformsXbasic2 has errors: %s" % (fformsXbasic2.errors))
         return put_json_messages('error: ' + str( fformsXbasic2.form_name ))
@@ -189,8 +189,8 @@ def formsXbasic():
     fformsXbasic3= Form(db.dfformsXbasic3, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic3.accepted:
-        prn_form_vars( fformsXbasic3, db.dfformsXbasic3 )
-        return put_json_messages('accepted: ' + str( fformsXbasic3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic3, db.dfformsXbasic3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic3.form_name ))
     elif fformsXbasic3.errors:
         print("fformsXbasic3 has errors: %s" % (fformsXbasic3.errors))
         return put_json_messages('error: ' + str( fformsXbasic3.form_name ))
@@ -199,8 +199,8 @@ def formsXbasic():
     fformsXbasic4= Form(db.dfformsXbasic4, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic4.accepted:
-        prn_form_vars( fformsXbasic4, db.dfformsXbasic4 )
-        return put_json_messages('accepted: ' + str( fformsXbasic4.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic4, db.dfformsXbasic4 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic4.form_name ))
     elif fformsXbasic4.errors:
         print("fformsXbasic4 has errors: %s" % (fformsXbasic4.errors))
         return put_json_messages('error: ' + str( fformsXbasic4.form_name ))
@@ -209,8 +209,8 @@ def formsXbasic():
     fformsXbasic5= Form(db.dfformsXbasic5, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic5.accepted:
-        prn_form_vars( fformsXbasic5, db.dfformsXbasic5 )
-        return put_json_messages('accepted: ' + str( fformsXbasic5.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic5, db.dfformsXbasic5 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic5.form_name ))
     elif fformsXbasic5.errors:
         print("fformsXbasic5 has errors: %s" % (fformsXbasic5.errors))
         return put_json_messages('error: ' + str( fformsXbasic5.form_name ))
@@ -219,8 +219,8 @@ def formsXbasic():
     fformsXbasic6= Form(db.dfformsXbasic6, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic6.accepted:
-        prn_form_vars( fformsXbasic6, db.dfformsXbasic6 )
-        return put_json_messages('accepted: ' + str( fformsXbasic6.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic6, db.dfformsXbasic6 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic6.form_name ))
     elif fformsXbasic6.errors:
         print("fformsXbasic6 has errors: %s" % (fformsXbasic6.errors))
         return put_json_messages('error: ' + str( fformsXbasic6.form_name ))
@@ -229,8 +229,8 @@ def formsXbasic():
     fformsXbasic7= Form(db.dfformsXbasic7, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXbasic7.accepted:
-        prn_form_vars( fformsXbasic7, db.dfformsXbasic7 )
-        return put_json_messages('accepted: ' + str( fformsXbasic7.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXbasic7, db.dfformsXbasic7 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXbasic7.form_name ))
     elif fformsXbasic7.errors:
         print("fformsXbasic7 has errors: %s" % (fformsXbasic7.errors))
         return put_json_messages('error: ' + str( fformsXbasic7.form_name ))
@@ -249,8 +249,8 @@ def pagesXblank():
     fpagesXblank0= Form(db.dfpagesXblank0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXblank0.accepted:
-        prn_form_vars( fpagesXblank0, db.dfpagesXblank0 )
-        return put_json_messages('accepted: ' + str( fpagesXblank0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXblank0, db.dfpagesXblank0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXblank0.form_name ))
     elif fpagesXblank0.errors:
         print("fpagesXblank0 has errors: %s" % (fpagesXblank0.errors))
         return put_json_messages('error: ' + str( fpagesXblank0.form_name ))
@@ -270,8 +270,8 @@ def tablesXajax():
     ftablesXajax0= Form(db.dftablesXajax0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXajax0.accepted:
-        prn_form_vars( ftablesXajax0, db.dftablesXajax0 )
-        return put_json_messages('accepted: ' + str( ftablesXajax0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXajax0, db.dftablesXajax0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXajax0.form_name ))
     elif ftablesXajax0.errors:
         print("ftablesXajax0 has errors: %s" % (ftablesXajax0.errors))
         return put_json_messages('error: ' + str( ftablesXajax0.form_name ))
@@ -290,8 +290,8 @@ def pagesXsignin():
     fpagesXsignin0= Form(db.dfpagesXsignin0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXsignin0.accepted:
-        prn_form_vars( fpagesXsignin0, db.dfpagesXsignin0 )
-        return put_json_messages('accepted: ' + str( fpagesXsignin0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXsignin0, db.dfpagesXsignin0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXsignin0.form_name ))
     elif fpagesXsignin0.errors:
         print("fpagesXsignin0 has errors: %s" % (fpagesXsignin0.errors))
         return put_json_messages('error: ' + str( fpagesXsignin0.form_name ))
@@ -310,8 +310,8 @@ def pagesXsignup():
     fpagesXsignup0= Form(db.dfpagesXsignup0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXsignup0.accepted:
-        prn_form_vars( fpagesXsignup0, db.dfpagesXsignup0 )
-        return put_json_messages('accepted: ' + str( fpagesXsignup0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXsignup0, db.dfpagesXsignup0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXsignup0.form_name ))
     elif fpagesXsignup0.errors:
         print("fpagesXsignup0 has errors: %s" % (fpagesXsignup0.errors))
         return put_json_messages('error: ' + str( fpagesXsignup0.form_name ))
@@ -340,8 +340,8 @@ def tablesXbasic():
     ftablesXbasic0= Form(db.dftablesXbasic0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXbasic0.accepted:
-        prn_form_vars( ftablesXbasic0, db.dftablesXbasic0 )
-        return put_json_messages('accepted: ' + str( ftablesXbasic0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXbasic0, db.dftablesXbasic0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXbasic0.form_name ))
     elif ftablesXbasic0.errors:
         print("ftablesXbasic0 has errors: %s" % (ftablesXbasic0.errors))
         return put_json_messages('error: ' + str( ftablesXbasic0.form_name ))
@@ -360,8 +360,8 @@ def formsXwizard():
     fformsXwizard0= Form(db.dfformsXwizard0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard0.accepted:
-        prn_form_vars( fformsXwizard0, db.dfformsXwizard0 )
-        return put_json_messages('accepted: ' + str( fformsXwizard0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard0, db.dfformsXwizard0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard0.form_name ))
     elif fformsXwizard0.errors:
         print("fformsXwizard0 has errors: %s" % (fformsXwizard0.errors))
         return put_json_messages('error: ' + str( fformsXwizard0.form_name ))
@@ -370,8 +370,8 @@ def formsXwizard():
     fformsXwizard1= Form(db.dfformsXwizard1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard1.accepted:
-        prn_form_vars( fformsXwizard1, db.dfformsXwizard1 )
-        return put_json_messages('accepted: ' + str( fformsXwizard1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard1, db.dfformsXwizard1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard1.form_name ))
     elif fformsXwizard1.errors:
         print("fformsXwizard1 has errors: %s" % (fformsXwizard1.errors))
         return put_json_messages('error: ' + str( fformsXwizard1.form_name ))
@@ -380,8 +380,8 @@ def formsXwizard():
     fformsXwizard2= Form(db.dfformsXwizard2, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard2.accepted:
-        prn_form_vars( fformsXwizard2, db.dfformsXwizard2 )
-        return put_json_messages('accepted: ' + str( fformsXwizard2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard2, db.dfformsXwizard2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard2.form_name ))
     elif fformsXwizard2.errors:
         print("fformsXwizard2 has errors: %s" % (fformsXwizard2.errors))
         return put_json_messages('error: ' + str( fformsXwizard2.form_name ))
@@ -390,8 +390,8 @@ def formsXwizard():
     fformsXwizard3= Form(db.dfformsXwizard3, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard3.accepted:
-        prn_form_vars( fformsXwizard3, db.dfformsXwizard3 )
-        return put_json_messages('accepted: ' + str( fformsXwizard3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard3, db.dfformsXwizard3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard3.form_name ))
     elif fformsXwizard3.errors:
         print("fformsXwizard3 has errors: %s" % (fformsXwizard3.errors))
         return put_json_messages('error: ' + str( fformsXwizard3.form_name ))
@@ -400,8 +400,8 @@ def formsXwizard():
     fformsXwizard4= Form(db.dfformsXwizard4, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard4.accepted:
-        prn_form_vars( fformsXwizard4, db.dfformsXwizard4 )
-        return put_json_messages('accepted: ' + str( fformsXwizard4.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard4, db.dfformsXwizard4 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard4.form_name ))
     elif fformsXwizard4.errors:
         print("fformsXwizard4 has errors: %s" % (fformsXwizard4.errors))
         return put_json_messages('error: ' + str( fformsXwizard4.form_name ))
@@ -410,8 +410,8 @@ def formsXwizard():
     fformsXwizard5= Form(db.dfformsXwizard5, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXwizard5.accepted:
-        prn_form_vars( fformsXwizard5, db.dfformsXwizard5 )
-        return put_json_messages('accepted: ' + str( fformsXwizard5.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXwizard5, db.dfformsXwizard5 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXwizard5.form_name ))
     elif fformsXwizard5.errors:
         print("fformsXwizard5 has errors: %s" % (fformsXwizard5.errors))
         return put_json_messages('error: ' + str( fformsXwizard5.form_name ))
@@ -430,8 +430,8 @@ def layoutsXboxed():
     flayoutsXboxed0= Form(db.dflayoutsXboxed0, dbio=False, formstyle=FormStyleBulma)
 
     if flayoutsXboxed0.accepted:
-        prn_form_vars( flayoutsXboxed0, db.dflayoutsXboxed0 )
-        return put_json_messages('accepted: ' + str( flayoutsXboxed0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flayoutsXboxed0, db.dflayoutsXboxed0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flayoutsXboxed0.form_name ))
     elif flayoutsXboxed0.errors:
         print("flayoutsXboxed0 has errors: %s" % (flayoutsXboxed0.errors))
         return put_json_messages('error: ' + str( flayoutsXboxed0.form_name ))
@@ -450,8 +450,8 @@ def formsXlayouts():
     fformsXlayouts0= Form(db.dfformsXlayouts0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXlayouts0.accepted:
-        prn_form_vars( fformsXlayouts0, db.dfformsXlayouts0 )
-        return put_json_messages('accepted: ' + str( fformsXlayouts0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts0, db.dfformsXlayouts0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXlayouts0.form_name ))
     elif fformsXlayouts0.errors:
         print("fformsXlayouts0 has errors: %s" % (fformsXlayouts0.errors))
         return put_json_messages('error: ' + str( fformsXlayouts0.form_name ))
@@ -460,8 +460,8 @@ def formsXlayouts():
     fformsXlayouts1= Form(db.dfformsXlayouts1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXlayouts1.accepted:
-        prn_form_vars( fformsXlayouts1, db.dfformsXlayouts1 )
-        return put_json_messages('accepted: ' + str( fformsXlayouts1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts1, db.dfformsXlayouts1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXlayouts1.form_name ))
     elif fformsXlayouts1.errors:
         print("fformsXlayouts1 has errors: %s" % (fformsXlayouts1.errors))
         return put_json_messages('error: ' + str( fformsXlayouts1.form_name ))
@@ -470,8 +470,8 @@ def formsXlayouts():
     fformsXlayouts2= Form(db.dfformsXlayouts2, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXlayouts2.accepted:
-        prn_form_vars( fformsXlayouts2, db.dfformsXlayouts2 )
-        return put_json_messages('accepted: ' + str( fformsXlayouts2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts2, db.dfformsXlayouts2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXlayouts2.form_name ))
     elif fformsXlayouts2.errors:
         print("fformsXlayouts2 has errors: %s" % (fformsXlayouts2.errors))
         return put_json_messages('error: ' + str( fformsXlayouts2.form_name ))
@@ -480,8 +480,8 @@ def formsXlayouts():
     fformsXlayouts3= Form(db.dfformsXlayouts3, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXlayouts3.accepted:
-        prn_form_vars( fformsXlayouts3, db.dfformsXlayouts3 )
-        return put_json_messages('accepted: ' + str( fformsXlayouts3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts3, db.dfformsXlayouts3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXlayouts3.form_name ))
     elif fformsXlayouts3.errors:
         print("fformsXlayouts3 has errors: %s" % (fformsXlayouts3.errors))
         return put_json_messages('error: ' + str( fformsXlayouts3.form_name ))
@@ -490,8 +490,8 @@ def formsXlayouts():
     fformsXlayouts4= Form(db.dfformsXlayouts4, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXlayouts4.accepted:
-        prn_form_vars( fformsXlayouts4, db.dfformsXlayouts4 )
-        return put_json_messages('accepted: ' + str( fformsXlayouts4.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts4, db.dfformsXlayouts4 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXlayouts4.form_name ))
     elif fformsXlayouts4.errors:
         print("fformsXlayouts4 has errors: %s" % (fformsXlayouts4.errors))
         return put_json_messages('error: ' + str( fformsXlayouts4.form_name ))
@@ -512,8 +512,8 @@ def pagesXinvoice():
     fpagesXinvoice0= Form(db.dfpagesXinvoice0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXinvoice0.accepted:
-        prn_form_vars( fpagesXinvoice0, db.dfpagesXinvoice0 )
-        return put_json_messages('accepted: ' + str( fpagesXinvoice0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXinvoice0, db.dfpagesXinvoice0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXinvoice0.form_name ))
     elif fpagesXinvoice0.errors:
         print("fpagesXinvoice0 has errors: %s" % (fpagesXinvoice0.errors))
         return put_json_messages('error: ' + str( fpagesXinvoice0.form_name ))
@@ -532,8 +532,8 @@ def mailboxXemail():
     fmailboxXemail0= Form(db.dfmailboxXemail0, dbio=False, formstyle=FormStyleBulma)
 
     if fmailboxXemail0.accepted:
-        prn_form_vars( fmailboxXemail0, db.dfmailboxXemail0 )
-        return put_json_messages('accepted: ' + str( fmailboxXemail0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmailboxXemail0, db.dfmailboxXemail0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmailboxXemail0.form_name ))
     elif fmailboxXemail0.errors:
         print("fmailboxXemail0 has errors: %s" % (fmailboxXemail0.errors))
         return put_json_messages('error: ' + str( fmailboxXemail0.form_name ))
@@ -552,8 +552,8 @@ def formsXadvanced():
     fformsXadvanced0= Form(db.dfformsXadvanced0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced0.accepted:
-        prn_form_vars( fformsXadvanced0, db.dfformsXadvanced0 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced0, db.dfformsXadvanced0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced0.form_name ))
     elif fformsXadvanced0.errors:
         print("fformsXadvanced0 has errors: %s" % (fformsXadvanced0.errors))
         return put_json_messages('error: ' + str( fformsXadvanced0.form_name ))
@@ -562,8 +562,8 @@ def formsXadvanced():
     fformsXadvanced1= Form(db.dfformsXadvanced1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced1.accepted:
-        prn_form_vars( fformsXadvanced1, db.dfformsXadvanced1 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced1, db.dfformsXadvanced1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced1.form_name ))
     elif fformsXadvanced1.errors:
         print("fformsXadvanced1 has errors: %s" % (fformsXadvanced1.errors))
         return put_json_messages('error: ' + str( fformsXadvanced1.form_name ))
@@ -572,8 +572,8 @@ def formsXadvanced():
     fformsXadvanced2= Form(db.dfformsXadvanced2, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced2.accepted:
-        prn_form_vars( fformsXadvanced2, db.dfformsXadvanced2 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced2, db.dfformsXadvanced2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced2.form_name ))
     elif fformsXadvanced2.errors:
         print("fformsXadvanced2 has errors: %s" % (fformsXadvanced2.errors))
         return put_json_messages('error: ' + str( fformsXadvanced2.form_name ))
@@ -582,8 +582,8 @@ def formsXadvanced():
     fformsXadvanced3= Form(db.dfformsXadvanced3, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced3.accepted:
-        prn_form_vars( fformsXadvanced3, db.dfformsXadvanced3 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced3, db.dfformsXadvanced3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced3.form_name ))
     elif fformsXadvanced3.errors:
         print("fformsXadvanced3 has errors: %s" % (fformsXadvanced3.errors))
         return put_json_messages('error: ' + str( fformsXadvanced3.form_name ))
@@ -592,8 +592,8 @@ def formsXadvanced():
     fformsXadvanced4= Form(db.dfformsXadvanced4, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced4.accepted:
-        prn_form_vars( fformsXadvanced4, db.dfformsXadvanced4 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced4.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced4, db.dfformsXadvanced4 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced4.form_name ))
     elif fformsXadvanced4.errors:
         print("fformsXadvanced4 has errors: %s" % (fformsXadvanced4.errors))
         return put_json_messages('error: ' + str( fformsXadvanced4.form_name ))
@@ -602,8 +602,8 @@ def formsXadvanced():
     fformsXadvanced5= Form(db.dfformsXadvanced5, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced5.accepted:
-        prn_form_vars( fformsXadvanced5, db.dfformsXadvanced5 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced5.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced5, db.dfformsXadvanced5 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced5.form_name ))
     elif fformsXadvanced5.errors:
         print("fformsXadvanced5 has errors: %s" % (fformsXadvanced5.errors))
         return put_json_messages('error: ' + str( fformsXadvanced5.form_name ))
@@ -612,8 +612,8 @@ def formsXadvanced():
     fformsXadvanced6= Form(db.dfformsXadvanced6, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced6.accepted:
-        prn_form_vars( fformsXadvanced6, db.dfformsXadvanced6 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced6.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced6, db.dfformsXadvanced6 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced6.form_name ))
     elif fformsXadvanced6.errors:
         print("fformsXadvanced6 has errors: %s" % (fformsXadvanced6.errors))
         return put_json_messages('error: ' + str( fformsXadvanced6.form_name ))
@@ -622,8 +622,8 @@ def formsXadvanced():
     fformsXadvanced7= Form(db.dfformsXadvanced7, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced7.accepted:
-        prn_form_vars( fformsXadvanced7, db.dfformsXadvanced7 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced7.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced7, db.dfformsXadvanced7 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced7.form_name ))
     elif fformsXadvanced7.errors:
         print("fformsXadvanced7 has errors: %s" % (fformsXadvanced7.errors))
         return put_json_messages('error: ' + str( fformsXadvanced7.form_name ))
@@ -632,8 +632,8 @@ def formsXadvanced():
     fformsXadvanced8= Form(db.dfformsXadvanced8, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced8.accepted:
-        prn_form_vars( fformsXadvanced8, db.dfformsXadvanced8 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced8.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced8, db.dfformsXadvanced8 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced8.form_name ))
     elif fformsXadvanced8.errors:
         print("fformsXadvanced8 has errors: %s" % (fformsXadvanced8.errors))
         return put_json_messages('error: ' + str( fformsXadvanced8.form_name ))
@@ -642,8 +642,8 @@ def formsXadvanced():
     fformsXadvanced9= Form(db.dfformsXadvanced9, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced9.accepted:
-        prn_form_vars( fformsXadvanced9, db.dfformsXadvanced9 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced9.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced9, db.dfformsXadvanced9 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced9.form_name ))
     elif fformsXadvanced9.errors:
         print("fformsXadvanced9 has errors: %s" % (fformsXadvanced9.errors))
         return put_json_messages('error: ' + str( fformsXadvanced9.form_name ))
@@ -652,8 +652,8 @@ def formsXadvanced():
     fformsXadvanced10= Form(db.dfformsXadvanced10, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced10.accepted:
-        prn_form_vars( fformsXadvanced10, db.dfformsXadvanced10 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced10.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced10, db.dfformsXadvanced10 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced10.form_name ))
     elif fformsXadvanced10.errors:
         print("fformsXadvanced10 has errors: %s" % (fformsXadvanced10.errors))
         return put_json_messages('error: ' + str( fformsXadvanced10.form_name ))
@@ -662,8 +662,8 @@ def formsXadvanced():
     fformsXadvanced11= Form(db.dfformsXadvanced11, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced11.accepted:
-        prn_form_vars( fformsXadvanced11, db.dfformsXadvanced11 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced11.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced11, db.dfformsXadvanced11 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced11.form_name ))
     elif fformsXadvanced11.errors:
         print("fformsXadvanced11 has errors: %s" % (fformsXadvanced11.errors))
         return put_json_messages('error: ' + str( fformsXadvanced11.form_name ))
@@ -672,8 +672,8 @@ def formsXadvanced():
     fformsXadvanced12= Form(db.dfformsXadvanced12, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXadvanced12.accepted:
-        prn_form_vars( fformsXadvanced12, db.dfformsXadvanced12 )
-        return put_json_messages('accepted: ' + str( fformsXadvanced12.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXadvanced12, db.dfformsXadvanced12 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXadvanced12.form_name ))
     elif fformsXadvanced12.errors:
         print("fformsXadvanced12 has errors: %s" % (fformsXadvanced12.errors))
         return put_json_messages('error: ' + str( fformsXadvanced12.form_name ))
@@ -692,8 +692,8 @@ def layoutsXscroll():
     flayoutsXscroll0= Form(db.dflayoutsXscroll0, dbio=False, formstyle=FormStyleBulma)
 
     if flayoutsXscroll0.accepted:
-        prn_form_vars( flayoutsXscroll0, db.dflayoutsXscroll0 )
-        return put_json_messages('accepted: ' + str( flayoutsXscroll0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flayoutsXscroll0, db.dflayoutsXscroll0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flayoutsXscroll0.form_name ))
     elif flayoutsXscroll0.errors:
         print("flayoutsXscroll0 has errors: %s" % (flayoutsXscroll0.errors))
         return put_json_messages('error: ' + str( flayoutsXscroll0.form_name ))
@@ -712,8 +712,8 @@ def pagesXtimeline():
     fpagesXtimeline0= Form(db.dfpagesXtimeline0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXtimeline0.accepted:
-        prn_form_vars( fpagesXtimeline0, db.dfpagesXtimeline0 )
-        return put_json_messages('accepted: ' + str( fpagesXtimeline0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXtimeline0, db.dfpagesXtimeline0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXtimeline0.form_name ))
     elif fpagesXtimeline0.errors:
         print("fpagesXtimeline0 has errors: %s" % (fpagesXtimeline0.errors))
         return put_json_messages('error: ' + str( fpagesXtimeline0.form_name ))
@@ -732,8 +732,8 @@ def pagesXcalendar():
     fpagesXcalendar0= Form(db.dfpagesXcalendar0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXcalendar0.accepted:
-        prn_form_vars( fpagesXcalendar0, db.dfpagesXcalendar0 )
-        return put_json_messages('accepted: ' + str( fpagesXcalendar0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXcalendar0, db.dfpagesXcalendar0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXcalendar0.form_name ))
     elif fpagesXcalendar0.errors:
         print("fpagesXcalendar0 has errors: %s" % (fpagesXcalendar0.errors))
         return put_json_messages('error: ' + str( fpagesXcalendar0.form_name ))
@@ -752,8 +752,8 @@ def mailboxXfolder():
     fmailboxXfolder0= Form(db.dfmailboxXfolder0, dbio=False, formstyle=FormStyleBulma)
 
     if fmailboxXfolder0.accepted:
-        prn_form_vars( fmailboxXfolder0, db.dfmailboxXfolder0 )
-        return put_json_messages('accepted: ' + str( fmailboxXfolder0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmailboxXfolder0, db.dfmailboxXfolder0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmailboxXfolder0.form_name ))
     elif fmailboxXfolder0.errors:
         print("fmailboxXfolder0 has errors: %s" % (fmailboxXfolder0.errors))
         return put_json_messages('error: ' + str( fmailboxXfolder0.form_name ))
@@ -772,8 +772,8 @@ def tablesXpricing():
     ftablesXpricing0= Form(db.dftablesXpricing0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXpricing0.accepted:
-        prn_form_vars( ftablesXpricing0, db.dftablesXpricing0 )
-        return put_json_messages('accepted: ' + str( ftablesXpricing0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXpricing0, db.dftablesXpricing0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXpricing0.form_name ))
     elif ftablesXpricing0.errors:
         print("ftablesXpricing0 has errors: %s" % (ftablesXpricing0.errors))
         return put_json_messages('error: ' + str( ftablesXpricing0.form_name ))
@@ -792,8 +792,8 @@ def layoutsXdefault():
     flayoutsXdefault0= Form(db.dflayoutsXdefault0, dbio=False, formstyle=FormStyleBulma)
 
     if flayoutsXdefault0.accepted:
-        prn_form_vars( flayoutsXdefault0, db.dflayoutsXdefault0 )
-        return put_json_messages('accepted: ' + str( flayoutsXdefault0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flayoutsXdefault0, db.dflayoutsXdefault0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flayoutsXdefault0.form_name ))
     elif flayoutsXdefault0.errors:
         print("flayoutsXdefault0 has errors: %s" % (flayoutsXdefault0.errors))
         return put_json_messages('error: ' + str( flayoutsXdefault0.form_name ))
@@ -813,8 +813,8 @@ def tablesXeditable():
     ftablesXeditable0= Form(db.dftablesXeditable0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXeditable0.accepted:
-        prn_form_vars( ftablesXeditable0, db.dftablesXeditable0 )
-        return put_json_messages('accepted: ' + str( ftablesXeditable0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXeditable0, db.dftablesXeditable0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXeditable0.form_name ))
     elif ftablesXeditable0.errors:
         print("ftablesXeditable0 has errors: %s" % (ftablesXeditable0.errors))
         return put_json_messages('error: ' + str( ftablesXeditable0.form_name ))
@@ -833,8 +833,8 @@ def mailboxXcompose():
     fmailboxXcompose0= Form(db.dfmailboxXcompose0, dbio=False, formstyle=FormStyleBulma)
 
     if fmailboxXcompose0.accepted:
-        prn_form_vars( fmailboxXcompose0, db.dfmailboxXcompose0 )
-        return put_json_messages('accepted: ' + str( fmailboxXcompose0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmailboxXcompose0, db.dfmailboxXcompose0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmailboxXcompose0.form_name ))
     elif fmailboxXcompose0.errors:
         print("fmailboxXcompose0 has errors: %s" % (fmailboxXcompose0.errors))
         return put_json_messages('error: ' + str( fmailboxXcompose0.form_name ))
@@ -843,8 +843,8 @@ def mailboxXcompose():
     fmailboxXcompose1= Form(db.dfmailboxXcompose1, dbio=False, formstyle=FormStyleBulma)
 
     if fmailboxXcompose1.accepted:
-        prn_form_vars( fmailboxXcompose1, db.dfmailboxXcompose1 )
-        return put_json_messages('accepted: ' + str( fmailboxXcompose1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmailboxXcompose1, db.dfmailboxXcompose1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmailboxXcompose1.form_name ))
     elif fmailboxXcompose1.errors:
         print("fmailboxXcompose1 has errors: %s" % (fmailboxXcompose1.errors))
         return put_json_messages('error: ' + str( fmailboxXcompose1.form_name ))
@@ -866,8 +866,8 @@ def tablesXadvanced():
     ftablesXadvanced0= Form(db.dftablesXadvanced0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXadvanced0.accepted:
-        prn_form_vars( ftablesXadvanced0, db.dftablesXadvanced0 )
-        return put_json_messages('accepted: ' + str( ftablesXadvanced0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXadvanced0, db.dftablesXadvanced0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXadvanced0.form_name ))
     elif ftablesXadvanced0.errors:
         print("ftablesXadvanced0 has errors: %s" % (ftablesXadvanced0.errors))
         return put_json_messages('error: ' + str( ftablesXadvanced0.form_name ))
@@ -886,8 +886,8 @@ def formsXvalidation():
     fformsXvalidation0= Form(db.dfformsXvalidation0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXvalidation0.accepted:
-        prn_form_vars( fformsXvalidation0, db.dfformsXvalidation0 )
-        return put_json_messages('accepted: ' + str( fformsXvalidation0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXvalidation0, db.dfformsXvalidation0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXvalidation0.form_name ))
     elif fformsXvalidation0.errors:
         print("fformsXvalidation0 has errors: %s" % (fformsXvalidation0.errors))
         return put_json_messages('error: ' + str( fformsXvalidation0.form_name ))
@@ -896,8 +896,8 @@ def formsXvalidation():
     fformsXvalidation1= Form(db.dfformsXvalidation1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXvalidation1.accepted:
-        prn_form_vars( fformsXvalidation1, db.dfformsXvalidation1 )
-        return put_json_messages('accepted: ' + str( fformsXvalidation1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXvalidation1, db.dfformsXvalidation1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXvalidation1.form_name ))
     elif fformsXvalidation1.errors:
         print("fformsXvalidation1 has errors: %s" % (fformsXvalidation1.errors))
         return put_json_messages('error: ' + str( fformsXvalidation1.form_name ))
@@ -906,8 +906,8 @@ def formsXvalidation():
     fformsXvalidation2= Form(db.dfformsXvalidation2, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXvalidation2.accepted:
-        prn_form_vars( fformsXvalidation2, db.dfformsXvalidation2 )
-        return put_json_messages('accepted: ' + str( fformsXvalidation2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXvalidation2, db.dfformsXvalidation2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXvalidation2.form_name ))
     elif fformsXvalidation2.errors:
         print("fformsXvalidation2 has errors: %s" % (fformsXvalidation2.errors))
         return put_json_messages('error: ' + str( fformsXvalidation2.form_name ))
@@ -916,8 +916,8 @@ def formsXvalidation():
     fformsXvalidation3= Form(db.dfformsXvalidation3, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXvalidation3.accepted:
-        prn_form_vars( fformsXvalidation3, db.dfformsXvalidation3 )
-        return put_json_messages('accepted: ' + str( fformsXvalidation3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXvalidation3, db.dfformsXvalidation3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXvalidation3.form_name ))
     elif fformsXvalidation3.errors:
         print("fformsXvalidation3 has errors: %s" % (fformsXvalidation3.errors))
         return put_json_messages('error: ' + str( fformsXvalidation3.form_name ))
@@ -926,8 +926,8 @@ def formsXvalidation():
     fformsXvalidation4= Form(db.dfformsXvalidation4, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXvalidation4.accepted:
-        prn_form_vars( fformsXvalidation4, db.dfformsXvalidation4 )
-        return put_json_messages('accepted: ' + str( fformsXvalidation4.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXvalidation4, db.dfformsXvalidation4 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXvalidation4.form_name ))
     elif fformsXvalidation4.errors:
         print("fformsXvalidation4 has errors: %s" % (fformsXvalidation4.errors))
         return put_json_messages('error: ' + str( fformsXvalidation4.form_name ))
@@ -946,8 +946,8 @@ def uiXelementsXtabs():
     fuiXelementsXtabs0= Form(db.dfuiXelementsXtabs0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXtabs0.accepted:
-        prn_form_vars( fuiXelementsXtabs0, db.dfuiXelementsXtabs0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXtabs0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXtabs0, db.dfuiXelementsXtabs0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXtabs0.form_name ))
     elif fuiXelementsXtabs0.errors:
         print("fuiXelementsXtabs0 has errors: %s" % (fuiXelementsXtabs0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXtabs0.form_name ))
@@ -969,8 +969,8 @@ def pagesXlogXviewer():
     fpagesXlogXviewer0= Form(db.dfpagesXlogXviewer0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXlogXviewer0.accepted:
-        prn_form_vars( fpagesXlogXviewer0, db.dfpagesXlogXviewer0 )
-        return put_json_messages('accepted: ' + str( fpagesXlogXviewer0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXlogXviewer0, db.dfpagesXlogXviewer0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXlogXviewer0.form_name ))
     elif fpagesXlogXviewer0.errors:
         print("fpagesXlogXviewer0 has errors: %s" % (fpagesXlogXviewer0.errors))
         return put_json_messages('error: ' + str( fpagesXlogXviewer0.form_name ))
@@ -989,8 +989,8 @@ def mapsXgoogleXmaps():
     fmapsXgoogleXmaps0= Form(db.dfmapsXgoogleXmaps0, dbio=False, formstyle=FormStyleBulma)
 
     if fmapsXgoogleXmaps0.accepted:
-        prn_form_vars( fmapsXgoogleXmaps0, db.dfmapsXgoogleXmaps0 )
-        return put_json_messages('accepted: ' + str( fmapsXgoogleXmaps0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmapsXgoogleXmaps0, db.dfmapsXgoogleXmaps0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmapsXgoogleXmaps0.form_name ))
     elif fmapsXgoogleXmaps0.errors:
         print("fmapsXgoogleXmaps0 has errors: %s" % (fmapsXgoogleXmaps0.errors))
         return put_json_messages('error: ' + str( fmapsXgoogleXmaps0.form_name ))
@@ -1009,8 +1009,8 @@ def uiXelementsXicons():
     fuiXelementsXicons0= Form(db.dfuiXelementsXicons0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXicons0.accepted:
-        prn_form_vars( fuiXelementsXicons0, db.dfuiXelementsXicons0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXicons0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXicons0, db.dfuiXelementsXicons0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXicons0.form_name ))
     elif fuiXelementsXicons0.errors:
         print("fuiXelementsXicons0 has errors: %s" % (fuiXelementsXicons0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXicons0.form_name ))
@@ -1029,8 +1029,8 @@ def formsXcodeXeditor():
     fformsXcodeXeditor0= Form(db.dfformsXcodeXeditor0, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXcodeXeditor0.accepted:
-        prn_form_vars( fformsXcodeXeditor0, db.dfformsXcodeXeditor0 )
-        return put_json_messages('accepted: ' + str( fformsXcodeXeditor0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXcodeXeditor0, db.dfformsXcodeXeditor0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXcodeXeditor0.form_name ))
     elif fformsXcodeXeditor0.errors:
         print("fformsXcodeXeditor0 has errors: %s" % (fformsXcodeXeditor0.errors))
         return put_json_messages('error: ' + str( fformsXcodeXeditor0.form_name ))
@@ -1039,8 +1039,8 @@ def formsXcodeXeditor():
     fformsXcodeXeditor1= Form(db.dfformsXcodeXeditor1, dbio=False, formstyle=FormStyleBulma)
 
     if fformsXcodeXeditor1.accepted:
-        prn_form_vars( fformsXcodeXeditor1, db.dfformsXcodeXeditor1 )
-        return put_json_messages('accepted: ' + str( fformsXcodeXeditor1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fformsXcodeXeditor1, db.dfformsXcodeXeditor1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fformsXcodeXeditor1.form_name ))
     elif fformsXcodeXeditor1.errors:
         print("fformsXcodeXeditor1 has errors: %s" % (fformsXcodeXeditor1.errors))
         return put_json_messages('error: ' + str( fformsXcodeXeditor1.form_name ))
@@ -1062,8 +1062,8 @@ def tablesXresponsive():
     ftablesXresponsive0= Form(db.dftablesXresponsive0, dbio=False, formstyle=FormStyleBulma)
 
     if ftablesXresponsive0.accepted:
-        prn_form_vars( ftablesXresponsive0, db.dftablesXresponsive0 )
-        return put_json_messages('accepted: ' + str( ftablesXresponsive0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( ftablesXresponsive0, db.dftablesXresponsive0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( ftablesXresponsive0.form_name ))
     elif ftablesXresponsive0.errors:
         print("ftablesXresponsive0 has errors: %s" % (ftablesXresponsive0.errors))
         return put_json_messages('error: ' + str( ftablesXresponsive0.form_name ))
@@ -1082,8 +1082,8 @@ def pagesXlockXscreen():
     fpagesXlockXscreen0= Form(db.dfpagesXlockXscreen0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXlockXscreen0.accepted:
-        prn_form_vars( fpagesXlockXscreen0, db.dfpagesXlockXscreen0 )
-        return put_json_messages('accepted: ' + str( fpagesXlockXscreen0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXlockXscreen0, db.dfpagesXlockXscreen0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXlockXscreen0.form_name ))
     elif fpagesXlockXscreen0.errors:
         print("fpagesXlockXscreen0 has errors: %s" % (fpagesXlockXscreen0.errors))
         return put_json_messages('error: ' + str( fpagesXlockXscreen0.form_name ))
@@ -1102,8 +1102,8 @@ def uiXelementsXextra():
     fuiXelementsXextra0= Form(db.dfuiXelementsXextra0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXextra0.accepted:
-        prn_form_vars( fuiXelementsXextra0, db.dfuiXelementsXextra0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXextra0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXextra0, db.dfuiXelementsXextra0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXextra0.form_name ))
     elif fuiXelementsXextra0.errors:
         print("fuiXelementsXextra0 has errors: %s" % (fuiXelementsXextra0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXextra0.form_name ))
@@ -1122,8 +1122,8 @@ def uiXelementsXalerts():
     fuiXelementsXalerts0= Form(db.dfuiXelementsXalerts0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXalerts0.accepted:
-        prn_form_vars( fuiXelementsXalerts0, db.dfuiXelementsXalerts0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXalerts0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXalerts0, db.dfuiXelementsXalerts0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXalerts0.form_name ))
     elif fuiXelementsXalerts0.errors:
         print("fuiXelementsXalerts0 has errors: %s" % (fuiXelementsXalerts0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXalerts0.form_name ))
@@ -1142,8 +1142,8 @@ def uiXelementsXcharts():
     fuiXelementsXcharts0= Form(db.dfuiXelementsXcharts0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXcharts0.accepted:
-        prn_form_vars( fuiXelementsXcharts0, db.dfuiXelementsXcharts0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXcharts0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXcharts0, db.dfuiXelementsXcharts0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXcharts0.form_name ))
     elif fuiXelementsXcharts0.errors:
         print("fuiXelementsXcharts0 has errors: %s" % (fuiXelementsXcharts0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXcharts0.form_name ))
@@ -1162,8 +1162,8 @@ def pagesXuserXprofile():
     fpagesXuserXprofile0= Form(db.dfpagesXuserXprofile0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXuserXprofile0.accepted:
-        prn_form_vars( fpagesXuserXprofile0, db.dfpagesXuserXprofile0 )
-        return put_json_messages('accepted: ' + str( fpagesXuserXprofile0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXuserXprofile0, db.dfpagesXuserXprofile0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXuserXprofile0.form_name ))
     elif fpagesXuserXprofile0.errors:
         print("fpagesXuserXprofile0 has errors: %s" % (fpagesXuserXprofile0.errors))
         return put_json_messages('error: ' + str( fpagesXuserXprofile0.form_name ))
@@ -1172,8 +1172,8 @@ def pagesXuserXprofile():
     fpagesXuserXprofile1= Form(db.dfpagesXuserXprofile1, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXuserXprofile1.accepted:
-        prn_form_vars( fpagesXuserXprofile1, db.dfpagesXuserXprofile1 )
-        return put_json_messages('accepted: ' + str( fpagesXuserXprofile1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXuserXprofile1, db.dfpagesXuserXprofile1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXuserXprofile1.form_name ))
     elif fpagesXuserXprofile1.errors:
         print("fpagesXuserXprofile1 has errors: %s" % (fpagesXuserXprofile1.errors))
         return put_json_messages('error: ' + str( fpagesXuserXprofile1.form_name ))
@@ -1182,8 +1182,8 @@ def pagesXuserXprofile():
     fpagesXuserXprofile2= Form(db.dfpagesXuserXprofile2, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXuserXprofile2.accepted:
-        prn_form_vars( fpagesXuserXprofile2, db.dfpagesXuserXprofile2 )
-        return put_json_messages('accepted: ' + str( fpagesXuserXprofile2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXuserXprofile2, db.dfpagesXuserXprofile2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXuserXprofile2.form_name ))
     elif fpagesXuserXprofile2.errors:
         print("fpagesXuserXprofile2 has errors: %s" % (fpagesXuserXprofile2.errors))
         return put_json_messages('error: ' + str( fpagesXuserXprofile2.form_name ))
@@ -1202,8 +1202,8 @@ def uiXelementsXmodals():
     fuiXelementsXmodals0= Form(db.dfuiXelementsXmodals0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXmodals0.accepted:
-        prn_form_vars( fuiXelementsXmodals0, db.dfuiXelementsXmodals0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXmodals0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXmodals0, db.dfuiXelementsXmodals0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXmodals0.form_name ))
     elif fuiXelementsXmodals0.errors:
         print("fuiXelementsXmodals0 has errors: %s" % (fuiXelementsXmodals0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXmodals0.form_name ))
@@ -1212,8 +1212,8 @@ def uiXelementsXmodals():
     fuiXelementsXmodals1= Form(db.dfuiXelementsXmodals1, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXmodals1.accepted:
-        prn_form_vars( fuiXelementsXmodals1, db.dfuiXelementsXmodals1 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXmodals1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXmodals1, db.dfuiXelementsXmodals1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXmodals1.form_name ))
     elif fuiXelementsXmodals1.errors:
         print("fuiXelementsXmodals1 has errors: %s" % (fuiXelementsXmodals1.errors))
         return put_json_messages('error: ' + str( fuiXelementsXmodals1.form_name ))
@@ -1232,8 +1232,8 @@ def uiXelementsXpanels():
     fuiXelementsXpanels0= Form(db.dfuiXelementsXpanels0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXpanels0.accepted:
-        prn_form_vars( fuiXelementsXpanels0, db.dfuiXelementsXpanels0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXpanels0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXpanels0, db.dfuiXelementsXpanels0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXpanels0.form_name ))
     elif fuiXelementsXpanels0.errors:
         print("fuiXelementsXpanels0 has errors: %s" % (fuiXelementsXpanels0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXpanels0.form_name ))
@@ -1252,8 +1252,8 @@ def pagesXmediaXgallery():
     fpagesXmediaXgallery0= Form(db.dfpagesXmediaXgallery0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXmediaXgallery0.accepted:
-        prn_form_vars( fpagesXmediaXgallery0, db.dfpagesXmediaXgallery0 )
-        return put_json_messages('accepted: ' + str( fpagesXmediaXgallery0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXmediaXgallery0, db.dfpagesXmediaXgallery0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXmediaXgallery0.form_name ))
     elif fpagesXmediaXgallery0.errors:
         print("fpagesXmediaXgallery0 has errors: %s" % (fpagesXmediaXgallery0.errors))
         return put_json_messages('error: ' + str( fpagesXmediaXgallery0.form_name ))
@@ -1284,8 +1284,8 @@ def uiXelementsXbuttons():
     fuiXelementsXbuttons0= Form(db.dfuiXelementsXbuttons0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXbuttons0.accepted:
-        prn_form_vars( fuiXelementsXbuttons0, db.dfuiXelementsXbuttons0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXbuttons0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXbuttons0, db.dfuiXelementsXbuttons0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXbuttons0.form_name ))
     elif fuiXelementsXbuttons0.errors:
         print("fuiXelementsXbuttons0 has errors: %s" % (fuiXelementsXbuttons0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXbuttons0.form_name ))
@@ -1304,8 +1304,8 @@ def uiXelementsXwidgets():
     fuiXelementsXwidgets0= Form(db.dfuiXelementsXwidgets0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXwidgets0.accepted:
-        prn_form_vars( fuiXelementsXwidgets0, db.dfuiXelementsXwidgets0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXwidgets0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXwidgets0, db.dfuiXelementsXwidgets0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXwidgets0.form_name ))
     elif fuiXelementsXwidgets0.errors:
         print("fuiXelementsXwidgets0 has errors: %s" % (fuiXelementsXwidgets0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXwidgets0.form_name ))
@@ -1324,8 +1324,8 @@ def uiXelementsXsliders():
     fuiXelementsXsliders0= Form(db.dfuiXelementsXsliders0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXsliders0.accepted:
-        prn_form_vars( fuiXelementsXsliders0, db.dfuiXelementsXsliders0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXsliders0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXsliders0, db.dfuiXelementsXsliders0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXsliders0.form_name ))
     elif fuiXelementsXsliders0.errors:
         print("fuiXelementsXsliders0 has errors: %s" % (fuiXelementsXsliders0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXsliders0.form_name ))
@@ -1344,8 +1344,8 @@ def uiXelementsXportlets():
     fuiXelementsXportlets0= Form(db.dfuiXelementsXportlets0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXportlets0.accepted:
-        prn_form_vars( fuiXelementsXportlets0, db.dfuiXelementsXportlets0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXportlets0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXportlets0, db.dfuiXelementsXportlets0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXportlets0.form_name ))
     elif fuiXelementsXportlets0.errors:
         print("fuiXelementsXportlets0 has errors: %s" % (fuiXelementsXportlets0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXportlets0.form_name ))
@@ -1364,8 +1364,8 @@ def uiXelementsXnestable():
     fuiXelementsXnestable0= Form(db.dfuiXelementsXnestable0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXnestable0.accepted:
-        prn_form_vars( fuiXelementsXnestable0, db.dfuiXelementsXnestable0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXnestable0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXnestable0, db.dfuiXelementsXnestable0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXnestable0.form_name ))
     elif fuiXelementsXnestable0.errors:
         print("fuiXelementsXnestable0 has errors: %s" % (fuiXelementsXnestable0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXnestable0.form_name ))
@@ -1384,8 +1384,8 @@ def pagesXsearchXresults():
     fpagesXsearchXresults0= Form(db.dfpagesXsearchXresults0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXsearchXresults0.accepted:
-        prn_form_vars( fpagesXsearchXresults0, db.dfpagesXsearchXresults0 )
-        return put_json_messages('accepted: ' + str( fpagesXsearchXresults0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXsearchXresults0, db.dfpagesXsearchXresults0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXsearchXresults0.form_name ))
     elif fpagesXsearchXresults0.errors:
         print("fpagesXsearchXresults0 has errors: %s" % (fpagesXsearchXresults0.errors))
         return put_json_messages('error: ' + str( fpagesXsearchXresults0.form_name ))
@@ -1394,8 +1394,8 @@ def pagesXsearchXresults():
     fpagesXsearchXresults1= Form(db.dfpagesXsearchXresults1, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXsearchXresults1.accepted:
-        prn_form_vars( fpagesXsearchXresults1, db.dfpagesXsearchXresults1 )
-        return put_json_messages('accepted: ' + str( fpagesXsearchXresults1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXsearchXresults1, db.dfpagesXsearchXresults1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXsearchXresults1.form_name ))
     elif fpagesXsearchXresults1.errors:
         print("fpagesXsearchXresults1 has errors: %s" % (fpagesXsearchXresults1.errors))
         return put_json_messages('error: ' + str( fpagesXsearchXresults1.form_name ))
@@ -1414,8 +1414,8 @@ def uiXelementsXlightbox():
     fuiXelementsXlightbox0= Form(db.dfuiXelementsXlightbox0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXlightbox0.accepted:
-        prn_form_vars( fuiXelementsXlightbox0, db.dfuiXelementsXlightbox0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXlightbox0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXlightbox0, db.dfuiXelementsXlightbox0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXlightbox0.form_name ))
     elif fuiXelementsXlightbox0.errors:
         print("fuiXelementsXlightbox0 has errors: %s" % (fuiXelementsXlightbox0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXlightbox0.form_name ))
@@ -1424,8 +1424,8 @@ def uiXelementsXlightbox():
     fuiXelementsXlightbox1= Form(db.dfuiXelementsXlightbox1, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXlightbox1.accepted:
-        prn_form_vars( fuiXelementsXlightbox1, db.dfuiXelementsXlightbox1 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXlightbox1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXlightbox1, db.dfuiXelementsXlightbox1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXlightbox1.form_name ))
     elif fuiXelementsXlightbox1.errors:
         print("fuiXelementsXlightbox1 has errors: %s" % (fuiXelementsXlightbox1.errors))
         return put_json_messages('error: ' + str( fuiXelementsXlightbox1.form_name ))
@@ -1444,8 +1444,8 @@ def pagesXsessionXtimeout():
     fpagesXsessionXtimeout0= Form(db.dfpagesXsessionXtimeout0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXsessionXtimeout0.accepted:
-        prn_form_vars( fpagesXsessionXtimeout0, db.dfpagesXsessionXtimeout0 )
-        return put_json_messages('accepted: ' + str( fpagesXsessionXtimeout0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXsessionXtimeout0, db.dfpagesXsessionXtimeout0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXsessionXtimeout0.form_name ))
     elif fpagesXsessionXtimeout0.errors:
         print("fpagesXsessionXtimeout0 has errors: %s" % (fpagesXsessionXtimeout0.errors))
         return put_json_messages('error: ' + str( fpagesXsessionXtimeout0.form_name ))
@@ -1464,8 +1464,8 @@ def uiXelementsXcarousels():
     fuiXelementsXcarousels0= Form(db.dfuiXelementsXcarousels0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXcarousels0.accepted:
-        prn_form_vars( fuiXelementsXcarousels0, db.dfuiXelementsXcarousels0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXcarousels0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXcarousels0, db.dfuiXelementsXcarousels0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXcarousels0.form_name ))
     elif fuiXelementsXcarousels0.errors:
         print("fuiXelementsXcarousels0 has errors: %s" % (fuiXelementsXcarousels0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXcarousels0.form_name ))
@@ -1484,8 +1484,8 @@ def uiXelementsXtreeXview():
     fuiXelementsXtreeXview0= Form(db.dfuiXelementsXtreeXview0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXtreeXview0.accepted:
-        prn_form_vars( fuiXelementsXtreeXview0, db.dfuiXelementsXtreeXview0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXtreeXview0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXtreeXview0, db.dfuiXelementsXtreeXview0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXtreeXview0.form_name ))
     elif fuiXelementsXtreeXview0.errors:
         print("fuiXelementsXtreeXview0 has errors: %s" % (fuiXelementsXtreeXview0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXtreeXview0.form_name ))
@@ -1504,8 +1504,8 @@ def uiXelementsXanimations():
     fuiXelementsXanimations0= Form(db.dfuiXelementsXanimations0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXanimations0.accepted:
-        prn_form_vars( fuiXelementsXanimations0, db.dfuiXelementsXanimations0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXanimations0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXanimations0, db.dfuiXelementsXanimations0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXanimations0.form_name ))
     elif fuiXelementsXanimations0.errors:
         print("fuiXelementsXanimations0 has errors: %s" % (fuiXelementsXanimations0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXanimations0.form_name ))
@@ -1524,8 +1524,8 @@ def layoutsXmenuXcollapsed():
     flayoutsXmenuXcollapsed0= Form(db.dflayoutsXmenuXcollapsed0, dbio=False, formstyle=FormStyleBulma)
 
     if flayoutsXmenuXcollapsed0.accepted:
-        prn_form_vars( flayoutsXmenuXcollapsed0, db.dflayoutsXmenuXcollapsed0 )
-        return put_json_messages('accepted: ' + str( flayoutsXmenuXcollapsed0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flayoutsXmenuXcollapsed0, db.dflayoutsXmenuXcollapsed0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flayoutsXmenuXcollapsed0.form_name ))
     elif flayoutsXmenuXcollapsed0.errors:
         print("flayoutsXmenuXcollapsed0 has errors: %s" % (flayoutsXmenuXcollapsed0.errors))
         return put_json_messages('error: ' + str( flayoutsXmenuXcollapsed0.form_name ))
@@ -1544,8 +1544,8 @@ def uiXelementsXtypography():
     fuiXelementsXtypography0= Form(db.dfuiXelementsXtypography0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXtypography0.accepted:
-        prn_form_vars( fuiXelementsXtypography0, db.dfuiXelementsXtypography0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXtypography0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXtypography0, db.dfuiXelementsXtypography0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXtypography0.form_name ))
     elif fuiXelementsXtypography0.errors:
         print("fuiXelementsXtypography0 has errors: %s" % (fuiXelementsXtypography0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXtypography0.form_name ))
@@ -1564,8 +1564,8 @@ def pagesXrecoverXpassword():
     fpagesXrecoverXpassword0= Form(db.dfpagesXrecoverXpassword0, dbio=False, formstyle=FormStyleBulma)
 
     if fpagesXrecoverXpassword0.accepted:
-        prn_form_vars( fpagesXrecoverXpassword0, db.dfpagesXrecoverXpassword0 )
-        return put_json_messages('accepted: ' + str( fpagesXrecoverXpassword0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpagesXrecoverXpassword0, db.dfpagesXrecoverXpassword0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpagesXrecoverXpassword0.form_name ))
     elif fpagesXrecoverXpassword0.errors:
         print("fpagesXrecoverXpassword0 has errors: %s" % (fpagesXrecoverXpassword0.errors))
         return put_json_messages('error: ' + str( fpagesXrecoverXpassword0.form_name ))
@@ -1584,8 +1584,8 @@ def uiXelementsXaccordions():
     fuiXelementsXaccordions0= Form(db.dfuiXelementsXaccordions0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXaccordions0.accepted:
-        prn_form_vars( fuiXelementsXaccordions0, db.dfuiXelementsXaccordions0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXaccordions0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXaccordions0, db.dfuiXelementsXaccordions0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXaccordions0.form_name ))
     elif fuiXelementsXaccordions0.errors:
         print("fuiXelementsXaccordions0 has errors: %s" % (fuiXelementsXaccordions0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXaccordions0.form_name ))
@@ -1614,8 +1614,8 @@ def uiXelementsXgridXsystem():
     fuiXelementsXgridXsystem0= Form(db.dfuiXelementsXgridXsystem0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXgridXsystem0.accepted:
-        prn_form_vars( fuiXelementsXgridXsystem0, db.dfuiXelementsXgridXsystem0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXgridXsystem0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXgridXsystem0, db.dfuiXelementsXgridXsystem0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXgridXsystem0.form_name ))
     elif fuiXelementsXgridXsystem0.errors:
         print("fuiXelementsXgridXsystem0 has errors: %s" % (fuiXelementsXgridXsystem0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXgridXsystem0.form_name ))
@@ -1634,8 +1634,8 @@ def uiXelementsXprogressbars():
     fuiXelementsXprogressbars0= Form(db.dfuiXelementsXprogressbars0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXprogressbars0.accepted:
-        prn_form_vars( fuiXelementsXprogressbars0, db.dfuiXelementsXprogressbars0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXprogressbars0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXprogressbars0, db.dfuiXelementsXprogressbars0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXprogressbars0.form_name ))
     elif fuiXelementsXprogressbars0.errors:
         print("fuiXelementsXprogressbars0 has errors: %s" % (fuiXelementsXprogressbars0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXprogressbars0.form_name ))
@@ -1654,8 +1654,8 @@ def mapsXgoogleXmapsXbuilder():
     fmapsXgoogleXmapsXbuilder0= Form(db.dfmapsXgoogleXmapsXbuilder0, dbio=False, formstyle=FormStyleBulma)
 
     if fmapsXgoogleXmapsXbuilder0.accepted:
-        prn_form_vars( fmapsXgoogleXmapsXbuilder0, db.dfmapsXgoogleXmapsXbuilder0 )
-        return put_json_messages('accepted: ' + str( fmapsXgoogleXmapsXbuilder0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmapsXgoogleXmapsXbuilder0, db.dfmapsXgoogleXmapsXbuilder0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmapsXgoogleXmapsXbuilder0.form_name ))
     elif fmapsXgoogleXmapsXbuilder0.errors:
         print("fmapsXgoogleXmapsXbuilder0 has errors: %s" % (fmapsXgoogleXmapsXbuilder0.errors))
         return put_json_messages('error: ' + str( fmapsXgoogleXmapsXbuilder0.form_name ))
@@ -1664,8 +1664,8 @@ def mapsXgoogleXmapsXbuilder():
     fmapsXgoogleXmapsXbuilder1= Form(db.dfmapsXgoogleXmapsXbuilder1, dbio=False, formstyle=FormStyleBulma)
 
     if fmapsXgoogleXmapsXbuilder1.accepted:
-        prn_form_vars( fmapsXgoogleXmapsXbuilder1, db.dfmapsXgoogleXmapsXbuilder1 )
-        return put_json_messages('accepted: ' + str( fmapsXgoogleXmapsXbuilder1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fmapsXgoogleXmapsXbuilder1, db.dfmapsXgoogleXmapsXbuilder1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fmapsXgoogleXmapsXbuilder1.form_name ))
     elif fmapsXgoogleXmapsXbuilder1.errors:
         print("fmapsXgoogleXmapsXbuilder1 has errors: %s" % (fmapsXgoogleXmapsXbuilder1.errors))
         return put_json_messages('error: ' + str( fmapsXgoogleXmapsXbuilder1.form_name ))
@@ -1694,8 +1694,8 @@ def uiXelementsXnotifications():
     fuiXelementsXnotifications0= Form(db.dfuiXelementsXnotifications0, dbio=False, formstyle=FormStyleBulma)
 
     if fuiXelementsXnotifications0.accepted:
-        prn_form_vars( fuiXelementsXnotifications0, db.dfuiXelementsXnotifications0 )
-        return put_json_messages('accepted: ' + str( fuiXelementsXnotifications0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fuiXelementsXnotifications0, db.dfuiXelementsXnotifications0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fuiXelementsXnotifications0.form_name ))
     elif fuiXelementsXnotifications0.errors:
         print("fuiXelementsXnotifications0 has errors: %s" % (fuiXelementsXnotifications0.errors))
         return put_json_messages('error: ' + str( fuiXelementsXnotifications0.form_name ))

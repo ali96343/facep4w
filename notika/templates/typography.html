@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
  <head>
-            <!-- 27.10.2020 12:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -59,7 +59,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -89,41 +128,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: ftypography0, db_table: dftypography0 -->
+<!-- BEGIN view: ftypography0, db_table: dftypography0 -->
 <div>
 [%[= ftypography0.custom['begin'] ]]
  [%[ ftypography0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ ftypography0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ ftypography0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= ftypography0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= ftypography0.custom['errors']['f0'] if 'f0' in ftypography0.custom['errors'] else '' ]]</span>
 
  [%[ ftypography0.custom['submit']['_type']= 'submit'  ]]
- [%[ ftypography0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ ftypography0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ ftypography0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftypography0.custom['submit']['_placeholder']= ''  ]]
+ [%[ ftypography0.custom['submit']['_rows']= '1'  ]]
+ [%[ ftypography0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ ftypography0.custom['submit']['_value']= 'Submit'  ]]
  [%[ ftypography0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftypography0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in ftypography0.custom['hidden_widgets'].keys(): ]]
- [%[= ftypography0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftypography0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= ftypography0.custom['end'] ]]
-  <div  class='divftypography0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftypography0</small>
-</div>
 
+  
+<div class="divftypography0 flashdiv"> <span class="flashspan">ftypography0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftypography0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= ftypography0.custom['end'] ]]
 </div>
-<!-- end ftypography0 -->
+<!-- END ftypography0-->
 
 </div>
          </div>
@@ -343,41 +381,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: ftypography1, db_table: dftypography1 -->
+<!-- BEGIN view: ftypography1, db_table: dftypography1 -->
 <div>
 [%[= ftypography1.custom['begin'] ]]
- [%[ ftypography1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ ftypography1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ ftypography1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= ftypography1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= ftypography1.custom['errors']['f0'] if 'f0' in ftypography1.custom['errors'] else '' ]]</span>
 
- [%[ ftypography1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ ftypography1.custom['submit']['_placeholder']= ''  ]]
  [%[ ftypography1.custom['submit']['_type']= 'submit'  ]]
- [%[ ftypography1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ ftypography1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ ftypography1.custom['submit']['_rows']= '1'  ]]
+ [%[ ftypography1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ ftypography1.custom['submit']['_value']= 'Submit'  ]]
  [%[ ftypography1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= ftypography1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in ftypography1.custom['hidden_widgets'].keys(): ]]
- [%[= ftypography1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= ftypography1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= ftypography1.custom['end'] ]]
-  <div  class='divftypography1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">ftypography1</small>
-</div>
 
+  
+<div class="divftypography1 flashdiv"> <span class="flashspan">ftypography1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divftypography1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= ftypography1.custom['end'] ]]
 </div>
-<!-- end ftypography1 -->
+<!-- END ftypography1-->
 
 </div>
           <div class="hd-message-info">
@@ -1461,5 +1498,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:54 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:04 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -59,7 +59,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -89,41 +128,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fdataXtable0, db_table: dfdataXtable0 -->
+<!-- BEGIN view: fdataXtable0, db_table: dfdataXtable0 -->
 <div>
 [%[= fdataXtable0.custom['begin'] ]]
  [%[ fdataXtable0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fdataXtable0.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fdataXtable0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fdataXtable0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fdataXtable0.custom['errors']['f0'] if 'f0' in fdataXtable0.custom['errors'] else '' ]]</span>
 
  [%[ fdataXtable0.custom['submit']['_type']= 'submit'  ]]
- [%[ fdataXtable0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ fdataXtable0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fdataXtable0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fdataXtable0.custom['submit']['_placeholder']= ''  ]]
+ [%[ fdataXtable0.custom['submit']['_rows']= '1'  ]]
+ [%[ fdataXtable0.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fdataXtable0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fdataXtable0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fdataXtable0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fdataXtable0.custom['hidden_widgets'].keys(): ]]
- [%[= fdataXtable0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fdataXtable0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fdataXtable0.custom['end'] ]]
-  <div  class='divfdataXtable0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fdataXtable0</small>
-</div>
 
+  
+<div class="divfdataXtable0 flashdiv"> <span class="flashspan">fdataXtable0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfdataXtable0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fdataXtable0.custom['end'] ]]
 </div>
-<!-- end fdataXtable0 -->
+<!-- END fdataXtable0-->
 
 </div>
          </div>
@@ -343,41 +381,40 @@
            <i class="notika-icon notika-left-arrow"></i>
            
 
-<!-- view: fdataXtable1, db_table: dfdataXtable1 -->
+<!-- BEGIN view: fdataXtable1, db_table: dfdataXtable1 -->
 <div>
 [%[= fdataXtable1.custom['begin'] ]]
- [%[ fdataXtable1.custom['widgets']['f0']['_placeholder']= 'Search People:p4w'  ]]
+ [%[ fdataXtable1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
  [%[ fdataXtable1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fdataXtable1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fdataXtable1.custom['errors']['f0'] if 'f0' in fdataXtable1.custom['errors'] else '' ]]</span>
 
- [%[ fdataXtable1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fdataXtable1.custom['submit']['_placeholder']= ''  ]]
  [%[ fdataXtable1.custom['submit']['_type']= 'submit'  ]]
- [%[ fdataXtable1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ fdataXtable1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ fdataXtable1.custom['submit']['_rows']= '1'  ]]
+ [%[ fdataXtable1.custom['submit']['_class']= 'mysubmit_cls'  ]]
+ [%[ fdataXtable1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fdataXtable1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fdataXtable1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in fdataXtable1.custom['hidden_widgets'].keys(): ]]
- [%[= fdataXtable1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= fdataXtable1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= fdataXtable1.custom['end'] ]]
-  <div  class='divfdataXtable1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fdataXtable1</small>
-</div>
 
+  
+<div class="divfdataXtable1 flashdiv"> <span class="flashspan">fdataXtable1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfdataXtable1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= fdataXtable1.custom['end'] ]]
 </div>
-<!-- end fdataXtable1 -->
+<!-- END fdataXtable1-->
 
 </div>
           <div class="hd-message-info">
@@ -894,41 +931,49 @@
        <div class="table-responsive">
         
 <!--view: rows_tdataXtable0, db_table: tdataXtable0 -->
-<table id="data-table-basic" class="table table-striped">
-  <thead>
-   <tr>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </tr>
-  </thead>
-  <tfoot>
-   <tr>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Office</th>
-    <th>Age</th>
-    <th>Start date</th>
-    <th>Salary</th>
-  </tr>
-  </tfoot>
+  <table id="data-table-basic" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
   <tbody>
         [%[ for row0 in rows_tdataXtable0: ]]
         <tr>
-            <td>[%[= row0.f0 ]]</td>
-            <td>[%[= row0.f1 ]]</td>
-            <td>[%[= row0.f2 ]]</td>
-            <td>[%[= row0.f3 ]]</td>
-            <td>[%[= row0.f4 ]]</td>
-            <td>[%[= row0.f5 ]]</td>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td>[%[= XML(row0.f3) ]]</td>
+            <td>[%[= XML(row0.f4) ]]</td>
+            <td>[%[= XML(row0.f5) ]]</td>
         </tr>
         [%[pass ]]
   </tbody>
+    <tfoot>
+      <tr>
+        <td>Name</td>
+        <td>Position</td>
+        <td>Office</td>
+        <td>Age</td>
+        <td>Start date</td>
+        <td>Salary</td>
+      </tr>
+    </tfoot>
 </table>
 <!-- end rows_tdataXtable0 -->
+
+
+<div class="divtdataXtable0 flashdiv"> <span class="flashspan">tdataXtable0</span> </div>
+<script>
+  !function() { const elems = document.querySelectorAll('.divtdataXtable0');
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+  }();
+</script>
 
        </div>
       </div>
@@ -1021,5 +1066,35 @@
   <!-- tawk chat JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/tawk-chat.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>

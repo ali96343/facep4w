@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="fixed">
  <head>
-            <!-- 26.11.2020 14:36:39 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:03:31 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -28,6 +28,44 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <section class="body">
@@ -43,14 +81,14 @@
     <!-- start: search & user box -->
     <div class="header-right">
      
-<!-- view: fformsXvalidation0, db_table: dfformsXvalidation0 -->
-<div class="search nav-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXvalidation0, db_table: dfformsXvalidation0 -->
+<div class="search nav-form">
 [%[= fformsXvalidation0.custom['begin'] ]]
 <div class="input-group input-search">
  [%[ fformsXvalidation0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXvalidation0.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXvalidation0.custom['widgets']['f0']['_id']= 'q'  ]]
- [%[ fformsXvalidation0.custom['widgets']['f0']['_placeholder']= 'Search...:p4w'  ]]
+ [%[ fformsXvalidation0.custom['widgets']['f0']['_placeholder']= 'Search..._p4w'  ]]
  [%[= fformsXvalidation0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation0.custom['errors']['f0'] if 'f0' in fformsXvalidation0.custom['errors'] else '' ]]</span>
@@ -58,9 +96,9 @@
  <span class="input-group-btn">
  [%[ fformsXvalidation0.custom['submit']['_class']= 'btn btn-default'  ]]
  [%[ fformsXvalidation0.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation0.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXvalidation0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXvalidation0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXvalidation0.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXvalidation0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXvalidation0.custom['submit'] ]]
 
  </span>
@@ -70,19 +108,18 @@
      [%[= fformsXvalidation0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXvalidation0.custom['end'] ]]
   
-<div  class='divfformsXvalidation0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation0</div>
-</div>
+<div class="divfformsXvalidation0 flashdiv"> <span class="flashspan">fformsXvalidation0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXvalidation0.custom['end'] ]]
 </div>
-<!-- end fformsXvalidation0 -->
+<!-- END fformsXvalidation0-->
 
      <span class="separator"></span>
      <ul class="notifications">
@@ -644,8 +681,8 @@
      <div class="row">
       <div class="col-md-6">
        
-<!-- view: fformsXvalidation1, db_table: dfformsXvalidation1 -->
-<div id="form" class="form-horizontal"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXvalidation1, db_table: dfformsXvalidation1 -->
+<div id="form" class="form-horizontal">
 [%[= fformsXvalidation1.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -673,7 +710,7 @@
    <div class="col-sm-9">
  [%[ fformsXvalidation1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXvalidation1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation1.custom['widgets']['f0']['_placeholder']= 'eg.: John Doe:p4w'  ]]
+ [%[ fformsXvalidation1.custom['widgets']['f0']['_placeholder']= 'eg.: John Doe_p4w'  ]]
  [%[= fformsXvalidation1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation1.custom['errors']['f0'] if 'f0' in fformsXvalidation1.custom['errors'] else '' ]]</span>
@@ -695,7 +732,7 @@
      </span>
  [%[ fformsXvalidation1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformsXvalidation1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation1.custom['widgets']['f1']['_placeholder']= 'eg.: email@email.com:p4w'  ]]
+ [%[ fformsXvalidation1.custom['widgets']['f1']['_placeholder']= 'eg.: email@email.com_p4w'  ]]
  [%[= fformsXvalidation1.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation1.custom['errors']['f1'] if 'f1' in fformsXvalidation1.custom['errors'] else '' ]]</span>
@@ -712,7 +749,7 @@
    <div class="col-sm-9">
  [%[ fformsXvalidation1.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformsXvalidation1.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation1.custom['widgets']['f2']['_placeholder']= 'eg.: https://github.com/johndoe:p4w'  ]]
+ [%[ fformsXvalidation1.custom['widgets']['f2']['_placeholder']= 'eg.: https://github.com/johndoe_p4w'  ]]
  [%[= fformsXvalidation1.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation1.custom['errors']['f2'] if 'f2' in fformsXvalidation1.custom['errors'] else '' ]]</span>
@@ -736,10 +773,9 @@
  <span style="color:#ff0000">[%[= fformsXvalidation1.custom['errors']['f3'] if 'f3' in fformsXvalidation1.custom['errors'] else '' ]]</span>
 
  [%[ fformsXvalidation1.custom['submit']['_rows']= '1'  ]]
- [%[ fformsXvalidation1.custom['submit']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fformsXvalidation1.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fformsXvalidation1.custom['submit']['_placeholder']= ''  ]]
  [%[ fformsXvalidation1.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXvalidation1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformsXvalidation1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformsXvalidation1.custom['submit'] ]]
@@ -748,26 +784,25 @@
      [%[= fformsXvalidation1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXvalidation1.custom['end'] ]]
   
-<div  class='divfformsXvalidation1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation1</div>
-</div>
+<div class="divfformsXvalidation1 flashdiv"> <span class="flashspan">fformsXvalidation1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXvalidation1.custom['end'] ]]
 </div>
-<!-- end fformsXvalidation1 -->
+<!-- END fformsXvalidation1-->
 
       </div>
       <!-- col-md-6 -->
       <div class="col-md-6">
        
-<!-- view: fformsXvalidation2, db_table: dfformsXvalidation2 -->
-<div id="chk-radios-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXvalidation2, db_table: dfformsXvalidation2 -->
+<div id="chk-radios-form">
 [%[= fformsXvalidation2.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -797,7 +832,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f0']['_id']= 'awesome'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f0']['_type']= 'radio'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f0']['_value']= 'awesome'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f0'] if 'f0' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -810,7 +845,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f1']['_id']= 'very-awesome'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f1']['_type']= 'radio'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f1']['_value']= 'very-awesome'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f1']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f1'] if 'f1' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -823,7 +858,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f2']['_id']= 'ultra-awesome'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f2']['_type']= 'radio'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f2']['_value']= 'ultra-awesome'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f2']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f2'] if 'f2' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -848,7 +883,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f3']['_id']= 'for-project'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f3']['_value']= 'project'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f3']['_type']= 'checkbox'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f3']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f3'] if 'f3' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -861,7 +896,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f4']['_id']= 'for-website'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f4']['_value']= 'website'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f4']['_type']= 'checkbox'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f4']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f4'] if 'f4' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -874,7 +909,7 @@
  [%[ fformsXvalidation2.custom['widgets']['f5']['_id']= 'for-all'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f5']['_value']= 'all'  ]]
  [%[ fformsXvalidation2.custom['widgets']['f5']['_type']= 'checkbox'  ]]
- [%[ fformsXvalidation2.custom['widgets']['f5']['_placeholder']= ':p4w'  ]]
+ [%[ fformsXvalidation2.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
  [%[= fformsXvalidation2.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation2.custom['errors']['f5'] if 'f5' in fformsXvalidation2.custom['errors'] else '' ]]</span>
@@ -892,10 +927,10 @@
   <div class="row">
    <div class="col-sm-9 col-sm-offset-3">
  [%[ fformsXvalidation2.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXvalidation2.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXvalidation2.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXvalidation2.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXvalidation2.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXvalidation2.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXvalidation2.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXvalidation2.custom['submit'] ]]
 
     <button class="btn btn-default" type="reset">
@@ -910,27 +945,26 @@
      [%[= fformsXvalidation2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXvalidation2.custom['end'] ]]
   
-<div  class='divfformsXvalidation2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation2</div>
-</div>
+<div class="divfformsXvalidation2 flashdiv"> <span class="flashspan">fformsXvalidation2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXvalidation2.custom['end'] ]]
 </div>
-<!-- end fformsXvalidation2 -->
+<!-- END fformsXvalidation2-->
 
       </div>
      </div>
      <div class="row">
       <div class="col-md-6">
        
-<!-- view: fformsXvalidation3, db_table: dfformsXvalidation3 -->
-<div id="summary-form" class="form-horizontal"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXvalidation3, db_table: dfformsXvalidation3 -->
+<div id="summary-form" class="form-horizontal">
 [%[= fformsXvalidation3.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -963,7 +997,7 @@
  [%[ fformsXvalidation3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f0']['_title']= 'Plase enter a name.'  ]]
- [%[ fformsXvalidation3.custom['widgets']['f0']['_placeholder']= 'eg.: John Doe:p4w'  ]]
+ [%[ fformsXvalidation3.custom['widgets']['f0']['_placeholder']= 'eg.: John Doe_p4w'  ]]
  [%[= fformsXvalidation3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation3.custom['errors']['f0'] if 'f0' in fformsXvalidation3.custom['errors'] else '' ]]</span>
@@ -981,7 +1015,7 @@
  [%[ fformsXvalidation3.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f1']['_title']= 'Please enter an email address.'  ]]
- [%[ fformsXvalidation3.custom['widgets']['f1']['_placeholder']= 'eg.: john@doe.com:p4w'  ]]
+ [%[ fformsXvalidation3.custom['widgets']['f1']['_placeholder']= 'eg.: john@doe.com_p4w'  ]]
  [%[= fformsXvalidation3.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation3.custom['errors']['f1'] if 'f1' in fformsXvalidation3.custom['errors'] else '' ]]</span>
@@ -996,7 +1030,7 @@
  [%[ fformsXvalidation3.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f2']['_title']= 'Please enter a valid url.'  ]]
  [%[ fformsXvalidation3.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation3.custom['widgets']['f2']['_placeholder']= 'eg.: https://github.com/johndoe:p4w'  ]]
+ [%[ fformsXvalidation3.custom['widgets']['f2']['_placeholder']= 'eg.: https://github.com/johndoe_p4w'  ]]
  [%[= fformsXvalidation3.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformsXvalidation3.custom['errors']['f2'] if 'f2' in fformsXvalidation3.custom['errors'] else '' ]]</span>
@@ -1022,10 +1056,9 @@
 
  [%[ fformsXvalidation3.custom['submit']['_rows']= '1'  ]]
  [%[ fformsXvalidation3.custom['submit']['_title']= 'mysubmit from last element'  ]]
- [%[ fformsXvalidation3.custom['submit']['_class']= 'form-control'  ]]
- [%[ fformsXvalidation3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fformsXvalidation3.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fformsXvalidation3.custom['submit']['_placeholder']= ''  ]]
  [%[ fformsXvalidation3.custom['submit']['_type']= 'submit'  ]]
- [%[ fformsXvalidation3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fformsXvalidation3.custom['submit']['_value']= 'Submit'  ]]
  [%[= fformsXvalidation3.custom['submit'] ]]
 
@@ -1033,25 +1066,24 @@
      [%[= fformsXvalidation3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXvalidation3.custom['end'] ]]
   
-<div  class='divfformsXvalidation3' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation3</div>
-</div>
+<div class="divfformsXvalidation3 flashdiv"> <span class="flashspan">fformsXvalidation3</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation3');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXvalidation3.custom['end'] ]]
 </div>
-<!-- end fformsXvalidation3 -->
+<!-- END fformsXvalidation3-->
 
       </div>
       <div class="col-md-6">
        
-<!-- view: fformsXvalidation4, db_table: dfformsXvalidation4 -->
-<div id="selects-form"  style="border: 1px gray dashed;">
+<!-- BEGIN view: fformsXvalidation4, db_table: dfformsXvalidation4 -->
+<div id="selects-form">
 [%[= fformsXvalidation4.custom['begin'] ]]
 <section class="panel">
  <header class="panel-heading">
@@ -1111,10 +1143,10 @@
   <div class="row">
    <div class="col-sm-9 col-sm-offset-3">
  [%[ fformsXvalidation4.custom['submit']['_class']= 'btn btn-primary'  ]]
- [%[ fformsXvalidation4.custom['submit']['_title']= 'mysubmit from <button'  ]]
+ [%[ fformsXvalidation4.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fformsXvalidation4.custom['submit']['_type']= 'submit'  ]]
  [%[ fformsXvalidation4.custom['submit']['_value']= 'Submit'  ]]
- [%[ fformsXvalidation4.custom['submit']['_style']= 'border:2px dashed red; text-decoration: underline;'  ]]
+ [%[ fformsXvalidation4.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fformsXvalidation4.custom['submit'] ]]
 
     <button class="btn btn-default" type="reset">
@@ -1129,19 +1161,18 @@
      [%[= fformsXvalidation4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fformsXvalidation4.custom['end'] ]]
   
-<div  class='divfformsXvalidation4' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fformsXvalidation4</div>
-</div>
+<div class="divfformsXvalidation4 flashdiv"> <span class="flashspan">fformsXvalidation4</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfformsXvalidation4');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fformsXvalidation4.custom['end'] ]]
 </div>
-<!-- end fformsXvalidation4 -->
+<!-- END fformsXvalidation4-->
 
       </div>
      </div>
@@ -1233,16 +1264,19 @@
   <!-- Examples -->
   <script src="[%[=URL('static/tte/assets/javascripts/forms/examples.validation.js') ]]"></script>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

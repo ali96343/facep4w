@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 15:42:47 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:59:13 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -17,6 +17,43 @@
  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
 
 </head>
  <body>
@@ -38,21 +75,20 @@
        <div class="control has-icons-left">
         
 
-<!-- view: fblogXtailsaw0, db_table: dfblogXtailsaw0 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fblogXtailsaw0, db_table: dfblogXtailsaw0 -->
+<div>
 [%[= fblogXtailsaw0.custom['begin'] ]]
  [%[ fblogXtailsaw0.custom['widgets']['f0']['_class']= 'input is-rounded'  ]]
- [%[ fblogXtailsaw0.custom['widgets']['f0']['_placeholder']= 'Search:p4w'  ]]
+ [%[ fblogXtailsaw0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
  [%[ fblogXtailsaw0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fblogXtailsaw0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fblogXtailsaw0.custom['errors']['f0'] if 'f0' in fblogXtailsaw0.custom['errors'] else '' ]]</span>
 
- [%[ fblogXtailsaw0.custom['submit']['_class']= 'input is-rounded'  ]]
- [%[ fblogXtailsaw0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fblogXtailsaw0.custom['submit']['_class']= 'input is-rounded mysubmit_cls'  ]]
+ [%[ fblogXtailsaw0.custom['submit']['_placeholder']= ''  ]]
  [%[ fblogXtailsaw0.custom['submit']['_type']= 'submit'  ]]
  [%[ fblogXtailsaw0.custom['submit']['_rows']= '1'  ]]
- [%[ fblogXtailsaw0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fblogXtailsaw0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fblogXtailsaw0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fblogXtailsaw0.custom['submit'] ]]
@@ -62,19 +98,18 @@
      [%[= fblogXtailsaw0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fblogXtailsaw0.custom['end'] ]]
   
-<div  class='divfblogXtailsaw0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fblogXtailsaw0</div>
-</div>
+<div class="divfblogXtailsaw0 flashdiv"> <span class="flashspan">fblogXtailsaw0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfblogXtailsaw0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fblogXtailsaw0.custom['end'] ]]
 </div>
-<!-- end fblogXtailsaw0 -->
+<!-- END fblogXtailsaw0-->
 
 
         <span class="icon is-left">
@@ -141,21 +176,20 @@
            <div class="control is-expanded">
             
 
-<!-- view: fblogXtailsaw1, db_table: dfblogXtailsaw1 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: fblogXtailsaw1, db_table: dfblogXtailsaw1 -->
+<div>
 [%[= fblogXtailsaw1.custom['begin'] ]]
  [%[ fblogXtailsaw1.custom['widgets']['f0']['_class']= 'input'  ]]
- [%[ fblogXtailsaw1.custom['widgets']['f0']['_placeholder']= 'Email address:p4w'  ]]
+ [%[ fblogXtailsaw1.custom['widgets']['f0']['_placeholder']= 'Email address_p4w'  ]]
  [%[ fblogXtailsaw1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fblogXtailsaw1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fblogXtailsaw1.custom['errors']['f0'] if 'f0' in fblogXtailsaw1.custom['errors'] else '' ]]</span>
 
- [%[ fblogXtailsaw1.custom['submit']['_class']= 'input'  ]]
- [%[ fblogXtailsaw1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ fblogXtailsaw1.custom['submit']['_class']= 'input mysubmit_cls'  ]]
+ [%[ fblogXtailsaw1.custom['submit']['_placeholder']= ''  ]]
  [%[ fblogXtailsaw1.custom['submit']['_type']= 'submit'  ]]
  [%[ fblogXtailsaw1.custom['submit']['_rows']= '1'  ]]
- [%[ fblogXtailsaw1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ fblogXtailsaw1.custom['submit']['_value']= 'Submit'  ]]
  [%[ fblogXtailsaw1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fblogXtailsaw1.custom['submit'] ]]
@@ -165,19 +199,18 @@
      [%[= fblogXtailsaw1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= fblogXtailsaw1.custom['end'] ]]
   
-<div  class='divfblogXtailsaw1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">fblogXtailsaw1</div>
-</div>
+<div class="divfblogXtailsaw1 flashdiv"> <span class="flashspan">fblogXtailsaw1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfblogXtailsaw1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= fblogXtailsaw1.custom['end'] ]]
 </div>
-<!-- end fblogXtailsaw1 -->
+<!-- END fblogXtailsaw1-->
 
 </div>
            <div class="control">
@@ -250,16 +283,19 @@
    </div>
   </footer>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

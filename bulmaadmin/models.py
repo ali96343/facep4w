@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 25.11.2020 17:35:38 msk, src: https://github.com/mazipan/bulma-admin-dashboard-template
+# py4web app, AI-biorex ported 01.12.2020 13:00:02 UTC+3
 #
 
 #import pydal
@@ -113,11 +113,11 @@ db.commit()
 
 if not db(db.ttables0).count():
     db.ttables0.insert(f0="<abbr title=\"Position\">Pos</abbr>", f1="Team", f2="<abbr title=\"Played\">Pld</abbr>", f3="<abbr title=\"Won\">W</abbr>", f4="<abbr title=\"Drawn\">D</abbr>", f5="<abbr title=\"Lost\">L</abbr>", f6="<abbr title=\"Goals for\">GF</abbr>", f7="<abbr title=\"Goals against\">GA</abbr>", f8="<abbr title=\"Goal difference\">GD</abbr>", f9="<abbr title=\"Points\">Pts</abbr>", f10="Qualification or relegation")
-    db.ttables0.insert(f0="1", f1="<a href=\"#\" title=\"Leicester City F.C.\">Leicester City</a> <strong>(C)</strong>", f2="38", f3="23", f4="12", f5="3", f6="68", f7="36", f8="+32", f9="81", f10="<a href=\"#\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
-    db.ttables0.insert(f0="2", f1="<a href=\"#\" title=\"Arsenal F.C.\">Arsenal</a>", f2="38", f3="20", f4="11", f5="7", f6="65", f7="36", f8="+29", f9="71", f10="<a href=\"#\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
-    db.ttables0.insert(f0="3", f1="<a href=\"#\" title=\"Tottenham Hotspur F.C.\">Tottenham Hotspur</a>", f2="38", f3="19", f4="13", f5="6", f6="69", f7="35", f8="+34", f9="70", f10="<a href=\"#\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
-    db.ttables0.insert(f0="4", f1="<a href=\"#\" title=\"Manchester City F.C.\">Manchester City</a>", f2="38", f3="19", f4="9", f5="10", f6="71", f7="41", f8="+30", f9="66", f10="<a href=\"#\" title=\"201617 UEFA Champions League\">Champions League play-off round</a>")
-    db.ttables0.insert(f0="5", f1="<a href=\"#\" title=\"Manchester United F.C.\">Manchester United</a>", f2="38", f3="19", f4="9", f5="10", f6="49", f7="35", f8="+14", f9="66", f10="<a href=\"#\" title=\"201617 UEFA Europa League\">Europa League group stage</a>")
+    db.ttables0.insert(f0="1", f1="<a href=\"https://en.wikipedia.org/wiki/Leicester_City_F.C.\" title=\"Leicester City F.C.\">Leicester City</a> <strong>(C)</strong>", f2="38", f3="23", f4="12", f5="3", f6="68", f7="36", f8="+32", f9="81", f10="<a href=\"https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
+    db.ttables0.insert(f0="2", f1="<a href=\"https://en.wikipedia.org/wiki/Arsenal_F.C.\" title=\"Arsenal F.C.\">Arsenal</a>", f2="38", f3="20", f4="11", f5="7", f6="65", f7="36", f8="+29", f9="71", f10="<a href=\"https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
+    db.ttables0.insert(f0="3", f1="<a href=\"https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C.\" title=\"Tottenham Hotspur F.C.\">Tottenham Hotspur</a>", f2="38", f3="19", f4="13", f5="6", f6="69", f7="35", f8="+34", f9="70", f10="<a href=\"https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage\" title=\"201617 UEFA Champions League\">Champions League group stage</a>")
+    db.ttables0.insert(f0="4", f1="<a href=\"https://en.wikipedia.org/wiki/Manchester_City_F.C.\" title=\"Manchester City F.C.\">Manchester City</a>", f2="38", f3="19", f4="9", f5="10", f6="71", f7="41", f8="+30", f9="66", f10="<a href=\"https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round\" title=\"201617 UEFA Champions League\">Champions League play-off round</a>")
+    db.ttables0.insert(f0="5", f1="<a href=\"https://en.wikipedia.org/wiki/Manchester_United_F.C.\" title=\"Manchester United F.C.\">Manchester United</a>", f2="38", f3="19", f4="9", f5="10", f6="49", f7="35", f8="+14", f9="66", f10="<a href=\"https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage\" title=\"201617 UEFA Europa League\">Europa League group stage</a>")
     db.commit()
 
 if not db(db.ttables1).count():

@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 26.11.2020 13:05:32 UTC+3, src: https://github.com/davidgrzyb/tailwind-admin-template
+# py4web app, AI-biorex ported 01.12.2020 12:11:11 UTC+3
 # https://github.com/ali96343/facep4w
 #
 
@@ -88,8 +88,8 @@ def forms():
     fforms0= Form(db.dfforms0, dbio=False, formstyle=FormStyleBulma)
 
     if fforms0.accepted:
-        prn_form_vars( fforms0, db.dfforms0 )
-        return put_json_messages('accepted: ' + str( fforms0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fforms0, db.dfforms0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fforms0.form_name ))
     elif fforms0.errors:
         print("fforms0 has errors: %s" % (fforms0.errors))
         return put_json_messages('error: ' + str( fforms0.form_name ))
@@ -98,8 +98,8 @@ def forms():
     fforms1= Form(db.dfforms1, dbio=False, formstyle=FormStyleBulma)
 
     if fforms1.accepted:
-        prn_form_vars( fforms1, db.dfforms1 )
-        return put_json_messages('accepted: ' + str( fforms1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fforms1, db.dfforms1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fforms1.form_name ))
     elif fforms1.errors:
         print("fforms1 has errors: %s" % (fforms1.errors))
         return put_json_messages('error: ' + str( fforms1.form_name ))
@@ -148,6 +148,26 @@ def calendar():
     ctrl_info= "ctrl: calendar, view: calendar.html"
     page_url = "\'" + URL('calendar' ) + "\'"
     messages = []
+
+    fcalendar0= Form(db.dfcalendar0, dbio=False, formstyle=FormStyleBulma)
+
+    if fcalendar0.accepted:
+        mess1 = 'accepted: ' if prn_form_vars( fcalendar0, db.dfcalendar0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fcalendar0.form_name ))
+    elif fcalendar0.errors:
+        print("fcalendar0 has errors: %s" % (fcalendar0.errors))
+        return put_json_messages('error: ' + str( fcalendar0.form_name ))
+ 
+
+    fcalendar1= Form(db.dfcalendar1, dbio=False, formstyle=FormStyleBulma)
+
+    if fcalendar1.accepted:
+        mess1 = 'accepted: ' if prn_form_vars( fcalendar1, db.dfcalendar1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fcalendar1.form_name ))
+    elif fcalendar1.errors:
+        print("fcalendar1 has errors: %s" % (fcalendar1.errors))
+        return put_json_messages('error: ' + str( fcalendar1.form_name ))
+ 
 
     return locals()
 

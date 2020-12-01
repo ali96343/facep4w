@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.11.2020 15:42:46 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:59:13 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -15,6 +15,43 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <div class="navbar is-inline-flex is-transparent">
@@ -27,21 +64,20 @@
      <div class="control has-icons-left">
       
 
-<!-- view: finstaAlbum0, db_table: dfinstaAlbum0 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: finstaAlbum0, db_table: dfinstaAlbum0 -->
+<div>
 [%[= finstaAlbum0.custom['begin'] ]]
  [%[ finstaAlbum0.custom['widgets']['f0']['_class']= 'input is-small has-text-centered'  ]]
- [%[ finstaAlbum0.custom['widgets']['f0']['_placeholder']= 'search:p4w'  ]]
+ [%[ finstaAlbum0.custom['widgets']['f0']['_placeholder']= 'search_p4w'  ]]
  [%[ finstaAlbum0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finstaAlbum0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finstaAlbum0.custom['errors']['f0'] if 'f0' in finstaAlbum0.custom['errors'] else '' ]]</span>
 
- [%[ finstaAlbum0.custom['submit']['_class']= 'input is-small has-text-centered'  ]]
- [%[ finstaAlbum0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finstaAlbum0.custom['submit']['_class']= 'input is-small has-text-centered mysubmit_cls'  ]]
+ [%[ finstaAlbum0.custom['submit']['_placeholder']= ''  ]]
  [%[ finstaAlbum0.custom['submit']['_type']= 'submit'  ]]
  [%[ finstaAlbum0.custom['submit']['_rows']= '1'  ]]
- [%[ finstaAlbum0.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ finstaAlbum0.custom['submit']['_value']= 'Submit'  ]]
  [%[ finstaAlbum0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finstaAlbum0.custom['submit'] ]]
@@ -51,19 +87,18 @@
      [%[= finstaAlbum0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= finstaAlbum0.custom['end'] ]]
   
-<div  class='divfinstaAlbum0' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finstaAlbum0</div>
-</div>
+<div class="divfinstaAlbum0 flashdiv"> <span class="flashspan">finstaAlbum0</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfinstaAlbum0');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= finstaAlbum0.custom['end'] ]]
 </div>
-<!-- end finstaAlbum0 -->
+<!-- END finstaAlbum0-->
 
 
       <span class="icon is-left is-small">
@@ -144,21 +179,20 @@
          <div class="control">
           
 
-<!-- view: finstaAlbum1, db_table: dfinstaAlbum1 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: finstaAlbum1, db_table: dfinstaAlbum1 -->
+<div>
 [%[= finstaAlbum1.custom['begin'] ]]
  [%[ finstaAlbum1.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum1.custom['widgets']['f0']['_placeholder']= 'Add a comment . . .:p4w'  ]]
+ [%[ finstaAlbum1.custom['widgets']['f0']['_placeholder']= 'Add a comment . . ._p4w'  ]]
  [%[ finstaAlbum1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finstaAlbum1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finstaAlbum1.custom['errors']['f0'] if 'f0' in finstaAlbum1.custom['errors'] else '' ]]</span>
 
- [%[ finstaAlbum1.custom['submit']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finstaAlbum1.custom['submit']['_class']= 'input is-medium mysubmit_cls'  ]]
+ [%[ finstaAlbum1.custom['submit']['_placeholder']= ''  ]]
  [%[ finstaAlbum1.custom['submit']['_type']= 'submit'  ]]
  [%[ finstaAlbum1.custom['submit']['_rows']= '1'  ]]
- [%[ finstaAlbum1.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ finstaAlbum1.custom['submit']['_value']= 'Submit'  ]]
  [%[ finstaAlbum1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finstaAlbum1.custom['submit'] ]]
@@ -168,19 +202,18 @@
      [%[= finstaAlbum1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= finstaAlbum1.custom['end'] ]]
   
-<div  class='divfinstaAlbum1' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finstaAlbum1</div>
-</div>
+<div class="divfinstaAlbum1 flashdiv"> <span class="flashspan">finstaAlbum1</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfinstaAlbum1');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= finstaAlbum1.custom['end'] ]]
 </div>
-<!-- end finstaAlbum1 -->
+<!-- END finstaAlbum1-->
 
 </div>
         </div>
@@ -251,21 +284,20 @@
          <div class="control">
           
 
-<!-- view: finstaAlbum2, db_table: dfinstaAlbum2 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: finstaAlbum2, db_table: dfinstaAlbum2 -->
+<div>
 [%[= finstaAlbum2.custom['begin'] ]]
  [%[ finstaAlbum2.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum2.custom['widgets']['f0']['_placeholder']= 'Add a comment . . .:p4w'  ]]
+ [%[ finstaAlbum2.custom['widgets']['f0']['_placeholder']= 'Add a comment . . ._p4w'  ]]
  [%[ finstaAlbum2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finstaAlbum2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finstaAlbum2.custom['errors']['f0'] if 'f0' in finstaAlbum2.custom['errors'] else '' ]]</span>
 
- [%[ finstaAlbum2.custom['submit']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finstaAlbum2.custom['submit']['_class']= 'input is-medium mysubmit_cls'  ]]
+ [%[ finstaAlbum2.custom['submit']['_placeholder']= ''  ]]
  [%[ finstaAlbum2.custom['submit']['_type']= 'submit'  ]]
  [%[ finstaAlbum2.custom['submit']['_rows']= '1'  ]]
- [%[ finstaAlbum2.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ finstaAlbum2.custom['submit']['_value']= 'Submit'  ]]
  [%[ finstaAlbum2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finstaAlbum2.custom['submit'] ]]
@@ -275,19 +307,18 @@
      [%[= finstaAlbum2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= finstaAlbum2.custom['end'] ]]
   
-<div  class='divfinstaAlbum2' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finstaAlbum2</div>
-</div>
+<div class="divfinstaAlbum2 flashdiv"> <span class="flashspan">finstaAlbum2</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfinstaAlbum2');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= finstaAlbum2.custom['end'] ]]
 </div>
-<!-- end finstaAlbum2 -->
+<!-- END finstaAlbum2-->
 
 </div>
         </div>
@@ -358,21 +389,20 @@
          <div class="control">
           
 
-<!-- view: finstaAlbum3, db_table: dfinstaAlbum3 -->
-<div  style="border: 1px gray dashed;">
+<!-- BEGIN view: finstaAlbum3, db_table: dfinstaAlbum3 -->
+<div>
 [%[= finstaAlbum3.custom['begin'] ]]
  [%[ finstaAlbum3.custom['widgets']['f0']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum3.custom['widgets']['f0']['_placeholder']= 'Add a comment . . .:p4w'  ]]
+ [%[ finstaAlbum3.custom['widgets']['f0']['_placeholder']= 'Add a comment . . ._p4w'  ]]
  [%[ finstaAlbum3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= finstaAlbum3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finstaAlbum3.custom['errors']['f0'] if 'f0' in finstaAlbum3.custom['errors'] else '' ]]</span>
 
- [%[ finstaAlbum3.custom['submit']['_class']= 'input is-medium'  ]]
- [%[ finstaAlbum3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ finstaAlbum3.custom['submit']['_class']= 'input is-medium mysubmit_cls'  ]]
+ [%[ finstaAlbum3.custom['submit']['_placeholder']= ''  ]]
  [%[ finstaAlbum3.custom['submit']['_type']= 'submit'  ]]
  [%[ finstaAlbum3.custom['submit']['_rows']= '1'  ]]
- [%[ finstaAlbum3.custom['submit']['_style']= 'background-color:LightCyan;color:red; border:2px dashed red; text-decoration: underline;'  ]]
  [%[ finstaAlbum3.custom['submit']['_value']= 'Submit'  ]]
  [%[ finstaAlbum3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= finstaAlbum3.custom['submit'] ]]
@@ -382,19 +412,18 @@
      [%[= finstaAlbum3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-[%[= finstaAlbum3.custom['end'] ]]
   
-<div  class='divfinstaAlbum3' style="text-align: center; position:absolute;">
-  <div style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black; border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">finstaAlbum3</div>
-</div>
+<div class="divfinstaAlbum3 flashdiv"> <span class="flashspan">finstaAlbum3</span> </div>
 <script>
   !function() { const elems = document.querySelectorAll('.divfinstaAlbum3');
       for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
 </script>
 
+
+[%[= finstaAlbum3.custom['end'] ]]
 </div>
-<!-- end finstaAlbum3 -->
+<!-- END finstaAlbum3-->
 
 </div>
         </div>
@@ -426,16 +455,19 @@
    </div>
   </div>
   
-<!-- myadd -->
+<!-- forms ajax -->
 <script>
-  const forms_url = [%[ =XML( page_url ) ]];
+    const forms_url = [%[ =XML( page_url ) ]];
 
-  for(let i = 0; i < document.forms.length; i++){
+    for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, { method: 'POST', body: new FormData( document.forms[i] ) });
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
 
             let result = await response.json();
             swal({

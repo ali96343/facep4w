@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 26.11.2020 15:42:46 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+# py4web app, AI-biorex ported 01.12.2020 12:59:12 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
 # https://github.com/ali96343/facep4w
 #
 
@@ -109,8 +109,8 @@ def band():
     fband0= Form(db.dfband0, dbio=False, formstyle=FormStyleBulma)
 
     if fband0.accepted:
-        prn_form_vars( fband0, db.dfband0 )
-        return put_json_messages('accepted: ' + str( fband0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fband0, db.dfband0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fband0.form_name ))
     elif fband0.errors:
         print("fband0 has errors: %s" % (fband0.errors))
         return put_json_messages('error: ' + str( fband0.form_name ))
@@ -129,8 +129,8 @@ def login():
     flogin0= Form(db.dflogin0, dbio=False, formstyle=FormStyleBulma)
 
     if flogin0.accepted:
-        prn_form_vars( flogin0, db.dflogin0 )
-        return put_json_messages('accepted: ' + str( flogin0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flogin0, db.dflogin0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flogin0.form_name ))
     elif flogin0.errors:
         print("flogin0 has errors: %s" % (flogin0.errors))
         return put_json_messages('error: ' + str( flogin0.form_name ))
@@ -159,8 +159,8 @@ def forum():
     fforum0= Form(db.dfforum0, dbio=False, formstyle=FormStyleBulma)
 
     if fforum0.accepted:
-        prn_form_vars( fforum0, db.dfforum0 )
-        return put_json_messages('accepted: ' + str( fforum0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fforum0, db.dfforum0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fforum0.form_name ))
     elif fforum0.errors:
         print("fforum0 has errors: %s" % (fforum0.errors))
         return put_json_messages('error: ' + str( fforum0.form_name ))
@@ -200,8 +200,8 @@ def admin():
     fadmin0= Form(db.dfadmin0, dbio=False, formstyle=FormStyleBulma)
 
     if fadmin0.accepted:
-        prn_form_vars( fadmin0, db.dfadmin0 )
-        return put_json_messages('accepted: ' + str( fadmin0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fadmin0, db.dfadmin0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fadmin0.form_name ))
     elif fadmin0.errors:
         print("fadmin0 has errors: %s" % (fadmin0.errors))
         return put_json_messages('error: ' + str( fadmin0.form_name ))
@@ -210,8 +210,8 @@ def admin():
     fadmin1= Form(db.dfadmin1, dbio=False, formstyle=FormStyleBulma)
 
     if fadmin1.accepted:
-        prn_form_vars( fadmin1, db.dfadmin1 )
-        return put_json_messages('accepted: ' + str( fadmin1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fadmin1, db.dfadmin1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fadmin1.form_name ))
     elif fadmin1.errors:
         print("fadmin1 has errors: %s" % (fadmin1.errors))
         return put_json_messages('error: ' + str( fadmin1.form_name ))
@@ -240,8 +240,8 @@ def search():
     fsearch0= Form(db.dfsearch0, dbio=False, formstyle=FormStyleBulma)
 
     if fsearch0.accepted:
-        prn_form_vars( fsearch0, db.dfsearch0 )
-        return put_json_messages('accepted: ' + str( fsearch0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fsearch0, db.dfsearch0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fsearch0.form_name ))
     elif fsearch0.errors:
         print("fsearch0 has errors: %s" % (fsearch0.errors))
         return put_json_messages('error: ' + str( fsearch0.form_name ))
@@ -270,8 +270,8 @@ def kanban():
     fkanban0= Form(db.dfkanban0, dbio=False, formstyle=FormStyleBulma)
 
     if fkanban0.accepted:
-        prn_form_vars( fkanban0, db.dfkanban0 )
-        return put_json_messages('accepted: ' + str( fkanban0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fkanban0, db.dfkanban0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fkanban0.form_name ))
     elif fkanban0.errors:
         print("fkanban0 has errors: %s" % (fkanban0.errors))
         return put_json_messages('error: ' + str( fkanban0.form_name ))
@@ -290,8 +290,8 @@ def contact():
     fcontact0= Form(db.dfcontact0, dbio=False, formstyle=FormStyleBulma)
 
     if fcontact0.accepted:
-        prn_form_vars( fcontact0, db.dfcontact0 )
-        return put_json_messages('accepted: ' + str( fcontact0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fcontact0, db.dfcontact0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fcontact0.form_name ))
     elif fcontact0.errors:
         print("fcontact0 has errors: %s" % (fcontact0.errors))
         return put_json_messages('error: ' + str( fcontact0.form_name ))
@@ -300,8 +300,8 @@ def contact():
     fcontact1= Form(db.dfcontact1, dbio=False, formstyle=FormStyleBulma)
 
     if fcontact1.accepted:
-        prn_form_vars( fcontact1, db.dfcontact1 )
-        return put_json_messages('accepted: ' + str( fcontact1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fcontact1, db.dfcontact1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fcontact1.form_name ))
     elif fcontact1.errors:
         print("fcontact1 has errors: %s" % (fcontact1.errors))
         return put_json_messages('error: ' + str( fcontact1.form_name ))
@@ -310,8 +310,8 @@ def contact():
     fcontact2= Form(db.dfcontact2, dbio=False, formstyle=FormStyleBulma)
 
     if fcontact2.accepted:
-        prn_form_vars( fcontact2, db.dfcontact2 )
-        return put_json_messages('accepted: ' + str( fcontact2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fcontact2, db.dfcontact2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fcontact2.form_name ))
     elif fcontact2.errors:
         print("fcontact2 has errors: %s" % (fcontact2.errors))
         return put_json_messages('error: ' + str( fcontact2.form_name ))
@@ -330,8 +330,8 @@ def landing():
     flanding0= Form(db.dflanding0, dbio=False, formstyle=FormStyleBulma)
 
     if flanding0.accepted:
-        prn_form_vars( flanding0, db.dflanding0 )
-        return put_json_messages('accepted: ' + str( flanding0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( flanding0, db.dflanding0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( flanding0.form_name ))
     elif flanding0.errors:
         print("flanding0 has errors: %s" % (flanding0.errors))
         return put_json_messages('error: ' + str( flanding0.form_name ))
@@ -350,8 +350,8 @@ def register():
     fregister0= Form(db.dfregister0, dbio=False, formstyle=FormStyleBulma)
 
     if fregister0.accepted:
-        prn_form_vars( fregister0, db.dfregister0 )
-        return put_json_messages('accepted: ' + str( fregister0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fregister0, db.dfregister0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fregister0.form_name ))
     elif fregister0.errors:
         print("fregister0 has errors: %s" % (fregister0.errors))
         return put_json_messages('error: ' + str( fregister0.form_name ))
@@ -371,8 +371,8 @@ def personal():
     fpersonal0= Form(db.dfpersonal0, dbio=False, formstyle=FormStyleBulma)
 
     if fpersonal0.accepted:
-        prn_form_vars( fpersonal0, db.dfpersonal0 )
-        return put_json_messages('accepted: ' + str( fpersonal0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpersonal0, db.dfpersonal0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpersonal0.form_name ))
     elif fpersonal0.errors:
         print("fpersonal0 has errors: %s" % (fpersonal0.errors))
         return put_json_messages('error: ' + str( fpersonal0.form_name ))
@@ -381,8 +381,8 @@ def personal():
     fpersonal1= Form(db.dfpersonal1, dbio=False, formstyle=FormStyleBulma)
 
     if fpersonal1.accepted:
-        prn_form_vars( fpersonal1, db.dfpersonal1 )
-        return put_json_messages('accepted: ' + str( fpersonal1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpersonal1, db.dfpersonal1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpersonal1.form_name ))
     elif fpersonal1.errors:
         print("fpersonal1 has errors: %s" % (fpersonal1.errors))
         return put_json_messages('error: ' + str( fpersonal1.form_name ))
@@ -391,8 +391,8 @@ def personal():
     fpersonal2= Form(db.dfpersonal2, dbio=False, formstyle=FormStyleBulma)
 
     if fpersonal2.accepted:
-        prn_form_vars( fpersonal2, db.dfpersonal2 )
-        return put_json_messages('accepted: ' + str( fpersonal2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fpersonal2, db.dfpersonal2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fpersonal2.form_name ))
     elif fpersonal2.errors:
         print("fpersonal2 has errors: %s" % (fpersonal2.errors))
         return put_json_messages('error: ' + str( fpersonal2.form_name ))
@@ -411,8 +411,8 @@ def showcase():
     fshowcase0= Form(db.dfshowcase0, dbio=False, formstyle=FormStyleBulma)
 
     if fshowcase0.accepted:
-        prn_form_vars( fshowcase0, db.dfshowcase0 )
-        return put_json_messages('accepted: ' + str( fshowcase0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fshowcase0, db.dfshowcase0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fshowcase0.form_name ))
     elif fshowcase0.errors:
         print("fshowcase0 has errors: %s" % (fshowcase0.errors))
         return put_json_messages('error: ' + str( fshowcase0.form_name ))
@@ -421,8 +421,8 @@ def showcase():
     fshowcase1= Form(db.dfshowcase1, dbio=False, formstyle=FormStyleBulma)
 
     if fshowcase1.accepted:
-        prn_form_vars( fshowcase1, db.dfshowcase1 )
-        return put_json_messages('accepted: ' + str( fshowcase1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fshowcase1, db.dfshowcase1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fshowcase1.form_name ))
     elif fshowcase1.errors:
         print("fshowcase1 has errors: %s" % (fshowcase1.errors))
         return put_json_messages('error: ' + str( fshowcase1.form_name ))
@@ -431,8 +431,8 @@ def showcase():
     fshowcase2= Form(db.dfshowcase2, dbio=False, formstyle=FormStyleBulma)
 
     if fshowcase2.accepted:
-        prn_form_vars( fshowcase2, db.dfshowcase2 )
-        return put_json_messages('accepted: ' + str( fshowcase2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fshowcase2, db.dfshowcase2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fshowcase2.form_name ))
     elif fshowcase2.errors:
         print("fshowcase2 has errors: %s" % (fshowcase2.errors))
         return put_json_messages('error: ' + str( fshowcase2.form_name ))
@@ -451,8 +451,8 @@ def instaAlbum():
     finstaAlbum0= Form(db.dfinstaAlbum0, dbio=False, formstyle=FormStyleBulma)
 
     if finstaAlbum0.accepted:
-        prn_form_vars( finstaAlbum0, db.dfinstaAlbum0 )
-        return put_json_messages('accepted: ' + str( finstaAlbum0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( finstaAlbum0, db.dfinstaAlbum0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( finstaAlbum0.form_name ))
     elif finstaAlbum0.errors:
         print("finstaAlbum0 has errors: %s" % (finstaAlbum0.errors))
         return put_json_messages('error: ' + str( finstaAlbum0.form_name ))
@@ -461,8 +461,8 @@ def instaAlbum():
     finstaAlbum1= Form(db.dfinstaAlbum1, dbio=False, formstyle=FormStyleBulma)
 
     if finstaAlbum1.accepted:
-        prn_form_vars( finstaAlbum1, db.dfinstaAlbum1 )
-        return put_json_messages('accepted: ' + str( finstaAlbum1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( finstaAlbum1, db.dfinstaAlbum1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( finstaAlbum1.form_name ))
     elif finstaAlbum1.errors:
         print("finstaAlbum1 has errors: %s" % (finstaAlbum1.errors))
         return put_json_messages('error: ' + str( finstaAlbum1.form_name ))
@@ -471,8 +471,8 @@ def instaAlbum():
     finstaAlbum2= Form(db.dfinstaAlbum2, dbio=False, formstyle=FormStyleBulma)
 
     if finstaAlbum2.accepted:
-        prn_form_vars( finstaAlbum2, db.dfinstaAlbum2 )
-        return put_json_messages('accepted: ' + str( finstaAlbum2.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( finstaAlbum2, db.dfinstaAlbum2 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( finstaAlbum2.form_name ))
     elif finstaAlbum2.errors:
         print("finstaAlbum2 has errors: %s" % (finstaAlbum2.errors))
         return put_json_messages('error: ' + str( finstaAlbum2.form_name ))
@@ -481,8 +481,8 @@ def instaAlbum():
     finstaAlbum3= Form(db.dfinstaAlbum3, dbio=False, formstyle=FormStyleBulma)
 
     if finstaAlbum3.accepted:
-        prn_form_vars( finstaAlbum3, db.dfinstaAlbum3 )
-        return put_json_messages('accepted: ' + str( finstaAlbum3.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( finstaAlbum3, db.dfinstaAlbum3 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( finstaAlbum3.form_name ))
     elif finstaAlbum3.errors:
         print("finstaAlbum3 has errors: %s" % (finstaAlbum3.errors))
         return put_json_messages('error: ' + str( finstaAlbum3.form_name ))
@@ -531,8 +531,8 @@ def blogXtailsaw():
     fblogXtailsaw0= Form(db.dfblogXtailsaw0, dbio=False, formstyle=FormStyleBulma)
 
     if fblogXtailsaw0.accepted:
-        prn_form_vars( fblogXtailsaw0, db.dfblogXtailsaw0 )
-        return put_json_messages('accepted: ' + str( fblogXtailsaw0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fblogXtailsaw0, db.dfblogXtailsaw0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fblogXtailsaw0.form_name ))
     elif fblogXtailsaw0.errors:
         print("fblogXtailsaw0 has errors: %s" % (fblogXtailsaw0.errors))
         return put_json_messages('error: ' + str( fblogXtailsaw0.form_name ))
@@ -541,8 +541,8 @@ def blogXtailsaw():
     fblogXtailsaw1= Form(db.dfblogXtailsaw1, dbio=False, formstyle=FormStyleBulma)
 
     if fblogXtailsaw1.accepted:
-        prn_form_vars( fblogXtailsaw1, db.dfblogXtailsaw1 )
-        return put_json_messages('accepted: ' + str( fblogXtailsaw1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fblogXtailsaw1, db.dfblogXtailsaw1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fblogXtailsaw1.form_name ))
     elif fblogXtailsaw1.errors:
         print("fblogXtailsaw1 has errors: %s" % (fblogXtailsaw1.errors))
         return put_json_messages('error: ' + str( fblogXtailsaw1.form_name ))
@@ -561,8 +561,8 @@ def kanbanXsearchX():
     fkanbanXsearchX0= Form(db.dfkanbanXsearchX0, dbio=False, formstyle=FormStyleBulma)
 
     if fkanbanXsearchX0.accepted:
-        prn_form_vars( fkanbanXsearchX0, db.dfkanbanXsearchX0 )
-        return put_json_messages('accepted: ' + str( fkanbanXsearchX0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fkanbanXsearchX0, db.dfkanbanXsearchX0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fkanbanXsearchX0.form_name ))
     elif fkanbanXsearchX0.errors:
         print("fkanbanXsearchX0 has errors: %s" % (fkanbanXsearchX0.errors))
         return put_json_messages('error: ' + str( fkanbanXsearchX0.form_name ))
@@ -581,8 +581,8 @@ def helloXparallax():
     fhelloXparallax0= Form(db.dfhelloXparallax0, dbio=False, formstyle=FormStyleBulma)
 
     if fhelloXparallax0.accepted:
-        prn_form_vars( fhelloXparallax0, db.dfhelloXparallax0 )
-        return put_json_messages('accepted: ' + str( fhelloXparallax0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fhelloXparallax0, db.dfhelloXparallax0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fhelloXparallax0.form_name ))
     elif fhelloXparallax0.errors:
         print("fhelloXparallax0 has errors: %s" % (fhelloXparallax0.errors))
         return put_json_messages('error: ' + str( fhelloXparallax0.form_name ))
@@ -591,8 +591,8 @@ def helloXparallax():
     fhelloXparallax1= Form(db.dfhelloXparallax1, dbio=False, formstyle=FormStyleBulma)
 
     if fhelloXparallax1.accepted:
-        prn_form_vars( fhelloXparallax1, db.dfhelloXparallax1 )
-        return put_json_messages('accepted: ' + str( fhelloXparallax1.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fhelloXparallax1, db.dfhelloXparallax1 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fhelloXparallax1.form_name ))
     elif fhelloXparallax1.errors:
         print("fhelloXparallax1 has errors: %s" % (fhelloXparallax1.errors))
         return put_json_messages('error: ' + str( fhelloXparallax1.form_name ))
@@ -611,8 +611,8 @@ def neumorphicXlogin():
     fneumorphicXlogin0= Form(db.dfneumorphicXlogin0, dbio=False, formstyle=FormStyleBulma)
 
     if fneumorphicXlogin0.accepted:
-        prn_form_vars( fneumorphicXlogin0, db.dfneumorphicXlogin0 )
-        return put_json_messages('accepted: ' + str( fneumorphicXlogin0.form_name ))
+        mess1 = 'accepted: ' if prn_form_vars( fneumorphicXlogin0, db.dfneumorphicXlogin0 ) == False else 'inserted: '
+        return put_json_messages(mess1 + str( fneumorphicXlogin0.form_name ))
     elif fneumorphicXlogin0.errors:
         print("fneumorphicXlogin0 has errors: %s" % (fneumorphicXlogin0.errors))
         return put_json_messages('error: ' + str( fneumorphicXlogin0.form_name ))

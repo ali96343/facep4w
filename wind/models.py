@@ -3,7 +3,7 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 26.11.2020 13:05:32 UTC+3, src: https://github.com/davidgrzyb/tailwind-admin-template
+# py4web app, AI-biorex ported 01.12.2020 12:11:11 UTC+3
 #
 
 #import pydal
@@ -54,6 +54,18 @@ db.define_table(
     Field('f4','string', length=1024, ),
     Field('f5','string', length=1024, ),
     Field('f6','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
+    'dfcalendar0',
+    Field('f0','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
+    'dfcalendar1',
+    Field('f0','string', length=1024, ),
     )
 db.commit()
 

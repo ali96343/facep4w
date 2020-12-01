@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 27.10.2020 12:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 01.12.2020 12:08:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -52,7 +52,46 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+
+<!-- mysubmit button -->
+<style>.mysubmit_cls {
+    width: 6em;
+    background-color: LightGray;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-weight: bold;
+    border: 1px dashed black;
+    text-decoration: underline;
+}
+
+.mysubmit_cls:hover {
+    background-color: LightCyan;
+    cursor: pointer;
+}
+
+
+.flashdiv {
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+}
+
+.flashspan {
+    position: relative;
+    z-index: 100;
+    background-color: #F0FFF0;
+    color: black;
+    border: 2px dashed red;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+
+</style>
+
 </head>
  <body>
   <!--[if lt IE 8]>
@@ -70,43 +109,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister0, db_table: dfloginXregister0 -->
+<!-- BEGIN view: floginXregister0, db_table: dfloginXregister0 -->
 <div>
 [%[= floginXregister0.custom['begin'] ]]
  [%[ floginXregister0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister0.custom['widgets']['f0']['_placeholder']= 'Username:p4w'  ]]
+ [%[ floginXregister0.custom['widgets']['f0']['_placeholder']= 'Username_p4w'  ]]
  [%[ floginXregister0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister0.custom['errors']['f0'] if 'f0' in floginXregister0.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister0.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister0.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister0.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister0.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister0.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister0.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister0.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister0.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister0.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister0.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister0.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister0.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister0.custom['end'] ]]
-  <div  class='divfloginXregister0' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister0</small>
-</div>
 
+  
+<div class="divfloginXregister0 flashdiv"> <span class="flashspan">floginXregister0</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister0.custom['end'] ]]
 </div>
-<!-- end floginXregister0 -->
+<!-- END floginXregister0-->
 
 </div>
      </div>
@@ -117,43 +154,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister1, db_table: dfloginXregister1 -->
+<!-- BEGIN view: floginXregister1, db_table: dfloginXregister1 -->
 <div>
 [%[= floginXregister1.custom['begin'] ]]
  [%[ floginXregister1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister1.custom['widgets']['f0']['_placeholder']= 'Password:p4w'  ]]
+ [%[ floginXregister1.custom['widgets']['f0']['_placeholder']= 'Password_p4w'  ]]
  [%[ floginXregister1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister1.custom['errors']['f0'] if 'f0' in floginXregister1.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister1.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister1.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister1.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister1.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister1.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister1.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister1.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister1.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister1.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister1.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister1.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister1.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister1.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister1.custom['end'] ]]
-  <div  class='divfloginXregister1' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister1</small>
-</div>
 
+  
+<div class="divfloginXregister1 flashdiv"> <span class="flashspan">floginXregister1</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister1.custom['end'] ]]
 </div>
-<!-- end floginXregister1 -->
+<!-- END floginXregister1-->
 
 </div>
      </div>
@@ -161,43 +196,40 @@
       <label>
        
 
-<!-- view: floginXregister2, db_table: dfloginXregister2 -->
+<!-- BEGIN view: floginXregister2, db_table: dfloginXregister2 -->
 <div>
 [%[= floginXregister2.custom['begin'] ]]
  [%[ floginXregister2.custom['widgets']['f0']['_class']= 'i-checks'  ]]
  [%[ floginXregister2.custom['widgets']['f0']['_type']= 'checkbox'  ]]
- [%[ floginXregister2.custom['widgets']['f0']['_placeholder']= ':p4w'  ]]
+ [%[ floginXregister2.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
  [%[= floginXregister2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister2.custom['errors']['f0'] if 'f0' in floginXregister2.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister2.custom['submit']['_class']= 'i-checks'  ]]
+ [%[ floginXregister2.custom['submit']['_class']= 'i-checks mysubmit_cls'  ]]
  [%[ floginXregister2.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister2.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
- [%[ floginXregister2.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister2.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister2.custom['submit']['_placeholder']= ''  ]]
+ [%[ floginXregister2.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister2.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister2.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister2.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister2.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister2.custom['end'] ]]
-  <div  class='divfloginXregister2' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister2</small>
-</div>
 
+  
+<div class="divfloginXregister2 flashdiv"> <span class="flashspan">floginXregister2</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister2.custom['end'] ]]
 </div>
-<!-- end floginXregister2 -->
+<!-- END floginXregister2-->
 
 
        <i></i>
@@ -229,43 +261,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister3, db_table: dfloginXregister3 -->
+<!-- BEGIN view: floginXregister3, db_table: dfloginXregister3 -->
 <div>
 [%[= floginXregister3.custom['begin'] ]]
  [%[ floginXregister3.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister3.custom['widgets']['f0']['_placeholder']= 'Username:p4w'  ]]
+ [%[ floginXregister3.custom['widgets']['f0']['_placeholder']= 'Username_p4w'  ]]
  [%[ floginXregister3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister3.custom['errors']['f0'] if 'f0' in floginXregister3.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister3.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister3.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister3.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister3.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister3.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister3.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister3.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister3.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister3.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister3.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister3.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister3.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister3.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister3.custom['end'] ]]
-  <div  class='divfloginXregister3' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister3</small>
-</div>
 
+  
+<div class="divfloginXregister3 flashdiv"> <span class="flashspan">floginXregister3</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister3');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister3.custom['end'] ]]
 </div>
-<!-- end floginXregister3 -->
+<!-- END floginXregister3-->
 
 </div>
      </div>
@@ -276,43 +306,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister4, db_table: dfloginXregister4 -->
+<!-- BEGIN view: floginXregister4, db_table: dfloginXregister4 -->
 <div>
 [%[= floginXregister4.custom['begin'] ]]
  [%[ floginXregister4.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister4.custom['widgets']['f0']['_placeholder']= 'Email Address:p4w'  ]]
+ [%[ floginXregister4.custom['widgets']['f0']['_placeholder']= 'Email Address_p4w'  ]]
  [%[ floginXregister4.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister4.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister4.custom['errors']['f0'] if 'f0' in floginXregister4.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister4.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister4.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister4.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister4.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister4.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister4.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister4.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister4.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister4.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister4.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister4.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister4.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister4.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister4.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister4.custom['end'] ]]
-  <div  class='divfloginXregister4' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister4</small>
-</div>
 
+  
+<div class="divfloginXregister4 flashdiv"> <span class="flashspan">floginXregister4</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister4');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister4.custom['end'] ]]
 </div>
-<!-- end floginXregister4 -->
+<!-- END floginXregister4-->
 
 </div>
      </div>
@@ -323,43 +351,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister5, db_table: dfloginXregister5 -->
+<!-- BEGIN view: floginXregister5, db_table: dfloginXregister5 -->
 <div>
 [%[= floginXregister5.custom['begin'] ]]
  [%[ floginXregister5.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister5.custom['widgets']['f0']['_placeholder']= 'Password:p4w'  ]]
+ [%[ floginXregister5.custom['widgets']['f0']['_placeholder']= 'Password_p4w'  ]]
  [%[ floginXregister5.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister5.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister5.custom['errors']['f0'] if 'f0' in floginXregister5.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister5.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister5.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister5.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister5.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister5.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister5.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister5.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister5.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister5.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister5.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister5.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister5.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister5.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister5.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister5.custom['end'] ]]
-  <div  class='divfloginXregister5' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister5</small>
-</div>
 
+  
+<div class="divfloginXregister5 flashdiv"> <span class="flashspan">floginXregister5</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister5');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister5.custom['end'] ]]
 </div>
-<!-- end floginXregister5 -->
+<!-- END floginXregister5-->
 
 </div>
      </div>
@@ -389,43 +415,41 @@
       <div class="nk-int-st">
        
 
-<!-- view: floginXregister6, db_table: dfloginXregister6 -->
+<!-- BEGIN view: floginXregister6, db_table: dfloginXregister6 -->
 <div>
 [%[= floginXregister6.custom['begin'] ]]
  [%[ floginXregister6.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ floginXregister6.custom['widgets']['f0']['_placeholder']= 'Email Address:p4w'  ]]
+ [%[ floginXregister6.custom['widgets']['f0']['_placeholder']= 'Email Address_p4w'  ]]
  [%[ floginXregister6.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= floginXregister6.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= floginXregister6.custom['errors']['f0'] if 'f0' in floginXregister6.custom['errors'] else '' ]]</span>
 
- [%[ floginXregister6.custom['submit']['_class']= 'form-control'  ]]
- [%[ floginXregister6.custom['submit']['_placeholder']= 'sUb:p4w'  ]]
+ [%[ floginXregister6.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ floginXregister6.custom['submit']['_placeholder']= ''  ]]
  [%[ floginXregister6.custom['submit']['_type']= 'submit'  ]]
- [%[ floginXregister6.custom['submit']['_style']= 'color:red; border:2px dashed red;'  ]]
- [%[ floginXregister6.custom['submit']['_value']= 'sUb:p4w'  ]]
+ [%[ floginXregister6.custom['submit']['_rows']= '1'  ]]
+ [%[ floginXregister6.custom['submit']['_value']= 'Submit'  ]]
  [%[ floginXregister6.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= floginXregister6.custom['submit'] ]]
 
 
  [%[ for hidden_widget in floginXregister6.custom['hidden_widgets'].keys(): ]]
- [%[= floginXregister6.custom['hidden_widgets'][hidden_widget] ]]
+     [%[= floginXregister6.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
-[%[= floginXregister6.custom['end'] ]]
-  <div  class='divfloginXregister6' style="text-align: center; position:absolute;">
-  <small style="position:relative; z-index:100; display:inline-block; background-color:#F0FFF0; color:black;border:2px dashed red; padding: 0.2em 1em 0.2em 1em;">floginXregister6</small>
-</div>
 
+  
+<div class="divfloginXregister6 flashdiv"> <span class="flashspan">floginXregister6</span> </div>
 <script>
-
   !function() { const elems = document.querySelectorAll('.divfloginXregister6');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 10000); }
+      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
   }();
-
 </script>
 
+
+[%[= floginXregister6.custom['end'] ]]
 </div>
-<!-- end floginXregister6 -->
+<!-- END floginXregister6-->
 
 </div>
      </div>
@@ -512,5 +536,35 @@
   <!-- main JS
 		============================================ -->
   <script src="[%[=URL('static/tte/js/main.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+    const forms_url = [%[ =XML( page_url ) ]];
+
+    for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, 
+                 { method: 'POST', 
+                   body: new FormData( document.forms[i] ) 
+                 });
+
+            let result = await response.json();
+            swal({
+                  type: (result.messages.startsWith('error') ? "error" : "info") ,
+                  title: result.messages,
+                  animation : false,
+                  timer: 3000,
+                  text: '3 sec & will hide',
+                  showCancelButton: false,
+                  showConfirmButton: false
+                 });
+        };
+  }
+</script>
+
+
  </body>
 </html>
