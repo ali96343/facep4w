@@ -1,8 +1,8 @@
 # facep4w
-## py4web apps ported from multistars-github-dashboards:
+## py4web apps ported from multistars-github dashboards
 
 ## js, jquery, bootstrap, bulma, tailwind
-forms and tables with pydal
+( forms and tables with pydal )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
 - https://github.com/puikinsh/notika
@@ -25,4 +25,4 @@ forms and tables with pydal
 - https://github.com/creativetimofficial/vue-notus
 - https://github.com/creativetimofficial/material-dashboard-react
 
-
+Thanks in advance for letting me about errors, typo ... etc
