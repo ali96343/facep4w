@@ -3,7 +3,7 @@
  <!-- Mirrored from nafplann.bulma-admin.dev/forms by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2019 05:38:01 GMT -->
  <!-- Added by HTTrack -->
  <head>
-            <!-- 01.12.2020 12:59:39 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 03.12.2020 11:33:22 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html;charset=utf-8" http-equiv="content-type"/>
   <!-- /Added by HTTrack -->
   <meta charset="utf-8"/>
@@ -26,12 +26,12 @@
 <!-- mysubmit button -->
 <style>.mysubmit_cls {
     width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
+    margin: 0.2em auto 0.2em auto !important;
+    padding: 0 0 0 0 !important;
     border: 1px dashed black;
+    color: black;
+    background-color: LightGray;
+    font-weight: bold;
     text-decoration: underline;
 }
 
@@ -39,7 +39,6 @@
     background-color: LightCyan;
     cursor: pointer;
 }
-
 
 .flashdiv {
     text-align: center;
@@ -1811,36 +1810,6 @@ gtag('config', 'UA-89250524-7');
         }
     }]
 }</script>
-  
-<!-- forms ajax -->
-<script>
-    const forms_url = [%[ =XML( page_url ) ]];
-
-    for(let i = 0; i < document.forms.length; i++){
-
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
-
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
-
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
-        };
-  }
-</script>
-
-
  </body>
  <!-- Mirrored from nafplann.bulma-admin.dev/forms by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2019 05:38:01 GMT -->
 </html>

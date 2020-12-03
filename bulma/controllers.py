@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 02.12.2020 10:42:53 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+# py4web app, AI-biorex ported 03.12.2020 11:21:00 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
 # https://github.com/ali96343/facep4w
 #
 
@@ -219,6 +219,24 @@ def index():
 
     return locals()
 
+@action('kanban', method=["GET", "POST"] )
+@action.uses(Template('kanban.html', delimiters='[%[ ]]',), db, session, T,)
+
+def kanban():
+    ctrl_info= "ctrl: kanban, view: kanban.html"
+    page_url = "\'" + URL('kanban' ) + "\'"
+    messages = []
+
+    fkanban0= Form(db.dfkanban0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
+
+    if fkanban0.accepted:
+        prn_form_vars( fkanban0, db.dfkanban0 )
+    elif fkanban0.errors:
+        print("fkanban0 has errors: %s " % (fkanban0.errors))
+ 
+
+    return locals()
+
 @action('search', method=["GET", "POST"] )
 @action.uses(Template('search.html', delimiters='[%[ ]]',), db, session, T,)
 
@@ -244,24 +262,6 @@ def absurd():
     ctrl_info= "ctrl: absurd, view: absurd.html"
     page_url = "\'" + URL('absurd' ) + "\'"
     messages = []
-
-    return locals()
-
-@action('kanban', method=["GET", "POST"] )
-@action.uses(Template('kanban.html', delimiters='[%[ ]]',), db, session, T,)
-
-def kanban():
-    ctrl_info= "ctrl: kanban, view: kanban.html"
-    page_url = "\'" + URL('kanban' ) + "\'"
-    messages = []
-
-    fkanban0= Form(db.dfkanban0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
-
-    if fkanban0.accepted:
-        prn_form_vars( fkanban0, db.dfkanban0 )
-    elif fkanban0.errors:
-        print("fkanban0 has errors: %s " % (fkanban0.errors))
- 
 
     return locals()
 

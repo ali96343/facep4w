@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 01.12.2020 13:00:02 UTC+3
+# py4web app, AI-biorex ported 03.12.2020 12:09:10 UTC+3
 # https://github.com/ali96343/facep4w
 #
 
@@ -75,74 +75,60 @@ def forms():
     page_url = "\'" + URL('forms' ) + "\'"
     messages = []
 
-    fforms0= Form(db.dfforms0, dbio=False, formstyle=FormStyleBulma)
+    fforms0= Form(db.dfforms0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms0, db.dfforms0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms0.form_name ))
+        prn_form_vars( fforms0, db.dfforms0 )
     elif fforms0.errors:
-        print("fforms0 has errors: %s" % (fforms0.errors))
-        return put_json_messages('error: ' + str( fforms0.form_name ))
+        print("fforms0 has errors: %s " % (fforms0.errors))
  
 
-    fforms1= Form(db.dfforms1, dbio=False, formstyle=FormStyleBulma)
+    fforms1= Form(db.dfforms1, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms1.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms1, db.dfforms1 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms1.form_name ))
+        prn_form_vars( fforms1, db.dfforms1 )
     elif fforms1.errors:
-        print("fforms1 has errors: %s" % (fforms1.errors))
-        return put_json_messages('error: ' + str( fforms1.form_name ))
+        print("fforms1 has errors: %s " % (fforms1.errors))
  
 
-    fforms2= Form(db.dfforms2, dbio=False, formstyle=FormStyleBulma)
+    fforms2= Form(db.dfforms2, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms2.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms2, db.dfforms2 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms2.form_name ))
+        prn_form_vars( fforms2, db.dfforms2 )
     elif fforms2.errors:
-        print("fforms2 has errors: %s" % (fforms2.errors))
-        return put_json_messages('error: ' + str( fforms2.form_name ))
+        print("fforms2 has errors: %s " % (fforms2.errors))
  
 
-    fforms3= Form(db.dfforms3, dbio=False, formstyle=FormStyleBulma)
+    fforms3= Form(db.dfforms3, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms3.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms3, db.dfforms3 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms3.form_name ))
+        prn_form_vars( fforms3, db.dfforms3 )
     elif fforms3.errors:
-        print("fforms3 has errors: %s" % (fforms3.errors))
-        return put_json_messages('error: ' + str( fforms3.form_name ))
+        print("fforms3 has errors: %s " % (fforms3.errors))
  
 
-    fforms4= Form(db.dfforms4, dbio=False, formstyle=FormStyleBulma)
+    fforms4= Form(db.dfforms4, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms4.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms4, db.dfforms4 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms4.form_name ))
+        prn_form_vars( fforms4, db.dfforms4 )
     elif fforms4.errors:
-        print("fforms4 has errors: %s" % (fforms4.errors))
-        return put_json_messages('error: ' + str( fforms4.form_name ))
+        print("fforms4 has errors: %s " % (fforms4.errors))
  
 
-    fforms5= Form(db.dfforms5, dbio=False, formstyle=FormStyleBulma)
+    fforms5= Form(db.dfforms5, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms5.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms5, db.dfforms5 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms5.form_name ))
+        prn_form_vars( fforms5, db.dfforms5 )
     elif fforms5.errors:
-        print("fforms5 has errors: %s" % (fforms5.errors))
-        return put_json_messages('error: ' + str( fforms5.form_name ))
+        print("fforms5 has errors: %s " % (fforms5.errors))
  
 
-    fforms6= Form(db.dfforms6, dbio=False, formstyle=FormStyleBulma)
+    fforms6= Form(db.dfforms6, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fforms6.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fforms6, db.dfforms6 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fforms6.form_name ))
+        prn_form_vars( fforms6, db.dfforms6 )
     elif fforms6.errors:
-        print("fforms6 has errors: %s" % (fforms6.errors))
-        return put_json_messages('error: ' + str( fforms6.form_name ))
+        print("fforms6 has errors: %s " % (fforms6.errors))
  
 
     return locals()
@@ -197,14 +183,12 @@ def uiXelements():
     page_url = "\'" + URL('uiXelements' ) + "\'"
     messages = []
 
-    fuiXelements0= Form(db.dfuiXelements0, dbio=False, formstyle=FormStyleBulma)
+    fuiXelements0= Form(db.dfuiXelements0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
     if fuiXelements0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXelements0, db.dfuiXelements0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXelements0.form_name ))
+        prn_form_vars( fuiXelements0, db.dfuiXelements0 )
     elif fuiXelements0.errors:
-        print("fuiXelements0 has errors: %s" % (fuiXelements0.errors))
-        return put_json_messages('error: ' + str( fuiXelements0.form_name ))
+        print("fuiXelements0 has errors: %s " % (fuiXelements0.errors))
  
 
     return locals()
