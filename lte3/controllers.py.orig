@@ -15,7 +15,7 @@ import bottle
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
 
 #
-# AI-biorex, 17:54:14 25.11.2020 MSK
+# AI-biorex, 15:49:46 04.12.2020 MSK
 # src:  
 #
 

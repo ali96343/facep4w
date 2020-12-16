@@ -7948,7 +7948,7 @@
                     vars: 2,
                     consts: [
                         ["role", "heading", 1, "page-header"],
-                        ["mat-flat-button", ""],
+                        ["mat-flat-button", "", "color", "warn"],
                         [1, "icons-wrapper"],
                         ["label", "Material Icons"],
                         [1, "icons-content"],
@@ -8401,7 +8401,7 @@
                     vars: 12,
                     consts: [
                         ["role", "heading", 1, "page-header"],
-                        ["mat-flat-button", ""],
+                        ["mat-flat-button", "", "color", "warn"],
                         [1, "charts-content"],
                         [1, "charts-content__charts-wrapper"],
                         [1, "charts-content__chart-item"],

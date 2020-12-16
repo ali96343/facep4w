@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
  <head>
-            <!-- 01.12.2020 13:21:38 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 07.12.2020 09:50:51 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -19,40 +19,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 2px dashed red;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -154,13 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
      [%[= ftopXnavXsidebar0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divftopXnavXsidebar0 flashdiv"> <span class="flashspan">ftopXnavXsidebar0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divftopXnavXsidebar0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">ftopXnavXsidebar0</span></div>
 
 
 [%[= ftopXnavXsidebar0.custom['end'] ]]
@@ -1040,10 +1032,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
    <!-- Control Sidebar -->
    <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-    <div class="p-3">
-     <h5>Title</h5>
-     <p>Sidebar content</p>
-    </div>
    </aside>
    <!-- /.control-sidebar -->
    <!-- Main Footer -->
@@ -1069,35 +1057,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
-  
-<!-- forms ajax -->
+ <!-- rm_flashdiv -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
-
-    for(let i = 0; i < document.forms.length; i++){
-
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
-
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
-
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
-        };
-  }
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
 </script>
 
-
- </body>
+</body>
 </html>

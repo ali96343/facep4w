@@ -15,7 +15,7 @@ ratio= 0.67
    dst: js/wild.js
 
 ratio= 0.48
-   src: .git/hooks/update.sample
+   src: index.css
    dst: example.docs
 
 ratio= 0.42

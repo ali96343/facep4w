@@ -1045,7 +1045,7 @@
                     load(page, pageSize) {
                         const startIndex = ((page - 1) % TOTAL_PAGES) * pageSize;
                         return this.http
-                            .get('ngx/static/tte/assets/data/news.json')
+                            .get('/ngx/static/tte/assets/data/news.json')
                             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(news => news.splice(startIndex, pageSize)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["delay"])(1500));
                     }
                 }

@@ -3,7 +3,8 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 03.12.2020 11:21:00 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+# py4web app, AI-biorex ported 08.12.2020 08:51:34 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+
 #
 
 #import pydal

@@ -21,10 +21,11 @@ function _setPrototypeOf(o, p) {
 }
 
 function _createSuper(Derived) {
-    return function() {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
         var Super = _getPrototypeOf(Derived),
             result;
-        if (_isNativeReflectConstruct()) {
+        if (hasNativeReflectConstruct) {
             var NewTarget = _getPrototypeOf(this).constructor;
             result = Reflect.construct(Super, arguments, NewTarget);
         } else {
@@ -116,7 +117,7 @@ function _unsupportedIterableToArray(o, minLen) {
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
     if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(n);
+    if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
 
@@ -8502,7 +8503,7 @@ function _classCallCheck(instance, Constructor) {
                     vars: 2,
                     consts: [
                         ["role", "heading", 1, "page-header"],
-                        ["mat-flat-button", ""],
+                        ["mat-flat-button", "", "color", "warn"],
                         [1, "icons-wrapper"],
                         ["label", "Material Icons"],
                         [1, "icons-content"],
@@ -9100,7 +9101,7 @@ function _classCallCheck(instance, Constructor) {
                     vars: 12,
                     consts: [
                         ["role", "heading", 1, "page-header"],
-                        ["mat-flat-button", ""],
+                        ["mat-flat-button", "", "color", "warn"],
                         [1, "charts-content"],
                         [1, "charts-content__charts-wrapper"],
                         [1, "charts-content__chart-item"],

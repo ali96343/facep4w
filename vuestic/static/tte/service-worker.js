@@ -1,4 +1,4 @@
-importScripts("/vuestic/static/tte/precache-manifest.8f88b7723c8fb8cf3af3f876c7bb6e85.js", "/vuestic/static/tte/workbox-v4.3.1/workbox-sw.js");
+importScripts("/vuestic/static/tte/precache-manifest.99c0007c6b238f0ebca862920c251b12.js", "/vuestic/static/tte/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({
     modulePathPrefix: "/workbox-v4.3.1"
 });

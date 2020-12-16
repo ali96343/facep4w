@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 01.12.2020 13:21:37 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 07.12.2020 09:50:50 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -17,40 +17,38 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 2px dashed red;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -82,10 +80,17 @@
       <a class="nav-link" href="#">Contact</a>
      </li>
     </ul>
-    <!-- SEARCH FORM -->
-    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+     <!-- Navbar Search -->
+     <li class="nav-item">
+      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+       <i class="fas fa-search"></i>
+      </a>
+      <div class="navbar-search-block">
+       
 <!-- BEGIN view: findex30, db_table: dfindex30 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= findex30.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ findex30.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
@@ -104,6 +109,10 @@
  [%[ findex30.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= findex30.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -111,21 +120,15 @@
      [%[= findex30.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divfindex30 flashdiv"> <span class="flashspan">findex30</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfindex30');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">findex30</span></div>
 
 
 [%[= findex30.custom['end'] ]]
 </div>
 <!-- END findex30-->
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+      </div>
+     </li>
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
@@ -1016,13 +1019,7 @@
 </table>
 <!-- end rows_tindex30 -->
 
-
-<div class="divtindex30 flashdiv"> <span class="flashspan">tindex30</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divtindex30');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+<div class="flashdiv"><span class="flashspan">tindex30</span></div>
 
          </div>
         </div>
@@ -1165,35 +1162,13 @@
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="[%[=URL('static/tte/dist/js/pages/dashboard3.js') ]]"></script>
-  
-<!-- forms ajax -->
+ <!-- rm_flashdiv -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
-
-    for(let i = 0; i < document.forms.length; i++){
-
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
-
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
-
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
-        };
-  }
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
 </script>
 
-
- </body>
+</body>
 </html>

@@ -495,7 +495,7 @@
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-card", 2);
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 3);
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-card-title");
-                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h5");
+                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Layout Options");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -548,7 +548,7 @@
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 3);
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "mat-card-title");
-                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "h5");
+                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "p");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Notifications Types");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -582,7 +582,7 @@
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 3);
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mat-card-title");
-                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "h5");
+                            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "p");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "Usage");
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

@@ -16,13 +16,23 @@ DB_FOLDER = os.path.join(APP_FOLDER, "databases")
 DB_URI = "sqlite://storage.db"
 DB_POOL_SIZE = 1
 DB_MIGRATE = True
-DB_FAKE_MIGRATE = False # maybe?
+DB_FAKE_MIGRATE = False  # maybe?
+
+# location where to store uploaded files:
+UPLOAD_FOLDER = os.path.join(APP_FOLDER, "uploads")
 
 # send email on regstration
-VERIFY_EMAIL = False
+VERIFY_EMAIL = True
 
 # account requires to be approved ?
 REQUIRES_APPROVAL = False
+
+# ALLOWED_ACTIONS:
+# ["all"] 
+# ["login", "logout", "request_reset_password", "reset_password", "change_password", "change_email", "update_profile"]
+# if you add "login", add also "logout"
+ALLOWED_ACTIONS = ["all"]
+
 
 # email settings
 SMTP_SSL = False
@@ -33,7 +43,7 @@ SMTP_TLS = False
 
 # session settings
 SESSION_TYPE = "cookies"
-SESSION_SECRET_KEY = "<my secret key>"
+SESSION_SECRET_KEY = "<session-secret-key>" # replace this with a uuid
 MEMCACHE_CLIENTS = ["127.0.0.1:11211"]
 REDIS_SERVER = "localhost:6379"
 
@@ -77,5 +87,5 @@ CELERY_BROKER = "redis://localhost:6379/0"
 # try import private settings
 try:
     from .settings_private import *
-except:
+except (ImportError, ModuleNotFoundError):
     pass

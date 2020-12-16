@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 03.12.2020 11:21:00 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 08.12.2020 08:51:34 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -14,39 +14,38 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    margin: 0.2em auto 0.2em auto !important;
-    padding: 0 0 0 0 !important;
-    border: 1px dashed black;
-    color: black;
-    background-color: LightGray;
-    font-weight: bold;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -346,13 +345,7 @@
      [%[= fband0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divfband0 flashdiv"> <span class="flashspan">fband0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfband0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fband0</span></div>
 
 
 [%[= fband0.custom['end'] ]]
@@ -386,5 +379,13 @@
    </div>
   </footer>
   <script src="[%[=URL('static/tte/js/bulma.js') ]]"></script>
- </body>
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
+</script>
+
+</body>
 </html>

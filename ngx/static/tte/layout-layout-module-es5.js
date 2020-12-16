@@ -1422,7 +1422,7 @@
                             key: "load",
                             value: function load(page, pageSize) {
                                 var startIndex = (page - 1) % TOTAL_PAGES * pageSize;
-                                return this.http.get('ngx/static/tte/assets/data/news.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function(news) {
+                                return this.http.get('/ngx/static/tte/assets/data/news.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function(news) {
                                     return news.splice(startIndex, pageSize);
                                 }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["delay"])(1500));
                             }

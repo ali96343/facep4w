@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 03.12.2020 11:21:00 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 08.12.2020 08:51:35 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/images/fav_icon.png') ]]" rel="shortcut icon" type="image/x-icon"/>
@@ -13,39 +13,38 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    margin: 0.2em auto 0.2em auto !important;
-    padding: 0 0 0 0 !important;
-    border: 1px dashed black;
-    color: black;
-    background-color: LightGray;
-    font-weight: bold;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -329,13 +328,7 @@
 </table>
 <!-- end rows_ttabs0 -->
 
-
-<div class="divttabs0 flashdiv"> <span class="flashspan">ttabs0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divttabs0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+<div class="flashdiv"><span class="flashspan">ttabs0</span></div>
 
       <p>Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.</p>
       <h5>Fifth level</h5>
@@ -355,5 +348,13 @@
   </section>
   <script src="[%[=URL('static/tte/js/bulma.js') ]]"></script>
   <script src="[%[=URL('static/tte/js/tabs.js') ]]"></script>
- </body>
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
+</script>
+
+</body>
 </html>

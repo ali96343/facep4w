@@ -1,5 +1,6 @@
 #
-# py4web app, AI-biorex ported 03.12.2020 11:21:00 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+# py4web app, AI-biorex ported 08.12.2020 08:51:34 UTC+3, src: https://github.com/BulmaTemplates/bulma-templates
+
 # https://github.com/ali96343/facep4w
 #
 
@@ -67,6 +68,16 @@ def put_json_messages(mess='mymess'):
     
 # ---------------------- Controllers  ------------------------------------------------
 
+@action('hero', method=["GET", "POST"] )
+@action.uses(Template('hero.html', delimiters='[%[ ]]',), db, session, T,)
+
+def hero():
+    ctrl_info= "ctrl: hero, view: hero.html"
+    page_url = "\'" + URL('hero' ) + "\'"
+    messages = []
+
+    return locals()
+
 @action('tabs', method=["GET", "POST"] )
 @action.uses(Template('tabs.html', delimiters='[%[ ]]',), db, session, T,)
 
@@ -76,16 +87,6 @@ def tabs():
     messages = []
 
     rows_ttabs0= db(db.ttabs0).select()
-    return locals()
-
-@action('hero', method=["GET", "POST"] )
-@action.uses(Template('hero.html', delimiters='[%[ ]]',), db, session, T,)
-
-def hero():
-    ctrl_info= "ctrl: hero, view: hero.html"
-    page_url = "\'" + URL('hero' ) + "\'"
-    messages = []
-
     return locals()
 
 @action('blog', method=["GET", "POST"] )
@@ -116,20 +117,29 @@ def band():
 
     return locals()
 
-@action('login', method=["GET", "POST"] )
-@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session, T,)
+@action('admin', method=["GET", "POST"] )
+@action.uses(Template('admin.html', delimiters='[%[ ]]',), db, session, T,)
 
-def login():
-    ctrl_info= "ctrl: login, view: login.html"
-    page_url = "\'" + URL('login' ) + "\'"
+def admin():
+    ctrl_info= "ctrl: admin, view: admin.html"
+    page_url = "\'" + URL('admin' ) + "\'"
     messages = []
 
-    flogin0= Form(db.dflogin0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
+    rows_tadmin0= db(db.tadmin0).select()
+    fadmin0= Form(db.dfadmin0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
 
-    if flogin0.accepted:
-        prn_form_vars( flogin0, db.dflogin0 )
-    elif flogin0.errors:
-        print("flogin0 has errors: %s " % (flogin0.errors))
+    if fadmin0.accepted:
+        prn_form_vars( fadmin0, db.dfadmin0 )
+    elif fadmin0.errors:
+        print("fadmin0 has errors: %s " % (fadmin0.errors))
+ 
+
+    fadmin1= Form(db.dfadmin1, dbio=False, keep_values=True, formstyle=FormStyleBulma)
+
+    if fadmin1.accepted:
+        prn_form_vars( fadmin1, db.dfadmin1 )
+    elif fadmin1.errors:
+        print("fadmin1 has errors: %s " % (fadmin1.errors))
  
 
     return locals()
@@ -162,13 +172,21 @@ def forum():
 
     return locals()
 
-@action('cover', method=["GET", "POST"] )
-@action.uses(Template('cover.html', delimiters='[%[ ]]',), db, session, T,)
+@action('login', method=["GET", "POST"] )
+@action.uses(Template('login.html', delimiters='[%[ ]]',), db, session, T,)
 
-def cover():
-    ctrl_info= "ctrl: cover, view: cover.html"
-    page_url = "\'" + URL('cover' ) + "\'"
+def login():
+    ctrl_info= "ctrl: login, view: login.html"
+    page_url = "\'" + URL('login' ) + "\'"
     messages = []
+
+    flogin0= Form(db.dflogin0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
+
+    if flogin0.accepted:
+        prn_form_vars( flogin0, db.dflogin0 )
+    elif flogin0.errors:
+        print("flogin0 has errors: %s " % (flogin0.errors))
+ 
 
     return locals()
 
@@ -182,30 +200,13 @@ def cards():
 
     return locals()
 
-@action('admin', method=["GET", "POST"] )
-@action.uses(Template('admin.html', delimiters='[%[ ]]',), db, session, T,)
+@action('cover', method=["GET", "POST"] )
+@action.uses(Template('cover.html', delimiters='[%[ ]]',), db, session, T,)
 
-def admin():
-    ctrl_info= "ctrl: admin, view: admin.html"
-    page_url = "\'" + URL('admin' ) + "\'"
+def cover():
+    ctrl_info= "ctrl: cover, view: cover.html"
+    page_url = "\'" + URL('cover' ) + "\'"
     messages = []
-
-    rows_tadmin0= db(db.tadmin0).select()
-    fadmin0= Form(db.dfadmin0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
-
-    if fadmin0.accepted:
-        prn_form_vars( fadmin0, db.dfadmin0 )
-    elif fadmin0.errors:
-        print("fadmin0 has errors: %s " % (fadmin0.errors))
- 
-
-    fadmin1= Form(db.dfadmin1, dbio=False, keep_values=True, formstyle=FormStyleBulma)
-
-    if fadmin1.accepted:
-        prn_form_vars( fadmin1, db.dfadmin1 )
-    elif fadmin1.errors:
-        print("fadmin1 has errors: %s " % (fadmin1.errors))
- 
 
     return locals()
 
@@ -265,6 +266,24 @@ def absurd():
 
     return locals()
 
+@action('landing', method=["GET", "POST"] )
+@action.uses(Template('landing.html', delimiters='[%[ ]]',), db, session, T,)
+
+def landing():
+    ctrl_info= "ctrl: landing, view: landing.html"
+    page_url = "\'" + URL('landing' ) + "\'"
+    messages = []
+
+    flanding0= Form(db.dflanding0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
+
+    if flanding0.accepted:
+        prn_form_vars( flanding0, db.dflanding0 )
+    elif flanding0.errors:
+        print("flanding0 has errors: %s " % (flanding0.errors))
+ 
+
+    return locals()
+
 @action('contact', method=["GET", "POST"] )
 @action.uses(Template('contact.html', delimiters='[%[ ]]',), db, session, T,)
 
@@ -295,24 +314,6 @@ def contact():
         prn_form_vars( fcontact2, db.dfcontact2 )
     elif fcontact2.errors:
         print("fcontact2 has errors: %s " % (fcontact2.errors))
- 
-
-    return locals()
-
-@action('landing', method=["GET", "POST"] )
-@action.uses(Template('landing.html', delimiters='[%[ ]]',), db, session, T,)
-
-def landing():
-    ctrl_info= "ctrl: landing, view: landing.html"
-    page_url = "\'" + URL('landing' ) + "\'"
-    messages = []
-
-    flanding0= Form(db.dflanding0, dbio=False, keep_values=True, formstyle=FormStyleBulma)
-
-    if flanding0.accepted:
-        prn_form_vars( flanding0, db.dflanding0 )
-    elif flanding0.errors:
-        print("flanding0 has errors: %s " % (flanding0.errors))
  
 
     return locals()
@@ -404,6 +405,16 @@ def showcase():
 
     return locals()
 
+@action('cheatsheet', method=["GET", "POST"] )
+@action.uses(Template('cheatsheet.html', delimiters='[%[ ]]',), db, session, T,)
+
+def cheatsheet():
+    ctrl_info= "ctrl: cheatsheet, view: cheatsheet.html"
+    page_url = "\'" + URL('cheatsheet' ) + "\'"
+    messages = []
+
+    return locals()
+
 @action('instaAlbum', method=["GET", "POST"] )
 @action.uses(Template('instaAlbum.html', delimiters='[%[ ]]',), db, session, T,)
 
@@ -452,16 +463,6 @@ def instaAlbum():
 def ghostXblog():
     ctrl_info= "ctrl: ghostXblog, view: ghost-blog.html"
     page_url = "\'" + URL('ghostXblog' ) + "\'"
-    messages = []
-
-    return locals()
-
-@action('cheatsheet', method=["GET", "POST"] )
-@action.uses(Template('cheatsheet.html', delimiters='[%[ ]]',), db, session, T,)
-
-def cheatsheet():
-    ctrl_info= "ctrl: cheatsheet, view: cheatsheet.html"
-    page_url = "\'" + URL('cheatsheet' ) + "\'"
     messages = []
 
     return locals()

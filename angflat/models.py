@@ -1,14 +1,14 @@
 
-
 from .common import db, Field
 from pydal.validators import *
 from py4web.utils.populate import populate 
 
-
 #with python cli
 #import pydal
 #from py4web import *
-#from apps.myapp.models import db
+#from apps.angflat.models import db
+
+my_app_name = "angflat"
 
 if not db(db.auth_user).count():
     body = {
@@ -31,3 +31,4 @@ db.define_table(
 
 if not db(db.test_table).count():
     populate(db.test_table, n=10)
+    db.commit()

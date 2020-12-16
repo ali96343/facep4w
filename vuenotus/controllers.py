@@ -1,39 +1,55 @@
 
 import os
 from py4web import action, request, abort, redirect, URL, Field, HTTP
-from yatl.helpers import A
 from py4web.utils.form import Form, FormStyleBulma
 from py4web.utils.grid import Grid
 from py4web.utils.publisher import Publisher, ALLOW_ALL_POLICY
 from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB
 from yatl.helpers import INPUT, H1, HTML, BODY, A
 from py4web.core import Template, Reloader
+import yatl
+
 
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
-import bottle
+from .settings import APP_NAME
+from py4web.core import bottle
 
 ## exposes services necessary to access the db.thing via ajax
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
 
 #
-# AI-biorex, 22:42:13 18.10.2020
+# AI-biorex, 14:31:01 16.12.2020 UTC+3
 # src: https://github.com/creativetimofficial/vue-notus 
 #
 
 
 
 @action('index', method=["GET", "POST"] )
+@action('static/tte', method=["GET", "POST"] )
+@action('static/tte/index', method=["GET", "POST"] )
 @action.uses(Template('index.html', delimiters='[%[ ]]',), db, session, T, )
-#
 def index(param=None):
-   ctrl_info= "ctrl: index, view: index.html"
-   if not param is None:
-       print (param)
-   return locals()
+    ctrl_info= "ctrl: index, view: index.html"
+    if not param is None:
+        print (param)
+    return locals()
 
 
 
-Glb= {'debug': True, 'my_app_name': "vuenotus", 'tte_path': '/static/tte'}
+Glb= {'debug': True, 'my_app_name': APP_NAME, 'tte_path': '/static/tte'}
+
+def before_request():
+    bad_path= '/vuenotus/static/tte/vuenotus/static/tte/'
+    bad_root='/vuenotus/vuenotus/'
+    if bottle.request.environ["PATH_INFO"].startswith(bad_path):
+        bottle.request.environ["PATH_INFO"]= bottle.request.environ["PATH_INFO"].replace( '/vuenotus/static/tte', '', 1)
+        print ( f'before_request:    /vuenotus: goto {bottle.request.environ["PATH_INFO"]}' )
+    elif bottle.request.environ["PATH_INFO"].startswith(bad_root):
+        bottle.request.environ["PATH_INFO"]= bottle.request.environ["PATH_INFO"].replace( '/vuenotus', '', 1)
+        print ( f'before_request:    /vuenotus: goto {bottle.request.environ["PATH_INFO"]}' )
+
+#bottle.default_app().add_hook( "before_request", before_request )
+
 
 @bottle.error(404)
 def error404(error):
@@ -42,15 +58,16 @@ def error404(error):
 
     def check_rule(maybe_app_root):
         for e in Reloader.ROUTES:
-            if ('rule' in e ) and ( e["rule"] == maybe_app_root) :
-                Glb["debug"] and func_mess.append(f"     found_rule: {e['rule']}")
+            if ('rule' in e ) and ( e["rule"] == maybe_app_root ):
+                Glb["debug"] and func_mess.append( f"     found_rule: {e['rule']}")
                 return True
         return False
 
     location = "/" + Glb["my_app_name"]
     lx = bottle.request.path.split("/", 2)
 
-    if len(lx) >= 2 and check_rule("/" + lx[1]):
+    if ( len(lx) >= 2 ) and check_rule("/" + lx[1]):
+
         location = "/" + lx[1]
         files_prefix = location + Glb["tte_path"]
 

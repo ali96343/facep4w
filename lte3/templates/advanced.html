@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 01.12.2020 13:21:40 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 07.12.2020 09:50:53 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -32,40 +32,38 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 2px dashed red;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -88,10 +86,17 @@
       <a class="nav-link" href="#">Contact</a>
      </li>
     </ul>
-    <!-- SEARCH FORM -->
-    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+     <!-- Navbar Search -->
+     <li class="nav-item">
+      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+       <i class="fas fa-search"></i>
+      </a>
+      <div class="navbar-search-block">
+       
 <!-- BEGIN view: fadvanced0, db_table: dfadvanced0 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fadvanced0.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fadvanced0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
@@ -110,6 +115,10 @@
  [%[ fadvanced0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fadvanced0.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -117,21 +126,15 @@
      [%[= fadvanced0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divfadvanced0 flashdiv"> <span class="flashspan">fadvanced0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfadvanced0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fadvanced0</span></div>
 
 
 [%[= fadvanced0.custom['end'] ]]
 </div>
 <!-- END fadvanced0-->
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+      </div>
+     </li>
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
@@ -2025,26 +2028,26 @@
 
     $('.my-colorpicker2').on('colorpickerChange', function(event) {
         $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-    });
+    })
 
     $("input[data-bootstrap-switch]").each(function() {
         $(this).bootstrapSwitch('state', $(this).prop('checked'));
-    });
+    })
 
 })
 // BS-Stepper Init
 document.addEventListener('DOMContentLoaded', function() {
     window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-});
+})
 
 // DropzoneJS Demo Code Start
-Dropzone.autoDiscover = false;
+Dropzone.autoDiscover = false
 
 // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-var previewNode = document.querySelector("#template");
-previewNode.id = "";
-var previewTemplate = previewNode.parentNode.innerHTML;
-previewNode.parentNode.removeChild(previewNode);
+var previewNode = document.querySelector("#template")
+previewNode.id = ""
+var previewTemplate = previewNode.parentNode.innerHTML
+previewNode.parentNode.removeChild(previewNode)
 
 var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
     url: "/target-url", // Set the url
@@ -2055,72 +2058,50 @@ var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
     autoQueue: false, // Make sure the files aren't queued until manually added
     previewsContainer: "#previews", // Define the container to display the previews
     clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
-});
+})
 
 myDropzone.on("addedfile", function(file) {
     // Hookup the start button
     file.previewElement.querySelector(".start").onclick = function() {
-        myDropzone.enqueueFile(file);
-    };
-});
+        myDropzone.enqueueFile(file)
+    }
+})
 
 // Update the total progress bar
 myDropzone.on("totaluploadprogress", function(progress) {
-    document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
-});
+    document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
+})
 
 myDropzone.on("sending", function(file) {
     // Show the total progress bar when upload starts
-    document.querySelector("#total-progress").style.opacity = "1";
+    document.querySelector("#total-progress").style.opacity = "1"
     // And disable the start button
-    file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
-});
+    file.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
+})
 
 // Hide the total progress bar when nothing's uploading anymore
 myDropzone.on("queuecomplete", function(progress) {
-    document.querySelector("#total-progress").style.opacity = "0";
-});
+    document.querySelector("#total-progress").style.opacity = "0"
+})
 
 // Setup the buttons for all transfers
 // The "add files" button doesn't need to be setup because the config
 // `clickable` has already been specified.
 document.querySelector("#actions .start").onclick = function() {
-    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-};
+    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
+}
 document.querySelector("#actions .cancel").onclick = function() {
-    myDropzone.removeAllFiles(true);
-};
+    myDropzone.removeAllFiles(true)
+}
 // DropzoneJS Demo Code End
   </script>
-  
-<!-- forms ajax -->
+ <!-- rm_flashdiv -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
-
-    for(let i = 0; i < document.forms.length; i++){
-
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
-
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
-
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
-        };
-  }
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
 </script>
 
-
- </body>
+</body>
 </html>

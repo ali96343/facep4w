@@ -52,6 +52,11 @@ div.dtsp-topRow button.dtsp-searchIcon {
     background-size: 12px
 }
 
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead th,
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead td {
+    width: 100% !important
+}
+
 div.dt-button-collection {
     z-index: 2002
 }
@@ -103,32 +108,32 @@ div.dtsp-columns-5 {
 div.dtsp-columns-6 {
     min-width: 15.666%;
     max-width: 15.666%;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    padding-left: .5%;
+    padding-right: .5%;
     margin: 0px !important
 }
 
 div.dtsp-columns-7 {
     min-width: 13.28%;
     max-width: 13.28%;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    padding-left: .5%;
+    padding-right: .5%;
     margin: 0px !important
 }
 
 div.dtsp-columns-8 {
     min-width: 11.5%;
     max-width: 11.5%;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    padding-left: .5%;
+    padding-right: .5%;
     margin: 0px !important
 }
 
 div.dtsp-columns-9 {
     min-width: 11.111%;
     max-width: 11.111%;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    padding-left: .5%;
+    padding-right: .5%;
     margin: 0px !important
 }
 
@@ -137,6 +142,10 @@ div.dt-button-collection {
 }
 
 div.dtsp-panesContainer {
+    width: 100%
+}
+
+div.dtsp-panesContainer div.dataTables_wrapper {
     width: 100%
 }
 
@@ -185,7 +194,7 @@ div.dtsp-searchPane {
     margin: 5px 0;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 0.9em;
+    font-size: .9em;
     margin: 5px
 }
 
@@ -212,7 +221,7 @@ div.dtsp-searchPane div.btn-group {
 div.dtsp-searchPane div.dtsp-topRow {
     padding: 0px !important;
     margin: 0px;
-    margin-bottom: 0.5rem
+    margin-bottom: .5rem
 }
 
 div.dtsp-searchPane div.dtsp-topRow div.dtsp-subRows {

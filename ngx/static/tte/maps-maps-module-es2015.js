@@ -3943,7 +3943,7 @@
                         this.min = Infinity;
                         this.alive = true;
                         Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["combineLatest"])([
-                                this.http.get('ngx/static/tte/assets/map/world.json'),
+                                this.http.get('/ngx/static/tte/assets/map/world.json'),
                                 this.theme.getJsTheme(),
                             ])
                             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeWhile"])(() => this.alive))

@@ -3,7 +3,8 @@ from pydal.validators import *
 from py4web.utils.populate import populate
 
 #
-# py4web app, AI-biorex ported 01.12.2020 13:21:37 UTC+3
+# py4web app, AI-biorex ported 07.12.2020 09:50:50 UTC+3, src: https://github.com/ColorlibHQ/AdminLTE
+
 #
 
 #import pydal

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 01.12.2020 13:21:44 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 07.12.2020 09:50:57 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -17,40 +17,38 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 2px dashed red;
-    text-decoration: underline;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -74,10 +72,17 @@
       <a class="nav-link" href="#">Contact</a>
      </li>
     </ul>
-    <!-- SEARCH FORM -->
-    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+     <!-- Navbar Search -->
+     <li class="nav-item">
+      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+       <i class="fas fa-search"></i>
+      </a>
+      <div class="navbar-search-block">
+       
 <!-- BEGIN view: fpace0, db_table: dfpace0 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fpace0.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fpace0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
@@ -96,6 +101,10 @@
  [%[ fpace0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fpace0.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -103,21 +112,15 @@
      [%[= fpace0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divfpace0 flashdiv"> <span class="flashspan">fpace0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfpace0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fpace0</span></div>
 
 
 [%[= fpace0.custom['end'] ]]
 </div>
 <!-- END fpace0-->
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+      </div>
+     </li>
      <!-- Messages Dropdown Menu -->
      <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
@@ -939,7 +942,11 @@
         </button>
        </div>
       </div>
-      <div class="card-body">Start creating your amazing application!</div>
+      <div class="card-body">
+       You can Change Pace Styles, Checkout the
+       <a href="https://adminlte.io/docs/3.1/" rel="noopener noreferrer" target="_blank">AdminLTE Official Docs</a>
+       in Online.
+       <br/>Start creating your amazing application!</div>
       <!-- /.card-body -->
       <div class="card-footer">Footer</div>
       <!-- /.card-footer-->
@@ -978,35 +985,13 @@
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
-  
-<!-- forms ajax -->
+ <!-- rm_flashdiv -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
-
-    for(let i = 0; i < document.forms.length; i++){
-
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
-
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
-
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
-        };
-  }
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+     }();
 </script>
 
-
- </body>
+</body>
 </html>

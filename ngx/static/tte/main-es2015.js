@@ -1972,16 +1972,16 @@
                         super(...arguments);
                         this.cameras = [{
                             title: 'Camera #1',
-                            source: 'ngx/static/tte/assets/images/camera1.jpg',
+                            source: '/ngx/static/tte/assets/images/camera1.jpg',
                         }, {
                             title: 'Camera #2',
-                            source: 'ngx/static/tte/assets/images/camera2.jpg',
+                            source: '/ngx/static/tte/assets/images/camera2.jpg',
                         }, {
                             title: 'Camera #3',
-                            source: 'ngx/static/tte/assets/images/camera3.jpg',
+                            source: '/ngx/static/tte/assets/images/camera3.jpg',
                         }, {
                             title: 'Camera #4',
-                            source: 'ngx/static/tte/assets/images/camera4.jpg',
+                            source: '/ngx/static/tte/assets/images/camera4.jpg',
                         }, ];
                     }
                     getCamerasData() {
@@ -3104,27 +3104,27 @@
                         this.users = {
                             nick: {
                                 name: 'Nick Jones',
-                                picture: 'ngx/static/tte/assets/images/nick.png'
+                                picture: '/ngx/static/tte/assets/images/nick.png'
                             },
                             eva: {
                                 name: 'Eva Moor',
-                                picture: 'ngx/static/tte/assets/images/eva.png'
+                                picture: '/ngx/static/tte/assets/images/eva.png'
                             },
                             jack: {
                                 name: 'Jack Williams',
-                                picture: 'ngx/static/tte/assets/images/jack.png'
+                                picture: '/ngx/static/tte/assets/images/jack.png'
                             },
                             lee: {
                                 name: 'Lee Wong',
-                                picture: 'ngx/static/tte/assets/images/lee.png'
+                                picture: '/ngx/static/tte/assets/images/lee.png'
                             },
                             alan: {
                                 name: 'Alan Thompson',
-                                picture: 'ngx/static/tte/assets/images/alan.png'
+                                picture: '/ngx/static/tte/assets/images/alan.png'
                             },
                             kate: {
                                 name: 'Kate Martinez',
-                                picture: 'ngx/static/tte/assets/images/kate.png'
+                                picture: '/ngx/static/tte/assets/images/kate.png'
                             },
                         };
                         this.types = {
@@ -3560,17 +3560,17 @@
                             name: 'Don\'t Wanna Fight',
                             artist: 'Alabama Shakes',
                             url: 'https://p.scdn.co/mp3-preview/6156cdbca425a894972c02fca9d76c0b70e001af',
-                            cover: 'ngx/static/tte/assets/images/cover1.jpg',
+                            cover: '/ngx/static/tte/assets/images/cover1.jpg',
                         }, {
                             name: 'Harder',
                             artist: 'Daft Punk',
                             url: 'https://p.scdn.co/mp3-preview/92a04c7c0e96bf93a1b1b1cae7dfff1921969a7b',
-                            cover: 'ngx/static/tte/assets/images/cover2.jpg',
+                            cover: '/ngx/static/tte/assets/images/cover2.jpg',
                         }, {
                             name: 'Come Together',
                             artist: 'Beatles',
                             url: 'https://p.scdn.co/mp3-preview/83090a4db6899eaca689ae35f69126dbe65d94c9',
-                            cover: 'ngx/static/tte/assets/images/cover3.jpg',
+                            cover: '/ngx/static/tte/assets/images/cover3.jpg',
                         }, ];
                     }
                     random() {
