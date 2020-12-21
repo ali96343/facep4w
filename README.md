@@ -5,6 +5,7 @@
 ( forms and tables with pydal )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
+- https://github.com/adminkit/adminkit
 - https://github.com/puikinsh/notika
 - https://github.com/puikinsh/srtdash-admin-dashboard
 - https://github.com/icdcom/octopus
