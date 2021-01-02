@@ -741,3 +741,4 @@ CREATE TABLE "test_table"(
     "f2" CHAR(512)
 );
 success!
+success!

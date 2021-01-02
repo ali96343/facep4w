@@ -17,6 +17,7 @@
 - https://github.com/nafplann/bulma-admin
 - https://github.com/tailwindadmin/admin  
 - https://github.com/davidgrzyb/tailwind-admin-template
+- https://github.com/dropways/deskapp
 
 ## angular, vue, react
 ( nodejs apps on py4web )
