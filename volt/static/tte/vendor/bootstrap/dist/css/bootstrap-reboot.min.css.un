@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Reboot v5.0.0-alpha2 (https://getbootstrap.com/)
+ * Bootstrap Reboot v5.0.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -11,9 +11,15 @@
     box-sizing: border-box
 }
 
+@media (prefers-reduced-motion:no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -104,7 +110,7 @@ p {
     margin-bottom: 1rem
 }
 
-abbr[data-original-title],
+abbr[data-bs-original-title],
 abbr[title] {
     text-decoration: underline;
     -webkit-text-decoration: underline dotted;
@@ -188,7 +194,7 @@ a {
 }
 
 a:hover {
-    color: #024dbc
+    color: #0a58ca
 }
 
 a:not([href]):not([class]),
@@ -202,7 +208,9 @@ kbd,
 pre,
 samp {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 1em
+    font-size: 1em;
+    direction: ltr;
+    unicode-bidi: bidi-override
 }
 
 pre {
@@ -210,8 +218,7 @@ pre {
     margin-top: 0;
     margin-bottom: 1rem;
     overflow: auto;
-    font-size: .875em;
-    -ms-overflow-style: scrollbar
+    font-size: .875em
 }
 
 pre code {
@@ -290,8 +297,8 @@ button {
 }
 
 button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color
+    outline: dotted 1px;
+    outline: -webkit-focus-ring-color auto 5px
 }
 
 button,
@@ -303,11 +310,6 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit
-}
-
-button,
-input {
-    overflow: visible
 }
 
 button,
@@ -363,8 +365,7 @@ legend {
     padding: 0;
     margin-bottom: .5rem;
     font-size: calc(1.275rem + .3vw);
-    line-height: inherit;
-    white-space: normal
+    line-height: inherit
 }
 
 @media (min-width:1200px) {
@@ -402,6 +403,10 @@ legend+* {
 
 ::-webkit-color-swatch-wrapper {
     padding: 0
+}
+
+::file-selector-button {
+    font: inherit
 }
 
 ::-webkit-file-upload-button {

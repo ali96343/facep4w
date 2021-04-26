@@ -8,7 +8,7 @@
 .uplot {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.5;
-    width: max-content;
+    width: min-content;
 }
 
 .u-title {
@@ -69,11 +69,7 @@
     width: 1em;
     height: 1em;
     margin-right: 4px;
-    border: 2px solid transparent;
-}
-
-.u-series:first-child .u-marker {
-    display: none;
+    background-clip: content-box !important;
 }
 
 .u-inline.u-live th::after {
@@ -113,12 +109,14 @@
     z-index: 100;
 }
 
-.u-cursor-x {
+.u-hz .u-cursor-x,
+.u-vt .u-cursor-y {
     height: 100%;
     border-right: 1px dashed #607D8B;
 }
 
-.u-cursor-y {
+.u-hz .u-cursor-y,
+.u-vt .u-cursor-x {
     width: 100%;
     border-bottom: 1px dashed #607D8B;
 }
@@ -128,10 +126,11 @@
     top: 0;
     left: 0;
     border-radius: 50%;
-    filter: brightness(85%);
     pointer-events: none;
     will-change: transform;
     z-index: 100;
+    /*this has to be !important since we set inline "background" shorthand */
+    background-clip: content-box !important;
 }
 
 .u-select.u-off,

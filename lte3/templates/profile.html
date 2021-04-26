@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.12.2020 09:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.04.2021 15:09:09 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -12,8 +12,11 @@
   <!-- Theme style -->
   <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -78,25 +81,25 @@
       </a>
       <div class="navbar-search-block">
        
-<!-- BEGIN view: fprofile0, db_table: dfprofile0 -->
+<!-- BEGIN view: fprofileA0, db_table: dfprofileA0 -->
 <div class="form-inline">
-[%[= fprofile0.custom['begin'] ]]
+[%[= fprofileA0.custom['begin'] ]]
 <div class="input-group input-group-sm">
- [%[ fprofile0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fprofile0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fprofile0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
- [%[ fprofile0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
- [%[= fprofile0.custom['widgets']['f0'] ]]
+ [%[ fprofileA0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
+ [%[ fprofileA0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fprofileA0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
+ [%[ fprofileA0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
+ [%[= fprofileA0.custom['widgets']['f0'] ]]
 
- <span style="color:#ff0000">[%[= fprofile0.custom['errors']['f0'] if 'f0' in fprofile0.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA0.custom['errors']['f0'] if 'f0' in fprofileA0.custom['errors'] else '' ]]</span>
 
  <div class="input-group-append">
- [%[ fprofile0.custom['submit']['_class']= 'btn btn-navbar'  ]]
- [%[ fprofile0.custom['submit']['_type']= 'submit'  ]]
- [%[ fprofile0.custom['submit']['_title']= 'mysubmit from button'  ]]
- [%[ fprofile0.custom['submit']['_value']= 'Submit'  ]]
- [%[ fprofile0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
- [%[= fprofile0.custom['submit'] ]]
+ [%[ fprofileA0.custom['submit']['_class']= 'btn btn-navbar'  ]]
+ [%[ fprofileA0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fprofileA0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fprofileA0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fprofileA0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fprofileA0.custom['submit'] ]]
 
   <button class="btn btn-navbar" data-widget="navbar-search" type="button">
    <i class="fas fa-times">
@@ -105,16 +108,16 @@
  </div>
 </div>
 
- [%[ for hidden_widget in fprofile0.custom['hidden_widgets'].keys(): ]]
-     [%[= fprofile0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ for hidden_widget in fprofileA0.custom['hidden_widgets'].keys(): ]]
+     [%[= fprofileA0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  <div class="flashdiv"><span class="flashspan">fprofile0</span></div>
+  <div class="flashdiv"><span class="flashspan">fprofileA0</span></div>
 
 
-[%[= fprofile0.custom['end'] ]]
+[%[= fprofileA0.custom['end'] ]]
 </div>
-<!-- END fprofile0-->
+<!-- END fprofileA0-->
 
       </div>
      </li>
@@ -593,7 +596,7 @@
           </a>
          </li>
          <li class="nav-item">
-          <a class="nav-link active" href="[%[=URL('profile') ]]">
+          <a class="nav-link active" href="[%[=URL('profileA') ]]">
            <i class="far fa-circle nav-icon"></i>
            <p>Profile</p>
           </a>
@@ -667,13 +670,13 @@
           </a>
           <ul class="nav nav-treeview">
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('login') ]]">
+            <a class="nav-link" href="[%[=URL('loginA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Login v1</p>
             </a>
            </li>
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('register') ]]">
+            <a class="nav-link" href="[%[=URL('registerA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Register v1</p>
             </a>
@@ -1065,38 +1068,38 @@
              <!-- /.user-block -->
              <p>Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for its demise, but others ignore the hate as they create awesome tools to help create filler text for everyone from bacon lovers to Charlie Sheen fans.</p>
              
-<!-- BEGIN view: fprofile1, db_table: dfprofile1 -->
+<!-- BEGIN view: fprofileA1, db_table: dfprofileA1 -->
 <div class="form-horizontal">
-[%[= fprofile1.custom['begin'] ]]
+[%[= fprofileA1.custom['begin'] ]]
 <div class="input-group input-group-sm mb-0">
- [%[ fprofile1.custom['widgets']['f0']['_class']= 'form-control form-control-sm'  ]]
- [%[ fprofile1.custom['widgets']['f0']['_placeholder']= 'Response_p4w'  ]]
- [%[ fprofile1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[= fprofile1.custom['widgets']['f0'] ]]
+ [%[ fprofileA1.custom['widgets']['f0']['_class']= 'form-control form-control-sm'  ]]
+ [%[ fprofileA1.custom['widgets']['f0']['_placeholder']= 'Response'  ]]
+ [%[ fprofileA1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fprofileA1.custom['widgets']['f0'] ]]
 
- <span style="color:#ff0000">[%[= fprofile1.custom['errors']['f0'] if 'f0' in fprofile1.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA1.custom['errors']['f0'] if 'f0' in fprofileA1.custom['errors'] else '' ]]</span>
 
  <div class="input-group-append">
- [%[ fprofile1.custom['submit']['_type']= 'submit'  ]]
- [%[ fprofile1.custom['submit']['_class']= 'btn btn-danger'  ]]
- [%[ fprofile1.custom['submit']['_title']= 'mysubmit from button'  ]]
- [%[ fprofile1.custom['submit']['_value']= 'Submit'  ]]
- [%[ fprofile1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
- [%[= fprofile1.custom['submit'] ]]
+ [%[ fprofileA1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fprofileA1.custom['submit']['_class']= 'btn btn-danger'  ]]
+ [%[ fprofileA1.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fprofileA1.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fprofileA1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fprofileA1.custom['submit'] ]]
 
  </div>
 </div>
 
- [%[ for hidden_widget in fprofile1.custom['hidden_widgets'].keys(): ]]
-     [%[= fprofile1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ for hidden_widget in fprofileA1.custom['hidden_widgets'].keys(): ]]
+     [%[= fprofileA1.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  <div class="flashdiv"><span class="flashspan">fprofile1</span></div>
+  <div class="flashdiv"><span class="flashspan">fprofileA1</span></div>
 
 
-[%[= fprofile1.custom['end'] ]]
+[%[= fprofileA1.custom['end'] ]]
 </div>
-<!-- END fprofile1-->
+<!-- END fprofileA1-->
 
             </div>
             <!-- /.post -->
@@ -1248,21 +1251,21 @@
            <!-- /.tab-pane -->
            <div class="tab-pane" id="settings">
             
-<!-- BEGIN view: fprofile2, db_table: dfprofile2 -->
+<!-- BEGIN view: fprofileA2, db_table: dfprofileA2 -->
 <div class="form-horizontal">
-[%[= fprofile2.custom['begin'] ]]
+[%[= fprofileA2.custom['begin'] ]]
 <div class="form-group row">
  <label class="col-sm-2 col-form-label" for="inputName">
   Name
  </label>
  <div class="col-sm-10">
- [%[ fprofile2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fprofile2.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fprofile2.custom['widgets']['f0']['_id']= 'inputName'  ]]
- [%[ fprofile2.custom['widgets']['f0']['_placeholder']= 'Name_p4w'  ]]
- [%[= fprofile2.custom['widgets']['f0'] ]]
+ [%[ fprofileA2.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fprofileA2.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fprofileA2.custom['widgets']['f0']['_id']= 'inputName'  ]]
+ [%[ fprofileA2.custom['widgets']['f0']['_placeholder']= 'Name'  ]]
+ [%[= fprofileA2.custom['widgets']['f0'] ]]
 
- <span style="color:#ff0000">[%[= fprofile2.custom['errors']['f0'] if 'f0' in fprofile2.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA2.custom['errors']['f0'] if 'f0' in fprofileA2.custom['errors'] else '' ]]</span>
 
  </div>
 </div>
@@ -1272,13 +1275,13 @@
   Email
  </label>
  <div class="col-sm-10">
- [%[ fprofile2.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fprofile2.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fprofile2.custom['widgets']['f1']['_id']= 'inputEmail'  ]]
- [%[ fprofile2.custom['widgets']['f1']['_placeholder']= 'Email_p4w'  ]]
- [%[= fprofile2.custom['widgets']['f1'] ]]
+ [%[ fprofileA2.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fprofileA2.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fprofileA2.custom['widgets']['f1']['_id']= 'inputEmail'  ]]
+ [%[ fprofileA2.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[= fprofileA2.custom['widgets']['f1'] ]]
 
- <span style="color:#ff0000">[%[= fprofile2.custom['errors']['f1'] if 'f1' in fprofile2.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA2.custom['errors']['f1'] if 'f1' in fprofileA2.custom['errors'] else '' ]]</span>
 
  </div>
 </div>
@@ -1288,13 +1291,13 @@
   Name
  </label>
  <div class="col-sm-10">
- [%[ fprofile2.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fprofile2.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fprofile2.custom['widgets']['f2']['_id']= 'inputName2'  ]]
- [%[ fprofile2.custom['widgets']['f2']['_placeholder']= 'Name_p4w'  ]]
- [%[= fprofile2.custom['widgets']['f2'] ]]
+ [%[ fprofileA2.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[ fprofileA2.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fprofileA2.custom['widgets']['f2']['_id']= 'inputName2'  ]]
+ [%[ fprofileA2.custom['widgets']['f2']['_placeholder']= 'Name'  ]]
+ [%[= fprofileA2.custom['widgets']['f2'] ]]
 
- <span style="color:#ff0000">[%[= fprofile2.custom['errors']['f2'] if 'f2' in fprofile2.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA2.custom['errors']['f2'] if 'f2' in fprofileA2.custom['errors'] else '' ]]</span>
 
  </div>
 </div>
@@ -1304,33 +1307,33 @@
   Experience
  </label>
  <div class="col-sm-10">
- [%[ fprofile2.custom['widgets']['f3']['_class']= 'form-control'  ]]
- [%[ fprofile2.custom['widgets']['f3']['_id']= 'inputExperience'  ]]
- [%[ fprofile2.custom['widgets']['f3']['_placeholder']= 'Experience'  ]]
- [%[ fprofile2.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[= fprofile2.custom['widgets']['f3'] ]]
+ [%[ fprofileA2.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fprofileA2.custom['widgets']['f3']['_id']= 'inputExperience'  ]]
+ [%[ fprofileA2.custom['widgets']['f3']['_placeholder']= 'Experience'  ]]
+ [%[ fprofileA2.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fprofileA2.custom['widgets']['f3'] ]]
 
- <span style="color:#ff0000">[%[= fprofile2.custom['errors']['f3'] if 'f3' in fprofile2.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= fprofileA2.custom['errors']['f3'] if 'f3' in fprofileA2.custom['errors'] else '' ]]</span>
 
- [%[ fprofile2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
- [%[ fprofile2.custom['submit']['_id']= 'inputExperience'  ]]
- [%[ fprofile2.custom['submit']['_placeholder']= ''  ]]
- [%[ fprofile2.custom['submit']['_type']= 'submit'  ]]
- [%[ fprofile2.custom['submit']['_rows']= '1'  ]]
- [%[ fprofile2.custom['submit']['_value']= 'Submit'  ]]
- [%[ fprofile2.custom['submit']['_title']= 'mysubmit from last element'  ]]
- [%[= fprofile2.custom['submit'] ]]
+ [%[ fprofileA2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fprofileA2.custom['submit']['_id']= 'inputExperience'  ]]
+ [%[ fprofileA2.custom['submit']['_placeholder']= ''  ]]
+ [%[ fprofileA2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fprofileA2.custom['submit']['_rows']= '1'  ]]
+ [%[ fprofileA2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fprofileA2.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fprofileA2.custom['submit'] ]]
 
- [%[ for hidden_widget in fprofile2.custom['hidden_widgets'].keys(): ]]
-     [%[= fprofile2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ for hidden_widget in fprofileA2.custom['hidden_widgets'].keys(): ]]
+     [%[= fprofileA2.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  <div class="flashdiv"><span class="flashspan">fprofile2</span></div>
+  <div class="flashdiv"><span class="flashspan">fprofileA2</span></div>
 
 
-[%[= fprofile2.custom['end'] ]]
+[%[= fprofileA2.custom['end'] ]]
 </div>
-<!-- END fprofile2-->
+<!-- END fprofileA2-->
 
            </div>
            <!-- /.tab-pane -->
@@ -1353,10 +1356,10 @@
    <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
      <b>Version</b>
-     3.1.0-rc
+     3.1.0
     </div>
     <strong>
-     Copyright © 2014-2020
+     Copyright © 2014-2021
      <a href="https://adminlte.io">AdminLTE.io</a>
      .
     </strong>
@@ -1377,11 +1380,62 @@
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

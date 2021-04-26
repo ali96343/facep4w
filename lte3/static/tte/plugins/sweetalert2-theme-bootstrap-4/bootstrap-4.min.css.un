@@ -133,7 +133,7 @@
 }
 
 .swal2-popup.swal2-toast .swal2-styled {
-    margin: 0 .3125em;
+    margin: .125em .3125em;
     padding: .3125em .625em;
     font-size: .875rem
 }
@@ -449,7 +449,7 @@
 
 .swal2-styled {
     margin: .3125em;
-    padding: .625em 2em;
+    padding: .625em 1.1em;
     box-shadow: none;
     font-weight: 500
 }

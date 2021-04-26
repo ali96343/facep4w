@@ -201,6 +201,11 @@
     color: #6c757d
 }
 
+.datepicker-cell.next.selected,
+.datepicker-cell.prev.selected {
+    color: #e6e6e6
+}
+
 .datepicker-cell.highlighted:not(.selected):not(.range):not(.today) {
     border-radius: 0;
     background-color: #f8f9fa

@@ -11,7 +11,7 @@
     position: relative;
     display: inline-block;
     width: 120px;
-    margin: 0.5em
+    margin: .5em
 }
 
 .dropzone .dz-preview .dz-progress {

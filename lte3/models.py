@@ -1,29 +1,51 @@
-from .common import db, Field
+import datetime
+
+from .common import db, Field, Tags, groups
 from pydal.validators import *
 from py4web.utils.populate import populate
 
-#
-# py4web app, AI-biorex ported 07.12.2020 09:50:50 UTC+3, src: https://github.com/ColorlibHQ/AdminLTE
-
-#
+# py4web app, AI-biorex ported 26.04.2021 15:09:02 UTC+3
 
 #import pydal
-
 #from py4web import *
 #from apps.myapp.models import db
 
-#if not len( db().select(db.auth_user.id) ):
 if not db(db.auth_user).count():
-    body = {
-        "username": "nil",
-        "email": "nil@nil.com",
+    u1 = {
+        "username": "anil",
+        "email": "anil@nil.com",
         "password": str(CRYPT()("xyz12345")[0]),
-        #"password": str(pydal.validators.CRYPT()("xyz12345")[0]),
-        "first_name": "MainUser",
-        "last_name": "MainUserLast",
+        "first_name": "Anil_first",
+        "last_name": "Anil_Last",
     }
-    db.auth_user.insert(**body)
+
+    u2 = {
+        "username": "bnil",
+        "email": "bnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Bnil_first",
+        "last_name": "Bnil_Last",
+    }
+
+    u3 = {
+        "username": "cnil",
+        "email": "cnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Cnil_first",
+        "last_name": "Cnil_Last",
+    }
+
+    for e in [u1, u2, u3]: db.auth_user.insert(**db.auth_user._filter_fields(e) )
     db.commit()
+
+    #groups = Tags(db.auth_user)
+
+    groups.add(1, 'manager')
+    groups.add(2, ['dancer', 'teacher'])
+    groups.add(3, 'dancer')
+    db.commit()
+
+
 
 db.define_table(
     'test_table',
@@ -34,9 +56,61 @@ db.define_table(
 db.commit()
 
 if not db(db.test_table).count():
-    populate(db.test_table, n=10)
+    populate(db.test_table, n=50)
     db.commit()
 
+db.define_table( 'uploaded_files',
+    Field('orig_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field("remark",'text',),
+    Field('uniq_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field('time', 'datetime', editable=False, default = datetime.datetime.now(), requires = IS_DATETIME( )),
+    )
+
+db.commit()
+#
+db.define_table( 'app_images',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+    
+if not db(db.app_images).count():
+    db.app_images.insert(f0='dist/img/AdminLTELogo.png', )
+    db.app_images.insert(f0='dist/img/user1-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/user8-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/user3-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/user2-160x160.jpg', )
+    db.app_images.insert(f0='dist/img/user7-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/user5-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/user6-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/default-150x150.png', )
+    db.app_images.insert(f0='dist/img/user4-128x128.jpg', )
+    db.app_images.insert(f0='dist/img/photo2.png', )
+    db.app_images.insert(f0='dist/img/photo1.png', )
+    db.app_images.insert(f0='dist/img/photo3.jpg', )
+    db.app_images.insert(f0='dist/img/credit/visa.png', )
+    db.app_images.insert(f0='dist/img/credit/mastercard.png', )
+    db.app_images.insert(f0='dist/img/credit/american-express.png', )
+    db.app_images.insert(f0='dist/img/credit/paypal2.png', )
+    db.app_images.insert(f0='dist/img/photo4.jpg', )
+    db.app_images.insert(f0='dist/img/prod-1.jpg', )
+    db.app_images.insert(f0='dist/img/prod-2.jpg', )
+    db.app_images.insert(f0='dist/img/prod-3.jpg', )
+    db.app_images.insert(f0='dist/img/prod-4.jpg', )
+    db.app_images.insert(f0='dist/img/prod-5.jpg', )
+    db.app_images.insert(f0='dist/img/avatar.png', )
+    db.app_images.insert(f0='dist/img/avatar2.png', )
+    db.app_images.insert(f0='dist/img/avatar3.png', )
+    db.app_images.insert(f0='dist/img/avatar4.png', )
+    db.app_images.insert(f0='dist/img/avatar5.png', )
+
+db.commit()
+
+db.define_table( 'css_js_files',
+    Field('orig_file_path', requires=IS_NOT_EMPTY(),  ),
+    Field('found_in_file', default='' ),
+    Field('app_name', default='' ),
+    )
+
+db.commit()
 
 db.define_table(
     'dfindex0',
@@ -323,6 +397,12 @@ db.define_table(
 db.commit()
 
 db.define_table(
+    'dfsimple1',
+    Field('f0','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
     'dfdata0',
     Field('f0','string', length=1024, ),
     )
@@ -377,19 +457,19 @@ db.define_table(
 db.commit()
 
 db.define_table(
-    'dfprofile0',
+    'dfprofileA0',
     Field('f0','string', length=1024, ),
     )
 db.commit()
 
 db.define_table(
-    'dfprofile1',
+    'dfprofileA1',
     Field('f0','string', length=1024, ),
     )
 db.commit()
 
 db.define_table(
-    'dfprofile2',
+    'dfprofileA2',
     Field('f0','string', length=1024, ),
     Field('f1','string', length=1024, ),
     Field('f2','string', length=1024, ),
@@ -446,7 +526,7 @@ db.define_table(
 db.commit()
 
 db.define_table(
-    'dflogin0',
+    'dfloginA0',
     Field('f0','string', length=1024, ),
     Field('f1','string', length=1024, ),
     Field('f2','boolean',  ),
@@ -454,7 +534,7 @@ db.define_table(
 db.commit()
 
 db.define_table(
-    'dfregister0',
+    'dfregisterA0',
     Field('f0','string', length=1024, ),
     Field('f1','string', length=1024, ),
     Field('f2','string', length=1024, ),
@@ -572,6 +652,18 @@ db.commit()
 
 db.define_table(
     'dfiframe0',
+    Field('f0','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
+    'dfsimpleXresults0',
+    Field('f0','string', length=1024, ),
+    )
+db.commit()
+
+db.define_table(
+    'dfsimpleXresults1',
     Field('f0','string', length=1024, ),
     )
 db.commit()
@@ -745,10 +837,10 @@ db.define_table(
 db.commit()
 
 if not db(db.tindex30).count():
-    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"static/tte/dist/img/default-150x150.png\"/>", f1="$13 USD", f2="<small class=\"text-success mr-1\"><i class=\"fas fa-arrow-up\"></i> 12% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
-    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"static/tte/dist/img/default-150x150.png\"/>", f1="$29 USD", f2="<small class=\"text-warning mr-1\"><i class=\"fas fa-arrow-down\"></i> 0.5% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
-    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"static/tte/dist/img/default-150x150.png\"/>", f1="$1,230 USD", f2="<small class=\"text-danger mr-1\"><i class=\"fas fa-arrow-down\"></i> 3% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
-    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"static/tte/dist/img/default-150x150.png\"/> <span class=\"badge bg-danger\">NEW</span>", f1="$199 USD", f2="<small class=\"text-success mr-1\"><i class=\"fas fa-arrow-up\"></i> 63% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
+    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/>", f1="$13 USD", f2="<small class=\"text-success mr-1\"><i class=\"fas fa-arrow-up\"></i> 12% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
+    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/>", f1="$29 USD", f2="<small class=\"text-warning mr-1\"><i class=\"fas fa-arrow-down\"></i> 0.5% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
+    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/>", f1="$1,230 USD", f2="<small class=\"text-danger mr-1\"><i class=\"fas fa-arrow-down\"></i> 3% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
+    db.tindex30.insert(f0="<img alt=\"Product 1\" class=\"img-circle img-size-32 mr-2\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/> <span class=\"badge bg-danger\">NEW</span>", f1="$199 USD", f2="<small class=\"text-success mr-1\"><i class=\"fas fa-arrow-up\"></i> 63% </small>", f3="<a class=\"text-muted\" href=\"#\"><i class=\"fas fa-search\"></i></a>")
     db.commit()
 
 if not db(db.tindex20).count():
@@ -958,15 +1050,15 @@ if not db(db.tinvoice1).count():
     db.commit()
 
 if not db(db.tprojects0).count():
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar2.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"57\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 57%\"></div></div> <small> 57% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar2.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"47\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 47%\"></div></div> <small> 47% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar2.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar2.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"60\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 60%\"></div></div> <small> 60% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar5.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"12\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 12%\"></div></div> <small> 12% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar2.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"35\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 35%\"></div></div> <small> 35% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar5.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"87\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 87%\"></div></div> <small> 87% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar3.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar4.png\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"static/tte/dist/img/avatar5.png\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"57\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 57%\"></div></div> <small> 57% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"47\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 47%\"></div></div> <small> 47% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"60\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 60%\"></div></div> <small> 60% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"12\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 12%\"></div></div> <small> 12% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"35\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 35%\"></div></div> <small> 35% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"87\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 87%\"></div></div> <small> 87% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a> AdminLTE v3 </a> <br/> <small> Created 01.01.2019 </small>", f2="<ul class=\"list-inline\"><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li class=\"list-inline-item\"><img alt=\"Avatar\" class=\"table-avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress-sm\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"77\" class=\"progress-bar bg-green\" role=\"progressbar\" style=\"width: 77%\"></div></div> <small> 77% Complete </small>", f4="<span class=\"badge badge-success\">Success</span>", f5="<a class=\"btn btn-primary btn-sm\" href=\"#\"><i class=\"fas fa-folder\"></i> View </a> <a class=\"btn btn-info btn-sm\" href=\"#\"><i class=\"fas fa-pencil-alt\"></i> Edit </a> <a class=\"btn btn-danger btn-sm\" href=\"#\"><i class=\"fas fa-trash\"></i> Delete </a>")
     db.commit()
 
 if not db(db.tprojectXedit0).count():

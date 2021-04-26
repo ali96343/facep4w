@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.12.2020 09:50:56 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.04.2021 15:09:10 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -14,8 +14,11 @@
   <!-- Theme style -->
   <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -66,16 +69,16 @@
     <div class="card-body login-card-body">
      <p class="login-box-msg">Sign in to start your session</p>
      
-<!-- BEGIN view: flogin0, db_table: dflogin0 -->
+<!-- BEGIN view: floginA0, db_table: dfloginA0 -->
 <div>
-[%[= flogin0.custom['begin'] ]]
+[%[= floginA0.custom['begin'] ]]
 <div class="input-group mb-3">
- [%[ flogin0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ flogin0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ flogin0.custom['widgets']['f0']['_placeholder']= 'Email_p4w'  ]]
- [%[= flogin0.custom['widgets']['f0'] ]]
+ [%[ floginA0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ floginA0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ floginA0.custom['widgets']['f0']['_placeholder']= 'Email'  ]]
+ [%[= floginA0.custom['widgets']['f0'] ]]
 
- <span style="color:#ff0000">[%[= flogin0.custom['errors']['f0'] if 'f0' in flogin0.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= floginA0.custom['errors']['f0'] if 'f0' in floginA0.custom['errors'] else '' ]]</span>
 
  <div class="input-group-append">
   <div class="input-group-text">
@@ -86,12 +89,12 @@
 </div>
 
 <div class="input-group mb-3">
- [%[ flogin0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ flogin0.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ flogin0.custom['widgets']['f1']['_placeholder']= 'Password_p4w'  ]]
- [%[= flogin0.custom['widgets']['f1'] ]]
+ [%[ floginA0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ floginA0.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ floginA0.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
+ [%[= floginA0.custom['widgets']['f1'] ]]
 
- <span style="color:#ff0000">[%[= flogin0.custom['errors']['f1'] if 'f1' in flogin0.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= floginA0.custom['errors']['f1'] if 'f1' in floginA0.custom['errors'] else '' ]]</span>
 
  <div class="input-group-append">
   <div class="input-group-text">
@@ -104,41 +107,39 @@
 <div class="row">
  <div class="col-8">
   <div class="icheck-primary">
- [%[ flogin0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
- [%[ flogin0.custom['widgets']['f2']['_id']= 'remember'  ]]
- [%[ flogin0.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
- [%[= flogin0.custom['widgets']['f2'] ]]
+ [%[ floginA0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ floginA0.custom['widgets']['f2']['_id']= 'remember'  ]]
+ [%[ floginA0.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= floginA0.custom['widgets']['f2'] ]]
 
- <span style="color:#ff0000">[%[= flogin0.custom['errors']['f2'] if 'f2' in flogin0.custom['errors'] else '' ]]</span>
+ <span style="color:#ff0000">[%[= floginA0.custom['errors']['f2'] if 'f2' in floginA0.custom['errors'] else '' ]]</span>
 
    <label for="remember">
     Remember Me
    </label>
   </div>
  </div>
- <!-- /.col -->
  <div class="col-4">
- [%[ flogin0.custom['submit']['_type']= 'submit'  ]]
- [%[ flogin0.custom['submit']['_class']= 'btn btn-primary btn-block'  ]]
- [%[ flogin0.custom['submit']['_title']= 'mysubmit from button'  ]]
- [%[ flogin0.custom['submit']['_value']= 'Submit'  ]]
- [%[ flogin0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
- [%[= flogin0.custom['submit'] ]]
+ [%[ floginA0.custom['submit']['_type']= 'submit'  ]]
+ [%[ floginA0.custom['submit']['_class']= 'btn btn-primary btn-block'  ]]
+ [%[ floginA0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ floginA0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ floginA0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= floginA0.custom['submit'] ]]
 
  </div>
- <!-- /.col -->
 </div>
 
- [%[ for hidden_widget in flogin0.custom['hidden_widgets'].keys(): ]]
-     [%[= flogin0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ for hidden_widget in floginA0.custom['hidden_widgets'].keys(): ]]
+     [%[= floginA0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  <div class="flashdiv"><span class="flashspan">flogin0</span></div>
+  <div class="flashdiv"><span class="flashspan">floginA0</span></div>
 
 
-[%[= flogin0.custom['end'] ]]
+[%[= floginA0.custom['end'] ]]
 </div>
-<!-- END flogin0-->
+<!-- END floginA0-->
 
      <div class="social-auth-links text-center mb-3">
       <p>- OR -</p>
@@ -156,7 +157,7 @@
       <a href="[%[=URL('forgotXpassword') ]]">I forgot my password</a>
      </p>
      <p class="mb-0">
-      <a class="text-center" href="[%[=URL('register') ]]">Register a new membership</a>
+      <a class="text-center" href="[%[=URL('registerA') ]]">Register a new membership</a>
      </p>
     </div>
     <!-- /.login-card-body -->
@@ -169,11 +170,62 @@
   <script src="[%[=URL('static/tte/plugins/bootstrap/js/bootstrap.bundle.min.js') ]]"></script>
   <!-- AdminLTE App -->
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

@@ -26,6 +26,7 @@ const SELECTOR_FOOTER = '.main-footer'
 const SELECTOR_PUSHMENU_BTN = '[data-widget="pushmenu"]'
 const SELECTOR_LOGIN_BOX = '.login-box'
 const SELECTOR_REGISTER_BOX = '.register-box'
+const SELECTOR_PRELOADER = '.preloader'
 
 const CLASS_NAME_SIDEBAR_COLLAPSED = 'sidebar-collapse'
 const CLASS_NAME_SIDEBAR_FOCUSED = 'sidebar-focused'
@@ -38,6 +39,7 @@ const Default = {
   scrollbarAutoHide: 'l',
   panelAutoHeight: true,
   panelAutoHeightMode: 'min-height',
+  preloadDuration: 200,
   loginRegisterAutoHeight: true
 }
 
@@ -50,8 +52,6 @@ class Layout {
   constructor(element, config) {
     this._config = config
     this._element = element
-
-    this._init()
   }
 
   // Public
@@ -90,10 +90,6 @@ class Layout {
         $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) - heights.header)
       }
 
-      if (heights.controlSidebar + heights.footer >= heights.sidebar && heights.controlSidebar != 0) {
-        $contentSelector.css(this._config.panelAutoHeightMode, (heights.controlSidebar + offset))
-      }
-
       if (this._isFooterFixed()) {
         $contentSelector.css(this._config.panelAutoHeightMode, parseFloat($contentSelector.css(this._config.panelAutoHeightMode)) + heights.footer)
       }
@@ -101,10 +97,6 @@ class Layout {
 
     if (!$body.hasClass(CLASS_NAME_LAYOUT_FIXED)) {
       return
-    }
-
-    if (offset !== false) {
-      $contentSelector.css(this._config.panelAutoHeightMode, (max + offset) - heights.header - heights.footer)
     }
 
     if (typeof $.fn.overlayScrollbars !== 'undefined') {
@@ -180,13 +172,19 @@ class Layout {
       this.fixLayoutHeight()
     })
 
-    $(document).ready(() => {
-      this.fixLayoutHeight()
-    })
-
     setTimeout(() => {
       $('body.hold-transition').removeClass('hold-transition')
     }, 50)
+
+    setTimeout(() => {
+      const $preloader = $(SELECTOR_PRELOADER)
+      if ($preloader) {
+        $preloader.css('height', 0)
+        setTimeout(() => {
+          $preloader.children().hide()
+        }, 200)
+      }
+    }, this._config.preloadDuration)
   }
 
   _max(numbers) {
@@ -236,13 +234,13 @@ $(window).on('load', () => {
   Layout._jQueryInterface.call($('body'))
 })
 
-$(`${SELECTOR_SIDEBAR} a`).on('focusin', () => {
-  $(SELECTOR_MAIN_SIDEBAR).addClass(CLASS_NAME_SIDEBAR_FOCUSED)
-})
-
-$(`${SELECTOR_SIDEBAR} a`).on('focusout', () => {
-  $(SELECTOR_MAIN_SIDEBAR).removeClass(CLASS_NAME_SIDEBAR_FOCUSED)
-})
+$(`${SELECTOR_SIDEBAR} a`)
+  .on('focusin', () => {
+    $(SELECTOR_MAIN_SIDEBAR).addClass(CLASS_NAME_SIDEBAR_FOCUSED)
+  })
+  .on('focusout', () => {
+    $(SELECTOR_MAIN_SIDEBAR).removeClass(CLASS_NAME_SIDEBAR_FOCUSED)
+  })
 
 /**
  * jQuery API

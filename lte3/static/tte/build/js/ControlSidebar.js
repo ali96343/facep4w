@@ -64,13 +64,13 @@ class ControlSidebar {
   collapse() {
     const $body = $('body')
     const $html = $('html')
-    const that = this
+    const { target } = this._config
 
     // Show the control sidebar
     if (this._config.controlsidebarSlide) {
       $html.addClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)
       $body.removeClass(CLASS_NAME_CONTROL_SIDEBAR_SLIDE).delay(300).queue(function () {
-        $(that._config.target).hide()
+        $(target).hide()
         $html.removeClass(CLASS_NAME_CONTROL_SIDEBAR_ANIMATE)
         $(this).dequeue()
       })
@@ -253,10 +253,8 @@ class ControlSidebar {
 
     let sidebarHeight = heights.window - heights.header
 
-    if (this._isFooterFixed()) {
-      if ($(SELECTOR_FOOTER).css('position') === 'fixed') {
-        sidebarHeight = heights.window - heights.header - heights.footer
-      }
+    if (this._isFooterFixed() && $(SELECTOR_FOOTER).css('position') === 'fixed') {
+      sidebarHeight = heights.window - heights.header - heights.footer
     }
 
     $controlSidebar.css('height', sidebarHeight)

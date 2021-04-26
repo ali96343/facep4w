@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.12.2020 09:50:53 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.04.2021 15:09:06 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -29,8 +29,11 @@
   <!-- Theme style -->
   <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -101,7 +104,7 @@
 <div class="input-group input-group-sm">
  [%[ fadvanced0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
  [%[ fadvanced0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fadvanced0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fadvanced0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fadvanced0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[= fadvanced0.custom['widgets']['f0'] ]]
 
@@ -610,7 +613,7 @@
           </a>
          </li>
          <li class="nav-item">
-          <a class="nav-link" href="[%[=URL('profile') ]]">
+          <a class="nav-link" href="[%[=URL('profileA') ]]">
            <i class="far fa-circle nav-icon"></i>
            <p>Profile</p>
           </a>
@@ -684,13 +687,13 @@
           </a>
           <ul class="nav nav-treeview">
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('login') ]]">
+            <a class="nav-link" href="[%[=URL('loginA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Login v1</p>
             </a>
            </li>
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('register') ]]">
+            <a class="nav-link" href="[%[=URL('registerA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Register v1</p>
             </a>
@@ -1528,6 +1531,20 @@
             </div>
            </div>
           </div>
+          <!-- Date and time -->
+          <div class="form-group">
+           <label>
+            Date and time:
+           </label>
+           <div class="input-group date" data-target-input="nearest" id="reservationdatetime">
+            <input class="form-control datetimepicker-input" data-target="#reservationdatetime" type="text"/>
+            <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+             <div class="input-group-text">
+              <i class="fa fa-calendar"></i>
+             </div>
+            </div>
+           </div>
+          </div>
           <!-- /.form group -->
           <!-- Date range -->
           <div class="form-group">
@@ -1576,7 +1593,7 @@
          </div>
          <div class="card-footer">
           Visit
-          <a href="https://tempusdominus.github.io/bootstrap-4/Usage/">tempusdominus</a>
+          <a href="https://getdatepicker.com/5-4/">tempusdominus</a>
           for more examples and information about
                   the plugin.
          </div>
@@ -1916,10 +1933,10 @@
    <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
      <b>Version</b>
-     3.1.0-rc
+     3.1.0
     </div>
     <strong>
-     Copyright © 2014-2020
+     Copyright © 2014-2021
      <a href="https://adminlte.io">AdminLTE.io</a>
      .
     </strong>
@@ -1981,10 +1998,18 @@
     //Money Euro
     $('[data-mask]').inputmask()
 
-    //Date range picker
+    //Date picker
     $('#reservationdate').datetimepicker({
         format: 'L'
     });
+
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({
+        icons: {
+            time: 'far fa-clock'
+        }
+    });
+
     //Date range picker
     $('#reservation').daterangepicker()
     //Date range picker with time picker
@@ -2095,11 +2120,62 @@ document.querySelector("#actions .cancel").onclick = function() {
 }
 // DropzoneJS Demo Code End
   </script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

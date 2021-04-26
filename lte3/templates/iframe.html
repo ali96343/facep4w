@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.12.2020 09:50:57 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.04.2021 15:09:11 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -14,8 +14,11 @@
   <!-- overlayScrollbars -->
   <link href="[%[=URL('static/tte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -86,7 +89,7 @@
 <div class="input-group input-group-sm">
  [%[ fiframe0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
  [%[ fiframe0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fiframe0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fiframe0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fiframe0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[= fiframe0.custom['widgets']['f0'] ]]
 
@@ -520,7 +523,7 @@
           </a>
          </li>
          <li class="nav-item">
-          <a class="nav-link" href="[%[=URL('profile') ]]">
+          <a class="nav-link" href="[%[=URL('profileA') ]]">
            <i class="far fa-circle nav-icon"></i>
            <p>Profile</p>
           </a>
@@ -594,13 +597,13 @@
           </a>
           <ul class="nav nav-treeview">
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('login') ]]">
+            <a class="nav-link" href="[%[=URL('loginA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Login v1</p>
             </a>
            </li>
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('register') ]]">
+            <a class="nav-link" href="[%[=URL('registerA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Register v1</p>
             </a>
@@ -826,12 +829,18 @@
    </aside>
    <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper iframe-mode" data-loading-screen="750" data-widget="iframe">
-    <div class="nav navbar navbar-expand-lg navbar-white navbar-light border-bottom p-0">
-     <a class="nav-link bg-danger" data-widget="iframe-close" href="#">Close</a>
+    <div class="nav navbar navbar-expand navbar-white navbar-light border-bottom p-0">
+     <div class="nav-item dropdown">
+      <a aria-expanded="false" aria-haspopup="true" class="nav-link bg-danger dropdown-toggle" data-toggle="dropdown" href="#" role="button">Close</a>
+      <div class="dropdown-menu mt-0">
+       <a class="dropdown-item" data-type="all" data-widget="iframe-close" href="#">Close All</a>
+       <a class="dropdown-item" data-type="all-other" data-widget="iframe-close" href="#">Close All Other</a>
+      </div>
+     </div>
      <a class="nav-link bg-light" data-widget="iframe-scrollleft" href="#">
       <i class="fas fa-angle-double-left"></i>
      </a>
-     <ul class="navbar-nav" role="tablist"></ul>
+     <ul class="navbar-nav overflow-hidden" role="tablist"></ul>
      <a class="nav-link bg-light" data-widget="iframe-scrollright" href="#">
       <i class="fas fa-angle-double-right"></i>
      </a>
@@ -856,14 +865,14 @@
    <!-- /.content-wrapper -->
    <footer class="main-footer">
     <strong>
-     Copyright © 2014-2020
+     Copyright © 2014-2021
      <a href="https://adminlte.io">AdminLTE.io</a>
      .
     </strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
      <b>Version</b>
-     3.1.0-rc
+     3.1.0
     </div>
    </footer>
    <!-- Control Sidebar -->
@@ -889,11 +898,62 @@
   <script src="[%[=URL('static/tte/dist/js/adminlte.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

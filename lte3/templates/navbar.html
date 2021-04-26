@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 07.12.2020 09:50:52 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 26.04.2021 15:09:05 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>biorex title text</title>
@@ -16,8 +16,11 @@
   <!-- Theme style -->
   <link href="[%[=URL('static/tte/dist/css/adminlte.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -77,10 +80,10 @@
     <ul class="navbar-nav ml-auto">
      <!-- Navbar Search -->
      <li class="nav-item">
-      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+      <a class="nav-link" data-target="#main-header-search" data-widget="navbar-search" href="#" role="button">
        <i class="fas fa-search"></i>
       </a>
-      <div class="navbar-search-block">
+      <div class="navbar-search-block" id="main-header-search">
        
 <!-- BEGIN view: fnavbar0, db_table: dfnavbar0 -->
 <div class="form-inline">
@@ -88,7 +91,7 @@
 <div class="input-group input-group-sm">
  [%[ fnavbar0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar0.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar0.custom['widgets']['f0'] ]]
 
@@ -597,7 +600,7 @@
           </a>
          </li>
          <li class="nav-item">
-          <a class="nav-link" href="[%[=URL('profile') ]]">
+          <a class="nav-link" href="[%[=URL('profileA') ]]">
            <i class="far fa-circle nav-icon"></i>
            <p>Profile</p>
           </a>
@@ -671,13 +674,13 @@
           </a>
           <ul class="nav nav-treeview">
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('login') ]]">
+            <a class="nav-link" href="[%[=URL('loginA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Login v1</p>
             </a>
            </li>
            <li class="nav-item">
-            <a class="nav-link" href="[%[=URL('register') ]]">
+            <a class="nav-link" href="[%[=URL('registerA') ]]">
              <i class="far fa-circle nav-icon"></i>
              <p>Register v1</p>
             </a>
@@ -945,7 +948,7 @@
          </div>
          <div class="card-body">
           <div class="row">
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4>
              Default Navbar
              <small>(navbar-light)</small>
@@ -959,21 +962,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search1" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search1">
+                
 <!-- BEGIN view: fnavbar1, db_table: dfnavbar1 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar1.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar1.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar1.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar1.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar1.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar1.custom['widgets']['f0'] ]]
 
@@ -987,6 +997,10 @@
  [%[ fnavbar1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar1.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1001,9 +1015,125 @@
 </div>
 <!-- END fnavbar1-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4>
              Default Navbar
              <small>(navbar-white navbar-light)</small>
@@ -1017,21 +1147,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search2" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search2">
+                
 <!-- BEGIN view: fnavbar2, db_table: dfnavbar2 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar2.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar2.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar2.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar2.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar2.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar2.custom['widgets']['f0'] ]]
 
@@ -1045,6 +1182,10 @@
  [%[ fnavbar2.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar2.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1059,11 +1200,127 @@
 </div>
 <!-- END fnavbar2-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
           </div>
           <div class="row">
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4 class="mt-4">
              Primary Navbar
              <small>
@@ -1080,21 +1337,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search3" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search3">
+                
 <!-- BEGIN view: fnavbar3, db_table: dfnavbar3 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar3.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar3.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar3.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar3.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar3.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar3.custom['widgets']['f0'] ]]
 
@@ -1108,6 +1372,10 @@
  [%[ fnavbar3.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar3.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1122,9 +1390,125 @@
 </div>
 <!-- END fnavbar3-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4 class="mt-4">
              Primary Navbar
              <small>(navbar-primary navbar-light)</small>
@@ -1138,21 +1522,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search4" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search4">
+                
 <!-- BEGIN view: fnavbar4, db_table: dfnavbar4 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar4.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar4.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar4.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar4.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar4.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar4.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar4.custom['widgets']['f0'] ]]
 
@@ -1166,6 +1557,10 @@
  [%[ fnavbar4.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar4.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1180,11 +1575,127 @@
 </div>
 <!-- END fnavbar4-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
           </div>
           <div class="row">
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4 class="mt-4">
              Orange Navbar
              <small>
@@ -1201,21 +1712,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search5" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search5">
+                
 <!-- BEGIN view: fnavbar5, db_table: dfnavbar5 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar5.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar5.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar5.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar5.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar5.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar5.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar5.custom['widgets']['f0'] ]]
 
@@ -1229,6 +1747,10 @@
  [%[ fnavbar5.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar5.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1243,9 +1765,125 @@
 </div>
 <!-- END fnavbar5-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
-           <div class="col-12 col-md-6">
+           <div class="col-12 col-lg-6">
             <h4 class="mt-4">
              Orange Navbar
              <small>(navbar-orange navbar-dark)</small>
@@ -1259,21 +1897,28 @@
                </a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
-               <a class="nav-link" href="#">Home</a>
+               <a class="nav-link" href="[%[=URL('index3') ]]">Home</a>
               </li>
               <li class="nav-item d-none d-sm-inline-block">
                <a class="nav-link" href="#">Contact</a>
               </li>
              </ul>
-             <!-- SEARCH FORM -->
-             
+             <!-- Right navbar links -->
+             <ul class="navbar-nav ml-auto">
+              <!-- Navbar Search -->
+              <li class="nav-item">
+               <a class="nav-link" data-target="#navbar-search6" data-widget="navbar-search" href="#" role="button">
+                <i class="fas fa-search"></i>
+               </a>
+               <div class="navbar-search-block" id="navbar-search6">
+                
 <!-- BEGIN view: fnavbar6, db_table: dfnavbar6 -->
-<div class="form-inline ml-3">
+<div class="form-inline">
 [%[= fnavbar6.custom['begin'] ]]
 <div class="input-group input-group-sm">
  [%[ fnavbar6.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[ fnavbar6.custom['widgets']['f0']['_class']= 'form-control form-control-navbar'  ]]
- [%[ fnavbar6.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fnavbar6.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fnavbar6.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fnavbar6.custom['widgets']['f0'] ]]
 
@@ -1287,6 +1932,10 @@
  [%[ fnavbar6.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fnavbar6.custom['submit'] ]]
 
+  <button class="btn btn-navbar" data-widget="navbar-search" type="button">
+   <i class="fas fa-times">
+   </i>
+  </button>
  </div>
 </div>
 
@@ -1301,6 +1950,122 @@
 </div>
 <!-- END fnavbar6-->
 
+               </div>
+              </li>
+              <!-- Messages Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 mr-3 img-circle" src="[%[=URL('static/tte/dist/img/user1-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">Call me whenever you can</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user8-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">I got your message bro</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <!-- Message Start -->
+                 <div class="media">
+                  <img alt="User Avatar" class="img-size-50 img-circle mr-3" src="[%[=URL('static/tte/dist/img/user3-128x128.jpg') ]]"/>
+                  <div class="media-body">
+                   <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning">
+                     <i class="fas fa-star"></i>
+                    </span>
+                   </h3>
+                   <p class="text-sm">The subject goes here</p>
+                   <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    4 Hours Ago
+                   </p>
+                  </div>
+                 </div>
+                 <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
+               </div>
+              </li>
+              <!-- Notifications Dropdown Menu -->
+              <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+               </a>
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-envelope mr-2"></i>
+                 4 new messages
+                 <span class="float-right text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-users mr-2"></i>
+                 8 friend requests
+                 <span class="float-right text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                 <i class="fas fa-file mr-2"></i>
+                 3 new reports
+                 <span class="float-right text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item dropdown-footer" href="#">See All Notifications</a>
+               </div>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                <i class="fas fa-expand-arrows-alt"></i>
+               </a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" data-slide="true" data-widget="control-sidebar" href="#" role="button">
+                <i class="fas fa-th-large"></i>
+               </a>
+              </li>
+             </ul>
             </nav>
            </div>
           </div>
@@ -1614,10 +2379,10 @@
    <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
      <b>Version</b>
-     3.1.0-rc
+     3.1.0
     </div>
     <strong>
-     Copyright © 2014-2020
+     Copyright © 2014-2021
      <a href="https://adminlte.io">AdminLTE.io</a>
      .
     </strong>
@@ -1638,11 +2403,62 @@
   <script src="[%[=URL('static/tte/dist/js/adminlte.min.js') ]]"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="[%[=URL('static/tte/dist/js/demo.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

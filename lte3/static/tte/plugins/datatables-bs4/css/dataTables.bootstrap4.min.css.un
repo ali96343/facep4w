@@ -1,4 +1,4 @@
-table.dataTable {
+﻿table.dataTable {
     clear: both;
     margin-top: 6px !important;
     margin-bottom: 6px !important;
@@ -45,13 +45,13 @@ div.dataTables_wrapper div.dataTables_filter label {
 }
 
 div.dataTables_wrapper div.dataTables_filter input {
-    margin-left: 0.5em;
+    margin-left: .5em;
     display: inline-block;
     width: auto
 }
 
 div.dataTables_wrapper div.dataTables_info {
-    padding-top: 0.85em
+    padding-top: .85em
 }
 
 div.dataTables_wrapper div.dataTables_paginate {
@@ -107,9 +107,9 @@ table.dataTable>thead .sorting_asc_disabled:after,
 table.dataTable>thead .sorting_desc_disabled:before,
 table.dataTable>thead .sorting_desc_disabled:after {
     position: absolute;
-    bottom: 0.9em;
+    bottom: .9em;
     display: block;
-    opacity: 0.3
+    opacity: .3
 }
 
 table.dataTable>thead .sorting:before,
@@ -118,7 +118,7 @@ table.dataTable>thead .sorting_desc:before,
 table.dataTable>thead .sorting_asc_disabled:before,
 table.dataTable>thead .sorting_desc_disabled:before {
     right: 1em;
-    content: "\2191"
+    content: "↑"
 }
 
 table.dataTable>thead .sorting:after,
@@ -126,8 +126,8 @@ table.dataTable>thead .sorting_asc:after,
 table.dataTable>thead .sorting_desc:after,
 table.dataTable>thead .sorting_asc_disabled:after,
 table.dataTable>thead .sorting_desc_disabled:after {
-    right: 0.5em;
-    content: "\2193"
+    right: .5em;
+    content: "↓"
 }
 
 table.dataTable>thead .sorting_asc:before,
@@ -195,7 +195,7 @@ table.dataTable.table-sm .sorting:before,
 table.dataTable.table-sm .sorting_asc:before,
 table.dataTable.table-sm .sorting_desc:before {
     top: 5px;
-    right: 0.85em
+    right: .85em
 }
 
 table.dataTable.table-sm .sorting:after,
@@ -233,10 +233,10 @@ div.table-responsive>div.dataTables_wrapper>div.row {
     margin: 0
 }
 
-div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:first-child {
+div.table-responsive>div.dataTables_wrapper>div.row>div[class^=col-]:first-child {
     padding-left: 0
 }
 
-div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-child {
+div.table-responsive>div.dataTables_wrapper>div.row>div[class^=col-]:last-child {
     padding-right: 0
 }

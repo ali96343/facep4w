@@ -1,3 +1,8 @@
+- install http://py4web.com
+
+py4web is an excellent and fast framework ( with tornado event loop) for web development
+
+
 # facep4w
 ## py4web apps ported from multistars-github dashboards
 
@@ -5,11 +10,13 @@
 ( forms and tables with pydal )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
+- https://github.com/ColorlibHQ/AdminLTE
+- https://github.com/BootstrapDash/Kapella-Free-Bootstrap-Admin-Template
+- https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template
 - https://github.com/adminkit/adminkit
 - https://github.com/puikinsh/notika
 - https://github.com/puikinsh/srtdash-admin-dashboard
 - https://github.com/icdcom/octopus
-- https://github.com/ColorlibHQ/AdminLTE
 - https://github.com/ColorlibHQ/gentelella
 - https://github.com/StartBootstrap/startbootstrap-sb-admin
 - https://github.com/mazipan/bulma-admin-dashboard-template
@@ -28,5 +35,3 @@
 - https://github.com/epicmaxco/vuestic-admin
 - https://github.com/creativetimofficial/vue-notus
 - https://github.com/creativetimofficial/material-dashboard-react
-
-Thanks in advance for letting me about errors, typo ... etc

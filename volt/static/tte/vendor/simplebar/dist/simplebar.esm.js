@@ -1,5 +1,5 @@
 /**
- * SimpleBar.js - v6.0.0-beta.2
+ * simplebar - v6.0.0-beta.10
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -7,16 +7,9 @@
  * Under MIT License
  */
 
-import 'core-js/modules/es.array.for-each';
-import 'core-js/modules/web.dom-collections.for-each';
 import canUseDOM from 'can-use-dom';
 import SimpleBar from 'simplebar-core';
 export { default } from 'simplebar-core';
-import 'core-js/modules/es.array.reduce';
-import 'core-js/modules/es.function.name';
-import 'core-js/modules/es.regexp.exec';
-import 'core-js/modules/es.string.match';
-import 'core-js/modules/es.string.replace';
 
 // Helper function to retrieve options from element attributes
 var getOptions = function getOptions(obj) {
@@ -101,7 +94,7 @@ SimpleBar.handleMutations = function (mutations) {
     });
     Array.prototype.forEach.call(mutation.removedNodes, function (removedNode) {
       if (removedNode.nodeType === 1) {
-        if (removedNode.hasAttribute('[data-simplebar="init"]')) {
+        if (removedNode.hasAttribute('data-simplebar')) {
           SimpleBar.instances.has(removedNode) && SimpleBar.instances.get(removedNode).unMount();
         } else {
           Array.prototype.forEach.call(removedNode.querySelectorAll('[data-simplebar="init"]'), function (el) {
@@ -114,6 +107,7 @@ SimpleBar.handleMutations = function (mutations) {
 };
 
 SimpleBar.getOptions = getOptions;
+SimpleBar.default = SimpleBar;
 /**
  * HTML API
  * Called only in a browser env.
