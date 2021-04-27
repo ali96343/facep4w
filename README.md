@@ -1,6 +1,8 @@
 - install http://py4web.com
 
-py4web is an excellent and fast framework ( with tornado event loop) for web development
+py4web is excellent and fast (with tornado event loop)
+
+py4web is the best for web development
 
 
 # facep4w
