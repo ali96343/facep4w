@@ -1,5 +1,5 @@
 
-py4web http://py4web.com is fast (with tornado event loop) and the best for web development
+http://py4web.com is fast (with tornado event loop) and the best for web development
 
 # facep4w
 ## py4web apps ported from multistars-github dashboards
