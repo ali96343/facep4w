@@ -49,7 +49,7 @@ def before_request():
         bottle.request.environ["PATH_INFO"]= bottle.request.environ["PATH_INFO"].replace( '/angflat', '', 1)
         print ( f'before_request:    /angflat: goto {bottle.request.environ["PATH_INFO"]}' )
 
-bottle.default_app().add_hook( "before_request", before_request )
+#bottle.default_app().add_hook( "before_request", before_request )
 
 
 @bottle.error(404)
