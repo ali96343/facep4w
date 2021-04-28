@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 01.12.2020 12:12:41 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 28.04.2021 11:31:58 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -11,43 +11,44 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet"/>
   <title>biorex title text</title>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 1px dashed black;
-    text-decoration: underline;
-}
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -156,7 +157,7 @@
         </a>
         <ul class="list-reset -mx-2 bg-white-medium-dark">
          <li class="border-t mt-2 border-300-border w-full h-full px-2 py-3">
-          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('login') ]]">
+          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('loginA') ]]">
            Login Page
            <span>
             <i class="fa fa-angle-right float-right"></i>
@@ -164,7 +165,7 @@
           </a>
          </li>
          <li class="border-t border-300-border w-full h-full px-2 py-3">
-          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('register') ]]">
+          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('registerA') ]]">
            Register Page
            <span>
             <i class="fa fa-angle-right float-right"></i>
@@ -290,7 +291,7 @@
  [%[ fmodals0.custom['widgets']['f0']['_class']= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500'  ]]
  [%[ fmodals0.custom['widgets']['f0']['_id']= 'grid-first-name'  ]]
  [%[ fmodals0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fmodals0.custom['widgets']['f0']['_placeholder']= 'Jane_p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f0']['_placeholder']= 'Jane'  ]]
  [%[= fmodals0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f0'] if 'f0' in fmodals0.custom['errors'] else '' ]]</span>
@@ -306,7 +307,7 @@
  [%[ fmodals0.custom['widgets']['f1']['_class']= 'appearance-none block w-full bg-gray-200 text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600'  ]]
  [%[ fmodals0.custom['widgets']['f1']['_id']= 'grid-last-name'  ]]
  [%[ fmodals0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fmodals0.custom['widgets']['f1']['_placeholder']= 'Doe_p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f1']['_placeholder']= 'Doe'  ]]
  [%[= fmodals0.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f1'] if 'f1' in fmodals0.custom['errors'] else '' ]]</span>
@@ -322,7 +323,7 @@
  [%[ fmodals0.custom['widgets']['f2']['_class']= 'appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey'  ]]
  [%[ fmodals0.custom['widgets']['f2']['_id']= 'grid-password'  ]]
  [%[ fmodals0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fmodals0.custom['widgets']['f2']['_placeholder']= '******************_p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f2']['_placeholder']= '******************'  ]]
  [%[= fmodals0.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f2'] if 'f2' in fmodals0.custom['errors'] else '' ]]</span>
@@ -342,7 +343,7 @@
  [%[ fmodals0.custom['widgets']['f3']['_class']= 'appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey'  ]]
  [%[ fmodals0.custom['widgets']['f3']['_id']= 'grid-city'  ]]
  [%[ fmodals0.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fmodals0.custom['widgets']['f3']['_placeholder']= 'Albuquerque_p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f3']['_placeholder']= 'Albuquerque'  ]]
  [%[= fmodals0.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f3'] if 'f3' in fmodals0.custom['errors'] else '' ]]</span>
@@ -376,7 +377,7 @@
  [%[ fmodals0.custom['widgets']['f5']['_class']= 'appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey'  ]]
  [%[ fmodals0.custom['widgets']['f5']['_id']= 'grid-zip'  ]]
  [%[ fmodals0.custom['widgets']['f5']['_type']= 'text'  ]]
- [%[ fmodals0.custom['widgets']['f5']['_placeholder']= '90210_p4w'  ]]
+ [%[ fmodals0.custom['widgets']['f5']['_placeholder']= '90210'  ]]
  [%[= fmodals0.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fmodals0.custom['errors']['f5'] if 'f5' in fmodals0.custom['errors'] else '' ]]</span>
@@ -401,13 +402,7 @@
      [%[= fmodals0.custom['hidden_widgets'][hidden_widget] ]]
  [%[ pass ]] 
 
-  
-<div class="divfmodals0 flashdiv"> <span class="flashspan">fmodals0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfmodals0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fmodals0</span></div>
 
 
 [%[= fmodals0.custom['end'] ]]
@@ -439,32 +434,61 @@
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
 
             let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
         };
   }
+
 </script>
 
 
- </body>
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
 </html>

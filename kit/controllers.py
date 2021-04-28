@@ -1,10 +1,10 @@
 #
-# py4web app, AI-biorex ported 19.12.2020 12:15:25 UTC+3, src: https://github.com/adminkit/adminkit
+# py4web app, AI-biorex ported 28.04.2021 12:04:48 UTC+3, src: https://github.com/adminkit/adminkit
 
 # https://github.com/ali96343/facep4w
 #
 
-import os, json
+import os, json, uuid
 from py4web.core import bottle
 
 from py4web import action, request, response,  abort, redirect, URL, Field
@@ -14,8 +14,11 @@ from py4web.utils.publisher import Publisher, ALLOW_ALL_POLICY
 from pydal.validators import IS_NOT_EMPTY, IS_INT_IN_RANGE, IS_IN_SET, IS_IN_DB
 from py4web.core import Template, Reloader
 from py4web.utils.dbstore import DBStore
+from py4web import Session, Cache, Translator, Flash, DAL
 
-#from yatl.helpers import INPUT, H1, HTML, BODY, A
+from py4web.utils.url_signer import URLSigner
+
+from yatl.helpers import INPUT, H1, HTML, BODY, A, DIV, SPAN, P
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
 from .settings import APP_NAME
 
@@ -24,489 +27,490 @@ from .settings import APP_NAME
 
 # exposes services necessary to access the db.thing via ajax
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
-
-#db_sess = DAL('sqlite:memory')
-#session =  Session(storage=DBStore(db_sess))
+url_signer = URLSigner(session)
 
 Glb= {'debug': True , 'my_app_name': APP_NAME, 'tte_path': '/static/tte' }
 
 # ---------------------- Utils -------------------------------------------------------
 
-def prn_form_vars(myform, mydb,):
+def insert_form_vars(myform, mytable):
 
-        id_db = None; row_db = None; f0_fld = None; inserted = False
+    row_id, table_row, f0_fld = None, None, None
 
+    if Glb['debug'] == True:
+        print("app:",Glb['my_app_name'])
+        _ = [ print (f'     {k}: {v}') for k,v in myform.vars.items() if k != '_formkey']
+
+    f0_fld = myform.vars.get('f0', None )
+    if (not f0_fld is None) and len(f0_fld):
+        row_id = mytable.insert(**mytable._filter_fields(myform.vars))
+        db.commit()
+
+        if not row_id is None:
+            table_row = mytable(row_id )
+
+            if not table_row is None:
+                if Glb['debug'] == True:
+                     print( f'     inserted: \"{myform.vars.f0}\" into {mytable.f0}, id = {row_id}' )
+                     print( f"     select  : \"{table_row.f0}\" from {mytable.f0}, id = {row_id}" )
+                     print ()
+    else:
         if Glb['debug'] == True:
-            print("app:",Glb['my_app_name'])
-            _ = [ print (f'     {k}: {v}') for k,v in myform.vars.items() if k != '_formkey']
+            print( f"     no entry inserted: (f0_fld is None) or (len(f0_fld) == 0)")
+            print()
 
-        f0_fld = myform.vars.get('f0', None )
-        if (not f0_fld is None) and len(f0_fld):
-            id_db = mydb.insert(**mydb._filter_fields(myform.vars))
-            db.commit()
+    return row_id 
 
-            if not id_db is None:
-                row_db = mydb(id_db )
 
-                if not row_db is None:
-                    if Glb['debug'] == True:
-                         print(f'     inserted: \"{myform.vars.f0}\" into {mydb.f0}, id = {id_db}' )
-                         print(f"     select  : \"{row_db.f0}\" from {mydb.f0}, id = {id_db}" )
-                         print ()
-                    inserted =True
-        else:
-            if Glb['debug'] == True:
-                print(f"     no entry inserted: (f0_fld is None) or (len(f0_fld) == 0)")
-                print()
 
-        return inserted
-            
-def put_json_messages(mess='mymess'):
+@action('callback', method="GET")
+# Note that we do not use a template.  This is a JSON API, not a "web page".
+@action.uses(url_signer.verify())
+def callback():
+     print("Called with:", dict(request.params))
+     return dict(messages=request.params.echo)
+
+#
+def json2user(mess='mymess', icon_type = 'warning', js_alert='sweet2'):
     response.headers["Content-Type"] = "application/json"
-    return json.dumps( {'messages' : f'{mess}'})
-    
+    return json.dumps( {'messages' : f'{mess}', 'icon_type': icon_type, 'js_alert': js_alert})
+
 # ---------------------- Controllers  ------------------------------------------------
 
 @action('index', method=["GET", "POST"] )
-@action.uses(Template('index.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('index.html', delimiters='[%[ ]]',))
 
 def index():
-    ctrl_info= "ctrl: index, view: index.html"
-    page_url = "\'" + URL('index' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'index', 'v':'index.html' }
+    messages = ['index', 'index.html']
+    #
+    ctrl_template_url = "\'" + URL('index' ) + "\'"
 
     rows_tindex0= db(db.tindex0).select()
     rows_tindex1= db(db.tindex1).select()
+    # 
     findex0= Form(db.dfindex0, dbio=False, formstyle=FormStyleBulma)
-
     if findex0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( findex0, db.dfindex0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( findex0.form_name ))
+        icon_type ='success' if insert_form_vars(findex0, db.dfindex0) else 'info'
+        return json2user(mess = str( findex0.form_name ), icon_type=icon_type )
     elif findex0.errors:
         print("findex0 has errors: %s" % (findex0.errors))
-        return put_json_messages('error: ' + str( findex0.form_name ))
- 
+        return json2user(mess = str(findex0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXgrid', method=["GET", "POST"] )
-@action.uses(Template('ui-grid.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-grid.html', delimiters='[%[ ]]',))
 
 def uiXgrid():
-    ctrl_info= "ctrl: uiXgrid, view: ui-grid.html"
-    page_url = "\'" + URL('uiXgrid' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXgrid', 'v':'ui-grid.html' }
+    messages = ['uiXgrid', 'ui-grid.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXgrid' ) + "\'"
 
+    # 
     fuiXgrid0= Form(db.dfuiXgrid0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXgrid0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXgrid0, db.dfuiXgrid0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXgrid0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXgrid0, db.dfuiXgrid0) else 'info'
+        return json2user(mess = str( fuiXgrid0.form_name ), icon_type=icon_type )
     elif fuiXgrid0.errors:
         print("fuiXgrid0 has errors: %s" % (fuiXgrid0.errors))
-        return put_json_messages('error: ' + str( fuiXgrid0.form_name ))
- 
+        return json2user(mess = str(fuiXgrid0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXcards', method=["GET", "POST"] )
-@action.uses(Template('ui-cards.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-cards.html', delimiters='[%[ ]]',))
 
 def uiXcards():
-    ctrl_info= "ctrl: uiXcards, view: ui-cards.html"
-    page_url = "\'" + URL('uiXcards' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXcards', 'v':'ui-cards.html' }
+    messages = ['uiXcards', 'ui-cards.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXcards' ) + "\'"
 
+    # 
     fuiXcards0= Form(db.dfuiXcards0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXcards0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXcards0, db.dfuiXcards0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXcards0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXcards0, db.dfuiXcards0) else 'info'
+        return json2user(mess = str( fuiXcards0.form_name ), icon_type=icon_type )
     elif fuiXcards0.errors:
         print("fuiXcards0 has errors: %s" % (fuiXcards0.errors))
-        return put_json_messages('error: ' + str( fuiXcards0.form_name ))
- 
+        return json2user(mess = str(fuiXcards0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXmodals', method=["GET", "POST"] )
-@action.uses(Template('ui-modals.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-modals.html', delimiters='[%[ ]]',))
 
 def uiXmodals():
-    ctrl_info= "ctrl: uiXmodals, view: ui-modals.html"
-    page_url = "\'" + URL('uiXmodals' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXmodals', 'v':'ui-modals.html' }
+    messages = ['uiXmodals', 'ui-modals.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXmodals' ) + "\'"
 
+    # 
     fuiXmodals0= Form(db.dfuiXmodals0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXmodals0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXmodals0, db.dfuiXmodals0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXmodals0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXmodals0, db.dfuiXmodals0) else 'info'
+        return json2user(mess = str( fuiXmodals0.form_name ), icon_type=icon_type )
     elif fuiXmodals0.errors:
         print("fuiXmodals0 has errors: %s" % (fuiXmodals0.errors))
-        return put_json_messages('error: ' + str( fuiXmodals0.form_name ))
- 
+        return json2user(mess = str(fuiXmodals0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXalerts', method=["GET", "POST"] )
-@action.uses(Template('ui-alerts.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-alerts.html', delimiters='[%[ ]]',))
 
 def uiXalerts():
-    ctrl_info= "ctrl: uiXalerts, view: ui-alerts.html"
-    page_url = "\'" + URL('uiXalerts' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXalerts', 'v':'ui-alerts.html' }
+    messages = ['uiXalerts', 'ui-alerts.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXalerts' ) + "\'"
 
+    # 
     fuiXalerts0= Form(db.dfuiXalerts0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXalerts0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXalerts0, db.dfuiXalerts0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXalerts0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXalerts0, db.dfuiXalerts0) else 'info'
+        return json2user(mess = str( fuiXalerts0.form_name ), icon_type=icon_type )
     elif fuiXalerts0.errors:
         print("fuiXalerts0 has errors: %s" % (fuiXalerts0.errors))
-        return put_json_messages('error: ' + str( fuiXalerts0.form_name ))
- 
-
-    return locals()
-
-@action('uiXgeneral', method=["GET", "POST"] )
-@action.uses(Template('ui-general.html', delimiters='[%[ ]]',), db, session, T,)
-
-def uiXgeneral():
-    ctrl_info= "ctrl: uiXgeneral, view: ui-general.html"
-    page_url = "\'" + URL('uiXgeneral' ) + "\'"
-    messages = []
-
-    fuiXgeneral0= Form(db.dfuiXgeneral0, dbio=False, formstyle=FormStyleBulma)
-
-    if fuiXgeneral0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXgeneral0, db.dfuiXgeneral0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXgeneral0.form_name ))
-    elif fuiXgeneral0.errors:
-        print("fuiXgeneral0 has errors: %s" % (fuiXgeneral0.errors))
-        return put_json_messages('error: ' + str( fuiXgeneral0.form_name ))
- 
+        return json2user(mess = str(fuiXalerts0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXbuttons', method=["GET", "POST"] )
-@action.uses(Template('ui-buttons.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-buttons.html', delimiters='[%[ ]]',))
 
 def uiXbuttons():
-    ctrl_info= "ctrl: uiXbuttons, view: ui-buttons.html"
-    page_url = "\'" + URL('uiXbuttons' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXbuttons', 'v':'ui-buttons.html' }
+    messages = ['uiXbuttons', 'ui-buttons.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXbuttons' ) + "\'"
 
+    # 
     fuiXbuttons0= Form(db.dfuiXbuttons0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXbuttons0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXbuttons0, db.dfuiXbuttons0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXbuttons0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXbuttons0, db.dfuiXbuttons0) else 'info'
+        return json2user(mess = str( fuiXbuttons0.form_name ), icon_type=icon_type )
     elif fuiXbuttons0.errors:
         print("fuiXbuttons0 has errors: %s" % (fuiXbuttons0.errors))
-        return put_json_messages('error: ' + str( fuiXbuttons0.form_name ))
- 
+        return json2user(mess = str(fuiXbuttons0.form_name), icon_type = 'error')
+
+    return locals()
+
+@action('uiXgeneral', method=["GET", "POST"] )
+@action.uses(db, session, T, Template('ui-general.html', delimiters='[%[ ]]',))
+
+def uiXgeneral():
+    ctrl_info= { 'c':'uiXgeneral', 'v':'ui-general.html' }
+    messages = ['uiXgeneral', 'ui-general.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXgeneral' ) + "\'"
+
+    # 
+    fuiXgeneral0= Form(db.dfuiXgeneral0, dbio=False, formstyle=FormStyleBulma)
+    if fuiXgeneral0.accepted:
+        icon_type ='success' if insert_form_vars(fuiXgeneral0, db.dfuiXgeneral0) else 'info'
+        return json2user(mess = str( fuiXgeneral0.form_name ), icon_type=icon_type )
+    elif fuiXgeneral0.errors:
+        print("fuiXgeneral0 has errors: %s" % (fuiXgeneral0.errors))
+        return json2user(mess = str(fuiXgeneral0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('pagesXblank', method=["GET", "POST"] )
-@action.uses(Template('pages-blank.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('pages-blank.html', delimiters='[%[ ]]',))
 
 def pagesXblank():
-    ctrl_info= "ctrl: pagesXblank, view: pages-blank.html"
-    page_url = "\'" + URL('pagesXblank' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'pagesXblank', 'v':'pages-blank.html' }
+    messages = ['pagesXblank', 'pages-blank.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXblank' ) + "\'"
 
+    # 
     fpagesXblank0= Form(db.dfpagesXblank0, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXblank0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXblank0, db.dfpagesXblank0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXblank0.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXblank0, db.dfpagesXblank0) else 'info'
+        return json2user(mess = str( fpagesXblank0.form_name ), icon_type=icon_type )
     elif fpagesXblank0.errors:
         print("fpagesXblank0 has errors: %s" % (fpagesXblank0.errors))
-        return put_json_messages('error: ' + str( fpagesXblank0.form_name ))
- 
+        return json2user(mess = str(fpagesXblank0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('mapsXgoogle', method=["GET", "POST"] )
-@action.uses(Template('maps-google.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('maps-google.html', delimiters='[%[ ]]',))
 
 def mapsXgoogle():
-    ctrl_info= "ctrl: mapsXgoogle, view: maps-google.html"
-    page_url = "\'" + URL('mapsXgoogle' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'mapsXgoogle', 'v':'maps-google.html' }
+    messages = ['mapsXgoogle', 'maps-google.html']
+    #
+    ctrl_template_url = "\'" + URL('mapsXgoogle' ) + "\'"
 
+    # 
     fmapsXgoogle0= Form(db.dfmapsXgoogle0, dbio=False, formstyle=FormStyleBulma)
-
     if fmapsXgoogle0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fmapsXgoogle0, db.dfmapsXgoogle0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fmapsXgoogle0.form_name ))
+        icon_type ='success' if insert_form_vars(fmapsXgoogle0, db.dfmapsXgoogle0) else 'info'
+        return json2user(mess = str( fmapsXgoogle0.form_name ), icon_type=icon_type )
     elif fmapsXgoogle0.errors:
         print("fmapsXgoogle0 has errors: %s" % (fmapsXgoogle0.errors))
-        return put_json_messages('error: ' + str( fmapsXgoogle0.form_name ))
- 
+        return json2user(mess = str(fmapsXgoogle0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('uiXtypography', method=["GET", "POST"] )
-@action.uses(Template('ui-typography.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('ui-typography.html', delimiters='[%[ ]]',))
 
 def uiXtypography():
-    ctrl_info= "ctrl: uiXtypography, view: ui-typography.html"
-    page_url = "\'" + URL('uiXtypography' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'uiXtypography', 'v':'ui-typography.html' }
+    messages = ['uiXtypography', 'ui-typography.html']
+    #
+    ctrl_template_url = "\'" + URL('uiXtypography' ) + "\'"
 
+    # 
     fuiXtypography0= Form(db.dfuiXtypography0, dbio=False, formstyle=FormStyleBulma)
-
     if fuiXtypography0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fuiXtypography0, db.dfuiXtypography0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fuiXtypography0.form_name ))
+        icon_type ='success' if insert_form_vars(fuiXtypography0, db.dfuiXtypography0) else 'info'
+        return json2user(mess = str( fuiXtypography0.form_name ), icon_type=icon_type )
     elif fuiXtypography0.errors:
         print("fuiXtypography0 has errors: %s" % (fuiXtypography0.errors))
-        return put_json_messages('error: ' + str( fuiXtypography0.form_name ))
- 
-
-    return locals()
-
-@action('pagesXsignXup', method=["GET", "POST"] )
-@action.uses(Template('pages-sign-up.html', delimiters='[%[ ]]',), db, session, T,)
-
-def pagesXsignXup():
-    ctrl_info= "ctrl: pagesXsignXup, view: pages-sign-up.html"
-    page_url = "\'" + URL('pagesXsignXup' ) + "\'"
-    messages = []
-
-    fpagesXsignXup0= Form(db.dfpagesXsignXup0, dbio=False, formstyle=FormStyleBulma)
-
-    if fpagesXsignXup0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsignXup0, db.dfpagesXsignXup0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsignXup0.form_name ))
-    elif fpagesXsignXup0.errors:
-        print("fpagesXsignXup0 has errors: %s" % (fpagesXsignXup0.errors))
-        return put_json_messages('error: ' + str( fpagesXsignXup0.form_name ))
- 
+        return json2user(mess = str(fuiXtypography0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('pagesXsignXin', method=["GET", "POST"] )
-@action.uses(Template('pages-sign-in.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('pages-sign-in.html', delimiters='[%[ ]]',))
 
 def pagesXsignXin():
-    ctrl_info= "ctrl: pagesXsignXin, view: pages-sign-in.html"
-    page_url = "\'" + URL('pagesXsignXin' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'pagesXsignXin', 'v':'pages-sign-in.html' }
+    messages = ['pagesXsignXin', 'pages-sign-in.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXsignXin' ) + "\'"
 
+    # 
     fpagesXsignXin0= Form(db.dfpagesXsignXin0, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXsignXin0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsignXin0, db.dfpagesXsignXin0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsignXin0.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXsignXin0, db.dfpagesXsignXin0) else 'info'
+        return json2user(mess = str( fpagesXsignXin0.form_name ), icon_type=icon_type )
     elif fpagesXsignXin0.errors:
         print("fpagesXsignXin0 has errors: %s" % (fpagesXsignXin0.errors))
-        return put_json_messages('error: ' + str( fpagesXsignXin0.form_name ))
- 
+        return json2user(mess = str(fpagesXsignXin0.form_name), icon_type = 'error')
 
     return locals()
 
-@action('pagesXinvoice', method=["GET", "POST"] )
-@action.uses(Template('pages-invoice.html', delimiters='[%[ ]]',), db, session, T,)
+@action('pagesXsignXup', method=["GET", "POST"] )
+@action.uses(db, session, T, Template('pages-sign-up.html', delimiters='[%[ ]]',))
 
-def pagesXinvoice():
-    ctrl_info= "ctrl: pagesXinvoice, view: pages-invoice.html"
-    page_url = "\'" + URL('pagesXinvoice' ) + "\'"
-    messages = []
+def pagesXsignXup():
+    ctrl_info= { 'c':'pagesXsignXup', 'v':'pages-sign-up.html' }
+    messages = ['pagesXsignXup', 'pages-sign-up.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXsignXup' ) + "\'"
 
-    rows_tpagesXinvoice0= db(db.tpagesXinvoice0).select()
-    fpagesXinvoice0= Form(db.dfpagesXinvoice0, dbio=False, formstyle=FormStyleBulma)
-
-    if fpagesXinvoice0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXinvoice0, db.dfpagesXinvoice0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXinvoice0.form_name ))
-    elif fpagesXinvoice0.errors:
-        print("fpagesXinvoice0 has errors: %s" % (fpagesXinvoice0.errors))
-        return put_json_messages('error: ' + str( fpagesXinvoice0.form_name ))
- 
+    # 
+    fpagesXsignXup0= Form(db.dfpagesXsignXup0, dbio=False, formstyle=FormStyleBulma)
+    if fpagesXsignXup0.accepted:
+        icon_type ='success' if insert_form_vars(fpagesXsignXup0, db.dfpagesXsignXup0) else 'info'
+        return json2user(mess = str( fpagesXsignXup0.form_name ), icon_type=icon_type )
+    elif fpagesXsignXup0.errors:
+        print("fpagesXsignXup0 has errors: %s" % (fpagesXsignXup0.errors))
+        return json2user(mess = str(fpagesXsignXup0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('pagesXprofile', method=["GET", "POST"] )
-@action.uses(Template('pages-profile.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('pages-profile.html', delimiters='[%[ ]]',))
 
 def pagesXprofile():
-    ctrl_info= "ctrl: pagesXprofile, view: pages-profile.html"
-    page_url = "\'" + URL('pagesXprofile' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'pagesXprofile', 'v':'pages-profile.html' }
+    messages = ['pagesXprofile', 'pages-profile.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXprofile' ) + "\'"
 
+    # 
     fpagesXprofile0= Form(db.dfpagesXprofile0, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXprofile0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXprofile0, db.dfpagesXprofile0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXprofile0.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXprofile0, db.dfpagesXprofile0) else 'info'
+        return json2user(mess = str( fpagesXprofile0.form_name ), icon_type=icon_type )
     elif fpagesXprofile0.errors:
         print("fpagesXprofile0 has errors: %s" % (fpagesXprofile0.errors))
-        return put_json_messages('error: ' + str( fpagesXprofile0.form_name ))
- 
+        return json2user(mess = str(fpagesXprofile0.form_name), icon_type = 'error')
+
+    return locals()
+
+@action('pagesXinvoice', method=["GET", "POST"] )
+@action.uses(db, session, T, Template('pages-invoice.html', delimiters='[%[ ]]',))
+
+def pagesXinvoice():
+    ctrl_info= { 'c':'pagesXinvoice', 'v':'pages-invoice.html' }
+    messages = ['pagesXinvoice', 'pages-invoice.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXinvoice' ) + "\'"
+
+    rows_tpagesXinvoice0= db(db.tpagesXinvoice0).select()
+    # 
+    fpagesXinvoice0= Form(db.dfpagesXinvoice0, dbio=False, formstyle=FormStyleBulma)
+    if fpagesXinvoice0.accepted:
+        icon_type ='success' if insert_form_vars(fpagesXinvoice0, db.dfpagesXinvoice0) else 'info'
+        return json2user(mess = str( fpagesXinvoice0.form_name ), icon_type=icon_type )
+    elif fpagesXinvoice0.errors:
+        print("fpagesXinvoice0 has errors: %s" % (fpagesXinvoice0.errors))
+        return json2user(mess = str(fpagesXinvoice0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('formsXlayouts', method=["GET", "POST"] )
-@action.uses(Template('forms-layouts.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('forms-layouts.html', delimiters='[%[ ]]',))
 
 def formsXlayouts():
-    ctrl_info= "ctrl: formsXlayouts, view: forms-layouts.html"
-    page_url = "\'" + URL('formsXlayouts' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'formsXlayouts', 'v':'forms-layouts.html' }
+    messages = ['formsXlayouts', 'forms-layouts.html']
+    #
+    ctrl_template_url = "\'" + URL('formsXlayouts' ) + "\'"
 
+    # 
     fformsXlayouts0= Form(db.dfformsXlayouts0, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXlayouts0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts0, db.dfformsXlayouts0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXlayouts0.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXlayouts0, db.dfformsXlayouts0) else 'info'
+        return json2user(mess = str( fformsXlayouts0.form_name ), icon_type=icon_type )
     elif fformsXlayouts0.errors:
         print("fformsXlayouts0 has errors: %s" % (fformsXlayouts0.errors))
-        return put_json_messages('error: ' + str( fformsXlayouts0.form_name ))
- 
+        return json2user(mess = str(fformsXlayouts0.form_name), icon_type = 'error')
 
+    # 
     fformsXlayouts1= Form(db.dfformsXlayouts1, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXlayouts1.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts1, db.dfformsXlayouts1 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXlayouts1.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXlayouts1, db.dfformsXlayouts1) else 'info'
+        return json2user(mess = str( fformsXlayouts1.form_name ), icon_type=icon_type )
     elif fformsXlayouts1.errors:
         print("fformsXlayouts1 has errors: %s" % (fformsXlayouts1.errors))
-        return put_json_messages('error: ' + str( fformsXlayouts1.form_name ))
- 
+        return json2user(mess = str(fformsXlayouts1.form_name), icon_type = 'error')
 
+    # 
     fformsXlayouts2= Form(db.dfformsXlayouts2, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXlayouts2.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts2, db.dfformsXlayouts2 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXlayouts2.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXlayouts2, db.dfformsXlayouts2) else 'info'
+        return json2user(mess = str( fformsXlayouts2.form_name ), icon_type=icon_type )
     elif fformsXlayouts2.errors:
         print("fformsXlayouts2 has errors: %s" % (fformsXlayouts2.errors))
-        return put_json_messages('error: ' + str( fformsXlayouts2.form_name ))
- 
+        return json2user(mess = str(fformsXlayouts2.form_name), icon_type = 'error')
 
+    # 
     fformsXlayouts3= Form(db.dfformsXlayouts3, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXlayouts3.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts3, db.dfformsXlayouts3 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXlayouts3.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXlayouts3, db.dfformsXlayouts3) else 'info'
+        return json2user(mess = str( fformsXlayouts3.form_name ), icon_type=icon_type )
     elif fformsXlayouts3.errors:
         print("fformsXlayouts3 has errors: %s" % (fformsXlayouts3.errors))
-        return put_json_messages('error: ' + str( fformsXlayouts3.form_name ))
- 
+        return json2user(mess = str(fformsXlayouts3.form_name), icon_type = 'error')
 
+    # 
     fformsXlayouts4= Form(db.dfformsXlayouts4, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXlayouts4.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXlayouts4, db.dfformsXlayouts4 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXlayouts4.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXlayouts4, db.dfformsXlayouts4) else 'info'
+        return json2user(mess = str( fformsXlayouts4.form_name ), icon_type=icon_type )
     elif fformsXlayouts4.errors:
         print("fformsXlayouts4 has errors: %s" % (fformsXlayouts4.errors))
-        return put_json_messages('error: ' + str( fformsXlayouts4.form_name ))
- 
+        return json2user(mess = str(fformsXlayouts4.form_name), icon_type = 'error')
 
     return locals()
 
 @action('iconsXfeather', method=["GET", "POST"] )
-@action.uses(Template('icons-feather.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('icons-feather.html', delimiters='[%[ ]]',))
 
 def iconsXfeather():
-    ctrl_info= "ctrl: iconsXfeather, view: icons-feather.html"
-    page_url = "\'" + URL('iconsXfeather' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'iconsXfeather', 'v':'icons-feather.html' }
+    messages = ['iconsXfeather', 'icons-feather.html']
+    #
+    ctrl_template_url = "\'" + URL('iconsXfeather' ) + "\'"
 
+    # 
     ficonsXfeather0= Form(db.dficonsXfeather0, dbio=False, formstyle=FormStyleBulma)
-
     if ficonsXfeather0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( ficonsXfeather0, db.dficonsXfeather0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( ficonsXfeather0.form_name ))
+        icon_type ='success' if insert_form_vars(ficonsXfeather0, db.dficonsXfeather0) else 'info'
+        return json2user(mess = str( ficonsXfeather0.form_name ), icon_type=icon_type )
     elif ficonsXfeather0.errors:
         print("ficonsXfeather0 has errors: %s" % (ficonsXfeather0.errors))
-        return put_json_messages('error: ' + str( ficonsXfeather0.form_name ))
- 
+        return json2user(mess = str(ficonsXfeather0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('pagesXsettings', method=["GET", "POST"] )
-@action.uses(Template('pages-settings.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('pages-settings.html', delimiters='[%[ ]]',))
 
 def pagesXsettings():
-    ctrl_info= "ctrl: pagesXsettings, view: pages-settings.html"
-    page_url = "\'" + URL('pagesXsettings' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'pagesXsettings', 'v':'pages-settings.html' }
+    messages = ['pagesXsettings', 'pages-settings.html']
+    #
+    ctrl_template_url = "\'" + URL('pagesXsettings' ) + "\'"
 
+    # 
     fpagesXsettings0= Form(db.dfpagesXsettings0, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXsettings0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsettings0, db.dfpagesXsettings0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsettings0.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXsettings0, db.dfpagesXsettings0) else 'info'
+        return json2user(mess = str( fpagesXsettings0.form_name ), icon_type=icon_type )
     elif fpagesXsettings0.errors:
         print("fpagesXsettings0 has errors: %s" % (fpagesXsettings0.errors))
-        return put_json_messages('error: ' + str( fpagesXsettings0.form_name ))
- 
+        return json2user(mess = str(fpagesXsettings0.form_name), icon_type = 'error')
 
+    # 
     fpagesXsettings1= Form(db.dfpagesXsettings1, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXsettings1.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsettings1, db.dfpagesXsettings1 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsettings1.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXsettings1, db.dfpagesXsettings1) else 'info'
+        return json2user(mess = str( fpagesXsettings1.form_name ), icon_type=icon_type )
     elif fpagesXsettings1.errors:
         print("fpagesXsettings1 has errors: %s" % (fpagesXsettings1.errors))
-        return put_json_messages('error: ' + str( fpagesXsettings1.form_name ))
- 
+        return json2user(mess = str(fpagesXsettings1.form_name), icon_type = 'error')
 
+    # 
     fpagesXsettings2= Form(db.dfpagesXsettings2, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXsettings2.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsettings2, db.dfpagesXsettings2 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsettings2.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXsettings2, db.dfpagesXsettings2) else 'info'
+        return json2user(mess = str( fpagesXsettings2.form_name ), icon_type=icon_type )
     elif fpagesXsettings2.errors:
         print("fpagesXsettings2 has errors: %s" % (fpagesXsettings2.errors))
-        return put_json_messages('error: ' + str( fpagesXsettings2.form_name ))
- 
+        return json2user(mess = str(fpagesXsettings2.form_name), icon_type = 'error')
 
+    # 
     fpagesXsettings3= Form(db.dfpagesXsettings3, dbio=False, formstyle=FormStyleBulma)
-
     if fpagesXsettings3.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fpagesXsettings3, db.dfpagesXsettings3 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fpagesXsettings3.form_name ))
+        icon_type ='success' if insert_form_vars(fpagesXsettings3, db.dfpagesXsettings3) else 'info'
+        return json2user(mess = str( fpagesXsettings3.form_name ), icon_type=icon_type )
     elif fpagesXsettings3.errors:
         print("fpagesXsettings3 has errors: %s" % (fpagesXsettings3.errors))
-        return put_json_messages('error: ' + str( fpagesXsettings3.form_name ))
- 
+        return json2user(mess = str(fpagesXsettings3.form_name), icon_type = 'error')
 
     return locals()
 
 @action('chartsXchartjs', method=["GET", "POST"] )
-@action.uses(Template('charts-chartjs.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('charts-chartjs.html', delimiters='[%[ ]]',))
 
 def chartsXchartjs():
-    ctrl_info= "ctrl: chartsXchartjs, view: charts-chartjs.html"
-    page_url = "\'" + URL('chartsXchartjs' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'chartsXchartjs', 'v':'charts-chartjs.html' }
+    messages = ['chartsXchartjs', 'charts-chartjs.html']
+    #
+    ctrl_template_url = "\'" + URL('chartsXchartjs' ) + "\'"
 
+    # 
     fchartsXchartjs0= Form(db.dfchartsXchartjs0, dbio=False, formstyle=FormStyleBulma)
-
     if fchartsXchartjs0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fchartsXchartjs0, db.dfchartsXchartjs0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fchartsXchartjs0.form_name ))
+        icon_type ='success' if insert_form_vars(fchartsXchartjs0, db.dfchartsXchartjs0) else 'info'
+        return json2user(mess = str( fchartsXchartjs0.form_name ), icon_type=icon_type )
     elif fchartsXchartjs0.errors:
         print("fchartsXchartjs0 has errors: %s" % (fchartsXchartjs0.errors))
-        return put_json_messages('error: ' + str( fchartsXchartjs0.form_name ))
- 
+        return json2user(mess = str(fchartsXchartjs0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('tablesXbootstrap', method=["GET", "POST"] )
-@action.uses(Template('tables-bootstrap.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('tables-bootstrap.html', delimiters='[%[ ]]',))
 
 def tablesXbootstrap():
-    ctrl_info= "ctrl: tablesXbootstrap, view: tables-bootstrap.html"
-    page_url = "\'" + URL('tablesXbootstrap' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'tablesXbootstrap', 'v':'tables-bootstrap.html' }
+    messages = ['tablesXbootstrap', 'tables-bootstrap.html']
+    #
+    ctrl_template_url = "\'" + URL('tablesXbootstrap' ) + "\'"
 
     rows_ttablesXbootstrap0= db(db.ttablesXbootstrap0).select()
     rows_ttablesXbootstrap1= db(db.ttablesXbootstrap1).select()
@@ -515,35 +519,34 @@ def tablesXbootstrap():
     rows_ttablesXbootstrap4= db(db.ttablesXbootstrap4).select()
     rows_ttablesXbootstrap5= db(db.ttablesXbootstrap5).select()
     rows_ttablesXbootstrap6= db(db.ttablesXbootstrap6).select()
+    # 
     ftablesXbootstrap0= Form(db.dftablesXbootstrap0, dbio=False, formstyle=FormStyleBulma)
-
     if ftablesXbootstrap0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( ftablesXbootstrap0, db.dftablesXbootstrap0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( ftablesXbootstrap0.form_name ))
+        icon_type ='success' if insert_form_vars(ftablesXbootstrap0, db.dftablesXbootstrap0) else 'info'
+        return json2user(mess = str( ftablesXbootstrap0.form_name ), icon_type=icon_type )
     elif ftablesXbootstrap0.errors:
         print("ftablesXbootstrap0 has errors: %s" % (ftablesXbootstrap0.errors))
-        return put_json_messages('error: ' + str( ftablesXbootstrap0.form_name ))
- 
+        return json2user(mess = str(ftablesXbootstrap0.form_name), icon_type = 'error')
 
     return locals()
 
 @action('formsXbasicXinputs', method=["GET", "POST"] )
-@action.uses(Template('forms-basic-inputs.html', delimiters='[%[ ]]',), db, session, T,)
+@action.uses(db, session, T, Template('forms-basic-inputs.html', delimiters='[%[ ]]',))
 
 def formsXbasicXinputs():
-    ctrl_info= "ctrl: formsXbasicXinputs, view: forms-basic-inputs.html"
-    page_url = "\'" + URL('formsXbasicXinputs' ) + "\'"
-    messages = []
+    ctrl_info= { 'c':'formsXbasicXinputs', 'v':'forms-basic-inputs.html' }
+    messages = ['formsXbasicXinputs', 'forms-basic-inputs.html']
+    #
+    ctrl_template_url = "\'" + URL('formsXbasicXinputs' ) + "\'"
 
+    # 
     fformsXbasicXinputs0= Form(db.dfformsXbasicXinputs0, dbio=False, formstyle=FormStyleBulma)
-
     if fformsXbasicXinputs0.accepted:
-        mess1 = 'accepted: ' if prn_form_vars( fformsXbasicXinputs0, db.dfformsXbasicXinputs0 ) == False else 'inserted: '
-        return put_json_messages(mess1 + str( fformsXbasicXinputs0.form_name ))
+        icon_type ='success' if insert_form_vars(fformsXbasicXinputs0, db.dfformsXbasicXinputs0) else 'info'
+        return json2user(mess = str( fformsXbasicXinputs0.form_name ), icon_type=icon_type )
     elif fformsXbasicXinputs0.errors:
         print("fformsXbasicXinputs0 has errors: %s" % (fformsXbasicXinputs0.errors))
-        return put_json_messages('error: ' + str( fformsXbasicXinputs0.form_name ))
- 
+        return json2user(mess = str(fformsXbasicXinputs0.form_name), icon_type = 'error')
 
     return locals()
 
@@ -581,6 +584,14 @@ def api(tablename, rec_id=None):
 #  http -f DELETE localhost:8000/kit/api/test_table/2
 #  http -f PUT localhost:8000/kit/api/test_table/2 f0=111111 f1=2222222 f2=333333
 
+#------------------------------------------------------------------------------------
+#curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "New item", "year": "2009"}' http://rest-api.io/items
+#curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Updated item", "year": "2010"}' http://rest-api.io/items/5069b47aa892630aae059584
+
+
+
+
+
 
 @bottle.error(404)
 def error404(error):
@@ -599,23 +610,27 @@ def error404(error):
 
     if len(lx) >= 2 and check_rule("/" + lx[1]):
         location = "/" + lx[1]
-        files_prefix = location + Glb["tte_path"]
 
-        location_2x = location + location + "/"
-        files_prefix_2x = files_prefix + files_prefix + "/"
+# this code is not necessary for modern py4web 
+#
+#        files_prefix = location + Glb["tte_path"]
+#
+#        location_2x = location + location + "/"
+#        files_prefix_2x = files_prefix + files_prefix + "/"
+#
+#        def rm_bad_prefix(bad_prefix):
+#            new_location = bottle.request.path.replace(bad_prefix, "", 1)
+#            Glb["debug"] and func_mess.append(f"     rm_bad_prefix: {bad_prefix}")
+#            return new_location
+#
+#        if bottle.request.path.startswith(files_prefix_2x):
+#            if len(bottle.request.path) > len(files_prefix_2x):
+#                location = rm_bad_prefix(files_prefix)
+#
+#        elif bottle.request.path.startswith(location_2x):
+#            if len(bottle.request.path) > len(location_2x):
+#                location = rm_bad_prefix(location)
 
-        def rm_bad_prefix(bad_prefix):
-            new_location = bottle.request.path.replace(bad_prefix, "", 1)
-            Glb["debug"] and func_mess.append(f"     rm_bad_prefix: {bad_prefix}")
-            return new_location
-
-        if bottle.request.path.startswith(files_prefix_2x):
-            if len(bottle.request.path) > len(files_prefix_2x):
-                location = rm_bad_prefix(files_prefix)
-
-        elif bottle.request.path.startswith(location_2x):
-            if len(bottle.request.path) > len(location_2x):
-                location = rm_bad_prefix(location)
     if Glb["debug"]:
         debug_mess = [  f"404  app=/{Glb['my_app_name']}, err_path={bottle.request.path}",
                         f"     info: {error}", ]
@@ -626,4 +641,26 @@ def error404(error):
 
     bottle.response.status = 303
     bottle.response.set_header("Location", location)
+
+
+# -------------------- tabinfo: my backend ------------------------------------
+
+from .atab_utils import mytab_grid
+from .images_utils import ima_grid
+from .upload_utils import p4wupload_file
+from .tlist_utils import tlist 
+
+@unauthenticated("tabinfo", "tabinfo.html")
+def tabinfo():
+    user = auth.get_user()
+    # simple backand-admin-panel (to be continued)
+    message = T("Hello {first_name}".format(**user) if user else "Hello")
+    menu = DIV(
+               P( "backand-admin-panel"),
+               A( "sql2table", _role="button", _href=URL('mytab_grid', ),) ,
+               A( "p4wupload_file", _role="button", _href=URL('p4wupload_file', ),) ,
+               A( "tlist", _role="button", _href=URL('tlist', ),) ,
+               A( "app_images", _role="button", _href=URL('ima_grid', ),) ,
+              )
+    return dict(message=message, menu=menu)
 

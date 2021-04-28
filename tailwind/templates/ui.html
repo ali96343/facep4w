@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 01.12.2020 12:12:41 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 28.04.2021 11:31:58 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -11,43 +11,44 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet"/>
   <title>biorex title text</title>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 1px dashed black;
-    text-decoration: underline;
-}
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
-
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
-
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
 </style>
 
@@ -156,7 +157,7 @@
         </a>
         <ul class="list-reset -mx-2 bg-white-medium-dark">
          <li class="border-t mt-2 border-300-border w-full h-full px-2 py-3">
-          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('login') ]]">
+          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('loginA') ]]">
            Login Page
            <span>
             <i class="fa fa-angle-right float-right"></i>
@@ -164,7 +165,7 @@
           </a>
          </li>
          <li class="border-t border-300-border w-full h-full px-2 py-3">
-          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('register') ]]">
+          <a class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline" href="[%[=URL('registerA') ]]">
            Register Page
            <span>
             <i class="fa fa-angle-right float-right"></i>

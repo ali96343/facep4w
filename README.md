@@ -15,6 +15,8 @@ py4web is the best for web development
 - https://github.com/ColorlibHQ/AdminLTE
 - https://github.com/BootstrapDash/Kapella-Free-Bootstrap-Admin-Template
 - https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template
+- https://github.com/puikinsh/concept
+- https://github.com/tailwindadmin/admin  
 - https://github.com/adminkit/adminkit
 - https://github.com/puikinsh/notika
 - https://github.com/puikinsh/srtdash-admin-dashboard
@@ -24,7 +26,6 @@ py4web is the best for web development
 - https://github.com/mazipan/bulma-admin-dashboard-template
 - https://github.com/BulmaTemplates/bulma-templates
 - https://github.com/nafplann/bulma-admin
-- https://github.com/tailwindadmin/admin  
 - https://github.com/davidgrzyb/tailwind-admin-template
 - https://github.com/dropways/deskapp
 

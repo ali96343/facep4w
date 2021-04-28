@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 19.12.2020 12:15:26 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 28.04.2021 12:04:50 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -12,8 +12,11 @@
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/css/app.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -195,7 +198,7 @@
 <div class="input-group input-group-navbar">
  [%[ fformsXbasicXinputs0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformsXbasicXinputs0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformsXbasicXinputs0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fformsXbasicXinputs0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fformsXbasicXinputs0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[= fformsXbasicXinputs0.custom['widgets']['f0'] ]]
 
@@ -616,37 +619,59 @@
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
 
             let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
         };
-    }
+  }
+
 </script>
+
 
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

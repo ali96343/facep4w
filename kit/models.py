@@ -1,29 +1,52 @@
-from .common import db, Field
+import datetime
+
+from .common import db, Field, Tags, groups
 from pydal.validators import *
 from py4web.utils.populate import populate
 
-#
-# py4web app, AI-biorex ported 19.12.2020 12:15:25 UTC+3, src: https://github.com/adminkit/adminkit
+# py4web app, AI-biorex ported 28.04.2021 12:04:48 UTC+3, src: https://github.com/adminkit/adminkit
 
-#
 
 #import pydal
-
 #from py4web import *
 #from apps.myapp.models import db
 
-#if not len( db().select(db.auth_user.id) ):
 if not db(db.auth_user).count():
-    body = {
-        "username": "nil",
-        "email": "nil@nil.com",
+    u1 = {
+        "username": "anil",
+        "email": "anil@nil.com",
         "password": str(CRYPT()("xyz12345")[0]),
-        #"password": str(pydal.validators.CRYPT()("xyz12345")[0]),
-        "first_name": "MainUser",
-        "last_name": "MainUserLast",
+        "first_name": "Anil_first",
+        "last_name": "Anil_Last",
     }
-    db.auth_user.insert(**body)
+
+    u2 = {
+        "username": "bnil",
+        "email": "bnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Bnil_first",
+        "last_name": "Bnil_Last",
+    }
+
+    u3 = {
+        "username": "cnil",
+        "email": "cnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Cnil_first",
+        "last_name": "Cnil_Last",
+    }
+
+    for e in [u1, u2, u3]: db.auth_user.insert(**db.auth_user._filter_fields(e) )
     db.commit()
+
+    #groups = Tags(db.auth_user)
+
+    groups.add(1, 'manager')
+    groups.add(2, ['dancer', 'teacher'])
+    groups.add(3, 'dancer')
+    db.commit()
+
+
 
 db.define_table(
     'test_table',
@@ -34,9 +57,45 @@ db.define_table(
 db.commit()
 
 if not db(db.test_table).count():
-    populate(db.test_table, n=10)
+    populate(db.test_table, n=50)
     db.commit()
 
+db.define_table( 'uploaded_files',
+    Field('orig_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field("remark",'text',),
+    Field('uniq_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field('time', 'datetime', editable=False, default = datetime.datetime.now(), requires = IS_DATETIME( )),
+    )
+
+db.commit()
+#
+db.define_table( 'app_images',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+    
+if not db(db.app_images).count():
+    db.app_images.insert(f0='img/icons/icon-48x48.png', )
+    db.app_images.insert(f0='img/avatars/avatar-5.jpg', )
+    db.app_images.insert(f0='img/avatars/avatar-2.jpg', )
+    db.app_images.insert(f0='img/avatars/avatar-4.jpg', )
+    db.app_images.insert(f0='img/avatars/avatar-3.jpg', )
+    db.app_images.insert(f0='img/avatars/avatar.jpg', )
+    db.app_images.insert(f0='img/photos/unsplash-1.jpg', )
+    db.app_images.insert(f0='img/photos/unsplash-2.jpg', )
+    db.app_images.insert(f0='img/photos/unsplash-3.jpg', )
+
+db.commit()
+
+db.define_table( 'app_css_js',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+
+db.define_table( 'app_js_script',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    Field('in_html', ),
+    )
+
+db.commit()
 
 db.define_table(
     'dfindex0',
@@ -375,10 +434,10 @@ if not db(db.ttablesXbootstrap2).count():
     db.commit()
 
 if not db(db.ttablesXbootstrap3).count():
-    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"static/tte/img/avatars/avatar-5.jpg\" width=\"48\"/>", f1="864-348-0485", f2="June 21, 1961")
-    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"static/tte/img/avatars/avatar-2.jpg\" width=\"48\"/>", f1="914-939-2458", f2="May 15, 1948")
-    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"static/tte/img/avatars/avatar-3.jpg\" width=\"48\"/>", f1="704-993-5435", f2="September 14, 1965")
-    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"static/tte/img/avatars/avatar-4.jpg\" width=\"48\"/>", f1="765-382-8195", f2="April 2, 1971")
+    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\" width=\"48\"/>", f1="864-348-0485", f2="June 21, 1961")
+    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\" width=\"48\"/>", f1="914-939-2458", f2="May 15, 1948")
+    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\" width=\"48\"/>", f1="704-993-5435", f2="September 14, 1965")
+    db.ttablesXbootstrap3.insert(f0="<img alt=\"Avatar\" class=\"rounded-circle mr-2\" height=\"48\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\" width=\"48\"/>", f1="765-382-8195", f2="April 2, 1971")
     db.commit()
 
 if not db(db.ttablesXbootstrap4).count():

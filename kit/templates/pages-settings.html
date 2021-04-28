@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 19.12.2020 12:15:25 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 28.04.2021 12:04:48 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -12,8 +12,11 @@
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/css/app.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -195,7 +198,7 @@
 <div class="input-group input-group-navbar">
  [%[ fpagesXsettings0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXsettings0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fpagesXsettings0.custom['widgets']['f0']['_placeholder']= 'Search_p4w'  ]]
+ [%[ fpagesXsettings0.custom['widgets']['f0']['_placeholder']= 'Search'  ]]
  [%[ fpagesXsettings0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
  [%[= fpagesXsettings0.custom['widgets']['f0'] ]]
 
@@ -422,7 +425,7 @@
  [%[ fpagesXsettings1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXsettings1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings1.custom['widgets']['f0']['_id']= 'inputUsername'  ]]
- [%[ fpagesXsettings1.custom['widgets']['f0']['_placeholder']= 'Username_p4w'  ]]
+ [%[ fpagesXsettings1.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
  [%[= fpagesXsettings1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings1.custom['errors']['f0'] if 'f0' in fpagesXsettings1.custom['errors'] else '' ]]</span>
@@ -480,7 +483,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f0']['_id']= 'inputFirstName'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f0']['_placeholder']= 'First name_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f0']['_placeholder']= 'First name'  ]]
  [%[= fpagesXsettings2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f0'] if 'f0' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -493,7 +496,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f1']['_id']= 'inputLastName'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f1']['_placeholder']= 'Last name_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f1']['_placeholder']= 'Last name'  ]]
  [%[= fpagesXsettings2.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f1'] if 'f1' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -508,7 +511,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f2']['_id']= 'inputEmail4'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f2']['_placeholder']= 'Email_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f2']['_placeholder']= 'Email'  ]]
  [%[= fpagesXsettings2.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f2'] if 'f2' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -522,7 +525,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f3']['_id']= 'inputAddress'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f3']['_placeholder']= '1234 Main St_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f3']['_placeholder']= '1234 Main St'  ]]
  [%[= fpagesXsettings2.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f3'] if 'f3' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -536,7 +539,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f4']['_id']= 'inputAddress2'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f4']['_placeholder']= 'Apartment, studio, or floor_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f4']['_placeholder']= 'Apartment, studio, or floor'  ]]
  [%[= fpagesXsettings2.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f4'] if 'f4' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -551,7 +554,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f5']['_id']= 'inputCity'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fpagesXsettings2.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f5'] if 'f5' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -577,7 +580,7 @@
  [%[ fpagesXsettings2.custom['widgets']['f7']['_type']= 'text'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f7']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings2.custom['widgets']['f7']['_id']= 'inputZip'  ]]
- [%[ fpagesXsettings2.custom['widgets']['f7']['_placeholder']= '_p4w'  ]]
+ [%[ fpagesXsettings2.custom['widgets']['f7']['_placeholder']= ''  ]]
  [%[= fpagesXsettings2.custom['widgets']['f7'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings2.custom['errors']['f7'] if 'f7' in fpagesXsettings2.custom['errors'] else '' ]]</span>
@@ -622,7 +625,7 @@
  [%[ fpagesXsettings3.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f0']['_id']= 'inputPasswordCurrent'  ]]
- [%[ fpagesXsettings3.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fpagesXsettings3.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fpagesXsettings3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings3.custom['errors']['f0'] if 'f0' in fpagesXsettings3.custom['errors'] else '' ]]</span>
@@ -641,7 +644,7 @@
  [%[ fpagesXsettings3.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f1']['_id']= 'inputPasswordNew'  ]]
- [%[ fpagesXsettings3.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fpagesXsettings3.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fpagesXsettings3.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings3.custom['errors']['f1'] if 'f1' in fpagesXsettings3.custom['errors'] else '' ]]</span>
@@ -655,7 +658,7 @@
  [%[ fpagesXsettings3.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fpagesXsettings3.custom['widgets']['f2']['_id']= 'inputPasswordNew2'  ]]
- [%[ fpagesXsettings3.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fpagesXsettings3.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fpagesXsettings3.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsettings3.custom['errors']['f2'] if 'f2' in fpagesXsettings3.custom['errors'] else '' ]]</span>
@@ -725,37 +728,59 @@
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
 
             let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
         };
-    }
+  }
+
 </script>
+
 
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 

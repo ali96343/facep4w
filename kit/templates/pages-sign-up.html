@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 19.12.2020 12:15:25 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 28.04.2021 12:04:49 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
@@ -12,8 +12,11 @@
   <title>biorex title text</title>
   <link href="[%[=URL('static/tte/css/app.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -74,7 +77,7 @@
  </label>
  [%[ fpagesXsignXup0.custom['widgets']['f0']['_class']= 'form-control form-control-lg'  ]]
  [%[ fpagesXsignXup0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fpagesXsignXup0.custom['widgets']['f0']['_placeholder']= 'Enter your name_p4w'  ]]
+ [%[ fpagesXsignXup0.custom['widgets']['f0']['_placeholder']= 'Enter your name'  ]]
  [%[= fpagesXsignXup0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsignXup0.custom['errors']['f0'] if 'f0' in fpagesXsignXup0.custom['errors'] else '' ]]</span>
@@ -87,7 +90,7 @@
  </label>
  [%[ fpagesXsignXup0.custom['widgets']['f1']['_class']= 'form-control form-control-lg'  ]]
  [%[ fpagesXsignXup0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fpagesXsignXup0.custom['widgets']['f1']['_placeholder']= 'Enter your company name_p4w'  ]]
+ [%[ fpagesXsignXup0.custom['widgets']['f1']['_placeholder']= 'Enter your company name'  ]]
  [%[= fpagesXsignXup0.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsignXup0.custom['errors']['f1'] if 'f1' in fpagesXsignXup0.custom['errors'] else '' ]]</span>
@@ -100,7 +103,7 @@
  </label>
  [%[ fpagesXsignXup0.custom['widgets']['f2']['_class']= 'form-control form-control-lg'  ]]
  [%[ fpagesXsignXup0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fpagesXsignXup0.custom['widgets']['f2']['_placeholder']= 'Enter your email_p4w'  ]]
+ [%[ fpagesXsignXup0.custom['widgets']['f2']['_placeholder']= 'Enter your email'  ]]
  [%[= fpagesXsignXup0.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsignXup0.custom['errors']['f2'] if 'f2' in fpagesXsignXup0.custom['errors'] else '' ]]</span>
@@ -113,7 +116,7 @@
  </label>
  [%[ fpagesXsignXup0.custom['widgets']['f3']['_class']= 'form-control form-control-lg'  ]]
  [%[ fpagesXsignXup0.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fpagesXsignXup0.custom['widgets']['f3']['_placeholder']= 'Enter password_p4w'  ]]
+ [%[ fpagesXsignXup0.custom['widgets']['f3']['_placeholder']= 'Enter password'  ]]
  [%[= fpagesXsignXup0.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fpagesXsignXup0.custom['errors']['f3'] if 'f3' in fpagesXsignXup0.custom['errors'] else '' ]]</span>
@@ -128,7 +131,6 @@
  [%[ fpagesXsignXup0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fpagesXsignXup0.custom['submit'] ]]
 
- <!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
 </div>
 
  [%[ for hidden_widget in fpagesXsignXup0.custom['hidden_widgets'].keys(): ]]
@@ -154,37 +156,59 @@
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
 
         document.forms[i].onsubmit = async (e) => {
             e.preventDefault();
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
 
             let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
         };
-    }
+  }
+
 </script>
+
 
  <!-- rm_flashdiv -->
 <script>
      !function() { 
          const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
      }();
 </script>
 
