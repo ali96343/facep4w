@@ -1,9 +1,5 @@
-- install http://py4web.com
 
-py4web is excellent and fast (with tornado event loop)
-
-py4web is the best for web development
-
+py4web http://py4web.com is fast (with tornado event loop) and the best for web development
 
 # facep4w
 ## py4web apps ported from multistars-github dashboards
@@ -38,3 +34,6 @@ py4web is the best for web development
 - https://github.com/epicmaxco/vuestic-admin
 - https://github.com/creativetimofficial/vue-notus
 - https://github.com/creativetimofficial/material-dashboard-react
+
+------------------------------------------------------------------
+to be continued
