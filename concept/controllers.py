@@ -1,5 +1,5 @@
 #
-# py4web app, AI-biorex ported 28.04.2021 08:47:33 UTC+3, src: https://github.com/puikinsh/concept
+# py4web app, AI-biorex ported 01.05.2021 13:10:21 UTC+3, src: https://github.com/puikinsh/concept
 
 # https://github.com/ali96343/facep4w
 #
@@ -42,7 +42,7 @@ def insert_form_vars(myform, mytable):
         _ = [ print (f'     {k}: {v}') for k,v in myform.vars.items() if k != '_formkey']
 
     f0_fld = myform.vars.get('f0', None )
-    if (not f0_fld is None) and len(f0_fld):
+    if (not f0_fld is None) and ( type( f0_fld ) in (list, tuple, dict, str, bytes) ) and len(f0_fld):
         row_id = mytable.insert(**mytable._filter_fields(myform.vars))
         db.commit()
 

@@ -1,5 +1,7 @@
 //cdn.jsdelivr.net/npm/sweetalert2@10
 https://colorlib.com/wp/
+https://cdn.jsdelivr.net/momentjs/latest/moment.min.js
+https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js
 http://via.placeholder.com/200x150
 http://via.placeholder.com/150x150
 https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js

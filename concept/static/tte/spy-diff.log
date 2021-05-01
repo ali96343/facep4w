@@ -1,4 +1,8 @@
-ratio= 0.83
-   src: assets/vendor/daterangepicker/daterangepicker.css
-   dst: cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js
+ratio= 1.00
+   src: assets/vendor/bootstrap-colorpicker/@claviska/jquery-minicolors/jquery.minicolors.css
+   dst: assets/vendor/bootstrap-colorpicker/%40claviska/jquery-minicolors/jquery.minicolors.css
+
+ratio= 1.00
+   src: assets/vendor/bootstrap-colorpicker/@claviska/jquery-minicolors/jquery.minicolors.min.js
+   dst: assets/vendor/bootstrap-colorpicker/%40claviska/jquery-minicolors/jquery.minicolors.min.js
 

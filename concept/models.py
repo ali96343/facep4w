@@ -4,7 +4,7 @@ from .common import db, Field, Tags, groups
 from pydal.validators import *
 from py4web.utils.populate import populate
 
-# py4web app, AI-biorex ported 28.04.2021 08:47:33 UTC+3, src: https://github.com/puikinsh/concept
+# py4web app, AI-biorex ported 01.05.2021 13:10:21 UTC+3, src: https://github.com/puikinsh/concept
 
 
 #import pydal
@@ -45,8 +45,6 @@ if not db(db.auth_user).count():
     groups.add(2, ['dancer', 'teacher'])
     groups.add(3, 'dancer')
     db.commit()
-
-
 
 db.define_table(
     'test_table',
@@ -109,10 +107,19 @@ if not db(db.app_images).count():
 
 db.commit()
 
-db.define_table( 'css_js_files',
-    Field('orig_file_path', requires=IS_NOT_EMPTY(),  ),
-    Field('found_in_file', default='' ),
-    Field('app_name', default='' ),
+db.define_table( 'app_css_js',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+
+db.define_table( 'app_js_script',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    Field('in_html', ),
+    )
+
+db.define_table( 'app_html_text',
+    Field('f0', requires=IS_NOT_EMPTY(), ),
+    Field('key',requires=IS_NOT_EMPTY(), ),
+    Field('in_html', ),
     )
 
 db.commit()
