@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <!-- 07.05.2021 14:48:49 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/>
+  <title>biorex title text</title>
+  <style>
+#loader {
+    transition: all .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    z-index: 90000
+}
+
+#loader.fadeOut {
+    opacity: 0;
+    visibility: hidden
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+    animation: sk-scaleout 1s infinite ease-in-out
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
+}
+  </style>
+  <link href="[%[=URL('static/tte/style.css') ]]" rel="stylesheet"/>
+ 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+</style>
+
+</head>
+ <body class="app">
+  <div id="loader">
+   <div class="spinner"></div>
+  </div>
+  <script>
+   window.addEventListener('load', function load() {
+    const loader = document.getElementById('loader');
+    setTimeout(function() {
+        loader.classList.add('fadeOut');
+    }, 300);
+});
+  </script>
+  <div>
+   <div class="sidebar">
+    <div class="sidebar-inner">
+     <div class="sidebar-logo">
+      <div class="peers ai-c fxw-nw">
+       <div class="peer peer-greed">
+        <a class="sidebar-link td-n" href="[%[=URL('index') ]]">
+         <div class="peers ai-c fxw-nw">
+          <div class="peer">
+           <div class="logo">
+            <img alt="" src="[%[=URL('static/tte/assets/static/images/logo.png') ]]"/></div>
+          </div>
+          <div class="peer peer-greed">
+           <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
+          </div>
+         </div>
+        </a>
+       </div>
+       <div class="peer">
+        <div class="mobile-toggle sidebar-toggle">
+         <a class="td-n" href="">
+          <i class="ti-arrow-circle-left"></i>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <ul class="sidebar-menu scrollable pos-r">
+      <li class="nav-item mT-30 actived">
+       <a class="sidebar-link" href="[%[=URL('index') ]]">
+        <span class="icon-holder">
+         <i class="c-blue-500 ti-home"></i>
+        </span>
+        <span class="title">Dashboard</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('email') ]]">
+        <span class="icon-holder">
+         <i class="c-brown-500 ti-email"></i>
+        </span>
+        <span class="title">Email</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('compose') ]]">
+        <span class="icon-holder">
+         <i class="c-blue-500 ti-share"></i>
+        </span>
+        <span class="title">Compose</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('calendar') ]]">
+        <span class="icon-holder">
+         <i class="c-deep-orange-500 ti-calendar"></i>
+        </span>
+        <span class="title">Calendar</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('chat') ]]">
+        <span class="icon-holder">
+         <i class="c-deep-purple-500 ti-comment-alt"></i>
+        </span>
+        <span class="title">Chat</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('charts') ]]">
+        <span class="icon-holder">
+         <i class="c-indigo-500 ti-bar-chart"></i>
+        </span>
+        <span class="title">Charts</span>
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="sidebar-link" href="[%[=URL('forms') ]]">
+        <span class="icon-holder">
+         <i class="c-light-blue-500 ti-pencil"></i>
+        </span>
+        <span class="title">Forms</span>
+       </a>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="sidebar-link" href="[%[=URL('ui') ]]">
+        <span class="icon-holder">
+         <i class="c-pink-500 ti-palette"></i>
+        </span>
+        <span class="title">UI Elements</span>
+       </a>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="dropdown-toggle" href="javascript:void(0);">
+        <span class="icon-holder">
+         <i class="c-orange-500 ti-layout-list-thumb"></i>
+        </span>
+        <span class="title">Tables</span>
+        <span class="arrow">
+         <i class="ti-angle-right"></i>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <li>
+         <a class="sidebar-link" href="[%[=URL('basicXtable') ]]">Basic Table</a>
+        </li>
+        <li>
+         <a class="sidebar-link" href="[%[=URL('datatable') ]]">Data Table</a>
+        </li>
+       </ul>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="dropdown-toggle" href="javascript:void(0);">
+        <span class="icon-holder">
+         <i class="c-purple-500 ti-map"></i>
+        </span>
+        <span class="title">Maps</span>
+        <span class="arrow">
+         <i class="ti-angle-right"></i>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <li>
+         <a href="[%[=URL('googleXmaps') ]]">Google Map</a>
+        </li>
+        <li>
+         <a href="[%[=URL('vectorXmaps') ]]">Vector Map</a>
+        </li>
+       </ul>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="dropdown-toggle" href="javascript:void(0);">
+        <span class="icon-holder">
+         <i class="c-red-500 ti-files"></i>
+        </span>
+        <span class="title">Pages</span>
+        <span class="arrow">
+         <i class="ti-angle-right"></i>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <li>
+         <a class="sidebar-link" href="[%[=URL('blank') ]]">Blank</a>
+        </li>
+        <li>
+         <a class="sidebar-link" href="[%[=URL('X404') ]]">404</a>
+        </li>
+        <li>
+         <a class="sidebar-link" href="[%[=URL('X500') ]]">500</a>
+        </li>
+        <li>
+         <a class="sidebar-link" href="[%[=URL('signin') ]]">Sign In</a>
+        </li>
+        <li>
+         <a class="sidebar-link" href="[%[=URL('signup') ]]">Sign Up</a>
+        </li>
+       </ul>
+      </li>
+      <li class="nav-item dropdown">
+       <a class="dropdown-toggle" href="javascript:void(0);">
+        <span class="icon-holder">
+         <i class="c-teal-500 ti-view-list-alt"></i>
+        </span>
+        <span class="title">Multiple Levels</span>
+        <span class="arrow">
+         <i class="ti-angle-right"></i>
+        </span>
+       </a>
+       <ul class="dropdown-menu">
+        <li class="nav-item dropdown">
+         <a href="javascript:void(0);">
+          <span>Menu Item</span>
+         </a>
+        </li>
+        <li class="nav-item dropdown">
+         <a href="javascript:void(0);">
+          <span>Menu Item</span>
+          <span class="arrow">
+           <i class="ti-angle-right"></i>
+          </span>
+         </a>
+         <ul class="dropdown-menu">
+          <li>
+           <a href="javascript:void(0);">Menu Item</a>
+          </li>
+          <li>
+           <a href="javascript:void(0);">Menu Item</a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="page-container">
+    <div class="header navbar">
+     <div class="header-container">
+      <ul class="nav-left">
+       <li>
+        <a class="sidebar-toggle" href="javascript:void(0);" id="sidebar-toggle">
+         <i class="ti-menu"></i>
+        </a>
+       </li>
+       <li class="search-box">
+        <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+         <i class="search-icon ti-search pdd-right-10"></i>
+         <i class="search-icon-close ti-close pdd-right-10"></i>
+        </a>
+       </li>
+       <li class="search-input">
+        <input class="form-control" placeholder="Search..." type="text"/></li>
+      </ul>
+      <ul class="nav-right">
+       <li class="notifications dropdown">
+        <span class="counter bgc-red">3</span>
+        <a class="dropdown-toggle no-after" data-toggle="dropdown" href="">
+         <i class="ti-bell"></i>
+        </a>
+        <ul class="dropdown-menu">
+         <li class="pX-20 pY-15 bdB">
+          <i class="ti-bell pR-10"></i>
+          <span class="fsz-sm fw-600 c-grey-900">Notifications</span>
+         </li>
+         <li>
+          <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg"/></div>
+             <div class="peer peer-greed">
+              <span>
+               <span class="fw-500">John Doe</span>
+               <span class="c-grey-600">
+                liked your
+                <span class="text-dark">post</span>
+               </span>
+              </span>
+              <p class="m-0">
+               <small class="fsz-xs">5 mins ago</small>
+              </p>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg"/></div>
+             <div class="peer peer-greed">
+              <span>
+               <span class="fw-500">Moo Doe</span>
+               <span class="c-grey-600">
+                liked your
+                <span class="text-dark">cover image</span>
+               </span>
+              </span>
+              <p class="m-0">
+               <small class="fsz-xs">7 mins ago</small>
+              </p>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg"/></div>
+             <div class="peer peer-greed">
+              <span>
+               <span class="fw-500">Lee Doe</span>
+               <span class="c-grey-600">
+                commented on your
+                <span class="text-dark">video</span>
+               </span>
+              </span>
+              <p class="m-0">
+               <small class="fsz-xs">10 mins ago</small>
+              </p>
+             </div>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="pX-20 pY-15 ta-c bdT">
+          <span>
+           <a class="c-grey-600 cH-blue fsz-sm td-n" href="">
+            View All Notifications
+            <i class="ti-angle-right fsz-xs mL-10"></i>
+           </a>
+          </span>
+         </li>
+        </ul>
+       </li>
+       <li class="notifications dropdown">
+        <span class="counter bgc-blue">3</span>
+        <a class="dropdown-toggle no-after" data-toggle="dropdown" href="">
+         <i class="ti-email"></i>
+        </a>
+        <ul class="dropdown-menu">
+         <li class="pX-20 pY-15 bdB">
+          <i class="ti-email pR-10"></i>
+          <span class="fsz-sm fw-600 c-grey-900">Emails</span>
+         </li>
+         <li>
+          <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg"/></div>
+             <div class="peer peer-greed">
+              <div>
+               <div class="peers jc-sb fxw-nw mB-5">
+                <div class="peer">
+                 <p class="fw-500 mB-0">John Doe</p>
+                </div>
+                <div class="peer">
+                 <small class="fsz-xs">5 mins ago</small>
+                </div>
+               </div>
+               <span class="c-grey-600 fsz-sm">Want to create your own customized data generator for your app...</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg"/></div>
+             <div class="peer peer-greed">
+              <div>
+               <div class="peers jc-sb fxw-nw mB-5">
+                <div class="peer">
+                 <p class="fw-500 mB-0">Moo Doe</p>
+                </div>
+                <div class="peer">
+                 <small class="fsz-xs">15 mins ago</small>
+                </div>
+               </div>
+               <span class="c-grey-600 fsz-sm">Want to create your own customized data generator for your app...</span>
+              </div>
+             </div>
+            </a>
+           </li>
+           <li>
+            <a class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100" href="">
+             <div class="peer mR-15">
+              <img alt="" class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg"/></div>
+             <div class="peer peer-greed">
+              <div>
+               <div class="peers jc-sb fxw-nw mB-5">
+                <div class="peer">
+                 <p class="fw-500 mB-0">Lee Doe</p>
+                </div>
+                <div class="peer">
+                 <small class="fsz-xs">25 mins ago</small>
+                </div>
+               </div>
+               <span class="c-grey-600 fsz-sm">Want to create your own customized data generator for your app...</span>
+              </div>
+             </div>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="pX-20 pY-15 ta-c bdT">
+          <span>
+           <a class="c-grey-600 cH-blue fsz-sm td-n" href="[%[=URL('email') ]]">
+            View All Email
+            <i class="fs-xs ti-angle-right mL-10"></i>
+           </a>
+          </span>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown">
+        <a class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown" href="">
+         <div class="peer mR-10">
+          <img alt="" class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg"/></div>
+         <div class="peer">
+          <span class="fsz-sm c-grey-900">John Doe</span>
+         </div>
+        </a>
+        <ul class="dropdown-menu fsz-sm">
+         <li>
+          <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" href="">
+           <i class="ti-settings mR-10"></i>
+           <span>Setting</span>
+          </a>
+         </li>
+         <li>
+          <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" href="">
+           <i class="ti-user mR-10"></i>
+           <span>Profile</span>
+          </a>
+         </li>
+         <li>
+          <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" href="[%[=URL('email') ]]">
+           <i class="ti-email mR-10"></i>
+           <span>Messages</span>
+          </a>
+         </li>
+         <li class="divider" role="separator"></li>
+         <li>
+          <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" href="">
+           <i class="ti-power-off mR-10"></i>
+           <span>Logout</span>
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <main class="main-content bgc-grey-100">
+     <div id="mainContent">
+      <div class="row gap-20 masonry pos-r">
+       <div class="masonry-sizer col-md-6"></div>
+       <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+         <h6 class="c-grey-900">Basic Form</h6>
+         <div class="mT-30">
+          
+<!-- BEGIN view: fforms0, db_table: dfforms0 -->
+<div>
+[%[= fforms0.custom['begin'] ]]
+<div class="form-group">
+ <label for="exampleInputEmail1">
+  Email address
+ </label>
+ [%[ fforms0.custom['widgets']['f0']['_aria-describedby']= 'emailHelp'  ]]
+ [%[ fforms0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fforms0.custom['widgets']['f0']['_id']= 'exampleInputEmail1'  ]]
+ [%[ fforms0.custom['widgets']['f0']['_placeholder']= 'Enter email'  ]]
+ [%[ fforms0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fforms0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fforms0.custom['errors']['f0'] if 'f0' in fforms0.custom['errors'] else '' ]]</span>
+
+ <small class="form-text text-muted" id="emailHelp">
+  We'll never share your email with anyone else.
+ </small>
+</div>
+
+<div class="form-group">
+ <label for="exampleInputPassword1">
+  Password
+ </label>
+ [%[ fforms0.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fforms0.custom['widgets']['f1']['_id']= 'exampleInputPassword1'  ]]
+ [%[ fforms0.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
+ [%[ fforms0.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fforms0.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fforms0.custom['errors']['f1'] if 'f1' in fforms0.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div class="checkbox checkbox-circle checkbox-info peers ai-c mB-15">
+ [%[ fforms0.custom['widgets']['f2']['_class']= 'peer'  ]]
+ [%[ fforms0.custom['widgets']['f2']['_id']= 'inputCall1'  ]]
+ [%[ fforms0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ fforms0.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= fforms0.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fforms0.custom['errors']['f2'] if 'f2' in fforms0.custom['errors'] else '' ]]</span>
+
+ <label class="peers peer-greed js-sb ai-c" for="inputCall1">
+  <span class="peer peer-greed">
+   Call John for Dinner
+  </span>
+ </label>
+</div>
+
+ [%[ fforms0.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fforms0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fforms0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fforms0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fforms0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fforms0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fforms0.custom['hidden_widgets'].keys(): ]]
+     [%[= fforms0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fforms0</span></div>
+
+
+[%[= fforms0.custom['end'] ]]
+</div>
+<!-- END fforms0-->
+
+         </div>
+        </div>
+       </div>
+       <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+         <h6 class="c-grey-900">Complex Form Layout</h6>
+         <div class="mT-30">
+          
+<!-- BEGIN view: fforms1, db_table: dfforms1 -->
+<div>
+[%[= fforms1.custom['begin'] ]]
+<div class="form-row">
+ <div class="form-group col-md-6">
+  <label for="inputEmail4">
+   Email
+  </label>
+ [%[ fforms1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f0']['_id']= 'inputEmail4'  ]]
+ [%[ fforms1.custom['widgets']['f0']['_placeholder']= 'Email'  ]]
+ [%[ fforms1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fforms1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f0'] if 'f0' in fforms1.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="form-group col-md-6">
+  <label for="inputPassword4">
+   Password
+  </label>
+ [%[ fforms1.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f1']['_id']= 'inputPassword4'  ]]
+ [%[ fforms1.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
+ [%[ fforms1.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fforms1.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f1'] if 'f1' in fforms1.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group">
+ <label for="inputAddress">
+  Address
+ </label>
+ [%[ fforms1.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f2']['_id']= 'inputAddress'  ]]
+ [%[ fforms1.custom['widgets']['f2']['_placeholder']= '1234 Main St'  ]]
+ [%[ fforms1.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fforms1.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f2'] if 'f2' in fforms1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div class="form-group">
+ <label for="inputAddress2">
+  Address 2
+ </label>
+ [%[ fforms1.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f3']['_id']= 'inputAddress2'  ]]
+ [%[ fforms1.custom['widgets']['f3']['_placeholder']= 'Apartment, studio, or floor'  ]]
+ [%[ fforms1.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fforms1.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f3'] if 'f3' in fforms1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div class="form-row">
+ <div class="form-group col-md-6">
+  <label for="inputCity">
+   City
+  </label>
+ [%[ fforms1.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f4']['_id']= 'inputCity'  ]]
+ [%[ fforms1.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[ fforms1.custom['widgets']['f4']['_placeholder']= ''  ]]
+ [%[= fforms1.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f4'] if 'f4' in fforms1.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="form-group col-md-4">
+  <label for="inputState">
+   State
+  </label>
+ [%[ fforms1.custom['widgets']['f5']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f5']['_id']= 'inputState'  ]]
+ [%[ fforms1.custom['widgets']['f5']['_placeholder']= 'it was select'  ]]
+ [%[ fforms1.custom['widgets']['f5']['_style']= 'color:red;'  ]]
+ [%[= fforms1.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f5'] if 'f5' in fforms1.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="form-group col-md-2">
+  <label for="inputZip">
+   Zip
+  </label>
+ [%[ fforms1.custom['widgets']['f6']['_class']= 'form-control'  ]]
+ [%[ fforms1.custom['widgets']['f6']['_id']= 'inputZip'  ]]
+ [%[ fforms1.custom['widgets']['f6']['_type']= 'text'  ]]
+ [%[ fforms1.custom['widgets']['f6']['_placeholder']= ''  ]]
+ [%[= fforms1.custom['widgets']['f6'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f6'] if 'f6' in fforms1.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-row">
+ <div class="form-group col-md-6">
+  <label class="fw-500">
+   Birthdate
+  </label>
+  <div class="timepicker-input input-icon form-group">
+   <div class="input-group">
+    <div class="input-group-addon bgc-white bd bdwR-0">
+     <i class="ti-calendar">
+     </i>
+    </div>
+ [%[ fforms1.custom['widgets']['f7']['_class']= 'form-control bdc-grey-200 start-date'  ]]
+ [%[ fforms1.custom['widgets']['f7']['_data-provide']= 'datepicker'  ]]
+ [%[ fforms1.custom['widgets']['f7']['_placeholder']= 'Datepicker'  ]]
+ [%[ fforms1.custom['widgets']['f7']['_type']= 'text'  ]]
+ [%[= fforms1.custom['widgets']['f7'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f7'] if 'f7' in fforms1.custom['errors'] else '' ]]</span>
+
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="checkbox checkbox-circle checkbox-info peers ai-c">
+ [%[ fforms1.custom['widgets']['f8']['_class']= 'peer'  ]]
+ [%[ fforms1.custom['widgets']['f8']['_id']= 'inputCall2'  ]]
+ [%[ fforms1.custom['widgets']['f8']['_type']= 'checkbox'  ]]
+ [%[ fforms1.custom['widgets']['f8']['_placeholder']= ''  ]]
+ [%[= fforms1.custom['widgets']['f8'] ]]
+
+ <span style="color:#ff0000">[%[= fforms1.custom['errors']['f8'] if 'f8' in fforms1.custom['errors'] else '' ]]</span>
+
+  <label class="peers peer-greed js-sb ai-c" for="inputCall2">
+   <span class="peer peer-greed">
+    Call John for Dinner
+   </span>
+  </label>
+ </div>
+</div>
+
+ [%[ fforms1.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fforms1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fforms1.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fforms1.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fforms1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fforms1.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fforms1.custom['hidden_widgets'].keys(): ]]
+     [%[= fforms1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fforms1</span></div>
+
+
+[%[= fforms1.custom['end'] ]]
+</div>
+<!-- END fforms1-->
+
+         </div>
+        </div>
+       </div>
+       <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+         <h6 class="c-grey-900">Horizontal Form</h6>
+         <div class="mT-30">
+          
+<!-- BEGIN view: fforms2, db_table: dfforms2 -->
+<div>
+[%[= fforms2.custom['begin'] ]]
+<div class="form-group row">
+ <label class="col-sm-2 col-form-label" for="inputEmail3">
+  Email
+ </label>
+ <div class="col-sm-10">
+ [%[ fforms2.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fforms2.custom['widgets']['f0']['_id']= 'inputEmail3'  ]]
+ [%[ fforms2.custom['widgets']['f0']['_placeholder']= 'Email'  ]]
+ [%[ fforms2.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fforms2.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f0'] if 'f0' in fforms2.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group row">
+ <label class="col-sm-2 col-form-label" for="inputPassword3">
+  Password
+ </label>
+ <div class="col-sm-10">
+ [%[ fforms2.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fforms2.custom['widgets']['f1']['_id']= 'inputPassword3'  ]]
+ [%[ fforms2.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
+ [%[ fforms2.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fforms2.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f1'] if 'f1' in fforms2.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<fieldset class="form-group">
+ <div class="row">
+  <legend class="col-form-legend col-sm-2">
+   Radios
+  </legend>
+  <div class="col-sm-10">
+   <div class="form-check">
+    <label class="form-check-label">
+ [%[ fforms2.custom['widgets']['f2']['_checked']= 'checked'  ]]
+ [%[ fforms2.custom['widgets']['f2']['_class']= 'form-check-input'  ]]
+ [%[ fforms2.custom['widgets']['f2']['_id']= 'gridRadios1'  ]]
+ [%[ fforms2.custom['widgets']['f2']['_type']= 'radio'  ]]
+ [%[ fforms2.custom['widgets']['f2']['_value']= 'option1'  ]]
+ [%[ fforms2.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= fforms2.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f2'] if 'f2' in fforms2.custom['errors'] else '' ]]</span>
+
+     Option one is this and that—be sure to include why it's great
+    </label>
+   </div>
+   <div class="form-check">
+    <label class="form-check-label">
+ [%[ fforms2.custom['widgets']['f3']['_class']= 'form-check-input'  ]]
+ [%[ fforms2.custom['widgets']['f3']['_id']= 'gridRadios2'  ]]
+ [%[ fforms2.custom['widgets']['f3']['_type']= 'radio'  ]]
+ [%[ fforms2.custom['widgets']['f3']['_value']= 'option2'  ]]
+ [%[ fforms2.custom['widgets']['f3']['_placeholder']= ''  ]]
+ [%[= fforms2.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f3'] if 'f3' in fforms2.custom['errors'] else '' ]]</span>
+
+     Option two can be something else and selecting it will deselect option one
+    </label>
+   </div>
+   <div class="form-check disabled">
+    <label class="form-check-label">
+ [%[ fforms2.custom['widgets']['f4']['_class']= 'form-check-input'  ]]
+ [%[ fforms2.custom['widgets']['f4']['_id']= 'gridRadios3'  ]]
+ [%[ fforms2.custom['widgets']['f4']['_type']= 'radio'  ]]
+ [%[ fforms2.custom['widgets']['f4']['_value']= 'option3'  ]]
+ [%[ fforms2.custom['widgets']['f4']['_placeholder']= ''  ]]
+ [%[= fforms2.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f4'] if 'f4' in fforms2.custom['errors'] else '' ]]</span>
+
+     Option three is disabled
+    </label>
+   </div>
+  </div>
+ </div>
+</fieldset>
+
+<div class="form-group row">
+ <div class="col-sm-2">
+  Checkbox
+ </div>
+ <div class="col-sm-10">
+  <div class="form-check">
+   <label class="form-check-label">
+ [%[ fforms2.custom['widgets']['f5']['_class']= 'form-check-input'  ]]
+ [%[ fforms2.custom['widgets']['f5']['_type']= 'checkbox'  ]]
+ [%[ fforms2.custom['widgets']['f5']['_placeholder']= ''  ]]
+ [%[= fforms2.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fforms2.custom['errors']['f5'] if 'f5' in fforms2.custom['errors'] else '' ]]</span>
+
+    Check me out
+   </label>
+  </div>
+ </div>
+</div>
+
+<div class="form-group row">
+ <div class="col-sm-10">
+ [%[ fforms2.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fforms2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fforms2.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fforms2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fforms2.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fforms2.custom['submit'] ]]
+
+ </div>
+</div>
+
+ [%[ for hidden_widget in fforms2.custom['hidden_widgets'].keys(): ]]
+     [%[= fforms2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fforms2</span></div>
+
+
+[%[= fforms2.custom['end'] ]]
+</div>
+<!-- END fforms2-->
+
+         </div>
+        </div>
+       </div>
+       <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+         <h6 class="c-grey-900">Disabled Forms</h6>
+         <div class="mT-30">
+          
+<!-- BEGIN view: fforms3, db_table: dfforms3 -->
+<div>
+[%[= fforms3.custom['begin'] ]]
+<fieldset disabled="disabled">
+ <div class="form-group">
+  <label for="disabledTextInput">
+   Disabled input
+  </label>
+ [%[ fforms3.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fforms3.custom['widgets']['f0']['_id']= 'disabledTextInput'  ]]
+ [%[ fforms3.custom['widgets']['f0']['_placeholder']= 'Disabled input'  ]]
+ [%[ fforms3.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fforms3.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fforms3.custom['errors']['f0'] if 'f0' in fforms3.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="form-group">
+  <label for="disabledSelect">
+   Disabled select menu
+  </label>
+ [%[ fforms3.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fforms3.custom['widgets']['f1']['_id']= 'disabledSelect'  ]]
+ [%[ fforms3.custom['widgets']['f1']['_placeholder']= 'it was select'  ]]
+ [%[ fforms3.custom['widgets']['f1']['_style']= 'color:red;'  ]]
+ [%[= fforms3.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fforms3.custom['errors']['f1'] if 'f1' in fforms3.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="form-check">
+  <label class="form-check-label">
+ [%[ fforms3.custom['widgets']['f2']['_class']= 'form-check-input'  ]]
+ [%[ fforms3.custom['widgets']['f2']['_type']= 'checkbox'  ]]
+ [%[ fforms3.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= fforms3.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fforms3.custom['errors']['f2'] if 'f2' in fforms3.custom['errors'] else '' ]]</span>
+
+   Can't check this
+  </label>
+ </div>
+ [%[ fforms3.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fforms3.custom['submit']['_type']= 'submit'  ]]
+ [%[ fforms3.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fforms3.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fforms3.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fforms3.custom['submit'] ]]
+
+</fieldset>
+
+ [%[ for hidden_widget in fforms3.custom['hidden_widgets'].keys(): ]]
+     [%[= fforms3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fforms3</span></div>
+
+
+[%[= fforms3.custom['end'] ]]
+</div>
+<!-- END fforms3-->
+
+         </div>
+        </div>
+       </div>
+       <div class="masonry-item col-md-6">
+        <div class="bgc-white p-20 bd">
+         <h6 class="c-grey-900">Validation</h6>
+         <div class="mT-30">
+          
+<!-- BEGIN view: fforms4, db_table: dfforms4 -->
+<div class="container" id="needs-validation">
+[%[= fforms4.custom['begin'] ]]
+<div class="row">
+ <div class="col-md-6 mb-3">
+  <label for="validationCustom01">
+   First name
+  </label>
+ [%[ fforms4.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fforms4.custom['widgets']['f0']['_id']= 'validationCustom01'  ]]
+ [%[ fforms4.custom['widgets']['f0']['_placeholder']= 'First name'  ]]
+ [%[ fforms4.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fforms4.custom['widgets']['f0']['_value']= 'Mark'  ]]
+ [%[= fforms4.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fforms4.custom['errors']['f0'] if 'f0' in fforms4.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-md-6 mb-3">
+  <label for="validationCustom02">
+   Last name
+  </label>
+ [%[ fforms4.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fforms4.custom['widgets']['f1']['_id']= 'validationCustom02'  ]]
+ [%[ fforms4.custom['widgets']['f1']['_placeholder']= 'Last name'  ]]
+ [%[ fforms4.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fforms4.custom['widgets']['f1']['_value']= 'Otto'  ]]
+ [%[= fforms4.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fforms4.custom['errors']['f1'] if 'f1' in fforms4.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row">
+ <div class="col-md-6 mb-3">
+  <label for="validationCustom03">
+   City
+  </label>
+ [%[ fforms4.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fforms4.custom['widgets']['f2']['_id']= 'validationCustom03'  ]]
+ [%[ fforms4.custom['widgets']['f2']['_placeholder']= 'City'  ]]
+ [%[ fforms4.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fforms4.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fforms4.custom['errors']['f2'] if 'f2' in fforms4.custom['errors'] else '' ]]</span>
+
+  <div class="invalid-feedback">
+   Please provide a valid city.
+  </div>
+ </div>
+ <div class="col-md-3 mb-3">
+  <label for="validationCustom04">
+   State
+  </label>
+ [%[ fforms4.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fforms4.custom['widgets']['f3']['_id']= 'validationCustom04'  ]]
+ [%[ fforms4.custom['widgets']['f3']['_placeholder']= 'State'  ]]
+ [%[ fforms4.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fforms4.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fforms4.custom['errors']['f3'] if 'f3' in fforms4.custom['errors'] else '' ]]</span>
+
+  <div class="invalid-feedback">
+   Please provide a valid state.
+  </div>
+ </div>
+ <div class="col-md-3 mb-3">
+  <label for="validationCustom05">
+   Zip
+  </label>
+ [%[ fforms4.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fforms4.custom['widgets']['f4']['_id']= 'validationCustom05'  ]]
+ [%[ fforms4.custom['widgets']['f4']['_placeholder']= 'Zip'  ]]
+ [%[ fforms4.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fforms4.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fforms4.custom['errors']['f4'] if 'f4' in fforms4.custom['errors'] else '' ]]</span>
+
+  <div class="invalid-feedback">
+   Please provide a valid zip.
+  </div>
+ </div>
+</div>
+
+ [%[ fforms4.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fforms4.custom['submit']['_type']= 'submit'  ]]
+ [%[ fforms4.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fforms4.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fforms4.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fforms4.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fforms4.custom['hidden_widgets'].keys(): ]]
+     [%[= fforms4.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fforms4</span></div>
+
+
+[%[= fforms4.custom['end'] ]]
+</div>
+<!-- END fforms4-->
+
+          <script>
+           ! function() {
+    "use strict";
+    window.addEventListener("load", function() {
+        var e = document.getElementById("needs-validation");
+        e.addEventListener("submit", function(t) {
+            !1 === e.checkValidity() && (t.preventDefault(), t.stopPropagation()), e.classList.add("was-validated")
+        }, !1)
+    }, !1)
+}()
+          </script>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+    <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+     <span>
+      Copyright © 2019 Designed by
+      <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a>
+      . All rights reserved.
+     </span>
+    </footer>
+   </div>
+  </div>
+  <script src="[%[=URL('static/tte/vendor.js') ]]" type="text/javascript"></script>
+  <script src="[%[=URL('static/tte/bundle.js') ]]" type="text/javascript"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
+</html>
