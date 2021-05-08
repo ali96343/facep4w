@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 06.05.2021 16:14:36 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <!-- Required meta tags-->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="au theme template" name="description"/>
+  <meta content="Hau Nguyen" name="author"/>
+  <meta content="au theme template" name="keywords"/>
+  <!-- Title Page-->
+  <title>biorex title text</title>
+  <!-- Fontfaces CSS-->
+  <link href="[%[=URL('static/tte/css/font-face.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-4.7/css/font-awesome.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-5/css/fontawesome-all.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/mdi-font/css/material-design-iconic-font.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Bootstrap CSS-->
+  <link href="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Vendor CSS-->
+  <link href="[%[=URL('static/tte/vendor/animsition/animsition.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/wow/animate.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/css-hamburgers/hamburgers.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/slick/slick.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/select2/select2.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Main CSS-->
+  <link href="[%[=URL('static/tte/css/theme.css') ]]" media="all" rel="stylesheet"/>
+ 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+</style>
+
+</head>
+ <body class="animsition">
+  <div class="page-wrapper">
+   <!-- HEADER MOBILE-->
+   <header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+     <div class="container-fluid">
+      <div class="header-mobile-inner">
+       <a class="logo" href="[%[=URL('index') ]]">
+        <img alt="CoolAdmin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+       <button class="hamburger hamburger--slider" type="button">
+        <span class="hamburger-box">
+         <span class="hamburger-inner"></span>
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <nav class="navbar-mobile">
+     <div class="container-fluid">
+      <ul class="navbar-mobile__list list-unstyled">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <!-- END HEADER MOBILE-->
+   <!-- MENU SIDEBAR-->
+   <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+     <a href="#">
+      <img alt="Cool Admin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+     <nav class="navbar-sidebar">
+      <ul class="list-unstyled navbar__list">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li class="active">
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </aside>
+   <!-- END MENU SIDEBAR-->
+   <!-- PAGE CONTAINER-->
+   <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="header-wrap">
+        
+<!-- BEGIN view: ftable0, db_table: dftable0 -->
+<div class="form-header">
+[%[= ftable0.custom['begin'] ]]
+ [%[ ftable0.custom['widgets']['f0']['_class']= 'au-input au-input--xl'  ]]
+ [%[ ftable0.custom['widgets']['f0']['_placeholder']= 'Search for datas & reports...'  ]]
+ [%[ ftable0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= ftable0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= ftable0.custom['errors']['f0'] if 'f0' in ftable0.custom['errors'] else '' ]]</span>
+
+
+ [%[ ftable0.custom['submit']['_class']= 'au-btn--submit'  ]]
+ [%[ ftable0.custom['submit']['_type']= 'submit'  ]]
+ [%[ ftable0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ ftable0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftable0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= ftable0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in ftable0.custom['hidden_widgets'].keys(): ]]
+     [%[= ftable0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">ftable0</span></div>
+
+
+[%[= ftable0.custom['end'] ]]
+</div>
+<!-- END ftable0-->
+
+        <div class="header-button">
+         <div class="noti-wrap">
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-comment-more"></i>
+           <span class="quantity">1</span>
+           <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+             <p>You have 2 news message</p>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Michelle Moreno" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Michelle Moreno</h6>
+              <p>Have sent a photo</p>
+              <span class="time">3 min ago</span>
+             </div>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Diane Myers" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Diane Myers</h6>
+              <p>You are now connected on message</p>
+              <span class="time">Yesterday</span>
+             </div>
+            </div>
+            <div class="mess__footer">
+             <a href="#">View all messages</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-email"></i>
+           <span class="quantity">1</span>
+           <div class="email-dropdown js-dropdown">
+            <div class="email__title">
+             <p>You have 3 New Emails</p>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, 3 min ago</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-05.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, Yesterday</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, April 12,,2018</span>
+             </div>
+            </div>
+            <div class="email__footer">
+             <a href="#">See all emails</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-notifications"></i>
+           <span class="quantity">3</span>
+           <div class="notifi-dropdown js-dropdown">
+            <div class="notifi__title">
+             <p>You have 3 Notifications</p>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c1 img-cir img-40">
+              <i class="zmdi zmdi-email-open"></i>
+             </div>
+             <div class="content">
+              <p>You got a email notification</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c2 img-cir img-40">
+              <i class="zmdi zmdi-account-box"></i>
+             </div>
+             <div class="content">
+              <p>Your account has been blocked</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c3 img-cir img-40">
+              <i class="zmdi zmdi-file-text"></i>
+             </div>
+             <div class="content">
+              <p>You got a new file</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__footer">
+             <a href="#">All notifications</a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="account-wrap">
+          <div class="account-item clearfix js-item-menu">
+           <div class="image">
+            <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></div>
+           <div class="content">
+            <a class="js-acc-btn" href="#">john doe</a>
+           </div>
+           <div class="account-dropdown js-dropdown">
+            <div class="info clearfix">
+             <div class="image">
+              <a href="#">
+               <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></a>
+             </div>
+             <div class="content">
+              <h5 class="name">
+               <a href="#">john doe</a>
+              </h5>
+              <span class="email">johndoe@example.com</span>
+             </div>
+            </div>
+            <div class="account-dropdown__body">
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-account"></i>
+               Account
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-settings"></i>
+               Setting
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-money-box"></i>
+               Billing
+              </a>
+             </div>
+            </div>
+            <div class="account-dropdown__footer">
+             <a href="#">
+              <i class="zmdi zmdi-power"></i>
+              Logout
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-lg-9">
+         <div class="table-responsive table--no-card m-b-30">
+          
+<!--view: rows_ttable0, db_table: ttable0 -->
+  <table class="table table-borderless table-striped table-earning">
+    <thead>
+      <tr>
+        <th>date</th>
+        <th>order ID</th>
+        <th>name</th>
+        <th class="text-right">price</th>
+        <th class="text-right">quantity</th>
+        <th class="text-right">total</th>
+      </tr>
+    </thead>
+  <tbody>
+        [%[ for row0 in rows_ttable0: ]]
+        <tr>
+            <td>[%[= XML(row0.f0) ]]</td>
+            <td>[%[= XML(row0.f1) ]]</td>
+            <td>[%[= XML(row0.f2) ]]</td>
+            <td class="text-right">[%[= XML(row0.f3) ]]</td>
+            <td class="text-right">[%[= XML(row0.f4) ]]</td>
+            <td class="text-right">[%[= XML(row0.f5) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable0 -->
+
+<div class="flashdiv"><span class="flashspan">ttable0</span></div>
+
+         </div>
+        </div>
+        <div class="col-lg-3">
+         <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
+          <div class="au-card-inner">
+           <div class="table-responsive">
+            
+<!--view: rows_ttable1, db_table: ttable1 -->
+  <table class="table table-top-countries">
+  <tbody>
+        [%[ for row1 in rows_ttable1: ]]
+        <tr>
+            <td>[%[= XML(row1.f0) ]]</td>
+            <td class="text-right">[%[= XML(row1.f1) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable1 -->
+
+<div class="flashdiv"><span class="flashspan">ttable1</span></div>
+
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-6">
+         <!-- USER DATA-->
+         <div class="user-data m-b-30">
+          <h3 class="title-3 m-b-30">
+           <i class="zmdi zmdi-account-calendar"></i>
+           user data
+          </h3>
+          <div class="filters m-b-45">
+           <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+            <select class="js-select2" name="property">
+             <option selected="selected">
+              All Properties
+             </option>
+             <option value="">
+              Products
+             </option>
+             <option value="">
+              Services
+             </option>
+            </select>
+            <div class="dropDownSelect2"></div>
+           </div>
+           <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+            <select class="js-select2 au-select-dark" name="time">
+             <option selected="selected">
+              All Time
+             </option>
+             <option value="">
+              By Month
+             </option>
+             <option value="">
+              By Day
+             </option>
+            </select>
+            <div class="dropDownSelect2"></div>
+           </div>
+          </div>
+          <div class="table-responsive table-data">
+           
+<!--view: rows_ttable2, db_table: ttable2 -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>==0</th>
+        <th>name</th>
+        <th>role</th>
+        <th>type</th>
+        <th>==0</th>
+      </tr>
+    </thead>
+  <tbody>
+        [%[ for row2 in rows_ttable2: ]]
+        <tr>
+            <td>[%[= XML(row2.f0) ]]</td>
+            <td>[%[= XML(row2.f1) ]]</td>
+            <td>[%[= XML(row2.f2) ]]</td>
+            <td>[%[= XML(row2.f3) ]]</td>
+            <td>[%[= XML(row2.f4) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable2 -->
+
+<div class="flashdiv"><span class="flashspan">ttable2</span></div>
+
+          </div>
+          <div class="user-data__footer">
+           <button class="au-btn au-btn-load">load more</button>
+          </div>
+         </div>
+         <!-- END USER DATA-->
+        </div>
+        <div class="col-lg-6">
+         <!-- TOP CAMPAIGN-->
+         <div class="top-campaign">
+          <h3 class="title-3 m-b-30">top campaigns</h3>
+          <div class="table-responsive">
+           
+<!--view: rows_ttable3, db_table: ttable3 -->
+  <table class="table table-top-campaign">
+  <tbody>
+        [%[ for row3 in rows_ttable3: ]]
+        <tr>
+            <td>[%[= XML(row3.f0) ]]</td>
+            <td>[%[= XML(row3.f1) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable3 -->
+
+<div class="flashdiv"><span class="flashspan">ttable3</span></div>
+
+          </div>
+         </div>
+         <!--  END TOP CAMPAIGN-->
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+         <!-- DATA TABLE -->
+         <h3 class="title-5 m-b-35">data table</h3>
+         <div class="table-data__tool">
+          <div class="table-data__tool-left">
+           <div class="rs-select2--light rs-select2--md">
+            <select class="js-select2" name="property">
+             <option selected="selected">
+              All Properties
+             </option>
+             <option value="">
+              Option 1
+             </option>
+             <option value="">
+              Option 2
+             </option>
+            </select>
+            <div class="dropDownSelect2"></div>
+           </div>
+           <div class="rs-select2--light rs-select2--sm">
+            <select class="js-select2" name="time">
+             <option selected="selected">
+              Today
+             </option>
+             <option value="">
+              3 Days
+             </option>
+             <option value="">
+              1 Week
+             </option>
+            </select>
+            <div class="dropDownSelect2"></div>
+           </div>
+           <button class="au-btn-filter">
+            <i class="zmdi zmdi-filter-list"></i>
+            filters
+           </button>
+          </div>
+          <div class="table-data__tool-right">
+           <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+            <i class="zmdi zmdi-plus"></i>
+            add item
+           </button>
+           <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+            <select class="js-select2" name="type">
+             <option selected="selected">
+              Export
+             </option>
+             <option value="">
+              Option 1
+             </option>
+             <option value="">
+              Option 2
+             </option>
+            </select>
+            <div class="dropDownSelect2"></div>
+           </div>
+          </div>
+         </div>
+         <div class="table-responsive table-responsive-data2">
+          
+<!--view: rows_ttable4, db_table: ttable4 -->
+  <table class="table table-data2">
+    <thead>
+      <tr>
+        <th>==0</th>
+        <th>name</th>
+        <th>email</th>
+        <th>description</th>
+        <th>date</th>
+        <th>status</th>
+        <th>price</th>
+        <th>==0</th>
+      </tr>
+    </thead>
+  <tbody>
+        [%[ for row4 in rows_ttable4: ]]
+        <tr>
+            <td>[%[= XML(row4.f0) ]]</td>
+            <td>[%[= XML(row4.f1) ]]</td>
+            <td>[%[= XML(row4.f2) ]]</td>
+            <td class="desc">[%[= XML(row4.f3) ]]</td>
+            <td>[%[= XML(row4.f4) ]]</td>
+            <td>[%[= XML(row4.f5) ]]</td>
+            <td>[%[= XML(row4.f6) ]]</td>
+            <td>[%[= XML(row4.f7) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable4 -->
+
+<div class="flashdiv"><span class="flashspan">ttable4</span></div>
+
+         </div>
+         <!-- END DATA TABLE -->
+        </div>
+       </div>
+       <div class="row m-t-30">
+        <div class="col-md-12">
+         <!-- DATA TABLE-->
+         <div class="table-responsive m-b-40">
+          
+<!--view: rows_ttable5, db_table: ttable5 -->
+  <table class="table table-borderless table-data3">
+    <thead>
+      <tr>
+        <th>date</th>
+        <th>type</th>
+        <th>description</th>
+        <th>status</th>
+        <th>price</th>
+      </tr>
+    </thead>
+  <tbody>
+        [%[ for row5 in rows_ttable5: ]]
+        <tr>
+            <td>[%[= XML(row5.f0) ]]</td>
+            <td>[%[= XML(row5.f1) ]]</td>
+            <td>[%[= XML(row5.f2) ]]</td>
+            <td class="process">[%[= XML(row5.f3) ]]</td>
+            <td>[%[= XML(row5.f4) ]]</td>
+        </tr>
+        [%[pass ]]
+  </tbody>
+</table>
+<!-- end rows_ttable5 -->
+
+<div class="flashdiv"><span class="flashspan">ttable5</span></div>
+
+         </div>
+         <!-- END DATA TABLE-->
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+         <div class="copyright">
+          <p>
+           Copyright © 2018 Colorlib. All rights reserved. Template by
+           <a href="https://colorlib.com">Colorlib</a>
+           .
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Jquery JS-->
+  <script src="[%[=URL('static/tte/vendor/jquery-3.2.1.min.js') ]]"></script>
+  <!-- Bootstrap JS-->
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/popper.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.js') ]]"></script>
+  <!-- Vendor JS       -->
+  <script src="[%[=URL('static/tte/vendor/slick/slick.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/wow/wow.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/animsition/animsition.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.waypoints.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.counterup.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/circle-progress/circle-progress.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/chartjs/Chart.bundle.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/select2/select2.min.js') ]]"></script>
+  <!-- Main JS-->
+  <script src="[%[=URL('static/tte/js/main.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
+</html>
+<!-- end document-->

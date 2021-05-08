@@ -1,0 +1,4 @@
+ratio= 0.46
+   src: js/main.js
+   dst: mailto
+

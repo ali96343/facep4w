@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 06.05.2021 16:14:36 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <!-- Required meta tags-->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="au theme template" name="description"/>
+  <meta content="Hau Nguyen" name="author"/>
+  <meta content="au theme template" name="keywords"/>
+  <!-- Title Page-->
+  <title>biorex title text</title>
+  <!-- Fontfaces CSS-->
+  <link href="[%[=URL('static/tte/css/font-face.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-5/css/fontawesome-all.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-4.7/css/font-awesome.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/mdi-font/css/material-design-iconic-font.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Bootstrap CSS-->
+  <link href="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Vendor CSS-->
+  <link href="[%[=URL('static/tte/vendor/animsition/animsition.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/wow/animate.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/css-hamburgers/hamburgers.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/slick/slick.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/select2/select2.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Main CSS-->
+  <link href="[%[=URL('static/tte/css/theme.css') ]]" media="all" rel="stylesheet"/>
+ 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+</style>
+
+</head>
+ <body class="animsition">
+  <div class="page-wrapper">
+   <!-- HEADER MOBILE-->
+   <header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+     <div class="container-fluid">
+      <div class="header-mobile-inner">
+       <a class="logo" href="[%[=URL('index') ]]">
+        <img alt="CoolAdmin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+       <button class="hamburger hamburger--slider" type="button">
+        <span class="hamburger-box">
+         <span class="hamburger-inner"></span>
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <nav class="navbar-mobile">
+     <div class="container-fluid">
+      <ul class="navbar-mobile__list list-unstyled">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <!-- END HEADER MOBILE-->
+   <!-- MENU SIDEBAR-->
+   <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+     <a href="#">
+      <img alt="Cool Admin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+     <nav class="navbar-sidebar">
+      <ul class="list-unstyled navbar__list">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li class="active">
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </aside>
+   <!-- END MENU SIDEBAR-->
+   <!-- PAGE CONTAINER-->
+   <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="header-wrap">
+        
+<!-- BEGIN view: fform0, db_table: dfform0 -->
+<div class="form-header">
+[%[= fform0.custom['begin'] ]]
+ [%[ fform0.custom['widgets']['f0']['_class']= 'au-input au-input--xl'  ]]
+ [%[ fform0.custom['widgets']['f0']['_placeholder']= 'Search for datas & reports...'  ]]
+ [%[ fform0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform0.custom['errors']['f0'] if 'f0' in fform0.custom['errors'] else '' ]]</span>
+
+
+ [%[ fform0.custom['submit']['_class']= 'au-btn--submit'  ]]
+ [%[ fform0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fform0.custom['hidden_widgets'].keys(): ]]
+     [%[= fform0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform0</span></div>
+
+
+[%[= fform0.custom['end'] ]]
+</div>
+<!-- END fform0-->
+
+        <div class="header-button">
+         <div class="noti-wrap">
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-comment-more"></i>
+           <span class="quantity">1</span>
+           <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+             <p>You have 2 news message</p>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Michelle Moreno" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Michelle Moreno</h6>
+              <p>Have sent a photo</p>
+              <span class="time">3 min ago</span>
+             </div>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Diane Myers" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Diane Myers</h6>
+              <p>You are now connected on message</p>
+              <span class="time">Yesterday</span>
+             </div>
+            </div>
+            <div class="mess__footer">
+             <a href="#">View all messages</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-email"></i>
+           <span class="quantity">1</span>
+           <div class="email-dropdown js-dropdown">
+            <div class="email__title">
+             <p>You have 3 New Emails</p>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, 3 min ago</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-05.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, Yesterday</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, April 12,,2018</span>
+             </div>
+            </div>
+            <div class="email__footer">
+             <a href="#">See all emails</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-notifications"></i>
+           <span class="quantity">3</span>
+           <div class="notifi-dropdown js-dropdown">
+            <div class="notifi__title">
+             <p>You have 3 Notifications</p>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c1 img-cir img-40">
+              <i class="zmdi zmdi-email-open"></i>
+             </div>
+             <div class="content">
+              <p>You got a email notification</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c2 img-cir img-40">
+              <i class="zmdi zmdi-account-box"></i>
+             </div>
+             <div class="content">
+              <p>Your account has been blocked</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c3 img-cir img-40">
+              <i class="zmdi zmdi-file-text"></i>
+             </div>
+             <div class="content">
+              <p>You got a new file</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__footer">
+             <a href="#">All notifications</a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="account-wrap">
+          <div class="account-item clearfix js-item-menu">
+           <div class="image">
+            <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></div>
+           <div class="content">
+            <a class="js-acc-btn" href="#">john doe</a>
+           </div>
+           <div class="account-dropdown js-dropdown">
+            <div class="info clearfix">
+             <div class="image">
+              <a href="#">
+               <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></a>
+             </div>
+             <div class="content">
+              <h5 class="name">
+               <a href="#">john doe</a>
+              </h5>
+              <span class="email">johndoe@example.com</span>
+             </div>
+            </div>
+            <div class="account-dropdown__body">
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-account"></i>
+               Account
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-settings"></i>
+               Setting
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-money-box"></i>
+               Billing
+              </a>
+             </div>
+            </div>
+            <div class="account-dropdown__footer">
+             <a href="#">
+              <i class="zmdi zmdi-power"></i>
+              Logout
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <!-- HEADER DESKTOP-->
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">Credit Card</div>
+          <div class="card-body">
+           <div class="card-title">
+            <h3 class="text-center title-2">Pay Invoice</h3>
+           </div>
+           <hr/>
+           
+<!-- BEGIN view: fform1, db_table: dfform1 -->
+<div>
+[%[= fform1.custom['begin'] ]]
+<div class="form-group">
+ <label class="control-label mb-1" for="cc-payment">
+  Payment amount
+ </label>
+ [%[ fform1.custom['widgets']['f0']['_aria-invalid']= 'false'  ]]
+ [%[ fform1.custom['widgets']['f0']['_aria-required']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform1.custom['widgets']['f0']['_id']= 'cc-pament'  ]]
+ [%[ fform1.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fform1.custom['widgets']['f0']['_value']= '100.00'  ]]
+ [%[ fform1.custom['widgets']['f0']['_placeholder']= ''  ]]
+ [%[= fform1.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform1.custom['errors']['f0'] if 'f0' in fform1.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div class="form-group has-success">
+ <label class="control-label mb-1" for="cc-name">
+  Name on card
+ </label>
+ [%[ fform1.custom['widgets']['f1']['_aria-describedby']= 'cc-name-error'  ]]
+ [%[ fform1.custom['widgets']['f1']['_aria-invalid']= 'false'  ]]
+ [%[ fform1.custom['widgets']['f1']['_aria-required']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f1']['_autocomplete']= 'cc-name'  ]]
+ [%[ fform1.custom['widgets']['f1']['_class']= 'form-control cc-name valid'  ]]
+ [%[ fform1.custom['widgets']['f1']['_data-val']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f1']['_data-val-required']= 'Please enter the name on card'  ]]
+ [%[ fform1.custom['widgets']['f1']['_id']= 'cc-name'  ]]
+ [%[ fform1.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fform1.custom['widgets']['f1']['_placeholder']= ''  ]]
+ [%[= fform1.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform1.custom['errors']['f1'] if 'f1' in fform1.custom['errors'] else '' ]]</span>
+
+ <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true">
+ </span>
+</div>
+
+<div class="form-group">
+ <label class="control-label mb-1" for="cc-number">
+  Card number
+ </label>
+ [%[ fform1.custom['widgets']['f2']['_autocomplete']= 'cc-number'  ]]
+ [%[ fform1.custom['widgets']['f2']['_class']= 'form-control cc-number identified visa'  ]]
+ [%[ fform1.custom['widgets']['f2']['_data-val']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f2']['_data-val-cc-number']= 'Please enter a valid card number'  ]]
+ [%[ fform1.custom['widgets']['f2']['_data-val-required']= 'Please enter the card number'  ]]
+ [%[ fform1.custom['widgets']['f2']['_id']= 'cc-number'  ]]
+ [%[ fform1.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[ fform1.custom['widgets']['f2']['_value']= '==0'  ]]
+ [%[ fform1.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= fform1.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform1.custom['errors']['f2'] if 'f2' in fform1.custom['errors'] else '' ]]</span>
+
+ <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true">
+ </span>
+</div>
+
+<div class="row">
+ <div class="col-6">
+  <div class="form-group">
+   <label class="control-label mb-1" for="cc-exp">
+    Expiration
+   </label>
+ [%[ fform1.custom['widgets']['f3']['_autocomplete']= 'cc-exp'  ]]
+ [%[ fform1.custom['widgets']['f3']['_class']= 'form-control cc-exp'  ]]
+ [%[ fform1.custom['widgets']['f3']['_data-val']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f3']['_data-val-cc-exp']= 'Please enter a valid month and year'  ]]
+ [%[ fform1.custom['widgets']['f3']['_data-val-required']= 'Please enter the card expiration'  ]]
+ [%[ fform1.custom['widgets']['f3']['_id']= 'cc-exp'  ]]
+ [%[ fform1.custom['widgets']['f3']['_placeholder']= 'MM / YY'  ]]
+ [%[ fform1.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[ fform1.custom['widgets']['f3']['_value']= '==0'  ]]
+ [%[= fform1.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fform1.custom['errors']['f3'] if 'f3' in fform1.custom['errors'] else '' ]]</span>
+
+   <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true">
+   </span>
+  </div>
+ </div>
+ <div class="col-6">
+  <label class="control-label mb-1" for="x_card_code">
+   Security code
+  </label>
+  <div class="input-group">
+ [%[ fform1.custom['widgets']['f4']['_autocomplete']= 'off'  ]]
+ [%[ fform1.custom['widgets']['f4']['_class']= 'form-control cc-cvc'  ]]
+ [%[ fform1.custom['widgets']['f4']['_data-val']= 'true'  ]]
+ [%[ fform1.custom['widgets']['f4']['_data-val-cc-cvc']= 'Please enter a valid security code'  ]]
+ [%[ fform1.custom['widgets']['f4']['_data-val-required']= 'Please enter the security code'  ]]
+ [%[ fform1.custom['widgets']['f4']['_id']= 'x_card_code'  ]]
+ [%[ fform1.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[ fform1.custom['widgets']['f4']['_value']= '==0'  ]]
+ [%[ fform1.custom['widgets']['f4']['_placeholder']= ''  ]]
+ [%[= fform1.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fform1.custom['errors']['f4'] if 'f4' in fform1.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div>
+ [%[ fform1.custom['submit']['_class']= 'btn btn-lg btn-info btn-block'  ]]
+ [%[ fform1.custom['submit']['_id']= 'payment-button'  ]]
+ [%[ fform1.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform1.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform1.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform1.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform1.custom['submit'] ]]
+
+</div>
+
+ [%[ for hidden_widget in fform1.custom['hidden_widgets'].keys(): ]]
+     [%[= fform1.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform1</span></div>
+
+
+[%[= fform1.custom['end'] ]]
+</div>
+<!-- END fform1-->
+
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Company</strong>
+           <small>Form</small>
+          </div>
+          <div class="card-body card-block">
+           <div class="form-group">
+            <label class="form-control-label" for="company">
+             Company
+            </label>
+            <input class="form-control" id="company" placeholder="Enter your company name" type="text"/></div>
+           <div class="form-group">
+            <label class="form-control-label" for="vat">
+             VAT
+            </label>
+            <input class="form-control" id="vat" placeholder="DE1234567890" type="text"/></div>
+           <div class="form-group">
+            <label class="form-control-label" for="street">
+             Street
+            </label>
+            <input class="form-control" id="street" placeholder="Enter street name" type="text"/></div>
+           <div class="row form-group">
+            <div class="col-8">
+             <div class="form-group">
+              <label class="form-control-label" for="city">
+               City
+              </label>
+              <input class="form-control" id="city" placeholder="Enter your city" type="text"/></div>
+            </div>
+            <div class="col-8">
+             <div class="form-group">
+              <label class="form-control-label" for="postal-code">
+               Postal Code
+              </label>
+              <input class="form-control" id="postal-code" placeholder="Postal Code" type="text"/></div>
+            </div>
+           </div>
+           <div class="form-group">
+            <label class="form-control-label" for="country">
+             Country
+            </label>
+            <input class="form-control" id="country" placeholder="Country name" type="text"/></div>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Basic Form</strong>
+           Elements
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform2, db_table: dfform2 -->
+<div class="form-horizontal" enctype="multipart/form-data">
+[%[= fform2.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label">
+   Static
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+  <p class="form-control-static">
+   Username
+  </p>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="text-input">
+   Text Input
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform2.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform2.custom['widgets']['f0']['_id']= 'text-input'  ]]
+ [%[ fform2.custom['widgets']['f0']['_placeholder']= 'Text'  ]]
+ [%[ fform2.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform2.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform2.custom['errors']['f0'] if 'f0' in fform2.custom['errors'] else '' ]]</span>
+
+  <small class="form-text text-muted">
+   This is a help text
+  </small>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="email-input">
+   Email Input
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform2.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform2.custom['widgets']['f1']['_id']= 'email-input'  ]]
+ [%[ fform2.custom['widgets']['f1']['_placeholder']= 'Enter Email'  ]]
+ [%[ fform2.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform2.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform2.custom['errors']['f1'] if 'f1' in fform2.custom['errors'] else '' ]]</span>
+
+  <small class="help-block form-text">
+   Please enter your email
+  </small>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="password-input">
+   Password
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform2.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform2.custom['widgets']['f2']['_id']= 'password-input'  ]]
+ [%[ fform2.custom['widgets']['f2']['_placeholder']= 'Password'  ]]
+ [%[ fform2.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform2.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform2.custom['errors']['f2'] if 'f2' in fform2.custom['errors'] else '' ]]</span>
+
+  <small class="help-block form-text">
+   Please enter a complex password
+  </small>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="disabled-input">
+   Disabled Input
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform2.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fform2.custom['widgets']['f3']['_id']= 'disabled-input'  ]]
+ [%[ fform2.custom['widgets']['f3']['_placeholder']= 'Disabled'  ]]
+ [%[ fform2.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fform2.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fform2.custom['errors']['f3'] if 'f3' in fform2.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="textarea-input">
+   Textarea
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform2.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fform2.custom['widgets']['f4']['_id']= 'textarea-input'  ]]
+ [%[ fform2.custom['widgets']['f4']['_placeholder']= 'Content...'  ]]
+ [%[ fform2.custom['widgets']['f4']['_rows']= '9'  ]]
+ [%[ fform2.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fform2.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fform2.custom['errors']['f4'] if 'f4' in fform2.custom['errors'] else '' ]]</span>
+
+ [%[ fform2.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform2.custom['submit']['_id']= 'textarea-input'  ]]
+ [%[ fform2.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform2.custom['submit']['_rows']= '1'  ]]
+ [%[ fform2.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform2.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform2.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform2.custom['submit'] ]]
+
+ [%[ for hidden_widget in fform2.custom['hidden_widgets'].keys(): ]]
+     [%[= fform2.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform2</span></div>
+
+
+[%[= fform2.custom['end'] ]]
+</div>
+<!-- END fform2-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header">
+           <strong>Inline</strong>
+           Form
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform3, db_table: dfform3 -->
+<div class="form-inline">
+[%[= fform3.custom['begin'] ]]
+<div class="form-group">
+ <label class="pr-1 form-control-label" for="exampleInputName2">
+  Name
+ </label>
+ [%[ fform3.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform3.custom['widgets']['f0']['_id']= 'exampleInputName2'  ]]
+ [%[ fform3.custom['widgets']['f0']['_placeholder']= 'Jane Doe'  ]]
+ [%[ fform3.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform3.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform3.custom['errors']['f0'] if 'f0' in fform3.custom['errors'] else '' ]]</span>
+
+</div>
+
+<div class="form-group">
+ <label class="px-1 form-control-label" for="exampleInputEmail2">
+  Email
+ </label>
+ [%[ fform3.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform3.custom['widgets']['f1']['_id']= 'exampleInputEmail2'  ]]
+ [%[ fform3.custom['widgets']['f1']['_placeholder']= 'jane.doe@example.com'  ]]
+ [%[ fform3.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform3.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform3.custom['errors']['f1'] if 'f1' in fform3.custom['errors'] else '' ]]</span>
+
+ [%[ fform3.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform3.custom['submit']['_id']= 'exampleInputEmail2'  ]]
+ [%[ fform3.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform3.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform3.custom['submit']['_rows']= '1'  ]]
+ [%[ fform3.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform3.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform3.custom['submit'] ]]
+
+</div>
+
+ [%[ for hidden_widget in fform3.custom['hidden_widgets'].keys(): ]]
+     [%[= fform3.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform3</span></div>
+
+
+[%[= fform3.custom['end'] ]]
+</div>
+<!-- END fform3-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Horizontal</strong>
+           Form
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform4, db_table: dfform4 -->
+<div class="form-horizontal">
+[%[= fform4.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="hf-email">
+   Email
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform4.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform4.custom['widgets']['f0']['_id']= 'hf-email'  ]]
+ [%[ fform4.custom['widgets']['f0']['_placeholder']= 'Enter Email...'  ]]
+ [%[ fform4.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform4.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform4.custom['errors']['f0'] if 'f0' in fform4.custom['errors'] else '' ]]</span>
+
+  <span class="help-block">
+   Please enter your email
+  </span>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-3">
+  <label class="form-control-label" for="hf-password">
+   Password
+  </label>
+ </div>
+ <div class="col-12 col-md-9">
+ [%[ fform4.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform4.custom['widgets']['f1']['_id']= 'hf-password'  ]]
+ [%[ fform4.custom['widgets']['f1']['_placeholder']= 'Enter Password...'  ]]
+ [%[ fform4.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform4.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform4.custom['errors']['f1'] if 'f1' in fform4.custom['errors'] else '' ]]</span>
+
+ [%[ fform4.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform4.custom['submit']['_id']= 'hf-password'  ]]
+ [%[ fform4.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform4.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform4.custom['submit']['_rows']= '1'  ]]
+ [%[ fform4.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform4.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform4.custom['submit'] ]]
+
+  <span class="help-block">
+   Please enter your password
+  </span>
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform4.custom['hidden_widgets'].keys(): ]]
+     [%[= fform4.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform4</span></div>
+
+
+[%[= fform4.custom['end'] ]]
+</div>
+<!-- END fform4-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header">
+           <strong>Normal</strong>
+           Form
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform5, db_table: dfform5 -->
+<div class="">
+[%[= fform5.custom['begin'] ]]
+<div class="form-group">
+ <label class="form-control-label" for="nf-email">
+  Email
+ </label>
+ [%[ fform5.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform5.custom['widgets']['f0']['_id']= 'nf-email'  ]]
+ [%[ fform5.custom['widgets']['f0']['_placeholder']= 'Enter Email..'  ]]
+ [%[ fform5.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform5.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform5.custom['errors']['f0'] if 'f0' in fform5.custom['errors'] else '' ]]</span>
+
+ <span class="help-block">
+  Please enter your email
+ </span>
+</div>
+
+<div class="form-group">
+ <label class="form-control-label" for="nf-password">
+  Password
+ </label>
+ [%[ fform5.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform5.custom['widgets']['f1']['_id']= 'nf-password'  ]]
+ [%[ fform5.custom['widgets']['f1']['_placeholder']= 'Enter Password..'  ]]
+ [%[ fform5.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform5.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform5.custom['errors']['f1'] if 'f1' in fform5.custom['errors'] else '' ]]</span>
+
+ [%[ fform5.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform5.custom['submit']['_id']= 'nf-password'  ]]
+ [%[ fform5.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform5.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform5.custom['submit']['_rows']= '1'  ]]
+ [%[ fform5.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform5.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform5.custom['submit'] ]]
+
+ <span class="help-block">
+  Please enter your password
+ </span>
+</div>
+
+ [%[ for hidden_widget in fform5.custom['hidden_widgets'].keys(): ]]
+     [%[= fform5.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform5</span></div>
+
+
+[%[= fform5.custom['end'] ]]
+</div>
+<!-- END fform5-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header">
+           Input
+           <strong>Grid</strong>
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform6, db_table: dfform6 -->
+<div class="form-horizontal">
+[%[= fform6.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-sm-3">
+ [%[ fform6.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f0']['_placeholder']= '.col-sm-3'  ]]
+ [%[ fform6.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f0'] if 'f0' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-4">
+ [%[ fform6.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f1']['_placeholder']= '.col-sm-4'  ]]
+ [%[ fform6.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f1'] if 'f1' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-5">
+ [%[ fform6.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f2']['_placeholder']= '.col-sm-5'  ]]
+ [%[ fform6.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f2'] if 'f2' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-6">
+ [%[ fform6.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f3']['_placeholder']= '.col-sm-6'  ]]
+ [%[ fform6.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f3'] if 'f3' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-7">
+ [%[ fform6.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f4']['_placeholder']= '.col-sm-7'  ]]
+ [%[ fform6.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f4'] if 'f4' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-8">
+ [%[ fform6.custom['widgets']['f5']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f5']['_placeholder']= '.col-sm-8'  ]]
+ [%[ fform6.custom['widgets']['f5']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f5'] if 'f5' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-9">
+ [%[ fform6.custom['widgets']['f6']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f6']['_placeholder']= '.col-sm-9'  ]]
+ [%[ fform6.custom['widgets']['f6']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f6'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f6'] if 'f6' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-10">
+ [%[ fform6.custom['widgets']['f7']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f7']['_placeholder']= '.col-sm-10'  ]]
+ [%[ fform6.custom['widgets']['f7']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f7'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f7'] if 'f7' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-11">
+ [%[ fform6.custom['widgets']['f8']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f8']['_placeholder']= '.col-sm-11'  ]]
+ [%[ fform6.custom['widgets']['f8']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f8'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f8'] if 'f8' in fform6.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-12">
+ [%[ fform6.custom['widgets']['f9']['_class']= 'form-control'  ]]
+ [%[ fform6.custom['widgets']['f9']['_placeholder']= '.col-sm-12'  ]]
+ [%[ fform6.custom['widgets']['f9']['_type']= 'text'  ]]
+ [%[= fform6.custom['widgets']['f9'] ]]
+
+ <span style="color:#ff0000">[%[= fform6.custom['errors']['f9'] if 'f9' in fform6.custom['errors'] else '' ]]</span>
+
+ [%[ fform6.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform6.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform6.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform6.custom['submit']['_rows']= '1'  ]]
+ [%[ fform6.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform6.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform6.custom['submit'] ]]
+
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform6.custom['hidden_widgets'].keys(): ]]
+     [%[= fform6.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform6</span></div>
+
+
+[%[= fform6.custom['end'] ]]
+</div>
+<!-- END fform6-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-user"></i>
+            Login
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header">
+           Input
+           <strong>Sizes</strong>
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform7, db_table: dfform7 -->
+<div class="form-horizontal">
+[%[= fform7.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-sm-5">
+  <label class="form-control-label" for="input-small">
+   Small Input
+  </label>
+ </div>
+ <div class="col col-sm-6">
+ [%[ fform7.custom['widgets']['f0']['_class']= 'input-sm form-control-sm form-control'  ]]
+ [%[ fform7.custom['widgets']['f0']['_id']= 'input-small'  ]]
+ [%[ fform7.custom['widgets']['f0']['_placeholder']= '.form-control-sm'  ]]
+ [%[ fform7.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform7.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform7.custom['errors']['f0'] if 'f0' in fform7.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-5">
+  <label class="form-control-label" for="input-normal">
+   Normal Input
+  </label>
+ </div>
+ <div class="col col-sm-6">
+ [%[ fform7.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform7.custom['widgets']['f1']['_id']= 'input-normal'  ]]
+ [%[ fform7.custom['widgets']['f1']['_placeholder']= 'Normal'  ]]
+ [%[ fform7.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform7.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform7.custom['errors']['f1'] if 'f1' in fform7.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-sm-5">
+  <label class="form-control-label" for="input-large">
+   Large Input
+  </label>
+ </div>
+ <div class="col col-sm-6">
+ [%[ fform7.custom['widgets']['f2']['_class']= 'input-lg form-control-lg form-control'  ]]
+ [%[ fform7.custom['widgets']['f2']['_id']= 'input-large'  ]]
+ [%[ fform7.custom['widgets']['f2']['_placeholder']= '.form-control-lg'  ]]
+ [%[ fform7.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform7.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform7.custom['errors']['f2'] if 'f2' in fform7.custom['errors'] else '' ]]</span>
+
+ [%[ fform7.custom['submit']['_class']= 'input-lg form-control-lg form-control mysubmit_cls'  ]]
+ [%[ fform7.custom['submit']['_id']= 'input-large'  ]]
+ [%[ fform7.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform7.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform7.custom['submit']['_rows']= '1'  ]]
+ [%[ fform7.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform7.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform7.custom['submit'] ]]
+
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform7.custom['hidden_widgets'].keys(): ]]
+     [%[= fform7.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform7</span></div>
+
+
+[%[= fform7.custom['end'] ]]
+</div>
+<!-- END fform7-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Validation states</strong>
+           Form
+          </div>
+          <div class="card-body card-block">
+           <div class="has-success form-group">
+            <label class="form-control-label" for="inputIsValid">
+             Input is valid
+            </label>
+            <input class="is-valid form-control-success form-control" id="inputIsValid" type="text"/></div>
+           <div class="has-warning form-group">
+            <label class="form-control-label" for="inputIsInvalid">
+             Input is invalid
+            </label>
+            <input class="is-invalid form-control" id="inputIsInvalid" type="text"/></div>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Validation states</strong>
+           with optional icons
+           <em>(deprecated)</em>
+          </div>
+          <div class="card-body card-block">
+           <div class="has-success form-group">
+            <label class="form-control-label" for="inputSuccess2i">
+             Input with success
+            </label>
+            <input class="form-control-success form-control" id="inputSuccess2i" type="text"/></div>
+           <div class="has-warning form-group">
+            <label class="form-control-label" for="inputWarning2i">
+             Input with warning
+            </label>
+            <input class="form-control-warning form-control" id="inputWarning2i" type="text"/></div>
+           <div class="has-danger has-feedback form-group">
+            <label class="form-control-label" for="inputError2i">
+             Input with error
+            </label>
+            <input class="form-control-danger form-control" id="inputError2i" type="text"/></div>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Icon/Text</strong>
+           Groups
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform8, db_table: dfform8 -->
+<div class="form-horizontal">
+[%[= fform8.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-addon">
+    <i class="fa fa-user">
+    </i>
+   </div>
+ [%[ fform8.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform8.custom['widgets']['f0']['_id']= 'input1-group1'  ]]
+ [%[ fform8.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
+ [%[ fform8.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform8.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform8.custom['errors']['f0'] if 'f0' in fform8.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+ [%[ fform8.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform8.custom['widgets']['f1']['_id']= 'input2-group1'  ]]
+ [%[ fform8.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[ fform8.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform8.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform8.custom['errors']['f1'] if 'f1' in fform8.custom['errors'] else '' ]]</span>
+
+   <div class="input-group-addon">
+    <i class="far fa-envelope">
+    </i>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-addon">
+    <i class="fa fa-euro">
+    </i>
+   </div>
+ [%[ fform8.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform8.custom['widgets']['f2']['_id']= 'input3-group1'  ]]
+ [%[ fform8.custom['widgets']['f2']['_placeholder']= '..'  ]]
+ [%[ fform8.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform8.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform8.custom['errors']['f2'] if 'f2' in fform8.custom['errors'] else '' ]]</span>
+
+ [%[ fform8.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform8.custom['submit']['_id']= 'input3-group1'  ]]
+ [%[ fform8.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform8.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform8.custom['submit']['_rows']= '1'  ]]
+ [%[ fform8.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform8.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform8.custom['submit'] ]]
+
+   <div class="input-group-addon">
+    .00
+   </div>
+  </div>
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform8.custom['hidden_widgets'].keys(): ]]
+     [%[= fform8.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform8</span></div>
+
+
+[%[= fform8.custom['end'] ]]
+</div>
+<!-- END fform8-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-success btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Buttons</strong>
+           Groups
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform9, db_table: dfform9 -->
+<div class="form-horizontal">
+[%[= fform9.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-btn">
+ [%[ fform9.custom['submit']['_class']= 'btn btn-primary'  ]]
+ [%[ fform9.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform9.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform9.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform9.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform9.custom['submit'] ]]
+
+   </div>
+ [%[ fform9.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform9.custom['widgets']['f0']['_id']= 'input1-group2'  ]]
+ [%[ fform9.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
+ [%[ fform9.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform9.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform9.custom['errors']['f0'] if 'f0' in fform9.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+ [%[ fform9.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform9.custom['widgets']['f1']['_id']= 'input2-group2'  ]]
+ [%[ fform9.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[ fform9.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform9.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform9.custom['errors']['f1'] if 'f1' in fform9.custom['errors'] else '' ]]</span>
+
+   <div class="input-group-btn">
+    <button class="btn btn-primary">
+     Submit
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-btn">
+    <button class="btn btn-primary">
+     <i class="fa fa-facebook">
+     </i>
+    </button>
+   </div>
+ [%[ fform9.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform9.custom['widgets']['f2']['_id']= 'input3-group2'  ]]
+ [%[ fform9.custom['widgets']['f2']['_placeholder']= 'Search'  ]]
+ [%[ fform9.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform9.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform9.custom['errors']['f2'] if 'f2' in fform9.custom['errors'] else '' ]]</span>
+
+   <div class="input-group-btn">
+    <button class="btn btn-primary">
+     <i class="fa fa-twitter">
+     </i>
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform9.custom['hidden_widgets'].keys(): ]]
+     [%[= fform9.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform9</span></div>
+
+
+[%[= fform9.custom['end'] ]]
+</div>
+<!-- END fform9-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-success btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Dropdowns</strong>
+           Groups
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform10, db_table: dfform10 -->
+<div class="form-horizontal">
+[%[= fform10.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-btn">
+    <div class="btn-group">
+ [%[ fform10.custom['submit']['_aria-expanded']= 'false'  ]]
+ [%[ fform10.custom['submit']['_aria-haspopup']= 'true'  ]]
+ [%[ fform10.custom['submit']['_class']= 'dropdown-toggle btn btn-primary'  ]]
+ [%[ fform10.custom['submit']['_data-toggle']= 'dropdown'  ]]
+ [%[ fform10.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform10.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform10.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform10.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform10.custom['submit'] ]]
+
+     <div aria-hidden="true" class="dropdown-menu" role="menu" tabindex="-1">
+      <button class="dropdown-item" tabindex="0" type="button">
+       Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Another Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Something else here
+      </button>
+      <div class="dropdown-divider" tabindex="-1">
+      </div>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Separated link
+      </button>
+     </div>
+    </div>
+   </div>
+ [%[ fform10.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform10.custom['widgets']['f0']['_id']= 'input1-group3'  ]]
+ [%[ fform10.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
+ [%[ fform10.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform10.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform10.custom['errors']['f0'] if 'f0' in fform10.custom['errors'] else '' ]]</span>
+
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+ [%[ fform10.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform10.custom['widgets']['f1']['_id']= 'input2-group3'  ]]
+ [%[ fform10.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[ fform10.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform10.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform10.custom['errors']['f1'] if 'f1' in fform10.custom['errors'] else '' ]]</span>
+
+   <div class="input-group-btn">
+    <div class="btn-group">
+     <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" type="button">
+      Dropdown
+     </button>
+     <div aria-hidden="true" class="dropdown-menu" role="menu" tabindex="-1">
+      <button class="dropdown-item" tabindex="0" type="button">
+       Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Another Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Something else here
+      </button>
+      <div class="dropdown-divider" tabindex="-1">
+      </div>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Separated link
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-12">
+  <div class="input-group">
+   <div class="input-group-btn">
+    <div class="btn-group">
+     <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" type="button">
+      Action
+     </button>
+     <div aria-hidden="true" class="dropdown-menu" role="menu" tabindex="-1">
+      <button class="dropdown-item" tabindex="0" type="button">
+       Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Another Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Something else here
+      </button>
+      <div class="dropdown-divider" tabindex="-1">
+      </div>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Separated link
+      </button>
+     </div>
+    </div>
+   </div>
+ [%[ fform10.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform10.custom['widgets']['f2']['_id']= 'input3-group3'  ]]
+ [%[ fform10.custom['widgets']['f2']['_placeholder']= '..'  ]]
+ [%[ fform10.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform10.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform10.custom['errors']['f2'] if 'f2' in fform10.custom['errors'] else '' ]]</span>
+
+   <div class="input-group-btn">
+    <div class="btn-group">
+     <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" type="button">
+      Dropdown
+     </button>
+     <div aria-hidden="true" class="dropdown-menu" role="menu" tabindex="-1">
+      <button class="dropdown-item" tabindex="0" type="button">
+       Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Another Action
+      </button>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Something else here
+      </button>
+      <div class="dropdown-divider" tabindex="-1">
+      </div>
+      <button class="dropdown-item" tabindex="0" type="button">
+       Separated link
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform10.custom['hidden_widgets'].keys(): ]]
+     [%[= fform10.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform10</span></div>
+
+
+[%[= fform10.custom['end'] ]]
+</div>
+<!-- END fform10-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-success btn-sm" type="submit">
+            <i class="fa fa-dot-circle-o"></i>
+            Submit
+           </button>
+           <button class="btn btn-danger btn-sm" type="reset">
+            <i class="fa fa-ban"></i>
+            Reset
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           Use the grid for big devices!
+           <small>
+            <code>
+             .col-lg-*
+            </code>
+            <code>
+             .col-md-*
+            </code>
+            <code>
+             .col-sm-*
+            </code>
+           </small>
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform11, db_table: dfform11 -->
+<div class="form-horizontal">
+[%[= fform11.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col col-md-8">
+ [%[ fform11.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f0']['_placeholder']= '.col-md-8'  ]]
+ [%[ fform11.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f0'] if 'f0' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col col-md-4">
+ [%[ fform11.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f1']['_placeholder']= '.col-md-4'  ]]
+ [%[ fform11.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f1'] if 'f1' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-7">
+ [%[ fform11.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f2']['_placeholder']= '.col-md-7'  ]]
+ [%[ fform11.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f2'] if 'f2' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col col-md-5">
+ [%[ fform11.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f3']['_placeholder']= '.col-md-5'  ]]
+ [%[ fform11.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f3'] if 'f3' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-6">
+ [%[ fform11.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f4']['_placeholder']= '.col-md-6'  ]]
+ [%[ fform11.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f4'] if 'f4' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col col-md-6">
+ [%[ fform11.custom['widgets']['f5']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f5']['_placeholder']= '.col-md-6'  ]]
+ [%[ fform11.custom['widgets']['f5']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f5'] if 'f5' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-5">
+ [%[ fform11.custom['widgets']['f6']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f6']['_placeholder']= '.col-md-5'  ]]
+ [%[ fform11.custom['widgets']['f6']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f6'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f6'] if 'f6' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col col-md-7">
+ [%[ fform11.custom['widgets']['f7']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f7']['_placeholder']= '.col-md-7'  ]]
+ [%[ fform11.custom['widgets']['f7']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f7'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f7'] if 'f7' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col col-md-4">
+ [%[ fform11.custom['widgets']['f8']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f8']['_placeholder']= '.col-md-4'  ]]
+ [%[ fform11.custom['widgets']['f8']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f8'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f8'] if 'f8' in fform11.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col col-md-8">
+ [%[ fform11.custom['widgets']['f9']['_class']= 'form-control'  ]]
+ [%[ fform11.custom['widgets']['f9']['_placeholder']= '.col-md-8'  ]]
+ [%[ fform11.custom['widgets']['f9']['_type']= 'text'  ]]
+ [%[= fform11.custom['widgets']['f9'] ]]
+
+ <span style="color:#ff0000">[%[= fform11.custom['errors']['f9'] if 'f9' in fform11.custom['errors'] else '' ]]</span>
+
+ [%[ fform11.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform11.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform11.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform11.custom['submit']['_rows']= '1'  ]]
+ [%[ fform11.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform11.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform11.custom['submit'] ]]
+
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform11.custom['hidden_widgets'].keys(): ]]
+     [%[= fform11.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform11</span></div>
+
+
+[%[= fform11.custom['end'] ]]
+</div>
+<!-- END fform11-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">Action</button>
+           <button class="btn btn-danger btn-sm">Action</button>
+           <button class="btn btn-warning btn-sm">Action</button>
+           <button class="btn btn-info btn-sm">Action</button>
+           <button class="btn btn-success btn-sm">Action</button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           Input Grid for small devices!
+           <small>
+            <code>
+             .col-*
+            </code>
+           </small>
+          </div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform12, db_table: dfform12 -->
+<div class="form-horizontal">
+[%[= fform12.custom['begin'] ]]
+<div class="row form-group">
+ <div class="col-4">
+ [%[ fform12.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f0']['_placeholder']= '.col-4'  ]]
+ [%[ fform12.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f0'] if 'f0' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-8">
+ [%[ fform12.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f1']['_placeholder']= '.col-8'  ]]
+ [%[ fform12.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f1'] if 'f1' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col-5">
+ [%[ fform12.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f2']['_placeholder']= '.col-5'  ]]
+ [%[ fform12.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f2'] if 'f2' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-7">
+ [%[ fform12.custom['widgets']['f3']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f3']['_placeholder']= '.col-7'  ]]
+ [%[ fform12.custom['widgets']['f3']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f3'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f3'] if 'f3' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col-6">
+ [%[ fform12.custom['widgets']['f4']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f4']['_placeholder']= '.col-6'  ]]
+ [%[ fform12.custom['widgets']['f4']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f4'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f4'] if 'f4' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-6">
+ [%[ fform12.custom['widgets']['f5']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f5']['_placeholder']= '.col-6'  ]]
+ [%[ fform12.custom['widgets']['f5']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f5'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f5'] if 'f5' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col-7">
+ [%[ fform12.custom['widgets']['f6']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f6']['_placeholder']= '.col-5'  ]]
+ [%[ fform12.custom['widgets']['f6']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f6'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f6'] if 'f6' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-5">
+ [%[ fform12.custom['widgets']['f7']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f7']['_placeholder']= '.col-5'  ]]
+ [%[ fform12.custom['widgets']['f7']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f7'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f7'] if 'f7' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="row form-group">
+ <div class="col-8">
+ [%[ fform12.custom['widgets']['f8']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f8']['_placeholder']= '.col-8'  ]]
+ [%[ fform12.custom['widgets']['f8']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f8'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f8'] if 'f8' in fform12.custom['errors'] else '' ]]</span>
+
+ </div>
+ <div class="col-4">
+ [%[ fform12.custom['widgets']['f9']['_class']= 'form-control'  ]]
+ [%[ fform12.custom['widgets']['f9']['_placeholder']= '.col-4'  ]]
+ [%[ fform12.custom['widgets']['f9']['_type']= 'text'  ]]
+ [%[= fform12.custom['widgets']['f9'] ]]
+
+ <span style="color:#ff0000">[%[= fform12.custom['errors']['f9'] if 'f9' in fform12.custom['errors'] else '' ]]</span>
+
+ [%[ fform12.custom['submit']['_class']= 'form-control mysubmit_cls'  ]]
+ [%[ fform12.custom['submit']['_placeholder']= ''  ]]
+ [%[ fform12.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform12.custom['submit']['_rows']= '1'  ]]
+ [%[ fform12.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform12.custom['submit']['_title']= 'mysubmit from last element'  ]]
+ [%[= fform12.custom['submit'] ]]
+
+ </div>
+</div>
+
+ [%[ for hidden_widget in fform12.custom['hidden_widgets'].keys(): ]]
+     [%[= fform12.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform12</span></div>
+
+
+[%[= fform12.custom['end'] ]]
+</div>
+<!-- END fform12-->
+
+          </div>
+          <div class="card-footer">
+           <button class="btn btn-primary btn-sm" type="submit">Action</button>
+           <button class="btn btn-danger btn-sm">Action</button>
+           <button class="btn btn-warning btn-sm">Action</button>
+           <button class="btn btn-info btn-sm">Action</button>
+           <button class="btn btn-success btn-sm">Action</button>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">Example Form</div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform13, db_table: dfform13 -->
+<div class="">
+[%[= fform13.custom['begin'] ]]
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   Username
+  </div>
+ [%[ fform13.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform13.custom['widgets']['f0']['_id']= 'username3'  ]]
+ [%[ fform13.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fform13.custom['widgets']['f0']['_placeholder']= ''  ]]
+ [%[= fform13.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform13.custom['errors']['f0'] if 'f0' in fform13.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-user">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   Email
+  </div>
+ [%[ fform13.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform13.custom['widgets']['f1']['_id']= 'email3'  ]]
+ [%[ fform13.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[ fform13.custom['widgets']['f1']['_placeholder']= ''  ]]
+ [%[= fform13.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform13.custom['errors']['f1'] if 'f1' in fform13.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-envelope">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   Password
+  </div>
+ [%[ fform13.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform13.custom['widgets']['f2']['_id']= 'password3'  ]]
+ [%[ fform13.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[ fform13.custom['widgets']['f2']['_placeholder']= ''  ]]
+ [%[= fform13.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform13.custom['errors']['f2'] if 'f2' in fform13.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-asterisk">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-actions form-group">
+ [%[ fform13.custom['submit']['_class']= 'btn btn-primary btn-sm'  ]]
+ [%[ fform13.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform13.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform13.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform13.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform13.custom['submit'] ]]
+
+</div>
+
+ [%[ for hidden_widget in fform13.custom['hidden_widgets'].keys(): ]]
+     [%[= fform13.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform13</span></div>
+
+
+[%[= fform13.custom['end'] ]]
+</div>
+<!-- END fform13-->
+
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">Example Form</div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform14, db_table: dfform14 -->
+<div class="">
+[%[= fform14.custom['begin'] ]]
+<div class="form-group">
+ <div class="input-group">
+ [%[ fform14.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform14.custom['widgets']['f0']['_id']= 'username2'  ]]
+ [%[ fform14.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
+ [%[ fform14.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform14.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform14.custom['errors']['f0'] if 'f0' in fform14.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-user">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+ [%[ fform14.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform14.custom['widgets']['f1']['_id']= 'email2'  ]]
+ [%[ fform14.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[ fform14.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform14.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform14.custom['errors']['f1'] if 'f1' in fform14.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-envelope">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+ [%[ fform14.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform14.custom['widgets']['f2']['_id']= 'password2'  ]]
+ [%[ fform14.custom['widgets']['f2']['_placeholder']= 'Password'  ]]
+ [%[ fform14.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform14.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform14.custom['errors']['f2'] if 'f2' in fform14.custom['errors'] else '' ]]</span>
+
+  <div class="input-group-addon">
+   <i class="fa fa-asterisk">
+   </i>
+  </div>
+ </div>
+</div>
+
+<div class="form-actions form-group">
+ [%[ fform14.custom['submit']['_class']= 'btn btn-secondary btn-sm'  ]]
+ [%[ fform14.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform14.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform14.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform14.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform14.custom['submit'] ]]
+
+</div>
+
+ [%[ for hidden_widget in fform14.custom['hidden_widgets'].keys(): ]]
+     [%[= fform14.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform14</span></div>
+
+
+[%[= fform14.custom['end'] ]]
+</div>
+<!-- END fform14-->
+
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">Example Form</div>
+          <div class="card-body card-block">
+           
+<!-- BEGIN view: fform15, db_table: dfform15 -->
+<div class="">
+[%[= fform15.custom['begin'] ]]
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   <i class="fa fa-user">
+   </i>
+  </div>
+ [%[ fform15.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fform15.custom['widgets']['f0']['_id']= 'username'  ]]
+ [%[ fform15.custom['widgets']['f0']['_placeholder']= 'Username'  ]]
+ [%[ fform15.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[= fform15.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fform15.custom['errors']['f0'] if 'f0' in fform15.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   <i class="fa fa-envelope">
+   </i>
+  </div>
+ [%[ fform15.custom['widgets']['f1']['_class']= 'form-control'  ]]
+ [%[ fform15.custom['widgets']['f1']['_id']= 'email'  ]]
+ [%[ fform15.custom['widgets']['f1']['_placeholder']= 'Email'  ]]
+ [%[ fform15.custom['widgets']['f1']['_type']= 'text'  ]]
+ [%[= fform15.custom['widgets']['f1'] ]]
+
+ <span style="color:#ff0000">[%[= fform15.custom['errors']['f1'] if 'f1' in fform15.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-group">
+ <div class="input-group">
+  <div class="input-group-addon">
+   <i class="fa fa-asterisk">
+   </i>
+  </div>
+ [%[ fform15.custom['widgets']['f2']['_class']= 'form-control'  ]]
+ [%[ fform15.custom['widgets']['f2']['_id']= 'password'  ]]
+ [%[ fform15.custom['widgets']['f2']['_placeholder']= 'Password'  ]]
+ [%[ fform15.custom['widgets']['f2']['_type']= 'text'  ]]
+ [%[= fform15.custom['widgets']['f2'] ]]
+
+ <span style="color:#ff0000">[%[= fform15.custom['errors']['f2'] if 'f2' in fform15.custom['errors'] else '' ]]</span>
+
+ </div>
+</div>
+
+<div class="form-actions form-group">
+ [%[ fform15.custom['submit']['_class']= 'btn btn-success btn-sm'  ]]
+ [%[ fform15.custom['submit']['_type']= 'submit'  ]]
+ [%[ fform15.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fform15.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fform15.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fform15.custom['submit'] ]]
+
+</div>
+
+ [%[ for hidden_widget in fform15.custom['hidden_widgets'].keys(): ]]
+     [%[= fform15.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fform15</span></div>
+
+
+[%[= fform15.custom['end'] ]]
+</div>
+<!-- END fform15-->
+
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-12">
+         <div class="copyright">
+          <p>
+           Copyright © 2018 Colorlib. All rights reserved. Template by
+           <a href="https://colorlib.com">Colorlib</a>
+           .
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Jquery JS-->
+  <script src="[%[=URL('static/tte/vendor/jquery-3.2.1.min.js') ]]"></script>
+  <!-- Bootstrap JS-->
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/popper.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.js') ]]"></script>
+  <!-- Vendor JS       -->
+  <script src="[%[=URL('static/tte/vendor/slick/slick.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/wow/wow.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/animsition/animsition.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.waypoints.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.counterup.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/circle-progress/circle-progress.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/chartjs/Chart.bundle.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/select2/select2.min.js') ]]"></script>
+  <!-- Main JS-->
+  <script src="[%[=URL('static/tte/js/main.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
+</html>
+<!-- end document-->

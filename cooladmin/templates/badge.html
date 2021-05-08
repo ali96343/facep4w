@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 06.05.2021 16:14:36 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <!-- Required meta tags-->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="au theme template" name="description"/>
+  <meta content="Hau Nguyen" name="author"/>
+  <meta content="au theme template" name="keywords"/>
+  <!-- Title Page-->
+  <title>biorex title text</title>
+  <!-- Fontfaces CSS-->
+  <link href="[%[=URL('static/tte/css/font-face.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-4.7/css/font-awesome.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-5/css/fontawesome-all.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/mdi-font/css/material-design-iconic-font.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Bootstrap CSS-->
+  <link href="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Vendor CSS-->
+  <link href="[%[=URL('static/tte/vendor/animsition/animsition.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/wow/animate.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/css-hamburgers/hamburgers.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/slick/slick.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/select2/select2.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Main CSS-->
+  <link href="[%[=URL('static/tte/css/theme.css') ]]" media="all" rel="stylesheet"/>
+ 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+</style>
+
+</head>
+ <body class="animsition">
+  <div class="page-wrapper">
+   <!-- HEADER MOBILE-->
+   <header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+     <div class="container-fluid">
+      <div class="header-mobile-inner">
+       <a class="logo" href="[%[=URL('index') ]]">
+        <img alt="CoolAdmin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+       <button class="hamburger hamburger--slider" type="button">
+        <span class="hamburger-box">
+         <span class="hamburger-inner"></span>
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <nav class="navbar-mobile">
+     <div class="container-fluid">
+      <ul class="navbar-mobile__list list-unstyled">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <!-- END HEADER MOBILE-->
+   <!-- MENU SIDEBAR-->
+   <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+     <a href="#">
+      <img alt="Cool Admin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+     <nav class="navbar-sidebar">
+      <ul class="list-unstyled navbar__list">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="active has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </aside>
+   <!-- END MENU SIDEBAR-->
+   <!-- PAGE CONTAINER-->
+   <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="header-wrap">
+        
+<!-- BEGIN view: fbadge0, db_table: dfbadge0 -->
+<div class="form-header">
+[%[= fbadge0.custom['begin'] ]]
+ [%[ fbadge0.custom['widgets']['f0']['_class']= 'au-input au-input--xl'  ]]
+ [%[ fbadge0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ fbadge0.custom['widgets']['f0']['_placeholder']= 'Search for datas & reports...'  ]]
+ [%[= fbadge0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= fbadge0.custom['errors']['f0'] if 'f0' in fbadge0.custom['errors'] else '' ]]</span>
+
+
+ [%[ fbadge0.custom['submit']['_class']= 'au-btn--submit'  ]]
+ [%[ fbadge0.custom['submit']['_type']= 'submit'  ]]
+ [%[ fbadge0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ fbadge0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ fbadge0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= fbadge0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in fbadge0.custom['hidden_widgets'].keys(): ]]
+     [%[= fbadge0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">fbadge0</span></div>
+
+
+[%[= fbadge0.custom['end'] ]]
+</div>
+<!-- END fbadge0-->
+
+        <div class="header-button">
+         <div class="noti-wrap">
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-comment-more"></i>
+           <span class="quantity">1</span>
+           <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+             <p>You have 2 news message</p>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Michelle Moreno" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Michelle Moreno</h6>
+              <p>Have sent a photo</p>
+              <span class="time">3 min ago</span>
+             </div>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Diane Myers" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Diane Myers</h6>
+              <p>You are now connected on message</p>
+              <span class="time">Yesterday</span>
+             </div>
+            </div>
+            <div class="mess__footer">
+             <a href="#">View all messages</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-email"></i>
+           <span class="quantity">1</span>
+           <div class="email-dropdown js-dropdown">
+            <div class="email__title">
+             <p>You have 3 New Emails</p>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, 3 min ago</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-05.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, Yesterday</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, April 12,,2018</span>
+             </div>
+            </div>
+            <div class="email__footer">
+             <a href="#">See all emails</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-notifications"></i>
+           <span class="quantity">3</span>
+           <div class="notifi-dropdown js-dropdown">
+            <div class="notifi__title">
+             <p>You have 3 Notifications</p>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c1 img-cir img-40">
+              <i class="zmdi zmdi-email-open"></i>
+             </div>
+             <div class="content">
+              <p>You got a email notification</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c2 img-cir img-40">
+              <i class="zmdi zmdi-account-box"></i>
+             </div>
+             <div class="content">
+              <p>Your account has been blocked</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c3 img-cir img-40">
+              <i class="zmdi zmdi-file-text"></i>
+             </div>
+             <div class="content">
+              <p>You got a new file</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__footer">
+             <a href="#">All notifications</a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="account-wrap">
+          <div class="account-item clearfix js-item-menu">
+           <div class="image">
+            <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></div>
+           <div class="content">
+            <a class="js-acc-btn" href="#">john doe</a>
+           </div>
+           <div class="account-dropdown js-dropdown">
+            <div class="info clearfix">
+             <div class="image">
+              <a href="#">
+               <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></a>
+             </div>
+             <div class="content">
+              <h5 class="name">
+               <a href="#">john doe</a>
+              </h5>
+              <span class="email">johndoe@example.com</span>
+             </div>
+            </div>
+            <div class="account-dropdown__body">
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-account"></i>
+               Account
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-settings"></i>
+               Setting
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-money-box"></i>
+               Billing
+              </a>
+             </div>
+            </div>
+            <div class="account-dropdown__footer">
+             <a href="#">
+              <i class="zmdi zmdi-power"></i>
+              Logout
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <!-- HEADER DESKTOP-->
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Badges</strong>
+           <small>
+            Use
+            <code>
+             .badge
+            </code>
+            class within
+            <code>
+             &lt;span&gt;
+            </code>
+            elements to create badges:
+           </small>
+          </div>
+          <div class="card-body">
+           <a href="#">
+            News
+            <span class="badge badge-primary">5</span>
+           </a>
+           <br/>
+           <a href="#">
+            Comments
+            <span class="badge badge-warning">10</span>
+           </a>
+           <br/>
+           <a href="#">
+            Updates
+            <span class="badge badge-success">2</span>
+           </a>
+          </div>
+         </div>
+         <!-- /# card -->
+         <div class="card">
+          <div class="card-header">
+           <strong>Labels</strong>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            Use the
+            <code>
+             .label
+            </code>
+            class,  followed by one of the six contextual classes
+            <code>
+             .label-default
+            </code>
+            ,
+            <code>
+             .label-primary
+            </code>
+            ,
+            <code>
+             .label-success
+            </code>
+            ,
+            <code>
+             .label-info
+            </code>
+            ,
+            <code>
+             .label-warning
+            </code>
+            or
+            <code>
+             .label-danger
+            </code>
+            , within a
+            <code>
+             &lt;span&gt;
+            </code>
+            element to create a label:
+           </p>
+           <h1>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h1>
+           <h2>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h2>
+           <h3>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h3>
+           <h4>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h4>
+           <h5>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h5>
+           <h6>
+            Example heading
+            <span class="badge badge-secondary">New</span>
+           </h6>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <strong>Badges in Buttons</strong>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            Use the
+            <code>
+             .badge
+            </code>
+            class within
+            <code>
+             &lt;span&gt;
+            </code>
+            elements to create badges:
+           </p>
+           <button class="btn btn-primary m-l-10 m-b-10" type="button">
+            Primary
+            <span class="badge badge-light">7</span>
+           </button>
+           <button class="btn btn-success m-l-10 m-b-10" type="button">
+            Success
+            <span class="badge badge-light">7</span>
+           </button>
+           <button class="btn btn-info m-l-10 m-b-10" type="button">
+            Info
+            <span class="badge badge-light">7</span>
+           </button>
+           <button class="btn btn-warning m-l-10 m-b-10" type="button">
+            Warning
+            <span class="badge badge-light">7</span>
+           </button>
+           <button class="btn btn-danger m-l-10 m-b-10" type="button">
+            Danger
+            <span class="badge badge-light">7</span>
+           </button>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header">
+           <strong>Labels</strong>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            Use the
+            <code>
+             .label
+            </code>
+            class,  followed by one of the six contextual classes
+            <code>
+             .label-default
+            </code>
+            ,
+            <code>
+             .label-primary
+            </code>
+            ,
+            <code>
+             .label-success
+            </code>
+            ,
+            <code>
+             .label-info
+            </code>
+            ,
+            <code>
+             .label-warning
+            </code>
+            or
+            <code>
+             .label-danger
+            </code>
+            , within a
+            <code>
+             &lt;span&gt;
+            </code>
+            element to create a label:
+           </p>
+           <span class="badge badge-primary">Primary</span>
+           <span class="badge badge-secondary">Secondary</span>
+           <span class="badge badge-success">Success</span>
+           <span class="badge badge-danger">Danger</span>
+           <span class="badge badge-warning">Warning</span>
+           <span class="badge badge-info">Info</span>
+           <span class="badge badge-light">Light</span>
+           <span class="badge badge-dark">Dark</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- END PAGE CONTAINER-->
+  </div>
+  <!-- Jquery JS-->
+  <script src="[%[=URL('static/tte/vendor/jquery-3.2.1.min.js') ]]"></script>
+  <!-- Bootstrap JS-->
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/popper.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.js') ]]"></script>
+  <!-- Vendor JS       -->
+  <script src="[%[=URL('static/tte/vendor/slick/slick.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/wow/wow.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/animsition/animsition.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.waypoints.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/counter-up/jquery.counterup.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/circle-progress/circle-progress.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/chartjs/Chart.bundle.min.js') ]]"></script>
+  <script src="[%[=URL('static/tte/vendor/select2/select2.min.js') ]]"></script>
+  <!-- Main JS-->
+  <script src="[%[=URL('static/tte/js/main.js') ]]"></script>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
+</html>
+<!-- end document-->

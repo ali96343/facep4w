@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+            <!-- 06.05.2021 16:14:36 py4web app, ported by AI-biorex, tidylib_check = True -->
+  <!-- Required meta tags-->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="au theme template" name="description"/>
+  <meta content="Hau Nguyen" name="author"/>
+  <meta content="au theme template" name="keywords"/>
+  <!-- Title Page-->
+  <title>biorex title text</title>
+  <!-- Fontfaces CSS-->
+  <link href="[%[=URL('static/tte/css/font-face.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-4.7/css/font-awesome.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/font-awesome-5/css/fontawesome-all.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/mdi-font/css/material-design-iconic-font.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Bootstrap CSS-->
+  <link href="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Vendor CSS-->
+  <link href="[%[=URL('static/tte/vendor/animsition/animsition.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/wow/animate.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/css-hamburgers/hamburgers.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/slick/slick.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/select2/select2.min.css') ]]" media="all" rel="stylesheet"/>
+  <link href="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.css') ]]" media="all" rel="stylesheet"/>
+  <!-- Main CSS-->
+  <link href="[%[=URL('static/tte/css/theme.css') ]]" media="all" rel="stylesheet"/>
+ 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+</style>
+
+</head>
+ <body class="animsition">
+  <div class="page-wrapper">
+   <!-- HEADER MOBILE-->
+   <header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+     <div class="container-fluid">
+      <div class="header-mobile-inner">
+       <a class="logo" href="[%[=URL('index') ]]">
+        <img alt="CoolAdmin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+       <button class="hamburger hamburger--slider" type="button">
+        <span class="hamburger-box">
+         <span class="hamburger-inner"></span>
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+    <nav class="navbar-mobile">
+     <div class="container-fluid">
+      <ul class="navbar-mobile__list list-unstyled">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <!-- END HEADER MOBILE-->
+   <!-- MENU SIDEBAR-->
+   <aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+     <a href="#">
+      <img alt="Cool Admin" src="[%[=URL('static/tte/images/icon/logo.png') ]]"/></a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+     <nav class="navbar-sidebar">
+      <ul class="list-unstyled navbar__list">
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-tachometer-alt"></i>
+         Dashboard
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('index') ]]">Dashboard 1</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index2') ]]">Dashboard 2</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index3') ]]">Dashboard 3</a>
+         </li>
+         <li>
+          <a href="[%[=URL('index4') ]]">Dashboard 4</a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="[%[=URL('chart') ]]">
+         <i class="fas fa-chart-bar"></i>
+         Charts
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('table') ]]">
+         <i class="fas fa-table"></i>
+         Tables
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('form') ]]">
+         <i class="far fa-check-square"></i>
+         Forms
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('calendar') ]]">
+         <i class="fas fa-calendar-alt"></i>
+         Calendar
+        </a>
+       </li>
+       <li>
+        <a href="[%[=URL('map') ]]">
+         <i class="fas fa-map-marker-alt"></i>
+         Maps
+        </a>
+       </li>
+       <li class="has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-copy"></i>
+         Pages
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('loginA') ]]">Login</a>
+         </li>
+         <li>
+          <a href="[%[=URL('registerA') ]]">Register</a>
+         </li>
+         <li>
+          <a href="[%[=URL('forgetXpass') ]]">Forget Password</a>
+         </li>
+        </ul>
+       </li>
+       <li class="active has-sub">
+        <a class="js-arrow" href="#">
+         <i class="fas fa-desktop"></i>
+         UI Elements
+        </a>
+        <ul class="list-unstyled navbar__sub-list js-sub-list">
+         <li>
+          <a href="[%[=URL('button') ]]">Button</a>
+         </li>
+         <li>
+          <a href="[%[=URL('badge') ]]">Badges</a>
+         </li>
+         <li>
+          <a href="[%[=URL('tab') ]]">Tabs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('card') ]]">Cards</a>
+         </li>
+         <li>
+          <a href="[%[=URL('alert') ]]">Alerts</a>
+         </li>
+         <li>
+          <a href="[%[=URL('progressXbar') ]]">Progress Bars</a>
+         </li>
+         <li>
+          <a href="[%[=URL('modal') ]]">Modals</a>
+         </li>
+         <li>
+          <a href="[%[=URL('switch') ]]">Switchs</a>
+         </li>
+         <li>
+          <a href="[%[=URL('grid') ]]">Grids</a>
+         </li>
+         <li>
+          <a href="[%[=URL('fontawesome') ]]">Fontawesome Icon</a>
+         </li>
+         <li>
+          <a href="[%[=URL('typo') ]]">Typography</a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </aside>
+   <!-- END MENU SIDEBAR-->
+   <!-- PAGE CONTAINER-->
+   <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    <header class="header-desktop">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="header-wrap">
+        
+<!-- BEGIN view: ftab0, db_table: dftab0 -->
+<div class="form-header">
+[%[= ftab0.custom['begin'] ]]
+ [%[ ftab0.custom['widgets']['f0']['_class']= 'au-input au-input--xl'  ]]
+ [%[ ftab0.custom['widgets']['f0']['_type']= 'text'  ]]
+ [%[ ftab0.custom['widgets']['f0']['_placeholder']= 'Search for datas & reports...'  ]]
+ [%[= ftab0.custom['widgets']['f0'] ]]
+
+ <span style="color:#ff0000">[%[= ftab0.custom['errors']['f0'] if 'f0' in ftab0.custom['errors'] else '' ]]</span>
+
+
+ [%[ ftab0.custom['submit']['_class']= 'au-btn--submit'  ]]
+ [%[ ftab0.custom['submit']['_type']= 'submit'  ]]
+ [%[ ftab0.custom['submit']['_title']= 'mysubmit from button'  ]]
+ [%[ ftab0.custom['submit']['_value']= 'Submit'  ]]
+ [%[ ftab0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
+ [%[= ftab0.custom['submit'] ]]
+
+
+ [%[ for hidden_widget in ftab0.custom['hidden_widgets'].keys(): ]]
+     [%[= ftab0.custom['hidden_widgets'][hidden_widget] ]]
+ [%[ pass ]] 
+
+  <div class="flashdiv"><span class="flashspan">ftab0</span></div>
+
+
+[%[= ftab0.custom['end'] ]]
+</div>
+<!-- END ftab0-->
+
+        <div class="header-button">
+         <div class="noti-wrap">
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-comment-more"></i>
+           <span class="quantity">1</span>
+           <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+             <p>You have 2 news message</p>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Michelle Moreno" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Michelle Moreno</h6>
+              <p>Have sent a photo</p>
+              <span class="time">3 min ago</span>
+             </div>
+            </div>
+            <div class="mess__item">
+             <div class="image img-cir img-40">
+              <img alt="Diane Myers" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <h6>Diane Myers</h6>
+              <p>You are now connected on message</p>
+              <span class="time">Yesterday</span>
+             </div>
+            </div>
+            <div class="mess__footer">
+             <a href="#">View all messages</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-email"></i>
+           <span class="quantity">1</span>
+           <div class="email-dropdown js-dropdown">
+            <div class="email__title">
+             <p>You have 3 New Emails</p>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-06.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, 3 min ago</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-05.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, Yesterday</span>
+             </div>
+            </div>
+            <div class="email__item">
+             <div class="image img-cir img-40">
+              <img alt="Cynthia Harvey" src="[%[=URL('static/tte/images/icon/avatar-04.jpg') ]]"/></div>
+             <div class="content">
+              <p>Meeting about new dashboard...</p>
+              <span>Cynthia Harvey, April 12,,2018</span>
+             </div>
+            </div>
+            <div class="email__footer">
+             <a href="#">See all emails</a>
+            </div>
+           </div>
+          </div>
+          <div class="noti__item js-item-menu">
+           <i class="zmdi zmdi-notifications"></i>
+           <span class="quantity">3</span>
+           <div class="notifi-dropdown js-dropdown">
+            <div class="notifi__title">
+             <p>You have 3 Notifications</p>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c1 img-cir img-40">
+              <i class="zmdi zmdi-email-open"></i>
+             </div>
+             <div class="content">
+              <p>You got a email notification</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c2 img-cir img-40">
+              <i class="zmdi zmdi-account-box"></i>
+             </div>
+             <div class="content">
+              <p>Your account has been blocked</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__item">
+             <div class="bg-c3 img-cir img-40">
+              <i class="zmdi zmdi-file-text"></i>
+             </div>
+             <div class="content">
+              <p>You got a new file</p>
+              <span class="date">April 12, 2018 06:50</span>
+             </div>
+            </div>
+            <div class="notifi__footer">
+             <a href="#">All notifications</a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="account-wrap">
+          <div class="account-item clearfix js-item-menu">
+           <div class="image">
+            <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></div>
+           <div class="content">
+            <a class="js-acc-btn" href="#">john doe</a>
+           </div>
+           <div class="account-dropdown js-dropdown">
+            <div class="info clearfix">
+             <div class="image">
+              <a href="#">
+               <img alt="John Doe" src="[%[=URL('static/tte/images/icon/avatar-01.jpg') ]]"/></a>
+             </div>
+             <div class="content">
+              <h5 class="name">
+               <a href="#">john doe</a>
+              </h5>
+              <span class="email">johndoe@example.com</span>
+             </div>
+            </div>
+            <div class="account-dropdown__body">
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-account"></i>
+               Account
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-settings"></i>
+               Setting
+              </a>
+             </div>
+             <div class="account-dropdown__item">
+              <a href="#">
+               <i class="zmdi zmdi-money-box"></i>
+               Billing
+              </a>
+             </div>
+            </div>
+            <div class="account-dropdown__footer">
+             <a href="#">
+              <i class="zmdi zmdi-power"></i>
+              Logout
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <!-- END HEADER DESKTOP-->
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+     <div class="section__content section__content--p30">
+      <div class="container-fluid">
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Menus</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            In HTML, a menu is often defined in an unordered list
+            <code>
+             &lt;ul&gt;
+            </code>
+            (and styled afterwards), like this:
+           </p>
+           <ul class="list-unstyled">
+            <li>
+             <a href="#">Home</a>
+            </li>
+            <li>
+             <a href="#">Menu 1</a>
+            </li>
+            <li>
+             <a href="#">Menu 2</a>
+            </li>
+            <li>
+             <a href="#">Menu 3</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Inline List</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            In HTML, a menu is often defined in an unordered list
+            <code>
+             &lt;ul&gt;
+            </code>
+            (and styled afterwards), like this:
+           </p>
+           <ul class="list-inline">
+            <li class="list-inline-item">
+             <a href="#">Home</a>
+            </li>
+            <li class="list-inline-item">
+             <a href="#">Menu 1</a>
+            </li>
+            <li class="list-inline-item">
+             <a href="#">Menu 2</a>
+            </li>
+            <li class="list-inline-item">
+             <a href="#">Menu 3</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Tabs With Dropdown Menu</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">The following example adds a dropdown menu to "Menu 1":</p>
+           <ul class="nav nav-tabs">
+            <li class="nav-item">
+             <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+             <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+              Menu 1
+              <span class="caret"></span>
+             </a>
+             <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Submenu 1-1</a>
+              <a class="dropdown-item" href="#">Submenu 1-2</a>
+              <a class="dropdown-item" href="#">Submenu 1-3</a>
+             </div>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 2</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 3</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- /# column -->
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Pills</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            Pills are created with
+            <code>
+             &lt;ul class="nav nav-pills"&gt;
+            </code>
+            . Also mark the current page with
+            <code>
+             &lt;li class="active"&gt;
+            </code>
+            :
+           </p>
+           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+             <a aria-controls="pills-home" aria-selected="true" class="nav-link active" data-toggle="pill" href="#pills-home" id="pills-home-tab" role="tab">Home</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-profile" id="pills-profile-tab" role="tab">Profile</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="pills-contact" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-contact" id="pills-contact-tab" role="tab">Contact</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Vertical Pills</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            Pills can also be displayed vertically. Just add the
+            <code>
+             .nav-stacked
+            </code>
+            class:
+           </p>
+           <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+            <a aria-controls="v-pills-home" aria-selected="true" class="nav-link active" data-toggle="pill" href="#v-pills-home" id="v-pills-home-tab" role="tab">Home</a>
+            <a aria-controls="v-pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-profile" id="v-pills-profile-tab" role="tab">Menu 1</a>
+            <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-messages" id="v-pills-messages-tab" role="tab">Menu 2</a>
+            <a aria-controls="v-pills-settings" aria-selected="false" class="nav-link" data-toggle="pill" href="#v-pills-settings" id="v-pills-settings-tab" role="tab">Menu 3</a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- /# column -->
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Pills With Dropdown Menu</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">The following example adds a dropdown menu to "Menu 1":</p>
+           <ul class="nav nav-pills">
+            <li class="nav-item">
+             <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+             <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Menu 1</a>
+             <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Submenu 1-1</a>
+              <a class="dropdown-item" href="#">Submenu 1-2</a>
+              <a class="dropdown-item" href="#">Submenu 1-3</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+             </div>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 2</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 3</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Centered Tabs and Pills</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            To center/justify the tabs and pills, use the
+            <code>
+             .nav-justified
+            </code>
+            class.
+           </p>
+           <!-- Centered Tabs -->
+           <ul class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+             <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 1</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 2</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Menu 3</a>
+            </li>
+           </ul>
+           <ul class="nav nav-pills nav-justified mb-3 mt-2" id="pills-tab" role="tablist">
+            <li class="nav-item">
+             <a aria-controls="pills-home" aria-selected="true" class="nav-link active" data-toggle="pill" href="#pills-home" id="pills-home-tab" role="tab">Home</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-profile" id="pills-profile-tab" role="tab">Menu 1</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="pills-profile" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-profile" id="pills-profile-tab" role="tab">Menu 2</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="pills-contact" aria-selected="false" class="nav-link" data-toggle="pill" href="#pills-contact" id="pills-contact-tab" role="tab">Menu 3</a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <!-- /# column -->
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Toggleable / Dynamic Tabs</h4>
+          </div>
+          <div class="card-body">
+           <p class="text-muted m-b-15">
+            To make the tabs toggleable, add the
+            <code>
+             data-toggle="tab"
+            </code>
+            attribute to each link. Then add a
+            <code>
+             .tab-pane
+            </code>
+            class with a unique ID for every tab and wrap them inside a
+            <code>
+             &lt;div&gt;
+            </code>
+            element with class
+            <code>
+             .tab-content
+            </code>
+            . If you want the tabs to fade in and out when clicking on them, add the
+            <code>
+             .fade
+            </code>
+            class to
+            <code>
+             .tab-pane
+            </code>
+            :
+           </p>
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+             <a aria-controls="home" aria-selected="true" class="nav-link active" data-toggle="tab" href="#home" id="home-tab" role="tab">Home</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="profile" aria-selected="false" class="nav-link" data-toggle="tab" href="#profile" id="profile-tab" role="tab">Menu 1</a>
+            </li>
+            <li class="nav-item">
+             <a aria-controls="contact" aria-selected="false" class="nav-link" data-toggle="tab" href="#contact" id="contact-tab" role="tab">Menu 2</a>
+            </li>
+           </ul>
+           <div class="tab-content pl-3 p-1" id="myTabContent">
+            <div aria-labelledby="home-tab" class="tab-pane fade show active" id="home" role="tabpanel">
+             <h3>Home</h3>
+             <p>Some content here.</p>
+            </div>
+            <div aria-labelledby="profile-tab" class="tab-pane fade" id="profile" role="tabpanel">
+             <h3>Menu 1</h3>
+             <p>Some content here.</p>
+            </div>
+            <div aria-labelledby="contact-tab" class="tab-pane fade" id="contact" role="tabpanel">
+             <h3>Menu 2</h3>
+             <p>Some content here.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Default Tab</h4>
+          </div>
+          <div class="card-body">
+           <div class="default-tab">
+            <nav>
+             <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a aria-controls="nav-home" aria-selected="true" class="nav-item nav-link active" data-toggle="tab" href="#nav-home" id="nav-home-tab" role="tab">Home</a>
+              <a aria-controls="nav-profile" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#nav-profile" id="nav-profile-tab" role="tab">Profile</a>
+              <a aria-controls="nav-contact" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#nav-contact" id="nav-contact-tab" role="tab">Contact</a>
+             </div>
+            </nav>
+            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+             <div aria-labelledby="nav-home-tab" class="tab-pane fade show active" id="nav-home" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+             <div aria-labelledby="nav-profile-tab" class="tab-pane fade" id="nav-profile" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+             <div aria-labelledby="nav-contact-tab" class="tab-pane fade" id="nav-contact" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- /# column -->
+        <div class="col-lg-6">
+         <div class="card">
+          <div class="card-header">
+           <h4>Custom Tab</h4>
+          </div>
+          <div class="card-body">
+           <div class="custom-tab">
+            <nav>
+             <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a aria-controls="custom-nav-home" aria-selected="true" class="nav-item nav-link active" data-toggle="tab" href="#custom-nav-home" id="custom-nav-home-tab" role="tab">Home</a>
+              <a aria-controls="custom-nav-profile" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#custom-nav-profile" id="custom-nav-profile-tab" role="tab">Profile</a>
+              <a aria-controls="custom-nav-contact" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#custom-nav-contact" id="custom-nav-contact-tab" role="tab">Contact</a>
+             </div>
+            </nav>
+            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+             <div aria-labelledby="custom-nav-home-tab" class="tab-pane fade show active" id="custom-nav-home" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+             <div aria-labelledby="custom-nav-profile-tab" class="tab-pane fade" id="custom-nav-profile" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+             <div aria-labelledby="custom-nav-contact-tab" class="tab-pane fade" id="custom-nav-contact" role="tabpanel">
+              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- /# column -->
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+   </div>
+   <!-- Jquery JS-->
+   <script src="[%[=URL('static/tte/vendor/jquery-3.2.1.min.js') ]]"></script>
+   <!-- Bootstrap JS-->
+   <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/popper.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/bootstrap-4.1/bootstrap.min.js') ]]"></script>
+   <!-- Vendor JS       -->
+   <script src="[%[=URL('static/tte/vendor/slick/slick.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/wow/wow.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/animsition/animsition.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/counter-up/jquery.waypoints.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/counter-up/jquery.counterup.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/circle-progress/circle-progress.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/perfect-scrollbar/perfect-scrollbar.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/chartjs/Chart.bundle.min.js') ]]"></script>
+   <script src="[%[=URL('static/tte/vendor/select2/select2.min.js') ]]"></script>
+   <!-- Main JS-->
+   <script src="[%[=URL('static/tte/js/main.js') ]]"></script>
+  </div>
+  
+<!-- forms ajax -->
+<script>
+
+  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
+  for(let i = 0; i < document.forms.length; i++){
+
+        document.forms[i].onsubmit = async (e) => {
+            e.preventDefault();
+
+            let response = await fetch(forms_url, {
+                method: 'POST',
+                body: new FormData( document.forms[i] )
+            });
+
+
+            let result = await response.json();
+
+            if ( result.js_alert==='sweet2' ) {
+
+                      if (("icon_type" in result)==0) { 
+                         result.icon_type = 'error' ;
+                       }
+          
+                      //----------------------------------------------------------
+                      Swal.fire({
+                            //position: 'top-end',
+                            icon: result.icon_type,
+                            title: result.messages,
+                            showConfirmButton: false,
+                            timer: 2000,
+                       
+                            showClass: {
+                              popup: '',
+                              icon: ''
+                            },
+                            hideClass: {
+                               popup: '',
+                            }
+                      })
+                     //----------------------------------------------------------
+            } else {
+                     alert(result.messages);
+            }
+
+        };
+  }
+
+</script>
+
+
+ <!-- rm_flashdiv -->
+<script>
+     !function() { 
+         const elems = document.querySelectorAll('.flashdiv');
+         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
+     }();
+</script>
+
+</body>
+</html>
+<!-- end document-->

@@ -1,7 +1,6 @@
 
-http://py4web.com is fast (with tornado event loop) and the best for web development
+http://py4web.com is fast and the best for web development
 
-# facep4w
 ## py4web apps ported from multistars-github dashboards
 
 ## js, jquery, bootstrap, bulma, tailwind
@@ -14,6 +13,7 @@ http://py4web.com is fast (with tornado event loop) and the best for web develop
 - https://github.com/puikinsh/concept
 - https://github.com/tailwindadmin/admin  
 - https://github.com/puikinsh/Adminator-admin-dashboard
+- https://github.com/puikinsh/CoolAdmin
 - https://github.com/adminkit/adminkit
 - https://github.com/puikinsh/notika
 - https://github.com/puikinsh/srtdash-admin-dashboard
