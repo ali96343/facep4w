@@ -37,4 +37,9 @@ http://py4web.com is fast and the best for web development
 - https://github.com/creativetimofficial/material-dashboard-react
 
 ------------------------------------------------------------------
-to be continued
+Credits
+
+Many Thanks to Massimo Di Pierro for his help (https://github.com/web2py/py4web).
+
+Also many Thanks to https://groups.google.com/forum/#!forum/py4web for helping so much.
+
