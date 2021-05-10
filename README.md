@@ -1,7 +1,8 @@
 
 ## [py4web](http://py4web.com) apps ported from multistars-github dashboards
 
-###js, jquery, bootstrap, bulma, tailwind
+### js, jquery, bootstrap, bulma, tailwind
+
 ( forms and tables with pydal )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
@@ -24,7 +25,8 @@
 - https://github.com/davidgrzyb/tailwind-admin-template
 - https://github.com/dropways/deskapp
 
-###angular, vue, react
+### angular, vue, react
+
 ( nodejs apps on py4web )
 
 - https://github.com/akveo/ngx-admin
