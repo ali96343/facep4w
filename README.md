@@ -1,5 +1,5 @@
 
-## [py4web](http://py4web.com) apps ported from multistars-github dashboards
+## [py4web](http://py4web.com) apps ported from multistars-github-dashboards
 
 ### js, jquery, bootstrap, bulma, tailwind
 
@@ -36,6 +36,10 @@
 - https://github.com/creativetimofficial/vue-notus
 - https://github.com/creativetimofficial/material-dashboard-react
 
+-------------------------------------------------------------------
+
+Let me know if you have interest / thoughts / suggestions.
+
 ------------------------------------------------------------------
 ### Credits
 
@@ -44,4 +48,3 @@ Many Thanks to Massimo Di Pierro for his help ( https://github.com/web2py/py4web
 Many Thanks to Luca de Alfaro ( https://sites.google.com/a/ucsc.edu/luca/classes/cmps-183-hypermedia-and-the-web/cse-183-spring-2020 ).
 
 Also many Thanks to https://groups.google.com/forum/#!forum/py4web for helping so much.
-

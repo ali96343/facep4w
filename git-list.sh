@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# https://github.com/linkchecker/linkchecker
+# array=($(ls -d */)) ;  for i in "${array[@]}" ; do 
+# echo $i; 
+# linkchecker --check-extern  --no-robots  http://localhost:8000/$i
+# done
+
 start=$SECONDS
 
 linkchecker --check-extern  --no-robots  http://localhost:8000/angflat
@@ -23,8 +31,11 @@ linkchecker --check-extern  --no-robots  http://localhost:8000/vuenotus
 linkchecker --check-extern  --no-robots  http://localhost:8000/vuestic
 linkchecker --check-extern  --no-robots  http://localhost:8000/vuetim
 linkchecker --check-extern  --no-robots  http://localhost:8000/wind
+linkchecker --check-extern  --no-robots  http://localhost:8000/adminator
+linkchecker --check-extern  --no-robots  http://localhost:8000/cooladmin
 
 end=$SECONDS
+
 #you can now either just print the difference:
 
 echo "duration: $((end-start)) seconds."
