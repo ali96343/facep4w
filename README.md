@@ -37,7 +37,7 @@
 - https://github.com/creativetimofficial/material-dashboard-react
 
 ------------------------------------------------------------------
-Credits
+### Credits
 
 Many Thanks to Massimo Di Pierro for his help ( https://github.com/web2py/py4web ).
 
