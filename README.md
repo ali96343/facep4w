@@ -36,6 +36,11 @@
 - https://github.com/creativetimofficial/vue-notus
 - https://github.com/creativetimofficial/material-dashboard-react
 
+### todo
+
+add app_name/tabinfo as in web2py appadmin to all apps
+
+some improvements
 
 ### Credits
 
