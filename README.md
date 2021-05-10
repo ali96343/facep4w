@@ -49,6 +49,7 @@ Many Thanks to Luca de Alfaro
 - https://learn-py4web.github.io/ 
 - https://bitbucket.org/luca_de_alfaro/workspace/projects/PY4WEB 
 
-Also many Thanks to py4web-forum
+Also many Thanks to py4web-web2py-forums
  
-- https://groups.google.com/forum/#!forum/py4web 
+- https://groups.google.com/forum/#!forum/py4web/
+- https://groups.google.com/forum/?fromgroups#!forum/web2py/
