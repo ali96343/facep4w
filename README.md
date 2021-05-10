@@ -41,7 +41,7 @@
 
 Many Thanks to Massimo Di Pierro for his help  
 
--https://github.com/web2py/py4web 
+- https://github.com/web2py/py4web 
 
 Many Thanks to Luca de Alfaro 
 
