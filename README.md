@@ -3,7 +3,8 @@ http://py4web.com is fast and the best for web development
 
 ## py4web apps ported from multistars-github dashboards
 
-## js, jquery, bootstrap, bulma, tailwind
+js, jquery, bootstrap, bulma, tailwind
+
 ( forms and tables with pydal )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
@@ -26,7 +27,8 @@ http://py4web.com is fast and the best for web development
 - https://github.com/davidgrzyb/tailwind-admin-template
 - https://github.com/dropways/deskapp
 
-## angular, vue, react
+angular, vue, react
+
 ( nodejs apps on py4web )
 
 - https://github.com/akveo/ngx-admin
@@ -39,7 +41,9 @@ http://py4web.com is fast and the best for web development
 ------------------------------------------------------------------
 Credits
 
-Many Thanks to Massimo Di Pierro for his help (https://github.com/web2py/py4web).
+Many Thanks to Massimo Di Pierro for his help ( https://github.com/web2py/py4web ).
+
+Many Thanks to Luca de Alfaro ( https://sites.google.com/a/ucsc.edu/luca/classes/cmps-183-hypermedia-and-the-web/cse-183-spring-2020 ).
 
 Also many Thanks to https://groups.google.com/forum/#!forum/py4web for helping so much.
 
