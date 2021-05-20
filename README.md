@@ -3,7 +3,7 @@
 
 ### js, jquery, bootstrap, bulma, tailwind
 
-( forms and tables with pydal )
+( forms and tables with pydal and sqlite )
 
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
 - https://github.com/ColorlibHQ/AdminLTE
