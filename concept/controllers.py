@@ -51,7 +51,7 @@ def insert_form_vars(myform, mytable):
 
             if not table_row is None:
                 if Glb['debug'] == True:
-                     print( f'     inserted: \"{myform.vars.f0}\" into {mytable.f0}, id = {row_id}' )
+                     print( f'     inserted: \"{myform.vars["f0"]}\" into {mytable.f0}, id = {row_id}' )
                      print( f"     select  : \"{table_row.f0}\" from {mytable.f0}, id = {row_id}" )
                      print ()
     else:

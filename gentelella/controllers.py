@@ -44,7 +44,7 @@ def prn_form_vars(myform, mydb,):
 
                 if not row_db is None:
                     if Glb['debug'] == True:
-                         print(f'     inserted: \"{myform.vars.f0}\" into {mydb.f0}, id = {id_db}' )
+                         print(f'     inserted: \"{myform.vars["f0"]}\" into {mydb.f0}, id = {id_db}' )
                          print(f"     select  : \"{row_db.f0}\" from {mydb.f0}, id = {id_db}" )
                          print ()
                     inserted =True
