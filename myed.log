@@ -1,0 +1,133 @@
+/home/w3p/myp4wgit/facep4w/srt/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/ngx/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/wind/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/kapella/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/chen/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/concept/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/angflat/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/sb/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/notika/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/kit/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/bulma/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/desk/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/bulmaadmin/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/cooladmin/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/vuenotus/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/vuestic/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/lte3/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/tailwind/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/vuetim/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/volt/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/octopus/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/bulma-ad/common.py
+    strlen=34
+     -10:    from py4web.utils.tags import Tags
+     +10:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/corona/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/gentelella/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+/home/w3p/myp4wgit/facep4w/adminator/common.py
+    strlen=37
+     -11:    from py4web.utils.tags import Tags
+     +11:    from pydal.tools.tags import Tags
+
+  ---------------------------- work_dir: /home/w3p/myp4wgit/facep4w --------------
+
+ find: [93m py4web.utils.tags[00m
+ replace:  pydal.tools.tags
+
+ extensions_tuple: ('.un', '.js', '.jsx', '.py', '.html', '.css', '.ts', '.tsx', '.sh', '.json', '.vue', '.scss', '.json')
+ view_only: False
+ found_in_files: 25
