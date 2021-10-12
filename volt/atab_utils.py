@@ -11,7 +11,7 @@ def sql2table(
     db,
     tbl_query = None,
     order_by = None,
-    items_on_page=13,
+    rows_on_page=13,
     caller="index",
     csv=False,
     pagi=False,
@@ -19,7 +19,7 @@ def sql2table(
     hlinks=[],
     fld_links={},
     fld_skip=[0,],
-    fld_length = None,
+    fld_length = 1000,
     page_d={},
     show_thead= True,
 ):
@@ -41,24 +41,24 @@ def sql2table(
 
     try:
         pg = int(page_d.get("page", 1))
-    except ValueError:
+    except ( ValueError, TypeError) : 
         pg = 1
 
 
     table_items = len(db( tbl_query ).select())
-    if items_on_page > table_items:
-        items_on_page = table_items
+    if rows_on_page > table_items:
+        rows_on_page = table_items
 
     if table_items == 0:
         show_thead = False
 
-    max_pages, rem = divmod( table_items, items_on_page  ) if table_items else (0,0)
+    max_pages, rem = divmod( table_items, rows_on_page  ) if table_items else (0,0)
     if rem: 
         max_pages += 1
 
-    limitby= ( (pg - 1) * items_on_page, pg * items_on_page ) 
+    limitby= ( (pg - 1) * rows_on_page, pg * rows_on_page ) 
     if not pagi:
-       items_on_page = table_items
+       rows_on_page = table_items
        limitby = ( 0, table_items )
 
     rows = db( tbl_query  ).select(orderby= order_by, limitby= limitby   )
@@ -66,11 +66,6 @@ def sql2table(
     ij_start = -len(links)
     ff = [f for f in db[tbl].fields]
     hh = [db[tbl][f].label for f in ff]
-
-
-    if fld_length is None : 
-            fld_length = 80 // (len(ff) -1 ) if len(ff) > 1 else 80
-
 
     def h_func(x, jj):
         if jj < 0:
@@ -81,7 +76,7 @@ def sql2table(
             return ''
 
         if not x is None and isinstance(x, str) and len(x) > fld_length :
-             x=x[:fld_length] + '...'
+             x=x[:fld_length] + '~'
 
         return f"{x}"
 
@@ -98,14 +93,16 @@ def sql2table(
             return fld_links[f_nm](t, x, r.id)
 
         if not x is None and isinstance(x, str) and len(x) > fld_length :
-             x=x[:fld_length] + '...'
+             x=x[:fld_length] + '~'
             
         return f"{x}"
 
     return DIV(
+        SPAN("table_name: ", ),
         SPAN(f"{tbl}", _style="color:red"),
-        SPAN(f"; {table_items} rows, {items_on_page} items_on_page, {max_pages}/{pg}"),
-        DIV(
+        SPAN(f"; {table_items} rows, {rows_on_page} rows_on_page, {pg} page "),
+        DIV( # <div>
+
             SPAN(
                 A(
                     "prev",
@@ -138,24 +135,8 @@ def sql2table(
             )
             if csv
             else "",
+        ),  # </div>
 
-        ) # </div>
-        if csv
-        else "",
-        DIV(
-            A(
-                "prev",
-                _role="button",
-                _href=URL(caller, vars=dict(page=pg - 1 if pg > 1 else pg)),
-            ) if pg > 1 else stop_button() ,
-            A(
-                "next",
-                _role="button",
-                _href=URL(caller, vars=dict(page=pg + 1 if pg < max_pages else pg)),
-            ) if pg < max_pages else stop_button(),
-        )
-        if pagi
-        else "",
         TABLE(
             THEAD(TR(*[TD(H6(h_func(hh[j], j))) for j in range(ij_start, len(hh))])) if show_thead else "",
             TBODY( *[ TR( *[ TD(r_func(row[ff[i]], i, row, tbl, ff[i])) for i in range(ij_start, len(ff)) ])
@@ -258,5 +239,4 @@ def some_func():
 def some_func():
     args = repr(dict(request.query))
     return f"some4_func: {args}"
-
 

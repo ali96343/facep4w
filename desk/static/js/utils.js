@@ -28,10 +28,17 @@ Q.get_query = function (source) {
 
 // a wrapper for fetch return a promise
 Q.ajax = function(method, url, data, headers) {
-    var options = {method: method,
-                   referrerPolicy: 'no-referrer', 
-                   headers: {'Content-type': 'application/json'}}
-    if (data) options.body = JSON.stringify(data);
+    var options = {
+        method: method,
+        referrerPolicy: 'no-referrer',
+    }
+    if (data){
+        if ( !(data instanceof FormData)){
+            options.headers = {'Content-type': 'application/json'};
+            data = JSON.stringify(data);
+        }
+        options.body = data;
+    }
     if (headers) for(var name in headers) options.headers[name] = headers[name];
     return new Promise(function(resolve, reject) {
             fetch(url, options).then(function(res){
@@ -42,7 +49,6 @@ Q.ajax = function(method, url, data, headers) {
                         }, reject);}).catch(reject);
     });
 }
-
 // Gets a cookie value
 Q.get_cookie = function (name) {
     var cookie = RegExp("" + name + "[^;]+").exec(document.cookie);
@@ -80,7 +86,7 @@ Q.register_vue_component = function (name, src, onload) {
 // Passes binary data to callback on drop of file in elem_id
 Q.upload_helper = function (elem_id, callback) {
     // function from http://jsfiddle.net/eliseosoto/JHQnk/
-    var elem = document.getelemById(elem_id);
+    var elem = document.getElementById(elem_id);
     if (elem) {
         var files = elem.files;
         var reader = new FileReader();

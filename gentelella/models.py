@@ -1,27 +1,49 @@
-from .common import db, Field
+import datetime
+
+from .common import db, Field, Tags, groups
 from pydal.validators import *
 from py4web.utils.populate import populate
 
-#
-# py4web app, AI-biorex ported 25.11.2020 16:43:07 msk, src: https://github.com/ColorlibHQ/gentelella
-#
+# py4web app, AI-biorex ported 09.10.2021 11:20:40 UTC+3, src: https://github.com/ColorlibHQ/gentelella
+
 
 #import pydal
-
 #from py4web import *
 #from apps.myapp.models import db
 
-#if not len( db().select(db.auth_user.id) ):
 if not db(db.auth_user).count():
-    body = {
-        "username": "nil",
-        "email": "nil@nil.com",
+    u1 = {
+        "username": "anil",
+        "email": "anil@nil.com",
         "password": str(CRYPT()("xyz12345")[0]),
-        #"password": str(pydal.validators.CRYPT()("xyz12345")[0]),
-        "first_name": "MainUser",
-        "last_name": "MainUserLast",
+        "first_name": "Anil_first",
+        "last_name": "Anil_Last",
     }
-    db.auth_user.insert(**body)
+
+    u2 = {
+        "username": "bnil",
+        "email": "bnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Bnil_first",
+        "last_name": "Bnil_Last",
+    }
+
+    u3 = {
+        "username": "cnil",
+        "email": "cnil@nil.com",
+        "password": str(CRYPT()("xyz12345")[0]),
+        "first_name": "Cnil_first",
+        "last_name": "Cnil_Last",
+    }
+
+    for e in [u1, u2, u3]: db.auth_user.insert(**db.auth_user._filter_fields(e) )
+    db.commit()
+
+    #groups = Tags(db.auth_user)
+
+    groups.add(1, 'manager')
+    groups.add(2, ['dancer', 'teacher'])
+    groups.add(3, 'dancer')
     db.commit()
 
 db.define_table(
@@ -33,156 +55,205 @@ db.define_table(
 db.commit()
 
 if not db(db.test_table).count():
-    populate(db.test_table, n=10)
+    populate(db.test_table, n=50)
     db.commit()
 
+db.define_table( 'uploaded_files',
+    Field('orig_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field("remark",'text',),
+    Field('uniq_file_name', requires=IS_NOT_EMPTY(),  ),
+    Field('time', 'datetime', editable=False, default = datetime.datetime.now(), requires = IS_DATETIME( )),
+    )
+
+db.commit()
+#
+db.define_table( 'app_images',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+    
+if not db(db.app_images).count():
+    db.app_images.insert(f0='images/favicon.ico', )
+    db.app_images.insert(f0='images/img.jpg', )
+    db.app_images.insert(f0='images/cropper.jpg', )
+    db.app_images.insert(f0='images/media.jpg', )
+    db.app_images.insert(f0='images/user.png', )
+    db.app_images.insert(f0='images/visa.png', )
+    db.app_images.insert(f0='images/mastercard.png', )
+    db.app_images.insert(f0='images/american-express.png', )
+    db.app_images.insert(f0='images/paypal.png', )
+    db.app_images.insert(f0='images/inbox.png', )
+    db.app_images.insert(f0='images/prod-1.jpg', )
+    db.app_images.insert(f0='images/prod-2.jpg', )
+    db.app_images.insert(f0='images/prod-3.jpg', )
+    db.app_images.insert(f0='images/prod-4.jpg', )
+    db.app_images.insert(f0='images/prod-5.jpg', )
+    db.app_images.insert(f0='images/picture.jpg', )
+
+db.commit()
+
+db.define_table( 'app_css_js',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+
+db.define_table( 'app_js_script',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    Field('in_html', ),
+    )
+
+db.define_table( 'app_html_text',
+    Field('f0', requires=IS_NOT_EMPTY(), ),
+    Field('key',requires=IS_NOT_EMPTY(), ),
+    Field('in_html', ),
+    )
+
+db.commit()
 
 db.define_table(
     'dfform0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
-    Field('f6','string', length=1024, ),
-    Field('f7','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
+    Field('f6','string', length=1024, default='fNo' ),
+    Field('f7','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','boolean',  ),
-    Field('f5','boolean',  ),
-    Field('f6','boolean',  ),
-    Field('f7','boolean',  ),
-    Field('f8','string', length=1024, ),
-    Field('f9','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','boolean', False ),
+    Field('f5','boolean', False ),
+    Field('f6','boolean', False ),
+    Field('f7','boolean', False ),
+    Field('f8','string', length=1024, default='fNo' ),
+    Field('f9','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform3',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform4',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform5',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform6',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfform7',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfformXadvanced0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXadvanced1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXadvanced2',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXadvanced3',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXvalidation0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
-    Field('f6','string', length=1024, ),
-    Field('f7','string', length=1024, ),
-    Field('f8','string', length=1024, ),
-    Field('f9','string', length=1024, ),
-    Field('f10','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
+    Field('f6','string', length=1024, default='fNo' ),
+    Field('f7','string', length=1024, default='fNo' ),
+    Field('f8','string', length=1024, default='fNo' ),
+    Field('f9','string', length=1024, default='fNo' ),
+    Field('f10','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXwizards0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfformXwizards1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','string', length=1024, default='fNo' ),
+    Field('f5','string', length=1024, default='fNo' ),
     )
 db.commit()
 
@@ -193,296 +264,296 @@ db.commit()
 
 db.define_table(
     'dfcalendar0',
-    Field('f0','string', length=1024, ),
-    Field('f1','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcalendar1',
-    Field('f0','string', length=1024, ),
-    Field('f1','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfpageX4030',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfpageX4040',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfpageX5000',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
-    'dflogin0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    'dfloginA0',
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
-    'dflogin1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    'dfloginA1',
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced3',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced4',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced5',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced6',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tformXadvanced7',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tgeneralXelements0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tgeneralXelements1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoice0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoice1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttables0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttables1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttables2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttables3',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttables4',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
-    Field('f6','string', length=1024, ),
-    Field('f7','string', length=1024, ),
-    Field('f8','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
+    Field('f6','string', length=1024, default='tNo' ),
+    Field('f7','string', length=1024, default='tNo' ),
+    Field('f8','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
-    Field('f6','string', length=1024, ),
-    Field('f7','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
+    Field('f6','string', length=1024, default='tNo' ),
+    Field('f7','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic3',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic4',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'ttablesXdynamic5',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
-    Field('f6','string', length=1024, ),
-    Field('f7','string', length=1024, ),
-    Field('f8','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
+    Field('f6','string', length=1024, default='tNo' ),
+    Field('f7','string', length=1024, default='tNo' ),
+    Field('f8','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'totherXcharts0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tprojects0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
-    'tprofile0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    'tprofileA0',
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
@@ -997,20 +1068,20 @@ if not db(db.totherXcharts0).count():
     db.commit()
 
 if not db(db.tprojects0).count():
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"57\" role=\"progressbar\"></div></div> <small>57% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"47\" role=\"progressbar\"></div></div> <small>47% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"60\" role=\"progressbar\"></div></div> <small>60% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"12\" role=\"progressbar\"></div></div> <small>12% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"35\" role=\"progressbar\"></div></div> <small>35% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"87\" role=\"progressbar\"></div></div> <small>87% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
-    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"static/tte/images/user.png\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"57\" role=\"progressbar\"></div></div> <small>57% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"47\" role=\"progressbar\"></div></div> <small>47% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"60\" role=\"progressbar\"></div></div> <small>60% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"12\" role=\"progressbar\"></div></div> <small>12% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"35\" role=\"progressbar\"></div></div> <small>35% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"87\" role=\"progressbar\"></div></div> <small>87% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
+    db.tprojects0.insert(f0="#", f1="<a>Pesamakini Backend UI</a> <br/> <small>Created 01.01.2015</small>", f2="<ul class=\"list-inline\"><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li><li><img alt=\"Avatar\" class=\"avatar\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\"/></li></ul>", f3="<div class=\"progress progress_sm\"><div class=\"progress-bar bg-green\" data-transitiongoal=\"77\" role=\"progressbar\"></div></div> <small>77% Complete</small>", f4="<button class=\"btn btn-success btn-xs\" type=\"button\">Success</button>", f5="<a class=\"btn btn-primary btn-xs\" href=\"#\"><i class=\"fa fa-folder\"></i> View </a> <a class=\"btn btn-info btn-xs\" href=\"#\"><i class=\"fa fa-pencil\"></i> Edit </a> <a class=\"btn btn-danger btn-xs\" href=\"#\"><i class=\"fa fa-trash-o\"></i> Delete </a>")
     db.commit()
 
-if not db(db.tprofile0).count():
-    db.tprofile0.insert(f0="1", f1="New Company Takeover Review", f2="Deveint Inc", f3="18", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"35\"></div></div>")
-    db.tprofile0.insert(f0="2", f1="New Partner Contracts Consultanci", f2="Deveint Inc", f3="13", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-danger\" data-transitiongoal=\"15\"></div></div>")
-    db.tprofile0.insert(f0="3", f1="Partners and Inverstors report", f2="Deveint Inc", f3="30", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"45\"></div></div>")
-    db.tprofile0.insert(f0="4", f1="New Company Takeover Review", f2="Deveint Inc", f3="28", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"75\"></div></div>")
+if not db(db.tprofileA0).count():
+    db.tprofileA0.insert(f0="1", f1="New Company Takeover Review", f2="Deveint Inc", f3="18", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"35\"></div></div>")
+    db.tprofileA0.insert(f0="2", f1="New Partner Contracts Consultanci", f2="Deveint Inc", f3="13", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-danger\" data-transitiongoal=\"15\"></div></div>")
+    db.tprofileA0.insert(f0="3", f1="Partners and Inverstors report", f2="Deveint Inc", f3="30", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"45\"></div></div>")
+    db.tprofileA0.insert(f0="4", f1="New Company Takeover Review", f2="Deveint Inc", f3="28", f4="<div class=\"progress\"><div class=\"progress-bar progress-bar-success\" data-transitiongoal=\"75\"></div></div>")
     db.commit()

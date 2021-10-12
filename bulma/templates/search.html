@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 08.12.2020 08:51:35 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:13:21 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -12,8 +12,11 @@
   <!-- Bulma Version 0.9.0-->
   <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -47,6 +50,42 @@
          border: 2px dashed red;
          padding: 0.2em 1em 0.2em 1em;
      }
+
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
 
 </style>
 
@@ -92,7 +131,7 @@
 <div>
 [%[= fsearch0.custom['begin'] ]]
  [%[ fsearch0.custom['widgets']['f0']['_class']= 'input is-large'  ]]
- [%[ fsearch0.custom['widgets']['f0']['_placeholder']= '==0_p4w'  ]]
+ [%[ fsearch0.custom['widgets']['f0']['_placeholder']= '==0'  ]]
  [%[ fsearch0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fsearch0.custom['widgets']['f0'] ]]
 
@@ -106,10 +145,6 @@
  [%[ fsearch0.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fsearch0.custom['submit'] ]]
 
-
- [%[ for hidden_widget in fsearch0.custom['hidden_widgets'].keys(): ]]
-     [%[= fsearch0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fsearch0</span></div>
 
@@ -354,13 +389,106 @@
     <script src="[%[=URL('static/tte/js/bulma.js') ]]"></script>
    </div>
   </footer>
- <!-- rm_flashdiv -->
+  
+<!-- forms ajax -->
 <script>
-     !function() { 
-         const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 9000); }
-     }();
+
+    ! function(forms_url) {
+
+        for (const f of document.forms) {
+
+            f.onsubmit = async (e) => {
+
+                e.preventDefault();
+
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
+
+                const result = await response.json();
+
+                if (result.js_alert === 'sweet2') {
+
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
+        };
+
+    }([%[ = XML(ctrl_template_url) ]]);
+
 </script>
 
+ <!-- rm_flashdiv -->
+<script>
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
+</script>
+
+
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
 </body>
 </html>

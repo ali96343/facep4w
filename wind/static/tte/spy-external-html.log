@@ -1,6 +1,6 @@
 https://unpkg.com/tailwindcss/dist/tailwind.min.css
 https://fonts.googleapis.com/css?family=Karla:400,700&display=swap
-https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js
+//cdn.jsdelivr.net/npm/sweetalert2@10
 https://source.unsplash.com/uJ8LNVCBjFQ/400x400
 https://davidgrzyb.com
 https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js

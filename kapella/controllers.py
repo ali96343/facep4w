@@ -1,11 +1,21 @@
 #
-# py4web app, AI-biorex ported 26.04.2021 17:25:06 UTC+3, src: https://github.com/BootstrapDash/Kapella-Free-Bootstrap-Admin-Template
+# py4web app, AI-biorex ported 12.10.2021 08:48:01 UTC+3, src: https://github.com/BootstrapDash/Kapella-Free-Bootstrap-Admin-Template
 
-# https://github.com/ali96343/facep4w
+#
+# https://github.com/ali96343/facep4w py4web apps
+#
+# http://py4web.com 
+# http://py4web.com/_documentation/static/en/index.html 
+#
 #
 
 import os, json, uuid
-from py4web.core import bottle
+#
+try:
+   import ombott as bottle
+except ImportError:
+   import bottle
+   #from py4web.core import bottle
 
 from py4web import action, request, response,  abort, redirect, URL, Field
 from py4web.utils.form import Form, FormStyleBulma
@@ -22,41 +32,49 @@ from yatl.helpers import INPUT, H1, HTML, BODY, A, DIV, SPAN, P
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
 from .settings import APP_NAME
 
- 
+
+#
+# admin panel at APP_NAME/tabinfo
+#
 # ---------------------- Global -----------------------------------------------------
 
 # exposes services necessary to access the db.thing via ajax
 publisher = Publisher(db, policy=ALLOW_ALL_POLICY)
 url_signer = URLSigner(session)
 
-Glb= {'debug': True , 'my_app_name': APP_NAME, 'tte_path': '/static/tte' }
+Glb= {'debug': True , 'my_app_name': APP_NAME, 'tte_path': '/static/tte', }
 
 # ---------------------- Utils -------------------------------------------------------
 
+def get_ctrl_url(ctrl_nm):
+    return "\'" + URL(ctrl_nm) + "\'"
+
 def insert_form_vars(myform, mytable):
 
-    row_id, table_row, f0_fld = None, None, None
+    ( row_id, table_row, f0_fld) = ( None, None, None )
 
     if Glb['debug'] == True:
         print("app:",Glb['my_app_name'])
         _ = [ print (f'     {k}: {v}') for k,v in myform.vars.items() if k != '_formkey']
 
-    f0_fld = myform.vars.get('f0', None )
-    if (not f0_fld is None) and len(f0_fld):
+    f0_name  = [ e for e in mytable.fields if e != 'id' ][0]
+    f0_value = myform.vars.get( f0_name  , None )
+
+    if f0_value and ( type( f0_value ) in (str, bytes, list, tuple, dict,) ) and len(f0_value):
         row_id = mytable.insert(**mytable._filter_fields(myform.vars))
         db.commit()
 
-        if not row_id is None:
+        if row_id:
             table_row = mytable(row_id )
 
-            if not table_row is None:
-                if Glb['debug'] == True:
-                     print( f'     inserted: \"{myform.vars["f0"]}\" into {mytable.f0}, id = {row_id}' )
-                     print( f"     select  : \"{table_row.f0}\" from {mytable.f0}, id = {row_id}" )
+            if table_row:
+                if Glb['debug']:
+                     print(f'     insert: \"{myform.vars[f0_name]}\" into {mytable[f0_name]}, id = {row_id}' )
+                     print(f"     select: \"{table_row[f0_name]}\" from {mytable[f0_name]}, id = {row_id}" )
                      print ()
     else:
-        if Glb['debug'] == True:
-            print( f"     no entry inserted: (f0_fld is None) or (len(f0_fld) == 0)")
+        if Glb['debug']:
+            print( f"     no entry inserted: (f0_value is None) or (len(f0_value) == 0)")
             print()
 
     return row_id 
@@ -83,8 +101,10 @@ def json2user(mess='mymess', icon_type = 'warning', js_alert='sweet2'):
 def mdi():
     ctrl_info= { 'c':'mdi', 'v':'mdi.html' }
     messages = ['mdi', 'mdi.html']
-    #
-    ctrl_template_url = "\'" + URL('mdi' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('mdi') 
+
 
     return locals()
 
@@ -94,8 +114,10 @@ def mdi():
 def loginA():
     ctrl_info= { 'c':'loginA', 'v':'login.html' }
     messages = ['loginA', 'login.html']
-    #
-    ctrl_template_url = "\'" + URL('loginA' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('loginA') 
+
 
     # 
     floginA0= Form(db.dfloginA0, dbio=False, formstyle=FormStyleBulma)
@@ -103,7 +125,7 @@ def loginA():
         icon_type ='success' if insert_form_vars(floginA0, db.dfloginA0) else 'info'
         return json2user(mess = str( floginA0.form_name ), icon_type=icon_type )
     elif floginA0.errors:
-        print("floginA0 has errors: %s" % (floginA0.errors))
+        print(f"floginA0 has errors: {floginA0.errors}")
         return json2user(mess = str(floginA0.form_name), icon_type = 'error')
 
     return locals()
@@ -114,8 +136,10 @@ def loginA():
 def index():
     ctrl_info= { 'c':'index', 'v':'index.html' }
     messages = ['index', 'index.html']
-    #
-    ctrl_template_url = "\'" + URL('index' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('index') 
+
 
     return locals()
 
@@ -125,8 +149,10 @@ def index():
 def loginX2():
     ctrl_info= { 'c':'loginX2', 'v':'login-2.html' }
     messages = ['loginX2', 'login-2.html']
-    #
-    ctrl_template_url = "\'" + URL('loginX2' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('loginX2') 
+
 
     # 
     floginX20= Form(db.dfloginX20, dbio=False, formstyle=FormStyleBulma)
@@ -134,7 +160,7 @@ def loginX2():
         icon_type ='success' if insert_form_vars(floginX20, db.dfloginX20) else 'info'
         return json2user(mess = str( floginX20.form_name ), icon_type=icon_type )
     elif floginX20.errors:
-        print("floginX20 has errors: %s" % (floginX20.errors))
+        print(f"floginX20 has errors: {floginX20.errors}")
         return json2user(mess = str(floginX20.form_name), icon_type = 'error')
 
     return locals()
@@ -145,8 +171,10 @@ def loginX2():
 def chartjs():
     ctrl_info= { 'c':'chartjs', 'v':'chartjs.html' }
     messages = ['chartjs', 'chartjs.html']
-    #
-    ctrl_template_url = "\'" + URL('chartjs' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('chartjs') 
+
 
     return locals()
 
@@ -156,8 +184,10 @@ def chartjs():
 def buttons():
     ctrl_info= { 'c':'buttons', 'v':'buttons.html' }
     messages = ['buttons', 'buttons.html']
-    #
-    ctrl_template_url = "\'" + URL('buttons' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('buttons') 
+
 
     return locals()
 
@@ -167,8 +197,10 @@ def buttons():
 def registerA():
     ctrl_info= { 'c':'registerA', 'v':'register.html' }
     messages = ['registerA', 'register.html']
-    #
-    ctrl_template_url = "\'" + URL('registerA' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('registerA') 
+
 
     # 
     fregisterA0= Form(db.dfregisterA0, dbio=False, formstyle=FormStyleBulma)
@@ -176,7 +208,7 @@ def registerA():
         icon_type ='success' if insert_form_vars(fregisterA0, db.dfregisterA0) else 'info'
         return json2user(mess = str( fregisterA0.form_name ), icon_type=icon_type )
     elif fregisterA0.errors:
-        print("fregisterA0 has errors: %s" % (fregisterA0.errors))
+        print(f"fregisterA0 has errors: {fregisterA0.errors}")
         return json2user(mess = str(fregisterA0.form_name), icon_type = 'error')
 
     return locals()
@@ -187,8 +219,10 @@ def registerA():
 def registerX2():
     ctrl_info= { 'c':'registerX2', 'v':'register-2.html' }
     messages = ['registerX2', 'register-2.html']
-    #
-    ctrl_template_url = "\'" + URL('registerX2' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('registerX2') 
+
 
     # 
     fregisterX20= Form(db.dfregisterX20, dbio=False, formstyle=FormStyleBulma)
@@ -196,7 +230,7 @@ def registerX2():
         icon_type ='success' if insert_form_vars(fregisterX20, db.dfregisterX20) else 'info'
         return json2user(mess = str( fregisterX20.form_name ), icon_type=icon_type )
     elif fregisterX20.errors:
-        print("fregisterX20 has errors: %s" % (fregisterX20.errors))
+        print(f"fregisterX20 has errors: {fregisterX20.errors}")
         return json2user(mess = str(fregisterX20.form_name), icon_type = 'error')
 
     return locals()
@@ -207,8 +241,10 @@ def registerX2():
 def typography():
     ctrl_info= { 'c':'typography', 'v':'typography.html' }
     messages = ['typography', 'typography.html']
-    #
-    ctrl_template_url = "\'" + URL('typography' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('typography') 
+
 
     return locals()
 
@@ -218,8 +254,10 @@ def typography():
 def lockXscreen():
     ctrl_info= { 'c':'lockXscreen', 'v':'lock-screen.html' }
     messages = ['lockXscreen', 'lock-screen.html']
-    #
-    ctrl_template_url = "\'" + URL('lockXscreen' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('lockXscreen') 
+
 
     # 
     flockXscreen0= Form(db.dflockXscreen0, dbio=False, formstyle=FormStyleBulma)
@@ -227,7 +265,7 @@ def lockXscreen():
         icon_type ='success' if insert_form_vars(flockXscreen0, db.dflockXscreen0) else 'info'
         return json2user(mess = str( flockXscreen0.form_name ), icon_type=icon_type )
     elif flockXscreen0.errors:
-        print("flockXscreen0 has errors: %s" % (flockXscreen0.errors))
+        print(f"flockXscreen0 has errors: {flockXscreen0.errors}")
         return json2user(mess = str(flockXscreen0.form_name), icon_type = 'error')
 
     return locals()
@@ -238,8 +276,10 @@ def lockXscreen():
 def basicXtable():
     ctrl_info= { 'c':'basicXtable', 'v':'basic-table.html' }
     messages = ['basicXtable', 'basic-table.html']
-    #
-    ctrl_template_url = "\'" + URL('basicXtable' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('basicXtable') 
+
 
     rows_tbasicXtable0= db(db.tbasicXtable0).select()
     rows_tbasicXtable1= db(db.tbasicXtable1).select()
@@ -255,8 +295,10 @@ def basicXtable():
 def documentation():
     ctrl_info= { 'c':'documentation', 'v':'documentation.html' }
     messages = ['documentation', 'documentation.html']
-    #
-    ctrl_template_url = "\'" + URL('documentation' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('documentation') 
+
 
     return locals()
 
@@ -266,8 +308,10 @@ def documentation():
 def basicXelements():
     ctrl_info= { 'c':'basicXelements', 'v':'basic_elements.html' }
     messages = ['basicXelements', 'basic_elements.html']
-    #
-    ctrl_template_url = "\'" + URL('basicXelements' ) + "\'"
+
+    ctrl_tabinfo_url =  get_ctrl_url('tabinfo') 
+    ctrl_template_url = get_ctrl_url('basicXelements') 
+
 
     # 
     fbasicXelements0= Form(db.dfbasicXelements0, dbio=False, formstyle=FormStyleBulma)
@@ -275,7 +319,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements0, db.dfbasicXelements0) else 'info'
         return json2user(mess = str( fbasicXelements0.form_name ), icon_type=icon_type )
     elif fbasicXelements0.errors:
-        print("fbasicXelements0 has errors: %s" % (fbasicXelements0.errors))
+        print(f"fbasicXelements0 has errors: {fbasicXelements0.errors}")
         return json2user(mess = str(fbasicXelements0.form_name), icon_type = 'error')
 
     # 
@@ -284,7 +328,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements1, db.dfbasicXelements1) else 'info'
         return json2user(mess = str( fbasicXelements1.form_name ), icon_type=icon_type )
     elif fbasicXelements1.errors:
-        print("fbasicXelements1 has errors: %s" % (fbasicXelements1.errors))
+        print(f"fbasicXelements1 has errors: {fbasicXelements1.errors}")
         return json2user(mess = str(fbasicXelements1.form_name), icon_type = 'error')
 
     # 
@@ -293,7 +337,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements2, db.dfbasicXelements2) else 'info'
         return json2user(mess = str( fbasicXelements2.form_name ), icon_type=icon_type )
     elif fbasicXelements2.errors:
-        print("fbasicXelements2 has errors: %s" % (fbasicXelements2.errors))
+        print(f"fbasicXelements2 has errors: {fbasicXelements2.errors}")
         return json2user(mess = str(fbasicXelements2.form_name), icon_type = 'error')
 
     # 
@@ -302,7 +346,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements3, db.dfbasicXelements3) else 'info'
         return json2user(mess = str( fbasicXelements3.form_name ), icon_type=icon_type )
     elif fbasicXelements3.errors:
-        print("fbasicXelements3 has errors: %s" % (fbasicXelements3.errors))
+        print(f"fbasicXelements3 has errors: {fbasicXelements3.errors}")
         return json2user(mess = str(fbasicXelements3.form_name), icon_type = 'error')
 
     # 
@@ -311,7 +355,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements4, db.dfbasicXelements4) else 'info'
         return json2user(mess = str( fbasicXelements4.form_name ), icon_type=icon_type )
     elif fbasicXelements4.errors:
-        print("fbasicXelements4 has errors: %s" % (fbasicXelements4.errors))
+        print(f"fbasicXelements4 has errors: {fbasicXelements4.errors}")
         return json2user(mess = str(fbasicXelements4.form_name), icon_type = 'error')
 
     # 
@@ -320,7 +364,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements5, db.dfbasicXelements5) else 'info'
         return json2user(mess = str( fbasicXelements5.form_name ), icon_type=icon_type )
     elif fbasicXelements5.errors:
-        print("fbasicXelements5 has errors: %s" % (fbasicXelements5.errors))
+        print(f"fbasicXelements5 has errors: {fbasicXelements5.errors}")
         return json2user(mess = str(fbasicXelements5.form_name), icon_type = 'error')
 
     # 
@@ -329,7 +373,7 @@ def basicXelements():
         icon_type ='success' if insert_form_vars(fbasicXelements6, db.dfbasicXelements6) else 'info'
         return json2user(mess = str( fbasicXelements6.form_name ), icon_type=icon_type )
     elif fbasicXelements6.errors:
-        print("fbasicXelements6 has errors: %s" % (fbasicXelements6.errors))
+        print(f"fbasicXelements6 has errors: {fbasicXelements6.errors}")
         return json2user(mess = str(fbasicXelements6.form_name), icon_type = 'error')
 
     return locals()
@@ -429,21 +473,10 @@ def error404(error):
 
 # -------------------- tabinfo: my backend ------------------------------------
 
-from .atab_utils import mytab_grid
-from .images_utils import ima_grid
-from .upload_utils import p4wupload_file
-from .tlist_utils import tlist 
-
 @unauthenticated("tabinfo", "tabinfo.html")
 def tabinfo():
     user = auth.get_user()
+    # simple backand-admin-panel (to be continued)
     message = T("Hello {first_name}".format(**user) if user else "Hello")
-    menu = DIV(
-               P( "test-demo for sql2table ( SQLTABLE from web2py)"),
-               A( "sql2table", _role="button", _href=URL('mytab_grid', ),) ,
-               A( "p4wupload_file", _role="button", _href=URL('p4wupload_file', ),) ,
-               A( "tlist", _role="button", _href=URL('tlist', ),) ,
-               A( "app_images", _role="button", _href=URL('ima_grid', ),) ,
-              )
-    return dict(message=message, menu=menu)
+    return dict(message=message, )
 

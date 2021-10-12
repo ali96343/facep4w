@@ -1,5 +1,5 @@
 /**
- * SimpleBar.js - v5.3.1
+ * SimpleBar.js - v5.3.6
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -19,13 +19,28 @@ import 'core-js/modules/web.dom-collections.iterator';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
 import memoize from 'lodash.memoize';
-import ResizeObserver from 'resize-observer-polyfill';
+import { ResizeObserver } from '@juggle/resize-observer';
 import canUseDOM from 'can-use-dom';
 import 'core-js/modules/es.array.reduce';
 import 'core-js/modules/es.function.name';
 import 'core-js/modules/es.regexp.exec';
 import 'core-js/modules/es.string.match';
 import 'core-js/modules/es.string.replace';
+
+function getElementWindow(element) {
+  if (!element || !element.ownerDocument || !element.ownerDocument.defaultView) {
+    return window;
+  }
+
+  return element.ownerDocument.defaultView;
+}
+function getElementDocument(element) {
+  if (!element || !element.ownerDocument) {
+    return document;
+  }
+
+  return element.ownerDocument;
+}
 
 var cachedScrollbarWidth = null;
 var cachedDevicePixelRatio = null;
@@ -39,8 +54,10 @@ if (canUseDOM) {
   });
 }
 
-function scrollbarWidth() {
+function scrollbarWidth(el) {
   if (cachedScrollbarWidth === null) {
+    var document = getElementDocument(el);
+
     if (typeof document === 'undefined') {
       cachedScrollbarWidth = 0;
       return cachedScrollbarWidth;
@@ -56,21 +73,6 @@ function scrollbarWidth() {
   }
 
   return cachedScrollbarWidth;
-}
-
-function getElementWindow(element) {
-  if (!element || !element.ownerDocument || !element.ownerDocument.defaultView) {
-    return window;
-  }
-
-  return element.ownerDocument.defaultView;
-}
-function getElementDocument(element) {
-  if (!element || !element.ownerDocument) {
-    return document;
-  }
-
-  return element.ownerDocument;
 }
 
 var SimpleBar =
@@ -369,6 +371,7 @@ function () {
 
     if (canUseDOM) {
       this.initDOM();
+      this.setAccessibilityAttributes();
       this.scrollbarWidth = this.getScrollbarWidth();
       this.recalculate();
       this.initListeners();
@@ -449,6 +452,13 @@ function () {
     }
 
     this.el.setAttribute('data-simplebar', 'init');
+  };
+
+  _proto.setAccessibilityAttributes = function setAccessibilityAttributes() {
+    var ariaLabel = this.options.ariaLabel || 'scrollable content';
+    this.contentWrapperEl.setAttribute('tabindex', '0');
+    this.contentWrapperEl.setAttribute('role', 'region');
+    this.contentWrapperEl.setAttribute('aria-label', ariaLabel);
   };
 
   _proto.initListeners = function initListeners() {
@@ -775,10 +785,10 @@ function () {
       if (getComputedStyle(this.contentWrapperEl, '::-webkit-scrollbar').display === 'none' || 'scrollbarWidth' in document.documentElement.style || '-ms-overflow-style' in document.documentElement.style) {
         return 0;
       } else {
-        return scrollbarWidth();
+        return scrollbarWidth(this.el);
       }
     } catch (e) {
-      return scrollbarWidth();
+      return scrollbarWidth(this.el);
     }
   };
 

@@ -1,4 +1,4 @@
-timestamp: 2021-06-25T21:12:34.126724
+timestamp: 2021-10-12T09:07:16.451319
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "username" CHAR(512) UNIQUE,
@@ -8,17 +8,18 @@ CREATE TABLE "auth_user"(
     "last_name" CHAR(512),
     "sso_id" CHAR(512),
     "action_token" CHAR(512),
-    "last_password_change" TIMESTAMP
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
 );
 success!
-timestamp: 2021-06-25T21:12:34.145238
+timestamp: 2021-10-12T09:07:16.467264
 CREATE TABLE "auth_user_tag_groups"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "path" CHAR(512),
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2021-06-25T21:12:34.184151
+timestamp: 2021-10-12T09:07:16.512237
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -26,7 +27,7 @@ CREATE TABLE "test_table"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:34.235273
+timestamp: 2021-10-12T09:07:16.574955
 CREATE TABLE "uploaded_files"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "orig_file_name" CHAR(512),
@@ -35,84 +36,34 @@ CREATE TABLE "uploaded_files"(
     "time" TIMESTAMP
 );
 success!
-timestamp: 2021-06-25T21:12:34.246335
+timestamp: 2021-10-12T09:07:16.598102
 CREATE TABLE "app_images"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:34.264759
+timestamp: 2021-10-12T09:07:16.618276
 CREATE TABLE "app_css_js"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:34.274725
+timestamp: 2021-10-12T09:07:16.629076
 CREATE TABLE "app_js_script"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
     "in_html" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:34.285162
-CREATE TABLE "dfindex0"(
+timestamp: 2021-10-12T09:07:16.641559
+CREATE TABLE "app_html_text"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
+    "f0" CHAR(512),
+    "key" CHAR(512),
+    "in_html" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:34.295047
-CREATE TABLE "dfpagesXprofile0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.304824
-CREATE TABLE "dfpagesXsettings0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.316227
-CREATE TABLE "dfpagesXsettings1"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" TEXT
-);
-success!
-timestamp: 2021-06-25T21:12:34.326869
-CREATE TABLE "dfpagesXsettings2"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024),
-    "f4" CHAR(1024),
-    "f5" CHAR(1024),
-    "f6" CHAR(1024),
-    "f7" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.338087
-CREATE TABLE "dfpagesXsettings3"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.348514
-CREATE TABLE "dfpagesXinvoice0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.358463
-CREATE TABLE "dfpagesXblank0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.368690
+timestamp: 2021-10-12T09:07:16.653716
 CREATE TABLE "dfpagesXsignXin0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -120,7 +71,7 @@ CREATE TABLE "dfpagesXsignXin0"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:34.379367
+timestamp: 2021-10-12T09:07:16.664945
 CREATE TABLE "dfpagesXsignXup0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -129,129 +80,14 @@ CREATE TABLE "dfpagesXsignXup0"(
     "f3" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:34.389794
-CREATE TABLE "dfuiXalerts0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.400450
-CREATE TABLE "dfuiXbuttons0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.410663
-CREATE TABLE "dfuiXcards0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.420724
-CREATE TABLE "dfuiXgeneral0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.431601
-CREATE TABLE "dfuiXgrid0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.446260
-CREATE TABLE "dfuiXmodals0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.456603
-CREATE TABLE "dfuiXtypography0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.467308
-CREATE TABLE "dficonsXfeather0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.477725
-CREATE TABLE "dfformsXlayouts0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.488513
-CREATE TABLE "dfformsXlayouts1"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" TEXT
-);
-success!
-timestamp: 2021-06-25T21:12:34.499243
-CREATE TABLE "dfformsXlayouts2"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" TEXT
-);
-success!
-timestamp: 2021-06-25T21:12:34.510564
-CREATE TABLE "dfformsXlayouts3"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024),
-    "f4" CHAR(1024),
-    "f5" CHAR(1024),
-    "f6" CHAR(1024),
-    "f7" CHAR(1)
-);
-success!
-timestamp: 2021-06-25T21:12:34.521295
-CREATE TABLE "dfformsXlayouts4"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1)
-);
-success!
-timestamp: 2021-06-25T21:12:34.532296
-CREATE TABLE "dfformsXbasicXinputs0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.542783
-CREATE TABLE "dftablesXbootstrap0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.553216
-CREATE TABLE "dfchartsXchartjs0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.564273
-CREATE TABLE "dfmapsXgoogle0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.574878
+timestamp: 2021-10-12T09:07:16.676236
 CREATE TABLE "tindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
     "f1" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:34.585926
+timestamp: 2021-10-12T09:07:16.687937
 CREATE TABLE "tindex1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -261,78 +97,11 @@ CREATE TABLE "tindex1"(
     "f4" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:34.597025
-CREATE TABLE "tpagesXinvoice0"(
+timestamp: 2021-10-12T09:07:16.699347
+CREATE TABLE "tupgradeXtoXpro0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
     "f1" CHAR(1024),
     "f2" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.607759
-CREATE TABLE "ttablesXbootstrap0"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.618462
-CREATE TABLE "ttablesXbootstrap1"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.628930
-CREATE TABLE "ttablesXbootstrap2"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.639261
-CREATE TABLE "ttablesXbootstrap3"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.649806
-CREATE TABLE "ttablesXbootstrap4"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.661171
-CREATE TABLE "ttablesXbootstrap5"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024)
-);
-success!
-timestamp: 2021-06-25T21:12:34.672535
-CREATE TABLE "ttablesXbootstrap6"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "f0" CHAR(1024),
-    "f1" CHAR(1024),
-    "f2" CHAR(1024),
-    "f3" CHAR(1024),
-    "f4" CHAR(1024),
-    "f5" CHAR(1024),
-    "f6" CHAR(1024),
-    "f7" CHAR(1024),
-    "f8" CHAR(1024),
-    "f9" CHAR(1024)
 );
 success!

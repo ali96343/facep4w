@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 08.12.2020 08:51:34 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:13:19 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -12,8 +12,11 @@
   <link href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" rel="stylesheet"/>
   <link href="[%[=URL('static/tte/css/index.css') ]]" rel="stylesheet" type="text/css"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -47,6 +50,42 @@
          border: 2px dashed red;
          padding: 0.2em 1em 0.2em 1em;
      }
+
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
 
 </style>
 
@@ -197,9 +236,6 @@
          <span class="tag is-default is-info">
           <i class="fas fa-desktop" title="Desktop Support"></i>
          </span>
-         <span class="tag is-default is-info">
-          <i class="fas fa-mobile-alt" title="Mobile Support"></i>
-         </span>
         </span>
        </p>
       </header>
@@ -289,6 +325,40 @@
         Preview
        </a>
        <a class="card-footer-item" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/cover.html">
+        <i class="fas fa-code"></i>
+        Source Code
+       </a>
+      </footer>
+     </div>
+    </div>
+    <!-- documentation -->
+    <div class="column is-4-desktop is-3-widescreen is-half-tablet">
+     <div class="card">
+      <header class="card-header">
+       <p class="card-header-title">
+        <span>Documentation</span>
+        <span class="is-pulled-right">
+         <a href="https://github.com/jgthms/bulma/releases/tag/0.9.2">
+          <span class="tag is-default is-primary" title="Current Version">v0.9.2</span>
+         </a>
+         <span class="tag is-default is-info">
+          <i class="fas fa-desktop" title="Desktop Support"></i>
+         </span>
+        </span>
+       </p>
+      </header>
+      <div class="card-content">
+       <figure class="image">
+        <a href="[%[=URL('documentation') ]]">
+         <img alt="Documentation template screenshot" src="[%[=URL('static/tte/images/documentation.jpg') ]]"/></a>
+       </figure>
+      </div>
+      <footer class="card-footer">
+       <a class="card-footer-item" href="[%[=URL('documentation') ]]">
+        <i class="fas fa-search"></i>
+        Preview
+       </a>
+       <a class="card-footer-item" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/documentation.html">
         <i class="fas fa-code"></i>
         Source Code
        </a>
@@ -642,12 +712,12 @@
       </header>
       <div class="card-content">
        <figure class="image">
-        <a href="[%[=URL('login') ]]">
+        <a href="[%[=URL('loginA') ]]">
          <img alt="Login template screenshot" src="[%[=URL('static/tte/images/login.png') ]]"/></a>
        </figure>
       </div>
       <footer class="card-footer">
-       <a class="card-footer-item" href="[%[=URL('login') ]]">
+       <a class="card-footer-item" href="[%[=URL('loginA') ]]">
         <i class="fas fa-search"></i>
         Preview
        </a>
@@ -824,12 +894,12 @@
       </header>
       <div class="card-content">
        <figure class="image">
-        <a href="[%[=URL('register') ]]">
+        <a href="[%[=URL('registerA') ]]">
          <img alt="register template screenshot" src="[%[=URL('static/tte/images/register.png') ]]"/></a>
        </figure>
       </div>
       <footer class="card-footer">
-       <a class="card-footer-item" href="[%[=URL('register') ]]">
+       <a class="card-footer-item" href="[%[=URL('registerA') ]]">
         <i class="fas fa-search"></i>
         Preview
        </a>

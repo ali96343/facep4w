@@ -1,4 +1,4 @@
-timestamp: 2021-06-25T21:12:29.258894
+timestamp: 2021-10-06T08:38:00.021663
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "username" CHAR(512) UNIQUE,
@@ -8,17 +8,18 @@ CREATE TABLE "auth_user"(
     "last_name" CHAR(512),
     "sso_id" CHAR(512),
     "action_token" CHAR(512),
-    "last_password_change" TIMESTAMP
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
 );
 success!
-timestamp: 2021-06-25T21:12:29.271021
+timestamp: 2021-10-06T08:38:00.033900
 CREATE TABLE "auth_user_tag_groups"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "path" CHAR(512),
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2021-06-25T21:12:29.294394
+timestamp: 2021-10-12T09:48:22.555811
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),

@@ -1,0 +1,4 @@
+ratio= 1.00
+   src: vendor/nouislider/dist/nouislider.min.js
+   dst: vendor/nouislider/distribute/nouislider.min.js
+

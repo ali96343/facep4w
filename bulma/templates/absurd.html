@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 08.12.2020 08:51:35 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:13:21 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>biorex title text</title>
@@ -30,10 +30,20 @@
     font-weight: 400 !important;
     line-height: 36px !important;
 }
+
+#colored-dna-back {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==);
+    background-position: center;
+    background-size: cover;
+    background-color: #212931;
+}
   </style>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
 <style>
      .mysubmit_cls {
@@ -68,6 +78,42 @@
          padding: 0.2em 1em 0.2em 1em;
      }
 
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
 </style>
 
 </head>
@@ -88,21 +134,20 @@
    </div>
   </nav>
   <!-- Hero del producto -->
-  <section class="hero is-white is-fullheight">
+  <section class="hero is-white is-fullheight" id="colored-dna-back">
    <div class="hero-body">
     <div class="container">
      <div class="columns is-vcentered reverse-columns">
-      <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet is-5-desktop is-offset-1-desktop is-5-widescreen is-offset-1-widescreen is-5-fullhd is-offset-1-fullhd" data-aos="fade-down">
-       <h1 class="title titled is-1 mb-6">absurd illustrations that make sense</h1>
-       <h2 class="subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-sans-serif">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cupiditate dolorum vitae dolores nesciunt totam magni quas.</h2>
+      <div class="column is-10-mobile is-10-tablet is-5-desktop is-5-widescreen is-5-fullhd" data-aos="fade-down">
+       <h1 class="title titled is-1 mb-6">Evolving business with technology</h1>
        <div class="buttons">
-        <button class="button is-black">Download</button>
-        <button class="button">Subscribe</button>
+        <button class="button is-yellow">Esablished technical teams</button>
+        <button class="button">Less-technical teams</button>
        </div>
       </div>
-      <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet is-4-desktop is-offset-1-desktop is-4-widescreen is-offset-1-widescreen is-4-fullhd is-offset-1-fullhd" data-aos="fade-right">
+      <div class="column is-10-mobile is-10-tablet is-4-desktop is-7-widescreen is-4-fullhd is-offset-1-fullhd" data-aos="fade-right">
        <figure class="image is-square">
-        <img src="[%[=URL('static/tte/images/undraw_Camera_re_cnp4.svg') ]]"/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
        </figure>
       </div>
      </div>

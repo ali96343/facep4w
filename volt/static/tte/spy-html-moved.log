@@ -2,6 +2,7 @@ pages/dashboard/dashboard.html
 pages/examples/sign-in.html
 pages/examples/sign-up.html
 pages/examples/lock.html
+pages/upgrade-to-pro.html
 pages/transactions.html
 pages/settings.html
 pages/examples/forgot-password.html
@@ -14,4 +15,3 @@ pages/components/notifications.html
 pages/components/forms.html
 pages/components/modals.html
 pages/components/typography.html
-pages/upgrade-to-pro.html

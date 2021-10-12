@@ -12784,8 +12784,8 @@
                                     case 10:
                                     case 11:
                                         switch (f = {
-                                            t: e[2]
-                                        }, e[2]) {
+                                                t: e[2]
+                                            }, e[2]) {
                                             case "n":
                                                 f.v = e[1];
                                                 break;
@@ -20603,15 +20603,15 @@
                                             else
                                                 for (j = 0; j < N.length; ++j) A >= N[j][0].s.r && A <= N[j][0].e.r && _ >= N[j][0].s.c && _ <= N[j][0].e.c && (f.F = N[j][1]);
                                         switch ((E["number-columns-spanned"] || E["number-rows-spanned"]) && (R = parseInt(E["number-rows-spanned"], 10) || 0, D = parseInt(E["number-columns-spanned"], 10) || 0, I = {
-                                            s: {
-                                                r: A,
-                                                c: _
-                                            },
-                                            e: {
-                                                r: A + R - 1,
-                                                c: _ + D - 1
-                                            }
-                                        }, x.push(I)), E["number-columns-repeated"] && (P = parseInt(E["number-columns-repeated"], 10)), f.t) {
+                                                s: {
+                                                    r: A,
+                                                    c: _
+                                                },
+                                                e: {
+                                                    r: A + R - 1,
+                                                    c: _ + D - 1
+                                                }
+                                            }, x.push(I)), E["number-columns-repeated"] && (P = parseInt(E["number-columns-repeated"], 10)), f.t) {
                                             case "boolean":
                                                 f.t = "b", f.v = je(E["boolean-value"]);
                                                 break;

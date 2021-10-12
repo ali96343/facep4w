@@ -3,7 +3,6 @@
 "http://google.com/"
 "http://e.weibo.com/1341556070/AhQXtjbqh"
 'https://github.com/moment/moment/issues/1407 for more info.'
-"http://127.0.0.1:9999/test/index.html"
 "http://raphaeljs.com/"
 "http://www.w3.org/TR/SVG11/feature#BasicStructure"
 "http://www.w3.org/TR/SVG/paths.html#PathData"
@@ -14,6 +13,7 @@
 "http://www.w3.org/2000/svg"
 "http://www.w3.org/TR/SVG/"
 "http://en.wikipedia.org/wiki/HSL_and_HSV"
+"http://127.0.0.1:9999/test/index.html"
 'https://github.com/abpetkov/switchery'
 'http://localhost:9999/'
 'http://www.w3.org/1999/xhtml'

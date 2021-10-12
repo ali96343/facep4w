@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 02.01.2021 13:25:04 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:22:38 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic Page Info -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -30,7 +30,7 @@ gtag('js', new Date());
 gtag('config', 'UA-119386393-1');
   </script>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
    <!-- disable google analytics -->
@@ -69,6 +69,42 @@ gtag('config', 'UA-119386393-1');
          padding: 0.2em 1em 0.2em 1em;
      }
 
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
 </style>
 
 </head>
@@ -98,7 +134,7 @@ gtag('config', 'UA-119386393-1');
  </i>
  [%[ finvoice0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ finvoice0.custom['widgets']['f0']['_class']= 'form-control search-input'  ]]
- [%[ finvoice0.custom['widgets']['f0']['_placeholder']= 'Search Here_p4w'  ]]
+ [%[ finvoice0.custom['widgets']['f0']['_placeholder']= 'Search Here'  ]]
  [%[= finvoice0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= finvoice0.custom['errors']['f0'] if 'f0' in finvoice0.custom['errors'] else '' ]]</span>
@@ -116,7 +152,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ finvoice0.custom['widgets']['f1']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ finvoice0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ finvoice0.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ finvoice0.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= finvoice0.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= finvoice0.custom['errors']['f1'] if 'f1' in finvoice0.custom['errors'] else '' ]]</span>
@@ -130,7 +166,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ finvoice0.custom['widgets']['f2']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ finvoice0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ finvoice0.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ finvoice0.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= finvoice0.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= finvoice0.custom['errors']['f2'] if 'f2' in finvoice0.custom['errors'] else '' ]]</span>
@@ -144,7 +180,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ finvoice0.custom['widgets']['f3']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ finvoice0.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ finvoice0.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ finvoice0.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= finvoice0.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= finvoice0.custom['errors']['f3'] if 'f3' in finvoice0.custom['errors'] else '' ]]</span>
@@ -163,10 +199,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in finvoice0.custom['hidden_widgets'].keys(): ]]
-     [%[= finvoice0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">finvoice0</span></div>
 
@@ -249,11 +281,11 @@ gtag('config', 'UA-119386393-1');
        <span class="user-name">Ross C. Lopez</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-       <a class="dropdown-item" href="[%[=URL('profile') ]]">
+       <a class="dropdown-item" href="[%[=URL('profileA') ]]">
         <i class="dw dw-user1"></i>
         Profile
        </a>
-       <a class="dropdown-item" href="[%[=URL('profile') ]]">
+       <a class="dropdown-item" href="[%[=URL('profileA') ]]">
         <i class="dw dw-settings2"></i>
         Setting
        </a>
@@ -261,7 +293,7 @@ gtag('config', 'UA-119386393-1');
         <i class="dw dw-help"></i>
         Help
        </a>
-       <a class="dropdown-item" href="[%[=URL('login') ]]">
+       <a class="dropdown-item" href="[%[=URL('loginA') ]]">
         <i class="dw dw-logout"></i>
         Log Out
        </a>
@@ -543,7 +575,7 @@ gtag('config', 'UA-119386393-1');
          <a href="[%[=URL('videoXplayer') ]]">Video Player</a>
         </li>
         <li>
-         <a href="[%[=URL('login') ]]">Login</a>
+         <a href="[%[=URL('loginA') ]]">Login</a>
         </li>
         <li>
          <a href="[%[=URL('forgotXpassword') ]]">Forgot Password</a>
@@ -604,7 +636,7 @@ gtag('config', 'UA-119386393-1');
          <a href="[%[=URL('faq') ]]">FAQ</a>
         </li>
         <li>
-         <a href="[%[=URL('profile') ]]">Profile</a>
+         <a href="[%[=URL('profileA') ]]">Profile</a>
         </li>
         <li>
          <a href="[%[=URL('gallery') ]]">Gallery</a>
@@ -858,39 +890,103 @@ gtag('config', 'UA-119386393-1');
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+    ! function(forms_url) {
 
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
+        for (const f of document.forms) {
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            f.onsubmit = async (e) => {
 
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+                e.preventDefault();
+
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
+
+                const result = await response.json();
+
+                if (result.js_alert === 'sweet2') {
+
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
         };
-    }
+
+    }([%[ = XML(ctrl_template_url) ]]);
+
 </script>
 
  <!-- rm_flashdiv -->
 <script>
-     !function() { 
-         const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-     }();
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
 </script>
 
+
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
 </body>
 </html>

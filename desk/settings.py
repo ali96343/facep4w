@@ -6,33 +6,42 @@ This is an optional file that defined app level settings such as:
 This file is provided as an example:
 """
 import os
+from py4web.core import required_folder
 
 # db settings
 APP_FOLDER = os.path.dirname(__file__)
 APP_NAME = os.path.split(APP_FOLDER)[-1]
 # DB_FOLDER:    Sets the place where migration files will be created
 #               and is the store location for SQLite databases
-DB_FOLDER = os.path.join(APP_FOLDER, "databases")
+DB_FOLDER = required_folder(APP_FOLDER, "databases")
 DB_URI = "sqlite://storage.db"
 DB_POOL_SIZE = 1
 DB_MIGRATE = True
 DB_FAKE_MIGRATE = False  # maybe?
 
-# location where to store uploaded files:
-UPLOAD_FOLDER = os.path.join(APP_FOLDER, "uploads")
+# location where static files are stored:
+STATIC_FOLDER = required_folder(APP_FOLDER, "static")
 
-# send email on regstration
+# location where to store uploaded files:
+UPLOAD_FOLDER = required_folder(APP_FOLDER, "uploads")
+
+# send verification email on registration
 VERIFY_EMAIL = True
 
 # account requires to be approved ?
 REQUIRES_APPROVAL = False
 
-# ALLOWED_ACTIONS:
-# ["all"] 
-# ["login", "logout", "request_reset_password", "reset_password", "change_password", "change_email", "update_profile"]
-# if you add "login", add also "logout"
-ALLOWED_ACTIONS = ["all"]
+# auto login after registration
+# requires False VERIFY_EMAIL & REQUIRES_APPROVAL 
+LOGIN_AFTER_REGISTRATION = False
 
+# ALLOWED_ACTIONS in API / default Forms:
+# ["all"] 
+# ["login", "logout", "request_reset_password", "reset_password", \
+#  "change_password", "change_email", "profile", "config", "register",
+#  "verify_email", "unsubscribe"]
+# Note: if you add "login", add also "logout"
+ALLOWED_ACTIONS = ["all"]
 
 # email settings
 SMTP_SSL = False
@@ -51,6 +60,9 @@ REDIS_SERVER = "localhost:6379"
 LOGGERS = [
     "warning:stdout"
 ]  # syntax "severity:filename" filename can be stderr or stdout
+
+# Disable default login when using OAuth
+DEFAULT_LOGIN_ENABLED = True
 
 # single sign on Google (will be used if provided)
 OAUTH2GOOGLE_CLIENT_ID = None
@@ -78,7 +90,7 @@ LDAP_SETTINGS = {
 }
 
 # i18n settings
-T_FOLDER = os.path.join(APP_FOLDER, "translations")
+T_FOLDER = required_folder(APP_FOLDER, "translations")
 
 # Celery settings
 USE_CELERY = False

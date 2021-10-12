@@ -1,0 +1,38 @@
+' + name + '.png'
+"apple.png"
+"img/picture.jpg"
+'Roboto-Regular.ttf'
+'Roboto-Medium.ttf'
+'Roboto-Italic.ttf'
+'use strict';
+
+	var _ = __webpack_require__(7);
+	var FontProvider = __webpack_require__(9);
+	var LayoutBuilder = __webpack_require__(11);
+	var PdfKit = __webpack_require__(24);
+	var PDFReference = __webpack_require__(46);
+	var sizes = __webpack_require__(102);
+	var ImageMeasure = __webpack_require__(103);
+	var textDecorator = __webpack_require__(104);
+	var FontProvider = __webpack_require__(9);
+
+	////////////////////////////////////////
+	// PdfPrinter
+
+	/**
+	 * @class Creates an instance of a PdfPrinter which turns document definition into a pdf
+	 *
+	 * @param {Object} fontDescriptors font definition dictionary
+	 *
+	 * @example
+	 * var fontDescriptors = {
+	 *	Roboto: {
+	 *		normal: 'fonts/Roboto-Regular.ttf'
+'fonts/Roboto-Medium.ttf'
+'fonts/Roboto-Italic.ttf'
+"myimage.png"
+'hs.png'
+'hv.png'
+' + themeName + '.png'
+"alert(1337)" src="nosuchimage.png"
+', name + '.png'

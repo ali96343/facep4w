@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 02.01.2021 13:25:03 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:22:37 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic Page Info -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -30,7 +30,7 @@ gtag('js', new Date());
 gtag('config', 'UA-119386393-1');
   </script>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
    <!-- disable google analytics -->
@@ -68,6 +68,42 @@ gtag('config', 'UA-119386393-1');
          border: 2px dashed red;
          padding: 0.2em 1em 0.2em 1em;
      }
+
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
 
 </style>
 

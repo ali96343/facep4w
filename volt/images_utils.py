@@ -7,6 +7,12 @@ import pydal
 
 from .atab_utils import sql2table
 
+# pip install Pillow
+# from PIL import Image
+
+# im = Image.open('whatever.png')
+# width, height = im.size
+
 @action("ima_grid", method=["GET", "POST"])
 @action.uses(Template("ima_grid.html", delimiters="[[ ]]"), db, session, T)
 def ima_grid():
@@ -39,7 +45,7 @@ def ima_grid():
         pagi = True,
     )
 
-    return dict(message="test sql2table", mytab=mytab)
+    return dict(message="app_images", mytab=mytab)
 
 
 @action("some_func", method=["GET", "POST"])

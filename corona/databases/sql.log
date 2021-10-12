@@ -1,4 +1,4 @@
-timestamp: 2021-06-25T21:12:43.786352
+timestamp: 2021-10-12T08:56:20.950540
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "username" CHAR(512) UNIQUE,
@@ -12,14 +12,14 @@ CREATE TABLE "auth_user"(
     "past_passwords_hash" TEXT
 );
 success!
-timestamp: 2021-06-25T21:12:43.798805
+timestamp: 2021-10-12T08:56:20.964057
 CREATE TABLE "auth_user_tag_groups"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "path" CHAR(512),
     "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2021-06-25T21:12:43.839246
+timestamp: 2021-10-12T08:56:21.009647
 CREATE TABLE "test_table"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512),
@@ -27,7 +27,7 @@ CREATE TABLE "test_table"(
     "f2" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:43.889520
+timestamp: 2021-10-12T08:56:21.073437
 CREATE TABLE "uploaded_files"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "orig_file_name" CHAR(512),
@@ -36,51 +36,64 @@ CREATE TABLE "uploaded_files"(
     "time" TIMESTAMP
 );
 success!
-timestamp: 2021-06-25T21:12:43.902403
+timestamp: 2021-10-12T08:56:21.086401
 CREATE TABLE "app_images"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:43.925821
-CREATE TABLE "css_js_files"(
+timestamp: 2021-10-12T08:56:21.112085
+CREATE TABLE "app_css_js"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "orig_file_path" CHAR(512),
-    "found_in_file" CHAR(512),
-    "app_name" CHAR(512)
+    "f0" CHAR(512)
 );
 success!
-timestamp: 2021-06-25T21:12:43.936052
+timestamp: 2021-10-12T08:56:21.124005
+CREATE TABLE "app_js_script"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "in_html" CHAR(512)
+);
+success!
+timestamp: 2021-10-12T08:56:21.136618
+CREATE TABLE "app_html_text"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "f0" CHAR(512),
+    "key" CHAR(512),
+    "in_html" CHAR(512)
+);
+success!
+timestamp: 2021-10-12T08:56:21.148655
 CREATE TABLE "dfindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:43.946314
+timestamp: 2021-10-12T08:56:21.159674
 CREATE TABLE "dfbuttons0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:43.956668
+timestamp: 2021-10-12T08:56:21.171196
 CREATE TABLE "dfdropdowns0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:43.967061
+timestamp: 2021-10-12T08:56:21.182633
 CREATE TABLE "dftypography0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:43.977205
+timestamp: 2021-10-12T08:56:21.194668
 CREATE TABLE "dfbasicXelements0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:43.987743
+timestamp: 2021-10-12T08:56:21.206318
 CREATE TABLE "dfbasicXelements1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -90,7 +103,7 @@ CREATE TABLE "dfbasicXelements1"(
     "f4" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:43.998636
+timestamp: 2021-10-12T08:56:21.218691
 CREATE TABLE "dfbasicXelements2"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -101,7 +114,7 @@ CREATE TABLE "dfbasicXelements2"(
     "f5" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:44.010665
+timestamp: 2021-10-12T08:56:21.230831
 CREATE TABLE "dfbasicXelements3"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -114,7 +127,7 @@ CREATE TABLE "dfbasicXelements3"(
     "f7" TEXT
 );
 success!
-timestamp: 2021-06-25T21:12:44.021612
+timestamp: 2021-10-12T08:56:21.242759
 CREATE TABLE "dfbasicXelements4"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1),
@@ -127,7 +140,7 @@ CREATE TABLE "dfbasicXelements4"(
     "f7" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.032640
+timestamp: 2021-10-12T08:56:21.255060
 CREATE TABLE "dfbasicXelements5"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1),
@@ -142,7 +155,7 @@ CREATE TABLE "dfbasicXelements5"(
     "f9" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.042938
+timestamp: 2021-10-12T08:56:21.266936
 CREATE TABLE "dfbasicXelements6"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -150,7 +163,7 @@ CREATE TABLE "dfbasicXelements6"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:44.054534
+timestamp: 2021-10-12T08:56:21.279862
 CREATE TABLE "dfbasicXelements7"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -168,31 +181,31 @@ CREATE TABLE "dfbasicXelements7"(
     "f12" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.065675
+timestamp: 2021-10-12T08:56:21.291044
 CREATE TABLE "dfbasicXtable0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.083652
+timestamp: 2021-10-12T08:56:21.303175
 CREATE TABLE "dfchartjs0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.095502
+timestamp: 2021-10-12T08:56:21.315265
 CREATE TABLE "dfmdi0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.105829
+timestamp: 2021-10-12T08:56:21.326911
 CREATE TABLE "dfblankXpage0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.118698
+timestamp: 2021-10-12T08:56:21.339044
 CREATE TABLE "dfloginA0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -200,7 +213,7 @@ CREATE TABLE "dfloginA0"(
     "f2" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:44.129619
+timestamp: 2021-10-12T08:56:21.351197
 CREATE TABLE "dfregisterA0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -209,7 +222,7 @@ CREATE TABLE "dfregisterA0"(
     "f3" CHAR(1)
 );
 success!
-timestamp: 2021-06-25T21:12:44.140939
+timestamp: 2021-10-12T08:56:21.363880
 CREATE TABLE "tindex0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -222,7 +235,7 @@ CREATE TABLE "tindex0"(
     "f7" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.152030
+timestamp: 2021-10-12T08:56:21.376024
 CREATE TABLE "tindex1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -231,7 +244,7 @@ CREATE TABLE "tindex1"(
     "f3" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.162637
+timestamp: 2021-10-12T08:56:21.388406
 CREATE TABLE "tbasicXtable0"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -240,7 +253,7 @@ CREATE TABLE "tbasicXtable0"(
     "f3" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.173508
+timestamp: 2021-10-12T08:56:21.400608
 CREATE TABLE "tbasicXtable1"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -249,7 +262,7 @@ CREATE TABLE "tbasicXtable1"(
     "f3" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.184326
+timestamp: 2021-10-12T08:56:21.413054
 CREATE TABLE "tbasicXtable2"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -259,7 +272,7 @@ CREATE TABLE "tbasicXtable2"(
     "f4" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.195479
+timestamp: 2021-10-12T08:56:21.425734
 CREATE TABLE "tbasicXtable3"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -269,7 +282,7 @@ CREATE TABLE "tbasicXtable3"(
     "f4" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.206836
+timestamp: 2021-10-12T08:56:21.447028
 CREATE TABLE "tbasicXtable4"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),
@@ -278,7 +291,7 @@ CREATE TABLE "tbasicXtable4"(
     "f3" CHAR(1024)
 );
 success!
-timestamp: 2021-06-25T21:12:44.217906
+timestamp: 2021-10-12T08:56:21.462762
 CREATE TABLE "tbasicXtable5"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "f0" CHAR(1024),

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
  <head>
-            <!-- 01.12.2020 12:08:02 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 15:22:52 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta charset="utf-8"/>
   <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <title>biorex title text</title>
@@ -56,42 +56,79 @@
 		============================================ -->
   <script src="[%[=URL('static/tte/js/vendor/modernizr-2.8.3.min.js') ]]"></script>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
 
-<!-- mysubmit button -->
-<style>.mysubmit_cls {
-    width: 6em;
-    background-color: LightGray;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
-    font-weight: bold;
-    border: 1px dashed black;
-    text-decoration: underline;
-}
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
 
-.mysubmit_cls:hover {
-    background-color: LightCyan;
-    cursor: pointer;
-}
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
 
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
 
-.flashdiv {
-    text-align: center;
-    position: absolute;
-    display: inline-block;
-}
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
 
-.flashspan {
-    position: relative;
-    z-index: 100;
-    background-color: #F0FFF0;
-    color: black;
-    border: 2px dashed red;
-    padding: 0.2em 1em 0.2em 1em;
-}
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
 
 
 </style>
@@ -129,7 +166,7 @@
 <div>
 [%[= fanalytics0.custom['begin'] ]]
  [%[ fanalytics0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fanalytics0.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fanalytics0.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fanalytics0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fanalytics0.custom['errors']['f0'] if 'f0' in fanalytics0.custom['errors'] else '' ]]</span>
@@ -143,17 +180,7 @@
  [%[= fanalytics0.custom['submit'] ]]
 
 
- [%[ for hidden_widget in fanalytics0.custom['hidden_widgets'].keys(): ]]
-     [%[= fanalytics0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
-
-  
-<div class="divfanalytics0 flashdiv"> <span class="flashspan">fanalytics0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfanalytics0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fanalytics0</span></div>
 
 
 [%[= fanalytics0.custom['end'] ]]
@@ -381,7 +408,7 @@
 <!-- BEGIN view: fanalytics1, db_table: dfanalytics1 -->
 <div>
 [%[= fanalytics1.custom['begin'] ]]
- [%[ fanalytics1.custom['widgets']['f0']['_placeholder']= 'Search People_p4w'  ]]
+ [%[ fanalytics1.custom['widgets']['f0']['_placeholder']= 'Search People'  ]]
  [%[ fanalytics1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fanalytics1.custom['widgets']['f0'] ]]
 
@@ -396,17 +423,7 @@
  [%[= fanalytics1.custom['submit'] ]]
 
 
- [%[ for hidden_widget in fanalytics1.custom['hidden_widgets'].keys(): ]]
-     [%[= fanalytics1.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
-
-  
-<div class="divfanalytics1 flashdiv"> <span class="flashspan">fanalytics1</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divfanalytics1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+  <div class="flashdiv"><span class="flashspan">fanalytics1</span></div>
 
 
 [%[= fanalytics1.custom['end'] ]]
@@ -988,13 +1005,7 @@
 </table>
 <!-- end rows_tanalytics0 -->
 
-
-<div class="divtanalytics0 flashdiv"> <span class="flashspan">tanalytics0</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divtanalytics0');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+<div class="flashdiv"><span class="flashspan">tanalytics0</span></div>
 
        </div>
       </div>
@@ -1026,13 +1037,7 @@
 </table>
 <!-- end rows_tanalytics1 -->
 
-
-<div class="divtanalytics1 flashdiv"> <span class="flashspan">tanalytics1</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divtanalytics1');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+<div class="flashdiv"><span class="flashspan">tanalytics1</span></div>
 
        </div>
       </div>
@@ -1064,13 +1069,7 @@
 </table>
 <!-- end rows_tanalytics2 -->
 
-
-<div class="divtanalytics2 flashdiv"> <span class="flashspan">tanalytics2</span> </div>
-<script>
-  !function() { const elems = document.querySelectorAll('.divtanalytics2');
-      for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-  }();
-</script>
+<div class="flashdiv"><span class="flashspan">tanalytics2</span></div>
 
        </div>
       </div>
@@ -1158,32 +1157,103 @@
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+    ! function(forms_url) {
 
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
+        for (const f of document.forms) {
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            f.onsubmit = async (e) => {
 
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+                e.preventDefault();
+
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
+
+                const result = await response.json();
+
+                if (result.js_alert === 'sweet2') {
+
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
         };
-  }
+
+    }([%[ = XML(ctrl_template_url) ]]);
+
+</script>
+
+ <!-- rm_flashdiv -->
+<script>
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
 </script>
 
 
- </body>
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
+</body>
 </html>

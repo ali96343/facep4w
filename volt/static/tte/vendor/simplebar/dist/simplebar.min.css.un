@@ -144,21 +144,12 @@
     left: 2px;
     right: 2px;
     opacity: 0;
-    transition: opacity .2s .5s linear
-}
-
-.simplebar-hover .simplebar-scrollbar:before,
-.simplebar-mouse-entered .simplebar-scrollbar:before,
-.simplebar-scrolling .simplebar-scrollbar:before {
-    opacity: .5;
-    transition-delay: 0s;
-    transition-duration: 0s
+    transition: opacity .2s linear
 }
 
 .simplebar-scrollbar.simplebar-visible:before {
     opacity: .5;
-    transition-delay: 0s;
-    transition-duration: 0s
+    transition: opacity 0s linear
 }
 
 .simplebar-track.simplebar-vertical {
@@ -166,11 +157,9 @@
     width: 11px
 }
 
-.simplebar-scrollbar:before {
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
     top: 2px;
-    bottom: 2px;
-    left: 2px;
-    right: 2px
+    bottom: 2px
 }
 
 .simplebar-track.simplebar-horizontal {
@@ -178,11 +167,17 @@
     height: 11px
 }
 
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+    height: 100%;
+    left: 2px;
+    right: 2px
+}
+
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
     right: auto;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 2px;
+    height: 7px;
     min-height: 0;
     min-width: 10px;
     width: auto
@@ -193,7 +188,7 @@
     left: 0
 }
 
-.simplebar-dummy-scrollbar-size {
+.hs-dummy-scrollbar-size {
     direction: rtl;
     position: fixed;
     opacity: 0;
@@ -201,14 +196,7 @@
     height: 500px;
     width: 500px;
     overflow-y: hidden;
-    overflow-x: scroll;
-    -ms-overflow-style: scrollbar !important
-}
-
-.simplebar-dummy-scrollbar-size>div {
-    width: 200%;
-    height: 200%;
-    margin: 10px 0
+    overflow-x: scroll
 }
 
 .simplebar-hide-scrollbar {

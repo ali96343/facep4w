@@ -1,11 +1,11 @@
 <!--
 
 =========================================================
-* Volt Free - Bootstrap 5 Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard
-* Copyright 2020 Themesberg (https://www.themesberg.com)
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
 * License (https://themesberg.com/licensing)
 
 * Designed and coded by https://themesberg.com
@@ -18,12 +18,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.04.2021 14:45:47 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:12:56 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="Volt Free Bootstrap Dashboard - Modals" name="title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Modals" name="title"/>
   <meta content="Themesberg" name="author"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." name="description"/>
   <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
@@ -31,13 +31,13 @@
   <!-- Open Graph / Facebook -->
   <meta content="website" property="og:type"/>
   <meta content="https://demo.themesberg.com/volt-pro" property="og:url"/>
-  <meta content="Volt Free Bootstrap Dashboard - Modals" property="og:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Modals" property="og:title"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." property="og:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" property="twitter:card"/>
   <meta content="https://demo.themesberg.com/volt-pro" property="twitter:url"/>
-  <meta content="Volt Free Bootstrap Dashboard - Modals" property="twitter:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Modals" property="twitter:title"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." property="twitter:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg" property="twitter:image"/>
   <!-- Favicon -->
@@ -48,8 +48,6 @@
   <link color="#ffffff" href="[%[=URL('static/tte/assets/img/favicon/safari-pinned-tab.svg') ]]" rel="mask-icon"/>
   <meta content="#ffffff" name="msapplication-TileColor"/>
   <meta content="#ffffff" name="theme-color"/>
-  <!-- Fontawesome -->
-  <link href="[%[=URL('static/tte/vendor/@fortawesome/fontawesome-free/css/all.min.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- Sweet Alert -->
   <link href="[%[=URL('static/tte/vendor/sweetalert2/dist/sweetalert2.min.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- Notyf -->
@@ -97,39 +95,81 @@
          padding: 0.2em 1em 0.2em 1em;
      }
 
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
 </style>
 
 </head>
  <body>
   <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
-  <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
+  <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
    <a class="navbar-brand me-lg-5" href="[%[=URL('index') ]]">
     <img alt="Volt logo" class="navbar-brand-dark" src="[%[=URL('static/tte/assets/img/brand/light.svg') ]]"/>
     <img alt="Volt logo" class="navbar-brand-light" src="[%[=URL('static/tte/assets/img/brand/dark.svg') ]]"/></a>
    <div class="d-flex align-items-center">
-    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler d-md-none collapsed" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" type="button">
+    <button aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler d-lg-none collapsed" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" type="button">
      <span class="navbar-toggler-icon"></span>
     </button>
    </div>
   </nav>
-  <nav class="sidebar d-md-block bg-dark text-white collapse" data-simplebar="" id="sidebarMenu">
+  <nav class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar="" id="sidebarMenu">
    <div class="sidebar-inner px-4 pt-3">
     <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
      <div class="d-flex align-items-center">
-      <div class="user-avatar lg-avatar me-4">
+      <div class="avatar-lg me-4">
        <img alt="Bonnie Green" class="card-img-top rounded-circle border-white" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
       <div class="d-block">
-       <h2 class="h6">Hi, Jane</h2>
-       <a class="btn btn-secondary text-dark btn-xs" href="[%[=URL('signXin') ]]">
-        <span class="me-2">
-         <span class="fas fa-sign-out-alt"></span>
-        </span>
+       <h2 class="h5 mb-3">Hi, Jane</h2>
+       <a class="btn btn-secondary btn-sm d-inline-flex align-items-center" href="[%[=URL('signXin') ]]">
+        <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+         </path>
+        </svg>
         Sign Out
        </a>
       </div>
      </div>
      <div class="collapse-close d-md-none">
-      <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" class="fas fa-times" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" href="#sidebarMenu"></a>
+      <a aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation" data-bs-target="#sidebarMenu" data-bs-toggle="collapse" href="#sidebarMenu">
+       <svg class="icon icon-xs" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd">
+        </path>
+       </svg>
+      </a>
      </div>
     </div>
     <ul class="nav flex-column pt-3 pt-md-0">
@@ -143,7 +183,12 @@
      <li class="nav-item">
       <a class="nav-link" href="[%[=URL('dashboard') ]]">
        <span class="sidebar-icon">
-        <span class="fas fa-chart-pie"></span>
+        <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z">
+         </path>
+         <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z">
+         </path>
+        </svg>
        </span>
        <span class="sidebar-text">Dashboard</span>
       </a>
@@ -152,19 +197,27 @@
       <a class="nav-link d-flex justify-content-between" href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank">
        <span>
         <span class="sidebar-icon">
-         <span class="fas fa-th"></span>
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+          </path>
+         </svg>
         </span>
         <span class="sidebar-text">Kanban</span>
        </span>
        <span>
-        <span class="badge badge-md bg-secondary ms-1 text-dark">Pro</span>
+        <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
        </span>
       </a>
      </li>
      <li class="nav-item">
       <a class="nav-link" href="[%[=URL('transactions') ]]">
        <span class="sidebar-icon">
-        <span class="fas fa-hand-holding-usd"></span>
+        <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z">
+         </path>
+         <path clip-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
        <span class="sidebar-text">Transactions</span>
       </a>
@@ -172,21 +225,62 @@
      <li class="nav-item">
       <a class="nav-link" href="[%[=URL('settings') ]]">
        <span class="sidebar-icon">
-        <span class="fas fa-cog"></span>
+        <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
        <span class="sidebar-text">Settings</span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link d-flex justify-content-between" href="https://demo.themesberg.com/volt-pro/pages/calendar.html" target="_blank">
+       <span>
+        <span class="sidebar-icon">
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" fill-rule="evenodd">
+          </path>
+         </svg>
+        </span>
+        <span class="sidebar-text">Calendar</span>
+       </span>
+       <span>
+        <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
+       </span>
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link d-flex justify-content-between" href="https://demo.themesberg.com/volt-pro/pages/map.html" target="_blank">
+       <span>
+        <span class="sidebar-icon">
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" fill-rule="evenodd">
+          </path>
+         </svg>
+        </span>
+        <span class="sidebar-text">Map</span>
+       </span>
+       <span>
+        <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
+       </span>
       </a>
      </li>
      <li class="nav-item">
       <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-target="#submenu-app" data-bs-toggle="collapse">
        <span>
         <span class="sidebar-icon">
-         <span class="fas fa-table"></span>
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" fill-rule="evenodd">
+          </path>
+         </svg>
         </span>
         <span class="sidebar-text">Tables</span>
        </span>
        <span class="link-arrow">
-        <span class="fas fa-chevron-right"></span>
+        <svg class="icon icon-sm" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
       </span>
       <div aria-expanded="false" class="multi-level collapse" id="submenu-app" role="list">
@@ -203,12 +297,20 @@
       <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-target="#submenu-pages" data-bs-toggle="collapse">
        <span>
         <span class="sidebar-icon">
-         <span class="far fa-file-alt"></span>
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" fill-rule="evenodd">
+          </path>
+          <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z">
+          </path>
+         </svg>
         </span>
         <span class="sidebar-text">Page examples</span>
        </span>
        <span class="link-arrow">
-        <span class="fas fa-chevron-right"></span>
+        <svg class="icon icon-sm" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
       </span>
       <div aria-expanded="false" class="multi-level collapse" id="submenu-pages" role="list">
@@ -255,12 +357,20 @@
       <span class="nav-link d-flex justify-content-between align-items-center" data-bs-target="#submenu-components" data-bs-toggle="collapse">
        <span>
         <span class="sidebar-icon">
-         <span class="fas fa-box-open"></span>
+         <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z">
+          </path>
+          <path clip-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" fill-rule="evenodd">
+          </path>
+         </svg>
         </span>
         <span class="sidebar-text">Components</span>
        </span>
        <span class="link-arrow">
-        <span class="fas fa-chevron-right"></span>
+        <svg class="icon icon-sm" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
       </span>
       <div aria-expanded="false" class="multi-level collapse show" id="submenu-components" role="list">
@@ -298,29 +408,35 @@
        </ul>
       </div>
      </li>
-     <li class="dropdown-divider mt-4 mb-3 border-black" role="separator"></li>
+     <li class="dropdown-divider mt-4 mb-3 border-gray-700" role="separator"></li>
      <li class="nav-item">
       <a class="nav-link d-flex align-items-center" href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/" target="_blank">
        <span class="sidebar-icon">
-        <span class="fas fa-book"></span>
+        <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
        <span class="sidebar-text">
         Documentation
-        <span class="badge badge-md bg-secondary ms-1 text-dark">v1.3</span>
+        <span class="badge badge-sm bg-secondary ms-1 text-gray-800">v1.4</span>
        </span>
       </a>
      </li>
      <li class="nav-item">
       <a class="nav-link d-flex align-items-center" href="https://themesberg.com" target="_blank">
        <span class="sidebar-icon">
-        <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="20"/></span>
+        <img alt="Themesberg Logo" height="20" src="[%[=URL('static/tte/assets/img/themesberg.svg') ]]" width="28"/></span>
        <span class="sidebar-text">Themesberg</span>
       </a>
      </li>
      <li class="nav-item">
       <a class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro" href="[%[=URL('upgradeXtoXpro') ]]">
-       <span class="sidebar-icon">
-        <span class="fas fa-rocket me-2"></span>
+       <span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
+        <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" fill-rule="evenodd">
+         </path>
+        </svg>
        </span>
        <span>Upgrade to Pro</span>
       </a>
@@ -340,8 +456,10 @@
 [%[= fmodals0.custom['begin'] ]]
 <div class="input-group input-group-merge search-bar">
  <span class="input-group-text" id="topbar-addon">
-  <span class="fas fa-search">
-  </span>
+  <svg aria-hidden="true" class="icon icon-xs" fill="currentColor" viewbox="0 0 20 20" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg">
+   <path clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" fill-rule="evenodd">
+   </path>
+  </svg>
  </span>
  [%[ fmodals0.custom['widgets']['f0']['_aria-describedby']= 'topbar-addon'  ]]
  [%[ fmodals0.custom['widgets']['f0']['_aria-label']= 'Search'  ]]
@@ -364,10 +482,6 @@
 
 </div>
 
- [%[ for hidden_widget in fmodals0.custom['hidden_widgets'].keys(): ]]
-     [%[= fmodals0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
-
   <div class="flashdiv"><span class="flashspan">fmodals0</span></div>
 
 
@@ -375,24 +489,25 @@
 </div>
 <!-- END fmodals0-->
 
+       <!-- / Search form -->
       </div>
       <!-- Navbar links -->
       <ul class="navbar-nav align-items-center">
        <li class="nav-item dropdown">
-        <a aria-expanded="false" aria-haspopup="true" class="nav-link text-dark me-lg-3 icon-notifications dropdown-toggle" data-bs-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
-         <span class="icon icon-sm">
-          <span class="fas fa-bell bell-shake"></span>
-          <span class="icon-badge rounded-circle unread-notifications"></span>
-         </span>
+        <a aria-expanded="false" class="nav-link text-dark notification-bell unread dropdown-toggle" data-bs-display="static" data-bs-toggle="dropdown" data-unread-notifications="true" href="#" role="button">
+         <svg class="icon icon-sm text-gray-900" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+          </path>
+         </svg>
         </a>
-        <div class="dropdown-menu dashboard-dropdown dropdown-menu-lg dropdown-menu-center mt-2 py-0">
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-center mt-2 py-0">
          <div class="list-group list-group-flush">
           <a class="text-center text-primary fw-bold border-bottom border-light py-3" href="#">Notifications</a>
-          <a class="list-group-item list-group-item-action border-bottom border-light" href="#">
+          <a class="list-group-item list-group-item-action border-bottom" href="#">
            <div class="row align-items-center">
             <div class="col-auto">
              <!-- Avatar -->
-             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
+             <img alt="Image placeholder" class="avatar-md rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-1.jpg') ]]"/></div>
             <div class="col ps-0 ms-2">
              <div class="d-flex justify-content-between align-items-center">
               <div>
@@ -406,11 +521,11 @@
             </div>
            </div>
           </a>
-          <a class="list-group-item list-group-item-action border-bottom border-light" href="#">
+          <a class="list-group-item list-group-item-action border-bottom" href="#">
            <div class="row align-items-center">
             <div class="col-auto">
              <!-- Avatar -->
-             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
+             <img alt="Image placeholder" class="avatar-md rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-2.jpg') ]]"/></div>
             <div class="col ps-0 ms-2">
              <div class="d-flex justify-content-between align-items-center">
               <div>
@@ -424,11 +539,11 @@
             </div>
            </div>
           </a>
-          <a class="list-group-item list-group-item-action border-bottom border-light" href="#">
+          <a class="list-group-item list-group-item-action border-bottom" href="#">
            <div class="row align-items-center">
             <div class="col-auto">
              <!-- Avatar -->
-             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
+             <img alt="Image placeholder" class="avatar-md rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/></div>
             <div class="col ps-0 m-2">
              <div class="d-flex justify-content-between align-items-center">
               <div>
@@ -438,15 +553,15 @@
                <small>5 hrs ago</small>
               </div>
              </div>
-             <p class="font-small mt-1 mb-0">Tagged you in a document called "First quarter financial plans",</p>
+             <p class="font-small mt-1 mb-0">Tagged you in a document called "Financial plans",</p>
             </div>
            </div>
           </a>
-          <a class="list-group-item list-group-item-action border-bottom border-light" href="#">
+          <a class="list-group-item list-group-item-action border-bottom" href="#">
            <div class="row align-items-center">
             <div class="col-auto">
              <!-- Avatar -->
-             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
+             <img alt="Image placeholder" class="avatar-md rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-4.jpg') ]]"/></div>
             <div class="col ps-0 ms-2">
              <div class="d-flex justify-content-between align-items-center">
               <div>
@@ -460,11 +575,11 @@
             </div>
            </div>
           </a>
-          <a class="list-group-item list-group-item-action border-bottom border-light" href="#">
+          <a class="list-group-item list-group-item-action border-bottom" href="#">
            <div class="row align-items-center">
             <div class="col-auto">
              <!-- Avatar -->
-             <img alt="Image placeholder" class="user-avatar lg-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
+             <img alt="Image placeholder" class="avatar-md rounded" src="[%[=URL('static/tte/assets/img/team/profile-picture-5.jpg') ]]"/></div>
             <div class="col ps-0 ms-2">
              <div class="d-flex justify-content-between align-items-center">
               <div>
@@ -478,39 +593,62 @@
             </div>
            </div>
           </a>
-          <a class="dropdown-item text-center text-primary fw-bold rounded-bottom py-3" href="#">View all</a>
+          <a class="dropdown-item text-center fw-bold rounded-bottom py-3" href="#">
+           <svg class="icon icon-xxs text-gray-400 me-1" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z">
+            </path>
+            <path clip-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" fill-rule="evenodd">
+            </path>
+           </svg>
+           View all
+          </a>
          </div>
         </div>
        </li>
-       <li class="nav-item dropdown">
+       <li class="nav-item dropdown ms-lg-3">
         <a aria-expanded="false" class="nav-link dropdown-toggle pt-1 px-0" data-bs-toggle="dropdown" href="#" role="button">
          <div class="media d-flex align-items-center">
-          <img alt="Image placeholder" class="user-avatar md-avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
+          <img alt="Image placeholder" class="avatar rounded-circle" src="[%[=URL('static/tte/assets/img/team/profile-picture-3.jpg') ]]"/>
           <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-           <span class="mb-0 font-small fw-bold">Bonnie Green</span>
+           <span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
           </div>
          </div>
         </a>
-        <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-0">
-         <a class="dropdown-item rounded-top fw-bold" href="#">
-          <span class="far fa-user-circle"></span>
+        <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
+         <a class="dropdown-item d-flex align-items-center" href="#">
+          <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+           <path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" fill-rule="evenodd">
+           </path>
+          </svg>
           My Profile
          </a>
-         <a class="dropdown-item fw-bold" href="#">
-          <span class="fas fa-cog"></span>
+         <a class="dropdown-item d-flex align-items-center" href="#">
+          <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+           <path clip-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" fill-rule="evenodd">
+           </path>
+          </svg>
           Settings
          </a>
-         <a class="dropdown-item fw-bold" href="#">
-          <span class="fas fa-envelope-open-text"></span>
+         <a class="dropdown-item d-flex align-items-center" href="#">
+          <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+           <path clip-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" fill-rule="evenodd">
+           </path>
+          </svg>
           Messages
          </a>
-         <a class="dropdown-item fw-bold" href="#">
-          <span class="fas fa-user-shield"></span>
+         <a class="dropdown-item d-flex align-items-center" href="#">
+          <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+           <path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" fill-rule="evenodd">
+           </path>
+          </svg>
           Support
          </a>
-         <div class="dropdown-divider my-0" role="separator"></div>
-         <a class="dropdown-item rounded-bottom fw-bold" href="#">
-          <span class="fas fa-sign-out-alt text-danger"></span>
+         <div class="dropdown-divider my-1" role="separator"></div>
+         <a class="dropdown-item d-flex align-items-center" href="#">
+          <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+           </path>
+          </svg>
           Logout
          </a>
         </div>
@@ -520,15 +658,18 @@
     </div>
    </nav>
    <div class="py-4">
-    <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
      <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
       <li class="breadcrumb-item">
        <a href="#">
-        <span class="fas fa-home"></span>
+        <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+         </path>
+        </svg>
        </a>
       </li>
       <li class="breadcrumb-item">
-       <a href="#">Components</a>
+       <a href="#">Volt</a>
       </li>
       <li aria-current="page" class="breadcrumb-item active">Modals</li>
      </ol>
@@ -548,12 +689,12 @@
    </div>
    <div class="row">
     <div class="col-12 mb-4">
-     <div class="card border-light shadow-sm">
+     <div class="card border-0 shadow">
       <div class="card-body">
        <div class="row d-block mt-4">
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-dark mb-3" data-bs-target="#modal-default" data-bs-toggle="modal" type="button">Default</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-default" data-bs-toggle="modal" type="button">Default</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-default" class="modal fade" id="modal-default" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -568,7 +709,7 @@
             </div>
             <div class="modal-footer">
              <button class="btn btn-secondary" type="button">Accept</button>
-             <button class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal" type="button">Close</button>
+             <button class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal" type="button">Close</button>
             </div>
            </div>
           </div>
@@ -577,22 +718,27 @@
         </div>
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-dark mb-3" data-bs-target="#modal-notification" data-bs-toggle="modal" type="button">Notification</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-notification" data-bs-toggle="modal" type="button">Notification</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-notification" class="modal fade" id="modal-notification" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-info modal-dialog-centered" role="document">
            <div class="modal-content bg-gradient-secondary">
+            <button aria-label="Close" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" type="button"></button>
             <div class="modal-header">
-             <p class="modal-title" id="modal-title-notification">A new experience, personalized for you.</p>
-             <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+             <p class="modal-title text-gray-200" id="modal-title-notification">A new experience, personalized for you.</p>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-white">
              <div class="py-3 text-center">
-              <span class="modal-icon display-1-lg">
-               <span class="far fa-envelope-open"></span>
+              <span class="modal-icon">
+               <svg class="icon icon-xl text-gray-200" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                </path>
+                <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                </path>
+               </svg>
               </span>
               <h2 class="h4 modal-title my-3">Important message!</h2>
-              <p>Do you know that you can assign status and relation to a company right in the visit list?.</p>
+              <p>Do you know that you can assign status and relation to a company right in the visit list?</p>
              </div>
             </div>
             <div class="modal-footer">
@@ -605,34 +751,37 @@
         </div>
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-dark mb-3" data-bs-target="#modal-form" data-bs-toggle="modal" type="button">Sign In</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-form" data-bs-toggle="modal" type="button">Sign In</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-form" class="modal fade" id="modal-form" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" role="document">
            <div class="modal-content">
             <div class="modal-body p-0">
-             <div class="card border-light p-3 p-lg-4">
+             <div class="card p-3 p-lg-4">
               <button aria-label="Close" class="btn-close ms-auto" data-bs-dismiss="modal" type="button"></button>
-              <div class="card-header border-0 text-center pb-0">
-               <h2 class="h4">Sign in to our platform</h2>
-               <span>Login here using your username and password</span>
+              <div class="text-center text-md-center mb-4 mt-md-0">
+               <h1 class="mb-0 h4">Sign in to our platform</h1>
               </div>
-              <div class="card-body p-0 pl-g-3">
-               
+              
 <!-- BEGIN view: fmodals1, db_table: dfmodals1 -->
 <div class="mt-4">
 [%[= fmodals1.custom['begin'] ]]
 <div class="form-group mb-4">
- <label for="login_email">
+ <label for="email">
   Your Email
  </label>
  <div class="input-group">
   <span class="input-group-text" id="basic-addon1">
-   <span class="fas fa-envelope">
-   </span>
+   <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+    </path>
+    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z">
+    </path>
+   </svg>
   </span>
+ [%[ fmodals1.custom['widgets']['f0']['_autofocus']= '==0'  ]]
  [%[ fmodals1.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fmodals1.custom['widgets']['f0']['_id']= 'login_email'  ]]
+ [%[ fmodals1.custom['widgets']['f0']['_id']= 'email'  ]]
  [%[ fmodals1.custom['widgets']['f0']['_placeholder']= 'example@company.com'  ]]
  [%[ fmodals1.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fmodals1.custom['widgets']['f0'] ]]
@@ -644,16 +793,18 @@
 
 <div class="form-group">
  <div class="form-group mb-4">
-  <label for="login_password">
+  <label for="password">
    Your Password
   </label>
   <div class="input-group">
    <span class="input-group-text" id="basic-addon2">
-    <span class="fas fa-unlock-alt">
-    </span>
+    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd">
+     </path>
+    </svg>
    </span>
  [%[ fmodals1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fmodals1.custom['widgets']['f1']['_id']= 'login_password'  ]]
+ [%[ fmodals1.custom['widgets']['f1']['_id']= 'password'  ]]
  [%[ fmodals1.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
  [%[ fmodals1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fmodals1.custom['widgets']['f1'] ]]
@@ -662,7 +813,7 @@
 
   </div>
  </div>
- <div class="d-flex justify-content-between align-items-center mb-4">
+ <div class="d-flex justify-content-between align-items-top mb-4">
   <div class="form-check">
  [%[ fmodals1.custom['widgets']['f2']['_class']= 'form-check-input'  ]]
  [%[ fmodals1.custom['widgets']['f2']['_id']= 'remember'  ]]
@@ -678,7 +829,7 @@
    </label>
   </div>
   <div>
-   <a class="small text-right" href="#">
+   <a class="small text-right" href="[%[=URL('index')]]">
     Lost password?
    </a>
   </div>
@@ -686,7 +837,7 @@
 </div>
 
 <div class="d-grid">
- [%[ fmodals1.custom['submit']['_class']= 'btn btn-dark'  ]]
+ [%[ fmodals1.custom['submit']['_class']= 'btn btn-gray-800'  ]]
  [%[ fmodals1.custom['submit']['_type']= 'submit'  ]]
  [%[ fmodals1.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fmodals1.custom['submit']['_value']= 'Submit'  ]]
@@ -695,10 +846,6 @@
 
 </div>
 
- [%[ for hidden_widget in fmodals1.custom['hidden_widgets'].keys(): ]]
-     [%[= fmodals1.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
-
   <div class="flashdiv"><span class="flashspan">fmodals1</span></div>
 
 
@@ -706,26 +853,34 @@
 </div>
 <!-- END fmodals1-->
 
-               <div class="mt-3 mb-4 text-center">
-                <span class="fw-normal">or login with</span>
-               </div>
-               <div class="d-flex justify-content-center my-4">
-                <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook me-2" href="#" title="facebook button" type="button">
-                 <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                </a>
-                <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-light text-twitter me-2" href="#" title="twitter button" type="button">
-                 <span aria-hidden="true" class="fab fa-twitter"></span>
-                </a>
-                <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" href="#" title="github button" type="button">
-                 <span aria-hidden="true" class="fab fa-github"></span>
-                </a>
-               </div>
-               <div class="d-flex justify-content-center align-items-center mt-4">
-                <span class="fw-normal">
-                 Not registered?
-                 <a class="fw-bold" href="#">Create account</a>
-                </span>
-               </div>
+              <div class="mt-3 mb-4 text-center">
+               <span class="fw-normal">or login with</span>
+              </div>
+              <div class="d-flex justify-content-center my-4">
+               <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="facebook button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="facebook-f" data-prefix="fab" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+               <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="twitter button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="twitter" data-prefix="fab" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+               <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-gray-500" href="#" title="github button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="github" data-prefix="fab" focusable="false" role="img" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+              </div>
+              <div class="d-flex justify-content-center align-items-center mt-4">
+               <span class="fw-normal">
+                Not registered?
+                <a class="fw-bold" href="[%[=URL('signXup') ]]">Create account</a>
+               </span>
               </div>
              </div>
             </div>
@@ -736,7 +891,7 @@
         </div>
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-dark mb-3" data-bs-target="#modal-form-signup" data-bs-toggle="modal" type="button">Sign Up</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-form-signup" data-bs-toggle="modal" type="button">Sign Up</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-form-signup" class="modal fade" id="modal-form-signup" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -744,23 +899,27 @@
             <div class="modal-body p-0">
              <div class="card p-3 p-lg-4">
               <button aria-label="Close" class="btn-close ms-auto" data-bs-dismiss="modal" type="button"></button>
-              <div class="card-header border-0 text-center pb-0">
-               <h2 class="mb-0 h5">Create Account</h2>
+              <div class="text-center text-md-center mb-4 mt-md-0">
+               <h1 class="mb-0 h4">Create Account</h1>
               </div>
-              <div class="card-body p-0 p-lg-3">
-               
+              
 <!-- BEGIN view: fmodals2, db_table: dfmodals2 -->
-<div>
+<div class="mt-4">
 [%[= fmodals2.custom['begin'] ]]
 <div class="form-group mb-4">
  <label for="email">
   Your Email
  </label>
  <div class="input-group">
-  <span class="input-group-text" id="basic-addon3">
-   <span class="fas fa-envelope">
-   </span>
+  <span class="input-group-text" id="basic-addon1">
+   <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+    </path>
+    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z">
+    </path>
+   </svg>
   </span>
+ [%[ fmodals2.custom['widgets']['f0']['_autofocus']= '==0'  ]]
  [%[ fmodals2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fmodals2.custom['widgets']['f0']['_id']= 'email'  ]]
  [%[ fmodals2.custom['widgets']['f0']['_placeholder']= 'example@company.com'  ]]
@@ -778,9 +937,11 @@
    Your Password
   </label>
   <div class="input-group">
-   <span class="input-group-text" id="basic-addon4">
-    <span class="fas fa-unlock-alt">
-    </span>
+   <span class="input-group-text" id="basic-addon2">
+    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd">
+     </path>
+    </svg>
    </span>
  [%[ fmodals2.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fmodals2.custom['widgets']['f1']['_id']= 'password'  ]]
@@ -793,16 +954,18 @@
   </div>
  </div>
  <div class="form-group mb-4">
-  <label for="password_confirm">
+  <label for="confirm_password">
    Confirm Password
   </label>
   <div class="input-group">
-   <span class="input-group-text" id="basic-addon5">
-    <span class="fas fa-unlock-alt">
-    </span>
+   <span class="input-group-text" id="basic-addon2">
+    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd">
+     </path>
+    </svg>
    </span>
  [%[ fmodals2.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fmodals2.custom['widgets']['f2']['_id']= 'password_confirm'  ]]
+ [%[ fmodals2.custom['widgets']['f2']['_id']= 'confirm_password'  ]]
  [%[ fmodals2.custom['widgets']['f2']['_placeholder']= 'Confirm Password'  ]]
  [%[ fmodals2.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[= fmodals2.custom['widgets']['f2'] ]]
@@ -811,9 +974,10 @@
 
   </div>
  </div>
- <div class="form-check mb-4">
+ <div class="mb-4">
+  <div class="form-check">
  [%[ fmodals2.custom['widgets']['f3']['_class']= 'form-check-input'  ]]
- [%[ fmodals2.custom['widgets']['f3']['_id']= 'terms'  ]]
+ [%[ fmodals2.custom['widgets']['f3']['_id']= 'remember'  ]]
  [%[ fmodals2.custom['widgets']['f3']['_type']= 'checkbox'  ]]
  [%[ fmodals2.custom['widgets']['f3']['_value']= '==0'  ]]
  [%[ fmodals2.custom['widgets']['f3']['_placeholder']= ''  ]]
@@ -821,17 +985,18 @@
 
  <span style="color:#ff0000">[%[= fmodals2.custom['errors']['f3'] if 'f3' in fmodals2.custom['errors'] else '' ]]</span>
 
-  <label class="form-check-label mb-0" for="terms">
-   I agree to the
-   <a href="#">
-    terms and conditions
-   </a>
-  </label>
+   <label class="form-check-label fw-normal mb-0" for="remember">
+    I agree to the
+    <a class="fw-bold" href="#">
+     terms and conditions
+    </a>
+   </label>
+  </div>
  </div>
 </div>
 
 <div class="d-grid">
- [%[ fmodals2.custom['submit']['_class']= 'btn btn-dark'  ]]
+ [%[ fmodals2.custom['submit']['_class']= 'btn btn-gray-800'  ]]
  [%[ fmodals2.custom['submit']['_type']= 'submit'  ]]
  [%[ fmodals2.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fmodals2.custom['submit']['_value']= 'Submit'  ]]
@@ -840,10 +1005,6 @@
 
 </div>
 
- [%[ for hidden_widget in fmodals2.custom['hidden_widgets'].keys(): ]]
-     [%[= fmodals2.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
-
   <div class="flashdiv"><span class="flashspan">fmodals2</span></div>
 
 
@@ -851,26 +1012,34 @@
 </div>
 <!-- END fmodals2-->
 
-               <div class="mt-3 mb-4 text-center">
-                <span class="fw-normal">or</span>
-               </div>
-               <div class="d-flex justify-content-center my-4">
-                <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook me-2" href="#" title="facebook button" type="button">
-                 <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                </a>
-                <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-light text-twitter me-2" href="#" title="twitter button" type="button">
-                 <span aria-hidden="true" class="fab fa-twitter"></span>
-                </a>
-                <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-light text-facebook" href="#" title="github button" type="button">
-                 <span aria-hidden="true" class="fab fa-github"></span>
-                </a>
-               </div>
-               <div class="d-flex justify-content-center align-items-center mt-4">
-                <span class="fw-normal">
-                 Already have an account?
-                 <a class="fw-bold" href="#">Login here</a>
-                </span>
-               </div>
+              <div class="mt-3 mb-4 text-center">
+               <span class="fw-normal">or login with</span>
+              </div>
+              <div class="d-flex justify-content-center my-3">
+               <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="facebook button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="facebook-f" data-prefix="fab" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+               <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="twitter button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="twitter" data-prefix="fab" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+               <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-gray-500" href="#" title="github button" type="button">
+                <svg aria-hidden="true" class="icon icon-xxs" data-icon="github" data-prefix="fab" focusable="false" role="img" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor">
+                 </path>
+                </svg>
+               </a>
+              </div>
+              <div class="d-flex justify-content-center align-items-center mt-4">
+               <span class="fw-normal">
+                Already have an account?
+                <a class="fw-bold" href="[%[=URL('signXin') ]]">Login here</a>
+               </span>
               </div>
              </div>
             </div>
@@ -881,23 +1050,27 @@
         </div>
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-tertiary mb-3" data-bs-target="#modal-achievement" data-bs-toggle="modal" type="button">Achievement</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-achievement" data-bs-toggle="modal" type="button">Achievement</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-achievement" class="modal fade" id="modal-achievement" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-tertiary modal-dialog-centered" role="document">
            <div class="modal-content">
+            <button aria-label="Close" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" type="button"></button>
             <div class="modal-header mx-auto">
              <p class="lead mb-0 text-white">You just unlocked a new badge</p>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pt-0">
              <div class="py-3 px-5 text-center">
               <span class="modal-icon display-1 text-white">
-               <span class="fas fa-medal"></span>
+               <svg class="icon icon-lg text-gray-200" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" fill-rule="evenodd">
+                </path>
+               </svg>
               </span>
               <h2 class="h3 modal-title mb-3 text-white">Author Level 5</h2>
               <p class="mb-4 text-white">One Thousand Dollars! Well done mate - heads are turning your way.</p>
               <div class="progress mb-0">
-               <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar" role="progressbar" style="width: 50%"></div>
+               <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar bg-secondary" role="progressbar" style="width: 50%"></div>
               </div>
              </div>
             </div>
@@ -911,7 +1084,7 @@
         </div>
         <div class="col-lg-4">
          <!-- Button Modal -->
-         <button class="btn btn-block btn-dark mb-3" data-bs-target="#modal-subscribe" data-bs-toggle="modal" type="button">Subscribe</button>
+         <button class="btn btn-block btn-gray-800 mb-3" data-bs-target="#modal-subscribe" data-bs-toggle="modal" type="button">Subscribe</button>
          <!-- Modal Content -->
          <div aria-hidden="true" aria-labelledby="modal-subscribe" class="modal fade" id="modal-subscribe" role="dialog" tabindex="-1">
           <div class="modal-dialog modal-tertiary modal-dialog-centered modal-lg" role="document">
@@ -920,8 +1093,11 @@
              <button aria-label="Close" class="btn-close btn-close-white text-white" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body text-center py-3">
-             <span class="modal-icon display-1">
-              <span class="fas fa-envelope-open-text"></span>
+             <span class="modal-icon">
+              <svg class="icon icon-xl text-gray-200 mb-4" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+               <path clip-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" fill-rule="evenodd">
+               </path>
+              </svg>
              </span>
              <h3 class="modal-title mb-3">Join our 1,360,462 subscribers</h3>
              <p class="mb-4 lead">Get exclusive access to freebies, premium products and news.</p>
@@ -929,7 +1105,7 @@
               <div class="d-flex mb-3 justify-content-center">
                <input class="me-sm-1 mb-sm-0 form-control form-control-lg" id="subscribe" placeholder="example@company.com" type="text"/>
                <div>
-                <button class="ms-2 btn large-form-btn btn-tertiary" type="submit">Subscribe</button>
+                <button class="ms-2 btn large-form-btn btn-secondary" type="submit">Subscribe</button>
                </div>
               </div>
              </div>
@@ -953,8 +1129,8 @@
      </div>
     </div>
    </div>
-   <div class="theme-settings card pt-2 collapse" id="theme-settings">
-    <div class="card-body pt-4">
+   <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+    <div class="card-body bg-gray-800 text-white pt-4">
      <button aria-controls="theme-settings" aria-expanded="false" aria-label="Close" class="btn-close theme-settings-close" data-bs-toggle="collapse" href="#theme-settings" role="button" type="button"></button>
      <div class="d-flex justify-content-between align-items-center mb-3">
       <p class="m-0 mb-1 me-4 fs-7">
@@ -963,11 +1139,14 @@
       </p>
       <a aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub" class="github-button" data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star" data-show-count="true" data-size="large" href="https://github.com/themesberg/volt-bootstrap-5-dashboard">Star</a>
      </div>
-     <a class="btn btn-primary mb-3 w-100" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank">
+     <a class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank">
       Download
-      <i class="fas fa-download ms-2"></i>
+      <svg class="icon icon-xs ms-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" fill-rule="evenodd">
+       </path>
+      </svg>
      </a>
-     <p class="fs-7 text-gray-700 text-center">Available in the following technologies:</p>
+     <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
      <div class="d-flex justify-content-center">
       <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank">
        <img class="image image-xs" src="[%[=URL('static/tte/assets/img/technologies/bootstrap-5-logo.svg') ]]"/></a>
@@ -976,26 +1155,29 @@
      </div>
     </div>
    </div>
-   <div class="card theme-settings theme-settings-expand" id="theme-settings-expand">
-    <div class="card-body p-3 py-2">
-     <span class="fw-bold h6">
-      <i class="fas fa-cogs me-1 fs-7"></i>
+   <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
+    <div class="card-body bg-gray-800 text-white rounded-top p-3 py-2">
+     <span class="fw-bold d-inline-flex align-items-center h6">
+      <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" fill-rule="evenodd">
+       </path>
+      </svg>
       Settings
      </span>
     </div>
    </div>
-   <footer class="footer section py-5">
+   <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
     <div class="row">
-     <div class="col-12 col-lg-6 mb-4 mb-lg-0">
-      <p class="mb-0 text-center text-xl-left">
-       Copyright © 2019-
+     <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
+      <p class="mb-0 text-center text-lg-start">
+       © 2019-
        <span class="current-year"></span>
        <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
       </p>
      </div>
-     <div class="col-12 col-lg-6">
+     <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
       <!-- List -->
-      <ul class="list-inline list-group-flush list-group-borderless text-center text-xl-right mb-0">
+      <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
        <li class="list-inline-item px-0 px-sm-2">
         <a href="https://themesberg.com/about">About</a>
        </li>
@@ -1045,60 +1227,102 @@
 <!-- forms ajax -->
 <script>
 
-  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
-  for(let i = 0; i < document.forms.length; i++){
+    ! function(forms_url) {
 
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
+        for (const f of document.forms) {
 
-            let response = await fetch(forms_url, {
-                method: 'POST',
-                body: new FormData( document.forms[i] )
-            });
+            f.onsubmit = async (e) => {
 
+                e.preventDefault();
 
-            let result = await response.json();
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
 
-            if ( result.js_alert==='sweet2' ) {
+                const result = await response.json();
 
-                      if (("icon_type" in result)==0) { 
-                         result.icon_type = 'error' ;
-                       }
-          
-                      //----------------------------------------------------------
-                      Swal.fire({
-                            //position: 'top-end',
-                            icon: result.icon_type,
-                            title: result.messages,
-                            showConfirmButton: false,
-                            timer: 2000,
-                       
-                            showClass: {
-                              popup: '',
-                              icon: ''
-                            },
-                            hideClass: {
-                               popup: '',
-                            }
-                      })
-                     //----------------------------------------------------------
-            } else {
-                     alert(result.messages);
-            }
+                if (result.js_alert === 'sweet2') {
 
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
         };
-  }
+
+    }([%[ = XML(ctrl_template_url) ]]);
 
 </script>
-
 
  <!-- rm_flashdiv -->
 <script>
-     !function() { 
-         const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-     }();
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
 </script>
 
+
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
 </body>
 </html>

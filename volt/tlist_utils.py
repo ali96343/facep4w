@@ -9,28 +9,28 @@ import pydal
 
 from .atab_utils import sql2table
 
-from .common import flash
+
+from .helpers import DATE_FORMAT, FLD_LEN
+
 
 @action("tlist", method=["GET", "POST"])
 @action.uses(flash, db, session, T, Template("tlist.html", delimiters="[[ ]]"),)
 def tlist():
     ts=[ e for e in db.tables  ]
-    headers= ['tname', 'len',  'cmd1', 'cmd2', 'cmd3']
+    headers= ['tname', 'tlen','cmd1', 'cmd2', 'cmd3']
 
     #flash.set("Hello World", sanitize=True)
 
-    #cmd = ['000', '111', '222', '333']
-
+    #cmd = ['111', '222', '333']
     def show_len(tn):
         c = db(db[tn].id>0).count()
         return f'{c}' if c else ''
 
-
     cmd = [ 
             lambda tn : show_len(tn) ,
-            lambda tn : A( "table",  _role="button",  _href=URL( f"p4w_sql_table/{tn}",   ), ) ,
+            lambda tn : A( "table",  _role="button",  _href=URL( f"p4w_sql_table/{tn}", ), ) ,
             lambda tn : A( "form",   _role="button",  _href=URL( f"p4w_create_form/{tn}", ), ) , 
-            lambda tn : A( "grid",   _role="button",  _href=URL( f"p4w_grid/{tn}",        ), ) ,
+            lambda tn : A( "grid",   _role="button",  _href=URL( f"p4w_grid/{tn}", ), ) ,
           ]
 
     #w, h = len(cmd), len(ts);
@@ -53,7 +53,7 @@ def tlist():
                    TBODY(*[TR(*[TD(Matrix[y][x]) for x in range(1+ len(cmd))]) for y in range (len(ts))]),
                    ),
            )
-    return dict(message=f'{len(ts)} tables:', xview=xview) 
+    return dict(message='tables:', xview=xview) 
 
 
 
@@ -132,18 +132,20 @@ def p4w_grid(path=None,):
   
     import datetime
  
-    def re_fmt(tbl):
+    def re_fmt(tbl, cut_line = 10):
         xfmt= dict()
         for e in db[tbl].fields:
-           if  db[tbl][e].type == 'datetime':
-                #print (  f"{tbl}.{e}"  )
-                xfmt[ f"{tbl}.{e}"] =  lambda e: SPAN( e.strftime("%d.%m.%Y %H:%M:%S"), _style="color:red"  ) 
-           else:  
-                xfmt[ f"{tbl}.{e}"] =  lambda e: SPAN(e[:15] + "...") 
+           tmp_type = db[tbl][e].type
+           if tmp_type == 'datetime':
+              xfmt[ f"{tbl}.{e}"] = lambda e: SPAN( e.strftime(DATE_FORMAT), _style="color:red") 
+           elif any( [tmp_type == 'string', tmp_type == 'text'] ):
+               xfmt[ f"{tbl}.{e}"] = lambda e: SPAN(e[:FLD_LEN] + "~" if len(e) > FLD_LEN else e )
+           else:
+               xfmt[ f"{tbl}.{e}"] = lambda e: SPAN(e, _style="color:green" )
            
         return xfmt
 
-    #fmt = {f"{tbl}.{e}": lambda e: SPAN(e[:20] + "...") for e in db[tbl].fields}
+    #fmt = {f"{tbl}.{e}": lambda e: SPAN(e[:10] + "...") for e in db[tbl].fields }
     fmt = re_fmt( tbl )
     for k, v in fmt.items():
         grid.formatters[k] = v

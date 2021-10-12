@@ -1,13 +1,13 @@
 ratio= 0.30
-   src: js/flot/flot-active.js
+   src: js/todo/jquery.todo.js
    dst: upload
 
 ratio= 0.17
-   src: img/blog/1.jpg
+   src: img/post/4.jpg
    dst: 99/99/9999
 
 ratio= 0.42
-   src: sr_in_html.yml
+   src: js/sparkline/sparkline-active.js
    dst: print
 
 ratio= 0.47

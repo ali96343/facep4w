@@ -1,5 +1,5 @@
 ratio= 0.53
-   src: src/images/modal-img3.jpg
+   src: src/images/modal-img1.jpg
    dst: modal
 
 ratio= 0.40

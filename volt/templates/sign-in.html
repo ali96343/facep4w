@@ -1,11 +1,11 @@
 <!--
 
 =========================================================
-* Volt Free - Bootstrap 5 Dashboard
+* Volt Pro - Premium Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard
-* Copyright 2020 Themesberg (https://www.themesberg.com)
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
 * License (https://themes.getbootstrap.com/licenses/)
 
 * Designed and coded by https://themesberg.com
@@ -18,12 +18,12 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 26.04.2021 14:45:46 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:12:55 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Primary Meta Tags -->
   <title>biorex title text</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="Volt Free Bootstrap Dashboard - Sign in page" name="title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Sign in page" name="title"/>
   <meta content="Themesberg" name="author"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." name="description"/>
   <meta content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" name="keywords"/>
@@ -31,13 +31,13 @@
   <!-- Open Graph / Facebook -->
   <meta content="website" property="og:type"/>
   <meta content="https://demo.themesberg.com/volt-pro" property="og:url"/>
-  <meta content="Volt Free Bootstrap Dashboard - Sign in page" property="og:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Sign in page" property="og:title"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." property="og:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" property="twitter:card"/>
   <meta content="https://demo.themesberg.com/volt-pro" property="twitter:url"/>
-  <meta content="Volt Free Bootstrap Dashboard - Sign in page" property="twitter:title"/>
+  <meta content="Volt Premium Bootstrap Dashboard - Sign in page" property="twitter:title"/>
   <meta content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS." property="twitter:description"/>
   <meta content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg" property="twitter:image"/>
   <!-- Favicon -->
@@ -48,8 +48,6 @@
   <link color="#ffffff" href="[%[=URL('static/tte/assets/img/favicon/safari-pinned-tab.svg') ]]" rel="mask-icon"/>
   <meta content="#ffffff" name="msapplication-TileColor"/>
   <meta content="#ffffff" name="theme-color"/>
-  <!-- Fontawesome -->
-  <link href="[%[=URL('static/tte/vendor/@fortawesome/fontawesome-free/css/all.min.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- Sweet Alert -->
   <link href="[%[=URL('static/tte/vendor/sweetalert2/dist/sweetalert2.min.css') ]]" rel="stylesheet" type="text/css"/>
   <!-- Notyf -->
@@ -97,6 +95,42 @@
          padding: 0.2em 1em 0.2em 1em;
      }
 
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
 </style>
 
 </head>
@@ -104,17 +138,20 @@
   <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
   <main>
    <!-- Section -->
-   <section class="d-flex align-items-center my-5 mt-lg-6 mb-lg-5">
+   <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
     <div class="container">
      <p class="text-center">
-      <a class="text-gray-700" href="[%[=URL('dashboard') ]]">
-       <i class="fas fa-angle-left me-2"></i>
+      <a class="d-flex align-items-center justify-content-center" href="[%[=URL('dashboard') ]]">
+       <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" fill-rule="evenodd">
+        </path>
+       </svg>
        Back to homepage
       </a>
      </p>
      <div class="row justify-content-center form-bg-image" data-background-lg="[%[=URL('static/tte/assets/img/illustrations/signin.svg') ]]">
       <div class="col-12 d-flex align-items-center justify-content-center">
-       <div class="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+       <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
         <div class="text-center text-md-center mb-4 mt-md-0">
          <h1 class="mb-0 h3">Sign in to our platform</h1>
         </div>
@@ -128,14 +165,18 @@
  </label>
  <div class="input-group">
   <span class="input-group-text" id="basic-addon1">
-   <span class="fas fa-envelope">
-   </span>
+   <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+    </path>
+    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z">
+    </path>
+   </svg>
   </span>
- [%[ fsignXin0.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fsignXin0.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fsignXin0.custom['widgets']['f0']['_placeholder']= 'example@company.com'  ]]
- [%[ fsignXin0.custom['widgets']['f0']['_id']= 'email'  ]]
  [%[ fsignXin0.custom['widgets']['f0']['_autofocus']= '==0'  ]]
+ [%[ fsignXin0.custom['widgets']['f0']['_class']= 'form-control'  ]]
+ [%[ fsignXin0.custom['widgets']['f0']['_id']= 'email'  ]]
+ [%[ fsignXin0.custom['widgets']['f0']['_placeholder']= 'example@company.com'  ]]
+ [%[ fsignXin0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[= fsignXin0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fsignXin0.custom['errors']['f0'] if 'f0' in fsignXin0.custom['errors'] else '' ]]</span>
@@ -150,13 +191,15 @@
   </label>
   <div class="input-group">
    <span class="input-group-text" id="basic-addon2">
-    <span class="fas fa-unlock-alt">
-    </span>
+    <svg class="icon icon-xs text-gray-600" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+     <path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd">
+     </path>
+    </svg>
    </span>
- [%[ fsignXin0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fsignXin0.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
  [%[ fsignXin0.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fsignXin0.custom['widgets']['f1']['_id']= 'password'  ]]
+ [%[ fsignXin0.custom['widgets']['f1']['_placeholder']= 'Password'  ]]
+ [%[ fsignXin0.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fsignXin0.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fsignXin0.custom['errors']['f1'] if 'f1' in fsignXin0.custom['errors'] else '' ]]</span>
@@ -166,9 +209,9 @@
  <div class="d-flex justify-content-between align-items-top mb-4">
   <div class="form-check">
  [%[ fsignXin0.custom['widgets']['f2']['_class']= 'form-check-input'  ]]
+ [%[ fsignXin0.custom['widgets']['f2']['_id']= 'remember'  ]]
  [%[ fsignXin0.custom['widgets']['f2']['_type']= 'checkbox'  ]]
  [%[ fsignXin0.custom['widgets']['f2']['_value']= '==0'  ]]
- [%[ fsignXin0.custom['widgets']['f2']['_id']= 'remember'  ]]
  [%[ fsignXin0.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fsignXin0.custom['widgets']['f2'] ]]
 
@@ -187,18 +230,14 @@
 </div>
 
 <div class="d-grid">
+ [%[ fsignXin0.custom['submit']['_class']= 'btn btn-gray-800'  ]]
  [%[ fsignXin0.custom['submit']['_type']= 'submit'  ]]
- [%[ fsignXin0.custom['submit']['_class']= 'btn btn-dark'  ]]
  [%[ fsignXin0.custom['submit']['_title']= 'mysubmit from button'  ]]
  [%[ fsignXin0.custom['submit']['_value']= 'Submit'  ]]
  [%[ fsignXin0.custom['submit']['_style']= 'text-decoration: underline; font-weight: bold;'  ]]
  [%[= fsignXin0.custom['submit'] ]]
 
 </div>
-
- [%[ for hidden_widget in fsignXin0.custom['hidden_widgets'].keys(): ]]
-     [%[= fsignXin0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fsignXin0</span></div>
 
@@ -211,14 +250,23 @@
          <span class="fw-normal">or login with</span>
         </div>
         <div class="d-flex justify-content-center my-4">
-         <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-gray-400 text-facebook me-2" href="#" title="facebook button" type="button">
-          <span aria-hidden="true" class="fab fa-facebook-f"></span>
+         <a aria-label="facebook button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="facebook button">
+          <svg aria-hidden="true" class="icon icon-xxs" data-icon="facebook-f" data-prefix="fab" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+           <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" fill="currentColor">
+           </path>
+          </svg>
          </a>
-         <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-gray-400 text-twitter me-2" href="#" title="twitter button" type="button">
-          <span aria-hidden="true" class="fab fa-twitter"></span>
+         <a aria-label="twitter button" class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2" href="#" title="twitter button">
+          <svg aria-hidden="true" class="icon icon-xxs" data-icon="twitter" data-prefix="fab" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+           <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" fill="currentColor">
+           </path>
+          </svg>
          </a>
-         <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-gray-400 text-facebook" href="#" title="github button" type="button">
-          <span aria-hidden="true" class="fab fa-github"></span>
+         <a aria-label="github button" class="btn btn-icon-only btn-pill btn-outline-gray-500" href="#" title="github button">
+          <svg aria-hidden="true" class="icon icon-xxs" data-icon="github" data-prefix="fab" focusable="false" role="img" viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+           <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor">
+           </path>
+          </svg>
          </a>
         </div>
         <div class="d-flex justify-content-center align-items-center mt-4">
@@ -265,60 +313,102 @@
 <!-- forms ajax -->
 <script>
 
-  const forms_url = [%[ =XML(  ctrl_template_url   ) ]]
-  for(let i = 0; i < document.forms.length; i++){
+    ! function(forms_url) {
 
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
+        for (const f of document.forms) {
 
-            let response = await fetch(forms_url, {
-                method: 'POST',
-                body: new FormData( document.forms[i] )
-            });
+            f.onsubmit = async (e) => {
 
+                e.preventDefault();
 
-            let result = await response.json();
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
 
-            if ( result.js_alert==='sweet2' ) {
+                const result = await response.json();
 
-                      if (("icon_type" in result)==0) { 
-                         result.icon_type = 'error' ;
-                       }
-          
-                      //----------------------------------------------------------
-                      Swal.fire({
-                            //position: 'top-end',
-                            icon: result.icon_type,
-                            title: result.messages,
-                            showConfirmButton: false,
-                            timer: 2000,
-                       
-                            showClass: {
-                              popup: '',
-                              icon: ''
-                            },
-                            hideClass: {
-                               popup: '',
-                            }
-                      })
-                     //----------------------------------------------------------
-            } else {
-                     alert(result.messages);
-            }
+                if (result.js_alert === 'sweet2') {
 
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
         };
-  }
+
+    }([%[ = XML(ctrl_template_url) ]]);
 
 </script>
-
 
  <!-- rm_flashdiv -->
 <script>
-     !function() { 
-         const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-     }();
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
 </script>
 
+
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
 </body>
 </html>

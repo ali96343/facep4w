@@ -1,5 +1,10 @@
+tailwind-admin-template/tabs.html
+tailwind-admin-template/index.html
+tailwind-admin-template/forms.html
+tailwind-admin-template/blank.html
+tailwind-admin-template/tables.html
+tailwind-admin-template/calendar.html
 LICENSE
 README.md
-favicon.ico
-sr_in_html.yml
+sr_in_js.yml
 screenshot.png

@@ -2,6 +2,7 @@
 from .common import db, Field
 from pydal.validators import *
 from py4web.utils.populate import populate 
+from .settings import APP_NAME
 
 #with python cli
 #import pydal
@@ -28,6 +29,7 @@ db.define_table(
     Field( 'f1', 'string', label='l1'),
     Field( 'f2', 'string', label='l2'),
     )
+db.commit()
 
 if not db(db.test_table).count():
     populate(db.test_table, n=10)

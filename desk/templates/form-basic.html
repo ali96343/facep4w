@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-            <!-- 02.01.2021 13:24:59 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 12.10.2021 08:22:29 py4web app, ported by AI-biorex, tidylib_check = True -->
   <!-- Basic Page Info -->
   <meta charset="utf-8"/>
   <title>biorex title text</title>
@@ -30,7 +30,7 @@ gtag('js', new Date());
 gtag('config', 'UA-119386393-1');
   </script>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
 
    <!-- disable google analytics -->
@@ -69,6 +69,42 @@ gtag('config', 'UA-119386393-1');
          padding: 0.2em 1em 0.2em 1em;
      }
 
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
 </style>
 
 </head>
@@ -98,7 +134,7 @@ gtag('config', 'UA-119386393-1');
  </i>
  [%[ fformXbasic0.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXbasic0.custom['widgets']['f0']['_class']= 'form-control search-input'  ]]
- [%[ fformXbasic0.custom['widgets']['f0']['_placeholder']= 'Search Here_p4w'  ]]
+ [%[ fformXbasic0.custom['widgets']['f0']['_placeholder']= 'Search Here'  ]]
  [%[= fformXbasic0.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic0.custom['errors']['f0'] if 'f0' in fformXbasic0.custom['errors'] else '' ]]</span>
@@ -116,7 +152,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ fformXbasic0.custom['widgets']['f1']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ fformXbasic0.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformXbasic0.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic0.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic0.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic0.custom['errors']['f1'] if 'f1' in fformXbasic0.custom['errors'] else '' ]]</span>
@@ -130,7 +166,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ fformXbasic0.custom['widgets']['f2']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ fformXbasic0.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXbasic0.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic0.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic0.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic0.custom['errors']['f2'] if 'f2' in fformXbasic0.custom['errors'] else '' ]]</span>
@@ -144,7 +180,7 @@ gtag('config', 'UA-119386393-1');
     <div class="col-sm-12 col-md-10">
  [%[ fformXbasic0.custom['widgets']['f3']['_class']= 'form-control form-control-sm form-control-line'  ]]
  [%[ fformXbasic0.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformXbasic0.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic0.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic0.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic0.custom['errors']['f3'] if 'f3' in fformXbasic0.custom['errors'] else '' ]]</span>
@@ -163,10 +199,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic0.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic0.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic0</span></div>
 
@@ -249,11 +281,11 @@ gtag('config', 'UA-119386393-1');
        <span class="user-name">Ross C. Lopez</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-       <a class="dropdown-item" href="[%[=URL('profile') ]]">
+       <a class="dropdown-item" href="[%[=URL('profileA') ]]">
         <i class="dw dw-user1"></i>
         Profile
        </a>
-       <a class="dropdown-item" href="[%[=URL('profile') ]]">
+       <a class="dropdown-item" href="[%[=URL('profileA') ]]">
         <i class="dw dw-settings2"></i>
         Setting
        </a>
@@ -261,7 +293,7 @@ gtag('config', 'UA-119386393-1');
         <i class="dw dw-help"></i>
         Help
        </a>
-       <a class="dropdown-item" href="[%[=URL('login') ]]">
+       <a class="dropdown-item" href="[%[=URL('loginA') ]]">
         <i class="dw dw-logout"></i>
         Log Out
        </a>
@@ -543,7 +575,7 @@ gtag('config', 'UA-119386393-1');
          <a href="[%[=URL('videoXplayer') ]]">Video Player</a>
         </li>
         <li>
-         <a href="[%[=URL('login') ]]">Login</a>
+         <a href="[%[=URL('loginA') ]]">Login</a>
         </li>
         <li>
          <a href="[%[=URL('forgotXpassword') ]]">Forgot Password</a>
@@ -604,7 +636,7 @@ gtag('config', 'UA-119386393-1');
          <a href="[%[=URL('faq') ]]">FAQ</a>
         </li>
         <li>
-         <a href="[%[=URL('profile') ]]">Profile</a>
+         <a href="[%[=URL('profileA') ]]">Profile</a>
         </li>
         <li>
          <a href="[%[=URL('gallery') ]]">Gallery</a>
@@ -766,7 +798,7 @@ gtag('config', 'UA-119386393-1');
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f0']['_placeholder']= 'Johnny Brown_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f0']['_placeholder']= 'Johnny Brown'  ]]
  [%[= fformXbasic1.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f0'] if 'f0' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -780,7 +812,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformXbasic1.custom['widgets']['f1']['_placeholder']= 'Search Here_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f1']['_placeholder']= 'Search Here'  ]]
  [%[ fformXbasic1.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fformXbasic1.custom['widgets']['f1'] ]]
 
@@ -797,7 +829,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f2']['_value']= 'bootstrap@example.com'  ]]
  [%[ fformXbasic1.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f2'] if 'f2' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -813,7 +845,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f3']['_value']= 'https://getbootstrap.com'  ]]
  [%[ fformXbasic1.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f3'] if 'f3' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -829,7 +861,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f4']['_value']= '1-(111)-111-1111'  ]]
  [%[ fformXbasic1.custom['widgets']['f4']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f4'] if 'f4' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -845,7 +877,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f5']['_value']= 'password'  ]]
  [%[ fformXbasic1.custom['widgets']['f5']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f5'] if 'f5' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -861,7 +893,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f6']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f6']['_value']= '100'  ]]
  [%[ fformXbasic1.custom['widgets']['f6']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f6']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f6']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f6'] if 'f6' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -875,7 +907,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f7']['_class']= 'form-control datetimepicker'  ]]
- [%[ fformXbasic1.custom['widgets']['f7']['_placeholder']= 'Choose Date anf time_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f7']['_placeholder']= 'Choose Date anf time'  ]]
  [%[ fformXbasic1.custom['widgets']['f7']['_type']= 'text'  ]]
  [%[= fformXbasic1.custom['widgets']['f7'] ]]
 
@@ -890,7 +922,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f8']['_class']= 'form-control date-picker'  ]]
- [%[ fformXbasic1.custom['widgets']['f8']['_placeholder']= 'Select Date_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f8']['_placeholder']= 'Select Date'  ]]
  [%[ fformXbasic1.custom['widgets']['f8']['_type']= 'text'  ]]
  [%[= fformXbasic1.custom['widgets']['f8'] ]]
 
@@ -905,7 +937,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f9']['_class']= 'form-control month-picker'  ]]
- [%[ fformXbasic1.custom['widgets']['f9']['_placeholder']= 'Select Month_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f9']['_placeholder']= 'Select Month'  ]]
  [%[ fformXbasic1.custom['widgets']['f9']['_type']= 'text'  ]]
  [%[= fformXbasic1.custom['widgets']['f9'] ]]
 
@@ -920,7 +952,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic1.custom['widgets']['f10']['_class']= 'form-control time-picker'  ]]
- [%[ fformXbasic1.custom['widgets']['f10']['_placeholder']= 'Select time_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f10']['_placeholder']= 'Select time'  ]]
  [%[ fformXbasic1.custom['widgets']['f10']['_type']= 'text'  ]]
  [%[= fformXbasic1.custom['widgets']['f10'] ]]
 
@@ -952,7 +984,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f12']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f12']['_value']= '#563d7c'  ]]
  [%[ fformXbasic1.custom['widgets']['f12']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f12'] if 'f12' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -968,7 +1000,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic1.custom['widgets']['f13']['_class']= 'form-control'  ]]
  [%[ fformXbasic1.custom['widgets']['f13']['_value']= '50'  ]]
  [%[ fformXbasic1.custom['widgets']['f13']['_type']= 'text'  ]]
- [%[ fformXbasic1.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic1.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic1.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic1.custom['errors']['f13'] if 'f13' in fformXbasic1.custom['errors'] else '' ]]</span>
@@ -983,10 +1015,6 @@ gtag('config', 'UA-119386393-1');
 
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic1.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic1.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic1</span></div>
 
@@ -1019,7 +1047,7 @@ gtag('config', 'UA-119386393-1');
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f0']['_placeholder']= 'Johnny Brown_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f0']['_placeholder']= 'Johnny Brown'  ]]
  [%[= fformXbasic2.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f0'] if 'f0' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1033,7 +1061,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformXbasic2.custom['widgets']['f1']['_placeholder']= 'Search Here_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f1']['_placeholder']= 'Search Here'  ]]
  [%[ fformXbasic2.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[= fformXbasic2.custom['widgets']['f1'] ]]
 
@@ -1050,7 +1078,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f2']['_value']= 'bootstrap@example.com'  ]]
  [%[ fformXbasic2.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f2'] if 'f2' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1066,7 +1094,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f3']['_value']= 'https://getbootstrap.com'  ]]
  [%[ fformXbasic2.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f3'] if 'f3' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1082,7 +1110,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f4']['_value']= '1-(111)-111-1111'  ]]
  [%[ fformXbasic2.custom['widgets']['f4']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f4'] if 'f4' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1098,7 +1126,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f5']['_value']= 'password'  ]]
  [%[ fformXbasic2.custom['widgets']['f5']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f5'] if 'f5' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1114,7 +1142,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f6']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f6']['_value']= '100'  ]]
  [%[ fformXbasic2.custom['widgets']['f6']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f6']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f6']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f6'] if 'f6' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1128,7 +1156,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f7']['_class']= 'form-control datetimepicker'  ]]
- [%[ fformXbasic2.custom['widgets']['f7']['_placeholder']= 'Choose Date anf time_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f7']['_placeholder']= 'Choose Date anf time'  ]]
  [%[ fformXbasic2.custom['widgets']['f7']['_type']= 'text'  ]]
  [%[= fformXbasic2.custom['widgets']['f7'] ]]
 
@@ -1143,7 +1171,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f8']['_class']= 'form-control date-picker'  ]]
- [%[ fformXbasic2.custom['widgets']['f8']['_placeholder']= 'Select Date_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f8']['_placeholder']= 'Select Date'  ]]
  [%[ fformXbasic2.custom['widgets']['f8']['_type']= 'text'  ]]
  [%[= fformXbasic2.custom['widgets']['f8'] ]]
 
@@ -1158,7 +1186,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f9']['_class']= 'form-control month-picker'  ]]
- [%[ fformXbasic2.custom['widgets']['f9']['_placeholder']= 'Select Month_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f9']['_placeholder']= 'Select Month'  ]]
  [%[ fformXbasic2.custom['widgets']['f9']['_type']= 'text'  ]]
  [%[= fformXbasic2.custom['widgets']['f9'] ]]
 
@@ -1173,7 +1201,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  <div class="col-sm-12 col-md-10">
  [%[ fformXbasic2.custom['widgets']['f10']['_class']= 'form-control time-picker'  ]]
- [%[ fformXbasic2.custom['widgets']['f10']['_placeholder']= 'Select time_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f10']['_placeholder']= 'Select time'  ]]
  [%[ fformXbasic2.custom['widgets']['f10']['_type']= 'text'  ]]
  [%[= fformXbasic2.custom['widgets']['f10'] ]]
 
@@ -1205,7 +1233,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f12']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f12']['_value']= '#563d7c'  ]]
  [%[ fformXbasic2.custom['widgets']['f12']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f12'] if 'f12' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1221,7 +1249,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic2.custom['widgets']['f13']['_class']= 'form-control'  ]]
  [%[ fformXbasic2.custom['widgets']['f13']['_value']= '50'  ]]
  [%[ fformXbasic2.custom['widgets']['f13']['_type']= 'text'  ]]
- [%[ fformXbasic2.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic2.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic2.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic2.custom['errors']['f13'] if 'f13' in fformXbasic2.custom['errors'] else '' ]]</span>
@@ -1236,10 +1264,6 @@ gtag('config', 'UA-119386393-1');
 
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic2.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic2.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic2</span></div>
 
@@ -1277,7 +1301,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic3.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f0']['_placeholder']= 'Johnny Brown_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f0']['_placeholder']= 'Johnny Brown'  ]]
  [%[= fformXbasic3.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f0'] if 'f0' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1291,7 +1315,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f1']['_value']= 'bootstrap@example.com'  ]]
  [%[ fformXbasic3.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f1'] if 'f1' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1305,7 +1329,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f2']['_value']= 'https://getbootstrap.com'  ]]
  [%[ fformXbasic3.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f2'] if 'f2' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1319,7 +1343,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f3']['_value']= '1-(111)-111-1111'  ]]
  [%[ fformXbasic3.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f3'] if 'f3' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1333,7 +1357,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f4']['_value']= 'password'  ]]
  [%[ fformXbasic3.custom['widgets']['f4']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f4'] if 'f4' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1346,7 +1370,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic3.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fformXbasic3.custom['widgets']['f5']['_type']= 'text'  ]]
- [%[ fformXbasic3.custom['widgets']['f5']['_placeholder']= 'Readonly input here_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f5']['_placeholder']= 'Readonly input here'  ]]
  [%[ fformXbasic3.custom['widgets']['f5']['_readonly']= '==0'  ]]
  [%[= fformXbasic3.custom['widgets']['f5'] ]]
 
@@ -1360,7 +1384,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic3.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[ fformXbasic3.custom['widgets']['f6']['_class']= 'form-control'  ]]
- [%[ fformXbasic3.custom['widgets']['f6']['_placeholder']= 'Disabled input_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f6']['_placeholder']= 'Disabled input'  ]]
  [%[= fformXbasic3.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f6'] if 'f6' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1377,7 +1401,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f7']['_type']= 'checkbox'  ]]
  [%[ fformXbasic3.custom['widgets']['f7']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic3.custom['widgets']['f7']['_id']= 'customCheck1'  ]]
- [%[ fformXbasic3.custom['widgets']['f7']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f7']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f7'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f7'] if 'f7' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1390,7 +1414,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f8']['_type']= 'checkbox'  ]]
  [%[ fformXbasic3.custom['widgets']['f8']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic3.custom['widgets']['f8']['_id']= 'customCheck2'  ]]
- [%[ fformXbasic3.custom['widgets']['f8']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f8']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f8'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f8'] if 'f8' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1403,7 +1427,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f9']['_type']= 'checkbox'  ]]
  [%[ fformXbasic3.custom['widgets']['f9']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic3.custom['widgets']['f9']['_id']= 'customCheck3'  ]]
- [%[ fformXbasic3.custom['widgets']['f9']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f9']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f9'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f9'] if 'f9' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1416,7 +1440,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f10']['_type']= 'checkbox'  ]]
  [%[ fformXbasic3.custom['widgets']['f10']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic3.custom['widgets']['f10']['_id']= 'customCheck4'  ]]
- [%[ fformXbasic3.custom['widgets']['f10']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f10']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f10'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f10'] if 'f10' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1434,7 +1458,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f11']['_type']= 'radio'  ]]
  [%[ fformXbasic3.custom['widgets']['f11']['_id']= 'customRadio1'  ]]
  [%[ fformXbasic3.custom['widgets']['f11']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic3.custom['widgets']['f11']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f11']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f11'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f11'] if 'f11' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1447,7 +1471,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f12']['_type']= 'radio'  ]]
  [%[ fformXbasic3.custom['widgets']['f12']['_id']= 'customRadio2'  ]]
  [%[ fformXbasic3.custom['widgets']['f12']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic3.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f12'] if 'f12' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1460,7 +1484,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f13']['_type']= 'radio'  ]]
  [%[ fformXbasic3.custom['widgets']['f13']['_id']= 'customRadio3'  ]]
  [%[ fformXbasic3.custom['widgets']['f13']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic3.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f13'] if 'f13' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1494,7 +1518,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['widgets']['f15']['_readonly']= '==0'  ]]
  [%[ fformXbasic3.custom['widgets']['f15']['_class']= 'form-control-plaintext'  ]]
  [%[ fformXbasic3.custom['widgets']['f15']['_value']= 'email@example.com'  ]]
- [%[ fformXbasic3.custom['widgets']['f15']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic3.custom['widgets']['f15']['_placeholder']= ''  ]]
  [%[= fformXbasic3.custom['widgets']['f15'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic3.custom['errors']['f15'] if 'f15' in fformXbasic3.custom['errors'] else '' ]]</span>
@@ -1518,10 +1542,6 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic3.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformXbasic3.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformXbasic3.custom['submit'] ]]
-
- [%[ for hidden_widget in fformXbasic3.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic3.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic3</span></div>
 
@@ -1553,7 +1573,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic4.custom['widgets']['f0']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f0']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f0']['_placeholder']= 'Johnny Brown_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f0']['_placeholder']= 'Johnny Brown'  ]]
  [%[= fformXbasic4.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f0'] if 'f0' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1567,7 +1587,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f1']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f1']['_value']= 'bootstrap@example.com'  ]]
  [%[ fformXbasic4.custom['widgets']['f1']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f1'] if 'f1' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1581,7 +1601,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f2']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f2']['_value']= 'https://getbootstrap.com'  ]]
  [%[ fformXbasic4.custom['widgets']['f2']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f2'] if 'f2' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1595,7 +1615,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f3']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f3']['_value']= '1-(111)-111-1111'  ]]
  [%[ fformXbasic4.custom['widgets']['f3']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f3'] if 'f3' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1609,7 +1629,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f4']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f4']['_value']= 'password'  ]]
  [%[ fformXbasic4.custom['widgets']['f4']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f4'] if 'f4' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1622,7 +1642,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic4.custom['widgets']['f5']['_class']= 'form-control'  ]]
  [%[ fformXbasic4.custom['widgets']['f5']['_type']= 'text'  ]]
- [%[ fformXbasic4.custom['widgets']['f5']['_placeholder']= 'Readonly input here_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f5']['_placeholder']= 'Readonly input here'  ]]
  [%[ fformXbasic4.custom['widgets']['f5']['_readonly']= '==0'  ]]
  [%[= fformXbasic4.custom['widgets']['f5'] ]]
 
@@ -1636,7 +1656,7 @@ gtag('config', 'UA-119386393-1');
  </label>
  [%[ fformXbasic4.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[ fformXbasic4.custom['widgets']['f6']['_class']= 'form-control'  ]]
- [%[ fformXbasic4.custom['widgets']['f6']['_placeholder']= 'Disabled input_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f6']['_placeholder']= 'Disabled input'  ]]
  [%[= fformXbasic4.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f6'] if 'f6' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1653,7 +1673,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f7']['_type']= 'checkbox'  ]]
  [%[ fformXbasic4.custom['widgets']['f7']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic4.custom['widgets']['f7']['_id']= 'customCheck1-1'  ]]
- [%[ fformXbasic4.custom['widgets']['f7']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f7']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f7'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f7'] if 'f7' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1666,7 +1686,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f8']['_type']= 'checkbox'  ]]
  [%[ fformXbasic4.custom['widgets']['f8']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic4.custom['widgets']['f8']['_id']= 'customCheck2-1'  ]]
- [%[ fformXbasic4.custom['widgets']['f8']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f8']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f8'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f8'] if 'f8' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1679,7 +1699,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f9']['_type']= 'checkbox'  ]]
  [%[ fformXbasic4.custom['widgets']['f9']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic4.custom['widgets']['f9']['_id']= 'customCheck3-1'  ]]
- [%[ fformXbasic4.custom['widgets']['f9']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f9']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f9'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f9'] if 'f9' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1692,7 +1712,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f10']['_type']= 'checkbox'  ]]
  [%[ fformXbasic4.custom['widgets']['f10']['_class']= 'custom-control-input'  ]]
  [%[ fformXbasic4.custom['widgets']['f10']['_id']= 'customCheck4-1'  ]]
- [%[ fformXbasic4.custom['widgets']['f10']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f10']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f10'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f10'] if 'f10' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1710,7 +1730,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f11']['_type']= 'radio'  ]]
  [%[ fformXbasic4.custom['widgets']['f11']['_id']= 'customRadio4'  ]]
  [%[ fformXbasic4.custom['widgets']['f11']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic4.custom['widgets']['f11']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f11']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f11'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f11'] if 'f11' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1723,7 +1743,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f12']['_type']= 'radio'  ]]
  [%[ fformXbasic4.custom['widgets']['f12']['_id']= 'customRadio5'  ]]
  [%[ fformXbasic4.custom['widgets']['f12']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic4.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f12'] if 'f12' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1736,7 +1756,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f13']['_type']= 'radio'  ]]
  [%[ fformXbasic4.custom['widgets']['f13']['_id']= 'customRadio6'  ]]
  [%[ fformXbasic4.custom['widgets']['f13']['_class']= 'custom-control-input'  ]]
- [%[ fformXbasic4.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f13'] if 'f13' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1770,7 +1790,7 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['widgets']['f15']['_readonly']= '==0'  ]]
  [%[ fformXbasic4.custom['widgets']['f15']['_class']= 'form-control-plaintext'  ]]
  [%[ fformXbasic4.custom['widgets']['f15']['_value']= 'email@example.com'  ]]
- [%[ fformXbasic4.custom['widgets']['f15']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic4.custom['widgets']['f15']['_placeholder']= ''  ]]
  [%[= fformXbasic4.custom['widgets']['f15'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic4.custom['errors']['f15'] if 'f15' in fformXbasic4.custom['errors'] else '' ]]</span>
@@ -1794,10 +1814,6 @@ gtag('config', 'UA-119386393-1');
  [%[ fformXbasic4.custom['submit']['_value']= 'Submit'  ]]
  [%[ fformXbasic4.custom['submit']['_title']= 'mysubmit from last element'  ]]
  [%[= fformXbasic4.custom['submit'] ]]
-
- [%[ for hidden_widget in fformXbasic4.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic4.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic4</span></div>
 
@@ -1838,7 +1854,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f0'] if 'f0' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1852,7 +1868,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f1'] if 'f1' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1866,7 +1882,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f2'] if 'f2' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1883,7 +1899,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f3']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f3'] if 'f3' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1897,7 +1913,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f4']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f4'] if 'f4' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1911,7 +1927,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f5']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f5'] if 'f5' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1925,7 +1941,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f6']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f6']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f6']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f6'] if 'f6' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1942,7 +1958,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f7']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f7']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f7']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f7']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f7'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f7'] if 'f7' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1956,7 +1972,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f8']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f8']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f8']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f8']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f8'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f8'] if 'f8' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1973,7 +1989,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f9']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f9']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f9']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f9']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f9'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f9'] if 'f9' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -1987,7 +2003,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f10']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f10']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f10']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f10']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f10'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f10'] if 'f10' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2001,7 +2017,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f11']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f11']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f11']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f11']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f11'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f11'] if 'f11' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2018,7 +2034,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f12']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f12']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f12'] if 'f12' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2035,7 +2051,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f13']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f13']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f13'] if 'f13' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2049,7 +2065,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f14']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f14']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f14']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f14']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f14'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f14'] if 'f14' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2063,7 +2079,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f15']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f15']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f15']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f15']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f15'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f15'] if 'f15' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2077,7 +2093,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f16']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f16']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f16']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f16']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f16'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f16'] if 'f16' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2091,7 +2107,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f17']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f17']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f17']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f17']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f17'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f17'] if 'f17' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2105,7 +2121,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic5.custom['widgets']['f18']['_type']= 'text'  ]]
  [%[ fformXbasic5.custom['widgets']['f18']['_class']= 'form-control'  ]]
- [%[ fformXbasic5.custom['widgets']['f18']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic5.custom['widgets']['f18']['_placeholder']= ''  ]]
  [%[= fformXbasic5.custom['widgets']['f18'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic5.custom['errors']['f18'] if 'f18' in fformXbasic5.custom['errors'] else '' ]]</span>
@@ -2121,10 +2137,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic5.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic5.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic5</span></div>
 
@@ -2158,7 +2170,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f0']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f0'] if 'f0' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2172,7 +2184,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f1']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f1'] if 'f1' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2186,7 +2198,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f2']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f2'] if 'f2' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2203,7 +2215,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f3']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f3'] if 'f3' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2217,7 +2229,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f4']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f4'] if 'f4' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2231,7 +2243,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f5']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f5'] if 'f5' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2245,7 +2257,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f6']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f6']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f6']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f6']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f6'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f6'] if 'f6' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2262,7 +2274,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f7']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f7']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f7']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f7']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f7'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f7'] if 'f7' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2276,7 +2288,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f8']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f8']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f8']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f8']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f8'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f8'] if 'f8' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2293,7 +2305,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f9']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f9']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f9']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f9']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f9'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f9'] if 'f9' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2307,7 +2319,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f10']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f10']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f10']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f10']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f10'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f10'] if 'f10' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2321,7 +2333,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f11']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f11']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f11']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f11']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f11'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f11'] if 'f11' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2338,7 +2350,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f12']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f12']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f12']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f12']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f12'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f12'] if 'f12' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2355,7 +2367,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f13']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f13']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f13']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f13']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f13'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f13'] if 'f13' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2369,7 +2381,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f14']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f14']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f14']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f14']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f14'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f14'] if 'f14' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2383,7 +2395,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f15']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f15']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f15']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f15']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f15'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f15'] if 'f15' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2397,7 +2409,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f16']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f16']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f16']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f16']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f16'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f16'] if 'f16' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2411,7 +2423,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f17']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f17']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f17']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f17']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f17'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f17'] if 'f17' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2425,7 +2437,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic6.custom['widgets']['f18']['_type']= 'text'  ]]
  [%[ fformXbasic6.custom['widgets']['f18']['_class']= 'form-control'  ]]
- [%[ fformXbasic6.custom['widgets']['f18']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic6.custom['widgets']['f18']['_placeholder']= ''  ]]
  [%[= fformXbasic6.custom['widgets']['f18'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic6.custom['errors']['f18'] if 'f18' in fformXbasic6.custom['errors'] else '' ]]</span>
@@ -2441,10 +2453,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic6.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic6.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic6</span></div>
 
@@ -2484,7 +2492,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic7.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f0']['_class']= 'form-control form-control-success'  ]]
- [%[ fformXbasic7.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f0'] if 'f0' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2502,7 +2510,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic7.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f1']['_class']= 'form-control form-control-warning'  ]]
- [%[ fformXbasic7.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f1'] if 'f1' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2520,7 +2528,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic7.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f2']['_class']= 'form-control form-control-danger'  ]]
- [%[ fformXbasic7.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f2'] if 'f2' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2541,7 +2549,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-9">
  [%[ fformXbasic7.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f3']['_class']= 'form-control form-control-success'  ]]
- [%[ fformXbasic7.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f3'] if 'f3' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2561,7 +2569,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-9">
  [%[ fformXbasic7.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f4']['_class']= 'form-control form-control-warning'  ]]
- [%[ fformXbasic7.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f4'] if 'f4' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2581,7 +2589,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-9">
  [%[ fformXbasic7.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fformXbasic7.custom['widgets']['f5']['_class']= 'form-control form-control-danger'  ]]
- [%[ fformXbasic7.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic7.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic7.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic7.custom['errors']['f5'] if 'f5' in fformXbasic7.custom['errors'] else '' ]]</span>
@@ -2604,10 +2612,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic7.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic7.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic7</span></div>
 
@@ -2641,7 +2645,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic8.custom['widgets']['f0']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f0']['_class']= 'form-control form-control-success'  ]]
- [%[ fformXbasic8.custom['widgets']['f0']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f0']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f0'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f0'] if 'f0' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2659,7 +2663,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic8.custom['widgets']['f1']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f1']['_class']= 'form-control form-control-warning'  ]]
- [%[ fformXbasic8.custom['widgets']['f1']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f1']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f1'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f1'] if 'f1' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2677,7 +2681,7 @@ gtag('config', 'UA-119386393-1');
    </label>
  [%[ fformXbasic8.custom['widgets']['f2']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f2']['_class']= 'form-control form-control-danger'  ]]
- [%[ fformXbasic8.custom['widgets']['f2']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f2']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f2'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f2'] if 'f2' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2698,7 +2702,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-10">
  [%[ fformXbasic8.custom['widgets']['f3']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f3']['_class']= 'form-control form-control-success'  ]]
- [%[ fformXbasic8.custom['widgets']['f3']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f3']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f3'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f3'] if 'f3' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2718,7 +2722,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-10">
  [%[ fformXbasic8.custom['widgets']['f4']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f4']['_class']= 'form-control form-control-warning'  ]]
- [%[ fformXbasic8.custom['widgets']['f4']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f4']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f4'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f4'] if 'f4' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2738,7 +2742,7 @@ gtag('config', 'UA-119386393-1');
    <div class="col-sm-12 col-md-10">
  [%[ fformXbasic8.custom['widgets']['f5']['_type']= 'text'  ]]
  [%[ fformXbasic8.custom['widgets']['f5']['_class']= 'form-control form-control-danger'  ]]
- [%[ fformXbasic8.custom['widgets']['f5']['_placeholder']= '_p4w'  ]]
+ [%[ fformXbasic8.custom['widgets']['f5']['_placeholder']= ''  ]]
  [%[= fformXbasic8.custom['widgets']['f5'] ]]
 
  <span style="color:#ff0000">[%[= fformXbasic8.custom['errors']['f5'] if 'f5' in fformXbasic8.custom['errors'] else '' ]]</span>
@@ -2761,10 +2765,6 @@ gtag('config', 'UA-119386393-1');
   </div>
  </div>
 </div>
-
- [%[ for hidden_widget in fformXbasic8.custom['hidden_widgets'].keys(): ]]
-     [%[= fformXbasic8.custom['hidden_widgets'][hidden_widget] ]]
- [%[ pass ]] 
 
   <div class="flashdiv"><span class="flashspan">fformXbasic8</span></div>
 
@@ -2793,39 +2793,103 @@ gtag('config', 'UA-119386393-1');
   
 <!-- forms ajax -->
 <script>
-    const forms_url = [%[ =XML( page_url ) ]];
 
-    for(let i = 0; i < document.forms.length; i++){
+    ! function(forms_url) {
 
-        document.forms[i].onsubmit = async (e) => {
-            e.preventDefault();
+        for (const f of document.forms) {
 
-            let response = await fetch(forms_url, 
-                 { method: 'POST', 
-                   body: new FormData( document.forms[i] ) 
-                 });
+            f.onsubmit = async (e) => {
 
-            let result = await response.json();
-            swal({
-                  type: (result.messages.startsWith('error') ? "error" : "info") ,
-                  title: result.messages,
-                  animation : false,
-                  timer: 3000,
-                  text: '3 sec & will hide',
-                  showCancelButton: false,
-                  showConfirmButton: false
-                 });
+                e.preventDefault();
+
+                const response = await fetch(forms_url, {
+                    method: 'POST',
+                    body: new FormData(f)
+                });
+
+                const result = await response.json();
+
+                if (result.js_alert === 'sweet2') {
+
+                    if (("icon_type" in result) == 0) {
+                        result.icon_type = 'error';
+                    };
+
+                    Swal.fire({
+                        //position: 'top-end',
+                        icon: result.icon_type,
+                        title: result.messages,
+                        showConfirmButton: false,
+                        timer: 2000,
+
+                        showClass: {
+                            popup: '',
+                            icon: ''
+                        },
+                        hideClass: {
+                            popup: '',
+                        }
+                    });
+                    //----------------------------------------------------------
+                } else {
+                    alert(result.messages);
+                };
+            };
         };
-    }
+
+    }([%[ = XML(ctrl_template_url) ]]);
+
 </script>
 
  <!-- rm_flashdiv -->
 <script>
-     !function() { 
-         const elems = document.querySelectorAll('.flashdiv');
-         for (const e of elems) { setTimeout(function() {e.remove();}, 15000); }
-     }();
+
+    ! function(rm_class) {
+
+        for (const e of document.querySelectorAll(rm_class)) {
+            setTimeout(function() {
+                e.remove();
+            }, 15000);
+        };
+
+    }('.flashdiv');
+
 </script>
 
+
+<!-- call tabinfo -->
+<button onclick="admin_btn.topFunction()" id="id_adm_btn" title="Up">&uarr;</button>
+
+<script>
+    const admin_btn = ( function ( tabinfo_url  ) {
+
+        const  btn_id = "id_adm_btn",
+               num_of_pix = 0; //20,
+    
+            // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+              if (document.body.scrollTop >= num_of_pix || document.documentElement.scrollTop >= num_of_pix) {
+                document.getElementById(btn_id).style.display = "block";
+              } else {
+                document.getElementById(btn_id).style.display = "none";
+              };
+            };
+    
+            // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+              //document.body.scrollTop = 0;
+             // document.documentElement.scrollTop = 0;
+    
+              window.location = tabinfo_url;
+    
+            };
+    
+        return {   topFunction: topFunction, }
+    
+        } ) ( [%[ = XML( ctrl_tabinfo_url ) ]]  );
+</script>
+    
 </body>
 </html>

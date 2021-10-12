@@ -1,13 +1,22 @@
 [[extend 'p4w_layout.html']]
 
 
-<a role="button" href="[[=URL(  'index'  )]]">goto index</a>
+<a role="button" href="[[=URL(  'index'  )]]">index</a>
+<a role="button" onclick="Previous()">prev page</a>
+
+    <script>
+        function Previous() {
+            window.history.go(-1);
+        }
+    </script>
+
 
 
 <div class="section">
   <div class="vars">
       [[=message]]
   </div>
-</div>
 
-[[=menu]]
+it's admin panel
+
+</div>

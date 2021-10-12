@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-            <!-- 25.11.2020 16:43:12 py4web app, ported by AI-biorex, tidylib_check = True -->
+            <!-- 09.10.2021 11:20:50 py4web app, ported by AI-biorex, tidylib_check = True -->
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8"/>
@@ -19,8 +19,83 @@
   <!-- Custom Theme Style -->
   <link href="[%[=URL('static/tte/gentelella/build/css/custom.min.css') ]]" rel="stylesheet"/>
  
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"  async defer></script>
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="/>
+
+   <!-- disable google analytics -->
+   <script>window['ga-disable-UA-119386393-1'] = true;</script>
+
+<style>
+     .mysubmit_cls {
+         width: 6em;
+         margin: 0.2em auto 0.2em auto !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         border: 1px dashed black;
+         color: black;
+         background-color: LightGray;
+         font-weight: bold;
+         text-decoration: underline;
+     }
+
+     .mysubmit_cls:hover {
+         background-color: LightCyan;
+         cursor: pointer;
+     }
+
+     .flashdiv {
+         text-align: center;
+         position: absolute;
+         display: inline-block;
+     }
+
+     .flashspan {
+         position: relative;
+         z-index: 100;
+         background-color: #F0FFF0;
+         color: black;
+         border: 2px dashed red;
+         padding: 0.2em 1em 0.2em 1em;
+     }
+
+     /* go tables button */
+
+     #id_adm_btn {
+         display: none;
+         position: fixed;
+         bottom: 15px;
+         right: 20px;
+         z-index: 99;
+         font-size: 18px;
+         border: none;
+         border: 2px dashed red;
+         outline: none;
+         background-color: #6698FD;
+         color: white;
+         cursor: pointer;
+         padding: 12px;
+         /* border-radius: 30%; */
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+     }
+
+     #id_adm_btn:hover {
+         background-color: #555;
+         background-color: #008000 !important;
+
+         border-color: white;
+         /* Цвет границы */
+         border-style: solid;
+         /* Стиль границы */
+
+         border-width: 2px;
+
+         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+     }
+
+
+
+</style>
+
 </head>
  <body class="nav-md">
   <div class="container body">
@@ -210,7 +285,7 @@
             <a href="[%[=URL('contacts') ]]">Contacts</a>
            </li>
            <li>
-            <a href="[%[=URL('profile') ]]">Profile</a>
+            <a href="[%[=URL('profileA') ]]">Profile</a>
            </li>
           </ul>
          </li>
@@ -234,7 +309,7 @@
             <a href="[%[=URL('plainXpage') ]]">Plain Page</a>
            </li>
            <li>
-            <a href="[%[=URL('login') ]]">Login Page</a>
+            <a href="[%[=URL('loginA') ]]">Login Page</a>
            </li>
            <li>
             <a href="[%[=URL('pricingXtables') ]]">Pricing Tables</a>
@@ -295,7 +370,7 @@
        <a data-placement="top" data-toggle="tooltip" title="Lock">
         <span aria-hidden="true" class="glyphicon glyphicon-eye-close"></span>
        </a>
-       <a data-placement="top" data-toggle="tooltip" href="[%[=URL('login') ]]" title="Logout">
+       <a data-placement="top" data-toggle="tooltip" href="[%[=URL('loginA') ]]" title="Logout">
         <span aria-hidden="true" class="glyphicon glyphicon-off"></span>
        </a>
       </div>
@@ -322,7 +397,7 @@
            <span>Settings</span>
           </a>
           <a class="dropdown-item" href="javascript:;">Help</a>
-          <a class="dropdown-item" href="[%[=URL('login') ]]">
+          <a class="dropdown-item" href="[%[=URL('loginA') ]]">
            <i class="fa fa-sign-out pull-right"></i>
            Log Out
           </a>

@@ -4,7 +4,7 @@ from .common import db, Field, Tags, groups
 from pydal.validators import *
 from py4web.utils.populate import populate
 
-# py4web app, AI-biorex ported 26.04.2021 15:09:02 UTC+3
+# py4web app, AI-biorex ported 12.10.2021 08:14:53 UTC+3
 
 #import pydal
 #from py4web import *
@@ -44,8 +44,6 @@ if not db(db.auth_user).count():
     groups.add(2, ['dancer', 'teacher'])
     groups.add(3, 'dancer')
     db.commit()
-
-
 
 db.define_table(
     'test_table',
@@ -104,735 +102,744 @@ if not db(db.app_images).count():
 
 db.commit()
 
-db.define_table( 'css_js_files',
-    Field('orig_file_path', requires=IS_NOT_EMPTY(),  ),
-    Field('found_in_file', default='' ),
-    Field('app_name', default='' ),
+db.define_table( 'app_css_js',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    )
+
+db.define_table( 'app_js_script',
+    Field('f0', requires=IS_NOT_EMPTY(),  ),
+    Field('in_html', ),
+    )
+
+db.define_table( 'app_html_text',
+    Field('f0', requires=IS_NOT_EMPTY(), ),
+    Field('key',requires=IS_NOT_EMPTY(), ),
+    Field('in_html', ),
     )
 
 db.commit()
 
 db.define_table(
     'dfindex0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfindex1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfindex30',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfindex20',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfindex21',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets2',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets3',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets4',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets5',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets6',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets7',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets8',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets9',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfwidgets10',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dftopXnav0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dftopXnavXsidebar0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfboxed0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dffixedXsidebar0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dffixedXsidebarXcustom0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dffixedXtopnav0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dffixedXfooter0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcollapsedXsidebar0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfchartjs0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfflot0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfinline0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfuplot0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfgeneral0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dficons0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfbuttons0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfsliders0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfmodals0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar2',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar3',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar4',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar5',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfnavbar6',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dftimeline0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfribbons0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfadvanced0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfeditors0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfvalidation0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfvalidation1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfsimple0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfsimple1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfdata0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfjsgrid0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcalendar0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfgallery0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfkanban0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfmailbox0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcompose0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfreadXmail0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfinvoice0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprofileA0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprofileA1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprofileA2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','text', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','text', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfeXcommerce0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprojects0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprojectXadd0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprojectXedit0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfprojectXdetail0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcontacts0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dffaq0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfcontactXus0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfloginA0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfregisterA0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfforgotXpassword0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfrecoverXpassword0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfloginXv20',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfregisterXv20',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','boolean',  ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
+    Field('f4','boolean', False ),
     )
 db.commit()
 
 db.define_table(
     'dfforgotXpasswordXv20',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfrecoverXpasswordXv20',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dflockscreen0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dflegacyXuserXmenu0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dflanguageXmenu0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfX5000',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfX5001',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfpace0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfblank0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfstarter0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfenhanced0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfenhanced1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfiframe0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfsimpleXresults0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfsimpleXresults1',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfenhancedXresults0',
-    Field('f0','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'dfenhancedXresults1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='fNo' ),
+    Field('f1','string', length=1024, default='fNo' ),
+    Field('f2','string', length=1024, default='fNo' ),
+    Field('f3','string', length=1024, default='fNo' ),
     )
 db.commit()
 
 db.define_table(
     'tindex30',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tindex20',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tbuttons0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tbuttons1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tbuttons2',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tbuttons3',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tbuttons4',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tdata0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tdata1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tmailbox0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoice0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoice1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tprojects0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
-    Field('f5','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
+    Field('f5','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tprojectXedit0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoiceXprint0',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
-    Field('f2','string', length=1024, ),
-    Field('f3','string', length=1024, ),
-    Field('f4','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
+    Field('f2','string', length=1024, default='tNo' ),
+    Field('f3','string', length=1024, default='tNo' ),
+    Field('f4','string', length=1024, default='tNo' ),
     )
 db.commit()
 
 db.define_table(
     'tinvoiceXprint1',
-    Field('f0','string', length=1024, ),
-    Field('f1','string', length=1024, ),
+    Field('f0','string', length=1024, default='tNo' ),
+    Field('f1','string', length=1024, default='tNo' ),
     )
 db.commit()
 

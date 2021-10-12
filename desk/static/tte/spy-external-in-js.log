@@ -21,7 +21,6 @@
 "http://www.w3.org/2000/xmlns/"
 'http://www.w3.org/1999/xhtml'
 'https://sweetalert2.github.io/#ajax-request'
-"http://www.macromedia.com/go/getflashplayer"
 "http://schemas.openxmlformats.org/package/2006/relationships"
 "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument"
 "http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet"
@@ -31,6 +30,7 @@
 "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 "http://schemas.openxmlformats.org/markup-compatibility/2006"
 "http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac"
+"http://www.macromedia.com/go/getflashplayer"
 "http://www.highcharts.com"
 'http://www.w3.org/2000/svg'
 'http://www.w3.org/1999/xlink'
