@@ -14,10 +14,7 @@ from py4web.core import Template, Reloader
 from .common import db, session, T, cache, authenticated, unauthenticated, auth
 from .settings import APP_NAME
 
-try:
-   import ombott as bottle
-except ImportError:
-   import bottle
+import ombott
 
 
 
@@ -51,71 +48,17 @@ def index(param=None):
 #Glb= {'debug': True, 'my_app_name': APP_NAME, 'tte_path': '/static/tte'}
 Glb= {'debug': True, 'my_app_name': "ngx", 'tte_path': '/static/tte'}
 
+# @ombott.error(404, '/web<_:path()>')
+# @ombott.error(404, '/web/<params:path>')
+@ombott.error(404, f"/{APP_NAME}")
+def url_not_found(route, params):
+    # print ( str(dict(route=route, params=params))  )
 
-def before_request():
-    bad_path= '/ngx/static/tte/ngx/static/tte/'
-    bad_root='/ngx/ngx/'
-    if bottle.request.environ["PATH_INFO"].startswith(bad_path):
-        bottle.request.environ["PATH_INFO"]= bottle.request.environ["PATH_INFO"].replace( '/ngx/static/tte', '', 1)
-        print ( f'before_request:    /ngx: goto {bottle.request.environ["PATH_INFO"]}' )
-    elif bottle.request.environ["PATH_INFO"].startswith(bad_root):
-        bottle.request.environ["PATH_INFO"]= bottle.request.environ["PATH_INFO"].replace( '/ngx', '', 1)
-        print ( f'before_request:    /ngx: goto {bottle.request.environ["PATH_INFO"]}' )
-
-#bottle.default_app().add_hook( "before_request", before_request )
+    ombott.response.status = 303
+    ombott.response.headers["Location"] = f"/{APP_NAME}"
+    #ombott.response.headers['Location'] = route #f'/{APP_NAME}'
 
 
-@bottle.error(404)
-def error404(error):
-
-    func_mess = []
-
-    def check_rule(maybe_app_root):
-        for e in Reloader.ROUTES:
-            if ('rule' in e ) and ( e["rule"] == maybe_app_root) :
-                Glb["debug"] and func_mess.append(f"     found_rule: {e['rule']}")
-                return True
-        return False
-
-    location = "/" + Glb["my_app_name"]
-    lx = bottle.request.path.split("/", 2)
-
-    if len(lx) >= 2 and check_rule("/" + lx[1]):
-
-        location = "/" + lx[1]
-#
-# this code is not necessary for a modern py4web
-#
-
-#        files_prefix = location + Glb["tte_path"]
-#
-#        location_2x = location + location + "/"
-#        files_prefix_2x = files_prefix + files_prefix + "/"
-#
-#        def rm_bad_prefix(bad_prefix):
-#            new_location = bottle.request.path.replace(bad_prefix, "", 1)
-#            Glb["debug"] and func_mess.append(f"     rm_bad_prefix: {bad_prefix}")
-#            return new_location
-#
-#        if bottle.request.path.startswith(files_prefix_2x):
-#            if len(bottle.request.path) > len(files_prefix_2x):
-#                location = rm_bad_prefix(files_prefix)
-#
-#        elif bottle.request.path.startswith(location_2x):
-#            if len(bottle.request.path) > len(location_2x):
-#                location = rm_bad_prefix(location)
-
-
-    if Glb["debug"]:
-        debug_mess = [  f"404  app=/{Glb['my_app_name']}, err_path={bottle.request.path}",
-                        f"     info: {error}", ]
-        if len(func_mess):
-            debug_mess += func_mess
-        debug_mess.append(f"     goto_new_path: {location}\n")
-        print("\n".join(debug_mess))
-
-    bottle.response.status = 303
-    bottle.response.set_header("Location", location)
 
 
 

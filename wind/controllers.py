@@ -10,11 +10,7 @@
 
 import os, json, uuid
 #
-try:
-   import ombott as bottle
-except ImportError:
-   import bottle
-   #from py4web.core import bottle
+import ombott
 
 from py4web import action, request, response,  abort, redirect, URL, Field
 from py4web.utils.form import Form, FormStyleBulma
@@ -232,60 +228,15 @@ def api(tablename, rec_id=None):
 #curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "New item", "year": "2009"}' http://rest-api.io/items
 #curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Updated item", "year": "2010"}' http://rest-api.io/items/5069b47aa892630aae059584
 
+# @ombott.error(404, '/web<_:path()>')
+# @ombott.error(404, '/web/<params:path>')
+@ombott.error(404, f"/{APP_NAME}")
+def url_not_found(route, params):
+    # print ( str(dict(route=route, params=params))  )
 
-
-
-
-
-@bottle.error(404)
-def error404(error):
-
-    func_mess = []
-
-    def check_rule(maybe_app_root):
-        for e in Reloader.ROUTES:
-            if ('rule' in e ) and ( e["rule"] == maybe_app_root) :
-                Glb["debug"] and func_mess.append(f"     found_rule: {e['rule']}")
-                return True
-        return False
-
-    location = "/" + Glb["my_app_name"]
-    lx = bottle.request.path.split("/", 2)
-
-    if len(lx) >= 2 and check_rule("/" + lx[1]):
-        location = "/" + lx[1]
-
-# this code is not necessary for modern py4web 
-#
-#        files_prefix = location + Glb["tte_path"]
-#
-#        location_2x = location + location + "/"
-#        files_prefix_2x = files_prefix + files_prefix + "/"
-#
-#        def rm_bad_prefix(bad_prefix):
-#            new_location = bottle.request.path.replace(bad_prefix, "", 1)
-#            Glb["debug"] and func_mess.append(f"     rm_bad_prefix: {bad_prefix}")
-#            return new_location
-#
-#        if bottle.request.path.startswith(files_prefix_2x):
-#            if len(bottle.request.path) > len(files_prefix_2x):
-#                location = rm_bad_prefix(files_prefix)
-#
-#        elif bottle.request.path.startswith(location_2x):
-#            if len(bottle.request.path) > len(location_2x):
-#                location = rm_bad_prefix(location)
-
-    if Glb["debug"]:
-        debug_mess = [  f"404  app=/{Glb['my_app_name']}, err_path={bottle.request.path}",
-                        f"     info: {error}", ]
-        if len(func_mess):
-            debug_mess += func_mess
-        debug_mess.append(f"     goto_new_path: {location}\n")
-        print("\n".join(debug_mess))
-
-    bottle.response.status = 303
-    bottle.response.set_header("Location", location)
-
+    ombott.response.status = 303
+    ombott.response.headers["Location"] = f"/{APP_NAME}"
+    #ombott.response.headers['Location'] = route #f'/{APP_NAME}'
 
 # -------------------- tabinfo: my backend ------------------------------------
 
