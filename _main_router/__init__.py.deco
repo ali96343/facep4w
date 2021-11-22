@@ -1,0 +1,143 @@
+import os, sys
+from py4web import action, request
+from py4web.core import Reloader
+import ombott
+
+
+
+def Xhello_decorator(func):
+    def inner1(*args, **kwargs):
+         
+        print("before Execution")
+         
+        # getting the returned value
+        returned_value = func(*args, **kwargs)
+        print("after Execution")
+         
+        # returning the value to the original frame
+        return returned_value
+         
+    return inner1
+
+
+
+@action("/favicon.ico")
+def favi():
+    return "my favicon"
+
+
+@action("/robot.txt")
+def robo():
+    return "my robot"
+
+@action("/page_not_found")
+def page_not_found():
+    return "my 404 page"
+
+
+
+
+
+class Router:
+
+    sys_apps = tuple("_ index static favicon.ico robot.txt examples page_not_found".split() )
+
+    def __init__(Z, params):
+        Z.params = params
+        r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
+        Z.a_lst = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
+        Z.client_ip = request.environ.get(
+            "HTTP_X_FORWARDED_FOR"
+        ) or request.environ.get("REMOTE_ADDR")
+        pass
+
+    def is_allow(Z, app_name):
+        if app_name and app_name in Z.a_lst:
+            return True
+        return False
+
+    @property
+    def location(Z, ):
+       l = "/page_not_found"
+       try:
+           p = Z.params[0].split(os.sep, 2)
+           if Z.is_allow(p[0]):
+               l = f"/{p[0]}"
+       except Exception as ex:
+            print (ex)
+       return l
+
+def hello_decorator(func):
+
+    def inner(*args, **kargs):
+       print ('before')
+       res = func(*args, **kargs)
+       print ('after')
+       return res
+    return inner
+
+def hello_dec(func):
+    def _wrap(*args, **kargs):
+       print ('before ',func.__name__)
+       print ('1-- ',*args)
+       print ('2-- ',**kargs)
+       res = func( *args, **kargs  )
+       print ('after ',func.__name__)
+       return res
+    return _wrap 
+
+
+def greeting(x,y):
+    def _wraper(func):
+         def inner( *args, **kargs  ):
+             print (x,' --- ',y)
+             res = func( *args, **kargs  )
+             print ('after')
+             return res
+         return inner
+    return _wraper
+
+
+def greeting(x,y):
+    def _func(func):
+        def _para(*args, **kwargs):
+            print (x, '+++', y)
+            res  = func( *args, **kwargs )
+            print ('============')
+            return res
+        return _para
+    return _func
+
+
+class Gree:
+
+    def __init__(self,z ):
+        self.z =z
+        #self.args = args
+        #self.kwargs = kwargs
+    
+    def __call__(self, func, ):
+        def _param( *args, **kwargs  ):
+           print (self.z)
+           res= func(  *args, **kwargs  )
+           print ('=========================')
+           return res
+        return _param
+
+# https://www.python-course.eu/python3_decorators.php
+# @ombott.error(404, "/")
+# @ombott.error(404, '/<_:path()>')
+@ombott.error(404, "/<params:path>")
+#@evening_greeting
+#@hello_dec
+@Gree('ccccccccccc')
+#@greeting("καλημερα", 'yyyyyyyyy')
+
+def url_not_found(route, params):
+    print('404 route: ', str(dict(route=route, params=params)))
+    router = Router(params)
+
+    ombott.response.status = 303
+    ombott.response.headers["Location"] =  router.location
+
+
