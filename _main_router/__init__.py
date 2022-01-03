@@ -44,6 +44,9 @@ def page_404():
     return ombott.static_file("page_404.html", static_path,)
 
 
+
+p4w_apps = None
+
 class Router:
 
     sys_apps = tuple(
@@ -54,8 +57,10 @@ class Router:
     def __init__(Z, route, params):
         Z.route = route
         Z.params = params
-        r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
-        Z.a_lst = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
+        global p4w_apps
+        if p4w_apps is None:
+            r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
+            p4w_apps = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
         Z.who = {k: v for k, v in request.headers.items()}
         Z.who["user_ip"] = request.environ.get(
             "HTTP_X_FORWARDED_FOR"
@@ -69,21 +74,21 @@ class Router:
         Z.who["agent"] = request.environ.get("HTTP_USER_AGENT")
 
     def is_allow(Z, app_name):
-        if app_name and app_name in Z.a_lst:
+        global p4w_apps
+        if app_name and app_name in p4w_apps:
             Z.who["app"] = app_name
             return True
         return False
 
     @property
     def location(Z,):
-        l = "/page_404"
         try:
             p = Z.params[0].split(os.sep, 2)
             if Z.is_allow(p[0]):
-                l = f"/{p[0]}"
+                return f"/{p[0]}"
         except Exception as ex:
             print(ex)
-        return l
+        return "/page_404"
 
 
 # @ombott.error(404, "/")
