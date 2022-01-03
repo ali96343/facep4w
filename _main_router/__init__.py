@@ -2,86 +2,99 @@ import os, sys
 from py4web import action, request, response
 from py4web.core import Reloader
 import ombott
+from datetime import datetime
 
-# https://github.com/ali96343/facep4w
+# https://github.com/jwulf/letsencrypt-nginx-sidecar
 
-this_dir = os.path.dirname( os.path.abspath(__file__) )
-file_404 = os.path.join( this_dir, 'static','page_404.html' )
-
-def file2str(file_name, mode='r'):
-    code = ""
-    try:
-        with open(file_name, mode) as f:
-            code = f.read()
-    except IOError:
-        print("File not accessible: ", file_name)
-    return code
+this_dir = os.path.dirname(os.path.abspath(__file__))
+static_path = os.path.join(this_dir, "static")
+log404 = os.path.join(this_dir, "404.log")
 
 
-@action("/favicon.ico", overwrite=True)
+def str2file(str_data, file_name, mode="a"):
+    with open(file_name, mode) as f:
+        f.write(str_data)
+    return file_name
+
+
+@action("/favicon.ico")
 def favicon_ico():
-    response.headers["Content-Type"] = 'text/plain'
+    # return ombott.static_file( 'favicon.ico', static_path, )
+    response.headers["Content-Type"] = "text/plain"
     response.headers["Content-disposition"] = 'inline; filename="favicon.ico"'
-    return ''
+    return ""
 
-@action("/robot.txt", overwrite=True)
+
+@action("/robot.txt")
 def robot_txt():
-    response.headers["Content-Type"] = 'text/plain'
+    # return ombott.static_file( 'robot.txt', static_path, )
+    response.headers["Content-Type"] = "text/plain"
     response.headers["Content-disposition"] = 'inline; filename="robot.txt"'
-    return ''
+    return ""
 
 
+# socketio driver works before ombott router
 @action("/socket.io", overwrite=True)
 def socketio_txt():
-    return ''
+    return ""
+
 
 @action("/page_404")
 def page_404():
-    response.headers["Content-Type"] = 'text/html'
-    response.headers["Content-disposition"] = 'inline; filename="file_404.html"'
-    return file2str( file_404 )
+    return ombott.static_file("page_404.html", static_path,)
 
 
 class Router:
 
-    sys_apps = tuple("_ index static favicon.ico robot.txt examples page_404 socket.io".split() )
+    sys_apps = tuple(
+        "_ index static favicon.ico robot.txt examples page_404 socket.io".split()
+    )
+    FMT = "%d.%m.%Y %H:%M:%S"
 
-    def __init__(Z, params):
+    def __init__(Z, route, params):
+        Z.route = route
         Z.params = params
         r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
         Z.a_lst = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
-        Z.who = { k:v for k,v in request.headers.items() }
-        Z.who['user_ip'] = request.environ.get(
+        Z.who = {k: v for k, v in request.headers.items()}
+        Z.who["user_ip"] = request.environ.get(
             "HTTP_X_FORWARDED_FOR"
         ) or request.environ.get("REMOTE_ADDR")
-        Z.who['method'] = request.environ.get('REQUEST_METHOD')
-        #print (Z.who)
+
+        Z.who["app"] = "unk"
+        Z.who["date"] = datetime.now().strftime(Z.FMT)
+        Z.who["route"] = Z.route
+        Z.who["params"] = Z.params
+        Z.who["method"] = request.environ.get("REQUEST_METHOD")
+        Z.who["agent"] = request.environ.get("HTTP_USER_AGENT")
 
     def is_allow(Z, app_name):
         if app_name and app_name in Z.a_lst:
+            Z.who["app"] = app_name
             return True
         return False
 
     @property
-    def location(Z, ):
-       l = "/page_404"
-       try:
-           p = Z.params[0].split(os.sep, 2)
-           if Z.is_allow(p[0]):
-               l = f"/{p[0]}"
-       except Exception as ex:
-            print (ex)
-       return l
+    def location(Z,):
+        l = "/page_404"
+        try:
+            p = Z.params[0].split(os.sep, 2)
+            if Z.is_allow(p[0]):
+                l = f"/{p[0]}"
+        except Exception as ex:
+            print(ex)
+        return l
 
 
 # @ombott.error(404, "/")
 # @ombott.error(404, '/<_:path()>')
 @ombott.error(404, "/<params:path>")
 def url_not_found(route, params):
-    print('404: ', str(dict(route=route, params=params)))
+    err_str = "404:" + str(dict(route=route, params=params))
+
+    print(err_str)
+    str2file(err_str + "\n", os.path.join(this_dir, log404))
 
     ombott.response.status = 303
-    ombott.response.headers["Server"] = 'Xping' 
-    ombott.response.headers["Location"] =  Router(params).location
-
-
+    ombott.response.headers["Server"] = "Xping"
+    ombott.response.headers["Location"] = Router(route, params).location
