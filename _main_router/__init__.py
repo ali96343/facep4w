@@ -4,12 +4,10 @@ from py4web.core import Reloader
 import ombott
 from datetime import datetime
 
-# https://github.com/jwulf/letsencrypt-nginx-sidecar
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 static_path = os.path.join(this_dir, "static")
-log404 = os.path.join(this_dir, "404.log")
-
+log404 = os.path.join('/tmp', "404.log")
 
 def str2file(str_data, file_name, mode="a"):
     with open(file_name, mode) as f:
@@ -61,6 +59,12 @@ class Router:
         if p4w_apps is None:
             r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
             p4w_apps = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
+            str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
+
+        err_str = "404:" + str(dict(route=route, params=params))
+        print(err_str)
+        str2file(err_str + "\n", log404)
+            
         Z.who = {k: v for k, v in request.headers.items()}
         Z.who["user_ip"] = request.environ.get(
             "HTTP_X_FORWARDED_FOR"
@@ -95,11 +99,7 @@ class Router:
 # @ombott.error(404, '/<_:path()>')
 @ombott.error(404, "/<params:path>")
 def url_not_found(route, params):
-    err_str = "404:" + str(dict(route=route, params=params))
-
-    print(err_str)
-    str2file(err_str + "\n", os.path.join(this_dir, log404))
 
     ombott.response.status = 303
-    ombott.response.headers["Server"] = "Xping"
+    ombott.response.headers["Server"] = "404-logged"
     ombott.response.headers["Location"] = Router(route, params).location
