@@ -4,10 +4,16 @@ from py4web.core import Reloader
 import ombott
 from datetime import datetime
 
+# https://github.com/jwulf/letsencrypt-nginx-sidecar
+# https://martinheinz.dev/blog/34
+# https://realpython.com/python-with-statement/
+
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 static_path = os.path.join(this_dir, "static")
 log404 = os.path.join('/tmp', "404.log")
+#log404 = os.path.join(this_dir, "404.log")
+
 
 def str2file(str_data, file_name, mode="a"):
     with open(file_name, mode) as f:
@@ -52,12 +58,14 @@ class Router:
     )
     FMT = "%d.%m.%Y %H:%M:%S"
 
+    # my_pep: Z === self
+
     def __init__(Z, route, params):
         Z.route = route
         Z.params = params
         global p4w_apps
         if p4w_apps is None:
-            r_lst = {e["rule"].split(os.sep, 2)[1] for e in Reloader.ROUTES}
+            r_lst = {e["rule"].split('/', 1)[1] for e in Reloader.ROUTES}
             p4w_apps = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
             str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
 
@@ -87,7 +95,7 @@ class Router:
     @property
     def location(Z,):
         try:
-            p = Z.params[0].split(os.sep, 2)
+            p = Z.params[0].split('/', 1)
             if Z.is_allow(p[0]):
                 return f"/{p[0]}"
         except Exception as ex:
