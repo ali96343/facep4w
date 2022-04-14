@@ -1,6 +1,6 @@
 import os, sys
 from py4web import action, request, response
-from py4web.core import Reloader
+from py4web.core import Reloader, PY4WEB_CMD 
 import ombott
 from datetime import datetime
 
@@ -8,6 +8,9 @@ from datetime import datetime
 # https://martinheinz.dev/blog/34
 # https://realpython.com/python-with-statement/
 
+
+
+apps_dir =  os.environ["PY4WEB_APPS_FOLDER"] 
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 static_path = os.path.join(this_dir, "static")
@@ -68,7 +71,7 @@ class Router:
              
             #r_lst = {e["rule"].split('/', 2)[1] for e in Reloader.ROUTES}
             r_lst = {e  for e in Reloader.ROUTES}
-            p4w_apps = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
+            p4w_apps = [e for e in r_lst if ( not e.startswith(Z.sys_apps) and ( os.path.isdir( os.path.join(apps_dir, e) )) )]
             str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
 
         err_str = "404:" + str(dict(route=route, params=params))
