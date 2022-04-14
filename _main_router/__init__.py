@@ -54,7 +54,7 @@ p4w_apps = None
 class Router:
 
     sys_apps = tuple(
-        "_ index static favicon.ico robot.txt examples page_404 socket.io".split()
+        "_ . README git index static favicon.ico robot.txt examples page_404 socket.io".split()
     )
     FMT = "%d.%m.%Y %H:%M:%S"
 
@@ -65,7 +65,9 @@ class Router:
         Z.params = params
         global p4w_apps
         if p4w_apps is None:
-            r_lst = {e["rule"].split('/', 1)[1] for e in Reloader.ROUTES}
+             
+            #r_lst = {e["rule"].split('/', 2)[1] for e in Reloader.ROUTES}
+            r_lst = {e  for e in Reloader.ROUTES}
             p4w_apps = [e for e in r_lst if (e and not e.startswith(Z.sys_apps))]
             str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
 

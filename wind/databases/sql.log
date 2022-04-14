@@ -119,3 +119,14 @@ CREATE TABLE "ttables2"(
     "f3" CHAR(1024)
 );
 success!
+timestamp: 2022-04-13T16:35:24.701196
+ALTER TABLE "auth_user_tag_groups" ADD "tagpath" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!

@@ -512,3 +512,14 @@ CREATE TABLE "tprofileA0"(
     "f4" CHAR(1024)
 );
 success!
+timestamp: 2022-04-13T16:35:28.510664
+ALTER TABLE "auth_user_tag_groups" ADD "tagpath" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
