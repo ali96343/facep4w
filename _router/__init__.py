@@ -18,6 +18,21 @@ log404 = os.path.join('/tmp', "404.log")
 #log404 = os.path.join(this_dir, "404.log")
 
 
+#from py4web.core import Template, action
+
+#def render_template(data, html):
+#    context = dict(output=data)
+#    Template(html).on_success(context)
+#    return context['output']
+
+#@action('index')
+#def index():
+#     d = dict(a='hello', b='world')
+#     return render_template(d, 'generic.html')
+
+
+
+
 def str2file(str_data, file_name, mode="a"):
     with open(file_name, mode) as f:
         f.write(str_data)
@@ -74,6 +89,7 @@ class Router:
             p4w_apps = [e for e in r_lst if ( not e.startswith(Z.sys_apps) and ( os.path.isdir( os.path.join(apps_dir, e) )) )]
             str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
 
+        print (p4w_apps)
         err_str = "404:" + str(dict(route=route, params=params))
         print(err_str)
         str2file(err_str + "\n", log404)
@@ -99,20 +115,25 @@ class Router:
 
     @property
     def location(Z,):
+        global p4w_apps
         try:
+            if Z.route == '/':
+                return p4w_apps[0] 
             p = Z.params[0].split('/', 1)
             if Z.is_allow(p[0]):
                 return f"/{p[0]}"
         except Exception as ex:
             print(ex)
         return "/page_404"
+        #return p4w_apps[0] 
 
 
 # @ombott.error(404, "/")
 # @ombott.error(404, '/<_:path()>')
+@ombott.error(404, "/")
 @ombott.error(404, "/<params:path>")
-def url_not_found(route, params):
-
+def url_not_found(route='/', params=[]):
+    print ( str(dict(route=route, params=params))  )
     ombott.response.status = 303
-    ombott.response.headers["Server"] = "404-logged"
+    #ombott.response.headers["Server"] = "404-logged"
     ombott.response.headers["Location"] = Router(route, params).location
