@@ -67,29 +67,35 @@ def page_404():
 
 
 
+FMT = "%d.%m.%Y %H:%M:%S"
 p4w_apps = None
 
-class Router:
+def get_apps_list():
 
     sys_apps = tuple(
         "_ . README git index static favicon.ico robot.txt examples page_404 socket.io".split()
     )
-    FMT = "%d.%m.%Y %H:%M:%S"
+
+    global p4w_apps
+    if p4w_apps is None:
+        r_lst = {e  for e in Reloader.ROUTES}
+        p4w_apps = [e for e in r_lst if ( not e.startswith(sys_apps) and ( os.path.isdir( os.path.join(apps_dir, e) )) )]
+        str2file( '404-error-start: ' + datetime.now().strftime(FMT) + '\n',log404, mode='w' )
+
+    p4w_apps.sort()
+    print (p4w_apps)
+
+get_apps_list()
+
+
+
+class Router:
 
     # my_pep: Z === self
 
     def __init__(Z, route, params):
         Z.route = route
         Z.params = params
-        global p4w_apps
-        if p4w_apps is None:
-             
-            #r_lst = {e["rule"].split('/', 2)[1] for e in Reloader.ROUTES}
-            r_lst = {e  for e in Reloader.ROUTES}
-            p4w_apps = [e for e in r_lst if ( not e.startswith(Z.sys_apps) and ( os.path.isdir( os.path.join(apps_dir, e) )) )]
-            str2file( '404-error-start: ' + datetime.now().strftime(Z.FMT) + '\n',log404, mode='w' ) 
-
-        print (p4w_apps)
         err_str = "404:" + str(dict(route=route, params=params))
         print(err_str)
         str2file(err_str + "\n", log404)
@@ -100,7 +106,7 @@ class Router:
         ) or request.environ.get("REMOTE_ADDR")
 
         Z.who["app"] = "unk"
-        Z.who["date"] = datetime.now().strftime(Z.FMT)
+        Z.who["date"] = datetime.now().strftime(FMT)
         Z.who["route"] = Z.route
         Z.who["params"] = Z.params
         Z.who["method"] = request.environ.get("REQUEST_METHOD")
@@ -118,14 +124,14 @@ class Router:
         global p4w_apps
         try:
             if Z.route == '/':
-                return p4w_apps[0] 
+                return p4w_apps[0]  if p4w_apps else "/page_404"
             p = Z.params[0].split('/', 1)
             if Z.is_allow(p[0]):
                 return f"/{p[0]}"
         except Exception as ex:
             print(ex)
-        return "/page_404"
-        #return p4w_apps[0] 
+        #return "/page_404"
+        return p4w_apps[0]  if p4w_apps else "/page_404"
 
 
 # @ombott.error(404, "/")
