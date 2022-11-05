@@ -1,6 +1,6 @@
 import os, sys
 from py4web import action, request, response
-from py4web.core import Reloader, PY4WEB_CMD 
+from py4web.core import Reloader, PY4WEB_CMD
 import ombott
 from datetime import datetime
 
@@ -9,28 +9,23 @@ from datetime import datetime
 # https://realpython.com/python-with-statement/
 
 
-
-apps_dir =  os.environ["PY4WEB_APPS_FOLDER"] 
-
 this_dir = os.path.dirname(os.path.abspath(__file__))
 static_path = os.path.join(this_dir, "static")
-log404 = os.path.join('/tmp', "404.log")
-#log404 = os.path.join(this_dir, "404.log")
+log404 = os.path.join("/tmp", "404.log")
+# log404 = os.path.join(this_dir, "404.log")
 
 
-#from py4web.core import Template, action
+# from py4web.core import Template, action
 
-#def render_template(data, html):
+# def render_template(data, html):
 #    context = dict(output=data)
 #    Template(html).on_success(context)
 #    return context['output']
 
-#@action('index')
-#def index():
+# @action('index')
+# def index():
 #     d = dict(a='hello', b='world')
 #     return render_template(d, 'generic.html')
-
-
 
 
 def str2file(str_data, file_name, mode="a"):
@@ -63,31 +58,26 @@ def socketio_txt():
 
 @action("/page_404")
 def page_404():
-    return ombott.static_file("page_404.html", static_path,)
-
+    return ombott.static_file(
+        "page_404.html",
+        static_path,
+    )
 
 
 FMT = "%d.%m.%Y %H:%M:%S"
-p4w_apps = None
 
-def get_apps_list():
-
-    sys_apps = tuple(
-        "_ . README git index static favicon.ico robot.txt examples page_404 socket.io".split()
-    )
-
-    global p4w_apps
-    if p4w_apps is None:
-        r_lst = {e  for e in Reloader.ROUTES}
-        p4w_apps = [e for e in r_lst if ( not e.startswith(sys_apps) and ( os.path.isdir( os.path.join(apps_dir, e) )) )]
-        str2file( '404-error-start: ' + datetime.now().strftime(FMT) + '\n',log404, mode='w' )
-
-    p4w_apps.sort()
-    print (p4w_apps)
-
-get_apps_list()
+def apps_list():
+    apps_dir = os.environ["PY4WEB_APPS_FOLDER"]
+    return sorted ( [ k  for k in Reloader.ROUTES.keys()  
+              if ( 
+                 not k.startswith( ('.','_')  )   
+                 and (os.path.isdir(os.path.join(apps_dir, k)))
+              )
+            ]
+           )
 
 
+p4w_apps=  apps_list()
 
 class Router:
 
@@ -99,7 +89,7 @@ class Router:
         err_str = "404:" + str(dict(route=route, params=params))
         print(err_str)
         str2file(err_str + "\n", log404)
-            
+
         Z.who = {k: v for k, v in request.headers.items()}
         Z.who["user_ip"] = request.environ.get(
             "HTTP_X_FORWARDED_FOR"
@@ -120,26 +110,28 @@ class Router:
         return False
 
     @property
-    def location(Z,):
+    def location(
+        Z,
+    ):
         global p4w_apps
         try:
-            if Z.route == '/':
-                return p4w_apps[0]  if p4w_apps else "/page_404"
-            p = Z.params[0].split('/', 1)
+            if Z.route == "/":
+                return p4w_apps[0] if p4w_apps else "/page_404"
+            p = Z.params[0].split("/", 1)
             if Z.is_allow(p[0]):
                 return f"/{p[0]}"
         except Exception as ex:
             print(ex)
-        #return "/page_404"
-        return p4w_apps[0]  if p4w_apps else "/page_404"
+        # return "/page_404"
+        return p4w_apps[0] if p4w_apps else "/page_404"
 
 
 # @ombott.error(404, "/")
 # @ombott.error(404, '/<_:path()>')
 @ombott.error(404, "/")
 @ombott.error(404, "/<params:path>")
-def url_not_found(route='/', params=[]):
-    print ( str(dict(route=route, params=params))  )
+def url_not_found(route="/", params=[]):
+    print(str(dict(route=route, params=params)))
     ombott.response.status = 303
-    #ombott.response.headers["Server"] = "404-logged"
+    # ombott.response.headers["Server"] = "404-logged"
     ombott.response.headers["Location"] = Router(route, params).location
