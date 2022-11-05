@@ -67,6 +67,12 @@ def page_404():
 FMT = "%d.%m.%Y %H:%M:%S"
 
 def apps_list():
+    xr = [ k.split('/', 1)  for k in ombott.default_app().routes.keys() 
+               if k and not '\r' in k] 
+    return sorted ( list ( { k[0] for k in xr 
+             if k[0] not in 
+              ['socket.io', 'favicon.ico','page_404', 'robot.txt']} )                       )
+    
     apps_dir = os.environ["PY4WEB_APPS_FOLDER"]
     return sorted ( [ k  for k in Reloader.ROUTES.keys()  
               if ( 
