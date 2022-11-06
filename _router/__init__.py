@@ -64,27 +64,23 @@ def page_404():
     )
 
 
-FMT = "%d.%m.%Y %H:%M:%S"
 
 
-def apps_list():
-    xxr = {
-        k.split("/", 1)[0]
-        for k in ombott.default_app().routes.keys()
-        if k and not "\r" in k
-    }
-
-    #    print (xxr)
+def apps_list(apps_routes):
+    apps_set = {k.split("/", 1)[0] 
+                for k in apps_routes.keys() 
+                if k and not "\r" in k
+               }
     return sorted(
-        [
-            e
-            for e in xxr
-            if e 
-              not in ["socket.io", "favicon.ico", "page_404", "robot.txt"]
-              and not e.startswith((".", "_"))
+        [ e for e in apps_set
+            if e not in ["socket.io", "favicon.ico", "page_404", "robot.txt"]
+            and not e.startswith((".", "_"))
         ]
     )
 
+def apps_list2(apps_modules):
+    modules = sorted ( [ k for k in apps_modules.keys () ] ) 
+    return modules
 
 #   apps_dir = os.environ["PY4WEB_APPS_FOLDER"]
 #   return sorted ( [ k  for k in Reloader.ROUTES.keys()
@@ -96,13 +92,18 @@ def apps_list():
 #           )
 
 
-p4w_apps = apps_list()
+p4w_apps = apps_list(ombott.default_app().routes)
+#p4w_apps = apps_list2(Reloader.MODULES)
+#p4w_apps = sorted ( [ k for k in Reloader.MODULES.keys () 
+#                    if not k.startswith((".", "_"))  ]  )
+print ('apps_list ', p4w_apps  )
 
 
 class Router:
 
     # my_pep: Z === self
 
+    FMT = "%d.%m.%Y %H:%M:%S"
     def __init__(Z, route, params):
         Z.route = route
         Z.params = params
@@ -116,7 +117,7 @@ class Router:
         ) or request.environ.get("REMOTE_ADDR")
 
         Z.who["app"] = "unk"
-        Z.who["date"] = datetime.now().strftime(FMT)
+        Z.who["date"] = datetime.now().strftime(Z.FMT)
         Z.who["route"] = Z.route
         Z.who["params"] = Z.params
         Z.who["method"] = request.environ.get("REQUEST_METHOD")
