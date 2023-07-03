@@ -42,8 +42,8 @@ def favicon_ico():
     return ""
 
 
-@action("/robot.txt")
-def robot_txt():
+@action("/robots.txt")
+def robots_txt():
     # return ombott.static_file( 'robot.txt', static_path, )
     response.headers["Content-Type"] = "text/plain"
     response.headers["Content-disposition"] = 'inline; filename="robot.txt"'
@@ -124,7 +124,6 @@ class Router:
         Z.who["agent"] = request.environ.get("HTTP_USER_AGENT")
 
     def is_allow(Z, app_name):
-        global p4w_apps
         if app_name and app_name in p4w_apps:
             Z.who["app"] = app_name
             return True
@@ -134,7 +133,6 @@ class Router:
     def location(
         Z,
     ):
-        global p4w_apps
         try:
             if Z.route == "/":
                 return p4w_apps[0] if p4w_apps else "/page_404"
