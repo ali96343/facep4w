@@ -1,6 +1,36 @@
 
 ## [py4web](http://py4web.com) apps ported from multistars-github-dashboards
 
+You can easily install them on py4web. First you need to install the requirements with:
+
+   `python3 -m pip install  --upgrade gunicorn gevent `
+
+(it' better on a virtual environment - and unfortunately this make it impossible to use them with the binary installation).
+
+Then goto the py4web folder and:
+
+   `git clone https://github.com/ali96343/facep4w    # this will copy all the apps on the facep4w subfolder`
+   
+   `./py4web.py run facep4w  -w 4`
+
+By default it will display the bulma app on http://127.0.0.1:8000/ , but there are 14 total apps!
+
+1. http://127.0.0.1:8000/bulma
+1. http://127.0.0.1:8000/chen
+1. http://127.0.0.1:8000/corona
+1. http://127.0.0.1:8000/desk
+1. http://127.0.0.1:8000/flat
+1. http://127.0.0.1:8000/gentelella
+1. http://127.0.0.1:8000/kapella
+1. http://127.0.0.1:8000/kit
+1. http://127.0.0.1:8000/lte3
+1. http://127.0.0.1:8000/ngx
+1. http://127.0.0.1:8000/notika
+1. http://127.0.0.1:8000/tail
+1. http://127.0.0.1:8000/volt
+1. http://127.0.0.1:8000/wind
+
+
 ### js, jquery, bootstrap, bulma, tailwind, alpine
 
 ( forms and tables with pydal and sqlite )
